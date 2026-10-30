@@ -13,7 +13,7 @@ pub fn make_0(mut n: ()) -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    return unimplemented!();
+    return (*c.borrow_mut()).clone();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

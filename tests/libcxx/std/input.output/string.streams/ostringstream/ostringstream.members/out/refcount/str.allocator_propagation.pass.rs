@@ -178,27 +178,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -248,23 +232,11 @@ impl SocccAllocator_char_ {
         Self { count_: i }
     }
 }
-impl std::cmp::PartialEq for SocccAllocator_char_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            SocccAllocator_char_Impl::operator_eq(
-                &Rc::new(RefCell::new(SocccAllocator_char_ {
-                    count_: self.count_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(SocccAllocator_char_ {
-                    count_: other.count_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for SocccAllocator_char_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SocccAllocator_char_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for SocccAllocator_char_ {}
 impl Default for SocccAllocator_char_ {
     fn default() -> Self {
         {
@@ -285,23 +257,11 @@ impl SocccAllocator_wchar_t_ {
         Self { count_: i }
     }
 }
-impl std::cmp::PartialEq for SocccAllocator_wchar_t_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            SocccAllocator_wchar_t_Impl::operator_eq(
-                &Rc::new(RefCell::new(SocccAllocator_wchar_t_ {
-                    count_: self.count_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(SocccAllocator_wchar_t_ {
-                    count_: other.count_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for SocccAllocator_wchar_t_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SocccAllocator_wchar_t_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for SocccAllocator_wchar_t_ {}
 impl Default for SocccAllocator_wchar_t_ {
     fn default() -> Self {
         {
@@ -319,7 +279,7 @@ pub fn test_soccc_behavior_4() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*ss.borrow()).str_16() });
+        let mut moved: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -333,7 +293,7 @@ pub fn test_soccc_behavior_5() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*ss.borrow()).str_16() });
+        let mut moved: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -350,7 +310,7 @@ pub fn test_allocation_is_pilfered_6() {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -365,7 +325,7 @@ pub fn test_allocation_is_pilfered_7() {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -382,7 +342,7 @@ pub fn test_no_foreign_allocations_8() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*ss.borrow()).str_16() });
+        let mut moved: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -401,7 +361,7 @@ pub fn test_no_foreign_allocations_9() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*ss.borrow()).str_16() });
+        let mut moved: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

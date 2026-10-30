@@ -31,59 +31,16 @@ impl Counter_int_ {
         __this
     }
 }
-impl std::cmp::Ord for Counter_int_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if Counter_int_Impl::operator_lt(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if Counter_int_Impl::operator_lt(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Counter_int_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Counter_int_Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Counter_int_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Counter_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Counter_int_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for Counter_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            Counter_int_Impl::operator_eq(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for Counter_int_ {}
 impl Clone for Counter_int_ {
     fn clone(&self) -> Self {
         let __src: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_ {

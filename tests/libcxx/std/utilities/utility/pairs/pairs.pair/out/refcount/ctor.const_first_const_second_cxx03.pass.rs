@@ -17,23 +17,11 @@ impl A {
         Self { data_: data }
     }
 }
-impl std::cmp::PartialEq for A {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            AImpl::operator_eq(
-                &Rc::new(RefCell::new(A {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        AImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for A {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

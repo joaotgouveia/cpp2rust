@@ -8,29 +8,21 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn get_temp_file_name_0() -> () {
     let mut Name: () = unimplemented!();
-    let mut FD: () = ({ mkstemp_1((unimplemented!())) });
+    let mut FD: () = unimplemented!();
     if (FD == -1_()) {
-        ({ perror_2(Ptr::<()>::from_string_literal(b"mkstemp")) });
+        unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     return unimplemented!();
 }
-pub fn glibc_version_less_than_3(mut version: Ptr<()>) -> () {
+pub fn glibc_version_less_than_1(mut version: Ptr<()>) -> () {
     let mut test_version: () = unimplemented!();
-    let mut n: () = ({ confstr_4((anon_5__CS_GNU_LIBC_VERSION as ()), Ptr::<()>::null(), 0_()) });
+    let mut n: () = unimplemented!();
     let mut current_version: Ptr<()> =
         Ptr::alloc_array((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>());
-    ({
-        confstr_4(
-            (anon_5__CS_GNU_LIBC_VERSION as ()),
-            (current_version).clone(),
-            n,
-        )
-    });
-    let result: Value<()> = Rc::new(RefCell::new(
-        (({ strverscmp_6((current_version).clone(), unimplemented!()) }) < 0_()),
-    ));
+    unimplemented!();
+    let result: Value<()> = Rc::new(RefCell::new((unimplemented!() < 0_())));
     current_version.delete();
     return (*result.borrow());
 }
@@ -63,7 +55,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_7(unimplemented!()) });
+    unimplemented!();
     {
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -72,7 +64,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_7(unimplemented!()) });
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -31,9 +31,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ztv: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___fun: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*zip_transform_0.with(Value::clone).borrow_mut())(
-                ___fun.as_pointer(),
+                ___f.as_pointer(),
                 v1.as_pointer(),
                 v2.as_pointer(),
             )

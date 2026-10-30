@@ -27,19 +27,26 @@ pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_const_std_filesystem_path_ptr__const_std_filesystem_path_ptr_
+pub struct test_macros_detail_is_same_const_std_filesystem_path_ref__const_std_filesystem_path_ref_
 {}
 pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_const_std_string_ref__const_std_string_ref_ {}
+pub struct test_macros_detail_is_same_const_std_filesystem_path_ptr__const_std_filesystem_path_ptr_
+{}
 pub type anon_5 = ();
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
+pub struct test_macros_detail_is_same_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref__const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref_
+{}
+pub type anon_6 = ();
+pub const anon_6_value: anon_6 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
-pub fn checkCollectionsEqual_6(start1: (), end1: (), mut start2: Ptr<()>, mut end2: Ptr<()>) -> () {
+pub fn checkCollectionsEqual_7(start1: (), end1: (), mut start2: Ptr<()>, mut end2: Ptr<()>) -> () {
     let start1: Value<()> = Rc::new(RefCell::new(start1));
     let end1: Value<()> = Rc::new(RefCell::new(end1));
     'loop_: while (unimplemented!()) && ({ (start2).clone() } != { (end2).clone() }) {
@@ -51,7 +58,7 @@ pub fn checkCollectionsEqual_6(start1: (), end1: (), mut start2: Ptr<()>, mut en
     }
     return ((unimplemented!()) && ({ start2 } == { end2 }));
 }
-pub fn checkCollectionsEqualBackwards_7(
+pub fn checkCollectionsEqualBackwards_8(
     start1: (),
     end1: (),
     mut start2: Ptr<()>,
@@ -68,16 +75,13 @@ pub fn checkCollectionsEqualBackwards_7(
     }
     return ((unimplemented!()) && ({ start2 } == { end2 }));
 }
-pub fn checkIteratorConcepts_8() {
+pub fn checkIteratorConcepts_9() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "std::bidirectional_iterator<It>");;
     const _: () = assert!(true, "");;
-    const _: () = assert!(
-        true,
-        "std::is_same<Traits::iterator_category, std::input_iterator_tag>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<Traits::pointer, path const*>::value");;
-    const _: () = assert!(true, "std::is_same<Traits::reference, path>::value");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     {
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -97,7 +101,7 @@ pub fn checkIteratorConcepts_8() {
         unimplemented!();
     }
 }
-pub fn checkBeginEndBasic_9() {
+pub fn checkBeginEndBasic_10() {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -158,8 +162,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ checkIteratorConcepts_8() });
-    ({ checkBeginEndBasic_9() });
+    ({ checkIteratorConcepts_9() });
+    ({ checkBeginEndBasic_10() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

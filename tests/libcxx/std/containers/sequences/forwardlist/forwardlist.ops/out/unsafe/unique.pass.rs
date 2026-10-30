@@ -42,55 +42,34 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_5(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_6(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_void__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_5(_x, y)
-    });
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
-pub unsafe fn do_unique_7(l: *mut (), mut expected: ()) {
+pub unsafe fn do_unique_5(l: *mut (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn do_unique_8(l: *mut (), mut expected: ()) {
+pub unsafe fn do_unique_6(l: *mut (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_7() -> () {
     {
         let t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_7(&mut c1, 3_()) });
+        (unsafe { do_unique_5(&mut c1, 3_()) });
         unimplemented!();
     }
     {
@@ -98,7 +77,7 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 1] = [0_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_7(&mut c1, 3_()) });
+        (unsafe { do_unique_5(&mut c1, 3_()) });
         unimplemented!();
     }
     {
@@ -106,13 +85,13 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 1] = [5_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_7(&mut c1, 2_()) });
+        (unsafe { do_unique_5(&mut c1, 2_()) });
         unimplemented!();
     }
     {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_7(&mut c1, 0_()) });
+        (unsafe { do_unique_5(&mut c1, 0_()) });
         unimplemented!();
     }
     {
@@ -120,7 +99,7 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 2] = [5_(), 0_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_7(&mut c1, 2_()) });
+        (unsafe { do_unique_5(&mut c1, 2_()) });
         unimplemented!();
     }
     {
@@ -128,7 +107,7 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_8(&mut c1, 3_()) });
+        (unsafe { do_unique_6(&mut c1, 3_()) });
         unimplemented!();
     }
     {
@@ -136,7 +115,7 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 1] = [0_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_8(&mut c1, 3_()) });
+        (unsafe { do_unique_6(&mut c1, 3_()) });
         unimplemented!();
     }
     {
@@ -144,13 +123,13 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 1] = [5_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_8(&mut c1, 2_()) });
+        (unsafe { do_unique_6(&mut c1, 2_()) });
         unimplemented!();
     }
     {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_8(&mut c1, 0_()) });
+        (unsafe { do_unique_6(&mut c1, 0_()) });
         unimplemented!();
     }
     {
@@ -158,7 +137,7 @@ pub unsafe fn test_9() -> () {
         let t2: [(); 2] = [5_(), 0_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
-        (unsafe { do_unique_8(&mut c1, 2_()) });
+        (unsafe { do_unique_6(&mut c1, 2_()) });
         unimplemented!();
     }
     return true;

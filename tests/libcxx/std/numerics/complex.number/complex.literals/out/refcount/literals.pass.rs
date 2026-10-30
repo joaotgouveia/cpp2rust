@@ -52,21 +52,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "std::is_same<decltype( 3if   ), std::complex<float>>::value"
     );;
     {
-        let c1: Value<()> = Rc::new(RefCell::new(({ operator_literal_il_0(3_f64) })));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let c2: Value<()> = Rc::new(RefCell::new(({ operator_literal_il_1(3_()) })));
-        unimplemented!();
-    }
-    {
-        let c1: Value<()> = Rc::new(RefCell::new(({ operator_literal_i_2(3_f64) })));
-        unimplemented!();
-        let c2: Value<()> = Rc::new(RefCell::new(({ operator_literal_i_3(3_()) })));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(({ operator_literal_if_4(3_f64) })));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let c2: Value<()> = Rc::new(RefCell::new(({ operator_literal_if_5(3_()) })));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

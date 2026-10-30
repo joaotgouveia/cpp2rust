@@ -411,10 +411,6 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc_MoveOnly_ {}
-impl some_alloc_MoveOnly_ {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -439,9 +435,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         const _: () = assert!(true, "std::is_nothrow_destructible<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "!std::is_nothrow_destructible<C>::value");;
     }
     return 0_();
 }

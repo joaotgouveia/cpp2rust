@@ -222,11 +222,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -269,11 +265,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -417,7 +409,7 @@ const _: () = assert!(
     true,
     "!std::is_copy_assignable_v<std::expected<void, NotCopyConstructible>>"
 );
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_2() -> () {
     {
         let mut e1: () = unimplemented!();
         let mut e2: () = unimplemented!();
@@ -489,7 +481,7 @@ pub unsafe fn test_3() -> () {
     }
     return true;
 }
-pub unsafe fn testException_4() {}
+pub unsafe fn testException_3() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -506,9 +498,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3() });
+    (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_4() });
+    (unsafe { testException_3() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

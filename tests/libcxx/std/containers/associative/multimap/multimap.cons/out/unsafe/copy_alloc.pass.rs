@@ -218,7 +218,7 @@ pub unsafe fn operator_eq_5(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_std_pair_const_int__int__ {
     data_: (),
     id_: (),
@@ -231,6 +231,19 @@ impl test_allocator_std_pair_const_int__int__ {
             id_: 0_(),
             stats_: std::ptr::null_mut(),
         };
+        this
+    }
+    pub unsafe fn copy_from(a: *const test_allocator_std_pair_const_int__int__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -254,6 +267,15 @@ impl std::cmp::PartialEq for test_allocator_std_pair_const_int__int__ {
     }
 }
 impl std::cmp::Eq for test_allocator_std_pair_const_int__int__ {}
+impl Clone for test_allocator_std_pair_const_int__int__ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_std_pair_const_int__int__::copy_from(
+                self as *const test_allocator_std_pair_const_int__int__,
+            )
+        }
+    }
+}
 impl Default for test_allocator_std_pair_const_int__int__ {
     fn default() -> Self {
         unsafe {

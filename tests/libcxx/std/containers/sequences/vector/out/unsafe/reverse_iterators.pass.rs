@@ -37,19 +37,25 @@ pub unsafe fn operator_sub_4(
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_5(
+pub unsafe fn operator_lt_5(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> () {
+    return ((x.ptr_) < (y.ptr_));
+}
+pub unsafe fn operator_eq_6(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_6(
+pub unsafe fn operator_ne_7(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_5(_x, y)
+        operator_eq_6(_x, y)
     });
 }
 #[repr(C)]
@@ -60,12 +66,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
     unsafe fn new_1(mut p: *mut ()) -> Self {
         let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
         this
     }
     pub unsafe fn to_(&self) -> () {
@@ -96,13 +96,6 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
-    pub unsafe fn operator_sub_assign(
-        &mut self,
-        mut n: (),
-    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
-        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
-    }
     pub unsafe fn operator_add(
         &self,
         mut n: (),
@@ -116,26 +109,28 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         });
         return tmp;
     }
-    pub unsafe fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
-            (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
-        (unsafe {
-            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_sub_assign(
-                &mut tmp, n,
-            )
-        });
-        return tmp;
+}
+impl std::cmp::Ord for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe {
+            if operator_lt_5(self.clone(), other.clone()) {
+                std::cmp::Ordering::Less
+            } else if operator_lt_5(other.clone(), self.clone()) {
+                std::cmp::Ordering::Greater
+            } else {
+                std::cmp::Ordering::Equal
+            }
+        }
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
-        return &mut (*self.ptr_.offset((n) as isize));
+}
+impl std::cmp::PartialOrd for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
 impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self.clone(), other.clone()) }
+        unsafe { operator_eq_6(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
@@ -145,23 +140,23 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_7(
+pub unsafe fn operator_sub_8(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_8(
+pub unsafe fn operator_lt_9(
+    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+) -> () {
+    return ((x.ptr_) < (y.ptr_));
+}
+pub unsafe fn operator_eq_10(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_9(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) != (y.ptr_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -186,9 +181,27 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
             as *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__));
     }
 }
+impl std::cmp::Ord for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe {
+            if operator_lt_9(self.clone(), other.clone()) {
+                std::cmp::Ordering::Less
+            } else if operator_lt_9(other.clone(), self.clone()) {
+                std::cmp::Ordering::Greater
+            } else {
+                std::cmp::Ordering::Equal
+            }
+        }
+    }
+}
+impl std::cmp::PartialOrd for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
 impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self.clone(), other.clone()) }
+        unsafe { operator_eq_10(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
@@ -218,54 +231,6 @@ impl min_allocator_int_ {
         unimplemented!();
     }
 }
-pub unsafe fn check_vector_reverse_iterators_10() {
-    {
-        let mut vec_: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let n: () = 10_();
-        let mut vec_: () = unimplemented!();
-        let cvec: *const () = &vec_;
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (n)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        {
-            let mut iterations: () = 0_();
-            let mut it: () = unimplemented!();
-            'loop_: while unimplemented!() {
-                unimplemented!();
-                iterations.prefix_inc();
-                unimplemented!();
-            }
-            unimplemented!();
-        }
-        {
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut iterations: () = 0_();
-            let mut it: () = unimplemented!();
-            'loop_: while unimplemented!() {
-                unimplemented!();
-                (*unimplemented!()) = 40_();
-                unimplemented!();
-                iterations.prefix_inc();
-                unimplemented!();
-            }
-            unimplemented!();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
 pub unsafe fn check_vector_reverse_iterators_11() {
     {
         let mut vec_: () = unimplemented!();
@@ -285,7 +250,7 @@ pub unsafe fn check_vector_reverse_iterators_11() {
         {
             let mut iterations: () = 0_();
             let mut it: () = unimplemented!();
-            'loop_: while unimplemented!() {
+            'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 iterations.prefix_inc();
                 unimplemented!();
@@ -299,7 +264,7 @@ pub unsafe fn check_vector_reverse_iterators_11() {
         {
             let mut iterations: () = 0_();
             let mut it: () = unimplemented!();
-            'loop_: while unimplemented!() {
+            'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 (*unimplemented!()) = 40_();
                 unimplemented!();
@@ -314,9 +279,57 @@ pub unsafe fn check_vector_reverse_iterators_11() {
         unimplemented!();
     }
 }
-pub unsafe fn test_12() -> () {
-    (unsafe { check_vector_reverse_iterators_10() });
+pub unsafe fn check_vector_reverse_iterators_12() {
+    {
+        let mut vec_: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let n: () = 10_();
+        let mut vec_: () = unimplemented!();
+        let cvec: *const () = &vec_;
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (n)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        {
+            let mut iterations: () = 0_();
+            let mut it: () = unimplemented!();
+            'loop_: while !(unimplemented!()) {
+                unimplemented!();
+                iterations.prefix_inc();
+                unimplemented!();
+            }
+            unimplemented!();
+        }
+        {
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut iterations: () = 0_();
+            let mut it: () = unimplemented!();
+            'loop_: while !(unimplemented!()) {
+                unimplemented!();
+                (*unimplemented!()) = 40_();
+                unimplemented!();
+                iterations.prefix_inc();
+                unimplemented!();
+            }
+            unimplemented!();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_13() -> () {
     (unsafe { check_vector_reverse_iterators_11() });
+    (unsafe { check_vector_reverse_iterators_12() });
     return true;
 }
 pub fn main() {
@@ -335,7 +348,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_12() });
+    (unsafe { test_13() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -43,55 +43,43 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_4(
-    mut x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_5(
-    mut x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_4(_x, y)
-    });
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
-}
-impl std::cmp::PartialEq for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_4(self.clone(), other.clone()) }
+    pub unsafe fn operator_sub_assign(
+        &mut self,
+        mut n: (),
+    ) -> *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
+        return &mut (*(self
+            as *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__));
     }
-}
-impl std::cmp::Eq for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
-impl min_allocator_bool_ {
-    pub unsafe fn new_1(mut _a0: min_allocator_unsigned_long_) -> Self {
-        let mut this = Self {};
-        this
+    pub unsafe fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ =
+            (*(self as *const min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__::operator_sub_assign(
+                &mut tmp, n,
+            )
+        });
+        return tmp;
+    }
+    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+        return &mut (*self.ptr_.offset((n) as isize));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_bool_ {}
-impl min_allocator_unsigned_long_ {
-    pub unsafe fn new_1(mut _a0: min_allocator_bool_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_unsigned_long_ {}
@@ -104,35 +92,19 @@ impl min_allocator_unsigned_long_ {
         unimplemented!();
     }
 }
-impl min_allocator_bool_ {}
-impl min_allocator_unsigned_long_ {}
-impl sized_allocator_bool__unsigned_char__signed_char_ {
-    pub unsafe fn new_1(
-        a: *const sized_allocator_unsigned_char__unsigned_char__signed_char_,
-    ) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct sized_allocator_bool__unsigned_char__signed_char_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_char__signed_char_ {}
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
-    pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_char__signed_char_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+pub struct sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     data_: (),
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
-    pub unsafe fn new_2(mut d: Option<()>) -> Self {
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {
+    pub unsafe fn new(mut d: Option<()>) -> Self {
         let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self { data_: d };
         this
@@ -144,15 +116,9 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl Default for sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+impl Default for sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     fn default() -> Self {
-        unsafe { sized_allocator_unsigned_char__unsigned_char__signed_char_::new_2(None) }
-    }
-}
-impl sized_allocator_bool__unsigned_short__short_ {
-    pub unsafe fn new_1(a: *const sized_allocator_unsigned_short__unsigned_short__short_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
+        unsafe { sized_allocator_unsigned_long__unsigned_char__signed_char_::new(None) }
     }
 }
 #[repr(C)]
@@ -161,19 +127,13 @@ pub struct sized_allocator_bool__unsigned_short__short_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_short__short_ {}
-impl sized_allocator_unsigned_short__unsigned_short__short_ {
-    pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_short__short_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct sized_allocator_unsigned_short__unsigned_short__short_ {
+pub struct sized_allocator_unsigned_long__unsigned_short__short_ {
     data_: (),
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_ {
-    pub unsafe fn new_2(mut d: Option<()>) -> Self {
+impl sized_allocator_unsigned_long__unsigned_short__short_ {
+    pub unsafe fn new(mut d: Option<()>) -> Self {
         let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self { data_: d };
         this
@@ -185,15 +145,9 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl Default for sized_allocator_unsigned_short__unsigned_short__short_ {
+impl Default for sized_allocator_unsigned_long__unsigned_short__short_ {
     fn default() -> Self {
-        unsafe { sized_allocator_unsigned_short__unsigned_short__short_::new_2(None) }
-    }
-}
-impl sized_allocator_bool__unsigned_int__int_ {
-    pub unsafe fn new_1(a: *const sized_allocator_unsigned_int__unsigned_int__int_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
+        unsafe { sized_allocator_unsigned_long__unsigned_short__short_::new(None) }
     }
 }
 #[repr(C)]
@@ -202,19 +156,13 @@ pub struct sized_allocator_bool__unsigned_int__int_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_int__int_ {}
-impl sized_allocator_unsigned_int__unsigned_int__int_ {
-    pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_int__int_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct sized_allocator_unsigned_int__unsigned_int__int_ {
+pub struct sized_allocator_unsigned_long__unsigned_int__int_ {
     data_: (),
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_ {
-    pub unsafe fn new_2(mut d: Option<()>) -> Self {
+impl sized_allocator_unsigned_long__unsigned_int__int_ {
+    pub unsafe fn new(mut d: Option<()>) -> Self {
         let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self { data_: d };
         this
@@ -226,15 +174,9 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl Default for sized_allocator_unsigned_int__unsigned_int__int_ {
+impl Default for sized_allocator_unsigned_long__unsigned_int__int_ {
     fn default() -> Self {
-        unsafe { sized_allocator_unsigned_int__unsigned_int__int_::new_2(None) }
-    }
-}
-impl sized_allocator_bool__unsigned_long__long_ {
-    pub unsafe fn new_1(a: *const sized_allocator_unsigned_long__unsigned_long__long_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
+        unsafe { sized_allocator_unsigned_long__unsigned_int__int_::new(None) }
     }
 }
 #[repr(C)]
@@ -243,19 +185,13 @@ pub struct sized_allocator_bool__unsigned_long__long_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_long__long_ {}
-impl sized_allocator_unsigned_long__unsigned_long__long_ {
-    pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_long__long_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct sized_allocator_unsigned_long__unsigned_long__long_ {
     data_: (),
 }
 impl sized_allocator_unsigned_long__unsigned_long__long_ {
-    pub unsafe fn new_2(mut d: Option<()>) -> Self {
+    pub unsafe fn new(mut d: Option<()>) -> Self {
         let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self { data_: d };
         this
@@ -269,7 +205,7 @@ impl sized_allocator_unsigned_long__unsigned_long__long_ {
 }
 impl Default for sized_allocator_unsigned_long__unsigned_long__long_ {
     fn default() -> Self {
-        unsafe { sized_allocator_unsigned_long__unsigned_long__long_::new_2(None) }
+        unsafe { sized_allocator_unsigned_long__unsigned_long__long_::new(None) }
     }
 }
 #[repr(C)]
@@ -322,21 +258,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_6: std::cell::LazyCell<()> =
+pub static mut destructed_value_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_7: std::cell::LazyCell<()> =
+pub static mut moved_value_5: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_8(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_6(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_9(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_7(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_8(_x, _y)
+        operator_eq_6(_x, _y)
     });
 }
 #[repr(C)]
@@ -400,8 +336,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_6));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_6));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -422,7 +358,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_8(
+            operator_eq_6(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -446,23 +382,12 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_bool_ {
-    pub unsafe fn new_1(a: *const test_allocator_unsigned_int_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_bool__rebind_unsigned_int_ {}
+pub struct test_allocator_bool__rebind_unsigned_long_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_bool__rebind_bool_ {}
 #[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_bool_ {
@@ -471,7 +396,7 @@ pub struct test_allocator_bool_ {
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_bool_ {
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_1(mut data: ()) -> Self {
         let mut this = Self {
             data_: data,
             id_: 0_(),
@@ -485,8 +410,8 @@ impl test_allocator_bool_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_6));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_6));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
     }
 }
 impl Default for test_allocator_bool_ {
@@ -500,7 +425,7 @@ impl Default for test_allocator_bool_ {
         }
     }
 }
-impl test_allocator_unsigned_int_ {
+impl test_allocator_unsigned_long_ {
     pub unsafe fn new_1(a: *const test_allocator_bool_) -> Self {
         let mut this = Self {
             data_: (*a).data_,
@@ -515,21 +440,34 @@ impl test_allocator_unsigned_int_ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_unsigned_int_ {
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
+pub struct test_allocator_unsigned_long_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_unsigned_int_ {
+impl test_allocator_unsigned_long_ {
+    pub unsafe fn copy_from(a: *const test_allocator_unsigned_long_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_6));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_6));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         unimplemented!();
@@ -544,21 +482,22 @@ impl test_allocator_unsigned_int_ {
             .wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl Default for test_allocator_unsigned_int_ {
+impl Clone for test_allocator_unsigned_long_ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_unsigned_long_::copy_from(self as *const test_allocator_unsigned_long_)
+        }
+    }
+}
+impl Default for test_allocator_unsigned_long_ {
     fn default() -> Self {
         unsafe {
-            test_allocator_unsigned_int_ {
+            test_allocator_unsigned_long_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
             }
         }
-    }
-}
-impl other_allocator_bool_ {
-    pub unsafe fn new_1(a: *const other_allocator_unsigned_long_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
     }
 }
 #[repr(C)]
@@ -567,7 +506,7 @@ pub struct other_allocator_bool_ {
     data_: (),
 }
 impl other_allocator_bool_ {
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: ()) -> Self {
         let mut this = Self { data_: i };
         this
     }
@@ -630,32 +569,6 @@ impl Tag_X {
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Tag_X) -> *mut Tag_X {
         return &mut (*(self as *mut Tag_X));
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct limited_alloc_handle_10_ {
-    pub outstanding_: (),
-    pub last_alloc_: (),
-}
-impl limited_alloc_handle_10_ {
-    pub unsafe fn deallocate_2_unsigned_long(&mut self, mut ptr: *mut (), mut N: ()) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-}
-impl Default for limited_alloc_handle_10_ {
-    fn default() -> Self {
-        unsafe {
-            limited_alloc_handle_10_ {
-                outstanding_: 0_(),
-                last_alloc_: unimplemented!(),
-            }
-        }
     }
 }
 #[repr(C)]
@@ -736,20 +649,7 @@ impl Default for limited_alloc_handle_292805461487453200_ {
         }
     }
 }
-pub unsafe fn make_thread_unsafe_shared_10()
--> detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    let mut ptr: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ =
-        <detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__>::default();
-    let _dtor_ptr = ScopedDestructorUnsafe::new(
-        &raw mut ptr,
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor,
-    );
-    let mut alloc: () = unimplemented!();
-    ptr.block = unimplemented!();
-    unimplemented!();
-    return detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from({ &ptr });
-}
-pub unsafe fn make_thread_unsafe_shared_11()
+pub unsafe fn make_thread_unsafe_shared_8()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ {
     let mut ptr: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ =
         <detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__>::default();
@@ -764,7 +664,7 @@ pub unsafe fn make_thread_unsafe_shared_11()
         { &ptr },
     );
 }
-pub unsafe fn make_thread_unsafe_shared_12()
+pub unsafe fn make_thread_unsafe_shared_9()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__ {
     let mut ptr: detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__ =
         <detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__>::default();
@@ -779,7 +679,7 @@ pub unsafe fn make_thread_unsafe_shared_12()
         &ptr
     });
 }
-pub unsafe fn make_thread_unsafe_shared_13()
+pub unsafe fn make_thread_unsafe_shared_10()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__ {
     let mut ptr: detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__ =
         <detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__>::default();
@@ -793,84 +693,6 @@ pub unsafe fn make_thread_unsafe_shared_13()
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__::copy_from({
         &ptr
     });
-}
-impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            ref_count: 1_(),
-            content: <limited_alloc_handle_10_>::default(),
-        };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
-    pub ref_count: (),
-    pub content: limited_alloc_handle_10_,
-}
-impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
-    fn default() -> Self {
-        unsafe {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
-                ref_count: 1_(),
-                content: <limited_alloc_handle_10_>::default(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
-pub struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    block: *mut detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block,
-}
-impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    pub unsafe fn copy_from(
-        other: *const detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-    ) -> Self {
-        let mut this = Self {
-            block: (*other).block,
-        };
-        (*this.block).ref_count.prefix_inc();
-        this
-    }
-    pub unsafe fn destructor(&mut self) {
-        (*self.block).ref_count.prefix_dec();
-        if (((*self.block).ref_count) != (0_())) {
-            return;
-        };
-        let mut alloc: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_10_ {
-        return (&mut (*self.block).content as *mut limited_alloc_handle_10_);
-    }
-    pub unsafe fn copy_assign(
-        &mut self,
-        _a0: *const detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-    ) -> *mut detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-        self.block = (*_a0).block;
-        return &mut (*(self as *mut detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__));
-    }
-}
-impl Clone for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    fn clone(&self) -> Self {
-        unsafe {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from(
-                self as *const detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-            )
-        }
-    }
-}
-impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    fn default() -> Self {
-        unsafe {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-                block: std::ptr::null_mut(),
-            }
-        }
-    }
 }
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block {
     pub unsafe fn new() -> Self {
@@ -1096,70 +918,10 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_2928054614
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_bool__10__rebind_unsigned_long_ {}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
-pub struct limited_allocator_bool__10_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_bool__10_ {}
-impl limited_allocator_bool__10_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
-    }
-}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct limited_allocator_unsigned_long__10_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_unsigned_long__10_ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_10() }),
-        };
-        this
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe {
-            let _ptr: *mut () = p;
-            let _N: () = n;
-            limited_alloc_handle_10_::deallocate_2_unsigned_long(
-                &mut (*(unsafe {
-                    detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::operator_arrow_7(
-                        &mut self.handle_,
-                    )
-                })),
-                _ptr,
-                _N,
-            )
-        });
-    }
-    pub unsafe fn max_size(&self) -> () {
-        return 10_();
-    }
-}
-impl limited_allocator_unsigned_long__10_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
-    }
-}
-impl Default for limited_allocator_unsigned_long__10_ {
-    fn default() -> Self {
-        unsafe { limited_allocator_unsigned_long__10_::new() }
-    }
-}
-impl limited_allocator_bool__18446744073709551615_ {
-    pub unsafe fn new_1(
-        other: *const limited_allocator_unsigned_long__18446744073709551615_,
-    ) -> Self {
-        let mut this = Self { handle_ : detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ :: copy_from ( { & ( * other ) . handle_  } , )  , } ;
-        this
-    }
-}
+pub struct limited_allocator_bool__18446744073709551615__rebind_unsigned_long_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_bool__18446744073709551615__rebind_unsigned_long_ {}
+pub struct limited_allocator_bool__18446744073709551615__rebind_bool_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct limited_allocator_bool__18446744073709551615_ {
@@ -1173,21 +935,15 @@ impl limited_allocator_bool__18446744073709551615_ {
         );
     }
 }
-impl limited_allocator_unsigned_long__18446744073709551615_ {
-    pub unsafe fn new_1(other: *const limited_allocator_bool__18446744073709551615_) -> Self {
-        let mut this = Self { handle_ : detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ :: copy_from ( { & ( * other ) . handle_  } , )  , } ;
-        this
-    }
-}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct limited_allocator_unsigned_long__18446744073709551615_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
 }
 impl limited_allocator_unsigned_long__18446744073709551615_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_11() }),
+            handle_: (unsafe { make_thread_unsafe_shared_8() }),
         };
         this
     }
@@ -1217,25 +973,15 @@ impl limited_allocator_unsigned_long__18446744073709551615_ {
 }
 impl Default for limited_allocator_unsigned_long__18446744073709551615_ {
     fn default() -> Self {
-        unsafe { limited_allocator_unsigned_long__18446744073709551615_::new_2() }
-    }
-}
-impl limited_allocator_bool__302405640552615600_ {
-    pub unsafe fn new_1(
-        other: *const limited_allocator_unsigned_long__302405640552615600_,
-    ) -> Self {
-        let mut this = Self {
-            handle_:
-                detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__::copy_from(
-                    { &(*other).handle_ },
-                ),
-        };
-        this
+        unsafe { limited_allocator_unsigned_long__18446744073709551615_::new() }
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_bool__302405640552615600__rebind_unsigned_long_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct limited_allocator_bool__302405640552615600__rebind_bool_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct limited_allocator_bool__302405640552615600_ {
@@ -1249,26 +995,15 @@ impl limited_allocator_bool__302405640552615600_ {
         );
     }
 }
-impl limited_allocator_unsigned_long__302405640552615600_ {
-    pub unsafe fn new_1(other: *const limited_allocator_bool__302405640552615600_) -> Self {
-        let mut this = Self {
-            handle_:
-                detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__::copy_from(
-                    { &(*other).handle_ },
-                ),
-        };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct limited_allocator_unsigned_long__302405640552615600_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__,
 }
 impl limited_allocator_unsigned_long__302405640552615600_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_12() }),
+            handle_: (unsafe { make_thread_unsafe_shared_9() }),
         };
         this
     }
@@ -1298,25 +1033,15 @@ impl limited_allocator_unsigned_long__302405640552615600_ {
 }
 impl Default for limited_allocator_unsigned_long__302405640552615600_ {
     fn default() -> Self {
-        unsafe { limited_allocator_unsigned_long__302405640552615600_::new_2() }
-    }
-}
-impl limited_allocator_bool__292805461487453200_ {
-    pub unsafe fn new_1(
-        other: *const limited_allocator_unsigned_long__292805461487453200_,
-    ) -> Self {
-        let mut this = Self {
-            handle_:
-                detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__::copy_from(
-                    { &(*other).handle_ },
-                ),
-        };
-        this
+        unsafe { limited_allocator_unsigned_long__302405640552615600_::new() }
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_bool__292805461487453200__rebind_unsigned_long_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct limited_allocator_bool__292805461487453200__rebind_bool_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct limited_allocator_bool__292805461487453200_ {
@@ -1330,26 +1055,15 @@ impl limited_allocator_bool__292805461487453200_ {
         );
     }
 }
-impl limited_allocator_unsigned_long__292805461487453200_ {
-    pub unsafe fn new_1(other: *const limited_allocator_bool__292805461487453200_) -> Self {
-        let mut this = Self {
-            handle_:
-                detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__::copy_from(
-                    { &(*other).handle_ },
-                ),
-        };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct limited_allocator_unsigned_long__292805461487453200_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__,
 }
 impl limited_allocator_unsigned_long__292805461487453200_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_13() }),
+            handle_: (unsafe { make_thread_unsafe_shared_10() }),
         };
         this
     }
@@ -1379,162 +1093,70 @@ impl limited_allocator_unsigned_long__292805461487453200_ {
 }
 impl Default for limited_allocator_unsigned_long__292805461487453200_ {
     fn default() -> Self {
-        unsafe { limited_allocator_unsigned_long__292805461487453200_::new_2() }
+        unsafe { limited_allocator_unsigned_long__292805461487453200_::new() }
     }
+}
+pub unsafe fn test_11(v: *const ()) {
+    let max_dist: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_12(v: *const ()) {
+    let max_dist: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_13(v: *const ()) {
+    let max_dist: () = unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test_14(v: *const ()) {
     let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_15(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
 }
 pub unsafe fn test_16(v: *const ()) {
     let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_17(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
 }
 pub unsafe fn test_18(v: *const ()) {
     let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_19(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
 }
 pub unsafe fn test_20(v: *const ()) {
     let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_21(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
 }
-pub unsafe fn test_22(v: *const ()) {
-    let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_23(v: *const ()) {
-    let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_24(v: *const ()) {
-    let max_dist: () = unimplemented!();
-    unimplemented!();
-    let max_alloc: () = unimplemented!();
-    let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
-        max_dist
-    } else {
-        (max_alloc).wrapping_mul(bits_per_word)
-    };
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn tests_25() -> () {
-    {
-        let mut v: () = unimplemented!();
-        let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-        unimplemented!();
-    }
+pub unsafe fn tests_22() -> () {
     {
         (unsafe {
             let mut _v: () = unimplemented!();
-            test_14(&mut _v)
+            test_11(&mut _v)
+        });
+        (unsafe {
+            let mut _v: () = unimplemented!();
+            test_11(&mut _v)
+        });
+        (unsafe {
+            let mut _v: () = unimplemented!();
+            test_12(&mut _v)
+        });
+        (unsafe {
+            let mut _v: () = unimplemented!();
+            test_13(&mut _v)
         });
         (unsafe {
             let mut _v: () = unimplemented!();
@@ -1560,6 +1182,8 @@ pub unsafe fn tests_25() -> () {
             let mut _v: () = unimplemented!();
             test_19(&mut _v)
         });
+    }
+    {
         (unsafe {
             let mut _v: () = unimplemented!();
             test_20(&mut _v)
@@ -1567,20 +1191,6 @@ pub unsafe fn tests_25() -> () {
         (unsafe {
             let mut _v: () = unimplemented!();
             test_21(&mut _v)
-        });
-        (unsafe {
-            let mut _v: () = unimplemented!();
-            test_22(&mut _v)
-        });
-    }
-    {
-        (unsafe {
-            let mut _v: () = unimplemented!();
-            test_23(&mut _v)
-        });
-        (unsafe {
-            let mut _v: () = unimplemented!();
-            test_24(&mut _v)
         });
     }
     return true;
@@ -1601,7 +1211,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_25() });
+    (unsafe { tests_22() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }
@@ -1610,6 +1220,6 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const alloc_count_1);
     std::cell::LazyCell::force(&*&raw const dealloc_count_2);
     std::cell::LazyCell::force(&*&raw const disable_default_constructor_3);
-    std::cell::LazyCell::force(&*&raw const destructed_value_6);
-    std::cell::LazyCell::force(&*&raw const moved_value_7);
+    std::cell::LazyCell::force(&*&raw const destructed_value_4);
+    std::cell::LazyCell::force(&*&raw const moved_value_5);
 }

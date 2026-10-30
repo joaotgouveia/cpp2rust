@@ -54,23 +54,61 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_ne_0(
     x: *const forward_iterator_const_char_ptr_,
@@ -79,7 +117,7 @@ pub unsafe fn operator_ne_0(
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_const_char_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -106,6 +144,17 @@ impl forward_iterator_const_char_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_const_char_ptr_,
+    ) -> *mut forward_iterator_const_char_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_const_char_ptr_));
+    }
 }
 pub unsafe fn operator_ne_1(
     x: *const forward_iterator_const_wchar_t_ptr_,
@@ -114,7 +163,7 @@ pub unsafe fn operator_ne_1(
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_const_wchar_t_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -141,9 +190,20 @@ impl forward_iterator_const_wchar_t_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_const_wchar_t_ptr_,
+    ) -> *mut forward_iterator_const_wchar_t_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_const_wchar_t_ptr_));
+    }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -154,6 +214,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -485,9 +563,9 @@ pub unsafe fn test_w_11(mut A: *const (), mut expected: (), mut icase: Option<()
     let mut t: () = unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let matches_underscore: () = unimplemented!();
-    if ((result) != (expected)) {
+    if !(unimplemented!()) {
         unimplemented!();
     } else {
         unimplemented!();
@@ -498,9 +576,9 @@ pub unsafe fn test_w_12(mut A: *const (), mut expected: (), mut icase: Option<()
     let mut t: () = unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let matches_underscore: () = unimplemented!();
-    if ((result) != (expected)) {
+    if !(unimplemented!()) {
         unimplemented!();
     } else {
         unimplemented!();
@@ -522,48 +600,24 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     (unsafe { test_9(c"d".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"D".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"d".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_9(c"D".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe {
-        test_w_11(
-            c"w".as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            None,
-        )
-    });
-    (unsafe {
-        test_w_11(
-            c"W".as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            None,
-        )
-    });
-    (unsafe {
-        test_w_11(
-            c"w".as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            Some(true),
-        )
-    });
-    (unsafe {
-        test_w_11(
-            c"W".as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            Some(true),
-        )
-    });
+    (unsafe { test_w_11(c"w".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_w_11(c"W".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_w_11(c"w".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_w_11(c"W".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_9(c"s".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"S".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"s".as_ptr(), unimplemented!(), Some(true)) });
@@ -598,20 +652,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_9(c"Graph".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_9(c"lower".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"LOWER".as_ptr(), unimplemented!(), None) });
-    (unsafe {
-        test_9(
-            c"lower".as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
-            Some(true),
-        )
-    });
-    (unsafe {
-        test_9(
-            c"Lower".as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
-            Some(true),
-        )
-    });
+    (unsafe { test_9(c"lower".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Lower".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_9(c"print".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"PRINT".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"print".as_ptr(), unimplemented!(), Some(true)) });
@@ -626,20 +668,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_9(c"Space".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_9(c"upper".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"UPPER".as_ptr(), unimplemented!(), None) });
-    (unsafe {
-        test_9(
-            c"upper".as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
-            Some(true),
-        )
-    });
-    (unsafe {
-        test_9(
-            c"Upper".as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
-            Some(true),
-        )
-    });
+    (unsafe { test_9(c"upper".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Upper".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_9(c"xdigit".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"XDIGIT".as_ptr(), unimplemented!(), None) });
     (unsafe { test_9(c"xdigit".as_ptr(), unimplemented!(), Some(true)) });
@@ -651,34 +681,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_10([68 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
     (unsafe { test_10([100 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_10([68 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe {
-        test_w_12(
-            [119 as (), 0 as ()].as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            None,
-        )
-    });
-    (unsafe {
-        test_w_12(
-            [87 as (), 0 as ()].as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            None,
-        )
-    });
-    (unsafe {
-        test_w_12(
-            [119 as (), 0 as ()].as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            Some(true),
-        )
-    });
-    (unsafe {
-        test_w_12(
-            [87 as (), 0 as ()].as_ptr(),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            Some(true),
-        )
-    });
+    (unsafe { test_w_12([119 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_w_12([87 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_w_12([119 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_w_12([87 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
     (unsafe { test_10([115 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
     (unsafe { test_10([83 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
     (unsafe { test_10([115 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
@@ -947,7 +953,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 108 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]
             .as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
+            unimplemented!(),
             Some(true),
         )
     });
@@ -957,7 +963,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 76 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]
             .as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
+            unimplemented!(),
             Some(true),
         )
     });
@@ -1083,7 +1089,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 117 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]
             .as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
+            unimplemented!(),
             Some(true),
         )
     });
@@ -1093,7 +1099,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 85 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]
             .as_ptr(),
-            ((unimplemented!()) | (unimplemented!())),
+            unimplemented!(),
             Some(true),
         )
     });

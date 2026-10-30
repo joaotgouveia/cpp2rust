@@ -162,9 +162,9 @@ pub unsafe fn test_stable_7(mut N: ()) {
         };
     }
     let mut it: () = unimplemented!();
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let mut next: () = unimplemented!();
-        if (unimplemented!()) && (((*unimplemented!()).val) == ((*unimplemented!()).val)) {
+        if (!(unimplemented!())) && (((*it).val) == ((*next).val)) {
             unimplemented!();
         }
         unimplemented!();

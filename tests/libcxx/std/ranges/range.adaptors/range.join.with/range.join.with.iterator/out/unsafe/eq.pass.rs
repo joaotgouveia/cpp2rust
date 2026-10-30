@@ -54,55 +54,94 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
-const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct forward_iterator_std___wrap_iter_const_char_ptr__ {
-    it_: (),
-    tracker_: support_double_move_tracker,
-}
-impl forward_iterator_std___wrap_iter_const_char_ptr__ {
-    pub unsafe fn new_1(mut it: ()) -> Self {
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
         let mut this = Self {
-            it_: unimplemented!(),
-            tracker_: support_double_move_tracker::new(),
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
 }
-pub unsafe fn operator_eq_0(
-    x: *const forward_iterator_std___wrap_iter_int_ptr__,
-    y: *const forward_iterator_std___wrap_iter_int_ptr__,
-) -> () {
-    return unimplemented!();
-}
-pub unsafe fn base_1(i: *const forward_iterator_std___wrap_iter_int_ptr__) -> () {
-    return unimplemented!();
-}
+const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
-pub struct forward_iterator_std___wrap_iter_int_ptr__ {
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____
+{
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_std___wrap_iter_int_ptr__ {
+impl forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn move_from ( _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { unimplemented!()  ;
+ ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  )  )  ;
+ } }
+pub unsafe fn operator_eq_0(
+    x : *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+    y : *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
+    return unimplemented!();
+}
+pub unsafe fn base_1(
+    i : *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
+    return unimplemented!();
+}
+#[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+pub struct forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
+    it_: (),
+    tracker_: support_double_move_tracker,
+}
+impl forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ {
     pub unsafe fn new_1() -> Self {
         let mut this = Self {
             it_: unimplemented!(),
@@ -119,154 +158,142 @@ impl forward_iterator_std___wrap_iter_int_ptr__ {
     }
     pub unsafe fn operator_deref(&self) -> () {
         return &mut (*unimplemented!());
-    }
-    pub unsafe fn operator_inc_6(&mut self) -> *mut forward_iterator_std___wrap_iter_int_ptr__ {
+    }    pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!();
-        return &mut (*(self as *mut forward_iterator_std___wrap_iter_int_ptr__));
+        return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
     }
-    pub unsafe fn move_from(_a0: *mut forward_iterator_std___wrap_iter_int_ptr__) -> Self {
+    pub unsafe fn move_from(
+        _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+    ) -> Self {
         let mut this = Self {
             it_: (*_a0).it_,
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
+    }    pub unsafe fn move_assign ( &mut self , _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
+        unimplemented!();
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
     }
 }
-impl std::cmp::PartialEq for forward_iterator_std___wrap_iter_int_ptr__ {
+impl std::cmp::PartialEq
+    for forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_0(
-                self as *const forward_iterator_std___wrap_iter_int_ptr__,
-                other as *const forward_iterator_std___wrap_iter_int_ptr__,
-            )
+            operator_eq_0(self as *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____, other as *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____)
         }
     }
 }
-impl std::cmp::Eq for forward_iterator_std___wrap_iter_int_ptr__ {}
-impl Default for forward_iterator_std___wrap_iter_int_ptr__ {
+impl std::cmp::Eq
+    for forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
+}
+impl Default
+    for forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     fn default() -> Self {
-        unsafe { forward_iterator_std___wrap_iter_int_ptr__::new_1() }
+        unsafe {
+            forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new_1 ( )
+        }
     }
 }
 pub unsafe fn operator_eq_2(
-    x : *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
-    y : *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
+    x : *const forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
+    y : *const forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
 ) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_ne_3(
-    x : *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
-    y : *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
+    x : *const forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
+    y : *const forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
 ) -> () {
     return !(unimplemented!());
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
-pub struct forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____
 {
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> () { return & mut ( * unimplemented!()  )   ;
- } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { unimplemented!()  ;
- return & mut ( * ( self as *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__  )  )  ;
- } pub unsafe fn move_from ( _a0 : *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
- this } }
-impl std::cmp::PartialEq for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_2(self as *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__, other as *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__) }}}
-impl std::cmp::Eq for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ {}
+ } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { unimplemented!()  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____  )  )  ;
+ } pub unsafe fn move_from ( _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { unimplemented!()  ;
+ ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____  )  )  ;
+ } }
+impl std::cmp::PartialEq for forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_2(self as *const forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____, other as *const forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____) }}}
+impl std::cmp::Eq for forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ {}
 pub unsafe fn operator_eq_4(
-    x : *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
-    y : *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
+    x : *const forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
+    y : *const forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
 ) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_ne_5(
-    x : *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
-    y : *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
+    x : *const forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
+    y : *const forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____,
 ) -> () {
     return !(unimplemented!());
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
-pub struct forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____
 {
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * unimplemented!()  )   ;
- } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { unimplemented!()  ;
- return & mut ( * ( self as *mut forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__  )  )  ;
- } pub unsafe fn move_from ( _a0 : *mut forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
- this } }
-impl std::cmp::PartialEq for forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_4(self as *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__, other as *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__) }}}
-impl std::cmp::Eq for forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ {}
+ } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { unimplemented!()  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____  )  )  ;
+ } pub unsafe fn move_from ( _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { unimplemented!()  ;
+ ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____  )  )  ;
+ } }
+impl std::cmp::PartialEq for forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_4(self as *const forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____, other as *const forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____) }}}
+impl std::cmp::Eq for forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ {}
 pub unsafe fn operator_eq_6(
-    x: *const forward_iterator_std___wrap_iter_const_int_ptr__,
-    y: *const forward_iterator_std___wrap_iter_const_int_ptr__,
+    x : *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
+    y : *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
 ) -> () {
     return unimplemented!();
 }
-pub unsafe fn base_7(i: *const forward_iterator_std___wrap_iter_const_int_ptr__) -> () {
+pub unsafe fn base_7(
+    i : *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
     return unimplemented!();
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
-pub struct forward_iterator_std___wrap_iter_const_int_ptr__ {
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+pub struct forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____
+{
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_std___wrap_iter_const_int_ptr__ {
-    pub unsafe fn new_1() -> Self {
-        let mut this = Self {
-            it_: unimplemented!(),
-            tracker_: support_double_move_tracker::new(),
-        };
-        this
-    }
-    pub unsafe fn new_2(mut it: ()) -> Self {
-        let mut this = Self {
-            it_: unimplemented!(),
-            tracker_: support_double_move_tracker::new(),
-        };
-        this
-    }
-    pub unsafe fn operator_deref(&self) -> () {
-        return &(*unimplemented!());
-    }
-    pub unsafe fn operator_inc_6(
-        &mut self,
-    ) -> *mut forward_iterator_std___wrap_iter_const_int_ptr__ {
-        unimplemented!();
-        return &mut (*(self as *mut forward_iterator_std___wrap_iter_const_int_ptr__));
-    }
-    pub unsafe fn move_from(_a0: *mut forward_iterator_std___wrap_iter_const_int_ptr__) -> Self {
-        let mut this = Self {
-            it_: (*_a0).it_,
-            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
-        };
-        this
-    }
-}
-impl std::cmp::PartialEq for forward_iterator_std___wrap_iter_const_int_ptr__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_6(
-                self as *const forward_iterator_std___wrap_iter_const_int_ptr__,
-                other as *const forward_iterator_std___wrap_iter_const_int_ptr__,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for forward_iterator_std___wrap_iter_const_int_ptr__ {}
-impl Default for forward_iterator_std___wrap_iter_const_int_ptr__ {
-    fn default() -> Self {
-        unsafe { forward_iterator_std___wrap_iter_const_int_ptr__::new_1() }
-    }
-}
+impl forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { pub unsafe fn new_1 ( ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn new_2 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * unimplemented!()  )   ;
+ } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { unimplemented!()  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
+ } pub unsafe fn move_from ( _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { unimplemented!()  ;
+ ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
+ return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
+ } }
+impl std::cmp::PartialEq for forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_6(self as *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____, other as *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____) }}}
+impl std::cmp::Eq for forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ {}
+impl Default for forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { fn default() -> Self { unsafe { forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new_1 ( )  } } }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -277,6 +304,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -313,92 +358,58 @@ impl cpp20_input_iterator_int_ptr_ {
     }
 }
 pub unsafe fn base_8(
-    i : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__,
+    i : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__,
 ) -> () {
     return (*i).it_.clone();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__
+pub struct cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__
 {
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn move_from ( _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
- this } pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ , ) -> *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ { unimplemented!()  ;
+impl cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn move_from ( _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ , ) -> *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ { unimplemented!()  ;
  ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
- return & mut ( * ( self as *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__  )  )  ;
- } pub unsafe fn operator_deref ( &self , ) -> () { return unimplemented!()   ;
+ return & mut ( * ( self as *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__  )  )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> () { return ( * self . it_  )  ;
  } }
 pub unsafe fn base_9(
-    i : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__,
+    i : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__,
 ) -> () {
     return (*i).it_.clone();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__
+pub struct cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__
 {
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn move_from ( _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
- this } pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ , ) -> *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ { unimplemented!()  ;
+impl cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn move_from ( _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ , ) -> *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ { unimplemented!()  ;
  ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
- return & mut ( * ( self as *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__  )  )  ;
- } pub unsafe fn operator_deref ( &self , ) -> () { return unimplemented!()   ;
+ return & mut ( * ( self as *mut cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__  )  )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> () { return ( * self . it_  )  ;
  } }
-pub unsafe fn base_10(i: *const cpp20_input_iterator_std___wrap_iter_int_ptr__) -> () {
+pub unsafe fn base_10(
+    i : *const cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
     return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct cpp20_input_iterator_std___wrap_iter_int_ptr__ {
+pub struct cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp20_input_iterator_std___wrap_iter_int_ptr__ {
-    pub unsafe fn new(mut it: ()) -> Self {
-        let mut this = Self {
-            it_: unimplemented!(),
-            tracker_: support_double_move_tracker::new(),
-        };
-        this
-    }
-    pub unsafe fn move_from(_a0: *mut cpp20_input_iterator_std___wrap_iter_int_ptr__) -> Self {
-        let mut this = Self {
-            it_: (*_a0).it_,
-            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
-        };
-        this
-    }
-    pub unsafe fn move_assign(
-        &mut self,
-        _a0: *mut cpp20_input_iterator_std___wrap_iter_int_ptr__,
-    ) -> *mut cpp20_input_iterator_std___wrap_iter_int_ptr__ {
-        unimplemented!();
-        (unsafe {
-            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
-            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
-        });
-        return &mut (*(self as *mut cpp20_input_iterator_std___wrap_iter_int_ptr__));
-    }
-    pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*unimplemented!());
-    }
-}
-pub unsafe fn base_11(i: *const cpp20_input_iterator_std___wrap_iter_const_int_ptr__) -> () {
-    return unimplemented!();
-}
-#[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
-    it_: (),
-    tracker_: support_double_move_tracker,
-}
-impl cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
+impl
+    cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
             it_: unimplemented!(),
@@ -407,29 +418,44 @@ impl cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
         this
     }
     pub unsafe fn move_from(
-        _a0: *mut cpp20_input_iterator_std___wrap_iter_const_int_ptr__,
+        _a0 : *mut cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
     ) -> Self {
         let mut this = Self {
             it_: (*_a0).it_,
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
-    }
-    pub unsafe fn move_assign(
-        &mut self,
-        _a0: *mut cpp20_input_iterator_std___wrap_iter_const_int_ptr__,
-    ) -> *mut cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
+    }    pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> *mut cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!();
         (unsafe {
             let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
             support_double_move_tracker::move_assign(&mut self.tracker_, _other)
         });
-        return &mut (*(self as *mut cpp20_input_iterator_std___wrap_iter_const_int_ptr__));
+        return & mut ( * ( self as *mut cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
     }
-    pub unsafe fn operator_deref(&self) -> *const () {
-        return &(*unimplemented!());
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*unimplemented!());
     }
 }
+pub unsafe fn base_11(
+    i : *const cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
+    return unimplemented!();
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____
+{
+    it_: (),
+    tracker_: support_double_move_tracker,
+}
+impl cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn move_from ( _a0 : *mut cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> *mut cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { unimplemented!()  ;
+ ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
+ return & mut ( * ( self as *mut cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> *const () { return & ( * unimplemented!()  )   ;
+ } }
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -460,16 +486,21 @@ impl cpp20_output_iterator_int_ptr_ {
         return &mut (*self.it_);
     }
 }
-pub unsafe fn base_12(i: *const cpp20_output_iterator_std___wrap_iter_int_ptr__) -> () {
+pub unsafe fn base_12(
+    i : *const cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
     return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct cpp20_output_iterator_std___wrap_iter_int_ptr__ {
+pub struct cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp20_output_iterator_std___wrap_iter_int_ptr__ {
+impl
+    cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
             it_: unimplemented!(),
@@ -477,23 +508,21 @@ impl cpp20_output_iterator_std___wrap_iter_int_ptr__ {
         };
         this
     }
-    pub unsafe fn move_from(_a0: *mut cpp20_output_iterator_std___wrap_iter_int_ptr__) -> Self {
+    pub unsafe fn move_from(
+        _a0 : *mut cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+    ) -> Self {
         let mut this = Self {
             it_: (*_a0).it_,
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
-    }
-    pub unsafe fn move_assign(
-        &mut self,
-        _a0: *mut cpp20_output_iterator_std___wrap_iter_int_ptr__,
-    ) -> *mut cpp20_output_iterator_std___wrap_iter_int_ptr__ {
+    }    pub unsafe fn move_assign ( &mut self , _a0 : *mut cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> *mut cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!();
         (unsafe {
             let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
             support_double_move_tracker::move_assign(&mut self.tracker_, _other)
         });
-        return &mut (*(self as *mut cpp20_output_iterator_std___wrap_iter_int_ptr__));
+        return & mut ( * ( self as *mut cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*unimplemented!());
@@ -525,93 +554,55 @@ impl Default for IteratorOpCounts {
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false___
+pub struct sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false___
 {
     base_: (),
 }
-impl sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false___ { pub unsafe fn new_1 ( it : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_8 ( it , ) } )  , } ;
+impl sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false___ { pub unsafe fn new_1 ( it : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_8 ( it , ) } )  , } ;
  this } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true___
+pub struct sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true___
 {
     base_: (),
 }
-impl sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true___ { pub unsafe fn new_1 ( it : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_9 ( it , ) } )  , } ;
+impl sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true___ { pub unsafe fn new_1 ( it : *const cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_9 ( it , ) } )  , } ;
  this } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_int_ptr___ {
+pub struct sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_int_ptr___ {
-    pub unsafe fn new_1(it: *const cpp20_input_iterator_std___wrap_iter_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_10(it) }),
-        };
-        this
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const cpp20_input_iterator_std___wrap_iter_int_ptr__,
-    ) -> () {
-        {}
-        return unimplemented!();
-    }
-}
+impl sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_10 ( it , ) } )  , } ;
+ this } pub unsafe fn operator_eq ( &self , other : *const cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> () { { } return unimplemented!()   ;
+ } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_cpp20_output_iterator_std___wrap_iter_int_ptr___ {
+pub struct sentinel_wrapper_cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_cpp20_output_iterator_std___wrap_iter_int_ptr___ {
-    pub unsafe fn new_1(it: *const cpp20_output_iterator_std___wrap_iter_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_12(it) }),
-        };
-        this
-    }
-}
+impl sentinel_wrapper_cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_12 ( it , ) } )  , } ;
+ this } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_forward_iterator_std___wrap_iter_int_ptr___ {
+pub struct sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_forward_iterator_std___wrap_iter_int_ptr___ {
-    pub unsafe fn new_1(it: *const forward_iterator_std___wrap_iter_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_1(it) }),
-        };
-        this
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const forward_iterator_std___wrap_iter_int_ptr__,
-    ) -> () {
-        {}
-        return unimplemented!();
-    }
-}
+impl sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_1 ( it , ) } )  , } ;
+ this } pub unsafe fn operator_eq ( &self , other : *const forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> () { { } return unimplemented!()   ;
+ } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_const_int_ptr___ {
+pub struct sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_const_int_ptr___ {
-    pub unsafe fn new_1(it: *const cpp20_input_iterator_std___wrap_iter_const_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_11(it) }),
-        };
-        this
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const cpp20_input_iterator_std___wrap_iter_const_int_ptr__,
-    ) -> () {
-        {}
-        return unimplemented!();
-    }
-}
+impl sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_11 ( it , ) } )  , } ;
+ this } pub unsafe fn operator_eq ( &self , other : *const cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> () { { } return unimplemented!()   ;
+ } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct sentinel_wrapper_const_int_ptr_ {
@@ -626,64 +617,31 @@ pub struct sentinel_wrapper_int_ptr_ {
 impl sentinel_wrapper_int_ptr_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_EqComparableInputIter_std___wrap_iter_int_ptr___ {
+pub struct sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_EqComparableInputIter_std___wrap_iter_int_ptr___ {
-    pub unsafe fn new_1(it: *const EqComparableInputIter_std___wrap_iter_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_13(it) }),
-        };
-        this
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const EqComparableInputIter_std___wrap_iter_int_ptr__,
-    ) -> () {
-        {}
-        return unimplemented!();
-    }
-}
+impl sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_13 ( it , ) } )  , } ;
+ this } pub unsafe fn operator_eq ( &self , other : *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ , ) -> () { { } return unimplemented!()   ;
+ } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_EqComparableInputIter_std___wrap_iter_const_int_ptr___ {
+pub struct sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_EqComparableInputIter_std___wrap_iter_const_int_ptr___ {
-    pub unsafe fn new_1(it: *const EqComparableInputIter_std___wrap_iter_const_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_14(it) }),
-        };
-        this
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const EqComparableInputIter_std___wrap_iter_const_int_ptr__,
-    ) -> () {
-        {}
-        return unimplemented!();
-    }
-}
+impl sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_14 ( it , ) } )  , } ;
+ this } pub unsafe fn operator_eq ( &self , other : *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> () { { } return unimplemented!()   ;
+ } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct sentinel_wrapper_forward_iterator_std___wrap_iter_const_int_ptr___ {
+pub struct sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____
+{
     base_: (),
 }
-impl sentinel_wrapper_forward_iterator_std___wrap_iter_const_int_ptr___ {
-    pub unsafe fn new_1(it: *const forward_iterator_std___wrap_iter_const_int_ptr__) -> Self {
-        let mut this = Self {
-            base_: (unsafe { base_7(it) }),
-        };
-        this
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const forward_iterator_std___wrap_iter_const_int_ptr__,
-    ) -> () {
-        {}
-        return unimplemented!();
-    }
-}
+impl sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { pub unsafe fn new_1 ( it : *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> Self { let mut this = Self { base_ : ( unsafe { base_7 ( it , ) } )  , } ;
+ this } pub unsafe fn operator_eq ( &self , other : *const forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ , ) -> () { { } return unimplemented!()   ;
+ } }
 pub unsafe fn operator_eq_15(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
@@ -941,41 +899,24 @@ impl Default for ViewProperties {
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
-pub struct BasicView_std_string__ViewProperties_true__true___forward_iterator__forward_iterator_ {
+pub struct BasicView_std_basic_string_char__std_char_traits_char___std_allocator_char____ViewProperties_true__true___forward_iterator__forward_iterator_
+{
     data_: (),
 }
-impl BasicView_std_string__ViewProperties_true__true___forward_iterator__forward_iterator_ {
-    pub unsafe fn begin_6(&self) -> forward_iterator_std___wrap_iter_const_char_ptr__ {
-        return forward_iterator_std___wrap_iter_const_char_ptr__::new_1({ unimplemented!() });
-    }
-    pub unsafe fn end_7(&self) -> forward_iterator_std___wrap_iter_const_char_ptr__ {
-        {
-            return forward_iterator_std___wrap_iter_const_char_ptr__::new_1({ unimplemented!() });
-        }
-        panic!("ub: non-void function does not return a value")
-    }
-}
-impl Default
-    for BasicView_std_string__ViewProperties_true__true___forward_iterator__forward_iterator_
-{
-    fn default() -> Self {
-        unsafe {
-            BasicView_std_string__ViewProperties_true__true___forward_iterator__forward_iterator_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
+impl BasicView_std_basic_string_char__std_char_traits_char___std_allocator_char____ViewProperties_true__true___forward_iterator__forward_iterator_ { pub unsafe fn begin_6 ( &self , ) -> forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { return forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { { return forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { unimplemented!()  } , )   ;
+ } panic!("ub: non-void function does not return a value") } }
+impl Default for BasicView_std_basic_string_char__std_char_traits_char___std_allocator_char____ViewProperties_true__true___forward_iterator__forward_iterator_ { fn default() -> Self { unsafe { BasicView_std_basic_string_char__std_char_traits_char___std_allocator_char____ViewProperties_true__true___forward_iterator__forward_iterator_ { data_ : unimplemented!() , } } } }
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
-pub struct BasicView_RvalueVector_std_string___ViewProperties_false__false___cpp20_input_iterator__cpp20_input_iterator_
+pub struct BasicView_RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char_____ViewProperties_false__false___cpp20_input_iterator__cpp20_input_iterator_
 {
-    data_: RvalueVector_std_string_,
+    data_: RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___,
 }
-impl BasicView_RvalueVector_std_string___ViewProperties_false__false___cpp20_input_iterator__cpp20_input_iterator_ { pub unsafe fn begin_4 ( &mut self , ) -> cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ { return cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ :: new ( { ( unsafe { RvalueVector_std_string_ :: begin_4 ( &mut self . data_   , ) } )  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false___ { { return { let mut __tmp_0 : cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__  = cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false__ :: new ( { ( unsafe { RvalueVector_std_string_ :: end_5 ( &mut self . data_   , ) } )  } , )  ; sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_false___ :: new_1 ( { & mut __tmp_0 } , )  }  ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ { return cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ :: new ( { ( unsafe { RvalueVector_std_string_ :: begin_6 ( & self . data_   , ) } )  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true___ { { return { let mut __tmp_1 : cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__  = cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true__ :: new ( { ( unsafe { RvalueVector_std_string_ :: end_7 ( & self . data_   , ) } )  } , )  ; sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____AsPrvalue____iterator_true___ :: new_1 ( { & mut __tmp_1 } , )  }  ;
+impl BasicView_RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char_____ViewProperties_false__false___cpp20_input_iterator__cpp20_input_iterator_ { pub unsafe fn begin_4 ( &mut self , ) -> cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ { return cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ :: new ( { ( unsafe { RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: begin_4 ( &mut self . data_   , ) } )  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false___ { { return { let mut __tmp_0 : cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__  = cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false__ :: new ( { ( unsafe { RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: end_5 ( &mut self . data_   , ) } )  } , )  ; sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_false___ :: new_1 ( { & mut __tmp_0 } , )  }  ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ { return cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ :: new ( { ( unsafe { RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: begin_6 ( & self . data_   , ) } )  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true___ { { return { let mut __tmp_1 : cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__  = cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true__ :: new ( { ( unsafe { RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: end_7 ( & self . data_   , ) } )  } , )  ; sentinel_wrapper_cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_______AsPrvalue___Iterator_true___ :: new_1 ( { & mut __tmp_1 } , )  }  ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -983,10 +924,10 @@ pub struct BasicView_std_vector_int__std_allocator_int____ViewProperties_false__
 {
     data_: (),
 }
-impl BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___forward_iterator__cpp20_input_iterator_ { pub unsafe fn begin_4 ( &mut self , ) -> forward_iterator_std___wrap_iter_int_ptr__ { return forward_iterator_std___wrap_iter_int_ptr__ :: new_2 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_forward_iterator_std___wrap_iter_int_ptr___ { { return { let mut __tmp_2 : forward_iterator_std___wrap_iter_int_ptr__  = forward_iterator_std___wrap_iter_int_ptr__ :: new_2 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator_std___wrap_iter_int_ptr___ :: new_1 ( { & mut __tmp_2 } , )  }  ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> cpp20_input_iterator_std___wrap_iter_const_int_ptr__ { return cpp20_input_iterator_std___wrap_iter_const_int_ptr__ :: new ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_const_int_ptr___ { { return { let mut __tmp_3 : cpp20_input_iterator_std___wrap_iter_const_int_ptr__  = cpp20_input_iterator_std___wrap_iter_const_int_ptr__ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_const_int_ptr___ :: new_1 ( { & mut __tmp_3 } , )  }  ;
+impl BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___forward_iterator__cpp20_input_iterator_ { pub unsafe fn begin_4 ( &mut self , ) -> forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ { return forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new_2 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_2 : forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  = forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new_2 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_2 } , )  }  ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { return cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_3 : cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  = cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_3 } , )  }  ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -995,10 +936,10 @@ pub struct BasicView_std_vector_int__std_allocator_int____ViewProperties_false__
     data_: (),
 }
 impl BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : unimplemented!()  , } ;
- this } pub unsafe fn begin_4 ( &mut self , ) -> EqComparableInputIter_std___wrap_iter_int_ptr__ { return EqComparableInputIter_std___wrap_iter_int_ptr__ :: new ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_EqComparableInputIter_std___wrap_iter_int_ptr___ { { return { let mut __tmp_4 : EqComparableInputIter_std___wrap_iter_int_ptr__  = EqComparableInputIter_std___wrap_iter_int_ptr__ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_EqComparableInputIter_std___wrap_iter_int_ptr___ :: new_1 ( { & mut __tmp_4 } , )  }  ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> EqComparableInputIter_std___wrap_iter_const_int_ptr__ { return EqComparableInputIter_std___wrap_iter_const_int_ptr__ :: new ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_EqComparableInputIter_std___wrap_iter_const_int_ptr___ { { return { let mut __tmp_5 : EqComparableInputIter_std___wrap_iter_const_int_ptr__  = EqComparableInputIter_std___wrap_iter_const_int_ptr__ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_EqComparableInputIter_std___wrap_iter_const_int_ptr___ :: new_1 ( { & mut __tmp_5 } , )  }  ;
+ this } pub unsafe fn begin_4 ( &mut self , ) -> EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ { return EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_4 : EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  = EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_4 } , )  }  ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { return EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_5 : EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  = EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_5 } , )  }  ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -1007,10 +948,10 @@ pub struct BasicView_std_vector_BasicView_std_vector_int__std_allocator_int____V
     data_: (),
 }
 impl BasicView_std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ViewProperties_false__true___forward_iterator__forward_iterator_ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : unimplemented!()  , } ;
- this } pub unsafe fn begin_4 ( &mut self , ) -> forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { return forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { { return forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ :: new_1 ( { unimplemented!()  } , )   ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { return forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { { return forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ :: new_1 ( { unimplemented!()  } , )   ;
+ this } pub unsafe fn begin_4 ( &mut self , ) -> forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { return forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ :: new_1 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { { return forward_iterator___gnu_cxx___normal_iterator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ :: new_1 ( { unimplemented!()  } , )   ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { return forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ :: new_1 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ { { return forward_iterator___gnu_cxx___normal_iterator_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter_____ :: new_1 ( { unimplemented!()  } , )   ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -1019,10 +960,10 @@ pub struct BasicView_std_vector_int__std_allocator_int____ViewProperties_false__
     data_: (),
 }
 impl BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___forward_iterator__forward_iterator_ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : unimplemented!()  , } ;
- this } pub unsafe fn begin_4 ( &mut self , ) -> forward_iterator_std___wrap_iter_int_ptr__ { return forward_iterator_std___wrap_iter_int_ptr__ :: new_2 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_forward_iterator_std___wrap_iter_int_ptr___ { { return { let mut __tmp_6 : forward_iterator_std___wrap_iter_int_ptr__  = forward_iterator_std___wrap_iter_int_ptr__ :: new_2 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator_std___wrap_iter_int_ptr___ :: new_1 ( { & mut __tmp_6 } , )  }  ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> forward_iterator_std___wrap_iter_const_int_ptr__ { return forward_iterator_std___wrap_iter_const_int_ptr__ :: new_2 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_forward_iterator_std___wrap_iter_const_int_ptr___ { { return { let mut __tmp_7 : forward_iterator_std___wrap_iter_const_int_ptr__  = forward_iterator_std___wrap_iter_const_int_ptr__ :: new_2 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator_std___wrap_iter_const_int_ptr___ :: new_1 ( { & mut __tmp_7 } , )  }  ;
+ this } pub unsafe fn begin_4 ( &mut self , ) -> forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ { return forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new_2 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_6 : forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  = forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new_2 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_6 } , )  }  ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { return forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new_2 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_7 : forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  = forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new_2 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_7 } , )  }  ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -1030,10 +971,10 @@ pub struct BasicView_std_vector_std_vector_int__std_allocator_int____std_allocat
 {
     data_: (),
 }
-impl BasicView_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ViewProperties_false__true___DefaultCtorInputIter__DefaultCtorInputIter_ { pub unsafe fn begin_4 ( &mut self , ) -> DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ { return DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ { { return DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ :: new_1 ( { unimplemented!()  } , )   ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ { return DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ { { return DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ :: new_1 ( { unimplemented!()  } , )   ;
+impl BasicView_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ViewProperties_false__true___DefaultCtorInputIter__DefaultCtorInputIter_ { pub unsafe fn begin_4 ( &mut self , ) -> DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { return DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ :: new_1 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { { return DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ :: new_1 ( { unimplemented!()  } , )   ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { return DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ :: new_1 ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { { return DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ :: new_1 ( { unimplemented!()  } , )   ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -1041,19 +982,22 @@ pub struct BasicView_std_vector_int__std_allocator_int____ViewProperties_false__
 {
     data_: (),
 }
-impl BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___cpp20_input_iterator__cpp20_input_iterator_ { pub unsafe fn begin_4 ( &mut self , ) -> cpp20_input_iterator_std___wrap_iter_int_ptr__ { return cpp20_input_iterator_std___wrap_iter_int_ptr__ :: new ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_int_ptr___ { { return { let mut __tmp_8 : cpp20_input_iterator_std___wrap_iter_int_ptr__  = cpp20_input_iterator_std___wrap_iter_int_ptr__ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_int_ptr___ :: new_1 ( { & mut __tmp_8 } , )  }  ;
- } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> cpp20_input_iterator_std___wrap_iter_const_int_ptr__ { return cpp20_input_iterator_std___wrap_iter_const_int_ptr__ :: new ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_const_int_ptr___ { { return { let mut __tmp_9 : cpp20_input_iterator_std___wrap_iter_const_int_ptr__  = cpp20_input_iterator_std___wrap_iter_const_int_ptr__ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_const_int_ptr___ :: new_1 ( { & mut __tmp_9 } , )  }  ;
+impl BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___cpp20_input_iterator__cpp20_input_iterator_ { pub unsafe fn begin_4 ( &mut self , ) -> cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ { return cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_5 ( &mut self , ) -> sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_8 : cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  = cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_8 } , )  }  ;
+ } panic!("ub: non-void function does not return a value") } pub unsafe fn begin_6 ( &self , ) -> cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { return cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+ } pub unsafe fn end_7 ( &self , ) -> sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ { { return { let mut __tmp_9 : cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  = cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_9 } , )  }  ;
  } panic!("ub: non-void function does not return a value") } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct AsPrvalue {}
 impl AsPrvalue {
-    pub unsafe fn operator_call_1_std_string_ref(&self, t: *mut ()) -> () {
+    pub unsafe fn operator_call_1_class_std_basic_string_char__ref(&self, t: *mut ()) -> () {
         return unimplemented!();
     }
-    pub unsafe fn operator_call_1_const_std_string_ref(&self, t: *const ()) -> () {
+    pub unsafe fn operator_call_1_const_class_std_basic_string_char__ref(
+        &self,
+        t: *const (),
+    ) -> () {
         return unimplemented!();
     }
     pub unsafe fn operator_call_1_int_ref(&self, t: *mut ()) -> () {
@@ -1071,10 +1015,10 @@ impl AsPrvalue {
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct RvalueVector_std_string_ {
+pub struct RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ {
     range_: (),
 }
-impl RvalueVector_std_string_ {
+impl RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ {
     pub unsafe fn begin_4(&mut self) -> () {
         return unimplemented!();
     }
@@ -1087,7 +1031,9 @@ impl RvalueVector_std_string_ {
     pub unsafe fn end_7(&self) -> () {
         return unimplemented!();
     }
-    pub unsafe fn move_from(_a0: *mut RvalueVector_std_string_) -> Self {
+    pub unsafe fn move_from(
+        _a0: *mut RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___,
+    ) -> Self {
         let mut this = Self {
             range_: (*_a0).range_,
         };
@@ -1095,10 +1041,10 @@ impl RvalueVector_std_string_ {
     }
     pub unsafe fn move_assign(
         &mut self,
-        _a0: *mut RvalueVector_std_string_,
-    ) -> *mut RvalueVector_std_string_ {
+        _a0: *mut RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___,
+    ) -> *mut RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___ {
         self.range_ = ((*_a0).range_).clone();
-        return &mut (*(self as *mut RvalueVector_std_string_));
+        return & mut ( * ( self as *mut RvalueVector_std_basic_string_char__std_char_traits_char___std_allocator_char___  )  )  ;
     }
 }
 #[repr(C)]
@@ -1197,132 +1143,51 @@ impl Default for DefaultCtorInputIter_int_ptr_ {
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
-pub struct DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ {
+pub struct DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______
+{
     it_: (),
 }
-impl DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ {
-    pub unsafe fn new_1(mut it: ()) -> Self {
-        let mut this = Self {
-            it_: unimplemented!(),
-        };
-        this
-    }
-    pub unsafe fn operator_inc_3(
-        &mut self,
-    ) -> *mut DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ {
-        unimplemented!();
-        return & mut ( * ( self as *mut DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__  )  )  ;
-    }
-    pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*unimplemented!());
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        _a0: *const DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__,
-    ) -> () {
-        return unimplemented!();
-    }
-}
-impl std::cmp::PartialEq
-    for DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__
-{
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__::operator_eq(self, other as *const DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__)
-        }
-    }
-}
-impl std::cmp::Eq
-    for DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__
-{
-}
-impl Default for DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ {
-    fn default() -> Self {
-        unsafe {
-            DefaultCtorInputIter_std___wrap_iter_std_vector_int__std_allocator_int___ptr__ {
-                it_: unimplemented!(),
-            }
-        }
-    }
-}
+impl DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , } ;
+ this } pub unsafe fn operator_inc_3 ( &mut self , ) -> *mut DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { unimplemented!()  ;
+ return & mut ( * ( self as *mut DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______  )  )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> *mut () { return & mut ( * unimplemented!()  )   ;
+ } pub unsafe fn operator_eq ( &self , _a0 : *const DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ , ) -> () { return unimplemented!()   ;
+ } }
+impl std::cmp::PartialEq for DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { fn eq(&self, other: &Self) -> bool { unsafe { DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______::operator_eq(self, other as *const DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______) }}}
+impl std::cmp::Eq for DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ {}
+impl Default for DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { fn default() -> Self { unsafe { DefaultCtorInputIter___gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { it_ : unimplemented!() , } } } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
-pub struct DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ {
+pub struct DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______
+{
     it_: (),
 }
-impl DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ {
-    pub unsafe fn new_1(mut it: ()) -> Self {
-        let mut this = Self {
-            it_: unimplemented!(),
-        };
-        this
-    }
-    pub unsafe fn operator_deref(&self) -> *const () {
-        return &(*unimplemented!());
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        _a0 : *const DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__,
-    ) -> () {
-        return unimplemented!();
-    }
-}
-impl std::cmp::PartialEq
-    for DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__
-{
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__::operator_eq(self, other as *const DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__)
-        }
-    }
-}
-impl std::cmp::Eq
-    for DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__
-{
-}
-impl Default
-    for DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__
-{
-    fn default() -> Self {
-        unsafe {
-            DefaultCtorInputIter_std___wrap_iter_const_std_vector_int__std_allocator_int___ptr__ {
-                it_: unimplemented!(),
-            }
-        }
-    }
-}
+impl DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , } ;
+ this } pub unsafe fn operator_deref ( &self , ) -> *const () { return & ( * unimplemented!()  )   ;
+ } pub unsafe fn operator_eq ( &self , _a0 : *const DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ , ) -> () { return unimplemented!()   ;
+ } }
+impl std::cmp::PartialEq for DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { fn eq(&self, other: &Self) -> bool { unsafe { DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______::operator_eq(self, other as *const DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______) }}}
+impl std::cmp::Eq for DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ {}
+impl Default for DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { fn default() -> Self { unsafe { DefaultCtorInputIter___gnu_cxx___normal_iterator_const_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ { it_ : unimplemented!() , } } } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
 pub struct InputRangeButOutputWhenConst_int_ {
     range_: (),
 }
 impl InputRangeButOutputWhenConst_int_ {
-    pub unsafe fn begin_2(&mut self) -> cpp20_input_iterator_std___wrap_iter_int_ptr__ {
-        return cpp20_input_iterator_std___wrap_iter_int_ptr__::new({ unimplemented!() });
-    }
-    pub unsafe fn end_3(
-        &mut self,
-    ) -> sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_int_ptr___ {
+    pub unsafe fn begin_2 ( &mut self , ) -> cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
+        return cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+    }    pub unsafe fn end_3 ( &mut self , ) -> sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____{
         return {
-            let mut __tmp_10: cpp20_input_iterator_std___wrap_iter_int_ptr__ =
-                cpp20_input_iterator_std___wrap_iter_int_ptr__::new({ unimplemented!() });
-            sentinel_wrapper_cpp20_input_iterator_std___wrap_iter_int_ptr___::new_1({
-                &mut __tmp_10
-            })
+            let mut __tmp_10 : cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  = cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ;
+            sentinel_wrapper_cpp20_input_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_10 } , )
         };
-    }
-    pub unsafe fn begin_4(&self) -> cpp20_output_iterator_std___wrap_iter_int_ptr__ {
-        return cpp20_output_iterator_std___wrap_iter_int_ptr__::new({ unimplemented!() });
-    }
-    pub unsafe fn end_5(
-        &self,
-    ) -> sentinel_wrapper_cpp20_output_iterator_std___wrap_iter_int_ptr___ {
+    }    pub unsafe fn begin_4 ( &self , ) -> cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
+        return cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )   ;
+    }    pub unsafe fn end_5 ( &self , ) -> sentinel_wrapper_cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____{
         return {
-            let mut __tmp_11: cpp20_output_iterator_std___wrap_iter_int_ptr__ =
-                cpp20_output_iterator_std___wrap_iter_int_ptr__::new({ unimplemented!() });
-            sentinel_wrapper_cpp20_output_iterator_std___wrap_iter_int_ptr___::new_1({
-                &mut __tmp_11
-            })
+            let mut __tmp_11 : cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  = cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ :: new ( { unimplemented!()  } , )  ;
+            sentinel_wrapper_cpp20_output_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____ :: new_1 ( { & mut __tmp_11 } , )
         };
     }
 }
@@ -1351,21 +1216,26 @@ impl EqComparableInputIter_int_ptr_ {
         return &mut (*self.it_);
     }
 }
-pub unsafe fn base_13(i: *const EqComparableInputIter_std___wrap_iter_int_ptr__) -> () {
+pub unsafe fn base_13(
+    i : *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_eq_23(
-    left: *const EqComparableInputIter_std___wrap_iter_int_ptr__,
-    right: *const EqComparableInputIter_std___wrap_iter_int_ptr__,
+    left : *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
+    right : *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____,
 ) -> () {
     return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct EqComparableInputIter_std___wrap_iter_int_ptr__ {
+pub struct EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     it_: (),
 }
-impl EqComparableInputIter_std___wrap_iter_int_ptr__ {
+impl
+    EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
             it_: unimplemented!(),
@@ -1374,67 +1244,37 @@ impl EqComparableInputIter_std___wrap_iter_int_ptr__ {
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*unimplemented!());
-    }
-    pub unsafe fn operator_inc_3(
-        &mut self,
-    ) -> *mut EqComparableInputIter_std___wrap_iter_int_ptr__ {
+    }    pub unsafe fn operator_inc_3 ( &mut self , ) -> *mut EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!();
-        return &mut (*(self as *mut EqComparableInputIter_std___wrap_iter_int_ptr__));
+        return & mut ( * ( self as *mut EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
     }
 }
-impl std::cmp::PartialEq for EqComparableInputIter_std___wrap_iter_int_ptr__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_23(
-                self as *const EqComparableInputIter_std___wrap_iter_int_ptr__,
-                other as *const EqComparableInputIter_std___wrap_iter_int_ptr__,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for EqComparableInputIter_std___wrap_iter_int_ptr__ {}
-pub unsafe fn base_14(i: *const EqComparableInputIter_std___wrap_iter_const_int_ptr__) -> () {
+impl std::cmp::PartialEq for EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_23(self as *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____, other as *const EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____) }}}
+impl std::cmp::Eq for EqComparableInputIter___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____ {}
+pub unsafe fn base_14(
+    i : *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_eq_24(
-    left: *const EqComparableInputIter_std___wrap_iter_const_int_ptr__,
-    right: *const EqComparableInputIter_std___wrap_iter_const_int_ptr__,
+    left : *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
+    right : *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____,
 ) -> () {
     return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct EqComparableInputIter_std___wrap_iter_const_int_ptr__ {
+pub struct EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____
+{
     it_: (),
 }
-impl EqComparableInputIter_std___wrap_iter_const_int_ptr__ {
-    pub unsafe fn new(mut it: ()) -> Self {
-        let mut this = Self {
-            it_: unimplemented!(),
-        };
-        this
-    }
-    pub unsafe fn operator_deref(&self) -> *const () {
-        return &(*unimplemented!());
-    }
-    pub unsafe fn operator_inc_3(
-        &mut self,
-    ) -> *mut EqComparableInputIter_std___wrap_iter_const_int_ptr__ {
-        unimplemented!();
-        return &mut (*(self as *mut EqComparableInputIter_std___wrap_iter_const_int_ptr__));
-    }
-}
-impl std::cmp::PartialEq for EqComparableInputIter_std___wrap_iter_const_int_ptr__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_24(
-                self as *const EqComparableInputIter_std___wrap_iter_const_int_ptr__,
-                other as *const EqComparableInputIter_std___wrap_iter_const_int_ptr__,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for EqComparableInputIter_std___wrap_iter_const_int_ptr__ {}
+impl EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , } ;
+ this } pub unsafe fn operator_deref ( &self , ) -> *const () { return & ( * unimplemented!()  )   ;
+ } pub unsafe fn operator_inc_3 ( &mut self , ) -> *mut EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { unimplemented!()  ;
+ return & mut ( * ( self as *mut EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____  )  )  ;
+ } }
+impl std::cmp::PartialEq for EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_24(self as *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____, other as *const EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____) }}}
+impl std::cmp::Eq for EqComparableInputIter___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConstOppositeView_int_ {}

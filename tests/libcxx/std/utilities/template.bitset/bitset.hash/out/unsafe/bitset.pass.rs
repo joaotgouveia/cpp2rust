@@ -10,32 +10,32 @@ pub unsafe fn test_0() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
     let mut bs: () = unimplemented!();
-    let result: () = (unsafe { h(&bs) });
-    unimplemented!();
+    let result: () = unimplemented!();
+    const _: () = assert!(true, "");;
     (&(result));
 }
 pub unsafe fn test_1() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
     let mut bs: () = unimplemented!();
-    let result: () = (unsafe { h(&bs) });
-    unimplemented!();
+    let result: () = unimplemented!();
+    const _: () = assert!(true, "");;
     (&(result));
 }
 pub unsafe fn test_2() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
     let mut bs: () = unimplemented!();
-    let result: () = (unsafe { h(&bs) });
-    unimplemented!();
+    let result: () = unimplemented!();
+    const _: () = assert!(true, "");;
     (&(result));
 }
 pub unsafe fn test_3() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
     let mut bs: () = unimplemented!();
-    let result: () = (unsafe { h(&bs) });
-    unimplemented!();
+    let result: () = unimplemented!();
+    const _: () = assert!(true, "");;
     (&(result));
 }
 pub fn main() {

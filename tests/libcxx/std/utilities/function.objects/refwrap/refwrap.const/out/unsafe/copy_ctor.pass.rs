@@ -11,27 +11,27 @@ use std::rc::Rc;
 pub struct functor1 {}
 pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
     let mut r: () = unimplemented!();
-    let mut r2: () = r.clone();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_1(t: Option<unsafe fn()>) {
     let mut r: () = unimplemented!();
-    let mut r2: () = r.clone();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_2(t: *mut functor1) {
     let mut r: () = unimplemented!();
-    let mut r2: () = r.clone();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_3(t: *mut ()) {
     let mut r: () = unimplemented!();
-    let mut r2: () = r.clone();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_4(t: *const ()) {
     let mut r: () = unimplemented!();
-    let mut r2: () = r.clone();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn f_5() {}

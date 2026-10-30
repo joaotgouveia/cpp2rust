@@ -6,12 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_long__long_ {}
-pub fn test_eprintf_1(
+pub fn test_eprintf_0(
     mut fmt: Ptr<()>,
     args_1: Ptr<Ptr<()>>,
     args_2: Ptr<Ptr<()>>,
@@ -19,19 +14,9 @@ pub fn test_eprintf_1(
     args_4: Ptr<()>,
     args_5: Ptr<Ptr<()>>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-            (args_4.read()),
-            (args_5.read()),
-        )
-    });
+    unimplemented!();
 }
-pub fn test_log_2(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
+pub fn test_log_1(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
     let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
     let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
     let line: Value<()> = Rc::new(RefCell::new(line));
@@ -42,7 +27,7 @@ pub fn test_log_2(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>)
         Ptr::<()>::from_string_literal(b"Unconditional failure:")
     }));
     ({
-        test_eprintf_1(
+        test_eprintf_0(
             Ptr::<()>::from_string_literal(b"%s%s %s %d\n%s"),
             msg.as_pointer(),
             condition.as_pointer(),
@@ -52,7 +37,6 @@ pub fn test_log_2(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>)
         )
     });
 }
-const _: () = assert!(true, "");
 const _: () = assert!(true, "std::is_signed<std::messages_base::catalog>::value");
 const _: () = assert!(true, "std::is_integral<std::messages_base::catalog>::value");
 pub fn main() {

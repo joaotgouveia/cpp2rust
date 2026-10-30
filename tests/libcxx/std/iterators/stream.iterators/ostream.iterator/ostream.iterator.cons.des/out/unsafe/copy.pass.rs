@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut outf: () = unimplemented!();
     let mut i: () = unimplemented!();
-    let mut j: () = i.clone();
+    let mut j: () = unimplemented!();
     unimplemented!();
     (&(j));
     return 0_();

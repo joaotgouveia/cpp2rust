@@ -20,32 +20,17 @@ pub struct check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_
 }
 impl check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
     pub fn new_1(mut i: Ptr<move_tracker>) -> Self {
-        Self {
-            base_: (unimplemented!().read()),
-        }
+        Self { base_: (i).clone() }
     }
 }
-impl std::cmp::PartialEq for check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_Impl::operator_eq(
-                &Rc::new(RefCell::new(
-                    check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
-                        base_: self.base_.clone(),
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
-                        base_: other.base_.clone(),
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
+impl CppEq for check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_Impl::operator_eq(
+            __lhs,
+            __rhs.clone(),
+        )
     }
 }
-impl std::cmp::Eq for check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {}
 impl Default for check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
     fn default() -> Self {
         {
@@ -127,28 +112,14 @@ pub struct iterator_wrapper_move_tracker_ptr_ {
 }
 impl iterator_wrapper_move_tracker_ptr_ {
     pub fn new_1(mut i: Ptr<move_tracker>) -> Self {
-        Self {
-            base_: (unimplemented!().read()),
-        }
+        Self { base_: (i).clone() }
     }
 }
-impl std::cmp::PartialEq for iterator_wrapper_move_tracker_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            iterator_wrapper_move_tracker_ptr_Impl::operator_eq(
-                &Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_ {
-                    base_: self.base_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_ {
-                    base_: other.base_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for iterator_wrapper_move_tracker_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        iterator_wrapper_move_tracker_ptr_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for iterator_wrapper_move_tracker_ptr_ {}
 impl Default for iterator_wrapper_move_tracker_ptr_ {
     fn default() -> Self {
         {
@@ -167,25 +138,25 @@ pub fn unqualified_lookup_move_5(
     let first: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (unimplemented!().read())
+                (first_).clone()
             }),
         ));
     let last: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (unimplemented!().read())
+                (last_).clone()
             }),
         ));
     let result_first: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (unimplemented!().read())
+                (result_first_).clone()
             }),
         ));
     let result_last: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (unimplemented!().read())
+                (result_last_).clone()
             }),
         ));
     const _: () = assert!(true, "!noexcept(std::ranges::iter_move(first))");;
@@ -226,19 +197,19 @@ pub fn lvalue_move_6(
 ) {
     let first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (first_).clone()
         })));
     let last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (last_).clone()
         })));
     let result_first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (result_first_).clone()
         })));
     let result_last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (result_last_).clone()
         })));
     const _: () = assert!(true, "!noexcept(std::ranges::iter_move(first))");;
     'loop_: while (!({
@@ -273,19 +244,19 @@ pub fn rvalue_move_7(
 ) {
     let first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (first_).clone()
         })));
     let last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (last_).clone()
         })));
     let result_first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (result_first_).clone()
         })));
     let result_last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (unimplemented!().read())
+            (result_last_).clone()
         })));
     const _: () = assert!(true, "noexcept(std::ranges::iter_move(std::move(first)))");;
     'loop_: while (!({
@@ -296,7 +267,8 @@ pub fn rvalue_move_7(
             result_last.as_pointer(),
         )
     })) {
-        let mut i: iterator_wrapper_move_tracker_ptr_ = (*first.borrow()).clone();
+        let i: Value<iterator_wrapper_move_tracker_ptr_> =
+            Rc::new(RefCell::new((*first.borrow()).clone()));
         ({
             move_trackerImpl::move_assign(
                 &({
@@ -304,7 +276,7 @@ pub fn rvalue_move_7(
                         &result_first.as_pointer(),
                     )
                 }),
-                ({ (*iter_move_1.with(Value::clone).borrow_mut())(unimplemented!()) }),
+                ({ (*iter_move_1.with(Value::clone).borrow_mut())(i.as_pointer()) }),
             )
         });
         {
@@ -313,15 +285,9 @@ pub fn rvalue_move_7(
         };
     }
 }
-pub fn iter_move_8(_a0: Ptr<WithADL_true_>) -> () {
-    return 0_();
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct WithADL_true_ {}
-pub fn iter_move_9(_a0: Ptr<WithADL_false_>) -> () {
-    return 0_();
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct WithADL_false_ {}
@@ -331,7 +297,7 @@ pub struct WithoutADL_true_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct WithoutADL_false_ {}
-pub fn test_10() -> () {
+pub fn test_8() -> () {
     let mut full_size: () = 100_();
     let mut half_size: () = (full_size / 2_());
     let mut reset: () = 0_();
@@ -339,14 +305,15 @@ pub fn test_10() -> () {
     let move_counter_is: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |mut n: ()| -> FnPtr<Generic> {
+        |n: ()| -> FnPtr<Generic> {
+            let n: Value<()> = Rc::new(RefCell::new(n));
             return lambda!(
                 Generic,
                 {
-                    let n: Value<()> = Rc::new(RefCell::new(n));
+                    let n: Value<()> = Rc::new(RefCell::new((*n.borrow())));
                 },
                 |x: Ptr<move_tracker>| -> () {
-                    return ({ ({ move_trackerImpl::moves(&x) }) } == { n });
+                    return ({ ({ move_trackerImpl::moves(&x) }) } == { (*n.borrow()) });
                 }
             );
         }
@@ -479,7 +446,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_10() });
+    ({ test_8() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -591,7 +558,7 @@ impl iterator_wrapper_move_tracker_ptr_Impl for Ptr<iterator_wrapper_move_tracke
         return (*self).with(|__s| __s.base_.clone());
     }
     fn operator_deref_4(&self) -> Ptr<move_tracker> {
-        return unimplemented!();
+        return (*self).with(|__s| __s.base_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<iterator_wrapper_move_tracker_ptr_> {
         field!((*self), base_).with_mut(|__v| __v.prefix_inc());

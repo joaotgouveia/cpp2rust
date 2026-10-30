@@ -30,13 +30,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "2017y == year(2017)");;
-        let y1: Value<()> = Rc::new(RefCell::new(({ operator_literal_y_0(2018_()) })));
+        let y1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "2017y == std::chrono::year(2017)");;
-        let y1: Value<()> = Rc::new(RefCell::new(({ operator_literal_y_0(2020_()) })));
+        let y1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

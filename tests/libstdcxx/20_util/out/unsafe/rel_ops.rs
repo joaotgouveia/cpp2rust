@@ -11,7 +11,7 @@ pub unsafe fn test01_0() {
     let mut vi: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    !(unimplemented!());
     unimplemented!();
     unimplemented!();
     unimplemented!();

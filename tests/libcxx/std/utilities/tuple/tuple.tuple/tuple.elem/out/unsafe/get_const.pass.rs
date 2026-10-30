@@ -41,7 +41,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let t: () = unimplemented!();
-        let e: Empty = (*(unsafe { get_0(&t) }));
+        let e: Empty = (*unimplemented!());
         (&(e));
     }
     {
@@ -50,7 +50,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*(unsafe { get_1(&t) })) = 2.5_f64;
+        (*unimplemented!()) = 2.5_f64;
         unimplemented!();
         unimplemented!();
         unimplemented!();

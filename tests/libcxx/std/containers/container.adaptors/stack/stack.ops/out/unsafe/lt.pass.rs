@@ -13,7 +13,7 @@ pub unsafe fn make_0(mut n: ()) -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    return unimplemented!();
+    return c;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

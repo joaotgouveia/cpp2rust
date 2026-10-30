@@ -24,7 +24,8 @@ pub struct test_trivial_double__true_ {}
 pub struct test_trivial_S__false_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_trivial_std_string__false_ {}
+pub struct test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_
+{}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -72,9 +73,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_trivial_std_string__false_Impl::operator_call(
-            &Rc::new(RefCell::new(<test_trivial_std_string__false_>::default())).as_pointer(),
-        )
+        test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_Impl :: operator_call ( &Rc::new(RefCell::new(<test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_  >::default() )).as_pointer() , )
     });
     return 0_();
 }
@@ -111,10 +110,13 @@ impl test_trivial_int__true_Impl for Ptr<test_trivial_int__true_> {
         &(*it.borrow_mut());
     }
 }
-pub trait test_trivial_std_string__false_Impl {
+pub trait test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_Impl
+{
     fn operator_call(&self);
 }
-impl test_trivial_std_string__false_Impl for Ptr<test_trivial_std_string__false_> {
+impl test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_Impl
+    for Ptr<test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_>
+{
     fn operator_call(&self) {}
 }
 pub fn __cpp2rust_init_globals() {}

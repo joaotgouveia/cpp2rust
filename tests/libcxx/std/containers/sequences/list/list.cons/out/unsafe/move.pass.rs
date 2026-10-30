@@ -505,12 +505,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const MoveOnly,
-}
-impl min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {}
 pub unsafe fn operator_eq_24(
     mut _a0: min_allocator_MoveOnly_,
     mut _a1: min_allocator_MoveOnly_,

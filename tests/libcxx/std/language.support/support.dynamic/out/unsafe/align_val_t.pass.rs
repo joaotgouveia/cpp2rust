@@ -49,9 +49,6 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    {
-        unimplemented!();
-    }
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

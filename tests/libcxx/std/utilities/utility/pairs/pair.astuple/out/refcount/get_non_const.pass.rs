@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveAssign)]
 #[byte_size(12)]
 pub struct S {
     #[offset(0)]
@@ -17,12 +17,10 @@ pub struct S {
 }
 impl S {
     pub fn new() -> Self {
-        let __this: Value<S> = Rc::new(RefCell::new(Self {
+        Self {
             a: unimplemented!(),
-            k: (({ get_0(field_ptr!(this, a)) }).read()),
-        }));
-        let this: Ptr<S> = __this.as_pointer();
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+            k: (unimplemented!().read()),
+        }
     }
 }
 impl Default for S {
@@ -30,7 +28,7 @@ impl Default for S {
         { S::new() }
     }
 }
-pub fn getP_1() -> () {
+pub fn getP_0() -> () {
     return unimplemented!();
 }
 pub fn main() {
@@ -57,8 +55,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        ({ get_2(p.as_pointer()) }).write(5_());
-        ({ get_3(p.as_pointer()) }).write(6_());
+        unimplemented!().write(5_());
+        unimplemented!().write(6_());
         unimplemented!();
         unimplemented!();
     }
@@ -67,5 +65,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::get<1>(getP()) == 4");;
     }
     return 0_();
+}
+pub trait SImpl {
+    fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S>;
+}
+impl SImpl for Ptr<S> {
+    fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
+        unimplemented!();
+        field!((*self), k).write({ { (*_a0.upgrade().deref()).k } });
+        return (*self).clone();
+    }
 }
 pub fn __cpp2rust_init_globals() {}

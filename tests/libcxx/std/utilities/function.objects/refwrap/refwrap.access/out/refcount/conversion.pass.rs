@@ -11,7 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct functor1 {}
 pub fn test_0(t: Ptr<FnPtr<fn()>>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<FnPtr<fn()>> = unimplemented!();
+    let r2: Ptr<FnPtr<fn()>> = (unimplemented!() as Option<unsafe fn()>);
     unimplemented!();
 }
 pub fn test_1(t: FnPtr<fn()>) {

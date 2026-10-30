@@ -11,11 +11,6 @@ pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_unsigned_long__unsigned_long_ {}
-pub type anon_1 = ();
-pub const anon_1_value: anon_1 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_unsigned_int__unsigned_int_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
@@ -66,21 +61,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_2: std::cell::LazyCell<()> =
+pub static mut destructed_value_1: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_3: std::cell::LazyCell<()> =
+pub static mut moved_value_2: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_4(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_3(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_5(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_4(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_4(_x, _y)
+        operator_eq_3(_x, _y)
     });
 }
 #[repr(C)]
@@ -144,8 +139,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -166,7 +161,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_4(
+            operator_eq_3(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -207,16 +202,16 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
     }
 }
 impl Default for test_allocator_int_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -254,24 +249,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_9)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_6)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_8)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7)) = 0_();
     }
 }
-pub static mut outstanding_bytes_6: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_5: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_7: std::cell::LazyCell<()> =
+pub static mut alloc_count_6: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_8: std::cell::LazyCell<()> =
+pub static mut dealloc_count_7: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_9: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_8: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -287,13 +282,12 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
+pub unsafe fn test0_9(mut s: (), mut val: (), mut expected: (), mut expected_erased_count: ()) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test0_10(mut s: (), mut val: (), mut expected: (), mut expected_erased_count: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -339,147 +333,142 @@ pub unsafe fn test0_18(mut s: (), mut val: (), mut expected: (), mut expected_er
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test0_19(mut s: (), mut val: (), mut expected: (), mut expected_erased_count: ()) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test1_19() {
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_9(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 3_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 4_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 3_()) });
+    (unsafe { test0_9(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_9(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_9(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_9(unimplemented!(), 2_(), unimplemented!(), 2_()) });
+    (unsafe { test0_9(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_10(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_10(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_10(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_10(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_20() {
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_10(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 3_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 4_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 3_()) });
-    (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_10(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 2_()) });
-    (unsafe { test0_10(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
-    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
-    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_11(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 3_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 4_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 3_()) });
+    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 2_()) });
+    (unsafe { test0_11(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_12(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_12(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_12(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_12(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_21() {
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_12(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 3_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 4_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 3_()) });
-    (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 2_()) });
-    (unsafe { test0_12(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
-    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
-    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_13(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 3_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 4_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 3_()) });
+    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 2_()) });
+    (unsafe { test0_13(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_14(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_14(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_14(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_14(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_22() {
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_14(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 3_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 4_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 3_()) });
-    (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 2_()) });
-    (unsafe { test0_14(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
-    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
-    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_15(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 3_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 4_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 3_()) });
+    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 2_()) });
+    (unsafe { test0_15(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_16(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_16(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_16(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_16(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_23() {
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_16(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 3_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 4_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 3_()) });
-    (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 2_()) });
-    (unsafe { test0_16(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
-    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
-    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_17(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 3_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 4_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 3_()) });
+    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 2_()) });
+    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 2_()) });
+    (unsafe { test0_17(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_18(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
+    (unsafe { test0_18(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_18(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_18(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test1_24() {
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_18(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 3_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 4_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 3_()) });
-    (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 2_()) });
-    (unsafe { test0_18(unimplemented!(), 3_(), unimplemented!(), 0_()) });
-    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
-    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
-    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_25() -> () {
+pub unsafe fn test_24() -> () {
+    (unsafe { test1_19() });
     (unsafe { test1_20() });
     (unsafe { test1_21() });
     (unsafe { test1_22() });
     (unsafe { test1_23() });
-    (unsafe { test1_24() });
     return true;
 }
 pub fn main() {
@@ -502,10 +491,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_2);
-    std::cell::LazyCell::force(&*&raw const moved_value_3);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_6);
-    std::cell::LazyCell::force(&*&raw const alloc_count_7);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_8);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_9);
+    std::cell::LazyCell::force(&*&raw const destructed_value_1);
+    std::cell::LazyCell::force(&*&raw const moved_value_2);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_5);
+    std::cell::LazyCell::force(&*&raw const alloc_count_6);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_7);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_8);
 }

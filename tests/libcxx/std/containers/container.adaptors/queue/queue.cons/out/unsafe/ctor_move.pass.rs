@@ -200,7 +200,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut q: () = unimplemented!();
-    let mut q2: () = unimplemented!();
+    let mut q2: () = q;
     unimplemented!();
     unimplemented!();
     return 0_();

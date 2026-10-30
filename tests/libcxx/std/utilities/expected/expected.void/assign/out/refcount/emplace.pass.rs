@@ -137,17 +137,11 @@ impl TailClobberer_0_ {
         }
     }
 }
-impl std::cmp::PartialEq for TailClobberer_0_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
-                Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for TailClobberer_0_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for TailClobberer_0_ {}
 const _: () = assert!(
     true,
     "!std::is_trivially_copy_constructible_v<TailClobberer<0>>"
@@ -200,11 +194,7 @@ impl BoolWithPadding {
         }));
         let this: Ptr<BoolWithPadding> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 8usize;
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, val_).write(val);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -247,11 +237,7 @@ impl IntWithoutPadding {
         }));
         let this: Ptr<IntWithoutPadding> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 4usize;
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, val_).write(val);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -292,7 +278,7 @@ pub struct CheckForInvalidWritesBaseImpl_true__true_ {}
 pub struct CheckForInvalidWritesBaseImpl_false__true_ {}
 const _: () = assert!(!(false), "!EmplaceNoexcept<int>");
 const _: () = assert!(true, "EmplaceNoexcept<std::expected<void, int>>");
-pub fn test_3() -> () {
+pub fn test_2() -> () {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -327,7 +313,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_3() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -17,14 +17,14 @@ pub fn csource_1() -> A {
 }
 pub fn test_constexpr_forward_2() -> () {
     let x: Value<()> = Rc::new(RefCell::new(42_()));
-    let cx: Value<()> = Rc::new(RefCell::new(101_()));
+    let mut cx: () = 101_();
     return ((((((((*x.borrow()) == 42_()) && ((*x.borrow()) == 42_()))
         && ((*x.borrow()) == 42_()))
         && ((*x.borrow()) == 42_()))
         && ((*x.borrow()) == 42_()))
         && ((*x.borrow()) == 42_()))
-        && ((*cx.borrow()) == 101_()))
-        && ((*cx.borrow()) == 101_());
+        && (cx == 101_()))
+        && (cx == 101_());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -96,7 +96,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let i2: Value<()> = Rc::new(RefCell::new(42_()));
+        let mut i2: () = 42_();
         const _: () = assert!(true, "std::forward<int>(42) == 42");;
         const _: () = assert!(true, "std::forward<const int&>(i2) == 42");;
         const _: () = assert!(true, "test_constexpr_forward()");;

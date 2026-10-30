@@ -154,27 +154,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_6(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -404,7 +388,7 @@ pub fn swallow_11(
 ) {
 }
 pub fn swallow_9(mut _a0: (), mut _a1: (), mut _a2: ()) {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -414,7 +398,14 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -422,7 +413,7 @@ const _: () = assert!(
 pub fn base_12(i: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -450,7 +441,7 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_13(i: Ptr<forward_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_int_ptr_ {
     #[offset(0)]
@@ -477,7 +468,7 @@ impl forward_iterator_int_ptr_ {
 pub fn base_14(i: Ptr<bidirectional_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_int_ptr_ {
     #[offset(0)]
@@ -504,7 +495,7 @@ impl bidirectional_iterator_int_ptr_ {
 pub fn base_15(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -528,7 +519,7 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -538,7 +529,14 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
@@ -546,7 +544,7 @@ const _: () = assert!(
 pub fn base_16(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_int_ptr_ {
     #[offset(0)]
@@ -760,23 +758,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_19(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_19(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -863,52 +849,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_25(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_25(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_24(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_24(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -928,44 +878,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -975,12 +898,19 @@ impl util_iterator_error {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_int_ptr_ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_int_ptr_ {
+    pub fn move_from(_a0: Ptr<Range_int_ptr_>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_int_ptr_ {
     fn default() -> Self {
@@ -991,12 +921,19 @@ impl Default for Range_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_contiguous_iterator_int_ptr__ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_contiguous_iterator_int_ptr__ {
+    pub fn move_from(_a0: Ptr<Range_contiguous_iterator_int_ptr__>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_contiguous_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1007,12 +944,19 @@ impl Default for Range_contiguous_iterator_int_ptr__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_random_access_iterator_int_ptr__ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_random_access_iterator_int_ptr__ {
+    pub fn move_from(_a0: Ptr<Range_random_access_iterator_int_ptr__>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_random_access_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1023,12 +967,19 @@ impl Default for Range_random_access_iterator_int_ptr__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_bidirectional_iterator_int_ptr__ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_bidirectional_iterator_int_ptr__ {
+    pub fn move_from(_a0: Ptr<Range_bidirectional_iterator_int_ptr__>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_bidirectional_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1039,12 +990,19 @@ impl Default for Range_bidirectional_iterator_int_ptr__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_forward_iterator_int_ptr__ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_forward_iterator_int_ptr__ {
+    pub fn move_from(_a0: Ptr<Range_forward_iterator_int_ptr__>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_forward_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1055,12 +1013,19 @@ impl Default for Range_forward_iterator_int_ptr__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_cpp20_input_iterator_int_ptr__ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_cpp20_input_iterator_int_ptr__ {
+    pub fn move_from(_a0: Ptr<Range_cpp20_input_iterator_int_ptr__>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_cpp20_input_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1071,12 +1036,19 @@ impl Default for Range_cpp20_input_iterator_int_ptr__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct Range_cpp17_input_iterator_int_ptr__int_ptr__ {
     #[offset(0)]
     #[byte_size(24)]
     data_: (),
+}
+impl Range_cpp17_input_iterator_int_ptr__int_ptr__ {
+    pub fn move_from(_a0: Ptr<Range_cpp17_input_iterator_int_ptr__int_ptr__>) -> Self {
+        Self {
+            data_: unimplemented!(),
+        }
+    }
 }
 impl Default for Range_cpp17_input_iterator_int_ptr__int_ptr__ {
     fn default() -> Self {
@@ -2177,6 +2149,10 @@ pub struct min_pointer_std_byte__std_integral_constant_unsigned_long__0__;
 pub trait Range_bidirectional_iterator_int_ptr__Impl {
     fn begin(&self) -> bidirectional_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_bidirectional_iterator_int_ptr__;
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_bidirectional_iterator_int_ptr__>,
+    ) -> Ptr<Range_bidirectional_iterator_int_ptr__>;
 }
 impl Range_bidirectional_iterator_int_ptr__Impl for Ptr<Range_bidirectional_iterator_int_ptr__> {
     fn begin(&self) -> bidirectional_iterator_int_ptr_ {
@@ -2191,10 +2167,21 @@ impl Range_bidirectional_iterator_int_ptr__Impl for Ptr<Range_bidirectional_iter
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_3.as_pointer() })
         };
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_bidirectional_iterator_int_ptr__>,
+    ) -> Ptr<Range_bidirectional_iterator_int_ptr__> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait Range_contiguous_iterator_int_ptr__Impl {
     fn begin(&self) -> contiguous_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_contiguous_iterator_int_ptr__;
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_contiguous_iterator_int_ptr__>,
+    ) -> Ptr<Range_contiguous_iterator_int_ptr__>;
 }
 impl Range_contiguous_iterator_int_ptr__Impl for Ptr<Range_contiguous_iterator_int_ptr__> {
     fn begin(&self) -> contiguous_iterator_int_ptr_ {
@@ -2209,10 +2196,21 @@ impl Range_contiguous_iterator_int_ptr__Impl for Ptr<Range_contiguous_iterator_i
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_1.as_pointer() })
         };
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_contiguous_iterator_int_ptr__>,
+    ) -> Ptr<Range_contiguous_iterator_int_ptr__> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait Range_cpp17_input_iterator_int_ptr__int_ptr__Impl {
     fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_;
     fn end(&self) -> sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__;
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_cpp17_input_iterator_int_ptr__int_ptr__>,
+    ) -> Ptr<Range_cpp17_input_iterator_int_ptr__int_ptr__>;
 }
 impl Range_cpp17_input_iterator_int_ptr__int_ptr__Impl
     for Ptr<Range_cpp17_input_iterator_int_ptr__int_ptr__>
@@ -2231,10 +2229,21 @@ impl Range_cpp17_input_iterator_int_ptr__int_ptr__Impl
             })
         };
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_cpp17_input_iterator_int_ptr__int_ptr__>,
+    ) -> Ptr<Range_cpp17_input_iterator_int_ptr__int_ptr__> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait Range_cpp20_input_iterator_int_ptr__Impl {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_cpp20_input_iterator_int_ptr__;
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_cpp20_input_iterator_int_ptr__>,
+    ) -> Ptr<Range_cpp20_input_iterator_int_ptr__>;
 }
 impl Range_cpp20_input_iterator_int_ptr__Impl for Ptr<Range_cpp20_input_iterator_int_ptr__> {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
@@ -2249,10 +2258,21 @@ impl Range_cpp20_input_iterator_int_ptr__Impl for Ptr<Range_cpp20_input_iterator
             sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ __tmp_5.as_pointer() })
         };
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_cpp20_input_iterator_int_ptr__>,
+    ) -> Ptr<Range_cpp20_input_iterator_int_ptr__> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait Range_forward_iterator_int_ptr__Impl {
     fn begin(&self) -> forward_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_forward_iterator_int_ptr__;
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_forward_iterator_int_ptr__>,
+    ) -> Ptr<Range_forward_iterator_int_ptr__>;
 }
 impl Range_forward_iterator_int_ptr__Impl for Ptr<Range_forward_iterator_int_ptr__> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
@@ -2267,10 +2287,18 @@ impl Range_forward_iterator_int_ptr__Impl for Ptr<Range_forward_iterator_int_ptr
             sentinel_wrapper_forward_iterator_int_ptr__::new_1({ __tmp_4.as_pointer() })
         };
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_forward_iterator_int_ptr__>,
+    ) -> Ptr<Range_forward_iterator_int_ptr__> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait Range_int_ptr_Impl {
     fn begin(&self) -> Ptr<()>;
     fn end(&self) -> sentinel_wrapper_int_ptr_;
+    fn move_assign(&self, _a0: Ptr<Range_int_ptr_>) -> Ptr<Range_int_ptr_>;
 }
 impl Range_int_ptr_Impl for Ptr<Range_int_ptr_> {
     fn begin(&self) -> Ptr<()> {
@@ -2284,10 +2312,18 @@ impl Range_int_ptr_Impl for Ptr<Range_int_ptr_> {
             sentinel_wrapper_int_ptr_::new_1({ __tmp_0.as_pointer() })
         };
     }
+    fn move_assign(&self, _a0: Ptr<Range_int_ptr_>) -> Ptr<Range_int_ptr_> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait Range_random_access_iterator_int_ptr__Impl {
     fn begin(&self) -> random_access_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_random_access_iterator_int_ptr__;
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_random_access_iterator_int_ptr__>,
+    ) -> Ptr<Range_random_access_iterator_int_ptr__>;
 }
 impl Range_random_access_iterator_int_ptr__Impl for Ptr<Range_random_access_iterator_int_ptr__> {
     fn begin(&self) -> random_access_iterator_int_ptr_ {
@@ -2301,6 +2337,13 @@ impl Range_random_access_iterator_int_ptr__Impl for Ptr<Range_random_access_iter
                 })));
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_2.as_pointer() })
         };
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<Range_random_access_iterator_int_ptr__>,
+    ) -> Ptr<Range_random_access_iterator_int_ptr__> {
+        unimplemented!();
+        return (*self).clone();
     }
 }
 pub trait Tag_XImpl {
@@ -2401,10 +2444,25 @@ pub trait bidirectional_iterator_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_>;
 }
 impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_> {
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -2437,10 +2495,25 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_>;
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -2452,10 +2525,25 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -2469,8 +2557,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -2552,6 +2656,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -2559,6 +2667,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
     }
 }
 pub trait forward_iterator_int_ptr_Impl {
@@ -2569,10 +2688,19 @@ pub trait forward_iterator_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_>;
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -2627,10 +2755,25 @@ pub trait random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_>;
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

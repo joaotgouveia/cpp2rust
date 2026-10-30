@@ -49,14 +49,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             i.prefix_inc();
         }
         var /= unimplemented!();
-        let mut dev: () = (unsafe { sqrt_1(var) });
+        let mut dev: () = unimplemented!();
         skew /= (((unimplemented!()) * (dev)) * (var));
         kurtosis /= (((unimplemented!()) * (var)) * (var));
         kurtosis -= 3_();
         let mut x_mean: () = unimplemented!();
         let mut x_var: () = ((unimplemented!()) * ((1_()) - (unimplemented!())));
-        let mut x_skew: () =
-            (((1_()) - ((2_()) * (unimplemented!()))) / (unsafe { sqrt_1(x_var) }));
+        let mut x_skew: () = (((1_()) - ((2_()) * (unimplemented!()))) / (unimplemented!()));
         let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0(unimplemented!()) }))
             - ((6_()) * (unimplemented!())))
             + (1_()))
@@ -90,14 +89,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             i.prefix_inc();
         }
         var /= unimplemented!();
-        let mut dev: () = (unsafe { sqrt_1(var) });
+        let mut dev: () = unimplemented!();
         skew /= (((unimplemented!()) * (dev)) * (var));
         kurtosis /= (((unimplemented!()) * (var)) * (var));
         kurtosis -= 3_();
         let mut x_mean: () = unimplemented!();
         let mut x_var: () = ((unimplemented!()) * ((1_()) - (unimplemented!())));
-        let mut x_skew: () =
-            (((1_()) - ((2_()) * (unimplemented!()))) / (unsafe { sqrt_1(x_var) }));
+        let mut x_skew: () = (((1_()) - ((2_()) * (unimplemented!()))) / (unimplemented!()));
         let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0(unimplemented!()) }))
             - ((6_()) * (unimplemented!())))
             + (1_()))

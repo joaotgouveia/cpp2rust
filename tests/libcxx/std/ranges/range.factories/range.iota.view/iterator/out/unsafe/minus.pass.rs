@@ -274,42 +274,42 @@ pub unsafe fn test_18() -> () {
             let mut iter1: () = unimplemented!();
             let mut iter2: () = unimplemented!();
             unimplemented!();
-            const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
+            const _: () = assert!(true, "");;
         }
         {
             let mut io: () = unimplemented!();
             let mut iter1: () = unimplemented!();
             let mut iter2: () = unimplemented!();
             unimplemented!();
-            const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
+            const _: () = assert!(true, "");;
         }
         {
             let mut io: () = unimplemented!();
             let mut iter1: () = unimplemented!();
             let mut iter2: () = unimplemented!();
             unimplemented!();
-            const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
+            const _: () = assert!(true, "");;
         }
         {
             let mut io: () = unimplemented!();
             let mut iter1: () = unimplemented!();
             let mut iter2: () = unimplemented!();
             unimplemented!();
-            const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
+            const _: () = assert!(true, "");;
         }
         {
             let mut io: () = unimplemented!();
             let mut iter1: () = unimplemented!();
             let mut iter2: () = unimplemented!();
             unimplemented!();
-            const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
+            const _: () = assert!(true, "");;
         }
         {
             let mut io: () = unimplemented!();
             let mut iter1: () = unimplemented!();
             let mut iter2: () = unimplemented!();
             unimplemented!();
-            const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
+            const _: () = assert!(true, "");;
         }
         {
             let mut io: () = unimplemented!();

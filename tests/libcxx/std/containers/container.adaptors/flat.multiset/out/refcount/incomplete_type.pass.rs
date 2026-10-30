@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
 pub struct A {
     #[offset(0)]
@@ -21,92 +21,27 @@ pub struct A {
     #[byte_size(8)]
     pub cit: (),
 }
-impl std::cmp::Ord for A {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_0(
-                Rc::new(RefCell::new(A {
-                    data: self.data.clone(),
-                    m: self.m.clone(),
-                    it: self.it.clone(),
-                    cit: self.cit.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    data: other.data.clone(),
-                    m: other.m.clone(),
-                    it: other.it.clone(),
-                    cit: other.cit.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_0(
-                Rc::new(RefCell::new(A {
-                    data: other.data.clone(),
-                    m: other.m.clone(),
-                    it: other.it.clone(),
-                    cit: other.cit.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    data: self.data.clone(),
-                    m: self.m.clone(),
-                    it: self.it.clone(),
-                    cit: self.cit.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
+impl A {
+    pub fn move_from(_a0: Ptr<A>) -> Self {
+        Self {
+            data: { (*_a0.upgrade().deref()).data },
+            m: field!(_a0, m).with_mut(std::mem::take),
+            it: field!(_a0, it).with_mut(std::mem::take),
+            cit: field!(_a0, cit).with_mut(std::mem::take),
         }
     }
 }
-impl std::cmp::PartialOrd for A {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppLess for A {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for A {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_0(
-                Rc::new(RefCell::new(A {
-                    data: self.data.clone(),
-                    m: self.m.clone(),
-                    it: self.it.clone(),
-                    cit: self.cit.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    data: other.data.clone(),
-                    m: other.m.clone(),
-                    it: other.it.clone(),
-                    cit: other.cit.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_0(
-                Rc::new(RefCell::new(A {
-                    data: other.data.clone(),
-                    m: other.m.clone(),
-                    it: other.it.clone(),
-                    cit: other.cit.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    data: self.data.clone(),
-                    m: self.m.clone(),
-                    it: self.it.clone(),
-                    cit: self.cit.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
+impl CppEq for A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_0(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_0(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::Eq for A {}
 pub fn operator_lt_0(L: Ptr<A>, R: Ptr<A>) -> () {
     return ({ L.with(|__s| __s.data) } < { R.with(|__s| __s.data) });
 }
@@ -135,5 +70,17 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_1() });
     return 0_();
+}
+pub trait AImpl {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
+}
+impl AImpl for Ptr<A> {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
+        field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
+        field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
+        unimplemented!();
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub fn __cpp2rust_init_globals() {}

@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        const _: () = assert!(true, "std::__is_swappable_v<T>");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::is_swappable_v<T>");;
     }
     {

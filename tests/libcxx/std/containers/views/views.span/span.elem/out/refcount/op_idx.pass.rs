@@ -8,84 +8,84 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn testConstexprSpan_0(sp: (), mut idx: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     return ({ (r1.read()) } == { (r2.read()) });
 }
 pub fn testConstexprSpan_1(sp: (), mut idx: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     return ({ (r1.read()) } == { (r2.read()) });
 }
 pub fn testConstexprSpan_2(sp: (), mut idx: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     return ({ (r1.read()) } == { (r2.read()) });
 }
 pub fn testConstexprSpan_3(sp: (), mut idx: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     return ({ (r1.read()) } == { (r2.read()) });
 }
 pub fn testConstexprSpan_4(sp: (), mut idx: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     return ({ (r1.read()) } == { (r2.read()) });
 }
 pub fn testRuntimeSpan_5(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();
 }
 pub fn testRuntimeSpan_6(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();
 }
 pub fn testRuntimeSpan_7(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();
 }
 pub fn testRuntimeSpan_8(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();
 }
 pub fn testRuntimeSpan_9(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();
 }
 pub fn testRuntimeSpan_10(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();
 }
 pub fn testRuntimeSpan_11(sp: (), mut idx: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let r1: () = unimplemented!();
     let r2: () = (unimplemented!().offset((idx) as isize));
     unimplemented!();

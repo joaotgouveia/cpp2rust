@@ -52,7 +52,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             i.prefix_inc();
         }
         var /= unimplemented!();
-        let mut dev: () = (unsafe { sqrt_1(var) });
+        let mut dev: () = unimplemented!();
         skew /= (((unimplemented!()) * (dev)) * (var));
         kurtosis /= (((unimplemented!()) * (var)) * (var));
         kurtosis -= 3_();

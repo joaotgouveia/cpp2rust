@@ -23,59 +23,16 @@ impl LessAndEqComp {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for LessAndEqComp {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_0(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_0(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for LessAndEqComp {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for LessAndEqComp {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for LessAndEqComp {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for LessAndEqComp {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for LessAndEqComp {}
 pub fn operator_cmp_2(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
@@ -96,22 +53,16 @@ impl StrongOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for StrongOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_2(self.clone(), other.clone()) }
+impl CppLess for StrongOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_2(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for StrongOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for StrongOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_2(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for StrongOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_2(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for StrongOrder {}
 pub fn operator_cmp_3(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -132,22 +83,16 @@ impl WeakOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for WeakOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_3(self.clone(), other.clone()) }
+impl CppLess for WeakOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_3(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for WeakOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for WeakOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_3(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for WeakOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_3(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_4(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
@@ -171,22 +116,16 @@ impl PartialOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for PartialOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_4(self.clone(), other.clone()) }
+impl CppLess for PartialOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_4(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for PartialOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for PartialOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::PartialEq for PartialOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for PartialOrder {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
@@ -212,23 +151,11 @@ impl EqualityComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for EqualityComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_6(
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for EqualityComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -258,44 +185,16 @@ impl ThreeWayComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::Ord for ThreeWayComparable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_8(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for ThreeWayComparable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_8(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for ThreeWayComparable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for ThreeWayComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for ThreeWayComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for ThreeWayComparable {}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -345,83 +244,22 @@ pub struct ComparesToMyBool {
     #[offset(0)]
     pub value: (),
 }
-impl std::cmp::Ord for ComparesToMyBool {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+impl CppLess for ComparesToMyBool {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         {
-            if {
-                let __cmp = &operator_lt_10(
-                    Rc::new(RefCell::new(ComparesToMyBool {
-                        value: self.value.clone(),
-                    }))
-                    .as_pointer(),
-                    Rc::new(RefCell::new(ComparesToMyBool {
-                        value: other.value.clone(),
-                    }))
-                    .as_pointer(),
-                );
-                MyBoolImpl::to_(
-                    &Rc::new(RefCell::new(MyBool {
-                        value: __cmp.value.clone(),
-                    }))
-                    .as_pointer(),
-                )
-            } {
-                std::cmp::Ordering::Less
-            } else if {
-                let __cmp = &operator_lt_10(
-                    Rc::new(RefCell::new(ComparesToMyBool {
-                        value: other.value.clone(),
-                    }))
-                    .as_pointer(),
-                    Rc::new(RefCell::new(ComparesToMyBool {
-                        value: self.value.clone(),
-                    }))
-                    .as_pointer(),
-                );
-                MyBoolImpl::to_(
-                    &Rc::new(RefCell::new(MyBool {
-                        value: __cmp.value.clone(),
-                    }))
-                    .as_pointer(),
-                )
-            } {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
+            let __cmp = operator_lt_10(__lhs.clone(), __rhs.clone());
+            MyBoolImpl::to_(&Rc::new(RefCell::new(__cmp)).as_pointer())
         }
     }
 }
-impl std::cmp::PartialOrd for ComparesToMyBool {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
-    }
-}
-impl std::cmp::PartialEq for ComparesToMyBool {
-    fn eq(&self, other: &Self) -> bool {
+impl CppEq for ComparesToMyBool {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         {
-            {
-                let __cmp = &operator_eq_11(
-                    Rc::new(RefCell::new(ComparesToMyBool {
-                        value: self.value.clone(),
-                    }))
-                    .as_pointer(),
-                    Rc::new(RefCell::new(ComparesToMyBool {
-                        value: other.value.clone(),
-                    }))
-                    .as_pointer(),
-                );
-                MyBoolImpl::to_(
-                    &Rc::new(RefCell::new(MyBool {
-                        value: __cmp.value.clone(),
-                    }))
-                    .as_pointer(),
-                )
-            }
+            let __cmp = operator_eq_11(__lhs.clone(), __rhs.clone());
+            MyBoolImpl::to_(&Rc::new(RefCell::new(__cmp)).as_pointer())
         }
     }
 }
-impl std::cmp::Eq for ComparesToMyBool {}
 impl Default for ComparesToMyBool {
     fn default() -> Self {
         { ComparesToMyBool { value: 0_() } }
@@ -744,79 +582,29 @@ pub fn test_relational_29() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A1 {}
-impl std::cmp::Ord for A1 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if A1Impl::operator_lt(
-                &Rc::new(RefCell::new(A1 {})).as_pointer(),
-                Rc::new(RefCell::new(A1 {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if A1Impl::operator_lt(
-                &Rc::new(RefCell::new(A1 {})).as_pointer(),
-                Rc::new(RefCell::new(A1 {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for A1 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        A1Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for A1 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for A1 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        A1Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for A1 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            A1Impl::operator_eq(
-                &Rc::new(RefCell::new(A1 {})).as_pointer(),
-                Rc::new(RefCell::new(A1 {})).as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for A1 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A2 {}
-impl std::cmp::Ord for A2 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if A2Impl::operator_lt(
-                &Rc::new(RefCell::new(A2 {})).as_pointer(),
-                Rc::new(RefCell::new(A2 {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if A2Impl::operator_lt(
-                &Rc::new(RefCell::new(A2 {})).as_pointer(),
-                Rc::new(RefCell::new(A2 {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for A2 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        A2Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for A2 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for A2 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        A2Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for A2 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            A2Impl::operator_eq(
-                &Rc::new(RefCell::new(A2 {})).as_pointer(),
-                Rc::new(RefCell::new(A2 {})).as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for A2 {}
 pub fn operator_eq_30(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
@@ -842,59 +630,16 @@ pub struct Array {
     #[byte_size(8)]
     pub ptr: Ptr<()>,
 }
-impl std::cmp::Ord for Array {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_32(
-                Rc::new(RefCell::new(Array {
-                    ptr: self.ptr.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Array {
-                    ptr: other.ptr.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_32(
-                Rc::new(RefCell::new(Array {
-                    ptr: other.ptr.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Array {
-                    ptr: self.ptr.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Array {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_32(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Array {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Array {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_30(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for Array {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_30(
-                Rc::new(RefCell::new(Array {
-                    ptr: self.ptr.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Array {
-                    ptr: other.ptr.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for Array {}
 pub fn test_recursive_36() {
     &(unimplemented!());
     &(unimplemented!());

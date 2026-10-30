@@ -203,42 +203,42 @@ pub fn classify_5(mut x: ()) -> () {
     if (x == 0_()) {
         return (anon_1_zero as ());
     }
-    if ({ isinf_6(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if ({ isnan_7(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub fn is_about_6(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub fn is_about_7(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub fn is_about_8(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub fn is_about_9(mut x: (), mut y: ()) {
+pub fn test_9() {
+    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn is_about_10(mut x: (), mut y: ()) {
+pub fn test_10() {
+    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_11() {
     let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_12() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-}
-pub fn test_13() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-}
-pub fn test_edges_14() {
-    let mut pi: () = ({ atan2_15(0_f64, -0_f64) });
+pub fn test_edges_12() {
+    let mut pi: () = unimplemented!();
     let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         let mut r: () = unimplemented!();
-        if ({ isnan_7(unimplemented!()) }) || ({ isnan_7(unimplemented!()) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             unimplemented!();
         } else {
             'switch: {
@@ -246,11 +246,11 @@ pub fn test_edges_14() {
                     ({ classify_4((testcases_0.with(|v| v.as_pointer()) as Ptr<()>).offset(i)) })
                 } {
                     __v if __v == (anon_1_zero as ()) => {
-                        if ({ signbit_16(unimplemented!()) }) {
-                            if ({ signbit_16(unimplemented!()) }) {
-                                ({ is_about_9(r, -pi) });
+                        if unimplemented!() {
+                            if unimplemented!() {
+                                ({ is_about_7(r, -pi) });
                             } else {
-                                ({ is_about_9(r, pi) });
+                                ({ is_about_7(r, pi) });
                             }
                         } else {
                             unimplemented!();
@@ -260,16 +260,16 @@ pub fn test_edges_14() {
                     __v if __v == (anon_1_non_zero as ()) => {
                         if (unimplemented!() == 0_()) {
                             if (unimplemented!() < 0_()) {
-                                ({ is_about_9(r, (-pi / 2_())) });
+                                ({ is_about_7(r, (-pi / 2_())) });
                             } else {
-                                ({ is_about_9(r, (pi / 2_())) });
+                                ({ is_about_7(r, (pi / 2_())) });
                             }
                         } else if (unimplemented!() == 0_()) {
                             if (unimplemented!() < 0_()) {
-                                if ({ signbit_16(unimplemented!()) }) {
-                                    ({ is_about_9(r, -pi) });
+                                if unimplemented!() {
+                                    ({ is_about_7(r, -pi) });
                                 } else {
-                                    ({ is_about_9(r, pi) });
+                                    ({ is_about_7(r, pi) });
                                 }
                             } else {
                                 unimplemented!();
@@ -283,26 +283,26 @@ pub fn test_edges_14() {
                         break 'switch;
                     }
                     __v if __v == (anon_1_inf as ()) => {
-                        if ({ isinf_6(unimplemented!()) }) && ({ isinf_6(unimplemented!()) }) {
+                        if (unimplemented!()) && (unimplemented!()) {
                             if (unimplemented!() < 0_()) {
                                 if (unimplemented!() > 0_()) {
-                                    ({ is_about_9(r, (0.75_f64 * pi)) });
+                                    ({ is_about_7(r, (0.75_f64 * pi)) });
                                 } else {
-                                    ({ is_about_9(r, (-0.75_f64 * pi)) });
+                                    ({ is_about_7(r, (-0.75_f64 * pi)) });
                                 }
                             } else {
                                 if (unimplemented!() > 0_()) {
-                                    ({ is_about_9(r, (0.25_f64 * pi)) });
+                                    ({ is_about_7(r, (0.25_f64 * pi)) });
                                 } else {
-                                    ({ is_about_9(r, (-0.25_f64 * pi)) });
+                                    ({ is_about_7(r, (-0.25_f64 * pi)) });
                                 }
                             }
-                        } else if ({ isinf_6(unimplemented!()) }) {
+                        } else if unimplemented!() {
                             if (unimplemented!() < 0_()) {
-                                if ({ signbit_16(unimplemented!()) }) {
-                                    ({ is_about_9(r, -pi) });
+                                if unimplemented!() {
+                                    ({ is_about_7(r, -pi) });
                                 } else {
-                                    ({ is_about_9(r, pi) });
+                                    ({ is_about_7(r, pi) });
                                 }
                             } else {
                                 unimplemented!();
@@ -310,9 +310,9 @@ pub fn test_edges_14() {
                             }
                         } else {
                             if (unimplemented!() < 0_()) {
-                                ({ is_about_9(r, (-pi / 2_())) });
+                                ({ is_about_7(r, (-pi / 2_())) });
                             } else {
-                                ({ is_about_9(r, (pi / 2_())) });
+                                ({ is_about_7(r, (pi / 2_())) });
                             }
                         }
                         break 'switch;
@@ -344,10 +344,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_9() });
+    ({ test_10() });
     ({ test_11() });
-    ({ test_12() });
-    ({ test_13() });
-    ({ test_edges_14() });
+    ({ test_edges_12() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

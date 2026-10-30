@@ -182,28 +182,6 @@ impl Default for test_allocator_void_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_char__rebind_char_ {}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_char_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_char_ {}
-impl Default for test_allocator_char_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_char_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
 #[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
@@ -228,49 +206,13 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    block: *mut detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block,
-}
-impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {}
-impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    fn default() -> Self {
-        unsafe {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-                block: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_char__10__rebind_char_ {}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_char__10_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_char__10_ {}
-pub unsafe fn is_string_asan_correct_4(_a0: *const ()) -> () {
-    return true;
-}
-const _: () = assert!(
-    true,
-    "std::is_nothrow_default_constructible<std::string>::value"
-);
-const _: () = assert!(
-    true,
-    "std::is_nothrow_default_constructible<\n                         std::basic_string<char, std::char_traits<char>, test_allocator<char>>>::value"
-);
-const _: () = assert!(
-    true,
-    "!std::is_nothrow_default_constructible<\n                         std::basic_string<char, std::char_traits<char>, limited_allocator<char, 10>>>::value"
-);
-pub unsafe fn test_5() -> () {
+const _: () = assert!(true, "");
+const _: () = assert!(true, "");
+const _: () = assert!(true, "");
+pub unsafe fn test_4() -> () {
     let mut str: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return true;
 }
 pub fn main() {
@@ -289,12 +231,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_5() });
+    (unsafe { test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block;
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_0);
     std::cell::LazyCell::force(&*&raw const moved_value_1);

@@ -92,11 +92,7 @@ impl TailClobberer_1_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_1_>();
-                memset_3(___s, 1_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -182,11 +178,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_3(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -229,11 +221,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_3(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -279,7 +267,7 @@ pub struct CheckForInvalidWritesBaseImpl_false__true_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct NonCopyable {}
-pub unsafe fn operator_eq_4(_a0: *const CopyableNonTrivial, _a1: *const CopyableNonTrivial) -> () {
+pub unsafe fn operator_eq_3(_a0: *const CopyableNonTrivial, _a1: *const CopyableNonTrivial) -> () {
     return (((*_a0).i) == ((*_a1).i));
 }
 #[repr(C)]
@@ -310,7 +298,7 @@ impl CopyableNonTrivial {
 impl std::cmp::PartialEq for CopyableNonTrivial {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_4(
+            operator_eq_3(
                 self as *const CopyableNonTrivial,
                 other as *const CopyableNonTrivial,
             )
@@ -343,7 +331,7 @@ const _: () = assert!(
     true,
     "!std::is_trivially_copy_constructible_v<std::expected<void, CopyableNonTrivial>>"
 );
-pub unsafe fn test_5() -> () {
+pub unsafe fn test_4() -> () {
     {
         let e1: () = unimplemented!();
         let mut e2: () = unimplemented!();
@@ -363,7 +351,7 @@ pub unsafe fn test_5() -> () {
     }
     return true;
 }
-pub unsafe fn testException_6() {}
+pub unsafe fn testException_5() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -380,9 +368,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_5() });
+    (unsafe { test_4() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_6() });
+    (unsafe { testException_5() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -26,13 +26,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "2017y == year(2017)");;
-        let mut y1: () = (unsafe { operator_literal_y_0(2018_()) });
+        let mut y1: () = unimplemented!();
         unimplemented!();
     }
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "2017y == std::chrono::year(2017)");;
-        let mut y1: () = (unsafe { operator_literal_y_0(2020_()) });
+        let mut y1: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

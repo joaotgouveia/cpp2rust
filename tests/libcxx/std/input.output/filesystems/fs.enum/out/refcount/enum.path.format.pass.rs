@@ -28,10 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
-    const _: () = assert!(
-        true,
-        "std::is_same<std::underlying_type<E>::type, unsigned char>::value"
-    );;
+    const _: () = assert!(true, "");;
     const _: () = assert!(
         true,
         "E::auto_format   != E::native_format &&\n          E::auto_format   != E::generic_format &&\n          E::native_format != E::generic_format"

@@ -98,59 +98,16 @@ pub struct NoSpaceship_4 {
     #[offset(0)]
     pub value: (),
 }
-impl std::cmp::Ord for NoSpaceship_4 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if NoSpaceship_4Impl::operator_lt(
-                &Rc::new(RefCell::new(NoSpaceship_4 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NoSpaceship_4 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if NoSpaceship_4Impl::operator_lt(
-                &Rc::new(RefCell::new(NoSpaceship_4 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NoSpaceship_4 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for NoSpaceship_4 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        NoSpaceship_4Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for NoSpaceship_4 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for NoSpaceship_4 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        NoSpaceship_4Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for NoSpaceship_4 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            NoSpaceship_4Impl::operator_eq(
-                &Rc::new(RefCell::new(NoSpaceship_4 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NoSpaceship_4 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for NoSpaceship_4 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoRelative_5 {}

@@ -6,130 +6,115 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn is_string_asan_correct_0(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_1(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_2(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_3(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_4(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_5() {
+pub unsafe fn test_0() {
     let mut short_s1: () = unimplemented!();
     let mut long_s1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     let mut short_s2: () = unimplemented!();
     let mut long_s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
-pub unsafe fn test_6() {
+pub unsafe fn test_1() {
     let mut short_s1: () = unimplemented!();
     let mut long_s1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     let mut short_s2: () = unimplemented!();
     let mut long_s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
-pub unsafe fn test_7() {
+pub unsafe fn test_2() {
     let mut short_s1: () = unimplemented!();
     let mut long_s1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     let mut short_s2: () = unimplemented!();
     let mut long_s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
-pub unsafe fn test_8() {
+pub unsafe fn test_3() {
     let mut short_s1: () = unimplemented!();
     let mut long_s1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     let mut short_s2: () = unimplemented!();
     let mut long_s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
-pub unsafe fn test_9() {
+pub unsafe fn test_4() {
     let mut short_s1: () = unimplemented!();
     let mut long_s1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     let mut short_s2: () = unimplemented!();
     let mut long_s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -147,11 +132,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_5() });
-    (unsafe { test_6() });
-    (unsafe { test_7() });
-    (unsafe { test_8() });
-    (unsafe { test_9() });
+    (unsafe { test_0() });
+    (unsafe { test_1() });
+    (unsafe { test_2() });
+    (unsafe { test_3() });
+    (unsafe { test_4() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

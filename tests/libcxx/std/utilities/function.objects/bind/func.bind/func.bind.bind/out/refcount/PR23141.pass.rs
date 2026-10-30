@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct Fun {}
 pub fn test_0() -> () {
-    unimplemented!();
+    ({ unimplemented!()(Ptr::<()>::from_string_literal(b"hello")) });
     return true;
 }
 pub fn main() {

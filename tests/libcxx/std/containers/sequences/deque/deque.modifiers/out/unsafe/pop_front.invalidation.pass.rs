@@ -6,10 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn is_double_ended_contiguous_container_asan_correct_0(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_1(mut c: ()) {
+pub unsafe fn test_0(mut c: ()) {
     let mut it1: () = unimplemented!();
     let mut it2: () = unimplemented!();
     unimplemented!();
@@ -45,9 +42,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         i.prefix_inc();
     }
     'loop_: while ((unimplemented!()) > (1_())) {
-        (unsafe { test_1(unimplemented!()) });
+        (unsafe { test_0(unimplemented!()) });
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     return 0_();
 }

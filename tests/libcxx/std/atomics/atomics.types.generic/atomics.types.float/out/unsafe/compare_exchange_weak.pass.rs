@@ -669,12 +669,7 @@ pub unsafe fn testBasic_59(mut memory_order_0: (), mut memory_order_1: ()) {
 pub unsafe fn test_impl_60() {
     (unsafe { testBasic_48() });
     (unsafe { testBasic_49(unimplemented!()) });
-    (unsafe {
-        testBasic_50(
-            unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-        )
-    });
+    (unsafe { testBasic_50(unimplemented!(), unimplemented!()) });
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
@@ -836,15 +831,10 @@ pub unsafe fn test_impl_60() {
         (unsafe { test_seq_cst_2(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_impl_62() {
+pub unsafe fn test_impl_61() {
     (unsafe { testBasic_51() });
     (unsafe { testBasic_52(unimplemented!()) });
-    (unsafe {
-        testBasic_53(
-            unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-        )
-    });
+    (unsafe { testBasic_53(unimplemented!(), unimplemented!()) });
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
@@ -1006,15 +996,10 @@ pub unsafe fn test_impl_62() {
         (unsafe { test_seq_cst_5(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_impl_63() {
+pub unsafe fn test_impl_62() {
     (unsafe { testBasic_54() });
     (unsafe { testBasic_55(unimplemented!()) });
-    (unsafe {
-        testBasic_56(
-            unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-        )
-    });
+    (unsafe { testBasic_56(unimplemented!(), unimplemented!()) });
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
@@ -1176,15 +1161,10 @@ pub unsafe fn test_impl_63() {
         (unsafe { test_seq_cst_8(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_impl_64() {
+pub unsafe fn test_impl_63() {
     (unsafe { testBasic_57() });
     (unsafe { testBasic_58(unimplemented!()) });
-    (unsafe {
-        testBasic_59(
-            unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-        )
-    });
+    (unsafe { testBasic_59(unimplemented!(), unimplemented!()) });
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
@@ -1346,16 +1326,16 @@ pub unsafe fn test_impl_64() {
         (unsafe { test_seq_cst_11(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_65() {
+pub unsafe fn test_64() {
     (unsafe { test_impl_60() });
     {
-        (unsafe { test_impl_62() });
+        (unsafe { test_impl_61() });
     }
 }
-pub unsafe fn test_66() {
-    (unsafe { test_impl_63() });
+pub unsafe fn test_65() {
+    (unsafe { test_impl_62() });
     {
-        (unsafe { test_impl_64() });
+        (unsafe { test_impl_63() });
     }
 }
 pub fn main() {
@@ -1374,8 +1354,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_64() });
     (unsafe { test_65() });
-    (unsafe { test_66() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

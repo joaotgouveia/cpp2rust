@@ -31,52 +31,52 @@ pub static mut powers_0: std::cell::LazyCell<[(); 20]> = std::cell::LazyCell::ne
     ]
 });
 pub unsafe fn check_precision_1() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_2));
+    return unimplemented!();
+}
+pub unsafe fn check_precision_2() -> () {
+    return unimplemented!();
 }
 pub unsafe fn check_precision_3() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_2));
+    return unimplemented!();
 }
 pub unsafe fn check_precision_4() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_2));
+    return unimplemented!();
 }
 pub unsafe fn check_precision_5() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_6));
+    return unimplemented!();
+}
+pub unsafe fn check_precision_6() -> () {
+    return unimplemented!();
 }
 pub unsafe fn check_precision_7() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_8));
+    return unimplemented!();
+}
+pub unsafe fn check_precision_8() -> () {
+    return unimplemented!();
 }
 pub unsafe fn check_precision_9() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_10));
+    return unimplemented!();
+}
+pub unsafe fn check_precision_10() -> () {
+    return unimplemented!();
 }
 pub unsafe fn check_precision_11() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_12));
+    return unimplemented!();
+}
+pub unsafe fn check_precision_12() -> () {
+    return unimplemented!();
 }
 pub unsafe fn check_precision_13() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_8));
+    return unimplemented!();
 }
 pub unsafe fn check_precision_14() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_15));
+    return unimplemented!();
+}
+pub unsafe fn check_precision_15() -> () {
+    return unimplemented!();
 }
 pub unsafe fn check_precision_16() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_12));
-}
-pub unsafe fn check_precision_17() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_8));
-}
-pub unsafe fn check_precision_18() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_8));
-}
-pub unsafe fn check_precision_19() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_6));
-}
-pub unsafe fn check_precision_20() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_8));
-}
-pub unsafe fn check_precision_21() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_12));
-}
-pub unsafe fn check_precision_22() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_23));
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

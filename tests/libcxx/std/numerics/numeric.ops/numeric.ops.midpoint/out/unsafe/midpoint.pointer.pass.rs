@@ -68,7 +68,7 @@ pub const anon_11_value: anon_11 = 1;
 pub struct test_macros_detail_is_same_const_volatile_double_ptr__const_volatile_double_ptr_ {}
 const _: () = assert!(!(false), "!has_midpoint<std::nullptr_t>");
 const _: () = assert!(!(false), "!has_midpoint<FuncPtr>");
-const _: () = assert!(!(false), "!has_midpoint<Incomplete*>");
+const _: () = assert!(true, "");
 const _: () = assert!(!(false), "!has_midpoint<void*>");
 const _: () = assert!(!(false), "!has_midpoint<const void*>");
 const _: () = assert!(!(false), "!has_midpoint<volatile void*>");

@@ -7,39 +7,39 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn check_required_alignment_0() {
-    let mut required_alignment: () = required_alignment_1.with(|rc| *rc.borrow());
+    let mut required_alignment: () = unimplemented!();
+    unimplemented!();
+}
+pub fn check_required_alignment_1() {
+    let mut required_alignment: () = unimplemented!();
     unimplemented!();
 }
 pub fn check_required_alignment_2() {
-    let mut required_alignment: () = required_alignment_3.with(|rc| *rc.borrow());
+    let mut required_alignment: () = unimplemented!();
+    unimplemented!();
+}
+pub fn check_required_alignment_3() {
+    let mut required_alignment: () = unimplemented!();
     unimplemented!();
 }
 pub fn check_required_alignment_4() {
-    let mut required_alignment: () = required_alignment_5.with(|rc| *rc.borrow());
+    let mut required_alignment: () = unimplemented!();
     unimplemented!();
 }
-pub fn check_required_alignment_6() {
-    let mut required_alignment: () = required_alignment_7.with(|rc| *rc.borrow());
-    unimplemented!();
-}
-pub fn check_required_alignment_8() {
-    let mut required_alignment: () = required_alignment_9.with(|rc| *rc.borrow());
-    unimplemented!();
-}
-pub fn test_10() -> () {
+pub fn test_5() -> () {
     ({ check_required_alignment_0() });
+    ({ check_required_alignment_1() });
     ({ check_required_alignment_2() });
+    ({ check_required_alignment_3() });
     ({ check_required_alignment_4() });
-    ({ check_required_alignment_6() });
-    ({ check_required_alignment_8() });
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct Empty_11 {}
+pub struct Empty_6 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct Trivial_12 {
+pub struct Trivial_7 {
     #[offset(0)]
     pub a: (),
 }
@@ -63,7 +63,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_10() });
+    ({ test_5() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

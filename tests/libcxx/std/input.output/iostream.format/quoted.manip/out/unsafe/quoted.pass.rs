@@ -7,10 +7,10 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn is_skipws_0(is: *const ()) -> () {
-    return (((unimplemented!()) & (unimplemented!())) != (0_()));
+    return ((unimplemented!()) != (0_()));
 }
 pub unsafe fn is_skipws_1(is: *const ()) -> () {
-    return (((unimplemented!()) & (unimplemented!())) != (0_()));
+    return ((unimplemented!()) != (0_()));
 }
 pub unsafe fn both_ways_2(mut p: *const ()) {
     let mut str: () = unimplemented!();

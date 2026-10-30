@@ -112,85 +112,61 @@ pub unsafe fn CheckCall_34() -> () {
 pub unsafe fn CheckCall_35() -> () {
     return unimplemented!();
 }
-pub unsafe fn CheckCall_36() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_37() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_38() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_39() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_40() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_41() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_42() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_43() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_44() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_45() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_46() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_47() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_48() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_49() -> () {
-    return unimplemented!();
-}
-pub unsafe fn CheckCall_50() -> () {
-    return unimplemented!();
-}
-pub unsafe fn do_test_51(mut func: Option<unsafe fn(()) -> ()>) {
+pub unsafe fn do_test_36(mut func: Option<unsafe fn(()) -> ()>) {
     let mut ret: () = unimplemented!();
     let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
-    let mut exp_r: () = unimplemented!();
-    let mut exp_r2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
+    let mut exp_r: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret_r(&mut ___args)
+    });
+    let mut exp_r2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret_r(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     {}
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_52(mut func: Option<unsafe fn(()) -> *mut ()>) {
+pub unsafe fn do_test_37(mut func: Option<unsafe fn(()) -> *mut ()>) {
     let mut ret: () = unimplemented!();
     let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *mut () = &mut (*unimplemented!());
-    let exp2: *mut () = &mut (*unimplemented!());
+    let exp: *mut () = &mut (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let exp2: *mut () = &mut (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     let exp_r: *mut () = &mut (unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)
@@ -211,23 +187,30 @@ pub unsafe fn do_test_52(mut func: Option<unsafe fn(()) -> *mut ()>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_53(mut func: Option<unsafe fn(()) -> *const ()>) {
+pub unsafe fn do_test_38(mut func: Option<unsafe fn(()) -> *const ()>) {
     let mut ret: () = unimplemented!();
     let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *const () = &(*unimplemented!());
-    let exp2: *const () = &(*unimplemented!());
+    let exp: *const () = &(unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let exp2: *const () = &(unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     let exp_r: *const () = &(unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)
@@ -248,23 +231,30 @@ pub unsafe fn do_test_53(mut func: Option<unsafe fn(()) -> *const ()>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_54(mut func: Option<unsafe fn(()) -> *mut ()>) {
+pub unsafe fn do_test_39(mut func: Option<unsafe fn(()) -> *mut ()>) {
     let mut ret: () = unimplemented!();
     let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *mut () = &mut (*unimplemented!());
-    let exp2: *mut () = &mut (*unimplemented!());
+    let exp: *mut () = &mut (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let exp2: *mut () = &mut (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     let exp_r: *mut () = &mut (unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)
@@ -285,23 +275,30 @@ pub unsafe fn do_test_54(mut func: Option<unsafe fn(()) -> *mut ()>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_55(mut func: Option<unsafe fn(()) -> *const ()>) {
+pub unsafe fn do_test_40(mut func: Option<unsafe fn(()) -> *const ()>) {
     let mut ret: () = unimplemented!();
     let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *const () = &(*unimplemented!());
-    let exp2: *const () = &(*unimplemented!());
+    let exp: *const () = &(unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let exp2: *const () = &(unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     let exp_r: *const () = &(unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)
@@ -322,80 +319,115 @@ pub unsafe fn do_test_55(mut func: Option<unsafe fn(()) -> *const ()>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_56(mut func: Option<unsafe fn(()) -> ()>) {
+pub unsafe fn do_test_r_41(mut func: Option<unsafe fn(()) -> ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_57(mut func: Option<unsafe fn(()) -> *mut ()>) {
+pub unsafe fn do_test_r_42(mut func: Option<unsafe fn(()) -> *mut ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_58(mut func: Option<unsafe fn(()) -> *const ()>) {
+pub unsafe fn do_test_r_43(mut func: Option<unsafe fn(()) -> *const ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_59(mut func: Option<unsafe fn(()) -> *mut ()>) {
+pub unsafe fn do_test_r_44(mut func: Option<unsafe fn(()) -> *mut ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_60(mut func: Option<unsafe fn(()) -> *const ()>) {
+pub unsafe fn do_test_r_45(mut func: Option<unsafe fn(()) -> *const ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
@@ -416,16 +448,16 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { do_test_51(Some(return_value_1)) });
-    (unsafe { do_test_52(Some(return_lvalue_2)) });
-    (unsafe { do_test_53(Some(return_const_lvalue_3)) });
-    (unsafe { do_test_54(Some(return_rvalue_4)) });
-    (unsafe { do_test_55(Some(return_const_rvalue_5)) });
-    (unsafe { do_test_r_56(Some(return_value_1)) });
-    (unsafe { do_test_r_57(Some(return_lvalue_2)) });
-    (unsafe { do_test_r_58(Some(return_const_lvalue_3)) });
-    (unsafe { do_test_r_59(Some(return_rvalue_4)) });
-    (unsafe { do_test_r_60(Some(return_const_rvalue_5)) });
+    (unsafe { do_test_36(Some(return_value_1)) });
+    (unsafe { do_test_37(Some(return_lvalue_2)) });
+    (unsafe { do_test_38(Some(return_const_lvalue_3)) });
+    (unsafe { do_test_39(Some(return_rvalue_4)) });
+    (unsafe { do_test_40(Some(return_const_rvalue_5)) });
+    (unsafe { do_test_r_41(Some(return_value_1)) });
+    (unsafe { do_test_r_42(Some(return_lvalue_2)) });
+    (unsafe { do_test_r_43(Some(return_const_lvalue_3)) });
+    (unsafe { do_test_r_44(Some(return_rvalue_4)) });
+    (unsafe { do_test_r_45(Some(return_const_rvalue_5)) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

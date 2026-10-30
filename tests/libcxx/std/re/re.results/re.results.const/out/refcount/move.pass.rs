@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -165,17 +149,17 @@ impl Default for test_allocator_void_ {
     }
 }
 pub fn operator_eq_4(
-    x: Ptr<test_allocator_std_csub_match_>,
-    y: Ptr<test_allocator_std_csub_match_>,
+    x: Ptr<test_allocator_std_sub_match_const_char_ptr__>,
+    y: Ptr<test_allocator_std_sub_match_const_char_ptr__>,
 ) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_allocator_std_csub_match__rebind_std_csub_match_ {}
+pub struct test_allocator_std_sub_match_const_char_ptr___rebind_std_sub_match_const_char_ptr__ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
-pub struct test_allocator_std_csub_match_ {
+pub struct test_allocator_std_sub_match_const_char_ptr__ {
     #[offset(0)]
     data_: (),
     #[offset(4)]
@@ -184,26 +168,28 @@ pub struct test_allocator_std_csub_match_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_std_csub_match_ {
+impl test_allocator_std_sub_match_const_char_ptr__ {
     pub fn new_1(mut data: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
-        let __this: Value<test_allocator_std_csub_match_> = Rc::new(RefCell::new(Self {
-            data_: data,
-            id_: 0_(),
-            stats_: (stats).clone(),
-        }));
-        let this: Ptr<test_allocator_std_csub_match_> = __this.as_pointer();
+        let __this: Value<test_allocator_std_sub_match_const_char_ptr__> =
+            Rc::new(RefCell::new(Self {
+                data_: data,
+                id_: 0_(),
+                stats_: (stats).clone(),
+            }));
+        let this: Ptr<test_allocator_std_sub_match_const_char_ptr__> = __this.as_pointer();
         if !((stats).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
-    pub fn copy_from(a: Ptr<test_allocator_std_csub_match_>) -> Self {
-        let __this: Value<test_allocator_std_csub_match_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_std_csub_match_> = __this.as_pointer();
+    pub fn copy_from(a: Ptr<test_allocator_std_sub_match_const_char_ptr__>) -> Self {
+        let __this: Value<test_allocator_std_sub_match_const_char_ptr__> =
+            Rc::new(RefCell::new(Self {
+                data_: a.with(|__s| __s.data_),
+                id_: a.with(|__s| __s.id_),
+                stats_: a.with(|__s| __s.stats_.clone()),
+            }));
+        let this: Ptr<test_allocator_std_sub_match_const_char_ptr__> = __this.as_pointer();
         unimplemented!();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
@@ -211,13 +197,14 @@ impl test_allocator_std_csub_match_ {
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
-    pub fn move_from(a: Ptr<test_allocator_std_csub_match_>) -> Self {
-        let __this: Value<test_allocator_std_csub_match_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_std_csub_match_> = __this.as_pointer();
+    pub fn move_from(a: Ptr<test_allocator_std_sub_match_const_char_ptr__>) -> Self {
+        let __this: Value<test_allocator_std_sub_match_const_char_ptr__> =
+            Rc::new(RefCell::new(Self {
+                data_: a.with(|__s| __s.data_),
+                id_: a.with(|__s| __s.id_),
+                stats_: a.with(|__s| __s.stats_.clone()),
+            }));
+        let this: Ptr<test_allocator_std_sub_match_const_char_ptr__> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
@@ -227,42 +214,27 @@ impl test_allocator_std_csub_match_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for test_allocator_std_csub_match_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(test_allocator_std_csub_match_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_std_csub_match_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_std_sub_match_const_char_ptr__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_std_csub_match_ {}
-impl Clone for test_allocator_std_csub_match_ {
+impl Clone for test_allocator_std_sub_match_const_char_ptr__ {
     fn clone(&self) -> Self {
-        let __src: Value<test_allocator_std_csub_match_> =
-            Rc::new(RefCell::new(test_allocator_std_csub_match_ {
+        let __src: Value<test_allocator_std_sub_match_const_char_ptr__> = Rc::new(RefCell::new(
+            test_allocator_std_sub_match_const_char_ptr__ {
                 data_: self.data_.clone(),
                 id_: self.id_.clone(),
                 stats_: self.stats_.clone(),
-            }));
-        test_allocator_std_csub_match_::copy_from(__src.as_pointer())
+            },
+        ));
+        test_allocator_std_sub_match_const_char_ptr__::copy_from(__src.as_pointer())
     }
 }
-impl Default for test_allocator_std_csub_match_ {
+impl Default for test_allocator_std_sub_match_const_char_ptr__ {
     fn default() -> Self {
         {
-            test_allocator_std_csub_match_ {
+            test_allocator_std_sub_match_const_char_ptr__ {
                 data_: unimplemented!(),
                 id_: 0_(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -271,17 +243,18 @@ impl Default for test_allocator_std_csub_match_ {
     }
 }
 pub fn operator_eq_5(
-    x: Ptr<test_allocator_std_wcsub_match_>,
-    y: Ptr<test_allocator_std_wcsub_match_>,
+    x: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__>,
+    y: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__>,
 ) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_allocator_std_wcsub_match__rebind_std_wcsub_match_ {}
+pub struct test_allocator_std_sub_match_const_wchar_t_ptr___rebind_std_sub_match_const_wchar_t_ptr__
+{}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
-pub struct test_allocator_std_wcsub_match_ {
+pub struct test_allocator_std_sub_match_const_wchar_t_ptr__ {
     #[offset(0)]
     data_: (),
     #[offset(4)]
@@ -290,26 +263,28 @@ pub struct test_allocator_std_wcsub_match_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_std_wcsub_match_ {
+impl test_allocator_std_sub_match_const_wchar_t_ptr__ {
     pub fn new_1(mut data: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
-        let __this: Value<test_allocator_std_wcsub_match_> = Rc::new(RefCell::new(Self {
-            data_: data,
-            id_: 0_(),
-            stats_: (stats).clone(),
-        }));
-        let this: Ptr<test_allocator_std_wcsub_match_> = __this.as_pointer();
+        let __this: Value<test_allocator_std_sub_match_const_wchar_t_ptr__> =
+            Rc::new(RefCell::new(Self {
+                data_: data,
+                id_: 0_(),
+                stats_: (stats).clone(),
+            }));
+        let this: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__> = __this.as_pointer();
         if !((stats).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
-    pub fn copy_from(a: Ptr<test_allocator_std_wcsub_match_>) -> Self {
-        let __this: Value<test_allocator_std_wcsub_match_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_std_wcsub_match_> = __this.as_pointer();
+    pub fn copy_from(a: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__>) -> Self {
+        let __this: Value<test_allocator_std_sub_match_const_wchar_t_ptr__> =
+            Rc::new(RefCell::new(Self {
+                data_: a.with(|__s| __s.data_),
+                id_: a.with(|__s| __s.id_),
+                stats_: a.with(|__s| __s.stats_.clone()),
+            }));
+        let this: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__> = __this.as_pointer();
         unimplemented!();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
@@ -317,13 +292,14 @@ impl test_allocator_std_wcsub_match_ {
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
-    pub fn move_from(a: Ptr<test_allocator_std_wcsub_match_>) -> Self {
-        let __this: Value<test_allocator_std_wcsub_match_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_std_wcsub_match_> = __this.as_pointer();
+    pub fn move_from(a: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__>) -> Self {
+        let __this: Value<test_allocator_std_sub_match_const_wchar_t_ptr__> =
+            Rc::new(RefCell::new(Self {
+                data_: a.with(|__s| __s.data_),
+                id_: a.with(|__s| __s.id_),
+                stats_: a.with(|__s| __s.stats_.clone()),
+            }));
+        let this: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
@@ -333,42 +309,27 @@ impl test_allocator_std_wcsub_match_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for test_allocator_std_wcsub_match_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(test_allocator_std_wcsub_match_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_std_wcsub_match_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_std_sub_match_const_wchar_t_ptr__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_std_wcsub_match_ {}
-impl Clone for test_allocator_std_wcsub_match_ {
+impl Clone for test_allocator_std_sub_match_const_wchar_t_ptr__ {
     fn clone(&self) -> Self {
-        let __src: Value<test_allocator_std_wcsub_match_> =
-            Rc::new(RefCell::new(test_allocator_std_wcsub_match_ {
+        let __src: Value<test_allocator_std_sub_match_const_wchar_t_ptr__> = Rc::new(RefCell::new(
+            test_allocator_std_sub_match_const_wchar_t_ptr__ {
                 data_: self.data_.clone(),
                 id_: self.id_.clone(),
                 stats_: self.stats_.clone(),
-            }));
-        test_allocator_std_wcsub_match_::copy_from(__src.as_pointer())
+            },
+        ));
+        test_allocator_std_sub_match_const_wchar_t_ptr__::copy_from(__src.as_pointer())
     }
 }
-impl Default for test_allocator_std_wcsub_match_ {
+impl Default for test_allocator_std_sub_match_const_wchar_t_ptr__ {
     fn default() -> Self {
         {
-            test_allocator_std_wcsub_match_ {
+            test_allocator_std_sub_match_const_wchar_t_ptr__ {
                 data_: unimplemented!(),
                 id_: 0_(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -397,7 +358,7 @@ pub fn test_6(a: Ptr<()>) {
     const _: () = assert!(true, "");;
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow_mut()).clone()));
+    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -406,25 +367,25 @@ pub fn test_7(a: Ptr<()>) {
     const _: () = assert!(true, "");;
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow_mut()).clone()));
+    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(a: Ptr<test_allocator_std_csub_match_>) {
+pub fn test_8(a: Ptr<test_allocator_std_sub_match_const_char_ptr__>) {
     const _: () = assert!(true, "");;
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow_mut()).clone()));
+    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_9(a: Ptr<test_allocator_std_wcsub_match_>) {
+pub fn test_9(a: Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__>) {
     const _: () = assert!(true, "");;
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow_mut()).clone()));
+    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -460,15 +421,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_7(_a.as_pointer())
     });
     ({
-        let _a: Value<test_allocator_std_csub_match_> = Rc::new(RefCell::new(
-            test_allocator_std_csub_match_::new_1({ 3_() }, { (alloc_stats.as_pointer()) }),
+        let _a: Value<test_allocator_std_sub_match_const_char_ptr__> = Rc::new(RefCell::new(
+            test_allocator_std_sub_match_const_char_ptr__::new_1({ 3_() }, {
+                (alloc_stats.as_pointer())
+            }),
         ));
         test_8(_a.as_pointer())
     });
     unimplemented!();
     ({
-        let _a: Value<test_allocator_std_wcsub_match_> = Rc::new(RefCell::new(
-            test_allocator_std_wcsub_match_::new_1({ 3_() }, { (alloc_stats.as_pointer()) }),
+        let _a: Value<test_allocator_std_sub_match_const_wchar_t_ptr__> = Rc::new(RefCell::new(
+            test_allocator_std_sub_match_const_wchar_t_ptr__::new_1({ 3_() }, {
+                (alloc_stats.as_pointer())
+            }),
         ));
         test_9(_a.as_pointer())
     });
@@ -509,7 +474,7 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
-pub trait test_allocator_std_csub_match_Impl {
+pub trait test_allocator_std_sub_match_const_char_ptr__Impl {
     fn destructor(&self);
     fn address_11(&self, x: ()) -> Ptr<()> {
         unimplemented!()
@@ -517,7 +482,7 @@ pub trait test_allocator_std_csub_match_Impl {
     fn address_12(&self, x: ()) -> Ptr<()> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, p: Ptr<()>, s: ());
@@ -532,7 +497,9 @@ pub trait test_allocator_std_csub_match_Impl {
         unimplemented!()
     }
 }
-impl test_allocator_std_csub_match_Impl for Ptr<test_allocator_std_csub_match_> {
+impl test_allocator_std_sub_match_const_char_ptr__Impl
+    for Ptr<test_allocator_std_sub_match_const_char_ptr__>
+{
     fn destructor(&self) {
         unimplemented!();
         unimplemented!();
@@ -563,7 +530,7 @@ impl test_allocator_std_csub_match_Impl for Ptr<test_allocator_std_csub_match_> 
         };
     }
 }
-pub trait test_allocator_std_wcsub_match_Impl {
+pub trait test_allocator_std_sub_match_const_wchar_t_ptr__Impl {
     fn destructor(&self);
     fn address_11(&self, x: ()) -> Ptr<()> {
         unimplemented!()
@@ -571,7 +538,7 @@ pub trait test_allocator_std_wcsub_match_Impl {
     fn address_12(&self, x: ()) -> Ptr<()> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, p: Ptr<()>, s: ());
@@ -586,7 +553,9 @@ pub trait test_allocator_std_wcsub_match_Impl {
         unimplemented!()
     }
 }
-impl test_allocator_std_wcsub_match_Impl for Ptr<test_allocator_std_wcsub_match_> {
+impl test_allocator_std_sub_match_const_wchar_t_ptr__Impl
+    for Ptr<test_allocator_std_sub_match_const_wchar_t_ptr__>
+{
     fn destructor(&self) {
         unimplemented!();
         unimplemented!();

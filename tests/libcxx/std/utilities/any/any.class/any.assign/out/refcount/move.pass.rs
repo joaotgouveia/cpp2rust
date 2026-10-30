@@ -41,23 +41,11 @@ impl TypeID {
         }
     }
 }
-impl std::cmp::PartialEq for TypeID {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(TypeID {
-                    m_id: self.m_id.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TypeID {
-                    m_id: other.m_id.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for TypeID {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for TypeID {}
 thread_local!(
     static id_3: Value<TypeID> = Rc::new(RefCell::new(TypeID::new({
         Ptr::<()>::from_string_literal(b"const TypeID &makeTypeIDImp() [T = ArgumentListID<>]")
@@ -808,20 +796,20 @@ impl Default for small_tracked_t {
 }
 const _: () = assert!(true, "IsSmallObject<small_tracked_t>::value");
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
-#[byte_size(48)]
+#[byte_size(32)]
 pub struct large_tracked_t {
     #[offset(0)]
     #[byte_size(8)]
     pub arg_types: Ptr<TypeID>,
     #[offset(8)]
-    #[byte_size(36)]
+    #[byte_size(20)]
     pub dummy: Box<[()]>,
 }
 impl large_tracked_t {
     pub fn new() -> Self {
         let __this: Value<large_tracked_t> = Rc::new(RefCell::new(Self {
             arg_types: ({ makeArgumentID_12() }),
-            dummy: (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            dummy: (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         }));
         let this: Ptr<large_tracked_t> = __this.as_pointer();
         array_elem!(this, dummy, 0_()).write(42_());
@@ -830,13 +818,13 @@ impl large_tracked_t {
     pub fn copy_from(_a0: Ptr<large_tracked_t>) -> Self {
         Self {
             arg_types: ({ makeArgumentID_15() }),
-            dummy: (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            dummy: (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         }
     }
     pub fn move_from(_a0: Ptr<large_tracked_t>) -> Self {
         Self {
             arg_types: ({ makeArgumentID_16() }),
-            dummy: (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            dummy: (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         }
     }
 }
@@ -870,12 +858,12 @@ pub fn test_move_assign_72() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         ({ assertContains_28(a.as_pointer(), 2_()) });
         if unimplemented!() {
             ({ assertContains_28(a2.as_pointer(), 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -895,12 +883,12 @@ pub fn test_move_assign_73() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         ({ assertContains_29(a.as_pointer(), 2_()) });
         if unimplemented!() {
             ({ assertContains_29(a2.as_pointer(), 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -920,12 +908,12 @@ pub fn test_move_assign_74() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         ({ assertContains_30(a.as_pointer(), 2_()) });
         if unimplemented!() {
             ({ assertContains_30(a2.as_pointer(), 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -945,12 +933,12 @@ pub fn test_move_assign_75() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         ({ assertContains_31(a.as_pointer(), 2_()) });
         if unimplemented!() {
             ({ assertContains_31(a2.as_pointer(), 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -963,12 +951,12 @@ pub fn test_move_assign_empty_76() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         ({ assertContains_31(a.as_pointer(), 1_()) });
         if unimplemented!() {
             ({ assertContains_31(a2.as_pointer(), 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     {
@@ -990,12 +978,12 @@ pub fn test_move_assign_empty_77() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         ({ assertContains_30(a.as_pointer(), 1_()) });
         if unimplemented!() {
             ({ assertContains_30(a2.as_pointer(), 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     {

@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn foo_0(a: *const i32) -> *const i32 {
+pub unsafe fn foo_0(a: *const ()) -> *const () {
     return a;
 }
 pub fn main() {
@@ -15,10 +15,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = Vec::from([1, 2]);
-    let b: *const i32 = (unsafe { foo_0(&(*v.begin().iter_deref())) });
-    v.clear();
+unsafe fn main_0() -> () {
+    let mut v: std_vector_int__std_allocator_int__ =
+        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let b: *const () = (unsafe { foo_0(&(*(unsafe { v.begin_26() }))) });
+    (unsafe { v.clear() });
     return (*b);
 }
 pub unsafe fn __cpp2rust_init_globals() {}

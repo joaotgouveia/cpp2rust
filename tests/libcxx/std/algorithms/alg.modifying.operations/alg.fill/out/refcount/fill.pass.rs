@@ -6,24 +6,18 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_char__signed_char_ {
     #[offset(0)]
     data_: (),
 }
 impl sized_allocator_bool__unsigned_char__signed_char_ {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 0_());
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
-impl Default for sized_allocator_bool__unsigned_char__signed_char_ {
-    fn default() -> Self {
-        { sized_allocator_bool__unsigned_char__signed_char_::new(None) }
-    }
-}
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_char__signed_char_>) -> Self {
         Self {
             data_: a.with(|__s| __s.data_),
@@ -32,29 +26,23 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+pub struct sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     #[offset(0)]
     data_: (),
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_short__short_ {
     #[offset(0)]
     data_: (),
 }
 impl sized_allocator_bool__unsigned_short__short_ {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 0_());
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
-impl Default for sized_allocator_bool__unsigned_short__short_ {
-    fn default() -> Self {
-        { sized_allocator_bool__unsigned_short__short_::new(None) }
-    }
-}
-impl sized_allocator_unsigned_short__unsigned_short__short_ {
+impl sized_allocator_unsigned_long__unsigned_short__short_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_short__short_>) -> Self {
         Self {
             data_: a.with(|__s| __s.data_),
@@ -63,29 +51,23 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct sized_allocator_unsigned_short__unsigned_short__short_ {
+pub struct sized_allocator_unsigned_long__unsigned_short__short_ {
     #[offset(0)]
     data_: (),
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+impl sized_allocator_unsigned_long__unsigned_short__short_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_int__int_ {
     #[offset(0)]
     data_: (),
 }
 impl sized_allocator_bool__unsigned_int__int_ {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 0_());
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
-impl Default for sized_allocator_bool__unsigned_int__int_ {
-    fn default() -> Self {
-        { sized_allocator_bool__unsigned_int__int_::new(None) }
-    }
-}
-impl sized_allocator_unsigned_int__unsigned_int__int_ {
+impl sized_allocator_unsigned_long__unsigned_int__int_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_int__int_>) -> Self {
         Self {
             data_: a.with(|__s| __s.data_),
@@ -94,26 +76,20 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct sized_allocator_unsigned_int__unsigned_int__int_ {
+pub struct sized_allocator_unsigned_long__unsigned_int__int_ {
     #[offset(0)]
     data_: (),
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+impl sized_allocator_unsigned_long__unsigned_int__int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_long__long_ {
     #[offset(0)]
     data_: (),
 }
 impl sized_allocator_bool__unsigned_long__long_ {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 0_());
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
-    }
-}
-impl Default for sized_allocator_bool__unsigned_long__long_ {
-    fn default() -> Self {
-        { sized_allocator_bool__unsigned_long__long_::new(None) }
     }
 }
 impl sized_allocator_unsigned_long__unsigned_long__long_ {
@@ -130,62 +106,6 @@ pub struct sized_allocator_unsigned_long__unsigned_long__long_ {
     data_: (),
 }
 impl sized_allocator_unsigned_long__unsigned_long__long_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_bool_ptr__unsigned_char__signed_char_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_bool_ptr__unsigned_char__signed_char_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_const_bool_ptr__unsigned_char__signed_char_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_const_bool_ptr__unsigned_char__signed_char_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_bool_ptr__unsigned_short__short_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_bool_ptr__unsigned_short__short_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_const_bool_ptr__unsigned_short__short_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_const_bool_ptr__unsigned_short__short_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_bool_ptr__unsigned_int__int_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_bool_ptr__unsigned_int__int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_const_bool_ptr__unsigned_int__int_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_const_bool_ptr__unsigned_int__int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_bool_ptr__unsigned_long__long_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_bool_ptr__unsigned_long__long_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(4)]
-pub struct sized_allocator_const_bool_ptr__unsigned_long__long_ {
-    #[offset(0)]
-    data_: (),
-}
-impl sized_allocator_const_bool_ptr__unsigned_long__long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(1)]
 pub struct support_double_move_tracker {
@@ -327,7 +247,7 @@ pub fn for_each_2(
     });
 }
 pub fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: (), mut _a3: (), mut _a4: ()) {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -337,12 +257,19 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -352,12 +279,19 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_ne_3(x: Ptr<forward_iterator_char_ptr_>, y: Ptr<forward_iterator_char_ptr_>) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_char_ptr_ {
     #[offset(0)]
@@ -384,7 +318,7 @@ impl forward_iterator_char_ptr_ {
 pub fn operator_ne_4(x: Ptr<forward_iterator_int_ptr_>, y: Ptr<forward_iterator_int_ptr_>) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_int_ptr_ {
     #[offset(0)]
@@ -414,7 +348,7 @@ pub fn operator_ne_5(
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_char_ptr_ {
     #[offset(0)]
@@ -444,7 +378,7 @@ pub fn operator_ne_6(
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_int_ptr_ {
     #[offset(0)]
@@ -468,13 +402,13 @@ impl bidirectional_iterator_int_ptr_ {
         }
     }
 }
-pub fn operator_sub_7(
-    mut x: random_access_iterator_char_ptr_,
-    mut y: random_access_iterator_char_ptr_,
+pub fn operator_ne_7(
+    x: Ptr<random_access_iterator_char_ptr_>,
+    y: Ptr<random_access_iterator_char_ptr_>,
 ) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_char_ptr_ {
     #[offset(0)]
@@ -498,13 +432,13 @@ impl random_access_iterator_char_ptr_ {
         }
     }
 }
-pub fn operator_sub_8(
-    mut x: random_access_iterator_int_ptr_,
-    mut y: random_access_iterator_int_ptr_,
+pub fn operator_ne_8(
+    x: Ptr<random_access_iterator_int_ptr_>,
+    y: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -528,7 +462,7 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -538,18 +472,25 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub fn operator_sub_9(
-    mut x: contiguous_iterator_char_ptr_,
-    mut y: contiguous_iterator_char_ptr_,
+pub fn operator_ne_9(
+    x: Ptr<contiguous_iterator_char_ptr_>,
+    y: Ptr<contiguous_iterator_char_ptr_>,
 ) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_char_ptr_ {
     #[offset(0)]
@@ -573,13 +514,13 @@ impl contiguous_iterator_char_ptr_ {
         }
     }
 }
-pub fn operator_sub_10(
-    mut x: contiguous_iterator_int_ptr_,
-    mut y: contiguous_iterator_int_ptr_,
+pub fn operator_ne_10(
+    x: Ptr<contiguous_iterator_int_ptr_>,
+    y: Ptr<contiguous_iterator_int_ptr_>,
 ) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_int_ptr_ {
     #[offset(0)]
@@ -682,23 +623,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_11(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_11(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -785,52 +714,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_17(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_17(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_16(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_16(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -850,44 +743,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -968,21 +834,41 @@ pub fn test_vector_bool_28(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut in_: () = unimplemented!();
-            let mut expected: () = unimplemented!();
-            unimplemented!();
+            let __rhs = {
+                unimplemented!() = false;
+                unimplemented!()
+            };
+            unimplemented!() = __rhs;
             unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
+            let __rhs = {
+                unimplemented!() = false;
+                unimplemented!()
+            };
+            unimplemented!() = __rhs;
             unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut in_: () = unimplemented!();
+            let mut expected: () = unimplemented!();
+            let __rhs = {
+                let __rhs = {
+                    let __rhs = {
+                        unimplemented!() = false;
+                        unimplemented!()
+                    };
+                    unimplemented!() = __rhs;
+                    unimplemented!()
+                };
+                unimplemented!() = __rhs;
+                unimplemented!()
+            };
+            unimplemented!() = __rhs;
             unimplemented!();
             unimplemented!();
         }
@@ -1474,6 +1360,10 @@ pub trait bidirectional_iterator_char_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_char_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_char_ptr_>,
+    ) -> Ptr<bidirectional_iterator_char_ptr_>;
 }
 impl bidirectional_iterator_char_ptr_Impl for Ptr<bidirectional_iterator_char_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1481,6 +1371,17 @@ impl bidirectional_iterator_char_ptr_Impl for Ptr<bidirectional_iterator_char_pt
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_char_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_char_ptr_>,
+    ) -> Ptr<bidirectional_iterator_char_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1496,6 +1397,10 @@ pub trait bidirectional_iterator_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_>;
 }
 impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1503,6 +1408,17 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1533,6 +1449,10 @@ pub trait contiguous_iterator_char_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_char_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_char_ptr_>,
+    ) -> Ptr<contiguous_iterator_char_ptr_>;
 }
 impl contiguous_iterator_char_ptr_Impl for Ptr<contiguous_iterator_char_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1540,6 +1460,17 @@ impl contiguous_iterator_char_ptr_Impl for Ptr<contiguous_iterator_char_ptr_> {
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_char_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_char_ptr_>,
+    ) -> Ptr<contiguous_iterator_char_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1570,6 +1501,10 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_>;
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1577,6 +1512,17 @@ impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1590,8 +1536,24 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -1602,8 +1564,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -1683,6 +1661,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -1691,6 +1673,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_char_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -1698,6 +1691,7 @@ pub trait forward_iterator_char_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_char_ptr_ {
         unimplemented!()
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_char_ptr_>) -> Ptr<forward_iterator_char_ptr_>;
 }
 impl forward_iterator_char_ptr_Impl for Ptr<forward_iterator_char_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1707,6 +1701,14 @@ impl forward_iterator_char_ptr_Impl for Ptr<forward_iterator_char_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_char_ptr_>) -> Ptr<forward_iterator_char_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -1714,6 +1716,7 @@ pub trait forward_iterator_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_>;
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1721,6 +1724,14 @@ impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1757,6 +1768,10 @@ pub trait random_access_iterator_char_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_char_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_char_ptr_>,
+    ) -> Ptr<random_access_iterator_char_ptr_>;
 }
 impl random_access_iterator_char_ptr_Impl for Ptr<random_access_iterator_char_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1764,6 +1779,17 @@ impl random_access_iterator_char_ptr_Impl for Ptr<random_access_iterator_char_pt
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_char_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_char_ptr_>,
+    ) -> Ptr<random_access_iterator_char_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1788,6 +1814,10 @@ pub trait random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_>;
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -1795,6 +1825,17 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -1912,137 +1953,17 @@ impl sized_allocator_bool__unsigned_short__short_Impl
     for Ptr<sized_allocator_bool__unsigned_short__short_>
 {
 }
-pub trait sized_allocator_bool_ptr__unsigned_char__signed_char_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_bool_ptr__unsigned_char__signed_char_Impl
-    for Ptr<sized_allocator_bool_ptr__unsigned_char__signed_char_>
-{
-}
-pub trait sized_allocator_bool_ptr__unsigned_int__int_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_bool_ptr__unsigned_int__int_Impl
-    for Ptr<sized_allocator_bool_ptr__unsigned_int__int_>
-{
-}
-pub trait sized_allocator_bool_ptr__unsigned_long__long_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_bool_ptr__unsigned_long__long_Impl
-    for Ptr<sized_allocator_bool_ptr__unsigned_long__long_>
-{
-}
-pub trait sized_allocator_bool_ptr__unsigned_short__short_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_bool_ptr__unsigned_short__short_Impl
-    for Ptr<sized_allocator_bool_ptr__unsigned_short__short_>
-{
-}
-pub trait sized_allocator_const_bool_ptr__unsigned_char__signed_char_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_const_bool_ptr__unsigned_char__signed_char_Impl
-    for Ptr<sized_allocator_const_bool_ptr__unsigned_char__signed_char_>
-{
-}
-pub trait sized_allocator_const_bool_ptr__unsigned_int__int_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_const_bool_ptr__unsigned_int__int_Impl
-    for Ptr<sized_allocator_const_bool_ptr__unsigned_int__int_>
-{
-}
-pub trait sized_allocator_const_bool_ptr__unsigned_long__long_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_const_bool_ptr__unsigned_long__long_Impl
-    for Ptr<sized_allocator_const_bool_ptr__unsigned_long__long_>
-{
-}
-pub trait sized_allocator_const_bool_ptr__unsigned_short__short_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-}
-impl sized_allocator_const_bool_ptr__unsigned_short__short_Impl
-    for Ptr<sized_allocator_const_bool_ptr__unsigned_short__short_>
-{
-}
-pub trait sized_allocator_unsigned_char__unsigned_char__signed_char_Impl {
+pub trait sized_allocator_unsigned_long__unsigned_char__signed_char_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
     fn max_size(&self) -> ();
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_Impl
-    for Ptr<sized_allocator_unsigned_char__unsigned_char__signed_char_>
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_Impl
+    for Ptr<sized_allocator_unsigned_long__unsigned_char__signed_char_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         if (n
-            > ({ sized_allocator_unsigned_char__unsigned_char__signed_char_Impl::max_size(self) }))
+            > ({ sized_allocator_unsigned_long__unsigned_char__signed_char_Impl::max_size(self) }))
         {
             unimplemented!();
         }
@@ -2055,16 +1976,16 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_Impl
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-pub trait sized_allocator_unsigned_int__unsigned_int__int_Impl {
+pub trait sized_allocator_unsigned_long__unsigned_int__int_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
     fn max_size(&self) -> ();
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_Impl
-    for Ptr<sized_allocator_unsigned_int__unsigned_int__int_>
+impl sized_allocator_unsigned_long__unsigned_int__int_Impl
+    for Ptr<sized_allocator_unsigned_long__unsigned_int__int_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
-        if (n > ({ sized_allocator_unsigned_int__unsigned_int__int_Impl::max_size(self) })) {
+        if (n > ({ sized_allocator_unsigned_long__unsigned_int__int_Impl::max_size(self) })) {
             unimplemented!();
         }
         return unimplemented!();
@@ -2097,16 +2018,16 @@ impl sized_allocator_unsigned_long__unsigned_long__long_Impl
         return (unimplemented!() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-pub trait sized_allocator_unsigned_short__unsigned_short__short_Impl {
+pub trait sized_allocator_unsigned_long__unsigned_short__short_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
     fn max_size(&self) -> ();
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_Impl
-    for Ptr<sized_allocator_unsigned_short__unsigned_short__short_>
+impl sized_allocator_unsigned_long__unsigned_short__short_Impl
+    for Ptr<sized_allocator_unsigned_long__unsigned_short__short_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
-        if (n > ({ sized_allocator_unsigned_short__unsigned_short__short_Impl::max_size(self) })) {
+        if (n > ({ sized_allocator_unsigned_long__unsigned_short__short_Impl::max_size(self) })) {
             unimplemented!();
         }
         return unimplemented!();

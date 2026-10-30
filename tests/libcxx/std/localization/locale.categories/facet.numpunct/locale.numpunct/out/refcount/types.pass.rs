@@ -30,7 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         unimplemented!();
-        let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
+        let f: Ptr<()> = unimplemented!();
         (&(*f.upgrade().deref()));
         {
             &(unimplemented!());
@@ -50,7 +50,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         unimplemented!();
-        let f: Ptr<()> = ({ use_facet_1(l.as_pointer()) });
+        let f: Ptr<()> = unimplemented!();
         (&(*f.upgrade().deref()));
         {
             &(unimplemented!());

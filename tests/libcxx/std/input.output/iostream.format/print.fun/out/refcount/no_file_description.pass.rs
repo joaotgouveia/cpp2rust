@@ -8,59 +8,43 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_print_0() {
     let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut file: *mut ::libc::FILE = ({
-        let ___s: () = (unimplemented!() as Ptr<()>).to_any();
-        let ___len: () = unimplemented!();
-        fmemopen_1(___s, ___len, Ptr::<()>::from_string_literal(b"wb"))
-    });
+    let mut file: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut pos: () = libc::ftell(file) as i64;
-    libc::fclose(file);
+    let mut pos: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_println_2() {
+pub fn test_println_1() {
     let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut file: *mut ::libc::FILE = ({
-        let ___s: () = (unimplemented!() as Ptr<()>).to_any();
-        let ___len: () = unimplemented!();
-        fmemopen_1(___s, ___len, Ptr::<()>::from_string_literal(b"wb"))
-    });
+    let mut file: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut pos: () = libc::ftell(file) as i64;
-    libc::fclose(file);
+    let mut pos: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_println_blank_line_3() {
+pub fn test_println_blank_line_2() {
     let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut file: *mut ::libc::FILE = ({
-        let ___s: () = (unimplemented!() as Ptr<()>).to_any();
-        let ___len: () = unimplemented!();
-        fmemopen_1(___s, ___len, Ptr::<()>::from_string_literal(b"wb"))
-    });
+    let mut file: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut pos: () = libc::ftell(file) as i64;
-    libc::fclose(file);
+    let mut pos: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_vprint_unicode_4() {}
-pub fn test_vprint_nonunicode_5() {
+pub fn test_vprint_unicode_3() {}
+pub fn test_vprint_nonunicode_4() {
     let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut file: *mut ::libc::FILE = ({
-        let ___s: () = (unimplemented!() as Ptr<()>).to_any();
-        let ___len: () = unimplemented!();
-        fmemopen_1(___s, ___len, Ptr::<()>::from_string_literal(b"wb"))
-    });
+    let mut file: () = unimplemented!();
     unimplemented!();
     let mut c: () = ('!' as ());
     unimplemented!();
-    let mut pos: () = libc::ftell(file) as i64;
-    libc::fclose(file);
+    let mut pos: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -85,10 +69,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_print_0() });
-    ({ test_println_2() });
-    ({ test_println_blank_line_3() });
-    ({ test_vprint_unicode_4() });
-    ({ test_vprint_nonunicode_5() });
+    ({ test_println_1() });
+    ({ test_println_blank_line_2() });
+    ({ test_vprint_unicode_3() });
+    ({ test_vprint_nonunicode_4() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

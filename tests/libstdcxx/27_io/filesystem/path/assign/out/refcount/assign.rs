@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn compare_paths_0(p1: Ptr<()>, p2: Ptr<()>) {
-    if unimplemented!() {
+    if !(unimplemented!()) {
         {
             unimplemented!();
             &(unimplemented!())
         };
     }
-    if unimplemented!() {
+    if !(unimplemented!()) {
         {
             unimplemented!();
             &(unimplemented!())
@@ -131,7 +131,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if (pos != npos_4.with(|rc| *rc.borrow())) {
+    if (pos != unimplemented!()) {
         unimplemented!();
     }
     unimplemented!();
@@ -141,7 +141,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
     unimplemented!();
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let mut fd: () = ({ mkstemp_6((unimplemented!())) });
+    let mut fd: () = unimplemented!();
     if (fd == -1_()) {
         {
             unimplemented!();
@@ -193,23 +193,21 @@ impl Default for __gnu_test_scoped_file {
         { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub fn permissions_are_testable_7(print_msg: Option<()>) -> () {
+pub fn permissions_are_testable_5(print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| true);
-    let mut testable: () = false;
+    let testable: Value<()> = Rc::new(RefCell::new(false));
     if (unimplemented!() != 0_()) {
-        testable = true;
+        (*testable.borrow_mut()) = true;
     }
-    if (print_msg) && (!(testable)) {
-        libc::puts(Ptr::<()>::from_string_literal(
-            b"Skipping tests that depend on filesystem permissions",
-        ));
+    if (print_msg) && (!(*testable.borrow())) {
+        unimplemented!();
     }
-    return testable;
+    return (*testable.borrow());
 }
 thread_local!(
-    static counter_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static counter_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-pub fn test01_8() {
+pub fn test01_6() {
     'loop_: for s in IterRange::new(
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -231,7 +229,7 @@ pub fn test01_8() {
         ({ compare_paths_0(p0.as_pointer(), p4.as_pointer()) });
     }
 }
-pub fn test02_9() {
+pub fn test02_7() {
     'loop_: for s in IterRange::new(
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -270,8 +268,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_8() });
-    ({ test02_9() });
+    ({ test01_6() });
+    ({ test02_7() });
     0
 }
 pub trait __gnu_test_scoped_fileImpl {

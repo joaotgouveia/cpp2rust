@@ -23,23 +23,11 @@ impl test_less_int_ {
         Self { data_: data }
     }
 }
-impl std::cmp::PartialEq for test_less_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(test_less_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_less_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_less_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_less_int_ {}
 impl Default for test_less_int_ {
     fn default() -> Self {
         { test_less_int_::new_1() }

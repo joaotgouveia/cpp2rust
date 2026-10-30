@@ -10,7 +10,7 @@ pub fn test_0() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let mut r: () = is_always_lock_free_1.with(|rc| *rc.borrow());
+        let mut r: () = unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -27,11 +27,11 @@ pub fn test_0() {
         }
     }
 }
-pub fn test_2() {
+pub fn test_1() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let mut r: () = is_always_lock_free_3.with(|rc| *rc.borrow());
+        let mut r: () = unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -69,7 +69,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0() });
-    ({ test_2() });
+    ({ test_1() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

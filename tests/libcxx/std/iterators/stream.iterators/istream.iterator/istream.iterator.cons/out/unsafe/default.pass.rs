@@ -45,8 +45,9 @@ impl test_trivial_S__false_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_trivial_std_string__false_ {}
-impl test_trivial_std_string__false_ {
+pub struct test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_
+{}
+impl test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ {
     pub unsafe fn operator_call(&self) {}
 }
 pub fn main() {
@@ -78,7 +79,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     });
     (unsafe { test_trivial_S__false_::operator_call(&<test_trivial_S__false_>::default()) });
     (unsafe {
-        test_trivial_std_string__false_::operator_call(&<test_trivial_std_string__false_>::default())
+        test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ :: operator_call ( & <test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ >::default()  , )
     });
     return 0_();
 }

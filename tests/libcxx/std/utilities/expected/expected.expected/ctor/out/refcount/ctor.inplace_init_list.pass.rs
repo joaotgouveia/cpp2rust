@@ -55,44 +55,16 @@ impl MoveOnly {
         __this
     }
 }
-impl std::cmp::Ord for MoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_6(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for MoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for MoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for MoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for MoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for MoveOnly {}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -145,44 +117,16 @@ impl TrivialMoveOnly {
         }
     }
 }
-impl std::cmp::Ord for TrivialMoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_13(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for TrivialMoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_9(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for TrivialMoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TrivialMoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for TrivialMoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for TrivialMoveOnly {}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -249,11 +193,7 @@ impl TailClobberer_0_ {
         }));
         let this: Ptr<TailClobberer_0_> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 2usize;
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, b).write(false);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -268,17 +208,11 @@ impl TailClobberer_0_ {
         TailClobberer_0_::new_1()
     }
 }
-impl std::cmp::PartialEq for TailClobberer_0_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_15(
-                Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
-                Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for TailClobberer_0_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_15(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for TailClobberer_0_ {}
 impl Default for TailClobberer_0_ {
     fn default() -> Self {
         { TailClobberer_0_::new_1() }
@@ -336,11 +270,7 @@ impl BoolWithPadding {
         }));
         let this: Ptr<BoolWithPadding> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 8usize;
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, val_).write(val);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -383,11 +313,7 @@ impl IntWithoutPadding {
         }));
         let this: Ptr<IntWithoutPadding> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 4usize;
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, val_).write(val);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -448,7 +374,7 @@ impl Data__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(32)]
 pub struct Data__ {
     #[offset(0)]
@@ -457,6 +383,14 @@ pub struct Data__ {
     #[offset(24)]
     #[byte_size(1)]
     pub tuple_: (),
+}
+impl Data__ {
+    pub fn move_from(_a0: Ptr<Data__>) -> Self {
+        Self {
+            vec__: unimplemented!(),
+            tuple_: unimplemented!(),
+        }
+    }
 }
 impl Default for Data__ {
     fn default() -> Self {
@@ -522,7 +456,7 @@ impl Data_int_ref__int_refref__MoveOnly_ {
         }
     }
 }
-pub fn test_17() -> () {
+pub fn test_16() -> () {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -555,7 +489,7 @@ pub fn test_17() -> () {
     }
     return true;
 }
-pub fn testException_18() {}
+pub fn testException_17() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -576,9 +510,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_17() });
+    ({ test_16() });
     const _: () = assert!(true, "test()");;
-    ({ testException_18() });
+    ({ testException_17() });
     return 0_();
 }
 pub trait BoolWithPaddingImpl {
@@ -596,7 +530,17 @@ pub trait Data_MoveOnly_Impl {
 impl Data_MoveOnly_Impl for Ptr<Data_MoveOnly_> {
     fn move_assign(&self, _a0: Ptr<Data_MoveOnly_>) -> Ptr<Data_MoveOnly_> {
         unimplemented!();
-        field!((*self), tuple_).write({ { (*_a0.upgrade().deref()).tuple_.clone() } });
+        unimplemented!();
+        return (*self).clone();
+    }
+}
+pub trait Data__Impl {
+    fn move_assign(&self, _a0: Ptr<Data__>) -> Ptr<Data__>;
+}
+impl Data__Impl for Ptr<Data__> {
+    fn move_assign(&self, _a0: Ptr<Data__>) -> Ptr<Data__> {
+        unimplemented!();
+        unimplemented!();
         return (*self).clone();
     }
 }
@@ -612,7 +556,7 @@ impl Data_int_ref__int_refref__MoveOnly_Impl for Ptr<Data_int_ref__int_refref__M
         _a0: Ptr<Data_int_ref__int_refref__MoveOnly_>,
     ) -> Ptr<Data_int_ref__int_refref__MoveOnly_> {
         unimplemented!();
-        field!((*self), tuple_).write({ { (*_a0.upgrade().deref()).tuple_.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

@@ -85,7 +85,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut source: () = unimplemented!();
-        let mut opt: () = unimplemented!();
+        let mut opt: () = source.clone();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

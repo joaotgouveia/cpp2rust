@@ -67,11 +67,7 @@ impl __gnu_test_copy_constructor {
     pub fn mark_call() {
         (*count__1.with(Value::clone).borrow_mut()).postfix_inc();
         if (count__1.with(|rc| *rc.borrow()) == throw_on__2.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"copy_constructor::mark_call",
-                ))
-            });
+            unimplemented!();
         }
     }
     pub fn reset() {
@@ -87,24 +83,20 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub fn count() -> () {
-        return count__4.with(|rc| *rc.borrow());
+        return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__4.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__4.with(|rc| *rc.borrow()) == throw_on__5.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"assignment_operator::mark_call",
-                ))
-            });
+        (*count__3.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__3.with(|rc| *rc.borrow()) == throw_on__4.with(|rc| *rc.borrow())) {
+            unimplemented!();
         }
     }
     pub fn reset() {
-        count__4.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__5.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__5.with(|rc| *rc.borrow_mut() = count);
+        throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -112,13 +104,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub fn count() -> () {
-        return _M_count_6.with(|rc| *rc.borrow());
+        return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*_M_count_6.with(Value::clone).borrow_mut()).postfix_inc();
+        (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -132,7 +124,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
         let mut id: () =
-            id.unwrap_or_else(|| (*next_id__7.with(Value::clone).borrow_mut()).postfix_dec());
+            id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
@@ -161,65 +153,16 @@ impl __gnu_test_copy_tracker {
         ({ __gnu_test_destructor::reset() });
     }
 }
-impl std::cmp::Ord for __gnu_test_copy_tracker {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for __gnu_test_copy_tracker {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for __gnu_test_copy_tracker {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for __gnu_test_copy_tracker {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_9(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for __gnu_test_copy_tracker {}
 impl Clone for __gnu_test_copy_tracker {
     fn clone(&self) -> Self {
         let __src: Value<__gnu_test_copy_tracker> =
@@ -235,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_9(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -251,7 +194,7 @@ pub struct __gnu_test_semaphore {
     #[offset(0)]
     sem_set_: (),
     #[offset(4)]
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -267,7 +210,7 @@ pub struct testcase_cyl_bessel_k_double_ {
     pub f: (),
 }
 thread_local!(
-    pub static data007_10: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data007_9: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 1.5415067512483025_f64,
@@ -392,10 +335,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler007_11: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler007_10: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data008_12: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data008_11: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 1.7144912564234513_f64,
@@ -520,10 +463,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler008_13: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler008_12: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data009_14: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data009_13: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 1.9521640631515476_f64,
@@ -648,10 +591,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler009_15: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler009_14: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data010_16: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data010_15: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 2.32890607455441_f64,
@@ -776,10 +719,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler010_17: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler010_16: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data011_18: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data011_17: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 3.7470259744407115_f64,
@@ -904,10 +847,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler011_19: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler011_18: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data012_20: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data012_19: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 31.517714546774_f64,
@@ -1032,10 +975,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler012_21: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler012_20: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data013_22: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data013_21: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 391683.9896233489_f64,
@@ -1160,10 +1103,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler013_23: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler013_22: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data014_24: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data014_23: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 194481817927839.88_f64,
@@ -1288,10 +1231,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler014_25: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler014_24: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data015_26: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data015_25: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 7.006598366164118e+34_f64,
@@ -1416,10 +1359,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler015_27: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler015_26: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data016_28: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data016_27: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 4.3394604622138714e+107_f64,
@@ -1544,10 +1487,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler016_29: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler016_28: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data017_30: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data017_29: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 9.50394281158099e+245_f64,
@@ -1672,10 +1615,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler017_31: Value<()> = Rc::new(RefCell::new(5.000000000000003e-12_f64));
+    pub static toler017_30: Value<()> = Rc::new(RefCell::new(5.000000000000003e-12_f64));
 );
 thread_local!(
-    pub static data018_32: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data018_31: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.0036910983340425947_f64,
@@ -1800,10 +1743,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler018_33: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler018_32: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data019_34: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data019_33: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.0037288750960535887_f64,
@@ -1928,10 +1871,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler019_35: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler019_34: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data020_36: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data020_35: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.0037766133746428825_f64,
@@ -2056,10 +1999,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler020_37: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler020_36: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data021_38: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data021_37: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.0038444246344968226_f64,
@@ -2184,10 +2127,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler021_39: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler021_38: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data022_40: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data022_39: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.0040446134454521655_f64,
@@ -2312,10 +2255,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler022_41: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler022_40: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data023_42: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data023_41: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.005308943712223461_f64,
@@ -2440,10 +2383,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler023_43: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler023_42: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data024_44: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data024_43: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 0.032706273712031865_f64,
@@ -2568,10 +2511,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler024_45: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler024_44: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data025_46: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data025_45: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 9.758562829177812_f64,
@@ -2696,10 +2639,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler025_47: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler025_46: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data026_48: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data026_47: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 482700052.0621487_f64,
@@ -2824,10 +2767,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler026_49: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler026_48: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data027_50: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data027_49: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 3.394322243430163e+42_f64,
@@ -2952,10 +2895,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler027_51: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler027_50: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data028_52: Value<Box<[testcase_cyl_bessel_k_double_]>> =
+    pub static data028_51: Value<Box<[testcase_cyl_bessel_k_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_cyl_bessel_k_double_ {
                 f0: 7.0398601930616815e+115_f64,
@@ -3080,9 +3023,9 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler028_53: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler028_52: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
-pub fn test_54(data: Ptr<testcase_cyl_bessel_k_double_>, mut toler: ()) {
+pub fn test_53(data: Ptr<testcase_cyl_bessel_k_double_>, mut toler: ()) {
     let mut test: () = true;
     let mut eps: () = unimplemented!();
     let mut max_abs_diff: () = -1_();
@@ -3108,9 +3051,7 @@ pub fn test_54(data: Ptr<testcase_cyl_bessel_k_double_>, mut toler: ()) {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(max_abs_frac < toler) {
-            ({
-                __builtin_fprintf_55 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"check_value.cc" )  ) .into() , ( 769_() ) .into() , ( Ptr::<() >::from_string_literal(b"void test(const testcase_cyl_bessel_k<Ret> (&)[Num], Ret) [Ret = double, Num = 20U]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"max_abs_frac < toler" )  ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -3121,135 +3062,135 @@ pub fn main() {
 }
 fn main_0() -> () {
     ({
-        test_54(
-            data007_10.with(|v| v.as_pointer()),
-            toler007_11.with(|rc| *rc.borrow()),
+        test_53(
+            data007_9.with(|v| v.as_pointer()),
+            toler007_10.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data008_12.with(|v| v.as_pointer()),
-            toler008_13.with(|rc| *rc.borrow()),
+        test_53(
+            data008_11.with(|v| v.as_pointer()),
+            toler008_12.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data009_14.with(|v| v.as_pointer()),
-            toler009_15.with(|rc| *rc.borrow()),
+        test_53(
+            data009_13.with(|v| v.as_pointer()),
+            toler009_14.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data010_16.with(|v| v.as_pointer()),
-            toler010_17.with(|rc| *rc.borrow()),
+        test_53(
+            data010_15.with(|v| v.as_pointer()),
+            toler010_16.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data011_18.with(|v| v.as_pointer()),
-            toler011_19.with(|rc| *rc.borrow()),
+        test_53(
+            data011_17.with(|v| v.as_pointer()),
+            toler011_18.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data012_20.with(|v| v.as_pointer()),
-            toler012_21.with(|rc| *rc.borrow()),
+        test_53(
+            data012_19.with(|v| v.as_pointer()),
+            toler012_20.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data013_22.with(|v| v.as_pointer()),
-            toler013_23.with(|rc| *rc.borrow()),
+        test_53(
+            data013_21.with(|v| v.as_pointer()),
+            toler013_22.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data014_24.with(|v| v.as_pointer()),
-            toler014_25.with(|rc| *rc.borrow()),
+        test_53(
+            data014_23.with(|v| v.as_pointer()),
+            toler014_24.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data015_26.with(|v| v.as_pointer()),
-            toler015_27.with(|rc| *rc.borrow()),
+        test_53(
+            data015_25.with(|v| v.as_pointer()),
+            toler015_26.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data016_28.with(|v| v.as_pointer()),
-            toler016_29.with(|rc| *rc.borrow()),
+        test_53(
+            data016_27.with(|v| v.as_pointer()),
+            toler016_28.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data017_30.with(|v| v.as_pointer()),
-            toler017_31.with(|rc| *rc.borrow()),
+        test_53(
+            data017_29.with(|v| v.as_pointer()),
+            toler017_30.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data018_32.with(|v| v.as_pointer()),
-            toler018_33.with(|rc| *rc.borrow()),
+        test_53(
+            data018_31.with(|v| v.as_pointer()),
+            toler018_32.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data019_34.with(|v| v.as_pointer()),
-            toler019_35.with(|rc| *rc.borrow()),
+        test_53(
+            data019_33.with(|v| v.as_pointer()),
+            toler019_34.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data020_36.with(|v| v.as_pointer()),
-            toler020_37.with(|rc| *rc.borrow()),
+        test_53(
+            data020_35.with(|v| v.as_pointer()),
+            toler020_36.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data021_38.with(|v| v.as_pointer()),
-            toler021_39.with(|rc| *rc.borrow()),
+        test_53(
+            data021_37.with(|v| v.as_pointer()),
+            toler021_38.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data022_40.with(|v| v.as_pointer()),
-            toler022_41.with(|rc| *rc.borrow()),
+        test_53(
+            data022_39.with(|v| v.as_pointer()),
+            toler022_40.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data023_42.with(|v| v.as_pointer()),
-            toler023_43.with(|rc| *rc.borrow()),
+        test_53(
+            data023_41.with(|v| v.as_pointer()),
+            toler023_42.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data024_44.with(|v| v.as_pointer()),
-            toler024_45.with(|rc| *rc.borrow()),
+        test_53(
+            data024_43.with(|v| v.as_pointer()),
+            toler024_44.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data025_46.with(|v| v.as_pointer()),
-            toler025_47.with(|rc| *rc.borrow()),
+        test_53(
+            data025_45.with(|v| v.as_pointer()),
+            toler025_46.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data026_48.with(|v| v.as_pointer()),
-            toler026_49.with(|rc| *rc.borrow()),
+        test_53(
+            data026_47.with(|v| v.as_pointer()),
+            toler026_48.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data027_50.with(|v| v.as_pointer()),
-            toler027_51.with(|rc| *rc.borrow()),
+        test_53(
+            data027_49.with(|v| v.as_pointer()),
+            toler027_50.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_54(
-            data028_52.with(|v| v.as_pointer()),
-            toler028_53.with(|rc| *rc.borrow()),
+        test_53(
+            data028_51.with(|v| v.as_pointer()),
+            toler028_52.with(|rc| *rc.borrow()),
         )
     });
     return 0_();
@@ -3258,74 +3199,50 @@ impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_56() }) as ::libc::pid_t));
-        field!(this, sem_set_)
-            .write(({ semget_57(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+        field!(this, pid_).write(unimplemented!());
+        field!(this, sem_set_).write(unimplemented!());
         if (this.with(|__s| __s.sem_set_) == -1_()) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not obtain semaphore set",
-                ))
-            });
+            unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (({
-            semctl_58(
-                this.with(|__s| __s.sem_set_),
-                0_(),
-                16_(),
-                Box::new([((*val.borrow()).clone()).into()]),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not initialize semaphore",
-                ))
-            });
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_59(size: Option<()>) {
+pub fn set_memory_limits_54(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_60((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_61((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_60((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_61((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_60((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_61((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn set_file_limit_62(mut size: ()) {
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+pub fn set_file_limit_55(mut size: ()) {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_60((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_61((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn verify_demangle_63(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_56(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = ({
-        __cxa_demangle_64(
-            (mangled).clone(),
-            Ptr::<()>::null(),
-            Ptr::<()>::null(),
-            (status.as_pointer()),
-        )
-    });
+    let mut demangled: Ptr<()> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
@@ -3351,13 +3268,13 @@ pub fn verify_demangle_63(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if unimplemented!() {
-        ({ __throw_runtime_error_3((s).clone()) });
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_65(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_57(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -3374,19 +3291,17 @@ pub fn run_tests_wrapped_locale_65(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                ({
-                    __builtin_fprintf_55 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_66(
+pub fn run_tests_wrapped_env_58(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -3406,7 +3321,7 @@ pub fn run_tests_wrapped_env_66(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 thread_local!(
@@ -3419,16 +3334,16 @@ thread_local!(
     static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__5: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static _M_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static next_id__7: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -3441,7 +3356,7 @@ impl __gnu_test_semun {
     pub fn val(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<semid_ds>> {
+    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
@@ -3456,7 +3371,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_68(
+pub fn test_tm_59(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -3466,20 +3381,20 @@ pub fn test_tm_68(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_69.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_69.with(|rc| *rc.borrow());
+) -> () {
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_60.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_60.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_69: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_60: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -3553,102 +3468,73 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_56() })) {
-            ({
-                semctl_58(
-                    (*self).with(|__s| __s.sem_set_),
-                    0_(),
-                    0_(),
-                    Box::new([((*val.borrow()).clone()).into()]),
-                )
-            });
+        if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
+            unimplemented!();
         }
     }
     fn signal(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_67(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not signal semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
     fn wait(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_67(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not wait for semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = data007_10.with(|_| ());
-    let _ = toler007_11.with(|_| ());
-    let _ = data008_12.with(|_| ());
-    let _ = toler008_13.with(|_| ());
-    let _ = data009_14.with(|_| ());
-    let _ = toler009_15.with(|_| ());
-    let _ = data010_16.with(|_| ());
-    let _ = toler010_17.with(|_| ());
-    let _ = data011_18.with(|_| ());
-    let _ = toler011_19.with(|_| ());
-    let _ = data012_20.with(|_| ());
-    let _ = toler012_21.with(|_| ());
-    let _ = data013_22.with(|_| ());
-    let _ = toler013_23.with(|_| ());
-    let _ = data014_24.with(|_| ());
-    let _ = toler014_25.with(|_| ());
-    let _ = data015_26.with(|_| ());
-    let _ = toler015_27.with(|_| ());
-    let _ = data016_28.with(|_| ());
-    let _ = toler016_29.with(|_| ());
-    let _ = data017_30.with(|_| ());
-    let _ = toler017_31.with(|_| ());
-    let _ = data018_32.with(|_| ());
-    let _ = toler018_33.with(|_| ());
-    let _ = data019_34.with(|_| ());
-    let _ = toler019_35.with(|_| ());
-    let _ = data020_36.with(|_| ());
-    let _ = toler020_37.with(|_| ());
-    let _ = data021_38.with(|_| ());
-    let _ = toler021_39.with(|_| ());
-    let _ = data022_40.with(|_| ());
-    let _ = toler022_41.with(|_| ());
-    let _ = data023_42.with(|_| ());
-    let _ = toler023_43.with(|_| ());
-    let _ = data024_44.with(|_| ());
-    let _ = toler024_45.with(|_| ());
-    let _ = data025_46.with(|_| ());
-    let _ = toler025_47.with(|_| ());
-    let _ = data026_48.with(|_| ());
-    let _ = toler026_49.with(|_| ());
-    let _ = data027_50.with(|_| ());
-    let _ = toler027_51.with(|_| ());
-    let _ = data028_52.with(|_| ());
-    let _ = toler028_53.with(|_| ());
+    let _ = data007_9.with(|_| ());
+    let _ = toler007_10.with(|_| ());
+    let _ = data008_11.with(|_| ());
+    let _ = toler008_12.with(|_| ());
+    let _ = data009_13.with(|_| ());
+    let _ = toler009_14.with(|_| ());
+    let _ = data010_15.with(|_| ());
+    let _ = toler010_16.with(|_| ());
+    let _ = data011_17.with(|_| ());
+    let _ = toler011_18.with(|_| ());
+    let _ = data012_19.with(|_| ());
+    let _ = toler012_20.with(|_| ());
+    let _ = data013_21.with(|_| ());
+    let _ = toler013_22.with(|_| ());
+    let _ = data014_23.with(|_| ());
+    let _ = toler014_24.with(|_| ());
+    let _ = data015_25.with(|_| ());
+    let _ = toler015_26.with(|_| ());
+    let _ = data016_27.with(|_| ());
+    let _ = toler016_28.with(|_| ());
+    let _ = data017_29.with(|_| ());
+    let _ = toler017_30.with(|_| ());
+    let _ = data018_31.with(|_| ());
+    let _ = toler018_32.with(|_| ());
+    let _ = data019_33.with(|_| ());
+    let _ = toler019_34.with(|_| ());
+    let _ = data020_35.with(|_| ());
+    let _ = toler020_36.with(|_| ());
+    let _ = data021_37.with(|_| ());
+    let _ = toler021_38.with(|_| ());
+    let _ = data022_39.with(|_| ());
+    let _ = toler022_40.with(|_| ());
+    let _ = data023_41.with(|_| ());
+    let _ = toler023_42.with(|_| ());
+    let _ = data024_43.with(|_| ());
+    let _ = toler024_44.with(|_| ());
+    let _ = data025_45.with(|_| ());
+    let _ = toler025_46.with(|_| ());
+    let _ = data026_47.with(|_| ());
+    let _ = toler026_48.with(|_| ());
+    let _ = data027_49.with(|_| ());
+    let _ = toler027_50.with(|_| ());
+    let _ = data028_51.with(|_| ());
+    let _ = toler028_52.with(|_| ());
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());
     let _ = throw_on__2.with(|_| ());
-    let _ = count__4.with(|_| ());
-    let _ = throw_on__5.with(|_| ());
-    let _ = _M_count_6.with(|_| ());
-    let _ = next_id__7.with(|_| ());
+    let _ = count__3.with(|_| ());
+    let _ = throw_on__4.with(|_| ());
+    let _ = _M_count_5.with(|_| ());
+    let _ = next_id__6.with(|_| ());
 }

@@ -130,18 +130,37 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     } else if (!RuleDecls::GetSugar(spelled)) {
       named = spelled->getAsCXXRecordDecl();
     }
-    if (!qualifier || !named ||
-        named->getIdentifier() != member->getIdentifier()) {
+    // or the same class whichever the arguments, spelled as itself
+    // (_Bit_reference of typename vector<bool, T1>::reference)
+    auto from_defaults = [&]() -> std::optional<TypeMatch> {
+      auto args = RuleDecls::DeduceFromDefaults(sema, tmpl, pattern, spelled);
+      if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
+          !satisfiesConstraints(sema, tmpl, *args)) {
+        return std::nullopt;
+      }
+      return TypeMatch{*std::move(args)};
+    };
+    if (!qualifier) {
       return std::nullopt;
+    }
+    // a use spelled through another member typedef names another member
+    // (vector<bool>::value_type is not vector<bool, T1>::const_reference)
+    if (!named || named->getIdentifier() != member->getIdentifier()) {
+      return llvm::isa<clang::TypedefType>(spelled.getTypePtr())
+                 ? std::nullopt
+                 : from_defaults();
     }
     auto owner =
         llvm::dyn_cast<clang::CXXRecordDecl>(named->getDeclContext());
     if (!owner) {
-      return std::nullopt;
+      return from_defaults();
     }
     auto args = RuleDecls::DeduceFromClass(
         sema, params, clang::QualType(qualifier, 0), owner);
-    if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
+    if (!args) {
+      return from_defaults();
+    }
+    if (!(args = completeArgs(sema, tmpl, *std::move(args))) ||
         !satisfiesConstraints(sema, tmpl, *args)) {
       return std::nullopt;
     }
@@ -166,9 +185,8 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
                                     clang::DeclarationName());
     // unless the ones left out are defaulted (map<T1, T2> of
     // map<int, int, less<int>, allocator<pair<const int, int>>>)
-    auto defaulted = [](const clang::ClassTemplateSpecializationDecl *spec,
-                        unsigned from) {
-      auto params = spec->getSpecializedTemplate()->getTemplateParameters();
+    auto defaulted = [](const clang::ClassTemplateDecl *tmpl, unsigned from) {
+      auto params = tmpl->getTemplateParameters();
       if (params->hasParameterPack()) {
         return false;
       }
@@ -198,9 +216,19 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
       return std::nullopt;
     }
     if (spec && written) {
+      auto named = llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
+          written->getTemplateName().getAsTemplateDecl());
+      // the owner is a base of the class the qualifier names when their
+      // templates differ (_Flat_map_impl<..., false> of flat_map<T1, T2, T3,
+      // T4, T5>), and the arguments count against the qualifier's own
+      bool base =
+          named && named->getCanonicalDecl() !=
+                       spec->getSpecializedTemplate()->getCanonicalDecl();
       auto n = count(written->template_arguments());
-      if (n != count(spec->getTemplateArgs().asArray()) &&
-          !defaulted(spec, n)) {
+      auto expected = base ? named->getTemplateParameters()->size()
+                           : count(spec->getTemplateArgs().asArray());
+      if (n != expected &&
+          !defaulted(base ? named : spec->getSpecializedTemplate(), n)) {
         return std::nullopt;
       }
     }

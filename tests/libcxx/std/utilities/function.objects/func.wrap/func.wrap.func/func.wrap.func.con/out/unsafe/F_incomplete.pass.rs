@@ -15,15 +15,30 @@ impl X {
     unsafe fn destructor(&mut self) {}
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct IncompleteReturnType {
     pub fn_: (),
+}
+impl IncompleteReturnType {
+    pub unsafe fn move_from(_a0: *mut IncompleteReturnType) -> Self {
+        let mut this = Self {
+            fn_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut IncompleteReturnType,
+    ) -> *mut IncompleteReturnType {
+        unimplemented!();
+        return &mut (*(self as *mut IncompleteReturnType));
+    }
 }
 pub static mut called_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 pub unsafe fn test_fn_1() -> IncompleteReturnType {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut called_0)).prefix_inc();
     let mut I: IncompleteReturnType = <IncompleteReturnType>::default();
-    return I.clone();
+    return IncompleteReturnType::move_from({ &mut I });
 }
 pub unsafe fn test_pr34298_2() {
     const _: () = assert!(

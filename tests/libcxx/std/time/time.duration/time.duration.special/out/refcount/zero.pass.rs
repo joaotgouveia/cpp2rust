@@ -20,23 +20,11 @@ impl Rep {
         Self { data_: i }
     }
 }
-impl std::cmp::PartialEq for Rep {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RepImpl::operator_eq_4(
-                &Rc::new(RefCell::new(Rep {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Rep {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Rep {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for Rep {}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }

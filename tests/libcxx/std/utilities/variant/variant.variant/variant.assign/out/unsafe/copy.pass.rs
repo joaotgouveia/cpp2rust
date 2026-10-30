@@ -281,20 +281,20 @@ pub unsafe fn test_copy_assignment_same_index_5() {
         const _: () = assert!(true, "result.value == 42");;
     }
     {
-        let mut test: anon_8 = <anon_8>::default();
-        let result: Result_long_ = (unsafe { anon_8::operator_call(&test) });
+        let mut test: anon_7 = <anon_7>::default();
+        let result: Result_long_ = (unsafe { anon_7::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42l");;
     }
     {
-        let mut test: anon_10 = <anon_10>::default();
-        let result: Result_int_ = (unsafe { anon_10::operator_call(&test) });
+        let mut test: anon_8 = <anon_8>::default();
+        let result: Result_int_ = (unsafe { anon_8::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
     {
-        let mut test: anon_12 = <anon_12>::default();
-        let result: Result_int_ = (unsafe { anon_12::operator_call(&test) });
+        let mut test: anon_9 = <anon_9>::default();
+        let result: Result_int_ = (unsafe { anon_9::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
@@ -309,7 +309,21 @@ impl anon_6 {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_7(&mut v) })),
+            value: (*unimplemented!()),
+        };
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct anon_7 {}
+impl anon_7 {
+    pub unsafe fn operator_call(&self) -> Result_long_ {
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
+        unimplemented!();
+        return Result_long_ {
+            index: unimplemented!(),
+            value: (*unimplemented!()),
         };
     }
 }
@@ -317,45 +331,31 @@ impl anon_6 {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_8 {}
 impl anon_8 {
-    pub unsafe fn operator_call(&self) -> Result_long_ {
-        let mut v: () = unimplemented!();
-        let mut v2: () = unimplemented!();
-        unimplemented!();
-        return Result_long_ {
-            index: unimplemented!(),
-            value: (*(unsafe { get_9(&mut v) })),
-        };
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_10 {}
-impl anon_10 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
         let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_11(&mut v) })).value,
+            value: (*unimplemented!()).value,
         };
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_12 {}
-impl anon_12 {
+pub struct anon_9 {}
+impl anon_9 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
         let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_13(&mut v) })).value,
+            value: (*unimplemented!()).value,
         };
     }
 }
-pub unsafe fn test_copy_assignment_different_index_14() {
+pub unsafe fn test_copy_assignment_different_index_10() {
     {
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
@@ -385,108 +385,108 @@ pub unsafe fn test_copy_assignment_different_index_14() {
         unimplemented!();
     }
     {
-        let mut test: anon_15 = <anon_15>::default();
-        let result: Result_long_ = (unsafe { anon_15::operator_call(&test) });
+        let mut test: anon_11 = <anon_11>::default();
+        let result: Result_long_ = (unsafe { anon_11::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42l");;
     }
     {
-        let mut test: anon_16 = <anon_16>::default();
-        let result: Result_int_ = (unsafe { anon_16::operator_call(&test) });
+        let mut test: anon_12 = <anon_12>::default();
+        let result: Result_int_ = (unsafe { anon_12::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_15 {}
-impl anon_15 {
+pub struct anon_11 {}
+impl anon_11 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
         let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_9(&mut v) })),
+            value: (*unimplemented!()),
         };
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_16 {}
-impl anon_16 {
+pub struct anon_12 {}
+impl anon_12 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
         let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_11(&mut v) })).value,
+            value: (*unimplemented!()).value,
         };
     }
 }
-pub unsafe fn test_assignment_throw_17() {}
+pub unsafe fn test_assignment_throw_13() {}
+pub unsafe fn test_constexpr_assign_imp_14(v: *mut (), new_value: *mut ()) {
+    let cp: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_assign_imp_15(v: *mut (), new_value: *mut ()) {
+    let cp: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_assign_imp_16(v: *mut (), new_value: *mut ()) {
+    let cp: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_assign_imp_17(v: *mut (), new_value: *mut ()) {
+    let cp: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_constexpr_assign_imp_18(v: *mut (), new_value: *mut ()) {
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_constexpr_assign_imp_19(v: *mut (), new_value: *mut ()) {
+pub unsafe fn test_constexpr_assign_imp_19(v: *mut (), new_value: *mut NonTrivialCopyAssign) {
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_constexpr_assign_imp_20(v: *mut (), new_value: *mut ()) {
-    let cp: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_assign_imp_21(v: *mut (), new_value: *mut ()) {
-    let cp: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_assign_imp_22(v: *mut (), new_value: *mut ()) {
-    let cp: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_assign_imp_23(v: *mut (), new_value: *mut NonTrivialCopyAssign) {
-    let cp: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_copy_assignment_trivial_24() {
+pub unsafe fn test_constexpr_copy_assignment_trivial_20() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_assignable<V>::value");;
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_18(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_14(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_18(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_14(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = Default::default();
-        test_constexpr_assign_imp_19(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_15(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_20(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_16(&mut _v, &mut _new_value)
     });
 }
-pub unsafe fn operator_eq_25(x: *const NonTrivialCopyAssign, y: *const NonTrivialCopyAssign) -> () {
+pub unsafe fn operator_eq_21(x: *const NonTrivialCopyAssign, y: *const NonTrivialCopyAssign) -> () {
     return (((*x).i) == ((*y).i));
 }
 #[repr(C)]
@@ -514,7 +514,7 @@ impl NonTrivialCopyAssign {
 impl std::cmp::PartialEq for NonTrivialCopyAssign {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_25(
+            operator_eq_21(
                 self as *const NonTrivialCopyAssign,
                 other as *const NonTrivialCopyAssign,
             )
@@ -532,51 +532,51 @@ impl Default for NonTrivialCopyAssign {
         unsafe { NonTrivialCopyAssign { i: 0_() } }
     }
 }
-pub unsafe fn test_constexpr_copy_assignment_non_trivial_26() {
+pub unsafe fn test_constexpr_copy_assignment_non_trivial_22() {
     const _: () = assert!(true, "!std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "!std::is_trivially_copy_assignable<V>::value");;
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_17(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_17(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: () = Default::default();
-        test_constexpr_assign_imp_22(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_18(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: NonTrivialCopyAssign = NonTrivialCopyAssign::new({ 5_() });
-        test_constexpr_assign_imp_23(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_19(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = unimplemented!();
         let mut _new_value: NonTrivialCopyAssign = NonTrivialCopyAssign::new({ 5_() });
-        test_constexpr_assign_imp_23(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_19(&mut _v, &mut _new_value)
     });
 }
-pub unsafe fn non_constexpr_test_27() {
+pub unsafe fn non_constexpr_test_23() {
     (unsafe { test_copy_assignment_empty_empty_2() });
     (unsafe { test_copy_assignment_non_empty_empty_3() });
     (unsafe { test_copy_assignment_empty_non_empty_4() });
-    (unsafe { test_assignment_throw_17() });
+    (unsafe { test_assignment_throw_13() });
 }
-pub unsafe fn cxx17_constexpr_test_28() -> () {
+pub unsafe fn cxx17_constexpr_test_24() -> () {
     (unsafe { test_copy_assignment_sfinae_1() });
     (unsafe { test_copy_assignment_not_noexcept_0() });
-    (unsafe { test_constexpr_copy_assignment_trivial_24() });
+    (unsafe { test_constexpr_copy_assignment_trivial_20() });
     return true;
 }
-pub unsafe fn cxx20_constexpr_test_29() -> () {
+pub unsafe fn cxx20_constexpr_test_25() -> () {
     (unsafe { test_copy_assignment_same_index_5() });
-    (unsafe { test_copy_assignment_different_index_14() });
-    (unsafe { test_constexpr_copy_assignment_non_trivial_26() });
+    (unsafe { test_copy_assignment_different_index_10() });
+    (unsafe { test_constexpr_copy_assignment_non_trivial_22() });
     return true;
 }
 pub fn main() {
@@ -595,9 +595,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { non_constexpr_test_27() });
-    (unsafe { cxx17_constexpr_test_28() });
-    (unsafe { cxx20_constexpr_test_29() });
+    (unsafe { non_constexpr_test_23() });
+    (unsafe { cxx17_constexpr_test_24() });
+    (unsafe { cxx20_constexpr_test_25() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
     return 0_();

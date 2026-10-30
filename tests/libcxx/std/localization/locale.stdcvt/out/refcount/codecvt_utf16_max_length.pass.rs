@@ -13,12 +13,12 @@ impl TestHelper_wchar_t__4_ {
     pub fn test() {
         {
             let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: () = ({ (*c.borrow()).max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
             let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: () = ({ (*c.borrow()).max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
     }
@@ -30,12 +30,12 @@ impl TestHelper_char16_t__2_ {
     pub fn test() {
         {
             let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: () = ({ (*c.borrow()).max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
             let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: () = ({ (*c.borrow()).max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
     }
@@ -47,12 +47,12 @@ impl TestHelper_char32_t__4_ {
     pub fn test() {
         {
             let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: () = ({ (*c.borrow()).max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
             let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: () = ({ (*c.borrow()).max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
     }

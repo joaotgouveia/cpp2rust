@@ -173,22 +173,46 @@ pub fn classify_2(mut x: ()) -> () {
     if (x == 0_()) {
         return (anon_1_zero as ());
     }
-    if ({ isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if ({ isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub fn is_about_6(mut x: (), mut y: ()) {
+pub fn test_6(_a0: Option<()>) {
+    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+    const _: () = assert!(
+        true,
+        "(std::is_same<decltype(std::imag(T(x))), double>::value)"
+    );;
     unimplemented!();
+    let mut val: () = 0_();
+    const _: () = assert!(true, "std::imag(val) == 0");;
+    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn is_about_7(mut x: (), mut y: ()) {
+pub fn test_7(_a0: Option<()>) {
+    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+    const _: () = assert!(
+        true,
+        "(std::is_same<decltype(std::imag(T(x))), double>::value)"
+    );;
     unimplemented!();
+    let mut val: () = 1_();
+    const _: () = assert!(true, "std::imag(val) == 0");;
+    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "t.imag() == x");;
 }
 pub fn test_8(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
@@ -197,7 +221,7 @@ pub fn test_8(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 0_();
+    let mut val: () = 10_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -209,7 +233,7 @@ pub fn test_9(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 1_();
+    let mut val: () = 0_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -221,7 +245,7 @@ pub fn test_10(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 10_();
+    let mut val: () = 1_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -233,7 +257,7 @@ pub fn test_11(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 0_();
+    let mut val: () = 10_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -245,7 +269,7 @@ pub fn test_12(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 1_();
+    let mut val: () = 0_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -257,7 +281,7 @@ pub fn test_13(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 10_();
+    let mut val: () = 1_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -269,31 +293,25 @@ pub fn test_14(_a0: Option<()>) {
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
     unimplemented!();
-    let mut val: () = 0_();
+    let mut val: () = 10_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
 pub fn test_15(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(
-        true,
-        "(std::is_same<decltype(std::imag(T(x))), double>::value)"
-    );;
+    const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 1_();
+    let mut val: () = 0_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
 pub fn test_16(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(
-        true,
-        "(std::is_same<decltype(std::imag(T(x))), double>::value)"
-    );;
+    const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 10_();
+    let mut val: () = 1_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -302,7 +320,7 @@ pub fn test_17(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 0_();
+    let mut val: () = 10_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -311,7 +329,7 @@ pub fn test_18(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 1_();
+    let mut val: () = 0_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -320,7 +338,7 @@ pub fn test_19(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 10_();
+    let mut val: () = 1_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -329,7 +347,7 @@ pub fn test_20(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 0_();
+    let mut val: () = 10_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -338,7 +356,7 @@ pub fn test_21(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 1_();
+    let mut val: () = 0_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -347,7 +365,7 @@ pub fn test_22(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 10_();
+    let mut val: () = 1_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -356,58 +374,40 @@ pub fn test_23(_a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
     unimplemented!();
-    let mut val: () = 0_();
-    const _: () = assert!(true, "std::imag(val) == 0");;
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    const _: () = assert!(true, "t.imag() == x");;
-}
-pub fn test_24(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 1_();
-    const _: () = assert!(true, "std::imag(val) == 0");;
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    const _: () = assert!(true, "t.imag() == x");;
-}
-pub fn test_25(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
     let mut val: () = 10_();
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_26() {
-    ({ test_17(None) });
-    ({ test_18(None) });
-    ({ test_19(None) });
-}
-pub fn test_27() {
-    ({ test_20(None) });
-    ({ test_21(None) });
-    ({ test_22(None) });
-}
-pub fn test_28() {
-    ({ test_23(None) });
-    ({ test_24(None) });
-    ({ test_25(None) });
-}
-pub fn test_29() {
-    ({ test_8(None) });
-    ({ test_9(None) });
-    ({ test_10(None) });
-}
-pub fn test_30() {
-    ({ test_11(None) });
-    ({ test_12(None) });
-    ({ test_13(None) });
-}
-pub fn test_31() {
-    ({ test_14(None) });
+pub fn test_24() {
     ({ test_15(None) });
     ({ test_16(None) });
+    ({ test_17(None) });
+}
+pub fn test_25() {
+    ({ test_18(None) });
+    ({ test_19(None) });
+    ({ test_20(None) });
+}
+pub fn test_26() {
+    ({ test_21(None) });
+    ({ test_22(None) });
+    ({ test_23(None) });
+}
+pub fn test_27() {
+    ({ test_6(None) });
+    ({ test_7(None) });
+    ({ test_8(None) });
+}
+pub fn test_28() {
+    ({ test_9(None) });
+    ({ test_10(None) });
+    ({ test_11(None) });
+}
+pub fn test_29() {
+    ({ test_12(None) });
+    ({ test_13(None) });
+    ({ test_14(None) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -429,12 +429,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_24() });
+    ({ test_25() });
     ({ test_26() });
     ({ test_27() });
     ({ test_28() });
     ({ test_29() });
-    ({ test_30() });
-    ({ test_31() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

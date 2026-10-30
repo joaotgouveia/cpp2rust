@@ -44,7 +44,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -54,7 +54,14 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -62,7 +69,7 @@ const _: () = assert!(
 pub fn base_0(i: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -90,7 +97,7 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_1(i: Ptr<forward_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_int_ptr_ {
     #[offset(0)]
@@ -117,7 +124,7 @@ impl forward_iterator_int_ptr_ {
 pub fn base_2(i: Ptr<bidirectional_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_int_ptr_ {
     #[offset(0)]
@@ -144,7 +151,7 @@ impl bidirectional_iterator_int_ptr_ {
 pub fn base_3(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -168,7 +175,7 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -178,7 +185,14 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
@@ -186,7 +200,7 @@ const _: () = assert!(
 pub fn base_4(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_int_ptr_ {
     #[offset(0)]
@@ -400,23 +414,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -455,7 +457,7 @@ pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -503,52 +505,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_13(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_13(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_12(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -568,44 +534,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -616,26 +555,30 @@ impl util_iterator_error {
     }
 }
 pub fn test_iterators_14(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -647,25 +590,29 @@ pub fn test_iterators_14(
     unimplemented!();
 }
 pub fn test_iterators_16(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -676,25 +623,29 @@ pub fn test_iterators_16(
     unimplemented!();
 }
 pub fn test_iterators_17(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -705,25 +656,29 @@ pub fn test_iterators_17(
     unimplemented!();
 }
 pub fn test_iterators_18(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -734,25 +689,29 @@ pub fn test_iterators_18(
     unimplemented!();
 }
 pub fn test_iterators_19(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -763,25 +722,29 @@ pub fn test_iterators_19(
     unimplemented!();
 }
 pub fn test_iterators_20(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -792,24 +755,27 @@ pub fn test_iterators_20(
     unimplemented!();
 }
 pub fn test_iterators_21(
-    mut begin1: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end1: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: cpp17_input_iterator_int_ptr__int_ptr_,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end1.as_pointer()
                 });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -820,24 +786,28 @@ pub fn test_iterators_21(
     unimplemented!();
 }
 pub fn test_iterators_22(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -849,23 +819,27 @@ pub fn test_iterators_22(
     unimplemented!();
 }
 pub fn test_iterators_23(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -876,23 +850,27 @@ pub fn test_iterators_23(
     unimplemented!();
 }
 pub fn test_iterators_24(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -903,23 +881,27 @@ pub fn test_iterators_24(
     unimplemented!();
 }
 pub fn test_iterators_25(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -930,23 +912,27 @@ pub fn test_iterators_25(
     unimplemented!();
 }
 pub fn test_iterators_26(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -957,23 +943,27 @@ pub fn test_iterators_26(
     unimplemented!();
 }
 pub fn test_iterators_27(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -984,22 +974,25 @@ pub fn test_iterators_27(
     unimplemented!();
 }
 pub fn test_iterators_28(
-    mut begin1: cpp20_input_iterator_int_ptr_,
-    mut end1: cpp20_input_iterator_int_ptr_,
+    begin1: cpp20_input_iterator_int_ptr_,
+    end1: cpp20_input_iterator_int_ptr_,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end1.as_pointer() });
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1010,24 +1003,28 @@ pub fn test_iterators_28(
     unimplemented!();
 }
 pub fn test_iterators_29(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -1039,23 +1036,27 @@ pub fn test_iterators_29(
     unimplemented!();
 }
 pub fn test_iterators_30(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1066,23 +1067,27 @@ pub fn test_iterators_30(
     unimplemented!();
 }
 pub fn test_iterators_31(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1093,23 +1098,27 @@ pub fn test_iterators_31(
     unimplemented!();
 }
 pub fn test_iterators_32(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1120,23 +1129,27 @@ pub fn test_iterators_32(
     unimplemented!();
 }
 pub fn test_iterators_33(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1147,23 +1160,27 @@ pub fn test_iterators_33(
     unimplemented!();
 }
 pub fn test_iterators_34(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1174,22 +1191,25 @@ pub fn test_iterators_34(
     unimplemented!();
 }
 pub fn test_iterators_35(
-    mut begin1: forward_iterator_int_ptr_,
-    mut end1: forward_iterator_int_ptr_,
+    begin1: forward_iterator_int_ptr_,
+    end1: forward_iterator_int_ptr_,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end1.as_pointer() });
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1200,24 +1220,28 @@ pub fn test_iterators_35(
     unimplemented!();
 }
 pub fn test_iterators_36(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -1229,23 +1253,27 @@ pub fn test_iterators_36(
     unimplemented!();
 }
 pub fn test_iterators_37(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1256,23 +1284,27 @@ pub fn test_iterators_37(
     unimplemented!();
 }
 pub fn test_iterators_38(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1283,23 +1315,27 @@ pub fn test_iterators_38(
     unimplemented!();
 }
 pub fn test_iterators_39(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1310,23 +1346,27 @@ pub fn test_iterators_39(
     unimplemented!();
 }
 pub fn test_iterators_40(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1337,23 +1377,27 @@ pub fn test_iterators_40(
     unimplemented!();
 }
 pub fn test_iterators_41(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1364,22 +1408,25 @@ pub fn test_iterators_41(
     unimplemented!();
 }
 pub fn test_iterators_42(
-    mut begin1: bidirectional_iterator_int_ptr_,
-    mut end1: bidirectional_iterator_int_ptr_,
+    begin1: bidirectional_iterator_int_ptr_,
+    end1: bidirectional_iterator_int_ptr_,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end1.as_pointer() });
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1390,24 +1437,28 @@ pub fn test_iterators_42(
     unimplemented!();
 }
 pub fn test_iterators_43(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -1419,23 +1470,27 @@ pub fn test_iterators_43(
     unimplemented!();
 }
 pub fn test_iterators_44(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1446,23 +1501,27 @@ pub fn test_iterators_44(
     unimplemented!();
 }
 pub fn test_iterators_45(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1473,23 +1532,27 @@ pub fn test_iterators_45(
     unimplemented!();
 }
 pub fn test_iterators_46(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1500,23 +1563,27 @@ pub fn test_iterators_46(
     unimplemented!();
 }
 pub fn test_iterators_47(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1527,23 +1594,27 @@ pub fn test_iterators_47(
     unimplemented!();
 }
 pub fn test_iterators_48(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1554,22 +1625,25 @@ pub fn test_iterators_48(
     unimplemented!();
 }
 pub fn test_iterators_49(
-    mut begin1: random_access_iterator_int_ptr_,
-    mut end1: random_access_iterator_int_ptr_,
+    begin1: random_access_iterator_int_ptr_,
+    end1: random_access_iterator_int_ptr_,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end1.as_pointer() });
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1580,24 +1654,28 @@ pub fn test_iterators_49(
     unimplemented!();
 }
 pub fn test_iterators_50(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -1609,23 +1687,27 @@ pub fn test_iterators_50(
     unimplemented!();
 }
 pub fn test_iterators_51(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1636,23 +1718,27 @@ pub fn test_iterators_51(
     unimplemented!();
 }
 pub fn test_iterators_52(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1663,23 +1749,27 @@ pub fn test_iterators_52(
     unimplemented!();
 }
 pub fn test_iterators_53(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1690,23 +1780,27 @@ pub fn test_iterators_53(
     unimplemented!();
 }
 pub fn test_iterators_54(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1717,23 +1811,27 @@ pub fn test_iterators_54(
     unimplemented!();
 }
 pub fn test_iterators_55(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1744,22 +1842,25 @@ pub fn test_iterators_55(
     unimplemented!();
 }
 pub fn test_iterators_56(
-    mut begin1: contiguous_iterator_int_ptr_,
-    mut end1: contiguous_iterator_int_ptr_,
+    begin1: contiguous_iterator_int_ptr_,
+    end1: contiguous_iterator_int_ptr_,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let begin1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin1));
+    let end1: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
             let ___first1: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin1.as_pointer() });
             let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end1.as_pointer() });
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1771,22 +1872,25 @@ pub fn test_iterators_56(
 }
 pub fn test_iterators_57(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
-    mut begin2: cpp17_input_iterator_int_ptr__int_ptr_,
-    mut end2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end1: Ptr<()>,
+    begin2: cpp17_input_iterator_int_ptr__int_ptr_,
+    end2: cpp17_input_iterator_int_ptr__int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
             let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() });
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
                 sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                    unimplemented!()
+                    end2.as_pointer()
                 });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
@@ -1799,21 +1903,24 @@ pub fn test_iterators_57(
 }
 pub fn test_iterators_58(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
-    mut begin2: cpp20_input_iterator_int_ptr_,
-    mut end2: cpp20_input_iterator_int_ptr_,
+    end1: Ptr<()>,
+    begin2: cpp20_input_iterator_int_ptr_,
+    end2: cpp20_input_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let begin2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
             let ___first2: cpp20_input_iterator_int_ptr_ =
-                cpp20_input_iterator_int_ptr_::move_from({ unimplemented!() });
+                cpp20_input_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1825,21 +1932,24 @@ pub fn test_iterators_58(
 }
 pub fn test_iterators_59(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
-    mut begin2: forward_iterator_int_ptr_,
-    mut end2: forward_iterator_int_ptr_,
+    end1: Ptr<()>,
+    begin2: forward_iterator_int_ptr_,
+    end2: forward_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let begin2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
             let ___first2: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::move_from({ unimplemented!() });
+                forward_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_forward_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1851,21 +1961,24 @@ pub fn test_iterators_59(
 }
 pub fn test_iterators_60(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
-    mut begin2: bidirectional_iterator_int_ptr_,
-    mut end2: bidirectional_iterator_int_ptr_,
+    end1: Ptr<()>,
+    begin2: bidirectional_iterator_int_ptr_,
+    end2: bidirectional_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let begin2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
             let ___first2: bidirectional_iterator_int_ptr_ =
-                bidirectional_iterator_int_ptr_::move_from({ unimplemented!() });
+                bidirectional_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1877,21 +1990,24 @@ pub fn test_iterators_60(
 }
 pub fn test_iterators_61(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
-    mut begin2: random_access_iterator_int_ptr_,
-    mut end2: random_access_iterator_int_ptr_,
+    end1: Ptr<()>,
+    begin2: random_access_iterator_int_ptr_,
+    end2: random_access_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let begin2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
             let ___first2: random_access_iterator_int_ptr_ =
-                random_access_iterator_int_ptr_::move_from({ unimplemented!() });
+                random_access_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1903,21 +2019,24 @@ pub fn test_iterators_61(
 }
 pub fn test_iterators_62(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
-    mut begin2: contiguous_iterator_int_ptr_,
-    mut end2: contiguous_iterator_int_ptr_,
+    end1: Ptr<()>,
+    begin2: contiguous_iterator_int_ptr_,
+    end2: contiguous_iterator_int_ptr_,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let begin2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(begin2));
+    let end2: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
             let ___first2: contiguous_iterator_int_ptr_ =
-                contiguous_iterator_int_ptr_::move_from({ unimplemented!() });
+                contiguous_iterator_int_ptr_::move_from({ begin2.as_pointer() });
             let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ unimplemented!() });
+                sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -1929,20 +2048,22 @@ pub fn test_iterators_62(
 }
 pub fn test_iterators_63(
     mut begin1: Ptr<()>,
-    mut end1: Ptr<()>,
+    end1: Ptr<()>,
     mut begin2: Ptr<()>,
-    mut end2: Ptr<()>,
+    end2: Ptr<()>,
     mut expected1: Ptr<()>,
     mut expected2: Ptr<()>,
 ) {
+    let end1: Value<Ptr<()>> = Rc::new(RefCell::new(end1));
+    let end2: Value<Ptr<()>> = Rc::new(RefCell::new(end2));
     let ret: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___first1: Ptr<()> = (unimplemented!().read());
+            let ___first1: Ptr<()> = (begin1).clone();
             let ___last1: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
-            let ___first2: Ptr<()> = (unimplemented!().read());
+                sentinel_wrapper_int_ptr_::new_1({ end1.as_pointer() });
+            let ___first2: Ptr<()> = (begin2).clone();
             let ___last2: sentinel_wrapper_int_ptr_ =
-                sentinel_wrapper_int_ptr_::new_1({ unimplemented!() });
+                sentinel_wrapper_int_ptr_::new_1({ end2.as_pointer() });
             (*mismatch_15.with(Value::clone).borrow_mut())(
                 ___first1, ___last1, ___first2, ___last2, None, None, None,
             )
@@ -3603,6 +3724,10 @@ pub trait bidirectional_iterator_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_>;
 }
 impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3610,6 +3735,17 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3640,6 +3776,10 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_>;
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3649,6 +3789,17 @@ impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -3656,6 +3807,10 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3663,6 +3818,17 @@ impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3676,8 +3842,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -3759,6 +3941,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -3767,6 +3953,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -3774,6 +3971,7 @@ pub trait forward_iterator_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_>;
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3781,6 +3979,14 @@ impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3817,6 +4023,10 @@ pub trait random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_>;
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3824,6 +4034,17 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

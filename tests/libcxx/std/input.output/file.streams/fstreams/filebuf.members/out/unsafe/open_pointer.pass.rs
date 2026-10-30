@@ -8,28 +8,21 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn get_temp_file_name_0() -> () {
     let mut Name: () = unimplemented!();
-    let mut FD: () = (unsafe { mkstemp_1((&mut (*unimplemented!()) as *mut ())) });
+    let mut FD: () = unimplemented!();
     if ((FD) == (-1_())) {
-        (unsafe { perror_2(c"mkstemp".as_ptr()) });
+        unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn glibc_version_less_than_3(mut version: *const ()) -> () {
+pub unsafe fn glibc_version_less_than_1(mut version: *const ()) -> () {
     let mut test_version: () = unimplemented!();
-    let mut n: () = (unsafe {
-        confstr_4(
-            (anon_5__CS_GNU_LIBC_VERSION as ()),
-            std::ptr::null_mut(),
-            0_(),
-        )
-    });
+    let mut n: () = unimplemented!();
     let mut current_version: *mut () =
         Box::leak((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-    (unsafe { confstr_4((anon_5__CS_GNU_LIBC_VERSION as ()), current_version, n) });
-    let mut result: () =
-        ((unsafe { strverscmp_6((current_version).cast_const(), unimplemented!()) }) < (0_()));
+    unimplemented!();
+    let mut result: () = ((unimplemented!()) < (0_()));
     {
         let __p = current_version;
         if !__p.is_null() {
@@ -73,7 +66,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { remove_7(unimplemented!()) });
+    unimplemented!();
     {
         let mut f: () = unimplemented!();
         unimplemented!();
@@ -88,17 +81,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { remove_7(unimplemented!()) });
+    unimplemented!();
     {
         let mut modes: [(); 6] = [
-            ((unimplemented!()) | (unimplemented!())),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            ((((unimplemented!()) | (unimplemented!())) | (unimplemented!())) | (unimplemented!())),
-            (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
-            ((((unimplemented!()) | (unimplemented!())) | (unimplemented!())) | (unimplemented!())),
-            (((((unimplemented!()) | (unimplemented!())) | (unimplemented!()))
-                | (unimplemented!()))
-                | (unimplemented!())),
+            (unimplemented!() as ()),
+            (unimplemented!() as ()),
+            (unimplemented!() as ()),
+            (unimplemented!() as ()),
+            (unimplemented!() as ()),
+            (unimplemented!() as ()),
         ];
         'loop_: for mode in IterRange::new(
             modes.as_mut_ptr(),
@@ -112,7 +103,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 unimplemented!();
             }
             {
-                (unsafe { remove_7(unimplemented!()) });
+                unimplemented!();
                 let mut f: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -130,7 +121,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 unimplemented!();
             }
             {
-                (unsafe { remove_7(unimplemented!()) });
+                unimplemented!();
                 let mut f: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();

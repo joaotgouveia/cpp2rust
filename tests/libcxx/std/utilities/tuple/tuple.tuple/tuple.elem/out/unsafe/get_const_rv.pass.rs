@@ -30,7 +30,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "std::is_same<const int&&, decltype(std::get<0>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(t)))");;
-        let i: *const () = (unsafe { get_0(&t) });
+        let i: *const () = unimplemented!();
         unimplemented!();
     }
     {
@@ -45,8 +45,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "std::is_same<const int&&, decltype(std::get<1>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(t)))");;
-        let s: *const () = (unsafe { get_1(&t) });
-        let i: *const () = (unsafe { get_2(&t) });
+        let s: *const () = unimplemented!();
+        let i: *const () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

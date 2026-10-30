@@ -8,41 +8,32 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn get_temp_file_name_0() -> () {
     let mut Name: () = unimplemented!();
-    let mut FD: () = ({ mkstemp_1((unimplemented!())) });
+    let mut FD: () = unimplemented!();
     if (FD == -1_()) {
-        ({ perror_2(Ptr::<()>::from_string_literal(b"mkstemp")) });
+        unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     return unimplemented!();
 }
-pub fn glibc_version_less_than_3(mut version: Ptr<()>) -> () {
+pub fn glibc_version_less_than_1(mut version: Ptr<()>) -> () {
     let mut test_version: () = unimplemented!();
-    let mut n: () = ({ confstr_4((anon_5__CS_GNU_LIBC_VERSION as ()), Ptr::<()>::null(), 0_()) });
+    let mut n: () = unimplemented!();
     let mut current_version: Ptr<()> =
         Ptr::alloc_array((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>());
-    ({
-        confstr_4(
-            (anon_5__CS_GNU_LIBC_VERSION as ()),
-            (current_version).clone(),
-            n,
-        )
-    });
-    let result: Value<()> = Rc::new(RefCell::new(
-        (({ strverscmp_6((current_version).clone(), unimplemented!()) }) < 0_()),
-    ));
+    unimplemented!();
+    let result: Value<()> = Rc::new(RefCell::new((unimplemented!() < 0_())));
     current_version.delete();
     return (*result.borrow());
 }
-pub fn get_temp_file_names_7() -> () {
+pub fn get_temp_file_names_2() -> () {
     let names: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let mut fd1: *mut ::libc::FILE =
-        libc::fopen(unimplemented!(), Ptr::<()>::from_string_literal(b"w"));
+    let mut fd1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    libc::fclose(fd1);
-    ({ remove_8(unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
     return unimplemented!();
 }
 pub fn main() {
@@ -65,7 +56,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let temp_files: Value<()> = Rc::new(RefCell::new(({ get_temp_file_names_7() })));
+    let temp_files: Value<()> = Rc::new(RefCell::new(({ get_temp_file_names_2() })));
     let temp1: Ptr<()> = field_ptr!(temp_files.as_pointer(), first);
     let temp2: Ptr<()> = field_ptr!(temp_files.as_pointer(), second);
     unimplemented!();
@@ -86,7 +77,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_8(unimplemented!()) });
+    unimplemented!();
     {
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut x: () = 0_();
@@ -95,7 +86,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_8(unimplemented!()) });
+    unimplemented!();
     {
         let fs1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let fs2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -113,7 +104,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_8(unimplemented!()) });
+    unimplemented!();
     {
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut x: () = 0_();
@@ -122,7 +113,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_8(unimplemented!()) });
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

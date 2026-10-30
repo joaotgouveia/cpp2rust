@@ -13,7 +13,7 @@ pub fn make_0(mut n: ()) -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    return unimplemented!();
+    return (*c.borrow_mut()).clone();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -37,8 +37,8 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let q1: Value<()> = Rc::new(RefCell::new(({ make_0(5_()) })));
     let q2: Value<()> = Rc::new(RefCell::new(({ make_0(10_()) })));
-    let q1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let q2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let q1_save: Value<()> = Rc::new(RefCell::new((*q1.borrow()).clone()));
+    let q2_save: Value<()> = Rc::new(RefCell::new((*q2.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

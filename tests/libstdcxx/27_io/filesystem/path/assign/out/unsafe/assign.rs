@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn compare_paths_0(p1: *const (), p2: *const ()) {
-    if unimplemented!() {
+    if !(unimplemented!()) {
         {
             unimplemented!();
             &(unimplemented!())
         };
     }
-    if unimplemented!() {
+    if !(unimplemented!()) {
         {
             unimplemented!();
             &(unimplemented!())
@@ -131,7 +131,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if ((pos) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_4))) {
+    if ((pos) != (unimplemented!())) {
         unimplemented!();
     }
     unimplemented!();
@@ -141,7 +141,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
     unimplemented!();
     let mut p: () = unimplemented!();
     unimplemented!();
-    let mut fd: () = (unsafe { mkstemp_6((&mut (*unimplemented!()) as *mut ())) });
+    let mut fd: () = unimplemented!();
     if ((fd) == (-1_())) {
         {
             unimplemented!();
@@ -202,20 +202,20 @@ impl Default for __gnu_test_scoped_file {
         unsafe { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub unsafe fn permissions_are_testable_7(mut print_msg: Option<()>) -> () {
+pub unsafe fn permissions_are_testable_5(mut print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| unsafe { true });
     let mut testable: () = false;
     if ((unimplemented!()) != (0_())) {
         testable = true;
     }
     if (print_msg) && (!(testable)) {
-        libc::puts(c"Skipping tests that depend on filesystem permissions".as_ptr());
+        unimplemented!();
     }
     return testable;
 }
-static mut counter_5: std::cell::LazyCell<()> =
+static mut counter_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test01_8() {
+pub unsafe fn test01_6() {
     'loop_: for s in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
@@ -239,7 +239,7 @@ pub unsafe fn test01_8() {
         (unsafe { compare_paths_0(&p0, &p4) });
     }
 }
-pub unsafe fn test02_9() {
+pub unsafe fn test02_7() {
     'loop_: for s in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
@@ -282,8 +282,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_8() });
-    (unsafe { test02_9() });
+    (unsafe { test01_6() });
+    (unsafe { test02_7() });
     0
 }
 pub unsafe fn __cpp2rust_init_globals() {

@@ -173,21 +173,31 @@ pub fn classify_2(mut x: ()) -> () {
     if (x == 0_()) {
         return (anon_1_zero as ());
     }
-    if ({ isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if ({ isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub fn is_about_6(mut x: (), mut y: ()) {
+pub fn test_6(mut x: (), _a1: Option<()>) {
+    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
     unimplemented!();
 }
-pub fn is_about_7(mut x: (), mut y: ()) {
+pub fn test_7(mut x: (), _a1: Option<()>) {
+    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
     unimplemented!();
 }
 pub fn test_8(mut x: (), _a1: Option<()>) {
@@ -197,12 +207,12 @@ pub fn test_8(mut x: (), _a1: Option<()>) {
 }
 pub fn test_9(mut x: (), _a1: Option<()>) {
     let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
     unimplemented!();
 }
 pub fn test_10(mut x: (), _a1: Option<()>) {
     let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
     unimplemented!();
 }
 pub fn test_11(mut x: (), _a1: Option<()>) {
@@ -210,15 +220,15 @@ pub fn test_11(mut x: (), _a1: Option<()>) {
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
     unimplemented!();
 }
-pub fn test_12(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+pub fn test_12() {
+    ({ test_9(0_(), None) });
+    ({ test_9(1_(), None) });
+    ({ test_9(10_(), None) });
 }
-pub fn test_13(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+pub fn test_13() {
+    ({ test_10(0_(), None) });
+    ({ test_10(1_(), None) });
+    ({ test_10(10_(), None) });
 }
 pub fn test_14() {
     ({ test_11(0_(), None) });
@@ -226,29 +236,19 @@ pub fn test_14() {
     ({ test_11(10_(), None) });
 }
 pub fn test_15() {
-    ({ test_12(0_(), None) });
-    ({ test_12(1_(), None) });
-    ({ test_12(10_(), None) });
+    ({ test_6(0_(), None) });
+    ({ test_6(1_(), None) });
+    ({ test_6(10_(), None) });
 }
 pub fn test_16() {
-    ({ test_13(0_(), None) });
-    ({ test_13(1_(), None) });
-    ({ test_13(10_(), None) });
+    ({ test_7(0_(), None) });
+    ({ test_7(1_(), None) });
+    ({ test_7(10_(), None) });
 }
 pub fn test_17() {
     ({ test_8(0_(), None) });
     ({ test_8(1_(), None) });
     ({ test_8(10_(), None) });
-}
-pub fn test_18() {
-    ({ test_9(0_(), None) });
-    ({ test_9(1_(), None) });
-    ({ test_9(10_(), None) });
-}
-pub fn test_19() {
-    ({ test_10(0_(), None) });
-    ({ test_10(1_(), None) });
-    ({ test_10(10_(), None) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -270,12 +270,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_12() });
+    ({ test_13() });
     ({ test_14() });
     ({ test_15() });
     ({ test_16() });
     ({ test_17() });
-    ({ test_18() });
-    ({ test_19() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

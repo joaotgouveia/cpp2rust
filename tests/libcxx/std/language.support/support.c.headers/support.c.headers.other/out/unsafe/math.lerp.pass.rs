@@ -6,15 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn lerp_0(mut _a0: (), mut _a1: (), mut _a2: ()) -> () {
-    return 32_();
-}
-pub unsafe fn lerp_1(mut _a0: (), mut _a1: (), mut _a2: ()) -> () {
-    return 32_();
-}
-pub unsafe fn lerp_2(mut _a0: (), mut _a1: (), mut _a2: ()) -> () {
-    return 32_();
-}
+
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

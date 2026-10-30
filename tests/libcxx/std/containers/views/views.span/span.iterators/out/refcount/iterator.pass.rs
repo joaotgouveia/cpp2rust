@@ -9,7 +9,10 @@ use std::rc::{Rc, Weak};
 pub fn test_type_0() {
     let ii1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ii2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ii4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ii4: Value<()> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
+    let cii: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -21,13 +24,24 @@ pub fn test_type_0() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_type_1() {
     let ii1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ii2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ii4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ii4: Value<()> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
+    let cii: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -39,13 +53,24 @@ pub fn test_type_1() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_type_2() {
     let ii1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ii2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ii4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ii4: Value<()> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
+    let cii: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -57,7 +82,15 @@ pub fn test_type_2() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_3() -> () {

@@ -19,7 +19,7 @@ pub unsafe fn test_nodiscard_0() -> () {
 }
 pub unsafe fn test_1() -> () {
     {
-        let ignore_v: *const () = &(*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
+        let ignore_v: *const () = &(*unimplemented!());
     }
     {
         let res: *const () = &(*unimplemented!());
@@ -27,7 +27,7 @@ pub unsafe fn test_1() -> () {
         unimplemented!();
     }
     {
-        let mut s: S_3 = S_3 { bf: 2_() };
+        let mut s: S_2 = S_2 { bf: 2_() };
         let res: *const () = &(*unimplemented!());
         unimplemented!();
     }
@@ -48,7 +48,7 @@ pub unsafe fn test_1() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct S_3 {
+pub struct S_2 {
     pub bf: (),
 }
 pub fn main() {

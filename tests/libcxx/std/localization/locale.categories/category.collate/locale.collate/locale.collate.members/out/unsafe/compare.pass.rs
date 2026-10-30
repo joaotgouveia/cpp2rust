@@ -29,7 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let sa: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let ib: [(); 4] = std::mem::transmute(*b"123\0");
-        let f: *const () = (unsafe { use_facet_0(&l) });
+        let f: *const () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -43,7 +43,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let sa: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let ib: [(); 4] = [49 as (), 50 as (), 51 as (), 0 as ()];
-        let f: *const () = (unsafe { use_facet_1(&l) });
+        let f: *const () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

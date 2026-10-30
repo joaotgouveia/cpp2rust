@@ -19,7 +19,7 @@ pub fn test_nodiscard_0() -> () {
 }
 pub fn test_1() -> () {
     {
-        let ignore_v: Ptr<()> = ignore_2.with(|v| v.as_pointer());
+        let ignore_v: Ptr<()> = unimplemented!();
     }
     {
         let res: Ptr<()> = (unimplemented!());
@@ -27,7 +27,7 @@ pub fn test_1() -> () {
         unimplemented!();
     }
     {
-        let mut s: S_3 = S_3 { bf: 2_() };
+        let mut s: S_2 = S_2 { bf: 2_() };
         let res: Ptr<()> = (unimplemented!());
         unimplemented!();
     }
@@ -48,7 +48,7 @@ pub fn test_1() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct S_3 {
+pub struct S_2 {
     #[offset(0)]
     pub bf: (),
 }

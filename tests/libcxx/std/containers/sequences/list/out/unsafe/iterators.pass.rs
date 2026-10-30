@@ -45,56 +45,10 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_A__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut A,
 }
-impl min_pointer_A__std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut A) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut A {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(t: *mut A) -> min_pointer_A__std_integral_constant_unsigned_long__0__ {
-        return min_pointer_A__std_integral_constant_unsigned_long__0__::new_1({
-            unimplemented!()
-        });
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const A,
-}
-impl min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *const A) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *const A {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *const A,
-    ) -> min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-        return min_pointer_const_A__std_integral_constant_unsigned_long__0__::new_1({
-            unimplemented!()
-        });
-    }
-}
+impl min_pointer_A__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
@@ -189,12 +143,7 @@ pub unsafe fn test_4() -> () {
     {
         let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
-        (*(unsafe {
-            min_pointer_A__std_integral_constant_unsigned_long__0__::operator_arrow(
-                &unimplemented!(),
-            )
-        }))
-        .first = 3_();
+        (*i).first = 3_();
         let mut j: () = unimplemented!();
         unimplemented!();
     }

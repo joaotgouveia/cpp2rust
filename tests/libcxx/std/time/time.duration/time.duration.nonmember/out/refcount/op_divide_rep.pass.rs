@@ -10,7 +10,7 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1000000000____std_chrono_duration_long_long__std_ratio_1__1000000000___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000000____std_chrono_duration_long__std_ratio_1__1000000000___
 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
@@ -26,23 +26,11 @@ impl Rep {
         Self { data_: i }
     }
 }
-impl std::cmp::PartialEq for Rep {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RepImpl::operator_eq_4(
-                &Rc::new(RefCell::new(Rep {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Rep {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Rep {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for Rep {}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -56,7 +44,7 @@ pub struct NotARep {}
 pub struct RepConstConvertibleLWG3050 {}
 pub fn operator_div_1(d: (), mut _a1: NotARep) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
-    return (*d.borrow_mut()).clone();
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -81,8 +69,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let __rhs = unimplemented!();
-        (*ns.borrow_mut()) = __rhs;
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -94,11 +81,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: NotARep = <NotARep>::default();
         const _: () = assert!(true, "");;
-        let __rhs = ({
-            let _d: () = unimplemented!();
-            operator_div_1(_d, (n).clone())
-        });
-        (*d.borrow_mut()) = __rhs;
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

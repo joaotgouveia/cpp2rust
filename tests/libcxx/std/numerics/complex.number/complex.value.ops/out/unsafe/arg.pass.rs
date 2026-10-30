@@ -203,43 +203,43 @@ pub unsafe fn classify_5(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_6(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_7(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_8(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_9(mut x: (), mut y: ()) {
+pub unsafe fn test_9() {
+    let mut z: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn is_about_10(mut x: (), mut y: ()) {
+pub unsafe fn test_10() {
+    let mut z: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_11() {
     let mut z: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_12() {
-    let mut z: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_13() {
-    let mut z: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_edges_14() {
-    let pi: () = (unsafe { atan2_15(0_f64, -0_f64) });
+pub unsafe fn test_edges_12() {
+    let pi: () = unimplemented!();
     let N: () = (::std::mem::size_of::<[(); 153]>() as ())
         .wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         let mut r: () = unimplemented!();
-        if (unsafe { isnan_7(unimplemented!()) }) || (unsafe { isnan_7(unimplemented!()) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             unimplemented!();
         } else {
             'switch: {
@@ -252,11 +252,11 @@ pub unsafe fn test_edges_14() {
                     })
                 } {
                     __v if __v == (anon_1_zero as ()) => {
-                        if (unsafe { signbit_16(unimplemented!()) }) {
-                            if (unsafe { signbit_16(unimplemented!()) }) {
-                                (unsafe { is_about_9(r, -pi) });
+                        if unimplemented!() {
+                            if unimplemented!() {
+                                (unsafe { is_about_7(r, -pi) });
                             } else {
-                                (unsafe { is_about_9(r, pi) });
+                                (unsafe { is_about_7(r, pi) });
                             }
                         } else {
                             unimplemented!();
@@ -266,16 +266,16 @@ pub unsafe fn test_edges_14() {
                     __v if __v == (anon_1_non_zero as ()) => {
                         if ((unimplemented!()) == (0_())) {
                             if ((unimplemented!()) < (0_())) {
-                                (unsafe { is_about_9(r, ((-pi) / (2_()))) });
+                                (unsafe { is_about_7(r, ((-pi) / (2_()))) });
                             } else {
-                                (unsafe { is_about_9(r, ((pi) / (2_()))) });
+                                (unsafe { is_about_7(r, ((pi) / (2_()))) });
                             }
                         } else if ((unimplemented!()) == (0_())) {
                             if ((unimplemented!()) < (0_())) {
-                                if (unsafe { signbit_16(unimplemented!()) }) {
-                                    (unsafe { is_about_9(r, -pi) });
+                                if unimplemented!() {
+                                    (unsafe { is_about_7(r, -pi) });
                                 } else {
-                                    (unsafe { is_about_9(r, pi) });
+                                    (unsafe { is_about_7(r, pi) });
                                 }
                             } else {
                                 unimplemented!();
@@ -289,28 +289,26 @@ pub unsafe fn test_edges_14() {
                         break 'switch;
                     }
                     __v if __v == (anon_1_inf as ()) => {
-                        if (unsafe { isinf_6(unimplemented!()) })
-                            && (unsafe { isinf_6(unimplemented!()) })
-                        {
+                        if (unimplemented!()) && (unimplemented!()) {
                             if ((unimplemented!()) < (0_())) {
                                 if ((unimplemented!()) > (0_())) {
-                                    (unsafe { is_about_9(r, ((0.75_f64) * (pi))) });
+                                    (unsafe { is_about_7(r, ((0.75_f64) * (pi))) });
                                 } else {
-                                    (unsafe { is_about_9(r, ((-0.75_f64) * (pi))) });
+                                    (unsafe { is_about_7(r, ((-0.75_f64) * (pi))) });
                                 }
                             } else {
                                 if ((unimplemented!()) > (0_())) {
-                                    (unsafe { is_about_9(r, ((0.25_f64) * (pi))) });
+                                    (unsafe { is_about_7(r, ((0.25_f64) * (pi))) });
                                 } else {
-                                    (unsafe { is_about_9(r, ((-0.25_f64) * (pi))) });
+                                    (unsafe { is_about_7(r, ((-0.25_f64) * (pi))) });
                                 }
                             }
-                        } else if (unsafe { isinf_6(unimplemented!()) }) {
+                        } else if unimplemented!() {
                             if ((unimplemented!()) < (0_())) {
-                                if (unsafe { signbit_16(unimplemented!()) }) {
-                                    (unsafe { is_about_9(r, -pi) });
+                                if unimplemented!() {
+                                    (unsafe { is_about_7(r, -pi) });
                                 } else {
-                                    (unsafe { is_about_9(r, pi) });
+                                    (unsafe { is_about_7(r, pi) });
                                 }
                             } else {
                                 unimplemented!();
@@ -318,9 +316,9 @@ pub unsafe fn test_edges_14() {
                             }
                         } else {
                             if ((unimplemented!()) < (0_())) {
-                                (unsafe { is_about_9(r, ((-pi) / (2_()))) });
+                                (unsafe { is_about_7(r, ((-pi) / (2_()))) });
                             } else {
-                                (unsafe { is_about_9(r, ((pi) / (2_()))) });
+                                (unsafe { is_about_7(r, ((pi) / (2_()))) });
                             }
                         }
                         break 'switch;
@@ -348,10 +346,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_9() });
+    (unsafe { test_10() });
     (unsafe { test_11() });
-    (unsafe { test_12() });
-    (unsafe { test_13() });
-    (unsafe { test_edges_14() });
+    (unsafe { test_edges_12() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

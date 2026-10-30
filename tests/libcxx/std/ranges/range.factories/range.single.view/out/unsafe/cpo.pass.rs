@@ -175,10 +175,6 @@ impl Default for TrivialMoveOnly {
     }
 }
 const _: () = assert!(true, "!std::is_invocable_v<decltype((std::views::single))>");
-const _: () = assert!(
-    true,
-    "std::is_invocable_v<decltype((std::views::single)), MoveOnly>"
-);
 pub unsafe fn test_14() -> () {
     {
         let mut x: () = 42_();
@@ -189,8 +185,8 @@ pub unsafe fn test_14() -> () {
     }
     {
         let mut v: () = (unsafe {
-            let mut ___range: () = 42_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut ___range)
+            let mut ___e: () = 42_();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut ___e)
         });
         unimplemented!();
         unimplemented!();

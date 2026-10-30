@@ -22,23 +22,11 @@ impl S {
         Self { x_: x }
     }
 }
-impl std::cmp::PartialEq for S {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(S {
-                    x_: self.x_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(S {
-                    x_: other.x_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for S {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for S {}
 impl Default for S {
     fn default() -> Self {
         { S::new_1() }

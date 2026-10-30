@@ -66,17 +66,7 @@ pub fn test_eprintf_0(
     args_4: Ptr<()>,
     args_5: Ptr<Ptr<()>>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-            (args_4.read()),
-            (args_5.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_eprintf_1(
     mut fmt: Ptr<()>,
@@ -84,15 +74,7 @@ pub fn test_eprintf_1(
     args_2: Ptr<Ptr<()>>,
     args_3: Ptr<()>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_eprintf_2(
     mut fmt: Ptr<()>,
@@ -102,38 +84,13 @@ pub fn test_eprintf_2(
     args_4: Ptr<()>,
     args_5: Ptr<()>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-            (args_4.read()),
-            (args_5.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_eprintf_3(mut fmt: Ptr<()>, args_1: Ptr<()>, args_2: Ptr<()>) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_eprintf_4(mut fmt: Ptr<()>, args_1: Ptr<()>, args_2: Ptr<()>, args_3: Ptr<()>) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_eprintf_5(
     mut fmt: Ptr<()>,
@@ -143,28 +100,10 @@ pub fn test_eprintf_5(
     args_4: Ptr<()>,
     args_5: Ptr<()>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-            (args_4.read()),
-            (args_5.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_eprintf_6(mut fmt: Ptr<()>, args_1: Ptr<()>, args_2: Ptr<()>, args_3: Ptr<()>) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_log_7(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
     let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
@@ -257,7 +196,147 @@ pub fn test_log_12(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_require_13(
+pub fn test_log_13(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_14(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_15(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_16(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_17(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_18(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_19(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_20(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_21(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_log_22(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
+    let line: Value<()> = Rc::new(RefCell::new(line));
+    ({
+        test_eprintf_1(
+            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            condition.as_pointer(),
+            file.as_pointer(),
+            line.as_pointer(),
+        )
+    });
+    ({ (*functor.upgrade().deref()).call() });
+}
+pub fn test_require_23(
     mut condition: (),
     mut condition_str: Ptr<()>,
     mut file: Ptr<()>,
@@ -276,7 +355,7 @@ pub fn test_require_13(
     });
     unimplemented!();
 }
-pub fn test_require_14(
+pub fn test_require_24(
     mut condition: (),
     mut condition_str: Ptr<()>,
     mut file: Ptr<()>,
@@ -295,7 +374,7 @@ pub fn test_require_14(
     });
     unimplemented!();
 }
-pub fn test_require_15(
+pub fn test_require_25(
     mut condition: (),
     mut condition_str: Ptr<()>,
     mut file: Ptr<()>,
@@ -314,7 +393,7 @@ pub fn test_require_15(
     });
     unimplemented!();
 }
-pub fn test_require_16(
+pub fn test_require_26(
     mut condition: (),
     mut condition_str: Ptr<()>,
     mut file: Ptr<()>,
@@ -333,7 +412,7 @@ pub fn test_require_16(
     });
     unimplemented!();
 }
-pub fn test_require_17(
+pub fn test_require_27(
     mut condition: (),
     mut condition_str: Ptr<()>,
     mut file: Ptr<()>,
@@ -352,41 +431,217 @@ pub fn test_require_17(
     });
     unimplemented!();
 }
-pub fn get_temp_file_name_18() -> () {
+pub fn test_require_28(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_13(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_29(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_14(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_30(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_15(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_31(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_16(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_32(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_17(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_33(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_18(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_34(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_19(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_35(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_20(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_36(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_21(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn test_require_37(
+    mut condition: (),
+    mut condition_str: Ptr<()>,
+    mut file: Ptr<()>,
+    mut line: (),
+    arg: Ptr<FnPtr<fn()>>,
+) {
+    if condition {
+        return;
+    }
+    ({
+        let _condition: Ptr<()> = (condition_str).clone();
+        let _file: Ptr<()> = (file).clone();
+        let _line: () = line;
+        let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
+        test_log_22(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub fn get_temp_file_name_38() -> () {
     let mut Name: () = unimplemented!();
-    let mut FD: () = ({ mkstemp_19((unimplemented!())) });
+    let mut FD: () = unimplemented!();
     if (FD == -1_()) {
-        ({ perror_20(Ptr::<()>::from_string_literal(b"mkstemp")) });
+        unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     return unimplemented!();
 }
-pub fn glibc_version_less_than_21(mut version: Ptr<()>) -> () {
+pub fn glibc_version_less_than_39(mut version: Ptr<()>) -> () {
     let mut test_version: () = unimplemented!();
-    let mut n: () = ({
-        confstr_22(
-            (anon_23__CS_GNU_LIBC_VERSION as ()),
-            Ptr::<()>::null(),
-            0_(),
-        )
-    });
+    let mut n: () = unimplemented!();
     let mut current_version: Ptr<()> =
         Ptr::alloc_array((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>());
-    ({
-        confstr_22(
-            (anon_23__CS_GNU_LIBC_VERSION as ()),
-            (current_version).clone(),
-            n,
-        )
-    });
-    let result: Value<()> = Rc::new(RefCell::new(
-        (({ strverscmp_24((current_version).clone(), unimplemented!()) }) < 0_()),
-    ));
+    unimplemented!();
+    let result: Value<()> = Rc::new(RefCell::new((unimplemented!() < 0_())));
     current_version.delete();
     return (*result.borrow());
 }
-pub fn test_write_25(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
+pub fn test_write_40(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
     let policy: Value<LibraryDefaultBuffer> = Rc::new(RefCell::new(policy));
     let previously_written: Value<()> = Rc::new(RefCell::new(0_()));
     let total_size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -398,7 +653,7 @@ pub fn test_write_25(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_18() });
+    let mut p: () = ({ get_temp_file_name_38() });
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
@@ -440,7 +695,7 @@ pub fn test_write_25(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
                             });
                         }
                     )));
-                    test_require_13(
+                    test_require_23(
                         _condition,
                         Ptr::<()>::from_string_literal(b"data[previously_written + j] == exp"),
                         Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -475,7 +730,7 @@ pub fn test_write_25(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
                     });
                 }
             )));
-            test_require_14(
+            test_require_24(
                 _condition,
                 Ptr::<()>::from_string_literal(b"in_sz == total_size"),
                 Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -515,7 +770,7 @@ pub fn test_write_25(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
                         });
                     }
                 )));
-                test_require_15(
+                test_require_25(
                     _condition,
                     Ptr::<()>::from_string_literal(b"in_buffer[i] == exp"),
                     Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -526,9 +781,9 @@ pub fn test_write_25(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
             (*i.borrow_mut()).prefix_inc();
         }
     }
-    ({ remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub fn test_write_27(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_write_41(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
     let policy: Value<LibraryManagedBuffer> = Rc::new(RefCell::new(policy));
     let previously_written: Value<()> = Rc::new(RefCell::new(0_()));
     let total_size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -540,7 +795,7 @@ pub fn test_write_27(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_18() });
+    let mut p: () = ({ get_temp_file_name_38() });
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
@@ -668,9 +923,9 @@ pub fn test_write_27(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
             (*i.borrow_mut()).prefix_inc();
         }
     }
-    ({ remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub fn test_write_31(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_write_42(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
     let policy: Value<UserManagedBuffer> = Rc::new(RefCell::new(policy));
     let previously_written: Value<()> = Rc::new(RefCell::new(0_()));
     let total_size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -682,7 +937,7 @@ pub fn test_write_31(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_18() });
+    let mut p: () = ({ get_temp_file_name_38() });
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ UserManagedBufferImpl::operator_call_4(&policy.as_pointer(), ofs.as_pointer()) });
@@ -722,7 +977,7 @@ pub fn test_write_31(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                             });
                         }
                     )));
-                    test_require_32(
+                    test_require_33(
                         _condition,
                         Ptr::<()>::from_string_literal(b"data[previously_written + j] == exp"),
                         Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -757,7 +1012,7 @@ pub fn test_write_31(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                     });
                 }
             )));
-            test_require_33(
+            test_require_34(
                 _condition,
                 Ptr::<()>::from_string_literal(b"in_sz == total_size"),
                 Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -797,7 +1052,7 @@ pub fn test_write_31(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                         });
                     }
                 )));
-                test_require_34(
+                test_require_35(
                     _condition,
                     Ptr::<()>::from_string_literal(b"in_buffer[i] == exp"),
                     Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -808,9 +1063,9 @@ pub fn test_write_31(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
             (*i.borrow_mut()).prefix_inc();
         }
     }
-    ({ remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub fn test_write_codecvt_35(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
+pub fn test_write_codecvt_43(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
     let policy: Value<LibraryDefaultBuffer> = Rc::new(RefCell::new(policy));
     let previously_written: Value<()> = Rc::new(RefCell::new(0_()));
     let mut total_size: () = unimplemented!();
@@ -821,7 +1076,7 @@ pub fn test_write_codecvt_35(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_18() });
+    let mut p: () = ({ get_temp_file_name_38() });
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -865,7 +1120,7 @@ pub fn test_write_codecvt_35(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()
                             });
                         }
                     )));
-                    test_require_16(
+                    test_require_26(
                         _condition,
                         Ptr::<()>::from_string_literal(b"data[previously_written + j] == exp"),
                         Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -911,7 +1166,7 @@ pub fn test_write_codecvt_35(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()
                         });
                     }
                 )));
-                test_require_17(
+                test_require_27(
                     _condition,
                     Ptr::<()>::from_string_literal(b"in_buffer[i] == exp"),
                     Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -922,9 +1177,9 @@ pub fn test_write_codecvt_35(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()
             (*i.borrow_mut()).prefix_inc();
         }
     }
-    ({ remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub fn test_write_codecvt_36(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_write_codecvt_44(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
     let policy: Value<LibraryManagedBuffer> = Rc::new(RefCell::new(policy));
     let previously_written: Value<()> = Rc::new(RefCell::new(0_()));
     let mut total_size: () = unimplemented!();
@@ -935,7 +1190,7 @@ pub fn test_write_codecvt_36(policy: LibraryManagedBuffer, payload_sizes: Ptr<()
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_18() });
+    let mut p: () = ({ get_temp_file_name_38() });
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -979,7 +1234,7 @@ pub fn test_write_codecvt_36(policy: LibraryManagedBuffer, payload_sizes: Ptr<()
                             });
                         }
                     )));
-                    test_require_37(
+                    test_require_31(
                         _condition,
                         Ptr::<()>::from_string_literal(b"data[previously_written + j] == exp"),
                         Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -1025,7 +1280,7 @@ pub fn test_write_codecvt_36(policy: LibraryManagedBuffer, payload_sizes: Ptr<()
                         });
                     }
                 )));
-                test_require_38(
+                test_require_32(
                     _condition,
                     Ptr::<()>::from_string_literal(b"in_buffer[i] == exp"),
                     Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -1036,9 +1291,9 @@ pub fn test_write_codecvt_36(policy: LibraryManagedBuffer, payload_sizes: Ptr<()
             (*i.borrow_mut()).prefix_inc();
         }
     }
-    ({ remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub fn test_write_codecvt_39(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_write_codecvt_45(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
     let policy: Value<UserManagedBuffer> = Rc::new(RefCell::new(policy));
     let previously_written: Value<()> = Rc::new(RefCell::new(0_()));
     let mut total_size: () = unimplemented!();
@@ -1049,7 +1304,7 @@ pub fn test_write_codecvt_39(policy: UserManagedBuffer, payload_sizes: Ptr<()>) 
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_18() });
+    let mut p: () = ({ get_temp_file_name_38() });
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -1088,7 +1343,7 @@ pub fn test_write_codecvt_39(policy: UserManagedBuffer, payload_sizes: Ptr<()>) 
                             });
                         }
                     )));
-                    test_require_40(
+                    test_require_36(
                         _condition,
                         Ptr::<()>::from_string_literal(b"data[previously_written + j] == exp"),
                         Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -1134,7 +1389,7 @@ pub fn test_write_codecvt_39(policy: UserManagedBuffer, payload_sizes: Ptr<()>) 
                         });
                     }
                 )));
-                test_require_41(
+                test_require_37(
                     _condition,
                     Ptr::<()>::from_string_literal(b"in_buffer[i] == exp"),
                     Ptr::<()>::from_string_literal(b"buffered_writes.pass.cpp"),
@@ -1145,27 +1400,27 @@ pub fn test_write_codecvt_39(policy: UserManagedBuffer, payload_sizes: Ptr<()>) 
             (*i.borrow_mut()).prefix_inc();
         }
     }
-    ({ remove_26(unimplemented!()) });
+    unimplemented!();
 }
 thread_local!(
-    pub static buffer_sizes_42: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static buffer_sizes_46: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static io_sizes_43: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static io_sizes_47: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static io_sizes_default_44: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static io_sizes_default_48: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-pub fn test_1_write_45() {
+pub fn test_1_write_49() {
     'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut x: () = (unimplemented!().read());
         ({
             let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_write_25(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
+            test_write_40(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
         });
         ({
             let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_write_codecvt_35(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
+            test_write_codecvt_43(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
         });
     }
     'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
@@ -1174,14 +1429,14 @@ pub fn test_1_write_45() {
             let mut x: () = (unimplemented!().read());
             ({
                 let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_write_27(
+                test_write_41(
                     LibraryManagedBuffer::new({ b }),
                     _payload_sizes.as_pointer(),
                 )
             });
             ({
                 let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_write_codecvt_36(
+                test_write_codecvt_44(
                     LibraryManagedBuffer::new({ b }),
                     _payload_sizes.as_pointer(),
                 )
@@ -1194,27 +1449,27 @@ pub fn test_1_write_45() {
             let mut x: () = (unimplemented!().read());
             ({
                 let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_write_31(UserManagedBuffer::new({ b }), _payload_sizes.as_pointer())
+                test_write_42(UserManagedBuffer::new({ b }), _payload_sizes.as_pointer())
             });
             ({
                 let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_write_codecvt_39(UserManagedBuffer::new({ b }), _payload_sizes.as_pointer())
+                test_write_codecvt_45(UserManagedBuffer::new({ b }), _payload_sizes.as_pointer())
             });
         }
     }
 }
-pub fn test_2_writes_46() {
+pub fn test_2_writes_50() {
     'loop_: for a in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut a: () = (unimplemented!().read());
         'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut b: () = (unimplemented!().read());
             ({
                 let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_write_25(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
+                test_write_40(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
             });
             ({
                 let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_write_codecvt_35(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
+                test_write_codecvt_43(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
             });
         }
     }
@@ -1226,14 +1481,14 @@ pub fn test_2_writes_46() {
                 let mut b: () = (unimplemented!().read());
                 ({
                     let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    test_write_27(
+                    test_write_41(
                         LibraryManagedBuffer::new({ buf }),
                         _payload_sizes.as_pointer(),
                     )
                 });
                 ({
                     let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    test_write_codecvt_36(
+                    test_write_codecvt_44(
                         LibraryManagedBuffer::new({ buf }),
                         _payload_sizes.as_pointer(),
                     )
@@ -1249,11 +1504,11 @@ pub fn test_2_writes_46() {
                 let mut b: () = (unimplemented!().read());
                 ({
                     let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    test_write_31(UserManagedBuffer::new({ buf }), _payload_sizes.as_pointer())
+                    test_write_42(UserManagedBuffer::new({ buf }), _payload_sizes.as_pointer())
                 });
                 ({
                     let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    test_write_codecvt_39(
+                    test_write_codecvt_45(
                         UserManagedBuffer::new({ buf }),
                         _payload_sizes.as_pointer(),
                     )
@@ -1282,8 +1537,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_1_write_45() });
-    ({ test_2_writes_46() });
+    ({ test_1_write_49() });
+    ({ test_2_writes_50() });
     return 0_();
 }
 pub trait LibraryDefaultBufferImpl {
@@ -1342,7 +1597,7 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = buffer_sizes_42.with(|_| ());
-    let _ = io_sizes_43.with(|_| ());
-    let _ = io_sizes_default_44.with(|_| ());
+    let _ = buffer_sizes_46.with(|_| ());
+    let _ = io_sizes_47.with(|_| ());
+    let _ = io_sizes_default_48.with(|_| ());
 }

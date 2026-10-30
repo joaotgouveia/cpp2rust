@@ -245,7 +245,7 @@ pub unsafe fn test_sfinae_2() {
         }
     );
     &(unimplemented!());
-    &(unsafe { opt.and_then(&mut l) });
+    &(unimplemented!());
 }
 pub unsafe fn test_3() -> () {
     (unsafe { test_val_types_1() });
@@ -258,22 +258,13 @@ pub unsafe fn test_3() -> () {
         }
     });
     &(unimplemented!());
-    &(unsafe { opt.and_then(&never_called) });
     &(unimplemented!());
-    &(unsafe {
-        let ___f: *const FnPtr<fn(()) -> ()> = &never_called;
-        (*copt).and_then(___f)
-    });
+    &(unimplemented!());
+    &(unimplemented!());
     let mut nc: () = unimplemented!();
     let cnc: *const () = &nc;
-    &(unsafe {
-        let mut ___f: NoCopy = <NoCopy>::default();
-        (*cnc).and_then(&mut ___f)
-    });
-    &(unsafe {
-        let mut ___f: NoCopy = <NoCopy>::default();
-        nc.and_then(&mut ___f)
-    });
+    &(unimplemented!());
+    &(unimplemented!());
     return true;
 }
 pub fn main() {

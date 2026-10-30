@@ -86,7 +86,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut i1: () = unimplemented!();
         (&(i1));
     }
-    let mut i: i64 = 0_i64;
+    let mut i: () = 0_();
     (&(i));
     const _: () = assert!(
         true,

@@ -430,12 +430,31 @@ pub unsafe fn swallow_11(
 }
 pub unsafe fn swallow_9(mut _a0: (), mut _a1: (), mut _a2: ()) {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -444,7 +463,7 @@ pub unsafe fn base_12(i: *const cpp17_input_iterator_int_ptr__int_ptr_) -> *mut 
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -468,13 +487,24 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn base_13(i: *const forward_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -498,12 +528,23 @@ impl forward_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_int_ptr_,
+    ) -> *mut forward_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_int_ptr_));
+    }
 }
 pub unsafe fn base_14(i: *const bidirectional_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct bidirectional_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -527,12 +568,23 @@ impl bidirectional_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut bidirectional_iterator_int_ptr_,
+    ) -> *mut bidirectional_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut bidirectional_iterator_int_ptr_));
+    }
 }
 pub unsafe fn base_15(i: *const random_access_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -556,9 +608,20 @@ impl random_access_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut random_access_iterator_int_ptr_,
+    ) -> *mut random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut random_access_iterator_int_ptr_));
+    }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -570,6 +633,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
@@ -579,7 +660,7 @@ pub unsafe fn base_16(i: *const contiguous_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -602,6 +683,17 @@ impl contiguous_iterator_int_ptr_ {
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut contiguous_iterator_int_ptr_,
+    ) -> *mut contiguous_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut contiguous_iterator_int_ptr_));
     }
 }
 pub unsafe fn base_17(mut i: *mut ()) -> *mut () {
@@ -1049,7 +1141,7 @@ impl util_iterator_error {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_int_ptr_ {
     data_: (),
 }
@@ -1063,6 +1155,16 @@ impl Range_int_ptr_ {
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_0 })
         };
     }
+    pub unsafe fn move_from(_a0: *mut Range_int_ptr_) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut Range_int_ptr_) -> *mut Range_int_ptr_ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_int_ptr_));
+    }
 }
 impl Default for Range_int_ptr_ {
     fn default() -> Self {
@@ -1074,7 +1176,7 @@ impl Default for Range_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_contiguous_iterator_int_ptr__ {
     data_: (),
 }
@@ -1090,6 +1192,19 @@ impl Range_contiguous_iterator_int_ptr__ {
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_1 })
         };
     }
+    pub unsafe fn move_from(_a0: *mut Range_contiguous_iterator_int_ptr__) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut Range_contiguous_iterator_int_ptr__,
+    ) -> *mut Range_contiguous_iterator_int_ptr__ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_contiguous_iterator_int_ptr__));
+    }
 }
 impl Default for Range_contiguous_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1101,7 +1216,7 @@ impl Default for Range_contiguous_iterator_int_ptr__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_random_access_iterator_int_ptr__ {
     data_: (),
 }
@@ -1118,6 +1233,19 @@ impl Range_random_access_iterator_int_ptr__ {
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_2 })
         };
     }
+    pub unsafe fn move_from(_a0: *mut Range_random_access_iterator_int_ptr__) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut Range_random_access_iterator_int_ptr__,
+    ) -> *mut Range_random_access_iterator_int_ptr__ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_random_access_iterator_int_ptr__));
+    }
 }
 impl Default for Range_random_access_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1129,7 +1257,7 @@ impl Default for Range_random_access_iterator_int_ptr__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_bidirectional_iterator_int_ptr__ {
     data_: (),
 }
@@ -1146,6 +1274,19 @@ impl Range_bidirectional_iterator_int_ptr__ {
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_3 })
         };
     }
+    pub unsafe fn move_from(_a0: *mut Range_bidirectional_iterator_int_ptr__) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut Range_bidirectional_iterator_int_ptr__,
+    ) -> *mut Range_bidirectional_iterator_int_ptr__ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_bidirectional_iterator_int_ptr__));
+    }
 }
 impl Default for Range_bidirectional_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1157,7 +1298,7 @@ impl Default for Range_bidirectional_iterator_int_ptr__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_forward_iterator_int_ptr__ {
     data_: (),
 }
@@ -1173,6 +1314,19 @@ impl Range_forward_iterator_int_ptr__ {
             sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &mut __tmp_4 })
         };
     }
+    pub unsafe fn move_from(_a0: *mut Range_forward_iterator_int_ptr__) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut Range_forward_iterator_int_ptr__,
+    ) -> *mut Range_forward_iterator_int_ptr__ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_forward_iterator_int_ptr__));
+    }
 }
 impl Default for Range_forward_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1184,7 +1338,7 @@ impl Default for Range_forward_iterator_int_ptr__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_cpp20_input_iterator_int_ptr__ {
     data_: (),
 }
@@ -1200,6 +1354,19 @@ impl Range_cpp20_input_iterator_int_ptr__ {
             sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_5 })
         };
     }
+    pub unsafe fn move_from(_a0: *mut Range_cpp20_input_iterator_int_ptr__) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut Range_cpp20_input_iterator_int_ptr__,
+    ) -> *mut Range_cpp20_input_iterator_int_ptr__ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_cpp20_input_iterator_int_ptr__));
+    }
 }
 impl Default for Range_cpp20_input_iterator_int_ptr__ {
     fn default() -> Self {
@@ -1211,7 +1378,7 @@ impl Default for Range_cpp20_input_iterator_int_ptr__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Range_cpp17_input_iterator_int_ptr__int_ptr__ {
     data_: (),
 }
@@ -1227,6 +1394,19 @@ impl Range_cpp17_input_iterator_int_ptr__int_ptr__ {
                 });
             sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &mut __tmp_6 })
         };
+    }
+    pub unsafe fn move_from(_a0: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__,
+    ) -> *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ {
+        unimplemented!();
+        return &mut (*(self as *mut Range_cpp17_input_iterator_int_ptr__int_ptr__));
     }
 }
 impl Default for Range_cpp17_input_iterator_int_ptr__int_ptr__ {

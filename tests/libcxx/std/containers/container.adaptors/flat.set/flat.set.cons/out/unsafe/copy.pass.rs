@@ -208,20 +208,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_int_ {
-    pub unsafe fn new_1(a: *const test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
 pub unsafe fn operator_eq_5(x: *const test_allocator_int_, y: *const test_allocator_int_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
@@ -232,9 +218,6 @@ pub struct test_allocator_int__rebind_int_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_const_int_ptr_ {}
-#[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
@@ -242,7 +225,7 @@ pub struct test_allocator_int_ {
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ {
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_1(mut data: ()) -> Self {
         let mut this = Self {
             data_: data,
             id_: 0_(),
@@ -365,40 +348,13 @@ impl test_allocator_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
+#[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ptr_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ptr_ {
-    pub unsafe fn copy_from(a: *const test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
-        this
-    }
-    pub unsafe fn move_from(a: *mut test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
-        }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_2));
-        this
-    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -429,28 +385,6 @@ impl test_allocator_int_ptr_ {
         }
         unimplemented!();
     }
-    pub unsafe fn destroy(&mut self, mut p: *mut *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).destroy_count.prefix_inc();
-        };
-    }
-    pub unsafe fn construct_16_int_ptr(&mut self, mut p: *mut *mut (), val: *mut *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).construct_count.prefix_inc();
-        }
-        unimplemented!();
-    }
-    pub unsafe fn construct_16_int_ptrref(&mut self, mut p: *mut *mut (), val: *mut *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).construct_count.prefix_inc();
-        }
-        unimplemented!();
-    }
-}
-impl Clone for test_allocator_int_ptr_ {
-    fn clone(&self) -> Self {
-        unsafe { test_allocator_int_ptr_::copy_from(self as *const test_allocator_int_ptr_) }
-    }
 }
 impl Default for test_allocator_int_ptr_ {
     fn default() -> Self {
@@ -463,31 +397,6 @@ impl Default for test_allocator_int_ptr_ {
         }
     }
 }
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_const_int_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_const_int_ptr_ {}
-impl Default for test_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_const_int_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-impl other_allocator_int_ {
-    pub unsafe fn new_1(a: *const other_allocator_int_ptr_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 pub unsafe fn operator_eq_6(x: *const other_allocator_int_, y: *const other_allocator_int_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
@@ -497,7 +406,7 @@ pub struct other_allocator_int_ {
     data_: (),
 }
 impl other_allocator_int_ {
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: ()) -> Self {
         let mut this = Self { data_: i };
         this
     }
@@ -508,7 +417,7 @@ impl other_allocator_int_ {
         unimplemented!();
     }
     pub unsafe fn select_on_container_copy_construction(&self) -> other_allocator_int_ {
-        return other_allocator_int_::new_2({ -2_() });
+        return other_allocator_int_::new_1({ -2_() });
     }
 }
 impl std::cmp::PartialEq for other_allocator_int_ {
@@ -560,21 +469,6 @@ impl Default for other_allocator_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_const_int_ptr_ {
-    data_: (),
-}
-impl other_allocator_const_int_ptr_ {}
-impl Default for other_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_const_int_ptr_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
@@ -603,56 +497,96 @@ impl Tag_X {
 pub unsafe fn test_7() {
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
+                { unimplemented!() },
+                { &mut __tmp_0 },
+            )
+        };
+        let mut m: () = mo.clone();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = (unsafe {
+            ( m as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { mo.extract() });
+        let mut keys2: () = (unsafe {
+            ( mo as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
     }
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_1: test_less_int_ = test_less_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_vector_int__other_allocator_int___::new_1(
+                { unimplemented!() },
+                { &mut __tmp_1 },
+            )
+        };
+        let mut m: () = mo.clone();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = (unsafe {
+            ( m as std__Flat_set_impl_int__test_less_int___std_vector_int__other_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { mo.extract() });
+        let mut keys2: () = (unsafe {
+            ( mo as std__Flat_set_impl_int__test_less_int___std_vector_int__other_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
     }
 }
 pub unsafe fn test_8() {
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
+                { unimplemented!() },
+                { &mut __tmp_2 },
+            )
+        };
+        let mut m: () = mo.clone();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = (unsafe {
+            ( m as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { mo.extract() });
+        let mut keys2: () = (unsafe {
+            ( mo as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
     }
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_3: test_less_int_ = test_less_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_deque_int__other_allocator_int___::new_1(
+                { unimplemented!() },
+                { &mut __tmp_3 },
+            )
+        };
+        let mut m: () = mo.clone();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = (unsafe {
+            ( m as std__Flat_set_impl_int__test_less_int___std_deque_int__other_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { mo.extract() });
+        let mut keys2: () = (unsafe {
+            ( mo as std__Flat_set_impl_int__test_less_int___std_deque_int__other_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
     }
 }

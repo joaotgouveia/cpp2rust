@@ -20,23 +20,11 @@ impl test_less_int_ {
         Self { data_: data }
     }
 }
-impl std::cmp::PartialEq for test_less_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(test_less_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_less_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_less_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_less_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -153,27 +141,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -204,7 +176,7 @@ pub fn operator_eq_5(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_int__int__ {
     #[offset(0)]
@@ -223,28 +195,37 @@ impl test_allocator_std_pair_const_int__int__ {
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-}
-impl std::cmp::PartialEq for test_allocator_std_pair_const_int__int__ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(test_allocator_std_pair_const_int__int__ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_std_pair_const_int__int__ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
+    pub fn copy_from(a: Ptr<test_allocator_std_pair_const_int__int__>) -> Self {
+        let __this: Value<test_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_std_pair_const_int__int__> = __this.as_pointer();
+        unimplemented!();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
         }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::Eq for test_allocator_std_pair_const_int__int__ {}
+impl CppEq for test_allocator_std_pair_const_int__int__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
+    }
+}
+impl Clone for test_allocator_std_pair_const_int__int__ {
+    fn clone(&self) -> Self {
+        let __src: Value<test_allocator_std_pair_const_int__int__> =
+            Rc::new(RefCell::new(test_allocator_std_pair_const_int__int__ {
+                data_: self.data_.clone(),
+                id_: self.id_.clone(),
+                stats_: self.stats_.clone(),
+            }));
+        test_allocator_std_pair_const_int__int__::copy_from(__src.as_pointer())
+    }
+}
 impl Default for test_allocator_std_pair_const_int__int__ {
     fn default() -> Self {
         {
@@ -327,12 +308,11 @@ pub fn operator_eq_10(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__int__ {}
-impl std::cmp::PartialEq for min_allocator_std_pair_const_int__int__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_10(self.clone(), other.clone()) }
+impl CppEq for min_allocator_std_pair_const_int__int__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_10(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_std_pair_const_int__int__ {}
 pub fn test_alloc_11(new_alloc: Ptr<()>) -> () {
     {
         let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];

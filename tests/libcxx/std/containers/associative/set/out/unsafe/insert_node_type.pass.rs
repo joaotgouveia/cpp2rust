@@ -37,34 +37,22 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
-pub unsafe fn verify_insert_return_type_5(t: *mut ()) {
+pub unsafe fn verify_insert_return_type_4(t: *mut ()) {
     const _: () = assert!(true, "std::is_aggregate_v<verified_type>");;
     const _: () = assert!(
         true,
         "std::is_same_v<verified_type, typename Container::insert_return_type>"
     );;
-    let __decomp_6: *mut () = t;
+    let __decomp_5: *mut () = t;
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(pos), typename Container::iterator>"
@@ -87,13 +75,13 @@ pub unsafe fn verify_insert_return_type_5(t: *mut ()) {
     );;
     unimplemented!();
 }
-pub unsafe fn verify_insert_return_type_7(t: *mut ()) {
+pub unsafe fn verify_insert_return_type_6(t: *mut ()) {
     const _: () = assert!(true, "std::is_aggregate_v<verified_type>");;
     const _: () = assert!(
         true,
         "std::is_same_v<verified_type, typename Container::insert_return_type>"
     );;
-    let __decomp_8: *mut () = t;
+    let __decomp_7: *mut () = t;
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(pos), typename Container::iterator>"
@@ -115,16 +103,61 @@ pub unsafe fn verify_insert_return_type_7(t: *mut ()) {
         "std::is_same_v<decltype(t.node), typename Container::node_type>"
     );;
     unimplemented!();
+}
+pub unsafe fn node_factory_8(c: *mut (), key: *const ()) -> () {
+    let mut p: () = unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn node_factory_9(c: *mut (), key: *const ()) -> () {
     let mut p: () = unimplemented!();
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn node_factory_10(c: *mut (), key: *const ()) -> () {
-    let mut p: () = unimplemented!();
+pub unsafe fn test_10(c: *mut ()) {
+    let mut nf: Option<unsafe fn(*mut (), *const ()) -> ()> = (Some(node_factory_8));
+    let mut c2: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) != (10_())) {
+        let mut node: () = (unsafe { (nf).unwrap()(&mut c2, &i) });
+        unimplemented!();
+        let mut irt: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (unsafe { verify_insert_return_type_4(&mut irt) });
+        i.prefix_inc();
+    }
     unimplemented!();
-    return unimplemented!();
+    {
+        let mut def: () = unimplemented!();
+        let mut irt: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (unsafe { verify_insert_return_type_4(&mut irt) });
+    }
+    {
+        let mut dupl: () = (unsafe {
+            let mut _arg1: () = 0_();
+            (nf).unwrap()(&mut c2, &mut _arg1)
+        });
+        let mut irt: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (unsafe { verify_insert_return_type_4(&mut irt) });
+    }
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) != (10_())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
 }
 pub unsafe fn test_11(c: *mut ()) {
     let mut nf: Option<unsafe fn(*mut (), *const ()) -> ()> = (Some(node_factory_9));
@@ -138,7 +171,7 @@ pub unsafe fn test_11(c: *mut ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { verify_insert_return_type_5(&mut irt) });
+        (unsafe { verify_insert_return_type_6(&mut irt) });
         i.prefix_inc();
     }
     unimplemented!();
@@ -149,7 +182,7 @@ pub unsafe fn test_11(c: *mut ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { verify_insert_return_type_5(&mut irt) });
+        (unsafe { verify_insert_return_type_6(&mut irt) });
     }
     {
         let mut dupl: () = (unsafe {
@@ -162,7 +195,7 @@ pub unsafe fn test_11(c: *mut ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { verify_insert_return_type_5(&mut irt) });
+        (unsafe { verify_insert_return_type_6(&mut irt) });
     }
     unimplemented!();
     let mut i: () = 0_();
@@ -171,56 +204,11 @@ pub unsafe fn test_11(c: *mut ()) {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_12(c: *mut ()) {
-    let mut nf: Option<unsafe fn(*mut (), *const ()) -> ()> = (Some(node_factory_10));
-    let mut c2: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
-        let mut node: () = (unsafe { (nf).unwrap()(&mut c2, &i) });
-        unimplemented!();
-        let mut irt: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (unsafe { verify_insert_return_type_7(&mut irt) });
-        i.prefix_inc();
-    }
-    unimplemented!();
-    {
-        let mut def: () = unimplemented!();
-        let mut irt: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (unsafe { verify_insert_return_type_7(&mut irt) });
-    }
-    {
-        let mut dupl: () = (unsafe {
-            let mut _arg1: () = 0_();
-            (nf).unwrap()(&mut c2, &mut _arg1)
-        });
-        let mut irt: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (unsafe { verify_insert_return_type_7(&mut irt) });
-    }
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-}
-pub unsafe fn test_13() -> () {
+pub unsafe fn test_12() -> () {
     let mut m: () = unimplemented!();
-    (unsafe { test_11(&mut m) });
+    (unsafe { test_10(&mut m) });
     let mut m2: () = unimplemented!();
-    (unsafe { test_12(&mut m2) });
+    (unsafe { test_11(&mut m2) });
     return true;
 }
 pub fn main() {
@@ -239,7 +227,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_13() });
+    (unsafe { test_12() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

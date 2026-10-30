@@ -34,11 +34,11 @@ pub unsafe fn test01_1() {
     let mut t1: () = unimplemented!();
     let mut t2: () = unimplemented!();
     let mut t3: () = unimplemented!();
-    t1 = (t3).clone();
+    unimplemented!();
     let mut t4: () = unimplemented!();
     let mut t5: () = unimplemented!();
     let mut t6: () = unimplemented!();
-    t4 = (t6).clone();
+    unimplemented!();
 }
 pub fn main() {
     unsafe {

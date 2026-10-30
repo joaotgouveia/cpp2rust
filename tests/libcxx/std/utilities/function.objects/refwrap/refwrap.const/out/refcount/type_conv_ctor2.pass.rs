@@ -30,7 +30,7 @@ pub fn test_0() -> () {
         let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
-        (*b1.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -39,7 +39,7 @@ pub fn test_0() -> () {
         let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
-        (*b2.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     return true;

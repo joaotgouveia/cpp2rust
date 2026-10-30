@@ -12,14 +12,14 @@ pub unsafe fn add_const_0() -> () {
 pub unsafe fn add_cv_1() -> () {
     return unimplemented!();
 }
-pub unsafe fn add_lvalue_reference_2() -> *mut () {
+pub unsafe fn add_lvalue_reference_2() -> () {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut i_3));
 }
 static mut i_3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn add_pointer_4() -> *mut () {
-    return std::ptr::null_mut();
+pub unsafe fn add_pointer_4() -> () {
+    return unimplemented!();
 }
-pub unsafe fn add_rvalue_reference_5() -> *mut () {
+pub unsafe fn add_rvalue_reference_5() -> () {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut i_6));
 }
 static mut i_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });

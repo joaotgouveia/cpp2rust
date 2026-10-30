@@ -33,7 +33,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             true,
             "(std::is_same<I1::difference_type, std::char_traits<char>::off_type>::value)"
         );;
-        const _: () = assert!(true, "(std::is_same<I1::pointer, char*>::value)");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "(std::is_same<I1::reference, char>::value)");;
         const _: () = assert!(true, "(std::is_same<I1::char_type, char>::value)");;
         const _: () = assert!(
@@ -66,7 +66,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             true,
             "(std::is_same<I2::difference_type, std::char_traits<wchar_t>::off_type>::value)"
         );;
-        const _: () = assert!(true, "(std::is_same<I2::pointer, wchar_t*>::value)");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "(std::is_same<I2::reference, wchar_t>::value)");;
         const _: () = assert!(true, "(std::is_same<I2::char_type, wchar_t>::value)");;
         const _: () = assert!(

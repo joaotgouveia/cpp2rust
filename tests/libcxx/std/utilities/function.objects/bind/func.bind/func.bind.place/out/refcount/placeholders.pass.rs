@@ -6,17 +6,137 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_all_0() -> () {
-    ({ test_1(_1_2.with(|v| v.as_pointer())) });
-    ({ test_3(_2_4.with(|v| v.as_pointer())) });
-    ({ test_5(_3_6.with(|v| v.as_pointer())) });
-    ({ test_7(_4_8.with(|v| v.as_pointer())) });
-    ({ test_9(_5_10.with(|v| v.as_pointer())) });
-    ({ test_11(_6_12.with(|v| v.as_pointer())) });
-    ({ test_13(_7_14.with(|v| v.as_pointer())) });
-    ({ test_15(_8_16.with(|v| v.as_pointer())) });
-    ({ test_17(_9_18.with(|v| v.as_pointer())) });
-    ({ test_19(_10_20.with(|v| v.as_pointer())) });
+pub fn test_0(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_1(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_2(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_3(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_4(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_5(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_6(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_7(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_8(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_9(t: Ptr<()>) {
+    {
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(*x.borrow_mut());
+    }
+    {
+        let x: Value<()> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
+        &(*x.borrow_mut());
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub fn test_all_10() -> () {
+    ({ test_0(unimplemented!()) });
+    ({ test_1(unimplemented!()) });
+    ({ test_2(unimplemented!()) });
+    ({ test_3(unimplemented!()) });
+    ({ test_4(unimplemented!()) });
+    ({ test_5(unimplemented!()) });
+    ({ test_6(unimplemented!()) });
+    ({ test_7(unimplemented!()) });
+    ({ test_8(unimplemented!()) });
+    ({ test_9(unimplemented!()) });
     return true;
 }
 pub fn main() {
@@ -39,7 +159,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_all_0() });
+    ({ test_all_10() });
     const _: () = assert!(true, "test_all()");;
     return 0_();
 }

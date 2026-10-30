@@ -21,13 +21,33 @@ impl Default for MyHash_A_ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct A {
     pub m: (),
     pub it: (),
     pub cit: (),
     pub lit: (),
     pub clit: (),
+}
+impl A {
+    pub unsafe fn move_from(_a0: *mut A) -> Self {
+        let mut this = Self {
+            m: unimplemented!(),
+            it: (*_a0).it,
+            cit: (*_a0).cit,
+            lit: (*_a0).lit,
+            clit: (*_a0).clit,
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut A) -> *mut A {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return &mut (*(self as *mut A));
+    }
 }
 impl std::cmp::PartialEq for A {
     fn eq(&self, other: &Self) -> bool {

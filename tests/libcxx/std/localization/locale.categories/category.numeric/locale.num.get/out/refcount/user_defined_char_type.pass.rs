@@ -19,10 +19,8 @@ impl Char {
     pub fn new_2(mut i: ()) -> Self {
         Self { underlying_: i }
     }
-    pub fn new_3(mut i: i32) -> Self {
-        Self {
-            underlying_: (i as ()),
-        }
+    pub fn new_3(mut i: ()) -> Self {
+        Self { underlying_: i }
     }
 }
 thread_local!(
@@ -56,11 +54,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     return 0_();
 }
 pub trait CharImpl {
-    fn to_i32(&self) -> i32;
+    fn to_(&self) -> ();
 }
 impl CharImpl for Ptr<Char> {
-    fn to_i32(&self) -> i32 {
-        return ((*self).with(|__s| __s.underlying_) as i32);
+    fn to_(&self) -> () {
+        return (*self).with(|__s| __s.underlying_);
     }
 }
 pub fn __cpp2rust_init_globals() {

@@ -286,15 +286,9 @@ pub unsafe fn rvalue_move_7(
         };
     }
 }
-pub unsafe fn iter_move_8(_a0: *mut WithADL_true_) -> () {
-    return 0_();
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct WithADL_true_ {}
-pub unsafe fn iter_move_9(_a0: *mut WithADL_false_) -> () {
-    return 0_();
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct WithADL_false_ {}
@@ -304,7 +298,7 @@ pub struct WithoutADL_true_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct WithoutADL_false_ {}
-pub unsafe fn test_10() -> () {
+pub unsafe fn test_8() -> () {
     let full_size: () = 100_();
     let half_size: () = ((full_size) / (2_()));
     let reset: () = 0_();
@@ -439,7 +433,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_10() });
+    (unsafe { test_8() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

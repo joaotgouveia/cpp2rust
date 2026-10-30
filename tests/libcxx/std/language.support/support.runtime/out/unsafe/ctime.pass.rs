@@ -23,10 +23,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut c: ::libc::clock_t = (0 as ::libc::clock_t);
+    let mut c: () = 0_();
     let mut s: () = 0_();
-    let mut t: ::libc::time_t = (0 as ::libc::time_t);
-    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
+    let mut t: () = 0_();
+    let mut tm: () = unimplemented!();
     (&(c));
     (&(s));
     (&(t));

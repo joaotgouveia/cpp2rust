@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let f: *const () = (unsafe { use_facet_0(unimplemented!()) });
+    let f: *const () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(f.max_length())");;
     return 0_();

@@ -35,8 +35,8 @@ impl Default for IterSwapTrackingIterator_int_ptr__IterKind_inner_view_ {
     }
 }
 pub unsafe fn iter_swap_0(
-    lhs: *const IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_,
-    rhs: *const IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_,
+    lhs : *const IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_,
+    rhs : *const IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_,
 ) {
     unimplemented!();
     (*(*lhs).flag_) = {
@@ -44,14 +44,14 @@ pub unsafe fn iter_swap_0(
         (*(*rhs).flag_)
     };
     (unsafe {
-        let ___x: *const () = &(*lhs).iter_;
-        let ___y: *const () = &(*rhs).iter_;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(___x, ___y)
+        let ___e1: *const () = &(*lhs).iter_;
+        let ___e2: *const () = &(*rhs).iter_;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(___e1, ___e2)
     });
     return;
 }
 pub unsafe fn iter_swap_2(
-    lhs: *const IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_,
+    lhs : *const IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_,
     rhs: *const IterSwapTrackingIterator_int_ptr__IterKind_pattern_,
 ) {
     unimplemented!();
@@ -61,70 +61,31 @@ pub unsafe fn iter_swap_2(
         (*(unsafe { IterSwapTrackingIterator_int_ptr__IterKind_pattern_::get_flag(&(*rhs)) }))
     };
     (unsafe {
-        let mut ___y: *mut () =
+        let mut ___e2: *mut () =
             (unsafe { IterSwapTrackingIterator_int_ptr__IterKind_pattern_::get_iter(&(*rhs)) });
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(&(*lhs).iter_, &mut ___y)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(&(*lhs).iter_, &mut ___e2)
     });
     return;
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
-pub struct IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
+pub struct IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_
+{
     iter_: (),
     flag_: *mut SwapKind,
 }
-impl IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-    pub unsafe fn get_iter(&self) -> () {
-        return unimplemented!();
-    }
-    pub unsafe fn get_flag(&self) -> *mut SwapKind {
-        return self.flag_;
-    }
-    pub unsafe fn new_1(mut iter: (), mut flag: Option<*mut SwapKind>) -> Self {
-        let mut flag: *mut SwapKind = flag.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
-        let mut this = Self {
-            iter_: iter,
-            flag_: flag,
-        };
-        this
-    }
-    pub unsafe fn operator_inc_5(
-        &mut self,
-    ) -> *mut IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-        unimplemented!();
-        return &mut (*(self
-            as *mut IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_));
-    }
-    pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*unimplemented!());
-    }
-    pub unsafe fn operator_eq(
-        &self,
-        other: *const IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_,
-    ) -> () {
-        return unimplemented!();
-    }
-}
-impl std::cmp::PartialEq
-    for IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_
-{
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_::operator_eq(self, other as *const IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_)
-        }
-    }
-}
-impl std::cmp::Eq for IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {}
-impl Default for IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-    fn default() -> Self {
-        unsafe {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-                iter_: unimplemented!(),
-                flag_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
+impl IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { pub unsafe fn get_iter ( &self , ) -> () { return unimplemented!()  ;
+ } pub unsafe fn get_flag ( &self , ) -> *mut SwapKind { return self . flag_   ;
+ } pub unsafe fn new_1 ( mut iter : () , mut flag : Option< *mut SwapKind > , ) -> Self { let mut flag : *mut SwapKind  = flag.unwrap_or_else(|| unsafe { std::ptr::null_mut()  }) ;
+ let mut this = Self { iter_ : iter , flag_ : flag , } ;
+ this } pub unsafe fn operator_inc_5 ( &mut self , ) -> *mut IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { unimplemented!()  ;
+ return & mut ( * ( self as *mut IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  )  )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> *mut () { return & mut ( * unimplemented!()  )   ;
+ } pub unsafe fn operator_eq ( &self , other : *const IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ , ) -> () { return unimplemented!()   ;
+ } }
+impl std::cmp::PartialEq for IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { fn eq(&self, other: &Self) -> bool { unsafe { IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_::operator_eq(self, other as *const IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_) }}}
+impl std::cmp::Eq for IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ {}
+impl Default for IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { fn default() -> Self { unsafe { IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { iter_ : unimplemented!() , flag_ : std::ptr::null_mut() , } } } }
 pub unsafe fn iter_swap_3(
     lhs: *const IterSwapTrackingIterator_int_ptr__IterKind_pattern_,
     rhs: *const IterSwapTrackingIterator_int_ptr__IterKind_pattern_,
@@ -135,36 +96,30 @@ pub unsafe fn iter_swap_3(
         (*(*rhs).flag_)
     };
     (unsafe {
-        let ___x: *const *mut () = &(*lhs).iter_;
-        let ___y: *const *mut () = &(*rhs).iter_;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(___x, ___y)
+        let ___e1: *const *mut () = &(*lhs).iter_;
+        let ___e2: *const *mut () = &(*rhs).iter_;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(___e1, ___e2)
     });
     return;
 }
 pub unsafe fn iter_swap_4(
     lhs: *const IterSwapTrackingIterator_int_ptr__IterKind_pattern_,
-    rhs: *const IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_,
+    rhs : *const IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_,
 ) {
     unimplemented!();
     (*(*lhs).flag_) = {
         (*(unsafe {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_::get_flag(
-                &(*rhs),
-            )
+            IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ :: get_flag ( & ( * rhs )  , )
         })) = SwapKind_with_different_type;
         (*(unsafe {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_::get_flag(
-                &(*rhs),
-            )
+            IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ :: get_flag ( & ( * rhs )  , )
         }))
     };
     (unsafe {
-        let mut ___y: () = (unsafe {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_::get_iter(
-                &(*rhs),
-            )
+        let mut ___e2: () = (unsafe {
+            IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ :: get_iter ( & ( * rhs )  , )
         });
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(&(*lhs).iter_, &mut ___y)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_1))(&(*lhs).iter_, &mut ___e2)
     });
     return;
 }

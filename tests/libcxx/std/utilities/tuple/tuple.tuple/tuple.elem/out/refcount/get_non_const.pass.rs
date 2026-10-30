@@ -9,7 +9,7 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(12)]
 pub struct S {
     #[offset(0)]
@@ -23,13 +23,18 @@ pub struct S {
 }
 impl S {
     pub fn new() -> Self {
-        let __this: Value<S> = Rc::new(RefCell::new(Self {
+        Self {
             a: unimplemented!(),
-            k: (({ get_0(field_ptr!(this, a)) }).read()),
-            e: (*({ get_1(field_ptr!(this, a)) }).upgrade().deref()).clone(),
-        }));
-        let this: Ptr<S> = __this.as_pointer();
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+            k: (unimplemented!().read()),
+            e: (*unimplemented!().upgrade().deref()).clone(),
+        }
+    }
+    pub fn move_from(_a0: Ptr<S>) -> Self {
+        Self {
+            a: unimplemented!(),
+            k: { (*_a0.upgrade().deref()).k },
+            e: { (*_a0.upgrade().deref()).e.clone() },
+        }
     }
 }
 impl Default for S {
@@ -37,7 +42,7 @@ impl Default for S {
         { S::new() }
     }
 }
-pub fn getP_2() -> () {
+pub fn getP_0() -> () {
     return unimplemented!();
 }
 pub fn main() {
@@ -63,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({ get_3(t.as_pointer()) }).write(2_());
+        unimplemented!().write(2_());
         unimplemented!();
     }
     {
@@ -71,7 +76,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ get_4(t.as_pointer()) }).write(4_());
+        unimplemented!().write(4_());
         unimplemented!();
         unimplemented!();
     }
@@ -81,9 +86,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ get_5(t.as_pointer()) }).write(2.5_f64);
+        unimplemented!().write(2.5_f64);
         unimplemented!();
-        ({ get_6(t.as_pointer()) }).write(4_());
+        unimplemented!().write(4_());
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -110,5 +115,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::get<1>(getP()) == 4");;
     }
     return 0_();
+}
+pub trait SImpl {
+    fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S>;
+}
+impl SImpl for Ptr<S> {
+    fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
+        unimplemented!();
+        field!((*self), k).write({ { (*_a0.upgrade().deref()).k } });
+        field!((*self), e).write({ { (*_a0.upgrade().deref()).e.clone() } });
+        return (*self).clone();
+    }
 }
 pub fn __cpp2rust_init_globals() {}

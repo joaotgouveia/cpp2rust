@@ -29,7 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut o: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_0));
+    let mut o: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

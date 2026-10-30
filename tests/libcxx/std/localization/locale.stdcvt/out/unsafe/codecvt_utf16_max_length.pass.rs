@@ -13,12 +13,12 @@ impl TestHelper_wchar_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
     }
@@ -30,12 +30,12 @@ impl TestHelper_char16_t__2_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
     }
@@ -47,12 +47,12 @@ impl TestHelper_char32_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
     }

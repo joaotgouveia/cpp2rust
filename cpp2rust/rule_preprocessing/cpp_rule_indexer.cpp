@@ -225,7 +225,12 @@ class DeclaredNames : public clang::RecursiveASTVisitor<DeclaredNames> {
 public:
   bool
   VisitTemplateSpecializationType(clang::TemplateSpecializationType *type) {
-    Add(type->getTemplateName().getAsTemplateDecl());
+    auto name = type->getTemplateName();
+    if (auto shadow = name.getAsUsingShadowDecl()) {
+      Add(shadow);
+    } else {
+      Add(name.getAsTemplateDecl());
+    }
     return true;
   }
 
@@ -239,14 +244,17 @@ public:
     return true;
   }
 
+  // A name the rule spells through a using-declaration
+  // (std::is_execution_policy_v of __pstl::execution) is declared where the
+  // using-declaration is, so the found declaration names the scope.
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
-    Add(expr->getDecl());
+    Add(expr->getFoundDecl());
     return true;
   }
 
   bool VisitOverloadExpr(clang::OverloadExpr *expr) {
     for (auto decl : expr->decls()) {
-      Add(decl->getUnderlyingDecl());
+      Add(decl);
     }
     return true;
   }
@@ -357,73 +365,99 @@ const clang::Expr *IgnoreImplicitAndFunctionalCast(const clang::Expr *expr) {
   return expr;
 }
 
-std::string DependentExprKey(const clang::Expr *expr) {
+std::vector<std::string> Keys(std::string key) {
+  if (key.empty()) {
+    return {};
+  }
+  return {std::move(key)};
+}
+
+// A dependent call of an overloaded name resolves to any of the declarations
+// found (std::pow in <complex> finds the templates of std and ::pow through
+// the using-declaration of <cmath>), and a use has the key of the one it
+// resolved to: the rule is filed under each.
+std::vector<std::string> OverloadKeys(const clang::OverloadExpr *overloads) {
+  std::vector<std::string> keys;
+  for (auto decl : overloads->decls()) {
+    auto key = RulesLoader::DeclKey(decl->getUnderlyingDecl());
+    if (!key.empty() && !llvm::is_contained(keys, key)) {
+      keys.push_back(std::move(key));
+    }
+  }
+  return keys;
+}
+
+std::vector<std::string> DependentExprKeys(const clang::Expr *expr) {
   auto member = llvm::dyn_cast<clang::CXXDependentScopeMemberExpr>(expr);
   if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
     if (auto callee = call->getDirectCallee()) {
-      return RulesLoader::FunctionKey(callee);
+      return Keys(RulesLoader::FunctionKey(callee));
     }
     auto callee = call->getCallee()->IgnoreParenImpCasts();
     member = llvm::dyn_cast<clang::CXXDependentScopeMemberExpr>(callee);
     if (auto overloads = llvm::dyn_cast<clang::UnresolvedMemberExpr>(callee);
         overloads && overloads->decls_begin() != overloads->decls_end()) {
-      return RulesLoader::DeclKey(
-          (*overloads->decls_begin())->getUnderlyingDecl());
+      return Keys(RulesLoader::DeclKey(
+          (*overloads->decls_begin())->getUnderlyingDecl()));
     }
     if (auto ref = llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(callee)) {
       auto qualifier = ref->getQualifier();
       if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
-        return RulesLoader::MemberKey(
+        return Keys(RulesLoader::MemberKey(
             ClassOf(clang::QualType(qualifier.getAsType(), 0)),
-            RulesLoader::MemberName(ref->getDeclName()));
+            RulesLoader::MemberName(ref->getDeclName())));
       }
     }
     if (auto lookup = llvm::dyn_cast<clang::UnresolvedLookupExpr>(callee);
-        lookup && !llvm::isa<clang::CXXOperatorCallExpr>(call) &&
-        lookup->decls_begin() != lookup->decls_end()) {
-      return RulesLoader::DeclKey(
-          (*lookup->decls_begin())->getUnderlyingDecl());
+        lookup && !llvm::isa<clang::CXXOperatorCallExpr>(call)) {
+      return OverloadKeys(lookup);
     }
+  }
+  // a variable template (std::chrono::is_clock_v<T1>)
+  if (auto lookup = llvm::dyn_cast<clang::UnresolvedLookupExpr>(expr)) {
+    return OverloadKeys(lookup);
   }
   if (member && !member->isArrow() &&
       member->getBaseType()
           .getNonReferenceType()
           ->getAs<clang::TemplateSpecializationType>()) {
-    return RulesLoader::MemberKey(ClassOf(member->getBaseType()),
-                                  RulesLoader::MemberName(member->getMember()));
+    return Keys(
+        RulesLoader::MemberKey(ClassOf(member->getBaseType()),
+                               RulesLoader::MemberName(member->getMember())));
   }
   if (auto construct =
           llvm::dyn_cast<clang::CXXUnresolvedConstructExpr>(expr)) {
     auto class_key = ClassOf(construct->getTypeAsWritten());
-    return RulesLoader::ConstructorKey(class_key);
+    return Keys(RulesLoader::ConstructorKey(class_key));
   }
   if (auto ref = llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(expr)) {
     auto qualifier = ref->getQualifier();
     if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
-      return RulesLoader::MemberKey(
+      return Keys(RulesLoader::MemberKey(
           ClassOf(clang::QualType(qualifier.getAsType(), 0)),
-          RulesLoader::MemberName(ref->getDeclName()));
+          RulesLoader::MemberName(ref->getDeclName())));
     }
   }
   return {};
 }
 
-std::string ExprKey(clang::ASTContext &ctx, const clang::Decl *rule) {
+std::vector<std::string> ExprKeys(clang::ASTContext &ctx,
+                                  const clang::Decl *rule) {
   auto expr = RuleExpr(rule);
   if (!expr) {
     return {};
   }
   expr = IgnoreImplicitAndFunctionalCast(expr);
   if (!expr->isTypeDependent() && !expr->isValueDependent()) {
-    return RulesLoader::ExprKey(ctx, expr);
+    return Keys(RulesLoader::ExprKey(ctx, expr));
   }
   // an aggregate rule returns the braced list of its fields, which constructs
   // the return type (std::array<T1, T2> f(const T1 (&a0)[T2]) { return {a0}; })
   if (auto fn = rule->getAsFunction();
       fn && llvm::isa<clang::InitListExpr>(expr)) {
-    return RulesLoader::ConstructorKey(ClassOf(fn->getReturnType()));
+    return Keys(RulesLoader::ConstructorKey(ClassOf(fn->getReturnType())));
   }
-  return DependentExprKey(expr);
+  return DependentExprKeys(expr);
 }
 
 std::string TypeKey(const clang::TypedefNameDecl *rule) {
@@ -472,20 +506,20 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     if (auto tmpl = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(decl)) {
       alias = tmpl->getTemplatedDecl();
     }
-    auto key = alias ? TypeKey(alias) : ExprKey(ctx, decl);
-    if (key.empty()) {
-      key = ClassOfParameters(decl);
+    auto keys = alias ? Keys(TypeKey(alias)) : ExprKeys(ctx, decl);
+    if (keys.empty()) {
+      keys = Keys(ClassOfParameters(decl));
     }
     if (auto fn = decl->getAsFunction();
-        key.empty() && fn &&
+        keys.empty() && fn &&
         !IsAliasTemplateSpecialization(fn->getReturnType())) {
-      key = ClassOf(fn->getReturnType());
+      keys = Keys(ClassOf(fn->getReturnType()));
     }
-    bool any_class = key.empty() && llvm::isa<clang::TemplateDecl>(decl);
+    bool any_class = keys.empty() && llvm::isa<clang::TemplateDecl>(decl);
     if (any_class) {
-      key = RulesLoader::kAnyClassKey;
+      keys = {RulesLoader::kAnyClassKey};
     }
-    if (key.empty()) {
+    if (keys.empty()) {
       llvm::errs() << "ERROR: cannot derive the key of rule '" << name
                    << "' in rule dir " << dir_name << '\n';
       std::exit(EXIT_FAILURE);
@@ -503,7 +537,10 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     if (!declared.empty()) {
       rule["declares"] = llvm::json::Array(declared);
     }
-    RulesLoader::AddRule(rules, key, std::move(rule));
+    for (const auto &key : keys) {
+      RulesLoader::AddRule(rules, key,
+                           llvm::json::Value(llvm::json::Object(rule)));
+    }
   }
 }
 

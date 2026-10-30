@@ -11,7 +11,7 @@ use std::rc::Rc;
 pub struct functor1 {}
 pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
     let mut r: () = unimplemented!();
-    let r2: *mut Option<unsafe fn()> = unimplemented!();
+    let r2: *mut Option<unsafe fn()> = (unimplemented!() as Option<unsafe fn()>);
     unimplemented!();
 }
 pub unsafe fn test_1(t: Option<unsafe fn()>) {

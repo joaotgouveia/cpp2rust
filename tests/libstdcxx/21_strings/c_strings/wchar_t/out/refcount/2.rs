@@ -24,22 +24,13 @@ pub fn test02_0() {
     let carray: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..50).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    ({ wcscpy_1((carray.as_pointer() as Ptr<()>), (ccarray1).clone()) });
+    unimplemented!();
     let mut cw: Ptr<()> = Ptr::<()>::null();
     let mut w: Ptr<()> = Ptr::<()>::null();
-    cw = ({
-        let ___s: Ptr<()> = (ccarray1).clone();
-        wmemchr_2(___s, (47 as ()), 3_())
-    });
-    cw = ({
-        let ___wcs: Ptr<()> = (ccarray1).clone();
-        wcschr_3(___wcs, (47 as ()))
-    });
-    cw = ({ wcspbrk_4((ccarray1).clone(), (ccarray2).clone()) });
-    cw = ({
-        let ___wcs: Ptr<()> = (ccarray1).clone();
-        wcsrchr_5(___wcs, (99 as ()))
-    });
+    cw = unimplemented!();
+    cw = unimplemented!();
+    cw = unimplemented!();
+    cw = unimplemented!();
     w = unimplemented!();
     cw = { (cw).clone() };
     w = { (w).clone() };

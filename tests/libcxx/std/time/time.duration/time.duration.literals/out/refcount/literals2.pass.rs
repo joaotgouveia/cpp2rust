@@ -27,29 +27,29 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let h: Value<()> = Rc::new(RefCell::new(({ operator_literal_h_0(4_()) })));
+    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let h2: Value<()> = Rc::new(RefCell::new(({ operator_literal_h_1(4_f64) })));
+    let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let min: Value<()> = Rc::new(RefCell::new(({ operator_literal_min_2(36_()) })));
+    let min: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let min2: Value<()> = Rc::new(RefCell::new(({ operator_literal_min_3(36_f64) })));
+    let min2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(({ operator_literal_s_4(24_()) })));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(({ operator_literal_s_5(24_f64) })));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let ms: Value<()> = Rc::new(RefCell::new(({ operator_literal_ms_6(247_()) })));
+    let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let ms2: Value<()> = Rc::new(RefCell::new(({ operator_literal_ms_7(247_f64) })));
+    let ms2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let us: Value<()> = Rc::new(RefCell::new(({ operator_literal_us_8(867_()) })));
+    let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let us2: Value<()> = Rc::new(RefCell::new(({ operator_literal_us_9(867_f64) })));
+    let us2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let ns: Value<()> = Rc::new(RefCell::new(({ operator_literal_ns_10(645_()) })));
+    let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let ns2: Value<()> = Rc::new(RefCell::new(({ operator_literal_ns_11(645_f64) })));
+    let ns2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return 0_();
 }

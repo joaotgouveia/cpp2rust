@@ -355,9 +355,6 @@ pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_MoveOnly__rebind_const_MoveOnly_ptr_ {}
-#[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_MoveOnly_ {
     data_: (),
@@ -373,6 +370,19 @@ impl test_allocator_MoveOnly_ {
         }
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
+    }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut MoveOnly {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut MoveOnly, mut s: ()) {
         unimplemented!();
@@ -399,6 +409,20 @@ impl Default for test_allocator_MoveOnly_ {
         }
     }
 }
+impl test_allocator_MoveOnly_ptr_ {
+    pub unsafe fn new_1(a: *const test_allocator_MoveOnly_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).converted.prefix_inc();
+        }
+        this
+    }
+}
 #[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_MoveOnly_ptr_ {
@@ -416,6 +440,19 @@ impl test_allocator_MoveOnly_ptr_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
     }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut MoveOnly {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut MoveOnly, mut s: ()) {
         unimplemented!();
         if !((self.stats_).is_null()) {
@@ -424,35 +461,11 @@ impl test_allocator_MoveOnly_ptr_ {
         }
         unimplemented!();
     }
-    pub unsafe fn destroy(&mut self, mut p: *mut *mut MoveOnly) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).destroy_count.prefix_inc();
-        };
-    }
 }
 impl Default for test_allocator_MoveOnly_ptr_ {
     fn default() -> Self {
         unsafe {
             test_allocator_MoveOnly_ptr_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_const_MoveOnly_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_const_MoveOnly_ptr_ {}
-impl Default for test_allocator_const_MoveOnly_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_const_MoveOnly_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
@@ -470,6 +483,9 @@ impl other_allocator_MoveOnly_ {
         let mut this = Self { data_: -1_() };
         this
     }
+    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut MoveOnly {
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut MoveOnly, mut s: ()) {
         unimplemented!();
     }
@@ -479,15 +495,20 @@ impl Default for other_allocator_MoveOnly_ {
         unsafe { other_allocator_MoveOnly_::new_1() }
     }
 }
+impl other_allocator_MoveOnly_ptr_ {
+    pub unsafe fn new_1(a: *const other_allocator_MoveOnly_) -> Self {
+        let mut this = Self { data_: (*a).data_ };
+        this
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct other_allocator_MoveOnly_ptr_ {
     data_: (),
 }
 impl other_allocator_MoveOnly_ptr_ {
-    pub unsafe fn new_1() -> Self {
-        let mut this = Self { data_: -1_() };
-        this
+    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut *mut MoveOnly {
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut MoveOnly, mut s: ()) {
         unimplemented!();
@@ -495,19 +516,8 @@ impl other_allocator_MoveOnly_ptr_ {
 }
 impl Default for other_allocator_MoveOnly_ptr_ {
     fn default() -> Self {
-        unsafe { other_allocator_MoveOnly_ptr_::new_1() }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_const_MoveOnly_ptr_ {
-    data_: (),
-}
-impl other_allocator_const_MoveOnly_ptr_ {}
-impl Default for other_allocator_const_MoveOnly_ptr_ {
-    fn default() -> Self {
         unsafe {
-            other_allocator_const_MoveOnly_ptr_ {
+            other_allocator_MoveOnly_ptr_ {
                 data_: unimplemented!(),
             }
         }
@@ -558,10 +568,6 @@ pub unsafe fn test_18() {
         const _: () = assert!(true, "std::is_nothrow_destructible_v<C>");;
         let mut c: () = unimplemented!();
     }
-    {
-        const _: () = assert!(true, "!std::is_nothrow_destructible_v<C>");;
-        let mut c: () = unimplemented!();
-    }
 }
 pub unsafe fn test_19() {
     {
@@ -574,10 +580,6 @@ pub unsafe fn test_19() {
     }
     {
         const _: () = assert!(true, "std::is_nothrow_destructible_v<C>");;
-        let mut c: () = unimplemented!();
-    }
-    {
-        const _: () = assert!(true, "!std::is_nothrow_destructible_v<C>");;
         let mut c: () = unimplemented!();
     }
 }

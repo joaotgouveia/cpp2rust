@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -159,32 +143,6 @@ impl Default for test_allocator_void_ {
             test_allocator_void_ {
                 data_: 0_(),
                 id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_char__rebind_char_ {}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_char_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_char_ {}
-impl Default for test_allocator_char_ {
-    fn default() -> Self {
-        {
-            test_allocator_char_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -253,12 +211,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
         );;
     }
-    {
-        const _: () = assert!(
-            true,
-            "noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
-        );;
-    }
     return 0_();
 }
 pub trait Tag_XImpl {
@@ -291,36 +243,6 @@ pub trait some_alloc_char_Impl {
     }
 }
 impl some_alloc_char_Impl for Ptr<some_alloc_char_> {}
-pub trait test_allocator_char_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<()>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_char_Impl for Ptr<test_allocator_char_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

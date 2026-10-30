@@ -81,49 +81,37 @@ pub struct test_macros_detail_is_same_const_std_ranges_empty_view_BigType__ref__
 pub fn testType_12() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let v: Value<()> = Rc::new(RefCell::new(
-        (*empty_13.with(Value::clone).borrow()).clone(),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+}
+pub fn testType_13() {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn testType_14() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let v: Value<()> = Rc::new(RefCell::new(
-        (*empty_15.with(Value::clone).borrow()).clone(),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+}
+pub fn testType_15() {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn testType_16() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let v: Value<()> = Rc::new(RefCell::new(
-        (*empty_17.with(Value::clone).borrow()).clone(),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn testType_18() {
+pub fn testType_17() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let v: Value<()> = Rc::new(RefCell::new(
-        (*empty_19.with(Value::clone).borrow()).clone(),
-    ));
-    unimplemented!();
-}
-pub fn testType_20() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let v: Value<()> = Rc::new(RefCell::new(
-        (*empty_21.with(Value::clone).borrow()).clone(),
-    ));
-    unimplemented!();
-}
-pub fn testType_22() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let v: Value<()> = Rc::new(RefCell::new(
-        (*empty_23.with(Value::clone).borrow()).clone(),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -145,13 +133,13 @@ impl Default for BigType {
         }
     }
 }
-pub fn test_24() -> () {
+pub fn test_18() -> () {
     ({ testType_12() });
+    ({ testType_13() });
     ({ testType_14() });
+    ({ testType_15() });
     ({ testType_16() });
-    ({ testType_18() });
-    ({ testType_20() });
-    ({ testType_22() });
+    ({ testType_17() });
     return true;
 }
 pub fn main() {
@@ -174,7 +162,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_24() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

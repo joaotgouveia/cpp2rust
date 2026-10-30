@@ -82,7 +82,10 @@ public:
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
     AddReferencedDecl(expr->getDecl());
     // a static member named through a derived class
-    if (llvm::isa<clang::CXXMethodDecl>(expr->getDecl()) &&
+    // (std::atomic<float>::is_always_lock_free of __atomic_float)
+    auto var = llvm::dyn_cast<clang::VarDecl>(expr->getDecl());
+    if ((llvm::isa<clang::CXXMethodDecl>(expr->getDecl()) ||
+         (var && var->isStaticDataMember())) &&
         expr->getQualifier().getKind() ==
             clang::NestedNameSpecifier::Kind::Type) {
       AddMemberKey(clang::QualType(expr->getQualifier().getAsType(), 0),
@@ -247,7 +250,7 @@ private:
         }
         if (ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
           AddSpecialMembers(record);
-          AddIterator(type, record);
+          AddIterator(record);
           AddNodeHandle(record);
         }
       }
@@ -272,41 +275,19 @@ private:
     }
   }
 
-  void AddIterator(clang::QualType type, const clang::CXXRecordDecl *record) {
-    auto *std_namespace = sema_.getStdNamespace();
-    if (!std_namespace) {
-      return;
-    }
-    clang::ClassTemplateDecl *traits = nullptr;
-    for (auto *decl :
-         std_namespace->lookup(&ctx_.Idents.get("iterator_traits"))) {
-      if ((traits = llvm::dyn_cast<clang::ClassTemplateDecl>(decl))) {
-        break;
-      }
-    }
-    if (!traits) {
-      return;
-    }
-    auto loc = record->getLocation();
-    RuleDecls::Trial trial(sema_);
-    clang::TemplateArgumentListInfo args(loc, loc);
-    args.addArgument(
-        clang::TemplateArgumentLoc(clang::TemplateArgument(type),
-                                   ctx_.getTrivialTypeSourceInfo(type, loc)));
-    auto instance = sema_.CheckTemplateIdType(
-        clang::ElaboratedTypeKeyword::None, clang::TemplateName(traits), loc,
-        args, /*Scope=*/nullptr, /*ForNestedNameSpecifier=*/false);
-    if (instance.isNull() || !sema_.isCompleteType(loc, instance) ||
-        trial.failed()) {
-      return;
-    }
-    auto *instance_record = instance->getAsCXXRecordDecl();
-    if (!instance_record) {
+  // An iterator declares its category. iterator_traits<T> checks the iterator
+  // concepts on any other class, whose ADL instantiates the classes of its
+  // template arguments (Holder<NS::Incomplete>).
+  void AddIterator(const clang::CXXRecordDecl *record) {
+    auto definition = record->getDefinition();
+    if (!definition) {
       return;
     }
     clang::LookupResult category(sema_, &ctx_.Idents.get("iterator_category"),
-                                 loc, clang::Sema::LookupMemberName);
-    if (sema_.LookupQualifiedName(category, instance_record)) {
+                                 definition->getLocation(),
+                                 clang::Sema::LookupMemberName);
+    if (sema_.LookupQualifiedName(
+            category, const_cast<clang::CXXRecordDecl *>(definition))) {
       AddKey(kAnyIteratorKey);
     }
   }
@@ -476,6 +457,9 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
   }
   auto rules = index.getObject("rules");
   std::unordered_map<std::string, bool> declared_names;
+  // a rule filed under several keys (std::pow of <complex>, under pow and
+  // std/pow) is written once
+  std::unordered_set<std::string> written;
   std::vector<std::string> candidates(keys.begin(), keys.end());
   candidates.push_back(kAnyClassKey);
   for (const auto &key : candidates) {
@@ -512,6 +496,12 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
             }
             return it->second;
           })) {
+        continue;
+      }
+      if (!written
+               .insert(rule->getString("dir")->str() + '/' +
+                       rule->getString("name")->str())
+               .second) {
         continue;
       }
       out += WrapRule(*rule, is_cxx);

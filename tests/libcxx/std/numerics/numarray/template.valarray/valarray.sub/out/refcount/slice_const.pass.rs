@@ -47,7 +47,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             15_(),
         ])));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -75,7 +75,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             15_(),
         ])));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

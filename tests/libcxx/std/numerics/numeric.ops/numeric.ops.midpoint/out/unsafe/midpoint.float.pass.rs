@@ -28,13 +28,26 @@ pub unsafe fn fptest_close_3(mut val: (), mut expected: (), mut eps: ()) -> () {
         return ((val) == (expected));
     }
     if ((val) == (zero)) {
-        return ((unsafe { abs_4(expected) }) <= (eps));
+        return ((unimplemented!()) <= (eps));
     }
     if ((expected) == (zero)) {
-        return ((unsafe { abs_4(val) }) <= (eps));
+        return ((unimplemented!()) <= (eps));
     }
-    return ((unsafe { abs_4(((val) - (expected))) }) < (eps))
-        && (((unsafe { abs_4(((val) - (expected))) }) / (unsafe { abs_4(val) })) < (eps));
+    return ((unimplemented!()) < (eps)) && (((unimplemented!()) / (unimplemented!())) < (eps));
+}
+pub unsafe fn fptest_close_4(mut val: (), mut expected: (), mut eps: ()) -> () {
+    let zero: () = 0_();
+    unimplemented!();
+    if ((eps) == (zero)) {
+        return ((val) == (expected));
+    }
+    if ((val) == (zero)) {
+        return ((unimplemented!()) <= (eps));
+    }
+    if ((expected) == (zero)) {
+        return ((unimplemented!()) <= (eps));
+    }
+    return ((unimplemented!()) < (eps)) && (((unimplemented!()) / (unimplemented!())) < (eps));
 }
 pub unsafe fn fptest_close_5(mut val: (), mut expected: (), mut eps: ()) -> () {
     let zero: () = 0_();
@@ -43,60 +56,44 @@ pub unsafe fn fptest_close_5(mut val: (), mut expected: (), mut eps: ()) -> () {
         return ((val) == (expected));
     }
     if ((val) == (zero)) {
-        return ((unsafe { abs_6(expected) }) <= (eps));
+        return ((unimplemented!()) <= (eps));
     }
     if ((expected) == (zero)) {
-        return ((unsafe { abs_6(val) }) <= (eps));
+        return ((unimplemented!()) <= (eps));
     }
-    return ((unsafe { abs_6(((val) - (expected))) }) < (eps))
-        && (((unsafe { abs_6(((val) - (expected))) }) / (unsafe { abs_6(val) })) < (eps));
+    return ((unimplemented!()) < (eps)) && (((unimplemented!()) / (unimplemented!())) < (eps));
 }
-pub unsafe fn fptest_close_7(mut val: (), mut expected: (), mut eps: ()) -> () {
-    let zero: () = 0_();
-    unimplemented!();
-    if ((eps) == (zero)) {
-        return ((val) == (expected));
-    }
-    if ((val) == (zero)) {
-        return ((unsafe { abs_8(expected) }) <= (eps));
-    }
-    if ((expected) == (zero)) {
-        return ((unsafe { abs_8(val) }) <= (eps));
-    }
-    return ((unsafe { abs_8(((val) - (expected))) }) < (eps))
-        && (((unsafe { abs_8(((val) - (expected))) }) / (unsafe { abs_8(val) })) < (eps));
-}
-pub unsafe fn fptest_close_pct_9(mut val: (), mut expected: (), mut percent: ()) -> () {
+pub unsafe fn fptest_close_pct_6(mut val: (), mut expected: (), mut percent: ()) -> () {
     unimplemented!();
     let mut eps: () = (((percent) / (100_())) * (*unimplemented!()));
     return (unsafe { fptest_close_3(val, expected, eps) });
 }
-pub unsafe fn fptest_close_pct_10(mut val: (), mut expected: (), mut percent: ()) -> () {
+pub unsafe fn fptest_close_pct_7(mut val: (), mut expected: (), mut percent: ()) -> () {
+    unimplemented!();
+    let mut eps: () = (((percent) / (100_())) * (*unimplemented!()));
+    return (unsafe { fptest_close_4(val, expected, eps) });
+}
+pub unsafe fn fptest_close_pct_8(mut val: (), mut expected: (), mut percent: ()) -> () {
     unimplemented!();
     let mut eps: () = (((percent) / (100_())) * (*unimplemented!()));
     return (unsafe { fptest_close_5(val, expected, eps) });
 }
-pub unsafe fn fptest_close_pct_11(mut val: (), mut expected: (), mut percent: ()) -> () {
-    unimplemented!();
-    let mut eps: () = (((percent) / (100_())) * (*unimplemented!()));
-    return (unsafe { fptest_close_7(val, expected, eps) });
-}
-pub unsafe fn is_nan_12(mut x: ()) -> () {
+pub unsafe fn is_nan_9(mut x: ()) -> () {
     return ((x) != (x));
 }
-pub unsafe fn is_nan_13(mut x: ()) -> () {
+pub unsafe fn is_nan_10(mut x: ()) -> () {
     return ((x) != (x));
 }
-pub unsafe fn is_nan_14(mut x: ()) -> () {
+pub unsafe fn is_nan_11(mut x: ()) -> () {
     return ((x) != (x));
 }
-pub unsafe fn get_error_pct_15() -> () {
+pub unsafe fn get_error_pct_12() -> () {
     {
         return 1e-04_f32;
     }
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn get_error_pct_16() -> () {
+pub unsafe fn get_error_pct_13() -> () {
     {
         {
             return 1e-12_f64;
@@ -104,7 +101,7 @@ pub unsafe fn get_error_pct_16() -> () {
     }
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn get_error_pct_17() -> () {
+pub unsafe fn get_error_pct_14() -> () {
     {
         {
             return 1e-13_f64;
@@ -112,62 +109,50 @@ pub unsafe fn get_error_pct_17() -> () {
     }
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn check_near_18(mut a: (), mut b: (), mut expect: ()) -> () {
+pub unsafe fn check_near_15(mut a: (), mut b: (), mut expect: ()) -> () {
     {}
     return (unsafe {
-        fptest_close_pct_9(
-            (unsafe { midpoint_19(a, b) }),
-            expect,
-            (unsafe { get_error_pct_15() }),
-        )
+        fptest_close_pct_6(unimplemented!(), expect, (unsafe { get_error_pct_12() }))
     });
 }
-pub unsafe fn check_near_20(mut a: (), mut b: (), mut expect: ()) -> () {
+pub unsafe fn check_near_16(mut a: (), mut b: (), mut expect: ()) -> () {
     {}
     return (unsafe {
-        fptest_close_pct_10(
-            (unsafe { midpoint_21(a, b) }),
-            expect,
-            (unsafe { get_error_pct_16() }),
-        )
+        fptest_close_pct_7(unimplemented!(), expect, (unsafe { get_error_pct_13() }))
     });
 }
-pub unsafe fn check_near_22(mut a: (), mut b: (), mut expect: ()) -> () {
+pub unsafe fn check_near_17(mut a: (), mut b: (), mut expect: ()) -> () {
     {}
     return (unsafe {
-        fptest_close_pct_11(
-            (unsafe { midpoint_23(a, b) }),
-            expect,
-            (unsafe { get_error_pct_17() }),
-        )
+        fptest_close_pct_8(unimplemented!(), expect, (unsafe { get_error_pct_14() }))
     });
 }
-pub unsafe fn check_exact_24(mut a: (), mut b: (), mut expect: ()) -> () {
-    let mut res: () = (unsafe { midpoint_19(a, b) });
-    if (unsafe { is_nan_12(expect) }) {
-        return (unsafe { is_nan_12(res) });
+pub unsafe fn check_exact_18(mut a: (), mut b: (), mut expect: ()) -> () {
+    let mut res: () = unimplemented!();
+    if (unsafe { is_nan_9(expect) }) {
+        return (unsafe { is_nan_9(res) });
     }
     return ((res) == (expect));
 }
-pub unsafe fn check_exact_25(mut a: (), mut b: (), mut expect: ()) -> () {
-    let mut res: () = (unsafe { midpoint_21(a, b) });
-    if (unsafe { is_nan_13(expect) }) {
-        return (unsafe { is_nan_13(res) });
+pub unsafe fn check_exact_19(mut a: (), mut b: (), mut expect: ()) -> () {
+    let mut res: () = unimplemented!();
+    if (unsafe { is_nan_10(expect) }) {
+        return (unsafe { is_nan_10(res) });
     }
     return ((res) == (expect));
 }
-pub unsafe fn check_exact_26(mut a: (), mut b: (), mut expect: ()) -> () {
-    let mut res: () = (unsafe { midpoint_23(a, b) });
-    if (unsafe { is_nan_14(expect) }) {
-        return (unsafe { is_nan_14(res) });
+pub unsafe fn check_exact_20(mut a: (), mut b: (), mut expect: ()) -> () {
+    let mut res: () = unimplemented!();
+    if (unsafe { is_nan_11(expect) }) {
+        return (unsafe { is_nan_11(res) });
     }
     return ((res) == (expect));
 }
-pub unsafe fn test_ppc_edge_cases_27() -> () {
+pub unsafe fn test_ppc_edge_cases_21() -> () {
     {}
     let mut d1: () = 3.14_f64;
-    let mut d0: () = (unsafe { nextafter_28(d1, 2_()) });
-    let mut d2: () = (unsafe { nextafter_28(d1, 5_()) });
+    let mut d0: () = unimplemented!();
+    let mut d2: () = unimplemented!();
     let mut verify: FnPtr<fn((), (), ()) -> ()> =
         FnPtr::<fn((), (), ()) -> ()>::new(|mut res: (), mut low: (), mut high: ()| -> () {
             unsafe {
@@ -176,22 +161,22 @@ pub unsafe fn test_ppc_edge_cases_27() -> () {
             }
         });
     return (unsafe {
-        let _res: () = (unsafe { midpoint_19(d0, d1) });
+        let _res: () = unimplemented!();
         let _low: () = d0;
         let _high: () = d1;
         verify.call(_res, _low, _high)
     }) && (unsafe {
-        let _res: () = (unsafe { midpoint_19(d1, d2) });
+        let _res: () = unimplemented!();
         let _low: () = d1;
         let _high: () = d2;
         verify.call(_res, _low, _high)
     });
 }
-pub unsafe fn test_ppc_edge_cases_29() -> () {
+pub unsafe fn test_ppc_edge_cases_22() -> () {
     {}
     let mut d1: () = 3.14_f64;
-    let mut d0: () = (unsafe { nextafter_30(d1, 2_()) });
-    let mut d2: () = (unsafe { nextafter_30(d1, 5_()) });
+    let mut d0: () = unimplemented!();
+    let mut d2: () = unimplemented!();
     let mut verify: FnPtr<fn((), (), ()) -> ()> =
         FnPtr::<fn((), (), ()) -> ()>::new(|mut res: (), mut low: (), mut high: ()| -> () {
             unsafe {
@@ -200,22 +185,22 @@ pub unsafe fn test_ppc_edge_cases_29() -> () {
             }
         });
     return (unsafe {
-        let _res: () = (unsafe { midpoint_21(d0, d1) });
+        let _res: () = unimplemented!();
         let _low: () = d0;
         let _high: () = d1;
         verify.call(_res, _low, _high)
     }) && (unsafe {
-        let _res: () = (unsafe { midpoint_21(d1, d2) });
+        let _res: () = unimplemented!();
         let _low: () = d1;
         let _high: () = d2;
         verify.call(_res, _low, _high)
     });
 }
-pub unsafe fn test_ppc_edge_cases_31() -> () {
+pub unsafe fn test_ppc_edge_cases_23() -> () {
     {}
     let mut d1: () = 3.14_f64;
-    let mut d0: () = (unsafe { nextafter_32(d1, 2_()) });
-    let mut d2: () = (unsafe { nextafter_32(d1, 5_()) });
+    let mut d0: () = unimplemented!();
+    let mut d2: () = unimplemented!();
     let mut verify: FnPtr<fn((), (), ()) -> ()> =
         FnPtr::<fn((), (), ()) -> ()>::new(|mut res: (), mut low: (), mut high: ()| -> () {
             unsafe {
@@ -224,18 +209,18 @@ pub unsafe fn test_ppc_edge_cases_31() -> () {
             }
         });
     return (unsafe {
-        let _res: () = (unsafe { midpoint_23(d0, d1) });
+        let _res: () = unimplemented!();
         let _low: () = d0;
         let _high: () = d1;
         verify.call(_res, _low, _high)
     }) && (unsafe {
-        let _res: () = (unsafe { midpoint_23(d1, d2) });
+        let _res: () = unimplemented!();
         let _low: () = d1;
         let _high: () = d2;
         verify.call(_res, _low, _high)
     });
 }
-pub unsafe fn test_floating_points_33() -> () {
+pub unsafe fn test_floating_points_24() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let max_v: () = unimplemented!();
@@ -285,7 +270,7 @@ pub unsafe fn test_floating_points_33() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_floating_points_34() -> () {
+pub unsafe fn test_floating_points_25() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let max_v: () = unimplemented!();
@@ -335,7 +320,7 @@ pub unsafe fn test_floating_points_34() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_floating_points_35() -> () {
+pub unsafe fn test_floating_points_26() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let max_v: () = unimplemented!();
@@ -385,10 +370,10 @@ pub unsafe fn test_floating_points_35() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_36() -> () {
-    (unsafe { test_floating_points_33() });
-    (unsafe { test_floating_points_34() });
-    (unsafe { test_floating_points_35() });
+pub unsafe fn test_27() -> () {
+    (unsafe { test_floating_points_24() });
+    (unsafe { test_floating_points_25() });
+    (unsafe { test_floating_points_26() });
     return true;
 }
 pub fn main() {
@@ -407,7 +392,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_36() });
+    (unsafe { test_27() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -260,11 +260,7 @@ impl TailClobberer_1_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_1_>();
-                memset_17(___s, 1_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -345,11 +341,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_17(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -392,11 +384,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_17(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -466,7 +454,7 @@ const _: () = assert!(
     true,
     "!std::is_convertible_v<const std::unexpected<int>&, std::expected<int, NotConvertible>>"
 );
-pub unsafe fn operator_eq_18(_a0: *const MyInt, _a1: *const MyInt) -> () {
+pub unsafe fn operator_eq_17(_a0: *const MyInt, _a1: *const MyInt) -> () {
     return (((*_a0).i) == ((*_a1).i));
 }
 #[repr(C)]
@@ -482,10 +470,16 @@ impl MyInt {
 }
 impl std::cmp::PartialEq for MyInt {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_18(self as *const MyInt, other as *const MyInt) }
+        unsafe { operator_eq_17(self as *const MyInt, other as *const MyInt) }
     }
 }
 impl std::cmp::Eq for MyInt {}
+pub unsafe fn testUnexpected_18() {
+    let u: () = unimplemented!();
+    let mut e: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn testUnexpected_19() {
     let u: () = unimplemented!();
     let mut e: () = unimplemented!();
@@ -498,19 +492,13 @@ pub unsafe fn testUnexpected_20() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testUnexpected_21() {
-    let u: () = unimplemented!();
-    let mut e: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_22() -> () {
+pub unsafe fn test_21() -> () {
+    (unsafe { testUnexpected_18() });
     (unsafe { testUnexpected_19() });
     (unsafe { testUnexpected_20() });
-    (unsafe { testUnexpected_21() });
     return true;
 }
-pub unsafe fn testException_23() {}
+pub unsafe fn testException_22() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -527,9 +515,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_22() });
+    (unsafe { test_21() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_23() });
+    (unsafe { testException_22() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

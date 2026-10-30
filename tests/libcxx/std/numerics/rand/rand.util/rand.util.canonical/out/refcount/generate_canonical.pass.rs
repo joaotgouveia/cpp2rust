@@ -40,52 +40,52 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_3(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_4(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_5(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_6(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_7(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_8(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_9(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_10(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_11(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = ({ generate_canonical_12(r.as_pointer()) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

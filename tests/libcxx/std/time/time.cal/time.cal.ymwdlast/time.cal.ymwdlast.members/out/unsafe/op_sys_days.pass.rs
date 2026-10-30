@@ -10,7 +10,7 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_int__std_ratio_86400__1_____std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_int__std_ratio_86400__1____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1_____std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1____
 {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

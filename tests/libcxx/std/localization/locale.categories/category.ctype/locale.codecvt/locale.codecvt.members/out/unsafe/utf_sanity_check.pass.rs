@@ -24,9 +24,9 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
-    let f32_8: *const () = (unsafe { use_facet_0(unimplemented!()) });
-    let f32_16: *const () = (unsafe { use_facet_1(&l) });
-    let f16_8: *const () = (unsafe { use_facet_2(unimplemented!()) });
+    let f32_8: *const () = unimplemented!();
+    let f32_16: *const () = unimplemented!();
+    let f16_8: *const () = unimplemented!();
     let mut mbs32_8: () = unimplemented!();
     let mut mbs16_8: () = unimplemented!();
     let mut mbs32_16: () = unimplemented!();
@@ -41,8 +41,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut c16c: [(); 4] = [unimplemented!(); 4];
     let mut c16cp: *mut () = std::ptr::null_mut();
     let mut c8: [(); 4] = [unimplemented!(); 4];
-    let f32_8t: *const () = (unsafe { use_facet_3(unimplemented!()) });
-    let f16_8t: *const () = (unsafe { use_facet_4(unimplemented!()) });
+    let f32_8t: *const () = unimplemented!();
+    let f16_8t: *const () = unimplemented!();
     let mut mbs32_8t: () = unimplemented!();
     let mut mbs16_8t: () = unimplemented!();
     let mut c8tp: *mut () = std::ptr::null_mut();

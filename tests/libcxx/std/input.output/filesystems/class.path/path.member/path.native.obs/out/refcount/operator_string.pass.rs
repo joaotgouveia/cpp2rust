@@ -10,7 +10,8 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_string__std_string_ {}
+pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___
+{}
 pub fn test_eprintf_1(
     mut fmt: Ptr<()>,
     args_1: Ptr<Ptr<()>>,
@@ -19,17 +20,7 @@ pub fn test_eprintf_1(
     args_4: Ptr<()>,
     args_5: Ptr<Ptr<()>>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-            (args_4.read()),
-            (args_5.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_log_2(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
     let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));

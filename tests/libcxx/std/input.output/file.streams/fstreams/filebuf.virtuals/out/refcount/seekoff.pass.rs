@@ -46,7 +46,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_0(Ptr::<()>::from_string_literal(b"seekoff.dat")) });
+    unimplemented!();
     {
         let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
             (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
@@ -56,7 +56,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -67,7 +67,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    ({ remove_0(Ptr::<()>::from_string_literal(b"seekoff.dat")) });
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

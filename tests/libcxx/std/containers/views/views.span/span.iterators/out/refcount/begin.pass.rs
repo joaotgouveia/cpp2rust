@@ -238,12 +238,11 @@ pub fn testRuntimeSpan_21(s: ()) {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
-impl std::cmp::PartialEq for A {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
+impl CppEq for A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for A {}
 pub fn operator_eq_4(mut _a0: A, mut _a1: A) -> () {
     return true;
 }

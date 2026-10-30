@@ -10,49 +10,49 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1____std_chrono_duration_long_long__std_ratio_1__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
-pub fn check_seconds_1(d: ()) -> i64 {
+pub fn check_seconds_1(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub fn check_seconds_2(d: ()) -> i64 {
+pub fn check_seconds_2(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub fn check_seconds_3(d: ()) -> i64 {
+pub fn check_seconds_3(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub fn check_seconds_4(d: ()) -> i64 {
+pub fn check_seconds_4(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub fn check_seconds_5(d: ()) -> i64 {
+pub fn check_seconds_5(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub fn check_seconds_6(d: ()) -> i64 {
+pub fn check_seconds_6(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub fn check_seconds_7(d: ()) -> i64 {
+pub fn check_seconds_7(d: ()) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

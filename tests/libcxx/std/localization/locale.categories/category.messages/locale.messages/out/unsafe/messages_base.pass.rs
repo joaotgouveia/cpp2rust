@@ -6,12 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
-pub const anon_0_value: anon_0 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_long__long_ {}
-pub unsafe fn test_eprintf_1(
+pub unsafe fn test_eprintf_0(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const *const (),
@@ -19,19 +14,9 @@ pub unsafe fn test_eprintf_1(
     args_4: *const (),
     args_5: *const *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn test_log_2(
+pub unsafe fn test_log_1(
     mut condition: *const (),
     mut file: *const (),
     mut line: (),
@@ -43,7 +28,7 @@ pub unsafe fn test_log_2(
         c"Unconditional failure:".as_ptr()
     };
     (unsafe {
-        test_eprintf_1(
+        test_eprintf_0(
             c"%s%s %s %d\n%s".as_ptr(),
             &msg,
             &condition,
@@ -53,7 +38,6 @@ pub unsafe fn test_log_2(
         )
     });
 }
-const _: () = assert!(true, "");
 const _: () = assert!(true, "std::is_signed<std::messages_base::catalog>::value");
 const _: () = assert!(true, "std::is_integral<std::messages_base::catalog>::value");
 pub fn main() {

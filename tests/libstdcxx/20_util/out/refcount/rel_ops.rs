@@ -11,7 +11,7 @@ pub fn test01_0() {
     let vi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    !(unimplemented!());
     unimplemented!();
     unimplemented!();
     unimplemented!();

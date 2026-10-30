@@ -92,7 +92,19 @@ pub fn test_hex_16(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
+        unimplemented!().write(__rhs);
+        i.prefix_inc();
+    }
+    unimplemented!();
+}
+pub fn test_hex_17(mut expected: Ptr<()>) {
+    let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let mut str: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < unimplemented!()) {
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -104,7 +116,7 @@ pub fn test_hex_18(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -116,7 +128,7 @@ pub fn test_hex_19(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -128,7 +140,7 @@ pub fn test_hex_20(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -140,7 +152,7 @@ pub fn test_hex_21(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -152,7 +164,7 @@ pub fn test_hex_22(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -164,19 +176,7 @@ pub fn test_hex_23(mut expected: Ptr<()>) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
-        unimplemented!().write(__rhs);
-        i.prefix_inc();
-    }
-    unimplemented!();
-}
-pub fn test_hex_24(mut expected: Ptr<()>) {
-    let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = ({ toupper_17((unimplemented!().read())) });
+        let __rhs = unimplemented!();
         unimplemented!().write(__rhs);
         i.prefix_inc();
     }
@@ -234,18 +234,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({ test_dec_15(Ptr::<()>::from_string_literal(b"-1")) });
     }
     ({ test_hex_16(Ptr::<()>::from_string_literal(b"FFFF")) });
-    ({ test_hex_18(Ptr::<()>::from_string_literal(b"FFFF")) });
+    ({ test_hex_17(Ptr::<()>::from_string_literal(b"FFFF")) });
+    ({ test_hex_18(Ptr::<()>::from_string_literal(b"FFFFFFFF")) });
     ({ test_hex_19(Ptr::<()>::from_string_literal(b"FFFFFFFF")) });
-    ({ test_hex_20(Ptr::<()>::from_string_literal(b"FFFFFFFF")) });
+    ({ test_hex_20(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
     ({ test_hex_21(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-    ({ test_hex_22(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
     {
+        ({ test_hex_20(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
         ({ test_hex_21(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-        ({ test_hex_22(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
     }
     {
+        ({ test_hex_22(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
         ({ test_hex_23(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-        ({ test_hex_24(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
     }
     return 0_();
 }

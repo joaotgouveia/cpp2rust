@@ -68,7 +68,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut phone_numbers: () = unimplemented!();
         let phone_book: [(); 29] = std::mem::transmute(*b"555-1234, 555-2345, 555-3456\0");
         let mut i: () = unimplemented!();
-        let mut i2: () = i.clone();
+        let mut i2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -106,7 +106,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut phone_numbers: () = unimplemented!();
         let phone_book: [(); 29] = std::mem::transmute(*b"555-1234, 555-2345, 555-3456\0");
         let mut i: () = unimplemented!();
-        let mut i2: () = i.clone();
+        let mut i2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

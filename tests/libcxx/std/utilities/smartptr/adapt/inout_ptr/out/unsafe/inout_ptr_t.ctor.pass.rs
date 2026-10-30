@@ -75,10 +75,7 @@ impl ConstructiblePtr_int_ {
         return &mut (*(self as *mut ConstructiblePtr_int_));
     }
 }
-const _: () = assert!(
-    true,
-    "std::is_same_v<std::__pointer_of_t< ConstructiblePtr<int>>, int* >"
-);
+const _: () = assert!(true, "");
 const _: () = assert!(
     true,
     "std::is_constructible_v< ConstructiblePtr<int>, int* >"
@@ -103,19 +100,13 @@ impl ResettablePtr_int_ {
         return &mut (*(self as *mut ResettablePtr_int_));
     }
 }
-const _: () = assert!(
-    true,
-    "std::is_same_v<std::__pointer_of_t< ResettablePtr<int>>, int* >"
-);
+const _: () = assert!(true, "");
 const _: () = assert!(true, "std::is_constructible_v< ResettablePtr<int>, int* >");
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct NonConstructiblePtr_int_ {}
 impl NonConstructiblePtr_int_ {}
-const _: () = assert!(
-    true,
-    "std::is_same_v<std::__pointer_of_t< NonConstructiblePtr<int>>, int* >"
-);
+const _: () = assert!(true, "");
 const _: () = assert!(
     true,
     "!std::is_constructible_v< NonConstructiblePtr<int>, int* >"

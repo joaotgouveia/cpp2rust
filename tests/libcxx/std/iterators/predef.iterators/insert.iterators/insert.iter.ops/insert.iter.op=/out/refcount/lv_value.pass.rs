@@ -20,23 +20,11 @@ impl nasty_vector_int_ {
         }
     }
 }
-impl std::cmp::PartialEq for nasty_vector_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(nasty_vector_int_ {
-                    v_: self.v_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(nasty_vector_int_ {
-                    v_: other.v_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for nasty_vector_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for nasty_vector_int_ {}
 impl Default for nasty_vector_int_ {
     fn default() -> Self {
         { nasty_vector_int_::new_1() }

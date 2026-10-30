@@ -344,6 +344,7 @@ pub trait soccc_allocator_char_Impl {
     fn select_on_container_copy_construction(&self) -> soccc_allocator_char_;
     fn get_soccc(&self) -> Ptr<()>;
     fn get_self_soccc(&self) -> ();
+    fn operator_eq_8_char(&self, that: Ptr<soccc_allocator_char_>) -> ();
 }
 impl soccc_allocator_char_Impl for Ptr<soccc_allocator_char_> {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
@@ -368,6 +369,11 @@ impl soccc_allocator_char_Impl for Ptr<soccc_allocator_char_> {
     fn get_self_soccc(&self) -> () {
         return (*self).with(|__s| __s.self_soccc_count);
     }
+    fn operator_eq_8_char(&self, that: Ptr<soccc_allocator_char_>) -> () {
+        return ({ (*self).with(|__s| __s.soccc_count.clone()) } == {
+            ({ soccc_allocator_char_Impl::get_soccc(&that) })
+        });
+    }
 }
 pub trait soccc_allocator_wchar_t_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
@@ -375,6 +381,7 @@ pub trait soccc_allocator_wchar_t_Impl {
     fn select_on_container_copy_construction(&self) -> soccc_allocator_wchar_t_;
     fn get_soccc(&self) -> Ptr<()>;
     fn get_self_soccc(&self) -> ();
+    fn operator_eq_8_wchar_t(&self, that: Ptr<soccc_allocator_wchar_t_>) -> ();
 }
 impl soccc_allocator_wchar_t_Impl for Ptr<soccc_allocator_wchar_t_> {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
@@ -398,6 +405,11 @@ impl soccc_allocator_wchar_t_Impl for Ptr<soccc_allocator_wchar_t_> {
     }
     fn get_self_soccc(&self) -> () {
         return (*self).with(|__s| __s.self_soccc_count);
+    }
+    fn operator_eq_8_wchar_t(&self, that: Ptr<soccc_allocator_wchar_t_>) -> () {
+        return ({ (*self).with(|__s| __s.soccc_count.clone()) } == {
+            ({ soccc_allocator_wchar_t_Impl::get_soccc(&that) })
+        });
     }
 }
 pub fn __cpp2rust_init_globals() {}

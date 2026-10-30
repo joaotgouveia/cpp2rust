@@ -10,7 +10,7 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration___int128__std_ratio_1__1000000000_____std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration___int128__std_ratio_1__1000000000____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_1__1000000000_____std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_1__1000000000____
 {}
 pub unsafe fn test_trivial_clock_1() {
     const _: () = assert!(true, "");;

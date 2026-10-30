@@ -252,14 +252,11 @@ impl Default for Int42_DefaultTo42_ {
 pub unsafe fn test_empty_iota_sfinae_18() {
     let mut ev: () = unimplemented!();
     let mut iv: () = (unsafe {
-        let mut ___start: () =
+        let mut ___e: () =
             (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut begin_19))(&mut ev) });
-        let mut ___bound_sentinel: () =
+        let mut ___f: () =
             (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut end_20))(&mut ev) });
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_21))(
-            &mut ___start,
-            &mut ___bound_sentinel,
-        )
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_21))(&mut ___e, &mut ___f)
     });
     const _: () = assert!(true, "HasEmpty<decltype(iv)>");;
     const _: () = assert!(true, "HasEmpty<decltype(std::as_const(iv))>");;
@@ -291,14 +288,11 @@ pub unsafe fn test_nonempty_iota_sfinae_22() {
 pub unsafe fn test_empty_iota_23() {
     let mut ev: () = unimplemented!();
     let mut iv: () = (unsafe {
-        let mut ___start: () =
+        let mut ___e: () =
             (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut begin_19))(&mut ev) });
-        let mut ___bound_sentinel: () =
+        let mut ___f: () =
             (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut end_20))(&mut ev) });
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_21))(
-            &mut ___start,
-            &mut ___bound_sentinel,
-        )
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_21))(&mut ___e, &mut ___f)
     });
     unimplemented!();
     unimplemented!();

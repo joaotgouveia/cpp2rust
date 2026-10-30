@@ -455,13 +455,13 @@ pub unsafe fn test_7() -> () {
     {
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();

@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(24)]
 pub struct NaturalParameters {
     #[offset(0)]
@@ -15,6 +15,11 @@ pub struct NaturalParameters {
 }
 impl NaturalParameters {
     pub fn new() -> Self {
+        Self {
+            m_data: unimplemented!(),
+        }
+    }
+    pub fn move_from(_a0: Ptr<NaturalParameters>) -> Self {
         Self {
             m_data: unimplemented!(),
         }
@@ -56,6 +61,7 @@ pub trait NaturalParametersImpl {
     fn begin(&self) -> ();
     fn end(&self) -> ();
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters>;
+    fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters>;
 }
 impl NaturalParametersImpl for Ptr<NaturalParameters> {
     fn begin(&self) -> () {
@@ -65,6 +71,10 @@ impl NaturalParametersImpl for Ptr<NaturalParameters> {
         return unimplemented!();
     }
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
+        return (*self).clone();
+    }
+    fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
+        unimplemented!();
         return (*self).clone();
     }
 }

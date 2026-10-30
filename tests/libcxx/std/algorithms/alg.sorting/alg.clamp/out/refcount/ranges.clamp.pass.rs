@@ -83,7 +83,6 @@ pub fn test_0() -> () {
             }
         )));
         unimplemented!();
-        unimplemented!();
     }
     return true;
 }
@@ -93,17 +92,11 @@ pub struct S_2 {
     #[offset(0)]
     pub i: (),
 }
-impl std::cmp::PartialEq for S_2 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            S_2Impl::operator_eq(
-                &Rc::new(RefCell::new(S_2 { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(S_2 { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for S_2 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        S_2Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for S_2 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MoveProj_3 {}

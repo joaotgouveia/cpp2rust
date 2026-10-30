@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -164,9 +148,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_char__rebind_char_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_char_ {
@@ -244,10 +225,6 @@ impl Tag_X {
         Self {}
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct throwing_alloc_char_ {}
-impl throwing_alloc_char_ {}
 thread_local!(
     pub static unused_string_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
@@ -259,10 +236,7 @@ const _: () = assert!(
     true,
     "std::is_nothrow_destructible< std::basic_string<char, std::char_traits<char>, test_allocator<char>>>::value"
 );
-const _: () = assert!(
-    true,
-    "!std::is_nothrow_destructible< std::basic_string<char, std::char_traits<char>, throwing_alloc<char>>>::value"
-);
+const _: () = assert!(true, "");
 pub fn test_6() -> () {
     let alloc_stats: Value<test_allocator_statistics> =
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
@@ -270,7 +244,7 @@ pub fn test_6() -> () {
         let mut str2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     return true;
@@ -435,15 +409,6 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
         return (*self).clone();
     }
 }
-pub trait throwing_alloc_char_Impl {
-    fn allocate(&self, mut _a0: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn destructor(&self) {
-        unimplemented!()
-    }
-}
-impl throwing_alloc_char_Impl for Ptr<throwing_alloc_char_> {}
 pub fn __cpp2rust_init_globals() {
     let _ = destructed_value_0.with(|_| ());
     let _ = moved_value_1.with(|_| ());

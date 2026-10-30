@@ -203,36 +203,36 @@ pub unsafe fn classify_5(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_6(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_7(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_8(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_9(mut x: (), mut y: ()) {
+pub unsafe fn test_9() {
+    let mut z: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn is_about_10(mut x: (), mut y: ()) {
+pub unsafe fn test_10() {
+    let mut z: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_11() {
     let mut z: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_12() {
-    let mut z: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_13() {
-    let mut z: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_edges_14() {
+pub unsafe fn test_edges_12() {
     let N: () = (::std::mem::size_of::<[(); 153]>() as ())
         .wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut i: () = 0_();
@@ -290,10 +290,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_9() });
+    (unsafe { test_10() });
     (unsafe { test_11() });
-    (unsafe { test_12() });
-    (unsafe { test_13() });
-    (unsafe { test_edges_14() });
+    (unsafe { test_edges_12() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

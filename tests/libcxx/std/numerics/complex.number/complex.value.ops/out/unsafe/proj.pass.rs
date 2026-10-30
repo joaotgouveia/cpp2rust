@@ -203,31 +203,67 @@ pub unsafe fn classify_5(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_6(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_7(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_8(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_9(mut x: (), mut y: ()) {
+pub unsafe fn test_9(z: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_10(mut x: (), mut y: ()) {
+pub unsafe fn test_10(z: *const (), mut x: ()) {
     unimplemented!();
 }
 pub unsafe fn test_11(z: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn test_12(z: *const (), mut x: ()) {
-    unimplemented!();
+pub unsafe fn test_12() {
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_9(&mut _z, unimplemented!())
+    });
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_9(&mut _z, unimplemented!())
+    });
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_9(&mut _z, unimplemented!())
+    });
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_9(&mut _z, unimplemented!())
+    });
 }
-pub unsafe fn test_13(z: *const (), mut x: ()) {
-    unimplemented!();
+pub unsafe fn test_13() {
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_10(&mut _z, unimplemented!())
+    });
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_10(&mut _z, unimplemented!())
+    });
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_10(&mut _z, unimplemented!())
+    });
+    (unsafe {
+        let mut _z: () = unimplemented!();
+        test_10(&mut _z, unimplemented!())
+    });
 }
 pub unsafe fn test_14() {
     (unsafe {
@@ -247,43 +283,7 @@ pub unsafe fn test_14() {
         test_11(&mut _z, unimplemented!())
     });
 }
-pub unsafe fn test_15() {
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_12(&mut _z, unimplemented!())
-    });
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_12(&mut _z, unimplemented!())
-    });
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_12(&mut _z, unimplemented!())
-    });
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_12(&mut _z, unimplemented!())
-    });
-}
-pub unsafe fn test_16() {
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_13(&mut _z, unimplemented!())
-    });
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_13(&mut _z, unimplemented!())
-    });
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_13(&mut _z, unimplemented!())
-    });
-    (unsafe {
-        let mut _z: () = unimplemented!();
-        test_13(&mut _z, unimplemented!())
-    });
-}
-pub unsafe fn test_edges_17() {
+pub unsafe fn test_edges_15() {
     let N: () = (::std::mem::size_of::<[(); 153]>() as ())
         .wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut i: () = 0_();
@@ -336,10 +336,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_12() });
+    (unsafe { test_13() });
     (unsafe { test_14() });
-    (unsafe { test_15() });
-    (unsafe { test_16() });
-    (unsafe { test_edges_17() });
+    (unsafe { test_edges_15() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

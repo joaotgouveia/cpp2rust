@@ -19,50 +19,41 @@ impl Default for MyHash_A_ {
         { MyHash_A_::new() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(104)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
+#[byte_size(120)]
 pub struct A {
     #[offset(0)]
-    #[byte_size(40)]
+    #[byte_size(56)]
     pub m: (),
-    #[offset(40)]
+    #[offset(56)]
     #[byte_size(8)]
     pub it: (),
-    #[offset(48)]
+    #[offset(64)]
     #[byte_size(8)]
     pub cit: (),
-    #[offset(56)]
+    #[offset(72)]
     #[byte_size(24)]
     pub lit: (),
-    #[offset(80)]
+    #[offset(96)]
     #[byte_size(24)]
     pub clit: (),
 }
-impl std::cmp::PartialEq for A {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(A {
-                    m: self.m.clone(),
-                    it: self.it.clone(),
-                    cit: self.cit.clone(),
-                    lit: self.lit.clone(),
-                    clit: self.clit.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    m: other.m.clone(),
-                    it: other.it.clone(),
-                    cit: other.cit.clone(),
-                    lit: other.lit.clone(),
-                    clit: other.clit.clone(),
-                }))
-                .as_pointer(),
-            )
+impl A {
+    pub fn move_from(_a0: Ptr<A>) -> Self {
+        Self {
+            m: unimplemented!(),
+            it: field!(_a0, it).with_mut(std::mem::take),
+            cit: field!(_a0, cit).with_mut(std::mem::take),
+            lit: field!(_a0, lit).with_mut(std::mem::take),
+            clit: field!(_a0, clit).with_mut(std::mem::take),
         }
     }
 }
-impl std::cmp::Eq for A {}
+impl CppEq for A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
+    }
+}
 pub fn operator_eq_0(L: Ptr<A>, R: Ptr<A>) -> () {
     return ({ (L).clone() } == { (R).clone() });
 }
@@ -88,6 +79,19 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let mut a: A = <A>::default();
     return 0_();
+}
+pub trait AImpl {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
+}
+impl AImpl for Ptr<A> {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait MyHash_A_Impl {
     fn operator_call(&self, _a0: Ptr<A>) -> () {

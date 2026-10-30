@@ -7,9 +7,21 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct X {
     pub q: (),
+}
+impl X {
+    pub unsafe fn move_from(_a0: *mut X) -> Self {
+        let mut this = Self {
+            q: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut X) -> *mut X {
+        unimplemented!();
+        return &mut (*(self as *mut X));
+    }
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

@@ -10,13 +10,13 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1000000000____std_chrono_duration_long_long__std_ratio_1__1000000000___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000000____std_chrono_duration_long__std_ratio_1__1000000000___
 {}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1____std_chrono_duration_long_long__std_ratio_1__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
@@ -70,7 +70,7 @@ impl RepConstConvertibleLWG3050 {
     }
 }
 pub unsafe fn operator_rem_2(mut d: (), mut _a1: NotARep) -> () {
-    return d;
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -91,7 +91,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut ns: () = unimplemented!();
         const _: () = assert!(true, "");;
-        ns = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -103,10 +103,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut d: () = unimplemented!();
         let mut n: NotARep = <NotARep>::default();
         const _: () = assert!(true, "");;
-        d = (unsafe {
-            let _d: () = unimplemented!();
-            operator_rem_2(_d, n)
-        });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

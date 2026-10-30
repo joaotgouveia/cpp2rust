@@ -43,12 +43,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -57,22 +51,62 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+pub fn node_factory_4(c: Ptr<()>, key: Ptr<()>) -> () {
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    return unimplemented!();
+}
 pub fn node_factory_5(c: Ptr<()>, key: Ptr<()>) -> () {
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return unimplemented!();
 }
-pub fn node_factory_6(c: Ptr<()>, key: Ptr<()>) -> () {
-    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return unimplemented!();
+pub fn test_6(c: Ptr<()>) {
+    let mut nf: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
+        (FnPtr::<fn(Ptr<()>, Ptr<()>) -> ()>::new(node_factory_4));
+    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    'loop_: while ((*i.borrow()) != 10_()) {
+        let node: Value<()> = Rc::new(RefCell::new(
+            ({
+                let _arg0: Ptr<()> = (c).clone();
+                let _arg1: Ptr<()> = i.as_pointer();
+                nf.call(_arg0, _arg1)
+            }),
+        ));
+        unimplemented!();
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*i.borrow_mut()).prefix_inc();
+    }
+    unimplemented!();
+    {
+        let def: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let dupl: Value<()> = Rc::new(RefCell::new(
+            ({
+                let _arg1: Value<()> = Rc::new(RefCell::new(0_()));
+                nf.call(c2.as_pointer(), _arg1.as_pointer())
+            }),
+        ));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while (i != 10_()) {
+        unimplemented!();
+        i.prefix_inc();
+    }
 }
 pub fn test_7(c: Ptr<()>) {
     let mut nf: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
@@ -120,57 +154,11 @@ pub fn test_7(c: Ptr<()>) {
         i.prefix_inc();
     }
 }
-pub fn test_8(c: Ptr<()>) {
-    let mut nf: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
-        (FnPtr::<fn(Ptr<()>, Ptr<()>) -> ()>::new(node_factory_6));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) != 10_()) {
-        let node: Value<()> = Rc::new(RefCell::new(
-            ({
-                let _arg0: Ptr<()> = (c).clone();
-                let _arg1: Ptr<()> = i.as_pointer();
-                nf.call(_arg0, _arg1)
-            }),
-        ));
-        unimplemented!();
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
-    }
-    unimplemented!();
-    {
-        let def: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let dupl: Value<()> = Rc::new(RefCell::new(
-            ({
-                let _arg1: Value<()> = Rc::new(RefCell::new(0_()));
-                nf.call(c2.as_pointer(), _arg1.as_pointer())
-            }),
-        ));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while (i != 10_()) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-}
-pub fn test_9() -> () {
+pub fn test_8() -> () {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_7(m.as_pointer()) });
+    ({ test_6(m.as_pointer()) });
     let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_8(m2.as_pointer()) });
+    ({ test_7(m2.as_pointer()) });
     return true;
 }
 pub fn main() {
@@ -193,7 +181,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_9() });
+    ({ test_8() });
     return 0_();
 }
 pub trait min_allocator_int_Impl {

@@ -67,11 +67,7 @@ impl TailClobberer_0_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -148,11 +144,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -195,11 +187,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -248,7 +236,7 @@ pub struct Foo {}
 const _: () = assert!(!(false), "!HasValueNoexcept<Foo>");
 const _: () = assert!(true, "HasValueNoexcept<std::expected<int, int>>");
 const _: () = assert!(true, "HasValueNoexcept<const std::expected<int, int>>");
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_2() -> () {
     {
         let e: () = unimplemented!();
         unimplemented!();
@@ -282,10 +270,7 @@ pub unsafe fn test_3() -> () {
     }
     {
         let e: () = unimplemented!();
-        const _: () = assert!(
-            ((::std::mem::size_of::<TailClobberer_0_>()) == (::std::mem::size_of::<()>())),
-            "sizeof(TailClobberer<0>) == sizeof(e)"
-        );;
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
     return true;
@@ -306,7 +291,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3() });
+    (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

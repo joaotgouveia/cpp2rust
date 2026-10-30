@@ -163,22 +163,13 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
-    const _: () = assert!(true, "std::is_same<UT, unsigned short>::value");;
+    const _: () = assert!(true, "");;
     unimplemented!();
-    const _: () = assert!(true, "E::none == ME(0)");;
-    const _: () = assert!(
-        true,
-        "E::skip_existing      == ME(1) &&\n          E::overwrite_existing == ME(2) &&\n          E::update_existing    == ME(4)"
-    );;
-    const _: () = assert!(true, "E::recursive == ME(8)");;
-    const _: () = assert!(
-        true,
-        "E::copy_symlinks == ME(16) &&\n          E::skip_symlinks == ME(32)"
-    );;
-    const _: () = assert!(
-        true,
-        "E::directories_only    == ME(64) &&\n          E::create_symlinks     == ME(128) &&\n          E::create_hard_links   == ME(256)"
-    );;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     (unsafe { test_bitmask_binary_operations_3() });
     const _: () = assert!(true, "test_bitmask_binary_operations()");;
     return 0_();

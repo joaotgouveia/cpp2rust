@@ -28,9 +28,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let f32_8: Ptr<()> = ({ use_facet_0(unimplemented!()) });
-    let f32_16: Ptr<()> = ({ use_facet_1(l.as_pointer()) });
-    let f16_8: Ptr<()> = ({ use_facet_2(unimplemented!()) });
+    let f32_8: Ptr<()> = unimplemented!();
+    let f32_16: Ptr<()> = unimplemented!();
+    let f16_8: Ptr<()> = unimplemented!();
     let mbs32_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mbs16_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mbs32_16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -51,8 +51,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let c8: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let f32_8t: Ptr<()> = ({ use_facet_3(unimplemented!()) });
-    let f16_8t: Ptr<()> = ({ use_facet_4(unimplemented!()) });
+    let f32_8t: Ptr<()> = unimplemented!();
+    let f16_8t: Ptr<()> = unimplemented!();
     let mbs32_8t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mbs16_8t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut c8tp: Ptr<()> = Ptr::<()>::null();

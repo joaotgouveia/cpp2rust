@@ -23,13 +23,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut source: () =
-        (unsafe { operator_literal_sv_0(c"  \t   \t   \t   hello there".as_ptr(), 25_()) });
+    let mut source: () = unimplemented!();
     let mut is_invisible: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |x: ()| -> () {
         return ((x) == (' ' as ())) || ((x) == ('\t' as ()));
     });
     let mut skip_ws: () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut drop_while_1))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut drop_while_0))(
             &mut source,
             &mut is_invisible,
         )

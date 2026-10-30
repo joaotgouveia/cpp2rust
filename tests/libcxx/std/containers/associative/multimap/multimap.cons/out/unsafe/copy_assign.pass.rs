@@ -282,6 +282,12 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut (),
+}
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__int__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -444,7 +450,7 @@ pub unsafe fn test_alloc_9(
         unimplemented!();
         let mut i: () = 0_();
         let mut iter: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
@@ -602,7 +608,7 @@ pub unsafe fn test_alloc_10(
         unimplemented!();
         let mut i: () = 0_();
         let mut iter: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
@@ -746,7 +752,7 @@ pub unsafe fn test_alloc_11(
         unimplemented!();
         let mut i: () = 0_();
         let mut iter: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();

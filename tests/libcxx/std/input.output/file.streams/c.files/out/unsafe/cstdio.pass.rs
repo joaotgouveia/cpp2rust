@@ -23,8 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut fp: *mut ::libc::FILE = std::ptr::null_mut();
-    let mut fpos: ::libc::fpos_t = unsafe { std::mem::zeroed() };
+    let mut fp: () = unimplemented!();
+    let mut fpos: () = unimplemented!();
     let mut s: () = 0_();
     let mut cp: *mut () = std::ptr::null_mut();
     let mut va: *const VaArg = ::std::ptr::null();

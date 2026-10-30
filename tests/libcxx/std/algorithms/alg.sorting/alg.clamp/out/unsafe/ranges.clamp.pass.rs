@@ -93,7 +93,6 @@ pub unsafe fn test_0() -> () {
             }
         );
         unimplemented!();
-        unimplemented!();
     }
     return true;
 }

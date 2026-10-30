@@ -657,13 +657,13 @@ const _: () = assert!(true, "IsSmallObject<small_tracked_t>::value");
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe)]
 pub struct large_tracked_t {
     pub arg_types: *const TypeID,
-    pub dummy: [(); 9],
+    pub dummy: [(); 5],
 }
 impl large_tracked_t {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             arg_types: (unsafe { makeArgumentID_12() }),
-            dummy: [unimplemented!(); 9],
+            dummy: [unimplemented!(); 5],
         };
         this.dummy[(0_()) as usize] = 42_();
         this
@@ -671,14 +671,14 @@ impl large_tracked_t {
     pub unsafe fn copy_from(_a0: *const large_tracked_t) -> Self {
         let mut this = Self {
             arg_types: (unsafe { makeArgumentID_15() }),
-            dummy: [unimplemented!(); 9],
+            dummy: [unimplemented!(); 5],
         };
         this
     }
     pub unsafe fn move_from(_a0: *mut large_tracked_t) -> Self {
         let mut this = Self {
             arg_types: (unsafe { makeArgumentID_16() }),
-            dummy: [unimplemented!(); 9],
+            dummy: [unimplemented!(); 5],
         };
         this
     }
@@ -709,12 +709,12 @@ pub unsafe fn test_move_assign_72() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         (unsafe { assertContains_28(&a, 2_()) });
         if unimplemented!() {
             (unsafe { assertContains_28(&a2, 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -734,12 +734,12 @@ pub unsafe fn test_move_assign_73() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         (unsafe { assertContains_29(&a, 2_()) });
         if unimplemented!() {
             (unsafe { assertContains_29(&a2, 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -759,12 +759,12 @@ pub unsafe fn test_move_assign_74() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         (unsafe { assertContains_30(&a, 2_()) });
         if unimplemented!() {
             (unsafe { assertContains_30(&a2, 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -784,12 +784,12 @@ pub unsafe fn test_move_assign_75() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         (unsafe { assertContains_31(&a, 2_()) });
         if unimplemented!() {
             (unsafe { assertContains_31(&a2, 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     unimplemented!();
@@ -802,12 +802,12 @@ pub unsafe fn test_move_assign_empty_76() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         (unsafe { assertContains_31(&a, 1_()) });
         if unimplemented!() {
             (unsafe { assertContains_31(&a2, 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     {
@@ -829,12 +829,12 @@ pub unsafe fn test_move_assign_empty_77() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         (unsafe { assertContains_30(&a, 1_()) });
         if unimplemented!() {
             (unsafe { assertContains_30(&a2, 0_()) });
         }
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     {

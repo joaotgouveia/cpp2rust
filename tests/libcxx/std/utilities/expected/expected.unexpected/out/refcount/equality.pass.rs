@@ -18,17 +18,11 @@ pub struct Error {
     #[offset(0)]
     pub i: (),
 }
-impl std::cmp::PartialEq for Error {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(Error { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(Error { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for Error {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for Error {}
 pub fn test_2() -> () {
     let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

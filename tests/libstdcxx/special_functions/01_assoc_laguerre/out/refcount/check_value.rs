@@ -67,11 +67,7 @@ impl __gnu_test_copy_constructor {
     pub fn mark_call() {
         (*count__1.with(Value::clone).borrow_mut()).postfix_inc();
         if (count__1.with(|rc| *rc.borrow()) == throw_on__2.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"copy_constructor::mark_call",
-                ))
-            });
+            unimplemented!();
         }
     }
     pub fn reset() {
@@ -87,24 +83,20 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub fn count() -> () {
-        return count__4.with(|rc| *rc.borrow());
+        return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__4.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__4.with(|rc| *rc.borrow()) == throw_on__5.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"assignment_operator::mark_call",
-                ))
-            });
+        (*count__3.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__3.with(|rc| *rc.borrow()) == throw_on__4.with(|rc| *rc.borrow())) {
+            unimplemented!();
         }
     }
     pub fn reset() {
-        count__4.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__5.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__5.with(|rc| *rc.borrow_mut() = count);
+        throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -112,13 +104,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub fn count() -> () {
-        return _M_count_6.with(|rc| *rc.borrow());
+        return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*_M_count_6.with(Value::clone).borrow_mut()).postfix_inc();
+        (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -132,7 +124,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
         let mut id: () =
-            id.unwrap_or_else(|| (*next_id__7.with(Value::clone).borrow_mut()).postfix_dec());
+            id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
@@ -161,65 +153,16 @@ impl __gnu_test_copy_tracker {
         ({ __gnu_test_destructor::reset() });
     }
 }
-impl std::cmp::Ord for __gnu_test_copy_tracker {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for __gnu_test_copy_tracker {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for __gnu_test_copy_tracker {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for __gnu_test_copy_tracker {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_9(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for __gnu_test_copy_tracker {}
 impl Clone for __gnu_test_copy_tracker {
     fn clone(&self) -> Self {
         let __src: Value<__gnu_test_copy_tracker> =
@@ -235,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_9(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -251,7 +194,7 @@ pub struct __gnu_test_semaphore {
     #[offset(0)]
     sem_set_: (),
     #[offset(4)]
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -269,7 +212,7 @@ pub struct testcase_assoc_laguerre_double_ {
     pub f: (),
 }
 thread_local!(
-    pub static data001_10: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data001_9: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -351,10 +294,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler001_11: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler001_10: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data002_12: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data002_11: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -436,10 +379,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler002_13: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler002_12: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data003_14: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data003_13: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -521,10 +464,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler003_15: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler003_14: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data004_16: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data004_15: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -606,10 +549,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler004_17: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler004_16: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data005_18: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data005_17: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -691,10 +634,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler005_19: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler005_18: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data006_20: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data006_19: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -776,10 +719,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler006_21: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler006_20: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data007_22: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data007_21: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -861,10 +804,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler007_23: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler007_22: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data008_24: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data008_23: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -946,10 +889,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler008_25: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler008_24: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data009_26: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data009_25: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -1031,10 +974,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler009_27: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler009_26: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data010_28: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data010_27: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 2_f64,
@@ -1116,10 +1059,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler010_29: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler010_28: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data011_30: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data011_29: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 3_f64,
@@ -1201,10 +1144,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler011_31: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler011_30: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data012_32: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data012_31: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 6_f64,
@@ -1286,10 +1229,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler012_33: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler012_32: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data013_34: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data013_33: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 11_f64,
@@ -1371,10 +1314,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler013_35: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler013_34: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data014_36: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data014_35: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 21_f64,
@@ -1456,10 +1399,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler014_37: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler014_36: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data015_38: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data015_37: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 51_f64,
@@ -1541,10 +1484,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler015_39: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler015_38: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data016_40: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data016_39: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 101_f64,
@@ -1626,10 +1569,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler016_41: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler016_40: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data017_42: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data017_41: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -1711,10 +1654,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler017_43: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler017_42: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data018_44: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data018_43: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 3_f64,
@@ -1796,10 +1739,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler018_45: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler018_44: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data019_46: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data019_45: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 6_f64,
@@ -1881,10 +1824,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler019_47: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler019_46: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data020_48: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data020_47: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 21_f64,
@@ -1966,10 +1909,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler020_49: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler020_48: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data021_50: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data021_49: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 66_f64,
@@ -2051,10 +1994,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler021_51: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler021_50: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data022_52: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data022_51: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 231_f64,
@@ -2136,10 +2079,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler022_53: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler022_52: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data023_54: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data023_53: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1326_f64,
@@ -2221,10 +2164,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler023_55: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler023_54: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data024_56: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data024_55: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 5151_f64,
@@ -2306,10 +2249,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler024_57: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler024_56: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data025_58: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data025_57: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -2391,10 +2334,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler025_59: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler025_58: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data026_60: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data026_59: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 6_f64,
@@ -2476,10 +2419,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler026_61: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler026_60: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data027_62: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data027_61: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 21_f64,
@@ -2561,10 +2504,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler027_63: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler027_62: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data028_64: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data028_63: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 252_f64,
@@ -2646,10 +2589,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler028_65: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler028_64: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data029_66: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data029_65: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 3003_f64,
@@ -2731,10 +2674,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler029_67: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler029_66: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data030_68: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data030_67: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 53130_f64,
@@ -2816,10 +2759,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler030_69: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler030_68: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data031_70: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data031_69: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 3478761_f64,
@@ -2901,10 +2844,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler031_71: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler031_70: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data032_72: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data032_71: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 96560646_f64,
@@ -2986,10 +2929,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler032_73: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler032_72: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data033_74: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data033_73: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -3071,10 +3014,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler033_75: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler033_74: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data034_76: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data034_75: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 11_f64,
@@ -3156,10 +3099,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler034_77: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler034_76: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data035_78: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data035_77: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 66_f64,
@@ -3241,10 +3184,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler035_79: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler035_78: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data036_80: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data036_79: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 3003_f64,
@@ -3326,10 +3269,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler036_81: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler036_80: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data037_82: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data037_81: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 184756_f64,
@@ -3411,10 +3354,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler037_83: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler037_82: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data038_84: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data038_83: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 30045014.999999993_f64,
@@ -3496,10 +3439,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler038_85: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler038_84: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data039_86: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data039_85: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 75394027566_f64,
@@ -3581,10 +3524,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler039_87: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler039_86: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data040_88: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data040_87: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 46897636623981_f64,
@@ -3666,10 +3609,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler040_89: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler040_88: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data041_90: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data041_89: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -3751,10 +3694,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler041_91: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler041_90: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data042_92: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data042_91: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 21_f64,
@@ -3836,10 +3779,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler042_93: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler042_92: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data043_94: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data043_93: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 231.00000000000003_f64,
@@ -3921,10 +3864,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler043_95: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler043_94: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data044_96: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data044_95: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 53130_f64,
@@ -4006,10 +3949,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler044_97: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler044_96: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data045_98: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data045_97: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 30045015_f64,
@@ -4091,10 +4034,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler045_99: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler045_98: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data046_100: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data046_99: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 137846528819.99994_f64,
@@ -4176,10 +4119,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler046_101: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler046_100: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data047_102: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data047_101: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 161884603662657888_f64,
@@ -4261,10 +4204,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler047_103: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler047_102: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data048_104: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data048_103: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 2.9462227291176643e+22_f64,
@@ -4346,10 +4289,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler048_105: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
+    pub static toler048_104: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
 );
 thread_local!(
-    pub static data049_106: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data049_105: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -4431,10 +4374,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler049_107: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler049_106: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data050_108: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data050_107: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 51.00000000000002_f64,
@@ -4516,10 +4459,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler050_109: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
+    pub static toler050_108: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
 );
 thread_local!(
-    pub static data051_110: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data051_109: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1326_f64,
@@ -4601,10 +4544,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler051_111: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler051_110: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data052_112: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data052_111: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 3478761_f64,
@@ -4686,10 +4629,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler052_113: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler052_112: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data053_114: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data053_113: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 75394027565.99998_f64,
@@ -4771,10 +4714,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler053_115: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler053_114: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data054_116: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data054_115: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 161884603662657792_f64,
@@ -4856,10 +4799,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler054_117: Value<()> = Rc::new(RefCell::new(5.000000000000003e-12_f64));
+    pub static toler054_116: Value<()> = Rc::new(RefCell::new(5.000000000000003e-12_f64));
 );
 thread_local!(
-    pub static data055_118: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data055_117: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1.0089134454556417e+29_f64,
@@ -4941,10 +4884,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler055_119: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler055_118: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data056_120: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data056_119: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 2.0128660909731929e+40_f64,
@@ -5026,10 +4969,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler056_121: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
+    pub static toler056_120: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
 );
 thread_local!(
-    pub static data057_122: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data057_121: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 1_f64,
@@ -5111,10 +5054,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler057_123: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler057_122: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
-    pub static data058_124: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data058_123: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 101.00000000000003_f64,
@@ -5196,10 +5139,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler058_125: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler058_124: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data059_126: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data059_125: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 5151.0000000000055_f64,
@@ -5281,10 +5224,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler059_127: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler059_126: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data060_128: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data060_127: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 96560646.00000003_f64,
@@ -5366,10 +5309,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler060_129: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler060_128: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data061_130: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data061_129: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 46897636623981.04_f64,
@@ -5451,10 +5394,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler061_131: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
+    pub static toler061_130: Value<()> = Rc::new(RefCell::new(5.000000000000004e-13_f64));
 );
 thread_local!(
-    pub static data062_132: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data062_131: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 2.9462227291176614e+22_f64,
@@ -5536,10 +5479,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler062_133: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
+    pub static toler062_132: Value<()> = Rc::new(RefCell::new(2.5000000000000015e-12_f64));
 );
 thread_local!(
-    pub static data063_134: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data063_133: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 2.012866090973193e+40_f64,
@@ -5621,10 +5564,10 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler063_135: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler063_134: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
 thread_local!(
-    pub static data064_136: Value<Box<[testcase_assoc_laguerre_double_]>> =
+    pub static data064_135: Value<Box<[testcase_assoc_laguerre_double_]>> =
         Rc::new(RefCell::new(Box::new([
             testcase_assoc_laguerre_double_ {
                 f0: 9.054851465610322e+58_f64,
@@ -5706,9 +5649,9 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler064_137: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
+    pub static toler064_136: Value<()> = Rc::new(RefCell::new(1.0000000000000008e-12_f64));
 );
-pub fn test_138(data: Ptr<testcase_assoc_laguerre_double_>, mut toler: ()) {
+pub fn test_137(data: Ptr<testcase_assoc_laguerre_double_>, mut toler: ()) {
     let mut test: () = true;
     let mut eps: () = unimplemented!();
     let mut max_abs_diff: () = -1_();
@@ -5734,9 +5677,7 @@ pub fn test_138(data: Ptr<testcase_assoc_laguerre_double_>, mut toler: ()) {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(max_abs_frac < toler) {
-            ({
-                __builtin_fprintf_139 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"check_value.cc" )  ) .into() , ( 2241_() ) .into() , ( Ptr::<() >::from_string_literal(b"void test(const testcase_assoc_laguerre<Ret> (&)[Num], Ret) [Ret = double, Num = 11U]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"max_abs_frac < toler" )  ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -5747,387 +5688,387 @@ pub fn main() {
 }
 fn main_0() -> () {
     ({
-        test_138(
-            data001_10.with(|v| v.as_pointer()),
-            toler001_11.with(|rc| *rc.borrow()),
+        test_137(
+            data001_9.with(|v| v.as_pointer()),
+            toler001_10.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data002_12.with(|v| v.as_pointer()),
-            toler002_13.with(|rc| *rc.borrow()),
+        test_137(
+            data002_11.with(|v| v.as_pointer()),
+            toler002_12.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data003_14.with(|v| v.as_pointer()),
-            toler003_15.with(|rc| *rc.borrow()),
+        test_137(
+            data003_13.with(|v| v.as_pointer()),
+            toler003_14.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data004_16.with(|v| v.as_pointer()),
-            toler004_17.with(|rc| *rc.borrow()),
+        test_137(
+            data004_15.with(|v| v.as_pointer()),
+            toler004_16.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data005_18.with(|v| v.as_pointer()),
-            toler005_19.with(|rc| *rc.borrow()),
+        test_137(
+            data005_17.with(|v| v.as_pointer()),
+            toler005_18.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data006_20.with(|v| v.as_pointer()),
-            toler006_21.with(|rc| *rc.borrow()),
+        test_137(
+            data006_19.with(|v| v.as_pointer()),
+            toler006_20.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data007_22.with(|v| v.as_pointer()),
-            toler007_23.with(|rc| *rc.borrow()),
+        test_137(
+            data007_21.with(|v| v.as_pointer()),
+            toler007_22.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data008_24.with(|v| v.as_pointer()),
-            toler008_25.with(|rc| *rc.borrow()),
+        test_137(
+            data008_23.with(|v| v.as_pointer()),
+            toler008_24.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data009_26.with(|v| v.as_pointer()),
-            toler009_27.with(|rc| *rc.borrow()),
+        test_137(
+            data009_25.with(|v| v.as_pointer()),
+            toler009_26.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data010_28.with(|v| v.as_pointer()),
-            toler010_29.with(|rc| *rc.borrow()),
+        test_137(
+            data010_27.with(|v| v.as_pointer()),
+            toler010_28.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data011_30.with(|v| v.as_pointer()),
-            toler011_31.with(|rc| *rc.borrow()),
+        test_137(
+            data011_29.with(|v| v.as_pointer()),
+            toler011_30.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data012_32.with(|v| v.as_pointer()),
-            toler012_33.with(|rc| *rc.borrow()),
+        test_137(
+            data012_31.with(|v| v.as_pointer()),
+            toler012_32.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data013_34.with(|v| v.as_pointer()),
-            toler013_35.with(|rc| *rc.borrow()),
+        test_137(
+            data013_33.with(|v| v.as_pointer()),
+            toler013_34.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data014_36.with(|v| v.as_pointer()),
-            toler014_37.with(|rc| *rc.borrow()),
+        test_137(
+            data014_35.with(|v| v.as_pointer()),
+            toler014_36.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data015_38.with(|v| v.as_pointer()),
-            toler015_39.with(|rc| *rc.borrow()),
+        test_137(
+            data015_37.with(|v| v.as_pointer()),
+            toler015_38.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data016_40.with(|v| v.as_pointer()),
-            toler016_41.with(|rc| *rc.borrow()),
+        test_137(
+            data016_39.with(|v| v.as_pointer()),
+            toler016_40.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data017_42.with(|v| v.as_pointer()),
-            toler017_43.with(|rc| *rc.borrow()),
+        test_137(
+            data017_41.with(|v| v.as_pointer()),
+            toler017_42.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data018_44.with(|v| v.as_pointer()),
-            toler018_45.with(|rc| *rc.borrow()),
+        test_137(
+            data018_43.with(|v| v.as_pointer()),
+            toler018_44.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data019_46.with(|v| v.as_pointer()),
-            toler019_47.with(|rc| *rc.borrow()),
+        test_137(
+            data019_45.with(|v| v.as_pointer()),
+            toler019_46.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data020_48.with(|v| v.as_pointer()),
-            toler020_49.with(|rc| *rc.borrow()),
+        test_137(
+            data020_47.with(|v| v.as_pointer()),
+            toler020_48.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data021_50.with(|v| v.as_pointer()),
-            toler021_51.with(|rc| *rc.borrow()),
+        test_137(
+            data021_49.with(|v| v.as_pointer()),
+            toler021_50.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data022_52.with(|v| v.as_pointer()),
-            toler022_53.with(|rc| *rc.borrow()),
+        test_137(
+            data022_51.with(|v| v.as_pointer()),
+            toler022_52.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data023_54.with(|v| v.as_pointer()),
-            toler023_55.with(|rc| *rc.borrow()),
+        test_137(
+            data023_53.with(|v| v.as_pointer()),
+            toler023_54.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data024_56.with(|v| v.as_pointer()),
-            toler024_57.with(|rc| *rc.borrow()),
+        test_137(
+            data024_55.with(|v| v.as_pointer()),
+            toler024_56.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data025_58.with(|v| v.as_pointer()),
-            toler025_59.with(|rc| *rc.borrow()),
+        test_137(
+            data025_57.with(|v| v.as_pointer()),
+            toler025_58.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data026_60.with(|v| v.as_pointer()),
-            toler026_61.with(|rc| *rc.borrow()),
+        test_137(
+            data026_59.with(|v| v.as_pointer()),
+            toler026_60.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data027_62.with(|v| v.as_pointer()),
-            toler027_63.with(|rc| *rc.borrow()),
+        test_137(
+            data027_61.with(|v| v.as_pointer()),
+            toler027_62.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data028_64.with(|v| v.as_pointer()),
-            toler028_65.with(|rc| *rc.borrow()),
+        test_137(
+            data028_63.with(|v| v.as_pointer()),
+            toler028_64.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data029_66.with(|v| v.as_pointer()),
-            toler029_67.with(|rc| *rc.borrow()),
+        test_137(
+            data029_65.with(|v| v.as_pointer()),
+            toler029_66.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data030_68.with(|v| v.as_pointer()),
-            toler030_69.with(|rc| *rc.borrow()),
+        test_137(
+            data030_67.with(|v| v.as_pointer()),
+            toler030_68.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data031_70.with(|v| v.as_pointer()),
-            toler031_71.with(|rc| *rc.borrow()),
+        test_137(
+            data031_69.with(|v| v.as_pointer()),
+            toler031_70.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data032_72.with(|v| v.as_pointer()),
-            toler032_73.with(|rc| *rc.borrow()),
+        test_137(
+            data032_71.with(|v| v.as_pointer()),
+            toler032_72.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data033_74.with(|v| v.as_pointer()),
-            toler033_75.with(|rc| *rc.borrow()),
+        test_137(
+            data033_73.with(|v| v.as_pointer()),
+            toler033_74.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data034_76.with(|v| v.as_pointer()),
-            toler034_77.with(|rc| *rc.borrow()),
+        test_137(
+            data034_75.with(|v| v.as_pointer()),
+            toler034_76.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data035_78.with(|v| v.as_pointer()),
-            toler035_79.with(|rc| *rc.borrow()),
+        test_137(
+            data035_77.with(|v| v.as_pointer()),
+            toler035_78.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data036_80.with(|v| v.as_pointer()),
-            toler036_81.with(|rc| *rc.borrow()),
+        test_137(
+            data036_79.with(|v| v.as_pointer()),
+            toler036_80.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data037_82.with(|v| v.as_pointer()),
-            toler037_83.with(|rc| *rc.borrow()),
+        test_137(
+            data037_81.with(|v| v.as_pointer()),
+            toler037_82.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data038_84.with(|v| v.as_pointer()),
-            toler038_85.with(|rc| *rc.borrow()),
+        test_137(
+            data038_83.with(|v| v.as_pointer()),
+            toler038_84.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data039_86.with(|v| v.as_pointer()),
-            toler039_87.with(|rc| *rc.borrow()),
+        test_137(
+            data039_85.with(|v| v.as_pointer()),
+            toler039_86.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data040_88.with(|v| v.as_pointer()),
-            toler040_89.with(|rc| *rc.borrow()),
+        test_137(
+            data040_87.with(|v| v.as_pointer()),
+            toler040_88.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data041_90.with(|v| v.as_pointer()),
-            toler041_91.with(|rc| *rc.borrow()),
+        test_137(
+            data041_89.with(|v| v.as_pointer()),
+            toler041_90.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data042_92.with(|v| v.as_pointer()),
-            toler042_93.with(|rc| *rc.borrow()),
+        test_137(
+            data042_91.with(|v| v.as_pointer()),
+            toler042_92.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data043_94.with(|v| v.as_pointer()),
-            toler043_95.with(|rc| *rc.borrow()),
+        test_137(
+            data043_93.with(|v| v.as_pointer()),
+            toler043_94.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data044_96.with(|v| v.as_pointer()),
-            toler044_97.with(|rc| *rc.borrow()),
+        test_137(
+            data044_95.with(|v| v.as_pointer()),
+            toler044_96.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data045_98.with(|v| v.as_pointer()),
-            toler045_99.with(|rc| *rc.borrow()),
+        test_137(
+            data045_97.with(|v| v.as_pointer()),
+            toler045_98.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data046_100.with(|v| v.as_pointer()),
-            toler046_101.with(|rc| *rc.borrow()),
+        test_137(
+            data046_99.with(|v| v.as_pointer()),
+            toler046_100.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data047_102.with(|v| v.as_pointer()),
-            toler047_103.with(|rc| *rc.borrow()),
+        test_137(
+            data047_101.with(|v| v.as_pointer()),
+            toler047_102.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data048_104.with(|v| v.as_pointer()),
-            toler048_105.with(|rc| *rc.borrow()),
+        test_137(
+            data048_103.with(|v| v.as_pointer()),
+            toler048_104.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data049_106.with(|v| v.as_pointer()),
-            toler049_107.with(|rc| *rc.borrow()),
+        test_137(
+            data049_105.with(|v| v.as_pointer()),
+            toler049_106.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data050_108.with(|v| v.as_pointer()),
-            toler050_109.with(|rc| *rc.borrow()),
+        test_137(
+            data050_107.with(|v| v.as_pointer()),
+            toler050_108.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data051_110.with(|v| v.as_pointer()),
-            toler051_111.with(|rc| *rc.borrow()),
+        test_137(
+            data051_109.with(|v| v.as_pointer()),
+            toler051_110.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data052_112.with(|v| v.as_pointer()),
-            toler052_113.with(|rc| *rc.borrow()),
+        test_137(
+            data052_111.with(|v| v.as_pointer()),
+            toler052_112.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data053_114.with(|v| v.as_pointer()),
-            toler053_115.with(|rc| *rc.borrow()),
+        test_137(
+            data053_113.with(|v| v.as_pointer()),
+            toler053_114.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data054_116.with(|v| v.as_pointer()),
-            toler054_117.with(|rc| *rc.borrow()),
+        test_137(
+            data054_115.with(|v| v.as_pointer()),
+            toler054_116.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data055_118.with(|v| v.as_pointer()),
-            toler055_119.with(|rc| *rc.borrow()),
+        test_137(
+            data055_117.with(|v| v.as_pointer()),
+            toler055_118.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data056_120.with(|v| v.as_pointer()),
-            toler056_121.with(|rc| *rc.borrow()),
+        test_137(
+            data056_119.with(|v| v.as_pointer()),
+            toler056_120.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data057_122.with(|v| v.as_pointer()),
-            toler057_123.with(|rc| *rc.borrow()),
+        test_137(
+            data057_121.with(|v| v.as_pointer()),
+            toler057_122.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data058_124.with(|v| v.as_pointer()),
-            toler058_125.with(|rc| *rc.borrow()),
+        test_137(
+            data058_123.with(|v| v.as_pointer()),
+            toler058_124.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data059_126.with(|v| v.as_pointer()),
-            toler059_127.with(|rc| *rc.borrow()),
+        test_137(
+            data059_125.with(|v| v.as_pointer()),
+            toler059_126.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data060_128.with(|v| v.as_pointer()),
-            toler060_129.with(|rc| *rc.borrow()),
+        test_137(
+            data060_127.with(|v| v.as_pointer()),
+            toler060_128.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data061_130.with(|v| v.as_pointer()),
-            toler061_131.with(|rc| *rc.borrow()),
+        test_137(
+            data061_129.with(|v| v.as_pointer()),
+            toler061_130.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data062_132.with(|v| v.as_pointer()),
-            toler062_133.with(|rc| *rc.borrow()),
+        test_137(
+            data062_131.with(|v| v.as_pointer()),
+            toler062_132.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data063_134.with(|v| v.as_pointer()),
-            toler063_135.with(|rc| *rc.borrow()),
+        test_137(
+            data063_133.with(|v| v.as_pointer()),
+            toler063_134.with(|rc| *rc.borrow()),
         )
     });
     ({
-        test_138(
-            data064_136.with(|v| v.as_pointer()),
-            toler064_137.with(|rc| *rc.borrow()),
+        test_137(
+            data064_135.with(|v| v.as_pointer()),
+            toler064_136.with(|rc| *rc.borrow()),
         )
     });
     return 0_();
@@ -6136,74 +6077,50 @@ impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_140() }) as ::libc::pid_t));
-        field!(this, sem_set_)
-            .write(({ semget_141(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+        field!(this, pid_).write(unimplemented!());
+        field!(this, sem_set_).write(unimplemented!());
         if (this.with(|__s| __s.sem_set_) == -1_()) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not obtain semaphore set",
-                ))
-            });
+            unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (({
-            semctl_142(
-                this.with(|__s| __s.sem_set_),
-                0_(),
-                16_(),
-                Box::new([((*val.borrow()).clone()).into()]),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not initialize semaphore",
-                ))
-            });
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_143(size: Option<()>) {
+pub fn set_memory_limits_138(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_144((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_145((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_144((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_145((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_144((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_145((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn set_file_limit_146(mut size: ()) {
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+pub fn set_file_limit_139(mut size: ()) {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_144((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_145((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn verify_demangle_147(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_140(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = ({
-        __cxa_demangle_148(
-            (mangled).clone(),
-            Ptr::<()>::null(),
-            Ptr::<()>::null(),
-            (status.as_pointer()),
-        )
-    });
+    let mut demangled: Ptr<()> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
@@ -6229,13 +6146,13 @@ pub fn verify_demangle_147(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if unimplemented!() {
-        ({ __throw_runtime_error_3((s).clone()) });
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_149(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_141(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -6252,19 +6169,17 @@ pub fn run_tests_wrapped_locale_149(mut name: Ptr<()>, l: Ptr<__gnu_test_func_ca
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                ({
-                    __builtin_fprintf_139 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_150(
+pub fn run_tests_wrapped_env_142(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -6284,7 +6199,7 @@ pub fn run_tests_wrapped_env_150(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 thread_local!(
@@ -6297,16 +6212,16 @@ thread_local!(
     static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__5: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static _M_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static next_id__7: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -6319,7 +6234,7 @@ impl __gnu_test_semun {
     pub fn val(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<semid_ds>> {
+    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
@@ -6334,7 +6249,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_152(
+pub fn test_tm_143(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -6344,20 +6259,20 @@ pub fn test_tm_152(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_153.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_153.with(|rc| *rc.borrow());
+) -> () {
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_144.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_144.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_153: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_144: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -6431,186 +6346,157 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_140() })) {
-            ({
-                semctl_142(
-                    (*self).with(|__s| __s.sem_set_),
-                    0_(),
-                    0_(),
-                    Box::new([((*val.borrow()).clone()).into()]),
-                )
-            });
+        if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
+            unimplemented!();
         }
     }
     fn signal(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_151(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not signal semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
     fn wait(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_151(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not wait for semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = data001_10.with(|_| ());
-    let _ = toler001_11.with(|_| ());
-    let _ = data002_12.with(|_| ());
-    let _ = toler002_13.with(|_| ());
-    let _ = data003_14.with(|_| ());
-    let _ = toler003_15.with(|_| ());
-    let _ = data004_16.with(|_| ());
-    let _ = toler004_17.with(|_| ());
-    let _ = data005_18.with(|_| ());
-    let _ = toler005_19.with(|_| ());
-    let _ = data006_20.with(|_| ());
-    let _ = toler006_21.with(|_| ());
-    let _ = data007_22.with(|_| ());
-    let _ = toler007_23.with(|_| ());
-    let _ = data008_24.with(|_| ());
-    let _ = toler008_25.with(|_| ());
-    let _ = data009_26.with(|_| ());
-    let _ = toler009_27.with(|_| ());
-    let _ = data010_28.with(|_| ());
-    let _ = toler010_29.with(|_| ());
-    let _ = data011_30.with(|_| ());
-    let _ = toler011_31.with(|_| ());
-    let _ = data012_32.with(|_| ());
-    let _ = toler012_33.with(|_| ());
-    let _ = data013_34.with(|_| ());
-    let _ = toler013_35.with(|_| ());
-    let _ = data014_36.with(|_| ());
-    let _ = toler014_37.with(|_| ());
-    let _ = data015_38.with(|_| ());
-    let _ = toler015_39.with(|_| ());
-    let _ = data016_40.with(|_| ());
-    let _ = toler016_41.with(|_| ());
-    let _ = data017_42.with(|_| ());
-    let _ = toler017_43.with(|_| ());
-    let _ = data018_44.with(|_| ());
-    let _ = toler018_45.with(|_| ());
-    let _ = data019_46.with(|_| ());
-    let _ = toler019_47.with(|_| ());
-    let _ = data020_48.with(|_| ());
-    let _ = toler020_49.with(|_| ());
-    let _ = data021_50.with(|_| ());
-    let _ = toler021_51.with(|_| ());
-    let _ = data022_52.with(|_| ());
-    let _ = toler022_53.with(|_| ());
-    let _ = data023_54.with(|_| ());
-    let _ = toler023_55.with(|_| ());
-    let _ = data024_56.with(|_| ());
-    let _ = toler024_57.with(|_| ());
-    let _ = data025_58.with(|_| ());
-    let _ = toler025_59.with(|_| ());
-    let _ = data026_60.with(|_| ());
-    let _ = toler026_61.with(|_| ());
-    let _ = data027_62.with(|_| ());
-    let _ = toler027_63.with(|_| ());
-    let _ = data028_64.with(|_| ());
-    let _ = toler028_65.with(|_| ());
-    let _ = data029_66.with(|_| ());
-    let _ = toler029_67.with(|_| ());
-    let _ = data030_68.with(|_| ());
-    let _ = toler030_69.with(|_| ());
-    let _ = data031_70.with(|_| ());
-    let _ = toler031_71.with(|_| ());
-    let _ = data032_72.with(|_| ());
-    let _ = toler032_73.with(|_| ());
-    let _ = data033_74.with(|_| ());
-    let _ = toler033_75.with(|_| ());
-    let _ = data034_76.with(|_| ());
-    let _ = toler034_77.with(|_| ());
-    let _ = data035_78.with(|_| ());
-    let _ = toler035_79.with(|_| ());
-    let _ = data036_80.with(|_| ());
-    let _ = toler036_81.with(|_| ());
-    let _ = data037_82.with(|_| ());
-    let _ = toler037_83.with(|_| ());
-    let _ = data038_84.with(|_| ());
-    let _ = toler038_85.with(|_| ());
-    let _ = data039_86.with(|_| ());
-    let _ = toler039_87.with(|_| ());
-    let _ = data040_88.with(|_| ());
-    let _ = toler040_89.with(|_| ());
-    let _ = data041_90.with(|_| ());
-    let _ = toler041_91.with(|_| ());
-    let _ = data042_92.with(|_| ());
-    let _ = toler042_93.with(|_| ());
-    let _ = data043_94.with(|_| ());
-    let _ = toler043_95.with(|_| ());
-    let _ = data044_96.with(|_| ());
-    let _ = toler044_97.with(|_| ());
-    let _ = data045_98.with(|_| ());
-    let _ = toler045_99.with(|_| ());
-    let _ = data046_100.with(|_| ());
-    let _ = toler046_101.with(|_| ());
-    let _ = data047_102.with(|_| ());
-    let _ = toler047_103.with(|_| ());
-    let _ = data048_104.with(|_| ());
-    let _ = toler048_105.with(|_| ());
-    let _ = data049_106.with(|_| ());
-    let _ = toler049_107.with(|_| ());
-    let _ = data050_108.with(|_| ());
-    let _ = toler050_109.with(|_| ());
-    let _ = data051_110.with(|_| ());
-    let _ = toler051_111.with(|_| ());
-    let _ = data052_112.with(|_| ());
-    let _ = toler052_113.with(|_| ());
-    let _ = data053_114.with(|_| ());
-    let _ = toler053_115.with(|_| ());
-    let _ = data054_116.with(|_| ());
-    let _ = toler054_117.with(|_| ());
-    let _ = data055_118.with(|_| ());
-    let _ = toler055_119.with(|_| ());
-    let _ = data056_120.with(|_| ());
-    let _ = toler056_121.with(|_| ());
-    let _ = data057_122.with(|_| ());
-    let _ = toler057_123.with(|_| ());
-    let _ = data058_124.with(|_| ());
-    let _ = toler058_125.with(|_| ());
-    let _ = data059_126.with(|_| ());
-    let _ = toler059_127.with(|_| ());
-    let _ = data060_128.with(|_| ());
-    let _ = toler060_129.with(|_| ());
-    let _ = data061_130.with(|_| ());
-    let _ = toler061_131.with(|_| ());
-    let _ = data062_132.with(|_| ());
-    let _ = toler062_133.with(|_| ());
-    let _ = data063_134.with(|_| ());
-    let _ = toler063_135.with(|_| ());
-    let _ = data064_136.with(|_| ());
-    let _ = toler064_137.with(|_| ());
+    let _ = data001_9.with(|_| ());
+    let _ = toler001_10.with(|_| ());
+    let _ = data002_11.with(|_| ());
+    let _ = toler002_12.with(|_| ());
+    let _ = data003_13.with(|_| ());
+    let _ = toler003_14.with(|_| ());
+    let _ = data004_15.with(|_| ());
+    let _ = toler004_16.with(|_| ());
+    let _ = data005_17.with(|_| ());
+    let _ = toler005_18.with(|_| ());
+    let _ = data006_19.with(|_| ());
+    let _ = toler006_20.with(|_| ());
+    let _ = data007_21.with(|_| ());
+    let _ = toler007_22.with(|_| ());
+    let _ = data008_23.with(|_| ());
+    let _ = toler008_24.with(|_| ());
+    let _ = data009_25.with(|_| ());
+    let _ = toler009_26.with(|_| ());
+    let _ = data010_27.with(|_| ());
+    let _ = toler010_28.with(|_| ());
+    let _ = data011_29.with(|_| ());
+    let _ = toler011_30.with(|_| ());
+    let _ = data012_31.with(|_| ());
+    let _ = toler012_32.with(|_| ());
+    let _ = data013_33.with(|_| ());
+    let _ = toler013_34.with(|_| ());
+    let _ = data014_35.with(|_| ());
+    let _ = toler014_36.with(|_| ());
+    let _ = data015_37.with(|_| ());
+    let _ = toler015_38.with(|_| ());
+    let _ = data016_39.with(|_| ());
+    let _ = toler016_40.with(|_| ());
+    let _ = data017_41.with(|_| ());
+    let _ = toler017_42.with(|_| ());
+    let _ = data018_43.with(|_| ());
+    let _ = toler018_44.with(|_| ());
+    let _ = data019_45.with(|_| ());
+    let _ = toler019_46.with(|_| ());
+    let _ = data020_47.with(|_| ());
+    let _ = toler020_48.with(|_| ());
+    let _ = data021_49.with(|_| ());
+    let _ = toler021_50.with(|_| ());
+    let _ = data022_51.with(|_| ());
+    let _ = toler022_52.with(|_| ());
+    let _ = data023_53.with(|_| ());
+    let _ = toler023_54.with(|_| ());
+    let _ = data024_55.with(|_| ());
+    let _ = toler024_56.with(|_| ());
+    let _ = data025_57.with(|_| ());
+    let _ = toler025_58.with(|_| ());
+    let _ = data026_59.with(|_| ());
+    let _ = toler026_60.with(|_| ());
+    let _ = data027_61.with(|_| ());
+    let _ = toler027_62.with(|_| ());
+    let _ = data028_63.with(|_| ());
+    let _ = toler028_64.with(|_| ());
+    let _ = data029_65.with(|_| ());
+    let _ = toler029_66.with(|_| ());
+    let _ = data030_67.with(|_| ());
+    let _ = toler030_68.with(|_| ());
+    let _ = data031_69.with(|_| ());
+    let _ = toler031_70.with(|_| ());
+    let _ = data032_71.with(|_| ());
+    let _ = toler032_72.with(|_| ());
+    let _ = data033_73.with(|_| ());
+    let _ = toler033_74.with(|_| ());
+    let _ = data034_75.with(|_| ());
+    let _ = toler034_76.with(|_| ());
+    let _ = data035_77.with(|_| ());
+    let _ = toler035_78.with(|_| ());
+    let _ = data036_79.with(|_| ());
+    let _ = toler036_80.with(|_| ());
+    let _ = data037_81.with(|_| ());
+    let _ = toler037_82.with(|_| ());
+    let _ = data038_83.with(|_| ());
+    let _ = toler038_84.with(|_| ());
+    let _ = data039_85.with(|_| ());
+    let _ = toler039_86.with(|_| ());
+    let _ = data040_87.with(|_| ());
+    let _ = toler040_88.with(|_| ());
+    let _ = data041_89.with(|_| ());
+    let _ = toler041_90.with(|_| ());
+    let _ = data042_91.with(|_| ());
+    let _ = toler042_92.with(|_| ());
+    let _ = data043_93.with(|_| ());
+    let _ = toler043_94.with(|_| ());
+    let _ = data044_95.with(|_| ());
+    let _ = toler044_96.with(|_| ());
+    let _ = data045_97.with(|_| ());
+    let _ = toler045_98.with(|_| ());
+    let _ = data046_99.with(|_| ());
+    let _ = toler046_100.with(|_| ());
+    let _ = data047_101.with(|_| ());
+    let _ = toler047_102.with(|_| ());
+    let _ = data048_103.with(|_| ());
+    let _ = toler048_104.with(|_| ());
+    let _ = data049_105.with(|_| ());
+    let _ = toler049_106.with(|_| ());
+    let _ = data050_107.with(|_| ());
+    let _ = toler050_108.with(|_| ());
+    let _ = data051_109.with(|_| ());
+    let _ = toler051_110.with(|_| ());
+    let _ = data052_111.with(|_| ());
+    let _ = toler052_112.with(|_| ());
+    let _ = data053_113.with(|_| ());
+    let _ = toler053_114.with(|_| ());
+    let _ = data054_115.with(|_| ());
+    let _ = toler054_116.with(|_| ());
+    let _ = data055_117.with(|_| ());
+    let _ = toler055_118.with(|_| ());
+    let _ = data056_119.with(|_| ());
+    let _ = toler056_120.with(|_| ());
+    let _ = data057_121.with(|_| ());
+    let _ = toler057_122.with(|_| ());
+    let _ = data058_123.with(|_| ());
+    let _ = toler058_124.with(|_| ());
+    let _ = data059_125.with(|_| ());
+    let _ = toler059_126.with(|_| ());
+    let _ = data060_127.with(|_| ());
+    let _ = toler060_128.with(|_| ());
+    let _ = data061_129.with(|_| ());
+    let _ = toler061_130.with(|_| ());
+    let _ = data062_131.with(|_| ());
+    let _ = toler062_132.with(|_| ());
+    let _ = data063_133.with(|_| ());
+    let _ = toler063_134.with(|_| ());
+    let _ = data064_135.with(|_| ());
+    let _ = toler064_136.with(|_| ());
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());
     let _ = throw_on__2.with(|_| ());
-    let _ = count__4.with(|_| ());
-    let _ = throw_on__5.with(|_| ());
-    let _ = _M_count_6.with(|_| ());
-    let _ = next_id__7.with(|_| ());
+    let _ = count__3.with(|_| ());
+    let _ = throw_on__4.with(|_| ());
+    let _ = _M_count_5.with(|_| ());
+    let _ = next_id__6.with(|_| ());
 }

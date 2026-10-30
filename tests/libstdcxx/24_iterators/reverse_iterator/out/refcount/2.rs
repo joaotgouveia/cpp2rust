@@ -10,7 +10,7 @@ pub fn test02_0() {
     let it01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    !(unimplemented!());
     unimplemented!();
     unimplemented!();
     unimplemented!();

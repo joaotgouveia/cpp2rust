@@ -411,9 +411,6 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct some_comp_MoveOnly_ {}
 pub unsafe fn test_18() -> () {
     {
         const _: () = assert!(true, "std::is_nothrow_destructible<C>::value");;
@@ -423,9 +420,6 @@ pub unsafe fn test_18() -> () {
     }
     {
         const _: () = assert!(true, "std::is_nothrow_destructible<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "!std::is_nothrow_destructible<C>::value");;
     }
     return true;
 }

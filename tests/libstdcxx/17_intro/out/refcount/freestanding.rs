@@ -19,6 +19,8 @@ fn main_0() -> () {
     cp.delete();
     let mut b: () = unimplemented!();
     let ilisti: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::has_single_bit(256u)");;
+    const _: () = assert!((201411_() >= 201411_()), "__cpp_lib_void_t >= 201411L");;
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -19,17 +19,18 @@ struct is_transparent_std_less_int___two {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct is_transparent_std_less_int__ {}
 pub static mut value_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<is_transparent_std_less_std_string___two>()) == (1_()))
+    ((::std::mem::size_of::<is_transparent_std_less_std_basic_string_char____two>()) == (1_()))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-struct is_transparent_std_less_std_string___two {
+struct is_transparent_std_less_std_basic_string_char____two {
     pub lx: (),
     pub lxx: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct is_transparent_std_less_std_string__ {}
+pub struct is_transparent_std_less_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut value_2: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((::std::mem::size_of::<()>()) == (1_())) });
 #[repr(C)]
@@ -48,17 +49,19 @@ struct is_transparent_std_less_equal_int___two {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct is_transparent_std_less_equal_int__ {}
 pub static mut value_4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<is_transparent_std_less_equal_std_string___two>()) == (1_()))
+    ((::std::mem::size_of::<is_transparent_std_less_equal_std_basic_string_char____two>())
+        == (1_()))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-struct is_transparent_std_less_equal_std_string___two {
+struct is_transparent_std_less_equal_std_basic_string_char____two {
     pub lx: (),
     pub lxx: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct is_transparent_std_less_equal_std_string__ {}
+pub struct is_transparent_std_less_equal_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut value_5: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((::std::mem::size_of::<()>()) == (1_())) });
 #[repr(C)]
@@ -77,17 +80,18 @@ struct is_transparent_std_equal_to_int___two {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct is_transparent_std_equal_to_int__ {}
 pub static mut value_7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<is_transparent_std_equal_to_std_string___two>()) == (1_()))
+    ((::std::mem::size_of::<is_transparent_std_equal_to_std_basic_string_char____two>()) == (1_()))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-struct is_transparent_std_equal_to_std_string___two {
+struct is_transparent_std_equal_to_std_basic_string_char____two {
     pub lx: (),
     pub lxx: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct is_transparent_std_equal_to_std_string__ {}
+pub struct is_transparent_std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut value_8: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((::std::mem::size_of::<()>()) == (1_())) });
 #[repr(C)]
@@ -106,17 +110,19 @@ struct is_transparent_std_not_equal_to_int___two {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct is_transparent_std_not_equal_to_int__ {}
 pub static mut value_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<is_transparent_std_not_equal_to_std_string___two>()) == (1_()))
+    ((::std::mem::size_of::<is_transparent_std_not_equal_to_std_basic_string_char____two>())
+        == (1_()))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-struct is_transparent_std_not_equal_to_std_string___two {
+struct is_transparent_std_not_equal_to_std_basic_string_char____two {
     pub lx: (),
     pub lxx: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct is_transparent_std_not_equal_to_std_string__ {}
+pub struct is_transparent_std_not_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut value_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((::std::mem::size_of::<()>()) == (1_())) });
 #[repr(C)]
@@ -135,17 +141,18 @@ struct is_transparent_std_greater_int___two {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct is_transparent_std_greater_int__ {}
 pub static mut value_13: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<is_transparent_std_greater_std_string___two>()) == (1_()))
+    ((::std::mem::size_of::<is_transparent_std_greater_std_basic_string_char____two>()) == (1_()))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-struct is_transparent_std_greater_std_string___two {
+struct is_transparent_std_greater_std_basic_string_char____two {
     pub lx: (),
     pub lxx: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct is_transparent_std_greater_std_string__ {}
+pub struct is_transparent_std_greater_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut value_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((::std::mem::size_of::<()>()) == (1_())) });
 #[repr(C)]
@@ -164,17 +171,19 @@ struct is_transparent_std_greater_equal_int___two {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct is_transparent_std_greater_equal_int__ {}
 pub static mut value_16: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<is_transparent_std_greater_equal_std_string___two>()) == (1_()))
+    ((::std::mem::size_of::<is_transparent_std_greater_equal_std_basic_string_char____two>())
+        == (1_()))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-struct is_transparent_std_greater_equal_std_string___two {
+struct is_transparent_std_greater_equal_std_basic_string_char____two {
     pub lx: (),
     pub lxx: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct is_transparent_std_greater_equal_std_string__ {}
+pub struct is_transparent_std_greater_equal_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut value_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((::std::mem::size_of::<()>()) == (1_())) });
 #[repr(C)]

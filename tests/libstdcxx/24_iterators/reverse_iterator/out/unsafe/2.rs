@@ -10,7 +10,7 @@ pub unsafe fn test02_0() {
     let mut it01: () = unimplemented!();
     let mut it02: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    !(unimplemented!());
     unimplemented!();
     unimplemented!();
     unimplemented!();

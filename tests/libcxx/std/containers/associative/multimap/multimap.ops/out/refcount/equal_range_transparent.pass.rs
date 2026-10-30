@@ -14,7 +14,7 @@ pub fn test_0() -> () {
     let er: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nels: () = 0_();
     let it: Value<()> = Rc::new(RefCell::new({ (*er.borrow()).first.clone() }));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         unimplemented!();
         nels.postfix_inc();
         unimplemented!();

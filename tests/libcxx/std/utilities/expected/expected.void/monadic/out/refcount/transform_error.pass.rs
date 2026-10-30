@@ -42,9 +42,7 @@ pub fn test_val_types_0() {
                 return 1_();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(
-            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
-        ));
+        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -53,9 +51,7 @@ pub fn test_val_types_0() {
                 return 1_();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(
-            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
-        ));
+        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
@@ -87,9 +83,7 @@ pub fn test_fail_1() {
                 return 0_();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(
-            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
-        ));
+        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -99,9 +93,7 @@ pub fn test_fail_1() {
                 return 0_();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(
-            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
-        ));
+        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }

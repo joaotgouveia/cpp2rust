@@ -329,10 +329,283 @@ pub unsafe fn test_1_3_12() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () = (unsafe { copysign_13(unimplemented!(), -1_()) });
-        let mut ns: () = (unsafe { copysign_13(unimplemented!(), -1_()) });
-        let mut ps: () = (unsafe { copysign_13(unimplemented!(), 1_()) });
-        let mut pq: () = (unsafe { copysign_13(unimplemented!(), 1_()) });
+        let mut nq: () = unimplemented!();
+        let mut ns: () = unimplemented!();
+        let mut ps: () = unimplemented!();
+        let mut pq: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (14_())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (14_())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (14_())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (14_())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
+}
+pub unsafe fn test_1_3_13() -> () {
+    const _: () = assert!(true, "");;
+    let mut v: [(); 14] = [
+        -unimplemented!(),
+        unimplemented!(),
+        -1_f64,
+        -0.1_f64,
+        -unimplemented!(),
+        -0_f64,
+        0_f64,
+        unimplemented!(),
+        0.1_f64,
+        1_f64,
+        2_f64,
+        3.14_f64,
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    const _: () = assert!(true, "std::size(v) == 14");;
+    let mut i: () = 0_();
+    'loop_: while ((i) < (14_())) {
+        let mut j: () = 0_();
+        'loop_: while ((j) < (14_())) {
+            let mut naturalOrder: () = (std::cmp::Ord::cmp(&(v[(i) as usize]), &(v[(j) as usize])));
+            if ((v[(i) as usize]) == (0_())) && ((v[(j) as usize]) == (0_())) {
+                unimplemented!();
+            } else {
+                unimplemented!();
+            }
+            j.prefix_inc();
+        }
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
+        let mut nq: () = unimplemented!();
+        let mut ns: () = unimplemented!();
+        let mut ps: () = unimplemented!();
+        let mut pq: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -602,283 +875,10 @@ pub unsafe fn test_1_3_14() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () = (unsafe { copysign_15(unimplemented!(), -1_()) });
-        let mut ns: () = (unsafe { copysign_15(unimplemented!(), -1_()) });
-        let mut ps: () = (unsafe { copysign_15(unimplemented!(), 1_()) });
-        let mut pq: () = (unsafe { copysign_15(unimplemented!(), 1_()) });
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (14_())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (14_())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (14_())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (14_())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
-pub unsafe fn test_1_3_16() -> () {
-    const _: () = assert!(true, "");;
-    let mut v: [(); 14] = [
-        -unimplemented!(),
-        unimplemented!(),
-        -1_f64,
-        -0.1_f64,
-        -unimplemented!(),
-        -0_f64,
-        0_f64,
-        unimplemented!(),
-        0.1_f64,
-        1_f64,
-        2_f64,
-        3.14_f64,
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    const _: () = assert!(true, "std::size(v) == 14");;
-    let mut i: () = 0_();
-    'loop_: while ((i) < (14_())) {
-        let mut j: () = 0_();
-        'loop_: while ((j) < (14_())) {
-            let mut naturalOrder: () = (std::cmp::Ord::cmp(&(v[(i) as usize]), &(v[(j) as usize])));
-            if ((v[(i) as usize]) == (0_())) && ((v[(j) as usize]) == (0_())) {
-                unimplemented!();
-            } else {
-                unimplemented!();
-            }
-            j.prefix_inc();
-        }
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        let mut nq: () = (unsafe { copysign_17(unimplemented!(), -1_()) });
-        let mut ns: () = (unsafe { copysign_17(unimplemented!(), -1_()) });
-        let mut ps: () = (unsafe { copysign_17(unimplemented!(), 1_()) });
-        let mut pq: () = (unsafe { copysign_17(unimplemented!(), 1_()) });
+        let mut nq: () = unimplemented!();
+        let mut ns: () = unimplemented!();
+        let mut ps: () = unimplemented!();
+        let mut pq: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -923,7 +923,7 @@ pub unsafe fn test_1_3_16() -> () {
 pub struct N14_A {}
 impl std::cmp::Ord for N14_A {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const N14_A, other as *const N14_A) }
+        unsafe { operator_cmp_15(self as *const N14_A, other as *const N14_A) }
     }
 }
 impl std::cmp::PartialOrd for N14_A {
@@ -934,16 +934,16 @@ impl std::cmp::PartialOrd for N14_A {
 impl std::cmp::PartialEq for N14_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_cmp_18(self as *const N14_A, other as *const N14_A)
+            operator_cmp_15(self as *const N14_A, other as *const N14_A)
                 == std::cmp::Ordering::Equal
         }
     }
 }
 impl std::cmp::Eq for N14_A {}
-pub unsafe fn operator_cmp_19(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
+pub unsafe fn operator_cmp_16(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_cmp_18(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
+pub unsafe fn operator_cmp_15(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
     return unimplemented!();
 }
 const _: () = assert!(true, "std::three_way_comparable<A>");
@@ -979,7 +979,7 @@ impl std::cmp::PartialEq for N14_C {
 }
 impl std::cmp::Eq for N14_C {}
 const _: () = assert!(true, "std::three_way_comparable<C>");
-pub unsafe fn test_1_4_20() -> () {
+pub unsafe fn test_1_4_17() -> () {
     let mut a: N14_A = <N14_A>::default();
     unimplemented!();
     unimplemented!();
@@ -1001,10 +1001,10 @@ pub unsafe fn test_1_4_20() -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct N15_A {}
-pub unsafe fn strong_order_21(_a0: *mut N15_A, _a1: *mut N15_A) -> () {
+pub unsafe fn strong_order_18(_a0: *mut N15_A, _a1: *mut N15_A) -> () {
     return unimplemented!();
 }
-pub unsafe fn strong_order_22(_a0: *mut N15_A, _a1: *mut N15_A) -> () {
+pub unsafe fn strong_order_19(_a0: *mut N15_A, _a1: *mut N15_A) -> () {
     return unimplemented!();
 }
 #[repr(C)]
@@ -1029,7 +1029,7 @@ impl N15_StrongOrder {
         return unimplemented!();
     }
 }
-pub unsafe fn strong_order_23(lhs: *mut N15_D, _a1: *mut N15_D) -> N15_StrongOrder {
+pub unsafe fn strong_order_20(lhs: *mut N15_D, _a1: *mut N15_D) -> N15_StrongOrder {
     (*lhs).touched = true;
     return <N15_StrongOrder>::default();
 }
@@ -1043,7 +1043,7 @@ impl Default for N15_D {
         unsafe { N15_D { touched: false } }
     }
 }
-pub unsafe fn test_1_5_24() -> () {
+pub unsafe fn test_1_5_21() -> () {
     let mut a: N15_A = <N15_A>::default();
     unimplemented!();
     unimplemented!();
@@ -1078,10 +1078,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_1_1_7() });
     (unsafe { test_1_2_11() });
     (unsafe { test_1_3_12() });
+    (unsafe { test_1_3_13() });
     (unsafe { test_1_3_14() });
-    (unsafe { test_1_3_16() });
-    (unsafe { test_1_4_20() });
-    (unsafe { test_1_5_24() });
+    (unsafe { test_1_4_17() });
+    (unsafe { test_1_5_21() });
     const _: () = assert!(true, "test_1_3<float>()");;
     const _: () = assert!(true, "test_1_3<double>()");;
     const _: () = assert!(true, "test_1_3<long double>()");;

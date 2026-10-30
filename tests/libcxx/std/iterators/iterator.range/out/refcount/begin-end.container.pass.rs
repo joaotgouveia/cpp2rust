@@ -32,48 +32,48 @@ pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___list_iterator_int__void_ptr___std___list_iterator_int__void_ptr__
-{}
+pub struct test_macros_detail_is_same_std__List_iterator_int___std__List_iterator_int__ {}
 pub type anon_5 = ();
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___list_const_iterator_int__void_ptr___std___list_const_iterator_int__void_ptr__
+pub struct test_macros_detail_is_same_std__List_const_iterator_int___std__List_const_iterator_int__
 {}
 pub type anon_6 = ();
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_std___list_iterator_int__void_ptr____std_reverse_iterator_std___list_iterator_int__void_ptr___
+pub struct test_macros_detail_is_same_std_reverse_iterator_std__List_iterator_int____std_reverse_iterator_std__List_iterator_int___
 {}
 pub type anon_7 = ();
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_std___list_const_iterator_int__void_ptr____std_reverse_iterator_std___list_const_iterator_int__void_ptr___
+pub struct test_macros_detail_is_same_std_reverse_iterator_std__List_const_iterator_int____std_reverse_iterator_std__List_const_iterator_int___
 {}
 pub type anon_8 = ();
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___wrap_iter_int_ptr___std___wrap_iter_int_ptr__ {}
+pub struct test_macros_detail_is_same___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_______gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____
+{}
 pub type anon_9 = ();
 pub const anon_9_value: anon_9 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___wrap_iter_const_int_ptr___std___wrap_iter_const_int_ptr__
+pub struct test_macros_detail_is_same___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_______gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____
 {}
 pub type anon_10 = ();
 pub const anon_10_value: anon_10 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_std___wrap_iter_int_ptr____std_reverse_iterator_std___wrap_iter_int_ptr___
+pub struct test_macros_detail_is_same_std_reverse_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int______std_reverse_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____
 {}
 pub type anon_11 = ();
 pub const anon_11_value: anon_11 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_std___wrap_iter_const_int_ptr____std_reverse_iterator_std___wrap_iter_const_int_ptr___
+pub struct test_macros_detail_is_same_std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int______std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int_____
 {}
 pub fn test_12() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));

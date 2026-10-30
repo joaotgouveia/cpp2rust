@@ -135,22 +135,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
-    {
-        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        {
-            let b: Value<B> = Rc::new(RefCell::new(B::new()));
-            let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
-            let pB: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    unimplemented!();
-    unimplemented!();
     return 0_();
 }
 pub trait AImpl {

@@ -24,10 +24,10 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut out: () = unimplemented!();
+        let mut out: std_ostrstream = <std_ostrstream>::default();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        (unsafe { out.freeze(Some(false)) });
     }
     return 0_();
 }

@@ -47,7 +47,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let msg: () = unimplemented!();
         let is_newlib: () = false;
         &(is_newlib);
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
     {

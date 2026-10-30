@@ -144,10 +144,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut stats_0)) = <Stats>::default();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
         logn.prefix_inc();
     }
     return 0_();

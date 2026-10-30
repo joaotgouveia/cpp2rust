@@ -548,11 +548,21 @@ impl AssignableFrom_ConstCopyAssign_ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, Default)]
+#[derive(FnPtrArg, MoveAssignUnsafe, Default)]
 pub struct AssignableFrom_TracedAssignment_ {
     pub v: TracedAssignment,
 }
 impl AssignableFrom_TracedAssignment_ {
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut AssignableFrom_TracedAssignment_,
+    ) -> *mut AssignableFrom_TracedAssignment_ {
+        (unsafe {
+            let _arg0: *mut TracedAssignment = &mut (*_a0).v;
+            TracedAssignment::operator_assign_4(&mut self.v, _arg0)
+        });
+        return &mut (*(self as *mut AssignableFrom_TracedAssignment_));
+    }
     pub unsafe fn operator_assign_5_struct_TracedAssignment_0(
         &self,
         t: *const TracedAssignment,

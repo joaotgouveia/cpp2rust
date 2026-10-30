@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -165,52 +149,21 @@ impl Default for test_allocator_void_ {
     }
 }
 pub fn operator_eq_4(
-    x: Ptr<other_allocator_std_pair_const_int__std_string__>,
-    y: Ptr<other_allocator_std_pair_const_int__std_string__>,
+    x : Ptr< other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >,
+    y : Ptr< other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >,
 ) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
-pub struct other_allocator_std_pair_const_int__std_string__ {
+pub struct other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
+{
     #[offset(0)]
     data_: (),
 }
-impl other_allocator_std_pair_const_int__std_string__ {
-    pub fn new_1(mut i: ()) -> Self {
-        Self { data_: i }
-    }
-}
-impl std::cmp::PartialEq for other_allocator_std_pair_const_int__std_string__ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(
-                    other_allocator_std_pair_const_int__std_string__ {
-                        data_: self.data_.clone(),
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    other_allocator_std_pair_const_int__std_string__ {
-                        data_: other.data_.clone(),
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for other_allocator_std_pair_const_int__std_string__ {}
-impl Default for other_allocator_std_pair_const_int__std_string__ {
-    fn default() -> Self {
-        {
-            other_allocator_std_pair_const_int__std_string__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
+impl other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub fn new_1 ( mut i : ()  , ) -> Self { Self { data_ : i  , }  } }
+impl CppEq for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_eq_4(__lhs.clone(), __rhs.clone()) } }
+impl Default for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn default() -> Self { { other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { data_ : unimplemented!() , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -254,9 +207,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let alloc: Value<other_allocator_std_pair_const_int__std_string__> = Rc::new(RefCell::new(
-            other_allocator_std_pair_const_int__std_string__::new_1({ 1_() }),
-        ));
+        let alloc : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1_()  } , )  )) ;
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -274,25 +225,21 @@ impl Tag_XImpl for Ptr<Tag_X> {
         return (*self).clone();
     }
 }
-pub trait other_allocator_std_pair_const_int__std_string__Impl {
+pub trait other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
+{
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
         unimplemented!()
-    }
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std_pair_const_int__std_string__ {
+    }    fn select_on_container_copy_construction ( &self , ) -> other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____{
         unimplemented!()
     }
     fn get_data(&self) -> () {
         unimplemented!()
     }
 }
-impl other_allocator_std_pair_const_int__std_string__Impl
-    for Ptr<other_allocator_std_pair_const_int__std_string__>
-{
+impl other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
 }
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);

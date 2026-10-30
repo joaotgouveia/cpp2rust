@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
         if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__1))
             == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)))
         {
-            (unsafe { __throw_runtime_error_3(c"copy_constructor::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
@@ -98,22 +98,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__4))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__3))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)))
         {
-            (unsafe { __throw_runtime_error_3(c"assignment_operator::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
 #[repr(C)]
@@ -121,13 +121,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
     }
 }
 #[repr(C)]
@@ -139,7 +139,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__7)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -193,12 +193,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_8(
+            if operator_lt_7(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_8(
+            } else if operator_lt_7(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -217,7 +217,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_8(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -235,14 +235,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_8(
+pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -253,13 +253,13 @@ pub unsafe fn operator_lt_8(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
     sem_set_: (),
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
-pub unsafe fn test01_10() -> () {
+pub unsafe fn test01_9() -> () {
     let mut pair_like: () = unimplemented!();
     (unsafe {
         lambda_unsafe!(
@@ -272,19 +272,7 @@ pub unsafe fn test01_10() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (34_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -303,19 +291,7 @@ pub unsafe fn test01_10() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (38_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -334,19 +310,7 @@ pub unsafe fn test01_10() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (42_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -365,19 +329,7 @@ pub unsafe fn test01_10() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (46_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -395,7 +347,7 @@ pub unsafe fn test01_10() -> () {
     );;
     return true;
 }
-pub unsafe fn test01_13() -> () {
+pub unsafe fn test01_11() -> () {
     let mut pair_like: () = unimplemented!();
     (unsafe {
         lambda_unsafe!(
@@ -408,19 +360,7 @@ pub unsafe fn test01_13() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (34_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -439,19 +379,7 @@ pub unsafe fn test01_13() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (38_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -470,19 +398,7 @@ pub unsafe fn test01_13() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (42_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -501,19 +417,7 @@ pub unsafe fn test01_13() -> () {
                 'loop_: while __do_while || (false) {
                     __do_while = false;
                     if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (46_()).into(),
-                                    (c"auto test01()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                                ]),
-                            )
-                        });
+                        unimplemented!();
                         unimplemented!();
                     }
                 }
@@ -533,10 +437,10 @@ pub unsafe fn test01_13() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct B_11 {
+pub struct B_10 {
     pub m: (),
 }
-impl B_11 {
+impl B_10 {
     pub unsafe fn new_1(_a0: *mut A) -> Self {
         let mut this = Self { m: 0_() };
         this
@@ -553,6 +457,191 @@ impl B_11 {
         let mut this = Self { m: 3_() };
         this
     }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct B_12 {
+    pub m: (),
+}
+impl B_12 {
+    pub unsafe fn new_1(_a0: *mut A) -> Self {
+        let mut this = Self { m: 0_() };
+        this
+    }
+    pub unsafe fn new_2(_a0: *mut A) -> Self {
+        let mut this = Self { m: 1_() };
+        this
+    }
+    pub unsafe fn new_3(_a0: *const A) -> Self {
+        let mut this = Self { m: 2_() };
+        this
+    }
+    pub unsafe fn new_4(_a0: *const A) -> Self {
+        let mut this = Self { m: 3_() };
+        this
+    }
+}
+pub unsafe fn test02_13() -> () {
+    const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
+    let mut pair_like: () = unimplemented!();
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    return true;
+}
+pub unsafe fn test02_15() -> () {
+    const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
+    let mut pair_like: () = unimplemented!();
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    (unsafe {
+        lambda_unsafe!(
+            {
+                let pair_like: *mut () = &mut pair_like;
+            },
+            || {
+                let mut p2b: () = unimplemented!();
+                let mut __do_while = true;
+                'loop_: while __do_while || (false) {
+                    __do_while = false;
+                    if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
+                        unimplemented!();
+                        unimplemented!();
+                    }
+                }
+            }
+        )
+        .call()
+    });
+    return true;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -577,264 +666,6 @@ impl B_14 {
         this
     }
 }
-pub unsafe fn test02_15() -> () {
-    const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let mut pair_like: () = unimplemented!();
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (77_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (81_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (85_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (89_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    return true;
-}
-pub unsafe fn test02_17() -> () {
-    const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let mut pair_like: () = unimplemented!();
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (77_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (81_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (85_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    (unsafe {
-        lambda_unsafe!(
-            {
-                let pair_like: *mut () = &mut pair_like;
-            },
-            || {
-                let mut p2b: () = unimplemented!();
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-                        (unsafe {
-                            __builtin_fprintf_12(
-                                libcc2rs::stderr_unsafe(),
-                                c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                                Box::new([
-                                    (c"p2165r4.cc".as_ptr()).into(),
-                                    (89_()).into(),
-                                    (c"auto test02()::(lambda)::operator()() const".as_ptr())
-                                        .into(),
-                                    (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                                ]),
-                            )
-                        });
-                        unimplemented!();
-                    }
-                }
-            }
-        )
-        .call()
-    });
-    return true;
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct B_16 {
@@ -858,28 +689,46 @@ impl B_16 {
         this
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct B_18 {
-    pub m: (),
-}
-impl B_18 {
-    pub unsafe fn new_1(_a0: *mut A) -> Self {
-        let mut this = Self { m: 0_() };
-        this
+pub unsafe fn test03_17() -> () {
+    let mut pair_like: () = unimplemented!();
+    let mut p2b: () = unimplemented!();
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
-    pub unsafe fn new_2(_a0: *mut A) -> Self {
-        let mut this = Self { m: 1_() };
-        this
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
-    pub unsafe fn new_3(_a0: *const A) -> Self {
-        let mut this = Self { m: 2_() };
-        this
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
-    pub unsafe fn new_4(_a0: *const A) -> Self {
-        let mut this = Self { m: 3_() };
-        this
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
+    return true;
 }
 pub unsafe fn test03_19() -> () {
     let mut pair_like: () = unimplemented!();
@@ -889,18 +738,7 @@ pub unsafe fn test03_19() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (114_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -909,18 +747,7 @@ pub unsafe fn test03_19() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (116_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -929,18 +756,7 @@ pub unsafe fn test03_19() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (118_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -949,107 +765,34 @@ pub unsafe fn test03_19() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (120_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     return true;
 }
-pub unsafe fn test03_21() -> () {
-    let mut pair_like: () = unimplemented!();
-    let mut p2b: () = unimplemented!();
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (114_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct B_18 {
+    pub m: (),
+}
+impl B_18 {
+    pub unsafe fn operator_assign_1(&mut self, _a0: *mut A) -> *mut B_18 {
+        self.m = 0_();
+        return &mut (*(self as *mut B_18));
     }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (116_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+    pub unsafe fn operator_assign_2(&mut self, _a0: *mut A) -> *mut B_18 {
+        self.m = 1_();
+        return &mut (*(self as *mut B_18));
     }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (118_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+    pub unsafe fn operator_assign_3(&mut self, _a0: *const A) -> *mut B_18 {
+        self.m = 2_();
+        return &mut (*(self as *mut B_18));
     }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (120_()).into(),
-                        (c"bool test03() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+    pub unsafe fn operator_assign_4(&mut self, _a0: *const A) -> *mut B_18 {
+        self.m = 3_();
+        return &mut (*(self as *mut B_18));
     }
-    return true;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -1074,28 +817,46 @@ impl B_20 {
         return &mut (*(self as *mut B_20));
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct B_22 {
-    pub m: (),
-}
-impl B_22 {
-    pub unsafe fn operator_assign_1(&mut self, _a0: *mut A) -> *mut B_22 {
-        self.m = 0_();
-        return &mut (*(self as *mut B_22));
+pub unsafe fn test04_21() -> () {
+    let mut pair_like: () = unimplemented!();
+    let p2b: () = unimplemented!();
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
-    pub unsafe fn operator_assign_2(&mut self, _a0: *mut A) -> *mut B_22 {
-        self.m = 1_();
-        return &mut (*(self as *mut B_22));
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
-    pub unsafe fn operator_assign_3(&mut self, _a0: *const A) -> *mut B_22 {
-        self.m = 2_();
-        return &mut (*(self as *mut B_22));
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
-    pub unsafe fn operator_assign_4(&mut self, _a0: *const A) -> *mut B_22 {
-        self.m = 3_();
-        return &mut (*(self as *mut B_22));
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
+            unimplemented!();
+            unimplemented!();
+        }
     }
+    return true;
 }
 pub unsafe fn test04_23() -> () {
     let mut pair_like: () = unimplemented!();
@@ -1105,18 +866,7 @@ pub unsafe fn test04_23() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (144_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1125,18 +875,7 @@ pub unsafe fn test04_23() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (146_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1145,18 +884,7 @@ pub unsafe fn test04_23() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (148_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1165,107 +893,34 @@ pub unsafe fn test04_23() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (150_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_array]".as_ptr()).into(),
-                        (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     return true;
 }
-pub unsafe fn test04_25() -> () {
-    let mut pair_like: () = unimplemented!();
-    let p2b: () = unimplemented!();
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (0_())) && ((p2b.second.m) == (0_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (144_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 0 && p2b.second.m == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct B_22 {
+    pub m: (),
+}
+impl B_22 {
+    pub unsafe fn operator_assign_1(&self, _a0: *mut A) -> *const B_22 {
+        (*(&raw const self.m).cast_mut()) = 0_();
+        return &(*(self as *const B_22));
     }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (1_())) && ((p2b.second.m) == (1_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (146_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 1 && p2b.second.m == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+    pub unsafe fn operator_assign_2(&self, _a0: *mut A) -> *const B_22 {
+        (*(&raw const self.m).cast_mut()) = 1_();
+        return &(*(self as *const B_22));
     }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (2_())) && ((p2b.second.m) == (2_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (148_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 2 && p2b.second.m == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+    pub unsafe fn operator_assign_3(&self, _a0: *const A) -> *const B_22 {
+        (*(&raw const self.m).cast_mut()) = 2_();
+        return &(*(self as *const B_22));
     }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((p2b.first.m) == (3_())) && ((p2b.second.m) == (3_()))) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"p2165r4.cc".as_ptr()).into(),
-                        (150_()).into(),
-                        (c"bool test04() [pair_like_t = pair_like_tuple]".as_ptr()).into(),
-                        (c"p2b.first.m == 3 && p2b.second.m == 3".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
+    pub unsafe fn operator_assign_4(&self, _a0: *const A) -> *const B_22 {
+        (*(&raw const self.m).cast_mut()) = 3_();
+        return &(*(self as *const B_22));
     }
-    return true;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -1290,29 +945,6 @@ impl B_24 {
         return &(*(self as *const B_24));
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct B_26 {
-    pub m: (),
-}
-impl B_26 {
-    pub unsafe fn operator_assign_1(&self, _a0: *mut A) -> *const B_26 {
-        (*(&raw const self.m).cast_mut()) = 0_();
-        return &(*(self as *const B_26));
-    }
-    pub unsafe fn operator_assign_2(&self, _a0: *mut A) -> *const B_26 {
-        (*(&raw const self.m).cast_mut()) = 1_();
-        return &(*(self as *const B_26));
-    }
-    pub unsafe fn operator_assign_3(&self, _a0: *const A) -> *const B_26 {
-        (*(&raw const self.m).cast_mut()) = 2_();
-        return &(*(self as *const B_26));
-    }
-    pub unsafe fn operator_assign_4(&self, _a0: *const A) -> *const B_26 {
-        (*(&raw const self.m).cast_mut()) = 3_();
-        return &(*(self as *const B_26));
-    }
-}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();
@@ -1334,93 +966,49 @@ impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         };
-        this.pid_ = ((unsafe { getpid_27() }) as ::libc::pid_t);
-        this.sem_set_ =
-            (unsafe { semget_28(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+        this.pid_ = unimplemented!();
+        this.sem_set_ = unimplemented!();
         if ((this.sem_set_) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
+            unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_29(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
-        {
-            (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_30(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_25(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
-    (unsafe {
-        getrlimit_31(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_32(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
-    (unsafe {
-        getrlimit_31(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_32(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_31((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_32(
-            (__rlimit_resource_RLIMIT_AS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn set_file_limit_33(mut size: ()) {
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+pub unsafe fn set_file_limit_26(mut size: ()) {
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
-    (unsafe {
-        getrlimit_31(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_32(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn verify_demangle_34(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_27(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_35(
-            mangled,
-            std::ptr::null_mut(),
-            std::ptr::null_mut(),
-            (&mut status as *mut ()),
-        )
-    });
+    let mut demangled: *mut () = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
@@ -1448,11 +1036,11 @@ pub unsafe fn verify_demangle_34(mut mangled: *const (), mut wanted: *const ()) 
     }
     let mut w: () = unimplemented!();
     if !(unimplemented!()) {
-        (unsafe { __throw_runtime_error_3(s) });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_36(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_28(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -1470,19 +1058,17 @@ pub unsafe fn run_tests_wrapped_locale_36(mut name: *const (), l: *const __gnu_t
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                (unsafe {
-                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_37(
+pub unsafe fn run_tests_wrapped_env_29(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -1503,21 +1089,21 @@ pub unsafe fn run_tests_wrapped_env_37(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
     pub val: (),
-    pub buf: *mut semid_ds,
+    pub buf: *mut (),
     pub array: *mut (),
 }
 impl Default for __gnu_test_semun {
@@ -1530,28 +1116,28 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_27() })) {
-            (unsafe { semctl_29(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unimplemented!())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_38(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_38(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
-pub unsafe fn test_tm_39(
+pub unsafe fn test_tm_30(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1561,26 +1147,26 @@ pub unsafe fn test_tm_39(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_40));
+) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).clone();
 }
-static mut tmp_40: std::cell::LazyCell<::libc::tm> =
-    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
+static mut tmp_31: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);
     std::cell::LazyCell::force(&*&raw const throw_on__2);
-    std::cell::LazyCell::force(&*&raw const count__4);
-    std::cell::LazyCell::force(&*&raw const throw_on__5);
-    std::cell::LazyCell::force(&*&raw const _M_count_6);
-    std::cell::LazyCell::force(&*&raw const next_id__7);
+    std::cell::LazyCell::force(&*&raw const count__3);
+    std::cell::LazyCell::force(&*&raw const throw_on__4);
+    std::cell::LazyCell::force(&*&raw const _M_count_5);
+    std::cell::LazyCell::force(&*&raw const next_id__6);
 }

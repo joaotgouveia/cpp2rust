@@ -44,7 +44,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -54,12 +54,19 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -69,7 +76,14 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_eq_0(
     x: Ptr<forward_iterator_const_int_ptr_>,
@@ -83,7 +97,7 @@ pub fn operator_ne_1(
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -107,29 +121,11 @@ impl forward_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(forward_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
 pub fn operator_eq_2(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
@@ -142,7 +138,7 @@ pub fn operator_ne_3(
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -166,58 +162,30 @@ impl bidirectional_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for bidirectional_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
-pub fn operator_add_4(
-    x: random_access_iterator_const_int_ptr_,
-    mut n: (),
-) -> random_access_iterator_const_int_ptr_ {
-    let x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(x));
-    ({ random_access_iterator_const_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
-    return random_access_iterator_const_int_ptr_::move_from({ x.as_pointer() });
-}
-pub fn operator_sub_5(
-    x: random_access_iterator_const_int_ptr_,
-    mut n: (),
-) -> random_access_iterator_const_int_ptr_ {
-    let x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(x));
-    ({ random_access_iterator_const_int_ptr_Impl::operator_sub_assign(&x.as_pointer(), n) });
-    return random_access_iterator_const_int_ptr_::move_from({ x.as_pointer() });
-}
-pub fn operator_sub_6(
+pub fn operator_sub_4(
     mut x: random_access_iterator_const_int_ptr_,
     mut y: random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
-pub fn operator_eq_7(
+pub fn operator_eq_5(
     x: Ptr<random_access_iterator_const_int_ptr_>,
     y: Ptr<random_access_iterator_const_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+pub fn operator_ne_6(
+    x: Ptr<random_access_iterator_const_int_ptr_>,
+    y: Ptr<random_access_iterator_const_int_ptr_>,
+) -> () {
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -241,30 +209,12 @@ impl random_access_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for random_access_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -274,7 +224,14 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
@@ -344,7 +301,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_8(
+pub fn operator_eq_7(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -358,23 +315,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_8(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -389,36 +334,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_9(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_8(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_9(_i, n)
+        operator_add_8(_i, n)
     });
 }
-pub fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -461,52 +406,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_14(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_13(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_13(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -526,44 +435,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -580,11 +462,27 @@ pub struct count_equal {
     #[byte_size(8)]
     pub count: Ptr<()>,
 }
-pub fn do_search_15(
+pub fn do_search_14(
     mut b1: forward_iterator_const_int_ptr_,
     mut e1: forward_iterator_const_int_ptr_,
     mut b2: forward_iterator_const_int_ptr_,
     mut e2: forward_iterator_const_int_ptr_,
+    result: forward_iterator_const_int_ptr_,
+) {
+    let result: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(result));
+    let count: Value<()> = Rc::new(RefCell::new(0_()));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let mut d1: () = unimplemented!();
+    let mut d2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn do_search_15(
+    mut b1: forward_iterator_const_int_ptr_,
+    mut e1: forward_iterator_const_int_ptr_,
+    mut b2: bidirectional_iterator_const_int_ptr_,
+    mut e2: bidirectional_iterator_const_int_ptr_,
     result: forward_iterator_const_int_ptr_,
 ) {
     let result: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(result));
@@ -599,22 +497,6 @@ pub fn do_search_15(
 pub fn do_search_16(
     mut b1: forward_iterator_const_int_ptr_,
     mut e1: forward_iterator_const_int_ptr_,
-    mut b2: bidirectional_iterator_const_int_ptr_,
-    mut e2: bidirectional_iterator_const_int_ptr_,
-    result: forward_iterator_const_int_ptr_,
-) {
-    let result: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(result));
-    let count: Value<()> = Rc::new(RefCell::new(0_()));
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut d1: () = unimplemented!();
-    let mut d2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn do_search_17(
-    mut b1: forward_iterator_const_int_ptr_,
-    mut e1: forward_iterator_const_int_ptr_,
     mut b2: random_access_iterator_const_int_ptr_,
     mut e2: random_access_iterator_const_int_ptr_,
     result: forward_iterator_const_int_ptr_,
@@ -628,11 +510,27 @@ pub fn do_search_17(
     unimplemented!();
     unimplemented!();
 }
-pub fn do_search_18(
+pub fn do_search_17(
     mut b1: bidirectional_iterator_const_int_ptr_,
     mut e1: bidirectional_iterator_const_int_ptr_,
     mut b2: forward_iterator_const_int_ptr_,
     mut e2: forward_iterator_const_int_ptr_,
+    result: bidirectional_iterator_const_int_ptr_,
+) {
+    let result: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(result));
+    let count: Value<()> = Rc::new(RefCell::new(0_()));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let mut d1: () = unimplemented!();
+    let mut d2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn do_search_18(
+    mut b1: bidirectional_iterator_const_int_ptr_,
+    mut e1: bidirectional_iterator_const_int_ptr_,
+    mut b2: bidirectional_iterator_const_int_ptr_,
+    mut e2: bidirectional_iterator_const_int_ptr_,
     result: bidirectional_iterator_const_int_ptr_,
 ) {
     let result: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(result));
@@ -647,22 +545,6 @@ pub fn do_search_18(
 pub fn do_search_19(
     mut b1: bidirectional_iterator_const_int_ptr_,
     mut e1: bidirectional_iterator_const_int_ptr_,
-    mut b2: bidirectional_iterator_const_int_ptr_,
-    mut e2: bidirectional_iterator_const_int_ptr_,
-    result: bidirectional_iterator_const_int_ptr_,
-) {
-    let result: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(result));
-    let count: Value<()> = Rc::new(RefCell::new(0_()));
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut d1: () = unimplemented!();
-    let mut d2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn do_search_20(
-    mut b1: bidirectional_iterator_const_int_ptr_,
-    mut e1: bidirectional_iterator_const_int_ptr_,
     mut b2: random_access_iterator_const_int_ptr_,
     mut e2: random_access_iterator_const_int_ptr_,
     result: bidirectional_iterator_const_int_ptr_,
@@ -676,7 +558,7 @@ pub fn do_search_20(
     unimplemented!();
     unimplemented!();
 }
-pub fn do_search_21(
+pub fn do_search_20(
     mut b1: random_access_iterator_const_int_ptr_,
     mut e1: random_access_iterator_const_int_ptr_,
     mut b2: forward_iterator_const_int_ptr_,
@@ -692,7 +574,7 @@ pub fn do_search_21(
     unimplemented!();
     unimplemented!();
 }
-pub fn do_search_22(
+pub fn do_search_21(
     mut b1: random_access_iterator_const_int_ptr_,
     mut e1: random_access_iterator_const_int_ptr_,
     mut b2: bidirectional_iterator_const_int_ptr_,
@@ -708,7 +590,7 @@ pub fn do_search_22(
     unimplemented!();
     unimplemented!();
 }
-pub fn do_search_23(
+pub fn do_search_22(
     mut b1: random_access_iterator_const_int_ptr_,
     mut e1: random_access_iterator_const_int_ptr_,
     mut b2: random_access_iterator_const_int_ptr_,
@@ -724,7 +606,7 @@ pub fn do_search_23(
     unimplemented!();
     unimplemented!();
 }
-pub fn test_24() -> () {
+pub fn test_23() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -741,7 +623,7 @@ pub fn test_24() -> () {
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -756,7 +638,7 @@ pub fn test_24() -> () {
         });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -773,7 +655,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -789,7 +671,7 @@ pub fn test_24() -> () {
         });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -806,7 +688,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -823,7 +705,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -838,7 +720,7 @@ pub fn test_24() -> () {
         });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -859,7 +741,7 @@ pub fn test_24() -> () {
                 .offset((sa) as isize)
                 .offset(-((1_()) as isize))
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -880,7 +762,7 @@ pub fn test_24() -> () {
                 .offset((sa) as isize)
                 .offset(-((3_()) as isize))
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -895,7 +777,7 @@ pub fn test_24() -> () {
         });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -915,7 +797,7 @@ pub fn test_24() -> () {
                 .offset((sa) as isize)
                 .offset(-((1_()) as isize))
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -931,7 +813,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -964,7 +846,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -981,7 +863,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -998,7 +880,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -1015,7 +897,7 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1048,11 +930,11 @@ pub fn test_24() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
         });
-        do_search_15(_b1, _e1, _b2, _e2, _result)
+        do_search_14(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
-pub fn test_25() -> () {
+pub fn test_24() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -1069,7 +951,7 @@ pub fn test_25() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1085,7 +967,7 @@ pub fn test_25() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1104,7 +986,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1122,7 +1004,7 @@ pub fn test_25() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1141,7 +1023,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1160,7 +1042,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1177,7 +1059,7 @@ pub fn test_25() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1200,7 +1082,7 @@ pub fn test_25() -> () {
                 .offset((sa) as isize)
                 .offset(-((1_()) as isize))
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1223,7 +1105,7 @@ pub fn test_25() -> () {
                 .offset((sa) as isize)
                 .offset(-((3_()) as isize))
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1239,7 +1121,7 @@ pub fn test_25() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1260,7 +1142,7 @@ pub fn test_25() -> () {
                 .offset((sa) as isize)
                 .offset(-((1_()) as isize))
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1277,7 +1159,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1311,7 +1193,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -1329,7 +1211,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -1347,7 +1229,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -1365,7 +1247,7 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1399,11 +1281,11 @@ pub fn test_25() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
         });
-        do_search_16(_b1, _e1, _b2, _e2, _result)
+        do_search_15(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
-pub fn test_26() -> () {
+pub fn test_25() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -1420,7 +1302,7 @@ pub fn test_26() -> () {
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1436,7 +1318,7 @@ pub fn test_26() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1455,7 +1337,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1473,7 +1355,7 @@ pub fn test_26() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1492,7 +1374,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1511,7 +1393,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1528,7 +1410,7 @@ pub fn test_26() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1551,7 +1433,7 @@ pub fn test_26() -> () {
                 .offset((sa) as isize)
                 .offset(-((1_()) as isize))
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1574,7 +1456,7 @@ pub fn test_26() -> () {
                 .offset((sa) as isize)
                 .offset(-((3_()) as isize))
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1590,7 +1472,7 @@ pub fn test_26() -> () {
             });
         let _result: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1611,7 +1493,7 @@ pub fn test_26() -> () {
                 .offset((sa) as isize)
                 .offset(-((1_()) as isize))
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: forward_iterator_const_int_ptr_ =
@@ -1628,7 +1510,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1662,7 +1544,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -1680,7 +1562,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -1698,7 +1580,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -1716,7 +1598,7 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1750,11 +1632,11 @@ pub fn test_26() -> () {
         let _result: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
         });
-        do_search_17(_b1, _e1, _b2, _e2, _result)
+        do_search_16(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
-pub fn test_27() -> () {
+pub fn test_26() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -1772,7 +1654,7 @@ pub fn test_27() -> () {
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1788,7 +1670,7 @@ pub fn test_27() -> () {
         });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1807,7 +1689,7 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1824,26 +1706,7 @@ pub fn test_27() -> () {
         });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-        });
-        let _e2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-        });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1862,7 +1725,26 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+        });
+        let _e2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+        });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1877,7 +1759,7 @@ pub fn test_27() -> () {
         });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1900,7 +1782,7 @@ pub fn test_27() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1923,7 +1805,7 @@ pub fn test_27() -> () {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1939,7 +1821,7 @@ pub fn test_27() -> () {
         });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1961,7 +1843,7 @@ pub fn test_27() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -1979,7 +1861,7 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -2014,7 +1896,7 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -2033,7 +1915,7 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -2052,7 +1934,7 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -2071,7 +1953,7 @@ pub fn test_27() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_18(_b1, _e1, _b2, _e2, _result)
+        do_search_17(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -2102,6 +1984,385 @@ pub fn test_27() -> () {
         let _e2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ii.as_pointer() as Ptr<()>).offset((3_()) as isize)
         });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        do_search_17(_b1, _e1, _b2, _e2, _result)
+    });
+    return true;
+}
+pub fn test_27() -> () {
+    let ia: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>)
+                    .offset((sa) as isize)
+                    .offset(-((1_()) as isize))
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>)
+                    .offset((sa) as isize)
+                    .offset(-((1_()) as isize))
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>)
+                    .offset((sa) as isize)
+                    .offset(-((3_()) as isize))
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>)
+                    .offset((sa) as isize)
+                    .offset(-((3_()) as isize))
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>)
+                    .offset((sa) as isize)
+                    .offset(-((1_()) as isize))
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>)
+                    .offset((sa) as isize)
+                    .offset(-((1_()) as isize))
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        2_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+    ])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ic.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (id.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ie.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ie.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ig.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ig.as_pointer() as Ptr<()>).offset((4_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
+            });
+        do_search_18(_b1, _e1, _b2, _e2, _result)
+    });
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+    ])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 2_()])));
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ih.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ih.as_pointer() as Ptr<()>).offset((sh) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ii.as_pointer() as Ptr<()>) });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ii.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
@@ -2122,392 +2383,13 @@ pub fn test_28() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
             });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>)
-                    .offset((sa) as isize)
-                    .offset(-((1_()) as isize))
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>)
-                    .offset((sa) as isize)
-                    .offset(-((1_()) as isize))
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>)
-                    .offset((sa) as isize)
-                    .offset(-((3_()) as isize))
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>)
-                    .offset((sa) as isize)
-                    .offset(-((3_()) as isize))
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>)
-                    .offset((sa) as isize)
-                    .offset(-((1_()) as isize))
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>)
-                    .offset((sa) as isize)
-                    .offset(-((1_()) as isize))
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-    ])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ie.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ie.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((sb) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ig.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ig.as_pointer() as Ptr<()>).offset((4_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-    ])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 2_()])));
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ih.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ih.as_pointer() as Ptr<()>).offset((sh) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ii.as_pointer() as Ptr<()>) });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ii.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
-    });
-    return true;
-}
-pub fn test_29() -> () {
-    let ia: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
         let _b2: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _e2: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2524,7 +2406,7 @@ pub fn test_29() -> () {
             });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2545,7 +2427,7 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2564,28 +2446,7 @@ pub fn test_29() -> () {
             });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _e2: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2606,7 +2467,28 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _e2: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        let _result: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2623,7 +2505,7 @@ pub fn test_29() -> () {
             });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2648,7 +2530,7 @@ pub fn test_29() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2673,7 +2555,7 @@ pub fn test_29() -> () {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2690,7 +2572,7 @@ pub fn test_29() -> () {
             });
         let _result: bidirectional_iterator_const_int_ptr_ =
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2713,7 +2595,7 @@ pub fn test_29() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: bidirectional_iterator_const_int_ptr_ =
@@ -2732,7 +2614,7 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -2768,7 +2650,7 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -2788,7 +2670,7 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -2808,7 +2690,7 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -2828,7 +2710,7 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -2864,11 +2746,11 @@ pub fn test_29() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_19(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
-pub fn test_30() -> () {
+pub fn test_29() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -2886,7 +2768,7 @@ pub fn test_30() -> () {
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -2902,7 +2784,7 @@ pub fn test_30() -> () {
         });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -2921,7 +2803,7 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -2938,26 +2820,7 @@ pub fn test_30() -> () {
         });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-        });
-        let _e2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-        });
-        let _result: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -2976,7 +2839,26 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+        });
+        let _e2: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+        });
+        let _result: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -2991,7 +2873,7 @@ pub fn test_30() -> () {
         });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3014,7 +2896,7 @@ pub fn test_30() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3037,7 +2919,7 @@ pub fn test_30() -> () {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3053,7 +2935,7 @@ pub fn test_30() -> () {
         });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3075,7 +2957,7 @@ pub fn test_30() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3093,7 +2975,7 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -3128,7 +3010,7 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -3147,7 +3029,7 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -3166,7 +3048,7 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -3185,7 +3067,7 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -3220,11 +3102,11 @@ pub fn test_30() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
             });
-        do_search_21(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
-pub fn test_31() -> () {
+pub fn test_30() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -3242,7 +3124,7 @@ pub fn test_31() -> () {
             bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3259,7 +3141,7 @@ pub fn test_31() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3280,7 +3162,7 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3299,28 +3181,7 @@ pub fn test_31() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
-    });
-    ({
-        let _b1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        let _e1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
-            });
-        let _b2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        let _e2: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
-        let _result: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3341,7 +3202,28 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
+    });
+    ({
+        let _b1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+        let _e1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((sa) as isize)
+            });
+        let _b2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        let _e2: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((3_()) as isize)
+            });
+        let _result: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
+            });
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3358,7 +3240,7 @@ pub fn test_31() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3383,7 +3265,7 @@ pub fn test_31() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3408,7 +3290,7 @@ pub fn test_31() -> () {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3425,7 +3307,7 @@ pub fn test_31() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3448,7 +3330,7 @@ pub fn test_31() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3467,7 +3349,7 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -3503,7 +3385,7 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -3523,7 +3405,7 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -3543,7 +3425,7 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -3563,7 +3445,7 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -3599,11 +3481,11 @@ pub fn test_31() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
             });
-        do_search_22(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
-pub fn test_32() -> () {
+pub fn test_31() -> () {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -3621,7 +3503,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3638,7 +3520,7 @@ pub fn test_32() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3659,7 +3541,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3678,7 +3560,7 @@ pub fn test_32() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3699,7 +3581,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3720,7 +3602,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3737,7 +3619,7 @@ pub fn test_32() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3762,7 +3644,7 @@ pub fn test_32() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3787,7 +3669,7 @@ pub fn test_32() -> () {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3804,7 +3686,7 @@ pub fn test_32() -> () {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3827,7 +3709,7 @@ pub fn test_32() -> () {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -3846,7 +3728,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -3882,7 +3764,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -3902,7 +3784,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -3922,7 +3804,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -3942,7 +3824,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -3978,7 +3860,7 @@ pub fn test_32() -> () {
             random_access_iterator_const_int_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
             });
-        do_search_23(_b1, _e1, _b2, _e2, _result)
+        do_search_22(_b1, _e1, _b2, _e2, _result)
     });
     return true;
 }
@@ -4002,6 +3884,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_23() });
     ({ test_24() });
     ({ test_25() });
     ({ test_26() });
@@ -4010,7 +3893,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_29() });
     ({ test_30() });
     ({ test_31() });
-    ({ test_32() });
     const _: () = assert!(
         true,
         "test<forward_iterator<const int*>, forward_iterator<const int*>>()"
@@ -4124,15 +4006,17 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
 pub trait bidirectional_iterator_const_int_ptr_Impl {
     fn operator_deref(&self) -> ();
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_>;
-    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
-        unimplemented!()
-    }
+    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_int_ptr_>;
     fn operator_post_inc_8(&self, mut _a0: ()) -> bidirectional_iterator_const_int_ptr_ {
         unimplemented!()
     }
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_const_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_const_int_ptr_>;
 }
 impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -4140,6 +4024,21 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
+        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_const_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -4164,8 +4063,24 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -4176,8 +4091,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -4257,6 +4188,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -4265,6 +4200,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_const_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -4272,6 +4218,10 @@ pub trait forward_iterator_const_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_const_int_ptr_>,
+    ) -> Ptr<forward_iterator_const_int_ptr_>;
 }
 impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -4279,6 +4229,17 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_const_int_ptr_>,
+    ) -> Ptr<forward_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -4300,9 +4261,7 @@ pub trait random_access_iterator_const_int_ptr_Impl {
         unimplemented!()
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_>;
-    fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
-        unimplemented!()
-    }
+    fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_int_ptr_>;
     fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_const_int_ptr_ {
         unimplemented!()
     }
@@ -4310,7 +4269,13 @@ pub trait random_access_iterator_const_int_ptr_Impl {
         unimplemented!()
     }
     fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_const_int_ptr_>;
-    fn operator_sub_assign(&self, n: ()) -> Ptr<random_access_iterator_const_int_ptr_>;
+    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
+        unimplemented!()
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_const_int_ptr_>,
+    ) -> Ptr<random_access_iterator_const_int_ptr_>;
 }
 impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -4320,6 +4285,10 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
+        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        return (*self).clone();
+    }
     fn operator_add_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
         {
             let _ptr = field!((*self), it_);
@@ -4327,11 +4296,15 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
         };
         return (*self).clone();
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
-        {
-            let _ptr = field!((*self), it_);
-            _ptr.write(_ptr.read() - n)
-        };
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_const_int_ptr_>,
+    ) -> Ptr<random_access_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

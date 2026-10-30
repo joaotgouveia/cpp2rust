@@ -47,7 +47,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub fn base_0(i: Ptr<cpp17_output_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -75,7 +75,7 @@ const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -85,12 +85,19 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_1(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -114,7 +121,7 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -124,7 +131,14 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
@@ -298,23 +312,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -401,52 +403,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_11(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_11(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_10(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -466,44 +432,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -660,17 +599,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for ForwardIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotDerivedFrom {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(true, "std::incrementable<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(
@@ -684,17 +617,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotIncrementable {}
-impl std::cmp::PartialEq for ForwardIteratorNotIncrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotIncrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotIncrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotIncrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotIncrementable {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotIncrementable>");
 const _: () = assert!(
     !(false),
@@ -711,17 +638,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDerivedFrom>"
@@ -737,17 +658,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDecrementable {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDecrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDecrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDecrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDecrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDecrementable {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDecrementable>"
@@ -775,17 +690,11 @@ pub struct PermutableNotSwappable_NotSwappable {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PermutableNotSwappable {}
-impl std::cmp::PartialEq for PermutableNotSwappable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            PermutableNotSwappableImpl::operator_eq(
-                &Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-                Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-            )
-        }
+impl CppEq for PermutableNotSwappable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PermutableNotSwappableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for PermutableNotSwappable {}
 const _: () = assert!(true, "std::input_iterator<PermutableNotSwappable>");
 const _: () = assert!(true, "std::forward_iterator<PermutableNotSwappable>");
 const _: () = assert!(!(false), "!std::permutable<PermutableNotSwappable>");
@@ -841,32 +750,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorNotDerivedFrom {}
-impl std::cmp::Ord for RandomAccessIteratorNotDerivedFrom {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorNotDerivedFrom {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorNotDerivedFrom {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorNotDerivedFrom>"
@@ -878,32 +773,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadIndex {}
-impl std::cmp::Ord for RandomAccessIteratorBadIndex {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadIndex {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadIndex {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadIndex {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadIndex {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadIndex {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorBadIndex>"
@@ -915,32 +796,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadDifferenceType {}
-impl std::cmp::Ord for RandomAccessIteratorBadDifferenceType {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadDifferenceType {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadDifferenceType {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadDifferenceType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadDifferenceType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadDifferenceType {}
 const _: () = assert!(true, "std::regular<RandomAccessIteratorBadDifferenceType>");
 const _: () = assert!(
     !(false),
@@ -1107,8 +974,8 @@ pub fn test_one_12(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1174,8 +1041,8 @@ pub fn test_one_14(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1233,8 +1100,8 @@ pub fn test_one_15(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1292,8 +1159,8 @@ pub fn test_one_16(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1359,8 +1226,8 @@ pub fn test_one_17(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1418,8 +1285,8 @@ pub fn test_one_18(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1485,8 +1352,8 @@ pub fn test_one_19(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1544,8 +1411,8 @@ pub fn test_one_20(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1603,8 +1470,8 @@ pub fn test_one_21(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1662,8 +1529,8 @@ pub fn test_one_22(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1729,8 +1596,8 @@ pub fn test_one_23(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1788,8 +1655,8 @@ pub fn test_one_24(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1855,8 +1722,8 @@ pub fn test_one_25(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1914,8 +1781,8 @@ pub fn test_one_26(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1973,8 +1840,8 @@ pub fn test_one_27(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2040,8 +1907,8 @@ pub fn test_one_28(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2099,8 +1966,8 @@ pub fn test_one_29(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2166,8 +2033,8 @@ pub fn test_one_30(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2225,8 +2092,8 @@ pub fn test_one_31(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2284,8 +2151,8 @@ pub fn test_one_32(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2343,8 +2210,8 @@ pub fn test_one_33(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2410,8 +2277,8 @@ pub fn test_one_34(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2469,8 +2336,8 @@ pub fn test_one_35(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2534,8 +2401,8 @@ pub fn test_one_36(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2593,8 +2460,8 @@ pub fn test_one_37(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2652,8 +2519,8 @@ pub fn test_one_38(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2717,8 +2584,8 @@ pub fn test_one_39(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2776,8 +2643,8 @@ pub fn test_one_40(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2841,8 +2708,8 @@ pub fn test_one_41(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2900,8 +2767,8 @@ pub fn test_one_42(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2959,8 +2826,8 @@ pub fn test_one_43(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3018,8 +2885,8 @@ pub fn test_one_44(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3083,8 +2950,8 @@ pub fn test_one_45(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3142,8 +3009,8 @@ pub fn test_one_46(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3209,8 +3076,8 @@ pub fn test_one_47(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3268,8 +3135,8 @@ pub fn test_one_48(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3327,8 +3194,8 @@ pub fn test_one_49(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3394,8 +3261,8 @@ pub fn test_one_50(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3453,8 +3320,8 @@ pub fn test_one_51(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3520,8 +3387,8 @@ pub fn test_one_52(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3579,8 +3446,8 @@ pub fn test_one_53(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3638,8 +3505,8 @@ pub fn test_one_54(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3697,8 +3564,8 @@ pub fn test_one_55(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3764,8 +3631,8 @@ pub fn test_one_56(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3823,8 +3690,8 @@ pub fn test_one_57(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3890,8 +3757,8 @@ pub fn test_one_58(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3949,8 +3816,8 @@ pub fn test_one_59(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4008,8 +3875,8 @@ pub fn test_one_60(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4075,8 +3942,8 @@ pub fn test_one_61(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4134,8 +4001,8 @@ pub fn test_one_62(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4201,8 +4068,8 @@ pub fn test_one_63(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4260,8 +4127,8 @@ pub fn test_one_64(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4319,8 +4186,8 @@ pub fn test_one_65(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4378,8 +4245,8 @@ pub fn test_one_66(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4445,8 +4312,8 @@ pub fn test_one_67(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4504,8 +4371,8 @@ pub fn test_one_68(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4569,8 +4436,8 @@ pub fn test_one_69(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4628,8 +4495,8 @@ pub fn test_one_70(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4687,8 +4554,8 @@ pub fn test_one_71(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4752,8 +4619,8 @@ pub fn test_one_72(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4811,8 +4678,8 @@ pub fn test_one_73(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4876,8 +4743,8 @@ pub fn test_one_74(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4935,8 +4802,8 @@ pub fn test_one_75(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -4994,8 +4861,8 @@ pub fn test_one_76(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5053,8 +4920,8 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5118,8 +4985,8 @@ pub fn test_one_78(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5177,8 +5044,8 @@ pub fn test_one_79(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5244,8 +5111,8 @@ pub fn test_one_80(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5303,8 +5170,8 @@ pub fn test_one_81(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5362,8 +5229,8 @@ pub fn test_one_82(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5429,8 +5296,8 @@ pub fn test_one_83(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5488,8 +5355,8 @@ pub fn test_one_84(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5555,8 +5422,8 @@ pub fn test_one_85(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5614,8 +5481,8 @@ pub fn test_one_86(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5673,8 +5540,8 @@ pub fn test_one_87(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5732,8 +5599,8 @@ pub fn test_one_88(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5799,8 +5666,8 @@ pub fn test_one_89(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5858,8 +5725,8 @@ pub fn test_one_90(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5925,8 +5792,8 @@ pub fn test_one_91(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -5984,8 +5851,8 @@ pub fn test_one_92(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6043,8 +5910,8 @@ pub fn test_one_93(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6110,8 +5977,8 @@ pub fn test_one_94(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6169,8 +6036,8 @@ pub fn test_one_95(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6236,8 +6103,8 @@ pub fn test_one_96(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6295,8 +6162,8 @@ pub fn test_one_97(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6354,8 +6221,8 @@ pub fn test_one_98(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6413,8 +6280,8 @@ pub fn test_one_99(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6480,8 +6347,8 @@ pub fn test_one_100(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6539,8 +6406,8 @@ pub fn test_one_101(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6604,8 +6471,8 @@ pub fn test_one_102(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6663,8 +6530,8 @@ pub fn test_one_103(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6722,8 +6589,8 @@ pub fn test_one_104(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6787,8 +6654,8 @@ pub fn test_one_105(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6846,8 +6713,8 @@ pub fn test_one_106(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6911,8 +6778,8 @@ pub fn test_one_107(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -6970,8 +6837,8 @@ pub fn test_one_108(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7029,8 +6896,8 @@ pub fn test_one_109(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7088,8 +6955,8 @@ pub fn test_one_110(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7153,8 +7020,8 @@ pub fn test_one_111(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7212,8 +7079,8 @@ pub fn test_one_112(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7277,8 +7144,8 @@ pub fn test_one_113(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7336,8 +7203,8 @@ pub fn test_one_114(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7395,8 +7262,8 @@ pub fn test_one_115(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7460,8 +7327,8 @@ pub fn test_one_116(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7519,8 +7386,8 @@ pub fn test_one_117(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7584,8 +7451,8 @@ pub fn test_one_118(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7643,8 +7510,8 @@ pub fn test_one_119(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7702,8 +7569,8 @@ pub fn test_one_120(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7761,8 +7628,8 @@ pub fn test_one_121(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7826,8 +7693,8 @@ pub fn test_one_122(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7885,8 +7752,8 @@ pub fn test_one_123(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -7950,8 +7817,8 @@ pub fn test_one_124(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8009,8 +7876,8 @@ pub fn test_one_125(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8068,8 +7935,8 @@ pub fn test_one_126(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8133,8 +8000,8 @@ pub fn test_one_127(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8192,8 +8059,8 @@ pub fn test_one_128(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8257,8 +8124,8 @@ pub fn test_one_129(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8316,8 +8183,8 @@ pub fn test_one_130(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8375,8 +8242,8 @@ pub fn test_one_131(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8434,8 +8301,8 @@ pub fn test_one_132(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8499,8 +8366,8 @@ pub fn test_one_133(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8558,8 +8425,8 @@ pub fn test_one_134(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8621,8 +8488,8 @@ pub fn test_one_135(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8680,8 +8547,8 @@ pub fn test_one_136(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8739,8 +8606,8 @@ pub fn test_one_137(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8802,8 +8669,8 @@ pub fn test_one_138(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8861,8 +8728,8 @@ pub fn test_one_139(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8924,8 +8791,8 @@ pub fn test_one_140(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -8983,8 +8850,8 @@ pub fn test_one_141(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9042,8 +8909,8 @@ pub fn test_one_142(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9101,8 +8968,8 @@ pub fn test_one_143(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9164,8 +9031,8 @@ pub fn test_one_144(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9223,8 +9090,8 @@ pub fn test_one_145(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9282,8 +9149,8 @@ pub fn test_one_146(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9333,8 +9200,8 @@ pub fn test_one_147(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9384,8 +9251,8 @@ pub fn test_one_148(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9443,8 +9310,8 @@ pub fn test_one_149(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9494,8 +9361,8 @@ pub fn test_one_150(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9553,8 +9420,8 @@ pub fn test_one_151(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9604,8 +9471,8 @@ pub fn test_one_152(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9655,8 +9522,8 @@ pub fn test_one_153(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9706,8 +9573,8 @@ pub fn test_one_154(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9765,8 +9632,8 @@ pub fn test_one_155(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9816,8 +9683,8 @@ pub fn test_one_156(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9875,8 +9742,8 @@ pub fn test_one_157(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9926,8 +9793,8 @@ pub fn test_one_158(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -9977,8 +9844,8 @@ pub fn test_one_159(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10036,8 +9903,8 @@ pub fn test_one_160(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10087,8 +9954,8 @@ pub fn test_one_161(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10146,8 +10013,8 @@ pub fn test_one_162(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10197,8 +10064,8 @@ pub fn test_one_163(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10248,8 +10115,8 @@ pub fn test_one_164(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10299,8 +10166,8 @@ pub fn test_one_165(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10358,8 +10225,8 @@ pub fn test_one_166(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10409,8 +10276,8 @@ pub fn test_one_167(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10466,8 +10333,8 @@ pub fn test_one_168(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10517,8 +10384,8 @@ pub fn test_one_169(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10568,8 +10435,8 @@ pub fn test_one_170(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10625,8 +10492,8 @@ pub fn test_one_171(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10676,8 +10543,8 @@ pub fn test_one_172(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10733,8 +10600,8 @@ pub fn test_one_173(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10784,8 +10651,8 @@ pub fn test_one_174(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10835,8 +10702,8 @@ pub fn test_one_175(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10886,8 +10753,8 @@ pub fn test_one_176(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10943,8 +10810,8 @@ pub fn test_one_177(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -10994,8 +10861,8 @@ pub fn test_one_178(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11053,8 +10920,8 @@ pub fn test_one_179(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11104,8 +10971,8 @@ pub fn test_one_180(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11155,8 +11022,8 @@ pub fn test_one_181(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11214,8 +11081,8 @@ pub fn test_one_182(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11265,8 +11132,8 @@ pub fn test_one_183(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11324,8 +11191,8 @@ pub fn test_one_184(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11375,8 +11242,8 @@ pub fn test_one_185(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11426,8 +11293,8 @@ pub fn test_one_186(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11477,8 +11344,8 @@ pub fn test_one_187(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11536,8 +11403,8 @@ pub fn test_one_188(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11587,8 +11454,8 @@ pub fn test_one_189(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11646,8 +11513,8 @@ pub fn test_one_190(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11697,8 +11564,8 @@ pub fn test_one_191(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11748,8 +11615,8 @@ pub fn test_one_192(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11807,8 +11674,8 @@ pub fn test_one_193(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11858,8 +11725,8 @@ pub fn test_one_194(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11917,8 +11784,8 @@ pub fn test_one_195(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -11968,8 +11835,8 @@ pub fn test_one_196(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12019,8 +11886,8 @@ pub fn test_one_197(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12070,8 +11937,8 @@ pub fn test_one_198(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12129,8 +11996,8 @@ pub fn test_one_199(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12180,8 +12047,8 @@ pub fn test_one_200(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12237,8 +12104,8 @@ pub fn test_one_201(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12288,8 +12155,8 @@ pub fn test_one_202(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12339,8 +12206,8 @@ pub fn test_one_203(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12396,8 +12263,8 @@ pub fn test_one_204(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12447,8 +12314,8 @@ pub fn test_one_205(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12504,8 +12371,8 @@ pub fn test_one_206(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12555,8 +12422,8 @@ pub fn test_one_207(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12606,8 +12473,8 @@ pub fn test_one_208(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12657,8 +12524,8 @@ pub fn test_one_209(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12714,8 +12581,8 @@ pub fn test_one_210(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12765,8 +12632,8 @@ pub fn test_one_211(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12824,8 +12691,8 @@ pub fn test_one_212(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12875,8 +12742,8 @@ pub fn test_one_213(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12926,8 +12793,8 @@ pub fn test_one_214(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -12985,8 +12852,8 @@ pub fn test_one_215(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13036,8 +12903,8 @@ pub fn test_one_216(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13095,8 +12962,8 @@ pub fn test_one_217(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13146,8 +13013,8 @@ pub fn test_one_218(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13197,8 +13064,8 @@ pub fn test_one_219(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13248,8 +13115,8 @@ pub fn test_one_220(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13307,8 +13174,8 @@ pub fn test_one_221(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13358,8 +13225,8 @@ pub fn test_one_222(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13417,8 +13284,8 @@ pub fn test_one_223(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13468,8 +13335,8 @@ pub fn test_one_224(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13519,8 +13386,8 @@ pub fn test_one_225(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13578,8 +13445,8 @@ pub fn test_one_226(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13629,8 +13496,8 @@ pub fn test_one_227(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13688,8 +13555,8 @@ pub fn test_one_228(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13739,8 +13606,8 @@ pub fn test_one_229(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13790,8 +13657,8 @@ pub fn test_one_230(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13841,8 +13708,8 @@ pub fn test_one_231(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13900,8 +13767,8 @@ pub fn test_one_232(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -13951,8 +13818,8 @@ pub fn test_one_233(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14008,8 +13875,8 @@ pub fn test_one_234(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14059,8 +13926,8 @@ pub fn test_one_235(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14110,8 +13977,8 @@ pub fn test_one_236(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14167,8 +14034,8 @@ pub fn test_one_237(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14218,8 +14085,8 @@ pub fn test_one_238(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14275,8 +14142,8 @@ pub fn test_one_239(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14326,8 +14193,8 @@ pub fn test_one_240(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14377,8 +14244,8 @@ pub fn test_one_241(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14428,8 +14295,8 @@ pub fn test_one_242(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14485,8 +14352,8 @@ pub fn test_one_243(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14536,8 +14403,8 @@ pub fn test_one_244(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14593,8 +14460,8 @@ pub fn test_one_245(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14644,8 +14511,8 @@ pub fn test_one_246(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14695,8 +14562,8 @@ pub fn test_one_247(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14752,8 +14619,8 @@ pub fn test_one_248(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14803,8 +14670,8 @@ pub fn test_one_249(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14860,8 +14727,8 @@ pub fn test_one_250(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14911,8 +14778,8 @@ pub fn test_one_251(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -14962,8 +14829,8 @@ pub fn test_one_252(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15013,8 +14880,8 @@ pub fn test_one_253(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15070,8 +14937,8 @@ pub fn test_one_254(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15121,8 +14988,8 @@ pub fn test_one_255(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15178,8 +15045,8 @@ pub fn test_one_256(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15229,8 +15096,8 @@ pub fn test_one_257(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15280,8 +15147,8 @@ pub fn test_one_258(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15337,8 +15204,8 @@ pub fn test_one_259(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15388,8 +15255,8 @@ pub fn test_one_260(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15445,8 +15312,8 @@ pub fn test_one_261(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15496,8 +15363,8 @@ pub fn test_one_262(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15547,8 +15414,8 @@ pub fn test_one_263(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15598,8 +15465,8 @@ pub fn test_one_264(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15655,8 +15522,8 @@ pub fn test_one_265(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15706,8 +15573,8 @@ pub fn test_one_266(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15761,8 +15628,8 @@ pub fn test_one_267(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15812,8 +15679,8 @@ pub fn test_one_268(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15863,8 +15730,8 @@ pub fn test_one_269(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15918,8 +15785,8 @@ pub fn test_one_270(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -15969,8 +15836,8 @@ pub fn test_one_271(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16024,8 +15891,8 @@ pub fn test_one_272(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16075,8 +15942,8 @@ pub fn test_one_273(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16126,8 +15993,8 @@ pub fn test_one_274(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16177,8 +16044,8 @@ pub fn test_one_275(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16232,8 +16099,8 @@ pub fn test_one_276(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16283,8 +16150,8 @@ pub fn test_one_277(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16345,8 +16212,8 @@ pub fn test_one_278(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16399,8 +16266,8 @@ pub fn test_one_279(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16453,8 +16320,8 @@ pub fn test_one_280(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16515,8 +16382,8 @@ pub fn test_one_281(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16569,8 +16436,8 @@ pub fn test_one_282(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16631,8 +16498,8 @@ pub fn test_one_283(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16685,8 +16552,8 @@ pub fn test_one_284(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16739,8 +16606,8 @@ pub fn test_one_285(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16793,8 +16660,8 @@ pub fn test_one_286(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16855,8 +16722,8 @@ pub fn test_one_287(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16909,8 +16776,8 @@ pub fn test_one_288(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -16971,8 +16838,8 @@ pub fn test_one_289(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17025,8 +16892,8 @@ pub fn test_one_290(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17079,8 +16946,8 @@ pub fn test_one_291(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17141,8 +17008,8 @@ pub fn test_one_292(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17195,8 +17062,8 @@ pub fn test_one_293(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17257,8 +17124,8 @@ pub fn test_one_294(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17311,8 +17178,8 @@ pub fn test_one_295(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17365,8 +17232,8 @@ pub fn test_one_296(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17419,8 +17286,8 @@ pub fn test_one_297(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17481,8 +17348,8 @@ pub fn test_one_298(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17535,8 +17402,8 @@ pub fn test_one_299(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17595,8 +17462,8 @@ pub fn test_one_300(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17649,8 +17516,8 @@ pub fn test_one_301(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17703,8 +17570,8 @@ pub fn test_one_302(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17763,8 +17630,8 @@ pub fn test_one_303(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17817,8 +17684,8 @@ pub fn test_one_304(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17877,8 +17744,8 @@ pub fn test_one_305(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17931,8 +17798,8 @@ pub fn test_one_306(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -17985,8 +17852,8 @@ pub fn test_one_307(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18039,8 +17906,8 @@ pub fn test_one_308(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18099,8 +17966,8 @@ pub fn test_one_309(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18153,8 +18020,8 @@ pub fn test_one_310(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18215,8 +18082,8 @@ pub fn test_one_311(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18269,8 +18136,8 @@ pub fn test_one_312(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18323,8 +18190,8 @@ pub fn test_one_313(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18385,8 +18252,8 @@ pub fn test_one_314(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18439,8 +18306,8 @@ pub fn test_one_315(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18501,8 +18368,8 @@ pub fn test_one_316(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18555,8 +18422,8 @@ pub fn test_one_317(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18609,8 +18476,8 @@ pub fn test_one_318(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18663,8 +18530,8 @@ pub fn test_one_319(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18725,8 +18592,8 @@ pub fn test_one_320(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18779,8 +18646,8 @@ pub fn test_one_321(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18841,8 +18708,8 @@ pub fn test_one_322(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18895,8 +18762,8 @@ pub fn test_one_323(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -18949,8 +18816,8 @@ pub fn test_one_324(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19011,8 +18878,8 @@ pub fn test_one_325(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19065,8 +18932,8 @@ pub fn test_one_326(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19127,8 +18994,8 @@ pub fn test_one_327(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19181,8 +19048,8 @@ pub fn test_one_328(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19235,8 +19102,8 @@ pub fn test_one_329(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19289,8 +19156,8 @@ pub fn test_one_330(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19351,8 +19218,8 @@ pub fn test_one_331(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19405,8 +19272,8 @@ pub fn test_one_332(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19465,8 +19332,8 @@ pub fn test_one_333(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19519,8 +19386,8 @@ pub fn test_one_334(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19573,8 +19440,8 @@ pub fn test_one_335(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19633,8 +19500,8 @@ pub fn test_one_336(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19687,8 +19554,8 @@ pub fn test_one_337(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19747,8 +19614,8 @@ pub fn test_one_338(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19801,8 +19668,8 @@ pub fn test_one_339(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19855,8 +19722,8 @@ pub fn test_one_340(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19909,8 +19776,8 @@ pub fn test_one_341(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19969,8 +19836,8 @@ pub fn test_one_342(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20023,8 +19890,8 @@ pub fn test_one_343(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20085,8 +19952,8 @@ pub fn test_one_344(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20139,8 +20006,8 @@ pub fn test_one_345(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20193,8 +20060,8 @@ pub fn test_one_346(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20255,8 +20122,8 @@ pub fn test_one_347(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20309,8 +20176,8 @@ pub fn test_one_348(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20371,8 +20238,8 @@ pub fn test_one_349(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20425,8 +20292,8 @@ pub fn test_one_350(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20479,8 +20346,8 @@ pub fn test_one_351(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20533,8 +20400,8 @@ pub fn test_one_352(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20595,8 +20462,8 @@ pub fn test_one_353(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20649,8 +20516,8 @@ pub fn test_one_354(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20711,8 +20578,8 @@ pub fn test_one_355(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20765,8 +20632,8 @@ pub fn test_one_356(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20819,8 +20686,8 @@ pub fn test_one_357(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20881,8 +20748,8 @@ pub fn test_one_358(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20935,8 +20802,8 @@ pub fn test_one_359(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -20997,8 +20864,8 @@ pub fn test_one_360(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21051,8 +20918,8 @@ pub fn test_one_361(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21105,8 +20972,8 @@ pub fn test_one_362(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21159,8 +21026,8 @@ pub fn test_one_363(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21221,8 +21088,8 @@ pub fn test_one_364(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21275,8 +21142,8 @@ pub fn test_one_365(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21335,8 +21202,8 @@ pub fn test_one_366(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21389,8 +21256,8 @@ pub fn test_one_367(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21443,8 +21310,8 @@ pub fn test_one_368(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21503,8 +21370,8 @@ pub fn test_one_369(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21557,8 +21424,8 @@ pub fn test_one_370(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21617,8 +21484,8 @@ pub fn test_one_371(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21671,8 +21538,8 @@ pub fn test_one_372(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21725,8 +21592,8 @@ pub fn test_one_373(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21779,8 +21646,8 @@ pub fn test_one_374(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21839,8 +21706,8 @@ pub fn test_one_375(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21893,8 +21760,8 @@ pub fn test_one_376(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -21953,8 +21820,8 @@ pub fn test_one_377(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22007,8 +21874,8 @@ pub fn test_one_378(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22061,8 +21928,8 @@ pub fn test_one_379(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22121,8 +21988,8 @@ pub fn test_one_380(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22175,8 +22042,8 @@ pub fn test_one_381(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22235,8 +22102,8 @@ pub fn test_one_382(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22289,8 +22156,8 @@ pub fn test_one_383(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22343,8 +22210,8 @@ pub fn test_one_384(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22397,8 +22264,8 @@ pub fn test_one_385(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22457,8 +22324,8 @@ pub fn test_one_386(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22511,8 +22378,8 @@ pub fn test_one_387(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22571,8 +22438,8 @@ pub fn test_one_388(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22625,8 +22492,8 @@ pub fn test_one_389(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22679,8 +22546,8 @@ pub fn test_one_390(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22739,8 +22606,8 @@ pub fn test_one_391(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22793,8 +22660,8 @@ pub fn test_one_392(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22853,8 +22720,8 @@ pub fn test_one_393(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22907,8 +22774,8 @@ pub fn test_one_394(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -22961,8 +22828,8 @@ pub fn test_one_395(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23015,8 +22882,8 @@ pub fn test_one_396(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23075,8 +22942,8 @@ pub fn test_one_397(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23129,8 +22996,8 @@ pub fn test_one_398(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23187,8 +23054,8 @@ pub fn test_one_399(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23241,8 +23108,8 @@ pub fn test_one_400(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23295,8 +23162,8 @@ pub fn test_one_401(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23353,8 +23220,8 @@ pub fn test_one_402(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23407,8 +23274,8 @@ pub fn test_one_403(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23465,8 +23332,8 @@ pub fn test_one_404(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23519,8 +23386,8 @@ pub fn test_one_405(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23573,8 +23440,8 @@ pub fn test_one_406(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23627,8 +23494,8 @@ pub fn test_one_407(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -23685,8 +23552,8 @@ pub fn test_one_408(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
     let expected_true: Value<()> = Rc::new(RefCell::new(expected_true));
     let expected_false: Value<()> = Rc::new(RefCell::new(expected_false));
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: Ptr<()> = unimplemented!();
-    let mut end: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -29167,14 +29034,34 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_int_ptr_>;
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
 impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -29182,6 +29069,17 @@ impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> 
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -29268,6 +29166,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -29275,6 +29177,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
     }
 }
 pub trait forward_sized_iterator_int_ptr_Impl {
@@ -29310,6 +29223,10 @@ pub trait random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_>;
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -29317,6 +29234,17 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

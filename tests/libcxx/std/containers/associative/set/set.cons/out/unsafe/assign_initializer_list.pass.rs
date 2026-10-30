@@ -224,7 +224,7 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
     id_: (),
@@ -242,6 +242,19 @@ impl test_allocator_int_ {
         }
         this
     }
+    pub unsafe fn copy_from(a: *const test_allocator_int_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -250,6 +263,11 @@ impl test_allocator_int_ {
         }
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_4));
+    }
+}
+impl Clone for test_allocator_int_ {
+    fn clone(&self) -> Self {
+        unsafe { test_allocator_int_::copy_from(self as *const test_allocator_int_) }
     }
 }
 impl Default for test_allocator_int_ {
@@ -320,15 +338,15 @@ pub unsafe fn basic_test_8() {
 pub unsafe fn duplicate_keys_test_9() {
     let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
     {
-        unimplemented!();
+        const _: () = assert!(true, "");;
         let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_10() -> () {
     (unsafe { basic_test_8() });

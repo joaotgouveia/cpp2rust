@@ -6,17 +6,137 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_all_0() -> () {
-    (unsafe { test_1(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_2))) });
-    (unsafe { test_3(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _2_4))) });
-    (unsafe { test_5(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _3_6))) });
-    (unsafe { test_7(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _4_8))) });
-    (unsafe { test_9(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _5_10))) });
-    (unsafe { test_11(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _6_12))) });
-    (unsafe { test_13(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _7_14))) });
-    (unsafe { test_15(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _8_16))) });
-    (unsafe { test_17(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _9_18))) });
-    (unsafe { test_19(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _10_20))) });
+pub unsafe fn test_0(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_1(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_2(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_3(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_4(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_5(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_6(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_7(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_8(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_9(t: *const ()) {
+    {
+        let mut x: () = unimplemented!();
+        &(x);
+    }
+    {
+        let mut x: () = (*t).clone();
+        &(x);
+        const _: () = assert!(true, "std::is_nothrow_copy_constructible<T>::value");;
+        const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
+    }
+}
+pub unsafe fn test_all_10() -> () {
+    (unsafe { test_0(&(*unimplemented!())) });
+    (unsafe { test_1(&(*unimplemented!())) });
+    (unsafe { test_2(&(*unimplemented!())) });
+    (unsafe { test_3(&(*unimplemented!())) });
+    (unsafe { test_4(&(*unimplemented!())) });
+    (unsafe { test_5(&(*unimplemented!())) });
+    (unsafe { test_6(&(*unimplemented!())) });
+    (unsafe { test_7(&(*unimplemented!())) });
+    (unsafe { test_8(&(*unimplemented!())) });
+    (unsafe { test_9(&(*unimplemented!())) });
     return true;
 }
 pub fn main() {
@@ -35,7 +155,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_all_0() });
+    (unsafe { test_all_10() });
     const _: () = assert!(true, "test_all()");;
     return 0_();
 }

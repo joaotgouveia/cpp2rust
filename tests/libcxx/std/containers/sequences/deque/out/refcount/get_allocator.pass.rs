@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -178,23 +162,11 @@ impl other_allocator_int_ {
         Self { data_: i }
     }
 }
-impl std::cmp::PartialEq for other_allocator_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(other_allocator_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(other_allocator_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for other_allocator_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for other_allocator_int_ {}
 impl Default for other_allocator_int_ {
     fn default() -> Self {
         {
@@ -222,22 +194,6 @@ impl Default for other_allocator_int_ptr_ {
     fn default() -> Self {
         {
             other_allocator_int_ptr_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_const_int_ptr_ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_const_int_ptr_ {}
-impl Default for other_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        {
-            other_allocator_const_int_ptr_ {
                 data_: unimplemented!(),
             }
         }
@@ -305,25 +261,8 @@ impl Tag_XImpl for Ptr<Tag_X> {
         return (*self).clone();
     }
 }
-pub trait other_allocator_const_int_ptr_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(&self) -> other_allocator_const_int_ptr_ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_const_int_ptr_Impl for Ptr<other_allocator_const_int_ptr_> {}
 pub trait other_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!()
-    }
+    fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, s: ());
     fn select_on_container_copy_construction(&self) -> other_allocator_int_ {
         unimplemented!()
@@ -333,14 +272,15 @@ pub trait other_allocator_int_Impl {
     }
 }
 impl other_allocator_int_Impl for Ptr<other_allocator_int_> {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        return unimplemented!();
+    }
     fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
         unimplemented!();
     }
 }
 pub trait other_allocator_int_ptr_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
+    fn allocate(&self, n: ()) -> Ptr<Ptr<()>>;
     fn deallocate(&self, p: Ptr<Ptr<()>>, s: ());
     fn select_on_container_copy_construction(&self) -> other_allocator_int_ptr_ {
         unimplemented!()
@@ -350,6 +290,9 @@ pub trait other_allocator_int_ptr_Impl {
     }
 }
 impl other_allocator_int_ptr_Impl for Ptr<other_allocator_int_ptr_> {
+    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
+        return unimplemented!();
+    }
     fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut s: ()) {
         unimplemented!();
     }

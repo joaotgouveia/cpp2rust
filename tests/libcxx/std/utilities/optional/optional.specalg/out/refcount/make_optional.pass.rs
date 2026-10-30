@@ -36,7 +36,8 @@ pub type anon_5 = ();
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_std_string___std_optional_std_string__ {}
+pub struct test_macros_detail_is_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_6: Value<()> = Rc::new(RefCell::new(true));
 );

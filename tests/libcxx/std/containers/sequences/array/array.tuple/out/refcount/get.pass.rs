@@ -13,15 +13,15 @@ pub fn tests_1() -> () {
     {
         let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({ get_2(array.as_pointer()) }).write(99.1_f64);
+        unimplemented!().write(99.1_f64);
         unimplemented!();
     }
     {
         let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        ({ get_3(array.as_pointer()) }).write(99.1_f64);
-        ({ get_4(array.as_pointer()) }).write(99.2_f64);
+        unimplemented!().write(99.1_f64);
+        unimplemented!().write(99.2_f64);
         unimplemented!();
         unimplemented!();
     }
@@ -30,7 +30,7 @@ pub fn tests_1() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ get_5(array.as_pointer()) }).write(99.2_f64);
+        unimplemented!().write(99.2_f64);
         unimplemented!();
         unimplemented!();
         unimplemented!();

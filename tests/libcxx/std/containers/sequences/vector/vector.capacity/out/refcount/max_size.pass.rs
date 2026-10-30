@@ -63,19 +63,12 @@ pub struct min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
     #[byte_size(8)]
     ptr_: Ptr<()>,
 }
-impl min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
-    pub fn new_1(mut _a0: ()) -> Self {
-        Self {
-            ptr_: Ptr::<()>::null(),
-        }
+impl min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {}
+impl CppEq for min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::PartialEq for min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_int_ {}
@@ -266,27 +259,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_10(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -313,7 +290,7 @@ impl Default for test_allocator_void_ {
 pub struct test_allocator_char__rebind_char_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_allocator_char__rebind_unsigned_int_ {}
+pub struct test_allocator_char__rebind_unsigned_long_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_char_ {
@@ -371,7 +348,7 @@ impl Default for test_allocator_char_ {
 }
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(16)]
-pub struct test_allocator_unsigned_int_ {
+pub struct test_allocator_unsigned_long_ {
     #[offset(0)]
     data_: (),
     #[offset(4)]
@@ -380,11 +357,11 @@ pub struct test_allocator_unsigned_int_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_unsigned_int_ {}
-impl Default for test_allocator_unsigned_int_ {
+impl test_allocator_unsigned_long_ {}
+impl Default for test_allocator_unsigned_long_ {
     fn default() -> Self {
         {
-            test_allocator_unsigned_int_ {
+            test_allocator_unsigned_long_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -931,103 +908,103 @@ pub fn test_16(v: Ptr<()>) {
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_17(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_18(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_19(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_20(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_21(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_22(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_23(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_24(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_25(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_26(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_27(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     let mut max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn tests_28() -> () {
     {
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut max_dist: () = unimplemented!();
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut max_dist: () = unimplemented!();
-        let mut c: () = unimplemented!();
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         ({
@@ -1530,18 +1507,14 @@ impl min_allocator_unsigned_int_Impl for Ptr<min_allocator_unsigned_int_> {
     }
 }
 pub trait min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_(&self) -> ();
+    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_arrow(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<()>;
     fn operator_inc_8(
         &self,
-    ) -> Ptr<min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
+    ) -> Ptr<min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
         mut _a0: (),
@@ -1550,7 +1523,9 @@ pub trait min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_dec_10(
         &self,
-    ) -> Ptr<min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__>;
+    ) -> Ptr<min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
     fn operator_post_dec_11(
         &self,
         mut _a0: (),
@@ -1588,13 +1563,16 @@ pub trait min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__Impl
 impl min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__>
 {
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn to_(&self) -> () {
+        return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
+    }
+    fn operator_deref(&self) -> Ptr<()> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_dec_10(
+    fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
 }
@@ -1689,7 +1667,7 @@ pub trait test_allocator_char_Impl {
     fn address_12(&self, x: ()) -> Ptr<()> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, p: Ptr<()>, s: ());
@@ -1759,7 +1737,7 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
-pub trait test_allocator_unsigned_int_Impl {
+pub trait test_allocator_unsigned_long_Impl {
     fn destructor(&self) {
         unimplemented!()
     }
@@ -1788,7 +1766,7 @@ pub trait test_allocator_unsigned_int_Impl {
         unimplemented!()
     }
 }
-impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
+impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

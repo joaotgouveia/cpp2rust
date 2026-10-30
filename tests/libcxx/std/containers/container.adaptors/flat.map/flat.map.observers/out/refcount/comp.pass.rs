@@ -15,7 +15,7 @@ pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_flat_map_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____value_compare__std_flat_map_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____value_compare_
+pub struct test_macros_detail_is_same_std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____false__value_compare__std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____false__value_compare_
 {}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
@@ -32,7 +32,7 @@ pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_flat_map_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare__std_flat_map_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare_
+pub struct test_macros_detail_is_same_std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____false__value_compare__std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____false__value_compare_
 {}
 pub type anon_5 = ();
 pub const anon_5_value: anon_5 = 1;
@@ -43,7 +43,7 @@ pub type anon_6 = ();
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_flat_map_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare__std_flat_map_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare_
+pub struct test_macros_detail_is_same_std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____false__value_compare__std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____false__value_compare_
 {}
 pub fn test_7() -> () {
     {
@@ -62,7 +62,7 @@ pub fn test_7() -> () {
     }
     {
         let comp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { comp .as_pointer()  } , )  )) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -100,11 +100,14 @@ pub fn test_7() -> () {
                 return ({ (unimplemented!().read()) } < { (unimplemented!().read()) });
             }
         )));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_std_vector_int__std_allocator_int____int__std_function_bool__const_std_vector_int__std_allocator_int___ref__const_std_vector_int__std_allocator_int___ref____std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { comp .as_pointer()  } , )  )) ;
         let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!((48usize >= 48usize), "sizeof(vc) >= sizeof(Comp)");;
+        const _: () = assert!((32usize >= 32usize), "sizeof(vc) >= sizeof(Comp)");;
         unimplemented!();
-        unimplemented!();
+        (*m.borrow_mut()) = {
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            std_flat_map_std_vector_int__std_allocator_int____int__std_function_bool__const_std_vector_int__std_allocator_int___ref__const_std_vector_int__std_allocator_int___ref____std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { __tmp_0.as_pointer() } , )
+        };
         unimplemented!();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));

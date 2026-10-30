@@ -57,7 +57,7 @@ pub unsafe fn base_0(i: *const cpp17_output_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -84,24 +84,54 @@ impl cpp17_output_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn base_1(i: *const random_access_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -128,9 +158,20 @@ impl random_access_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut random_access_iterator_int_ptr_,
+    ) -> *mut random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut random_access_iterator_int_ptr_));
+    }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -141,6 +182,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -1204,8 +1263,8 @@ pub unsafe fn test_one_12(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1264,8 +1323,8 @@ pub unsafe fn test_one_14(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1316,8 +1375,8 @@ pub unsafe fn test_one_15(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1368,8 +1427,8 @@ pub unsafe fn test_one_16(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1428,8 +1487,8 @@ pub unsafe fn test_one_17(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1480,8 +1539,8 @@ pub unsafe fn test_one_18(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1540,8 +1599,8 @@ pub unsafe fn test_one_19(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1592,8 +1651,8 @@ pub unsafe fn test_one_20(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1644,8 +1703,8 @@ pub unsafe fn test_one_21(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1696,8 +1755,8 @@ pub unsafe fn test_one_22(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1756,8 +1815,8 @@ pub unsafe fn test_one_23(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1808,8 +1867,8 @@ pub unsafe fn test_one_24(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1868,8 +1927,8 @@ pub unsafe fn test_one_25(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1920,8 +1979,8 @@ pub unsafe fn test_one_26(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -1972,8 +2031,8 @@ pub unsafe fn test_one_27(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2032,8 +2091,8 @@ pub unsafe fn test_one_28(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2084,8 +2143,8 @@ pub unsafe fn test_one_29(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2144,8 +2203,8 @@ pub unsafe fn test_one_30(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2196,8 +2255,8 @@ pub unsafe fn test_one_31(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2248,8 +2307,8 @@ pub unsafe fn test_one_32(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2300,8 +2359,8 @@ pub unsafe fn test_one_33(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2360,8 +2419,8 @@ pub unsafe fn test_one_34(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2412,8 +2471,8 @@ pub unsafe fn test_one_35(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2470,8 +2529,8 @@ pub unsafe fn test_one_36(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2522,8 +2581,8 @@ pub unsafe fn test_one_37(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2574,8 +2633,8 @@ pub unsafe fn test_one_38(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2632,8 +2691,8 @@ pub unsafe fn test_one_39(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2684,8 +2743,8 @@ pub unsafe fn test_one_40(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2742,8 +2801,8 @@ pub unsafe fn test_one_41(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2794,8 +2853,8 @@ pub unsafe fn test_one_42(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2846,8 +2905,8 @@ pub unsafe fn test_one_43(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2898,8 +2957,8 @@ pub unsafe fn test_one_44(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -2956,8 +3015,8 @@ pub unsafe fn test_one_45(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3008,8 +3067,8 @@ pub unsafe fn test_one_46(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3068,8 +3127,8 @@ pub unsafe fn test_one_47(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3120,8 +3179,8 @@ pub unsafe fn test_one_48(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3172,8 +3231,8 @@ pub unsafe fn test_one_49(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3232,8 +3291,8 @@ pub unsafe fn test_one_50(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3284,8 +3343,8 @@ pub unsafe fn test_one_51(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3344,8 +3403,8 @@ pub unsafe fn test_one_52(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3396,8 +3455,8 @@ pub unsafe fn test_one_53(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3448,8 +3507,8 @@ pub unsafe fn test_one_54(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3500,8 +3559,8 @@ pub unsafe fn test_one_55(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3560,8 +3619,8 @@ pub unsafe fn test_one_56(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3612,8 +3671,8 @@ pub unsafe fn test_one_57(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3672,8 +3731,8 @@ pub unsafe fn test_one_58(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3724,8 +3783,8 @@ pub unsafe fn test_one_59(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3776,8 +3835,8 @@ pub unsafe fn test_one_60(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3836,8 +3895,8 @@ pub unsafe fn test_one_61(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3888,8 +3947,8 @@ pub unsafe fn test_one_62(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -3948,8 +4007,8 @@ pub unsafe fn test_one_63(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4000,8 +4059,8 @@ pub unsafe fn test_one_64(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4052,8 +4111,8 @@ pub unsafe fn test_one_65(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4104,8 +4163,8 @@ pub unsafe fn test_one_66(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4164,8 +4223,8 @@ pub unsafe fn test_one_67(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4216,8 +4275,8 @@ pub unsafe fn test_one_68(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4274,8 +4333,8 @@ pub unsafe fn test_one_69(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4326,8 +4385,8 @@ pub unsafe fn test_one_70(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4378,8 +4437,8 @@ pub unsafe fn test_one_71(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4436,8 +4495,8 @@ pub unsafe fn test_one_72(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4488,8 +4547,8 @@ pub unsafe fn test_one_73(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4546,8 +4605,8 @@ pub unsafe fn test_one_74(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4598,8 +4657,8 @@ pub unsafe fn test_one_75(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4650,8 +4709,8 @@ pub unsafe fn test_one_76(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4702,8 +4761,8 @@ pub unsafe fn test_one_77(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4760,8 +4819,8 @@ pub unsafe fn test_one_78(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4812,8 +4871,8 @@ pub unsafe fn test_one_79(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4872,8 +4931,8 @@ pub unsafe fn test_one_80(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4924,8 +4983,8 @@ pub unsafe fn test_one_81(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -4976,8 +5035,8 @@ pub unsafe fn test_one_82(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5036,8 +5095,8 @@ pub unsafe fn test_one_83(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5088,8 +5147,8 @@ pub unsafe fn test_one_84(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5148,8 +5207,8 @@ pub unsafe fn test_one_85(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5200,8 +5259,8 @@ pub unsafe fn test_one_86(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5252,8 +5311,8 @@ pub unsafe fn test_one_87(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5304,8 +5363,8 @@ pub unsafe fn test_one_88(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5364,8 +5423,8 @@ pub unsafe fn test_one_89(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5416,8 +5475,8 @@ pub unsafe fn test_one_90(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5476,8 +5535,8 @@ pub unsafe fn test_one_91(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5528,8 +5587,8 @@ pub unsafe fn test_one_92(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5580,8 +5639,8 @@ pub unsafe fn test_one_93(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5640,8 +5699,8 @@ pub unsafe fn test_one_94(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5692,8 +5751,8 @@ pub unsafe fn test_one_95(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5752,8 +5811,8 @@ pub unsafe fn test_one_96(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5804,8 +5863,8 @@ pub unsafe fn test_one_97(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5856,8 +5915,8 @@ pub unsafe fn test_one_98(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5908,8 +5967,8 @@ pub unsafe fn test_one_99(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -5968,8 +6027,8 @@ pub unsafe fn test_one_100(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6020,8 +6079,8 @@ pub unsafe fn test_one_101(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6078,8 +6137,8 @@ pub unsafe fn test_one_102(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6130,8 +6189,8 @@ pub unsafe fn test_one_103(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6182,8 +6241,8 @@ pub unsafe fn test_one_104(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6240,8 +6299,8 @@ pub unsafe fn test_one_105(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6292,8 +6351,8 @@ pub unsafe fn test_one_106(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6350,8 +6409,8 @@ pub unsafe fn test_one_107(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6402,8 +6461,8 @@ pub unsafe fn test_one_108(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6454,8 +6513,8 @@ pub unsafe fn test_one_109(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6506,8 +6565,8 @@ pub unsafe fn test_one_110(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6564,8 +6623,8 @@ pub unsafe fn test_one_111(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6616,8 +6675,8 @@ pub unsafe fn test_one_112(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6674,8 +6733,8 @@ pub unsafe fn test_one_113(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6726,8 +6785,8 @@ pub unsafe fn test_one_114(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6778,8 +6837,8 @@ pub unsafe fn test_one_115(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6836,8 +6895,8 @@ pub unsafe fn test_one_116(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6888,8 +6947,8 @@ pub unsafe fn test_one_117(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6946,8 +7005,8 @@ pub unsafe fn test_one_118(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -6998,8 +7057,8 @@ pub unsafe fn test_one_119(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7050,8 +7109,8 @@ pub unsafe fn test_one_120(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7102,8 +7161,8 @@ pub unsafe fn test_one_121(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7160,8 +7219,8 @@ pub unsafe fn test_one_122(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7212,8 +7271,8 @@ pub unsafe fn test_one_123(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7270,8 +7329,8 @@ pub unsafe fn test_one_124(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7322,8 +7381,8 @@ pub unsafe fn test_one_125(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7374,8 +7433,8 @@ pub unsafe fn test_one_126(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7432,8 +7491,8 @@ pub unsafe fn test_one_127(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7484,8 +7543,8 @@ pub unsafe fn test_one_128(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7542,8 +7601,8 @@ pub unsafe fn test_one_129(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7594,8 +7653,8 @@ pub unsafe fn test_one_130(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7646,8 +7705,8 @@ pub unsafe fn test_one_131(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7698,8 +7757,8 @@ pub unsafe fn test_one_132(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7756,8 +7815,8 @@ pub unsafe fn test_one_133(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7808,8 +7867,8 @@ pub unsafe fn test_one_134(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7864,8 +7923,8 @@ pub unsafe fn test_one_135(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7916,8 +7975,8 @@ pub unsafe fn test_one_136(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -7968,8 +8027,8 @@ pub unsafe fn test_one_137(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8024,8 +8083,8 @@ pub unsafe fn test_one_138(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8076,8 +8135,8 @@ pub unsafe fn test_one_139(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8132,8 +8191,8 @@ pub unsafe fn test_one_140(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8184,8 +8243,8 @@ pub unsafe fn test_one_141(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8236,8 +8295,8 @@ pub unsafe fn test_one_142(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8288,8 +8347,8 @@ pub unsafe fn test_one_143(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8344,8 +8403,8 @@ pub unsafe fn test_one_144(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8396,8 +8455,8 @@ pub unsafe fn test_one_145(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8452,8 +8511,8 @@ pub unsafe fn test_one_146(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8500,8 +8559,8 @@ pub unsafe fn test_one_147(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8548,8 +8607,8 @@ pub unsafe fn test_one_148(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8604,8 +8663,8 @@ pub unsafe fn test_one_149(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8652,8 +8711,8 @@ pub unsafe fn test_one_150(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8708,8 +8767,8 @@ pub unsafe fn test_one_151(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8756,8 +8815,8 @@ pub unsafe fn test_one_152(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8804,8 +8863,8 @@ pub unsafe fn test_one_153(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8852,8 +8911,8 @@ pub unsafe fn test_one_154(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8908,8 +8967,8 @@ pub unsafe fn test_one_155(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -8956,8 +9015,8 @@ pub unsafe fn test_one_156(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9012,8 +9071,8 @@ pub unsafe fn test_one_157(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9060,8 +9119,8 @@ pub unsafe fn test_one_158(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9108,8 +9167,8 @@ pub unsafe fn test_one_159(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9164,8 +9223,8 @@ pub unsafe fn test_one_160(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9212,8 +9271,8 @@ pub unsafe fn test_one_161(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9268,8 +9327,8 @@ pub unsafe fn test_one_162(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9316,8 +9375,8 @@ pub unsafe fn test_one_163(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9364,8 +9423,8 @@ pub unsafe fn test_one_164(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9412,8 +9471,8 @@ pub unsafe fn test_one_165(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9468,8 +9527,8 @@ pub unsafe fn test_one_166(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9516,8 +9575,8 @@ pub unsafe fn test_one_167(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9570,8 +9629,8 @@ pub unsafe fn test_one_168(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9618,8 +9677,8 @@ pub unsafe fn test_one_169(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9666,8 +9725,8 @@ pub unsafe fn test_one_170(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9720,8 +9779,8 @@ pub unsafe fn test_one_171(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9768,8 +9827,8 @@ pub unsafe fn test_one_172(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9822,8 +9881,8 @@ pub unsafe fn test_one_173(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9870,8 +9929,8 @@ pub unsafe fn test_one_174(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9918,8 +9977,8 @@ pub unsafe fn test_one_175(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -9966,8 +10025,8 @@ pub unsafe fn test_one_176(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10020,8 +10079,8 @@ pub unsafe fn test_one_177(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10068,8 +10127,8 @@ pub unsafe fn test_one_178(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10124,8 +10183,8 @@ pub unsafe fn test_one_179(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10172,8 +10231,8 @@ pub unsafe fn test_one_180(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10220,8 +10279,8 @@ pub unsafe fn test_one_181(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10276,8 +10335,8 @@ pub unsafe fn test_one_182(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10324,8 +10383,8 @@ pub unsafe fn test_one_183(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10380,8 +10439,8 @@ pub unsafe fn test_one_184(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10428,8 +10487,8 @@ pub unsafe fn test_one_185(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10476,8 +10535,8 @@ pub unsafe fn test_one_186(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10524,8 +10583,8 @@ pub unsafe fn test_one_187(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10580,8 +10639,8 @@ pub unsafe fn test_one_188(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10628,8 +10687,8 @@ pub unsafe fn test_one_189(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10684,8 +10743,8 @@ pub unsafe fn test_one_190(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10732,8 +10791,8 @@ pub unsafe fn test_one_191(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10780,8 +10839,8 @@ pub unsafe fn test_one_192(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10836,8 +10895,8 @@ pub unsafe fn test_one_193(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10884,8 +10943,8 @@ pub unsafe fn test_one_194(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10940,8 +10999,8 @@ pub unsafe fn test_one_195(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -10988,8 +11047,8 @@ pub unsafe fn test_one_196(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11036,8 +11095,8 @@ pub unsafe fn test_one_197(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11084,8 +11143,8 @@ pub unsafe fn test_one_198(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11140,8 +11199,8 @@ pub unsafe fn test_one_199(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11188,8 +11247,8 @@ pub unsafe fn test_one_200(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11242,8 +11301,8 @@ pub unsafe fn test_one_201(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11290,8 +11349,8 @@ pub unsafe fn test_one_202(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11338,8 +11397,8 @@ pub unsafe fn test_one_203(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11392,8 +11451,8 @@ pub unsafe fn test_one_204(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11440,8 +11499,8 @@ pub unsafe fn test_one_205(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11494,8 +11553,8 @@ pub unsafe fn test_one_206(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11542,8 +11601,8 @@ pub unsafe fn test_one_207(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11590,8 +11649,8 @@ pub unsafe fn test_one_208(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11638,8 +11697,8 @@ pub unsafe fn test_one_209(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11692,8 +11751,8 @@ pub unsafe fn test_one_210(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11740,8 +11799,8 @@ pub unsafe fn test_one_211(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11796,8 +11855,8 @@ pub unsafe fn test_one_212(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11844,8 +11903,8 @@ pub unsafe fn test_one_213(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11892,8 +11951,8 @@ pub unsafe fn test_one_214(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11948,8 +12007,8 @@ pub unsafe fn test_one_215(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -11996,8 +12055,8 @@ pub unsafe fn test_one_216(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12052,8 +12111,8 @@ pub unsafe fn test_one_217(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12100,8 +12159,8 @@ pub unsafe fn test_one_218(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12148,8 +12207,8 @@ pub unsafe fn test_one_219(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12196,8 +12255,8 @@ pub unsafe fn test_one_220(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12252,8 +12311,8 @@ pub unsafe fn test_one_221(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12300,8 +12359,8 @@ pub unsafe fn test_one_222(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12356,8 +12415,8 @@ pub unsafe fn test_one_223(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12404,8 +12463,8 @@ pub unsafe fn test_one_224(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12452,8 +12511,8 @@ pub unsafe fn test_one_225(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12508,8 +12567,8 @@ pub unsafe fn test_one_226(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12556,8 +12615,8 @@ pub unsafe fn test_one_227(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12612,8 +12671,8 @@ pub unsafe fn test_one_228(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12660,8 +12719,8 @@ pub unsafe fn test_one_229(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12708,8 +12767,8 @@ pub unsafe fn test_one_230(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12756,8 +12815,8 @@ pub unsafe fn test_one_231(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12812,8 +12871,8 @@ pub unsafe fn test_one_232(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12860,8 +12919,8 @@ pub unsafe fn test_one_233(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12914,8 +12973,8 @@ pub unsafe fn test_one_234(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -12962,8 +13021,8 @@ pub unsafe fn test_one_235(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13010,8 +13069,8 @@ pub unsafe fn test_one_236(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13064,8 +13123,8 @@ pub unsafe fn test_one_237(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13112,8 +13171,8 @@ pub unsafe fn test_one_238(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13166,8 +13225,8 @@ pub unsafe fn test_one_239(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13214,8 +13273,8 @@ pub unsafe fn test_one_240(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13262,8 +13321,8 @@ pub unsafe fn test_one_241(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13310,8 +13369,8 @@ pub unsafe fn test_one_242(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13364,8 +13423,8 @@ pub unsafe fn test_one_243(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13412,8 +13471,8 @@ pub unsafe fn test_one_244(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13466,8 +13525,8 @@ pub unsafe fn test_one_245(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13514,8 +13573,8 @@ pub unsafe fn test_one_246(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13562,8 +13621,8 @@ pub unsafe fn test_one_247(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13616,8 +13675,8 @@ pub unsafe fn test_one_248(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13664,8 +13723,8 @@ pub unsafe fn test_one_249(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13718,8 +13777,8 @@ pub unsafe fn test_one_250(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13766,8 +13825,8 @@ pub unsafe fn test_one_251(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13814,8 +13873,8 @@ pub unsafe fn test_one_252(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13862,8 +13921,8 @@ pub unsafe fn test_one_253(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13916,8 +13975,8 @@ pub unsafe fn test_one_254(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -13964,8 +14023,8 @@ pub unsafe fn test_one_255(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14018,8 +14077,8 @@ pub unsafe fn test_one_256(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14066,8 +14125,8 @@ pub unsafe fn test_one_257(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14114,8 +14173,8 @@ pub unsafe fn test_one_258(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14168,8 +14227,8 @@ pub unsafe fn test_one_259(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14216,8 +14275,8 @@ pub unsafe fn test_one_260(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14270,8 +14329,8 @@ pub unsafe fn test_one_261(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14318,8 +14377,8 @@ pub unsafe fn test_one_262(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14366,8 +14425,8 @@ pub unsafe fn test_one_263(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14414,8 +14473,8 @@ pub unsafe fn test_one_264(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14468,8 +14527,8 @@ pub unsafe fn test_one_265(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14516,8 +14575,8 @@ pub unsafe fn test_one_266(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14568,8 +14627,8 @@ pub unsafe fn test_one_267(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14616,8 +14675,8 @@ pub unsafe fn test_one_268(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14664,8 +14723,8 @@ pub unsafe fn test_one_269(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14716,8 +14775,8 @@ pub unsafe fn test_one_270(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14764,8 +14823,8 @@ pub unsafe fn test_one_271(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14816,8 +14875,8 @@ pub unsafe fn test_one_272(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14864,8 +14923,8 @@ pub unsafe fn test_one_273(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14912,8 +14971,8 @@ pub unsafe fn test_one_274(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -14960,8 +15019,8 @@ pub unsafe fn test_one_275(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15012,8 +15071,8 @@ pub unsafe fn test_one_276(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15060,8 +15119,8 @@ pub unsafe fn test_one_277(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15119,8 +15178,8 @@ pub unsafe fn test_one_278(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15170,8 +15229,8 @@ pub unsafe fn test_one_279(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15221,8 +15280,8 @@ pub unsafe fn test_one_280(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15280,8 +15339,8 @@ pub unsafe fn test_one_281(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15331,8 +15390,8 @@ pub unsafe fn test_one_282(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15390,8 +15449,8 @@ pub unsafe fn test_one_283(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15441,8 +15500,8 @@ pub unsafe fn test_one_284(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15492,8 +15551,8 @@ pub unsafe fn test_one_285(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15543,8 +15602,8 @@ pub unsafe fn test_one_286(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15602,8 +15661,8 @@ pub unsafe fn test_one_287(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15653,8 +15712,8 @@ pub unsafe fn test_one_288(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15712,8 +15771,8 @@ pub unsafe fn test_one_289(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15763,8 +15822,8 @@ pub unsafe fn test_one_290(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15814,8 +15873,8 @@ pub unsafe fn test_one_291(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15873,8 +15932,8 @@ pub unsafe fn test_one_292(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15924,8 +15983,8 @@ pub unsafe fn test_one_293(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -15983,8 +16042,8 @@ pub unsafe fn test_one_294(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16034,8 +16093,8 @@ pub unsafe fn test_one_295(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16085,8 +16144,8 @@ pub unsafe fn test_one_296(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16136,8 +16195,8 @@ pub unsafe fn test_one_297(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16195,8 +16254,8 @@ pub unsafe fn test_one_298(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16246,8 +16305,8 @@ pub unsafe fn test_one_299(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16303,8 +16362,8 @@ pub unsafe fn test_one_300(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16354,8 +16413,8 @@ pub unsafe fn test_one_301(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16405,8 +16464,8 @@ pub unsafe fn test_one_302(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16462,8 +16521,8 @@ pub unsafe fn test_one_303(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16513,8 +16572,8 @@ pub unsafe fn test_one_304(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16570,8 +16629,8 @@ pub unsafe fn test_one_305(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16621,8 +16680,8 @@ pub unsafe fn test_one_306(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16672,8 +16731,8 @@ pub unsafe fn test_one_307(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16723,8 +16782,8 @@ pub unsafe fn test_one_308(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16780,8 +16839,8 @@ pub unsafe fn test_one_309(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16831,8 +16890,8 @@ pub unsafe fn test_one_310(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16890,8 +16949,8 @@ pub unsafe fn test_one_311(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16941,8 +17000,8 @@ pub unsafe fn test_one_312(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -16992,8 +17051,8 @@ pub unsafe fn test_one_313(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17051,8 +17110,8 @@ pub unsafe fn test_one_314(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17102,8 +17161,8 @@ pub unsafe fn test_one_315(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17161,8 +17220,8 @@ pub unsafe fn test_one_316(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17212,8 +17271,8 @@ pub unsafe fn test_one_317(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17263,8 +17322,8 @@ pub unsafe fn test_one_318(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17314,8 +17373,8 @@ pub unsafe fn test_one_319(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17373,8 +17432,8 @@ pub unsafe fn test_one_320(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17424,8 +17483,8 @@ pub unsafe fn test_one_321(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17483,8 +17542,8 @@ pub unsafe fn test_one_322(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17534,8 +17593,8 @@ pub unsafe fn test_one_323(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17585,8 +17644,8 @@ pub unsafe fn test_one_324(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17644,8 +17703,8 @@ pub unsafe fn test_one_325(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17695,8 +17754,8 @@ pub unsafe fn test_one_326(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17754,8 +17813,8 @@ pub unsafe fn test_one_327(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17805,8 +17864,8 @@ pub unsafe fn test_one_328(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17856,8 +17915,8 @@ pub unsafe fn test_one_329(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17907,8 +17966,8 @@ pub unsafe fn test_one_330(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -17966,8 +18025,8 @@ pub unsafe fn test_one_331(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18017,8 +18076,8 @@ pub unsafe fn test_one_332(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18074,8 +18133,8 @@ pub unsafe fn test_one_333(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18125,8 +18184,8 @@ pub unsafe fn test_one_334(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18176,8 +18235,8 @@ pub unsafe fn test_one_335(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18233,8 +18292,8 @@ pub unsafe fn test_one_336(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18284,8 +18343,8 @@ pub unsafe fn test_one_337(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18341,8 +18400,8 @@ pub unsafe fn test_one_338(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18392,8 +18451,8 @@ pub unsafe fn test_one_339(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18443,8 +18502,8 @@ pub unsafe fn test_one_340(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18494,8 +18553,8 @@ pub unsafe fn test_one_341(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18551,8 +18610,8 @@ pub unsafe fn test_one_342(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18602,8 +18661,8 @@ pub unsafe fn test_one_343(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18661,8 +18720,8 @@ pub unsafe fn test_one_344(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18712,8 +18771,8 @@ pub unsafe fn test_one_345(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18763,8 +18822,8 @@ pub unsafe fn test_one_346(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18822,8 +18881,8 @@ pub unsafe fn test_one_347(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18873,8 +18932,8 @@ pub unsafe fn test_one_348(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18932,8 +18991,8 @@ pub unsafe fn test_one_349(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -18983,8 +19042,8 @@ pub unsafe fn test_one_350(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19034,8 +19093,8 @@ pub unsafe fn test_one_351(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19085,8 +19144,8 @@ pub unsafe fn test_one_352(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19144,8 +19203,8 @@ pub unsafe fn test_one_353(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19195,8 +19254,8 @@ pub unsafe fn test_one_354(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19254,8 +19313,8 @@ pub unsafe fn test_one_355(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19305,8 +19364,8 @@ pub unsafe fn test_one_356(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19356,8 +19415,8 @@ pub unsafe fn test_one_357(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19415,8 +19474,8 @@ pub unsafe fn test_one_358(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19466,8 +19525,8 @@ pub unsafe fn test_one_359(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19525,8 +19584,8 @@ pub unsafe fn test_one_360(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19576,8 +19635,8 @@ pub unsafe fn test_one_361(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19627,8 +19686,8 @@ pub unsafe fn test_one_362(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19678,8 +19737,8 @@ pub unsafe fn test_one_363(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19737,8 +19796,8 @@ pub unsafe fn test_one_364(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19788,8 +19847,8 @@ pub unsafe fn test_one_365(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19845,8 +19904,8 @@ pub unsafe fn test_one_366(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19896,8 +19955,8 @@ pub unsafe fn test_one_367(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -19947,8 +20006,8 @@ pub unsafe fn test_one_368(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20004,8 +20063,8 @@ pub unsafe fn test_one_369(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20055,8 +20114,8 @@ pub unsafe fn test_one_370(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20112,8 +20171,8 @@ pub unsafe fn test_one_371(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20163,8 +20222,8 @@ pub unsafe fn test_one_372(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20214,8 +20273,8 @@ pub unsafe fn test_one_373(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20265,8 +20324,8 @@ pub unsafe fn test_one_374(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20322,8 +20381,8 @@ pub unsafe fn test_one_375(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20373,8 +20432,8 @@ pub unsafe fn test_one_376(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20430,8 +20489,8 @@ pub unsafe fn test_one_377(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20481,8 +20540,8 @@ pub unsafe fn test_one_378(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20532,8 +20591,8 @@ pub unsafe fn test_one_379(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20589,8 +20648,8 @@ pub unsafe fn test_one_380(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20640,8 +20699,8 @@ pub unsafe fn test_one_381(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20697,8 +20756,8 @@ pub unsafe fn test_one_382(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20748,8 +20807,8 @@ pub unsafe fn test_one_383(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20799,8 +20858,8 @@ pub unsafe fn test_one_384(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20850,8 +20909,8 @@ pub unsafe fn test_one_385(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20907,8 +20966,8 @@ pub unsafe fn test_one_386(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -20958,8 +21017,8 @@ pub unsafe fn test_one_387(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21015,8 +21074,8 @@ pub unsafe fn test_one_388(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21066,8 +21125,8 @@ pub unsafe fn test_one_389(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21117,8 +21176,8 @@ pub unsafe fn test_one_390(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21174,8 +21233,8 @@ pub unsafe fn test_one_391(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21225,8 +21284,8 @@ pub unsafe fn test_one_392(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21282,8 +21341,8 @@ pub unsafe fn test_one_393(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21333,8 +21392,8 @@ pub unsafe fn test_one_394(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21384,8 +21443,8 @@ pub unsafe fn test_one_395(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21435,8 +21494,8 @@ pub unsafe fn test_one_396(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21492,8 +21551,8 @@ pub unsafe fn test_one_397(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21543,8 +21602,8 @@ pub unsafe fn test_one_398(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21598,8 +21657,8 @@ pub unsafe fn test_one_399(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21649,8 +21708,8 @@ pub unsafe fn test_one_400(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21700,8 +21759,8 @@ pub unsafe fn test_one_401(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21755,8 +21814,8 @@ pub unsafe fn test_one_402(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21806,8 +21865,8 @@ pub unsafe fn test_one_403(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21861,8 +21920,8 @@ pub unsafe fn test_one_404(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21912,8 +21971,8 @@ pub unsafe fn test_one_405(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -21963,8 +22022,8 @@ pub unsafe fn test_one_406(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -22014,8 +22073,8 @@ pub unsafe fn test_one_407(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();
@@ -22069,8 +22128,8 @@ pub unsafe fn test_one_408(
     mut expected_false: (),
 ) {
     const _: () = assert!(true, "N2 + N3 == N1");;
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((unimplemented!()) as isize);
+    let mut begin: () = unimplemented!();
+    let mut end: () = unimplemented!().offset((unimplemented!()) as isize);
     {
         let mut out1: () = unimplemented!();
         let mut out2: () = unimplemented!();

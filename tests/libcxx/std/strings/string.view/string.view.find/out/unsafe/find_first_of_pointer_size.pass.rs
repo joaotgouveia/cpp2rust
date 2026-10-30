@@ -25,6 +25,20 @@ impl constexpr_char_traits_char_ {
         }
         return len;
     }
+    pub unsafe fn find(mut s: *const (), mut n: (), a: *const ()) -> *const () {
+        'loop_: while (n != 0) {
+            if (unsafe {
+                let _c1: () = (*s);
+                let _c2: () = (*a);
+                constexpr_char_traits_char_::eq(_c1, _c2)
+            }) {
+                return s;
+            }
+            s.prefix_inc();
+            n.prefix_dec();
+        }
+        return std::ptr::null();
+    }
 }
 pub unsafe fn test_0(s: *const (), mut str: *const (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;

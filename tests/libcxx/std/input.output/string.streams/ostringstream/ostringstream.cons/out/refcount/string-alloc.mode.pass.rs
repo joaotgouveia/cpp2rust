@@ -178,27 +178,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -220,9 +204,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_char__rebind_char_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_char_ {
@@ -271,9 +252,6 @@ impl Default for test_allocator_char_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_wchar_t__rebind_wchar_t_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_wchar_t_ {
@@ -343,41 +321,16 @@ impl Tag_X {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct operator_hijacker {}
-impl std::cmp::Ord for operator_hijacker {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_hijackerImpl::operator_lt(
-                &Rc::new(RefCell::new(operator_hijacker {})).as_pointer(),
-                Rc::new(RefCell::new(operator_hijacker {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_hijackerImpl::operator_lt(
-                &Rc::new(RefCell::new(operator_hijacker {})).as_pointer(),
-                Rc::new(RefCell::new(operator_hijacker {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for operator_hijacker {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_hijackerImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for operator_hijacker {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for operator_hijacker {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_hijackerImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for operator_hijacker {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_hijackerImpl::operator_eq(
-                &Rc::new(RefCell::new(operator_hijacker {})).as_pointer(),
-                Rc::new(RefCell::new(operator_hijacker {})).as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for operator_hijacker {}
 const _: () = assert!(
     true,
     "std::is_trivially_copyable<operator_hijacker>::value &&     //\n                  std::is_copy_constructible<operator_hijacker>::value && //\n                  std::is_move_constructible<operator_hijacker>::value && //\n                  std::is_copy_assignable<operator_hijacker>::value &&    //\n                  std::is_move_assignable<operator_hijacker>::value"

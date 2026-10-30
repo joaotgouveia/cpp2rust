@@ -27,11 +27,8 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
-    const _: () = assert!(true, "std::is_same<UT, signed char>::value");;
-    const _: () = assert!(
-        true,
-        "E::none == ME(0) &&\n          E::not_found == ME(-1) &&\n          E::regular == ME(1) &&\n          E::directory == ME(2) &&\n          E::symlink == ME(3) &&\n          E::block == ME(4) &&\n          E::character == ME(5) &&\n          E::fifo == ME(6) &&\n          E::socket == ME(7) &&\n          E::unknown == ME(8)"
-    );;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

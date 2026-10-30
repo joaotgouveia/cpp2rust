@@ -108,23 +108,11 @@ impl Copyable {
         Self { data_: 0_() }
     }
 }
-impl std::cmp::PartialEq for Copyable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(Copyable {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Copyable {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Copyable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for Copyable {}
 impl Default for Copyable {
     fn default() -> Self {
         { Copyable::new() }

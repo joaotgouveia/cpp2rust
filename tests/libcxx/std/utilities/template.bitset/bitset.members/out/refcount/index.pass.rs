@@ -10,56 +10,47 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_0__0___true___std___bit_reference_std___bitset_0__0___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_0__reference__std_bitset_0__reference_ {}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_1__1___true___std___bit_reference_std___bitset_1__1___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_1__reference__std_bitset_1__reference_ {}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_1__31___true___std___bit_reference_std___bitset_1__31___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_31__reference__std_bitset_31__reference_ {}
 pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_1__32___true___std___bit_reference_std___bitset_1__32___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_32__reference__std_bitset_32__reference_ {}
 pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_1__33___true___std___bit_reference_std___bitset_1__33___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_33__reference__std_bitset_33__reference_ {}
 pub type anon_5 = ();
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_1__63___true___std___bit_reference_std___bitset_1__63___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_63__reference__std_bitset_63__reference_ {}
 pub type anon_6 = ();
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_1__64___true___std___bit_reference_std___bitset_1__64___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_64__reference__std_bitset_64__reference_ {}
 pub type anon_7 = ();
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_2__65___true___std___bit_reference_std___bitset_2__65___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_65__reference__std_bitset_65__reference_ {}
 pub type anon_8 = ();
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std___bit_reference_std___bitset_16__1000___true___std___bit_reference_std___bitset_16__1000___true__
-{}
+pub struct test_macros_detail_is_same_std_bitset_1000__reference__std_bitset_1000__reference_ {}
 pub fn get_test_cases_9() -> () {
     let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

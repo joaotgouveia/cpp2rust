@@ -31,7 +31,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let mut from: () = unimplemented!();
     let mut expected: () = unimplemented!();
     let mut to: () = unimplemented!();
-    let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
+    let f: Ptr<()> = unimplemented!();
     let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut from_next: Ptr<()> = Ptr::<()>::null();
     let mut to_next: Ptr<()> = Ptr::<()>::null();

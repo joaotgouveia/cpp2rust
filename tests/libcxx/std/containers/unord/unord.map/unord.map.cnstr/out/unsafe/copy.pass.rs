@@ -32,14 +32,18 @@ impl std::cmp::PartialEq for test_equal_to_int_ {
 }
 impl std::cmp::Eq for test_equal_to_int_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_hash_int_ {
     data_: (),
 }
 impl test_hash_int_ {
-    pub unsafe fn new(mut data: ()) -> Self {
+    pub unsafe fn new(mut data: Option<()>) -> Self {
+        let mut data: () = data.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self { data_: data };
         this
+    }
+    pub unsafe fn operator_call(&self, x: *const ()) -> () {
+        return unimplemented!();
     }
     pub unsafe fn operator_eq(&self, c: *const test_hash_int_) -> () {
         return ((self.data_) == ((*c).data_));
@@ -51,6 +55,11 @@ impl std::cmp::PartialEq for test_hash_int_ {
     }
 }
 impl std::cmp::Eq for test_hash_int_ {}
+impl Default for test_hash_int_ {
+    fn default() -> Self {
+        unsafe { test_hash_int_::new(None) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
@@ -81,20 +90,7 @@ pub static mut disable_default_constructor_4: std::cell::LazyCell<()> =
 pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
-impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *mut (),
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-}
+impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -103,50 +99,7 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *const ()) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *const (),
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { ptr_ : *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , }
-impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_inc_8 ( &mut self , ) -> *mut min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  .prefix_inc() ;
- return & mut ( * ( self as *mut min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
- } pub unsafe fn operator_index ( &self , mut n : () , ) -> *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_  . offset ( ( n ) as isize ) )  ;
- } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__int__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___
-{}
-impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { pub unsafe fn allocate ( &mut self , mut n : () , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { return min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn deallocate ( &mut self , mut p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
- } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
@@ -331,7 +284,7 @@ pub unsafe fn operator_eq_9(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
+#[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_std_pair_const_int__int__ {
     data_: (),
     id_: (),
@@ -344,19 +297,6 @@ impl test_allocator_std_pair_const_int__int__ {
             id_: 0_(),
             stats_: std::ptr::null_mut(),
         };
-        this
-    }
-    pub unsafe fn copy_from(a: *const test_allocator_std_pair_const_int__int__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -383,15 +323,6 @@ impl std::cmp::PartialEq for test_allocator_std_pair_const_int__int__ {
     }
 }
 impl std::cmp::Eq for test_allocator_std_pair_const_int__int__ {}
-impl Clone for test_allocator_std_pair_const_int__int__ {
-    fn clone(&self) -> Self {
-        unsafe {
-            test_allocator_std_pair_const_int__int__::copy_from(
-                self as *const test_allocator_std_pair_const_int__int__,
-            )
-        }
-    }
-}
 impl Default for test_allocator_std_pair_const_int__int__ {
     fn default() -> Self {
         unsafe {
@@ -471,6 +402,7 @@ pub unsafe fn test_alloc_11() {
         let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -478,8 +410,7 @@ pub unsafe fn test_alloc_11() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -489,24 +420,24 @@ pub unsafe fn test_alloc_11() {
         let mut arr: [(); 1] = [unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
@@ -527,6 +458,7 @@ pub unsafe fn test_alloc_12() {
         let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -534,8 +466,7 @@ pub unsafe fn test_alloc_12() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -545,24 +476,24 @@ pub unsafe fn test_alloc_12() {
         let mut arr: [(); 1] = [unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
@@ -620,8 +551,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_13() });
     return 0_();
 }
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_1);
     std::cell::LazyCell::force(&*&raw const alloc_count_2);

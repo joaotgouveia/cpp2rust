@@ -36,52 +36,13 @@ pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
 pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *mut (),
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-}
+impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *const ()) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *const (),
-    ) -> min_pointer_const_std_pair_const_int__double___std_integral_constant_unsigned_long__0__
-    {
-        return min_pointer_const_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__double__ {}
@@ -124,7 +85,7 @@ pub unsafe fn test_4() -> () {
         'loop_: while ((j) <= (unimplemented!())) {
             unimplemented!();
             unimplemented!();
-            (*unimplemented!()).second = 2.5_f64;
+            (*i).second = 2.5_f64;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -137,7 +98,7 @@ pub unsafe fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*unimplemented!()).second = 1_();
+            (*i).second = 1_();
             unimplemented!();
             j.prefix_dec();
         }
@@ -234,7 +195,7 @@ pub unsafe fn test_4() -> () {
         'loop_: while ((j) <= (unimplemented!())) {
             unimplemented!();
             unimplemented!();
-            ( * ( unsafe { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . second   = 2.5_f64  ;
+            (*i).second = 2.5_f64;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -247,7 +208,7 @@ pub unsafe fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ( * ( unsafe { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . second   = 1_()  ;
+            (*i).second = 1_();
             unimplemented!();
             j.prefix_dec();
         }

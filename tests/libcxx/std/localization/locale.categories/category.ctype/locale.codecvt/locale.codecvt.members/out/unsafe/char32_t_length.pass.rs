@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
-    let f: *const () = (unsafe { use_facet_0(&l) });
+    let f: *const () = unimplemented!();
     let mut mbs: () = unimplemented!();
     let from: [(); 10] = std::mem::transmute(*b"some text\0");
     unimplemented!();

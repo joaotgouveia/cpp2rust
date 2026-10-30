@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut vec_: () = unimplemented!();
+    let vec_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(vec.get_allocator() == &a)");;
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));

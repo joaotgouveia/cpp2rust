@@ -39,7 +39,7 @@ pub const e_non_class_enum_c: e_non_class = 12;
 pub type e_int = ();
 pub const e_int_enum_min: e_int = -2147483648;
 pub const e_int_enum_max: e_int = 2147483647;
-pub type e_bool = u8;
+pub type e_bool = ();
 pub const e_bool_f: e_bool = 0;
 pub const e_bool_t: e_bool = 1;
 #[repr(C)]

@@ -20,7 +20,7 @@ pub fn f1_0(first: RandomAccessIterator<i32>, last: RandomAccessIterator<i32>) {
 }
 pub fn f1_1(mut first: Ptr<i32>, mut last: Ptr<i32>) {
     {
-        let __first = first;
+        let __first = (first).clone();
         let __n = last.iter_distance(&__first);
         let mut __order: Vec<isize> = (0..__n).collect();
         __order.sort_by(|&__x, &__y| cpp_cmp(&__first.iter_at(__x), &__first.iter_at(__y)));

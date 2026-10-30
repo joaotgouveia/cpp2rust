@@ -45,11 +45,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         });
         (unsafe {
             let mut _token: () = unimplemented!();
-            check_random_device_valid_2(&mut _token)
+            check_random_device_invalid_3(&mut _token)
         });
         (unsafe {
             let mut _token: () = unimplemented!();
-            check_random_device_valid_2(&mut _token)
+            check_random_device_invalid_3(&mut _token)
         });
         (unsafe {
             let mut _token: () = unimplemented!();

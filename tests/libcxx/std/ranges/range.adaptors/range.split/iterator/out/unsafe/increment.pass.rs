@@ -54,23 +54,61 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_eq_0(
     x: *const forward_iterator_int_ptr_,
@@ -228,39 +266,19 @@ impl Default for bidirectional_iterator_int_ptr_ {
         unsafe { bidirectional_iterator_int_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_add_6(
-    mut x: random_access_iterator_int_ptr_,
-    mut n: (),
-) -> random_access_iterator_int_ptr_ {
-    (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
-    return random_access_iterator_int_ptr_::move_from({ &mut x });
-}
-pub unsafe fn operator_sub_7(
-    mut x: random_access_iterator_int_ptr_,
-    mut n: (),
-) -> random_access_iterator_int_ptr_ {
-    (unsafe { random_access_iterator_int_ptr_::operator_sub_assign(&mut x, n) });
-    return random_access_iterator_int_ptr_::move_from({ &mut x });
-}
-pub unsafe fn operator_sub_8(
-    mut x: random_access_iterator_int_ptr_,
-    mut y: random_access_iterator_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_6(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_10(
+pub unsafe fn operator_ne_7(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
-pub unsafe fn base_11(i: *const random_access_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_8(i: *const random_access_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -291,20 +309,6 @@ impl random_access_iterator_int_ptr_ {
         self.it_.prefix_inc();
         return &mut (*(self as *mut random_access_iterator_int_ptr_));
     }
-    pub unsafe fn operator_add_assign(
-        &mut self,
-        mut n: (),
-    ) -> *mut random_access_iterator_int_ptr_ {
-        self.it_ = (self.it_).wrapping_add(n as usize);
-        return &mut (*(self as *mut random_access_iterator_int_ptr_));
-    }
-    pub unsafe fn operator_sub_assign(
-        &mut self,
-        mut n: (),
-    ) -> *mut random_access_iterator_int_ptr_ {
-        self.it_ = (self.it_).wrapping_sub(n as usize);
-        return &mut (*(self as *mut random_access_iterator_int_ptr_));
-    }
     pub unsafe fn move_from(_a0: *mut random_access_iterator_int_ptr_) -> Self {
         let mut this = Self {
             it_: (*_a0).it_,
@@ -327,7 +331,7 @@ impl random_access_iterator_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_6(
                 self as *const random_access_iterator_int_ptr_,
                 other as *const random_access_iterator_int_ptr_,
             )
@@ -341,7 +345,7 @@ impl Default for random_access_iterator_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -353,44 +357,42 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub unsafe fn operator_add_12(
-    mut x: contiguous_iterator_int_ptr_,
-    mut n: (),
-) -> contiguous_iterator_int_ptr_ {
-    (unsafe { contiguous_iterator_int_ptr_::operator_add_assign(&mut x, n) });
-    return contiguous_iterator_int_ptr_::move_from({ &mut x });
-}
-pub unsafe fn operator_sub_13(
-    mut x: contiguous_iterator_int_ptr_,
-    mut n: (),
-) -> contiguous_iterator_int_ptr_ {
-    (unsafe { contiguous_iterator_int_ptr_::operator_sub_assign(&mut x, n) });
-    return contiguous_iterator_int_ptr_::move_from({ &mut x });
-}
-pub unsafe fn operator_sub_14(
-    mut x: contiguous_iterator_int_ptr_,
-    mut y: contiguous_iterator_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_15(
+pub unsafe fn operator_eq_9(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_16(
+pub unsafe fn operator_ne_10(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
-pub unsafe fn base_17(i: *const contiguous_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_11(i: *const contiguous_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -421,14 +423,6 @@ impl contiguous_iterator_int_ptr_ {
         self.it_.prefix_inc();
         return &mut (*(self as *mut contiguous_iterator_int_ptr_));
     }
-    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut contiguous_iterator_int_ptr_ {
-        self.it_ = (self.it_).wrapping_add(n as usize);
-        return &mut (*(self as *mut contiguous_iterator_int_ptr_));
-    }
-    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut contiguous_iterator_int_ptr_ {
-        self.it_ = (self.it_).wrapping_sub(n as usize);
-        return &mut (*(self as *mut contiguous_iterator_int_ptr_));
-    }
     pub unsafe fn move_from(_a0: *mut contiguous_iterator_int_ptr_) -> Self {
         let mut this = Self {
             it_: (*_a0).it_,
@@ -451,7 +445,7 @@ impl contiguous_iterator_int_ptr_ {
 impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_15(
+            operator_eq_9(
                 self as *const contiguous_iterator_int_ptr_,
                 other as *const contiguous_iterator_int_ptr_,
             )
@@ -464,7 +458,7 @@ impl Default for contiguous_iterator_int_ptr_ {
         unsafe { contiguous_iterator_int_ptr_::new_1() }
     }
 }
-pub unsafe fn base_18(mut i: *mut ()) -> *mut () {
+pub unsafe fn base_12(mut i: *mut ()) -> *mut () {
     return i;
 }
 #[repr(C)]
@@ -550,7 +544,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_19(
+pub unsafe fn operator_eq_13(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -565,7 +559,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_19(
+            operator_eq_13(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -587,33 +581,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_20(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_14(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_21(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_15(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_20(_i, n)
+        operator_add_14(_i, n)
     });
 }
-pub unsafe fn iter_swap_22(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_16(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_23(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_17(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_24(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_25(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -697,7 +691,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_25(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -707,7 +701,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_24(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -775,7 +769,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn testOne_26() {
+pub unsafe fn testOne_20() {
     let make_subrange: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -878,7 +872,7 @@ pub unsafe fn testOne_26() {
         }
     }
 }
-pub unsafe fn testOne_27() {
+pub unsafe fn testOne_21() {
     let make_subrange: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -981,7 +975,7 @@ pub unsafe fn testOne_27() {
         }
     }
 }
-pub unsafe fn testOne_28() {
+pub unsafe fn testOne_22() {
     let make_subrange: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -1084,7 +1078,7 @@ pub unsafe fn testOne_28() {
         }
     }
 }
-pub unsafe fn testOne_29() {
+pub unsafe fn testOne_23() {
     let make_subrange: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -1187,7 +1181,7 @@ pub unsafe fn testOne_29() {
         }
     }
 }
-pub unsafe fn testOne_30() {
+pub unsafe fn testOne_24() {
     let make_subrange: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -1290,12 +1284,12 @@ pub unsafe fn testOne_30() {
         }
     }
 }
-pub unsafe fn test_31() -> () {
-    (unsafe { testOne_26() });
-    (unsafe { testOne_27() });
-    (unsafe { testOne_28() });
-    (unsafe { testOne_29() });
-    (unsafe { testOne_30() });
+pub unsafe fn test_25() -> () {
+    (unsafe { testOne_20() });
+    (unsafe { testOne_21() });
+    (unsafe { testOne_22() });
+    (unsafe { testOne_23() });
+    (unsafe { testOne_24() });
     return true;
 }
 pub fn main() {
@@ -1314,7 +1308,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_31() });
+    (unsafe { test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

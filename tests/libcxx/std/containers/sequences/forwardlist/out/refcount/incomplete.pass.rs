@@ -54,7 +54,7 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_B_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct A {
     #[offset(0)]
@@ -67,7 +67,16 @@ pub struct A {
     #[byte_size(8)]
     pub it2: (),
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+impl A {
+    pub fn move_from(_a0: Ptr<A>) -> Self {
+        Self {
+            d: unimplemented!(),
+            it: field!(_a0, it).with_mut(std::mem::take),
+            it2: field!(_a0, it2).with_mut(std::mem::take),
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct B {
     #[offset(0)]
@@ -79,6 +88,15 @@ pub struct B {
     #[offset(16)]
     #[byte_size(8)]
     pub it2: (),
+}
+impl B {
+    pub fn move_from(_a0: Ptr<B>) -> Self {
+        Self {
+            d: unimplemented!(),
+            it: { (*_a0.upgrade().deref()).it.clone() },
+            it2: { (*_a0.upgrade().deref()).it2.clone() },
+        }
+    }
 }
 pub fn test_4() -> () {
     {
@@ -117,6 +135,28 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     return 0_();
+}
+pub trait AImpl {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
+}
+impl AImpl for Ptr<A> {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return (*self).clone();
+    }
+}
+pub trait BImpl {
+    fn move_assign(&self, _a0: Ptr<B>) -> Ptr<B>;
+}
+impl BImpl for Ptr<B> {
+    fn move_assign(&self, _a0: Ptr<B>) -> Ptr<B> {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub trait min_allocator_B_Impl {
     fn allocate(&self, mut n: ()) -> min_pointer_B__std_integral_constant_unsigned_long__0__ {

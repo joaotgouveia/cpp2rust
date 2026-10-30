@@ -18,8 +18,8 @@ pub fn test_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ get_1(t.as_pointer()) }).write(0_());
-    ({ get_2(t.as_pointer()) }).write(0_());
+    unimplemented!().write(0_());
+    unimplemented!().write(0_());
     unimplemented!();
     unimplemented!();
     return true;
@@ -48,8 +48,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test()");;
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i1: () = (({ get_3(t1.as_pointer()) }).read());
-        let mut d1: () = (({ get_4(t1.as_pointer()) }).read());
+        let mut i1: () = (unimplemented!().read());
+        let mut d1: () = (unimplemented!().read());
         const _: () = assert!(true, "i1 == 1");;
         const _: () = assert!(true, "d1 == 3.14");;
     }

@@ -969,7 +969,7 @@ pub unsafe fn test_hash_variant_duplicate_elements_197() {
     let v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

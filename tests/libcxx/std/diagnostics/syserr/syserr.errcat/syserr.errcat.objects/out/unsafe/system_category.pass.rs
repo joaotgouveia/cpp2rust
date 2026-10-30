@@ -39,12 +39,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let e_cat1: *const () = unimplemented!();
         let mut e_cond: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
@@ -53,7 +53,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let msg: () = unimplemented!();
         let is_newlib: () = false;
         &(is_newlib);
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
     {

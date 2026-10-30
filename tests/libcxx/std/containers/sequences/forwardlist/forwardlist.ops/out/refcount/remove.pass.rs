@@ -48,21 +48,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_5(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_6(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !({
-        let _x: min_pointer_void__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_5(_x, y)
-    });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -71,28 +56,22 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+pub fn do_remove_5(l: Ptr<()>, value: Ptr<()>, mut expected: ()) {
+    let mut old_size: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn do_remove_6(l: Ptr<()>, value: Ptr<S>, mut expected: ()) {
+    let mut old_size: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
 pub fn do_remove_7(l: Ptr<()>, value: Ptr<()>, mut expected: ()) {
-    let mut old_size: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-}
-pub fn do_remove_8(l: Ptr<()>, value: Ptr<S>, mut expected: ()) {
-    let mut old_size: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-}
-pub fn do_remove_9(l: Ptr<()>, value: Ptr<()>, mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -115,23 +94,11 @@ impl S {
         }
     }
 }
-impl std::cmp::PartialEq for S {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            SImpl::operator_eq(
-                &Rc::new(RefCell::new(S {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(S {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for S {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for S {}
 impl Clone for S {
     fn clone(&self) -> Self {
         let __src: Value<S> = Rc::new(RefCell::new(S {
@@ -140,7 +107,96 @@ impl Clone for S {
         S::copy_from(__src.as_pointer())
     }
 }
-pub fn test_10() -> () {
+pub fn test_8() -> () {
+    {
+        let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
+        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            let _value: Value<()> = Rc::new(RefCell::new(0_()));
+            do_remove_5(c1.as_pointer(), _value.as_pointer(), 4_())
+        });
+        unimplemented!();
+    }
+    {
+        let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            let _value: Value<()> = Rc::new(RefCell::new(0_()));
+            do_remove_5(c1.as_pointer(), _value.as_pointer(), 4_())
+        });
+        unimplemented!();
+    }
+    {
+        let mut t1: [(); 3] = [5_(), 5_(), 5_()];
+        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            let _value: Value<()> = Rc::new(RefCell::new(0_()));
+            do_remove_5(c1.as_pointer(), _value.as_pointer(), 0_())
+        });
+        unimplemented!();
+    }
+    {
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            let _value: Value<()> = Rc::new(RefCell::new(0_()));
+            do_remove_5(c1.as_pointer(), _value.as_pointer(), 0_())
+        });
+        unimplemented!();
+    }
+    {
+        let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
+        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            let _value: Value<()> = Rc::new(RefCell::new(0_()));
+            do_remove_5(c1.as_pointer(), _value.as_pointer(), 1_())
+        });
+        unimplemented!();
+    }
+    {
+        let mut t1: [(); 7] = [1_(), 2_(), 1_(), 3_(), 5_(), 8_(), 11_()];
+        let mut t2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            let _l: Ptr<()> = c1.as_pointer();
+            let _value: Ptr<()> = unimplemented!();
+            do_remove_5(_l, _value, 2_())
+        });
+        unimplemented!();
+    }
+    {
+        let mut t1: [(); 8] = [1_(), 2_(), 1_(), 3_(), 5_(), 8_(), 11_(), 1_()];
+        let mut t2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ip: Ptr<()> = unimplemented!();
+        'loop_: while ({ (ip).clone() } != { unimplemented!() }) {
+            unimplemented!();
+        }
+        ({
+            let _l: Ptr<()> = c.as_pointer();
+            let _value: Ptr<S> = unimplemented!();
+            do_remove_6(_l, _value, 3_())
+        });
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ip: Ptr<()> = unimplemented!();
+        'loop_: while ({ (ip).clone() } != { unimplemented!() }) {
+            unimplemented!();
+            unimplemented!();
+            {
+                ip.prefix_inc();
+                unimplemented!()
+            };
+        }
+        unimplemented!();
+    }
     {
         let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
@@ -190,95 +246,6 @@ pub fn test_10() -> () {
         ({
             let _value: Value<()> = Rc::new(RefCell::new(0_()));
             do_remove_7(c1.as_pointer(), _value.as_pointer(), 1_())
-        });
-        unimplemented!();
-    }
-    {
-        let mut t1: [(); 7] = [1_(), 2_(), 1_(), 3_(), 5_(), 8_(), 11_()];
-        let mut t2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let _l: Ptr<()> = c1.as_pointer();
-            let _value: Ptr<()> = unimplemented!();
-            do_remove_7(_l, _value, 2_())
-        });
-        unimplemented!();
-    }
-    {
-        let mut t1: [(); 8] = [1_(), 2_(), 1_(), 3_(), 5_(), 8_(), 11_(), 1_()];
-        let mut t2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ip: Ptr<()> = unimplemented!();
-        'loop_: while ({ (ip).clone() } != { unimplemented!() }) {
-            unimplemented!();
-        }
-        ({
-            let _l: Ptr<()> = c.as_pointer();
-            let _value: Ptr<S> = unimplemented!();
-            do_remove_8(_l, _value, 3_())
-        });
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ip: Ptr<()> = unimplemented!();
-        'loop_: while ({ (ip).clone() } != { unimplemented!() }) {
-            unimplemented!();
-            unimplemented!();
-            {
-                ip.prefix_inc();
-                unimplemented!()
-            };
-        }
-        unimplemented!();
-    }
-    {
-        let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let _value: Value<()> = Rc::new(RefCell::new(0_()));
-            do_remove_9(c1.as_pointer(), _value.as_pointer(), 4_())
-        });
-        unimplemented!();
-    }
-    {
-        let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let _value: Value<()> = Rc::new(RefCell::new(0_()));
-            do_remove_9(c1.as_pointer(), _value.as_pointer(), 4_())
-        });
-        unimplemented!();
-    }
-    {
-        let mut t1: [(); 3] = [5_(), 5_(), 5_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let _value: Value<()> = Rc::new(RefCell::new(0_()));
-            do_remove_9(c1.as_pointer(), _value.as_pointer(), 0_())
-        });
-        unimplemented!();
-    }
-    {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let _value: Value<()> = Rc::new(RefCell::new(0_()));
-            do_remove_9(c1.as_pointer(), _value.as_pointer(), 0_())
-        });
-        unimplemented!();
-    }
-    {
-        let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let _value: Value<()> = Rc::new(RefCell::new(0_()));
-            do_remove_9(c1.as_pointer(), _value.as_pointer(), 1_())
         });
         unimplemented!();
     }

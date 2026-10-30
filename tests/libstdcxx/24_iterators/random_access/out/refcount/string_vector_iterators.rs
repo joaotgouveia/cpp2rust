@@ -67,11 +67,7 @@ impl __gnu_test_copy_constructor {
     pub fn mark_call() {
         (*count__1.with(Value::clone).borrow_mut()).postfix_inc();
         if (count__1.with(|rc| *rc.borrow()) == throw_on__2.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"copy_constructor::mark_call",
-                ))
-            });
+            unimplemented!();
         }
     }
     pub fn reset() {
@@ -87,24 +83,20 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub fn count() -> () {
-        return count__4.with(|rc| *rc.borrow());
+        return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__4.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__4.with(|rc| *rc.borrow()) == throw_on__5.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"assignment_operator::mark_call",
-                ))
-            });
+        (*count__3.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__3.with(|rc| *rc.borrow()) == throw_on__4.with(|rc| *rc.borrow())) {
+            unimplemented!();
         }
     }
     pub fn reset() {
-        count__4.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__5.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__5.with(|rc| *rc.borrow_mut() = count);
+        throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -112,13 +104,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub fn count() -> () {
-        return _M_count_6.with(|rc| *rc.borrow());
+        return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*_M_count_6.with(Value::clone).borrow_mut()).postfix_inc();
+        (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -132,7 +124,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
         let mut id: () =
-            id.unwrap_or_else(|| (*next_id__7.with(Value::clone).borrow_mut()).postfix_dec());
+            id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
@@ -161,65 +153,16 @@ impl __gnu_test_copy_tracker {
         ({ __gnu_test_destructor::reset() });
     }
 }
-impl std::cmp::Ord for __gnu_test_copy_tracker {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for __gnu_test_copy_tracker {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for __gnu_test_copy_tracker {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for __gnu_test_copy_tracker {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_9(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for __gnu_test_copy_tracker {}
 impl Clone for __gnu_test_copy_tracker {
     fn clone(&self) -> Self {
         let __src: Value<__gnu_test_copy_tracker> =
@@ -235,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_9(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -251,256 +194,256 @@ pub struct __gnu_test_semaphore {
     #[offset(0)]
     sem_set_: (),
     #[offset(4)]
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub fn string_stuff_10() -> () {
-    let mut failures: () = 0_();
+pub fn string_stuff_9() -> () {
+    let failures: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: () = unimplemented!();
     let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('b' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('b' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('c' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('e' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('d' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('d' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('c' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut d1: () = unimplemented!();
     d1 = unimplemented!();
     if (d1 != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut v1: () = unimplemented!();
     v1 = (unimplemented!().read());
     if (v1 != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let r1: () = unimplemented!();
     if ((r1.read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     r1.write(('x' as ()));
     if ((r1.read()) != ('x' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     r1.write(('a' as ()));
-    if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+    if ((!(unimplemented!())) != true) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let i3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!().write(('x' as ()));
     if ((unimplemented!().read()) != ('x' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!().write(('e' as ()));
     unimplemented!().write(('x' as ()));
     if ((unimplemented!().read()) != ('x' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!().write(('c' as ()));
     let ci1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('b' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('b' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('c' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('e' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('d' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('d' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('c' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let ci2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut d2: () = unimplemented!();
     d2 = unimplemented!();
     if (d2 != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut v2: () = unimplemented!();
     v2 = (unimplemented!().read());
     if (v2 != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let r2: () = unimplemented!();
     if ((r2.read()) != ('a' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if ((unimplemented!()) != true) {
-        failures.prefix_inc();
-    }
-    if ((unimplemented!()) != false) {
-        failures.prefix_inc();
-    }
-    if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+    if ((!(unimplemented!())) != true) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
+    }
+    if ((unimplemented!()) != true) {
+        (*failures.borrow_mut()).prefix_inc();
+    }
+    if ((unimplemented!()) != false) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     let ci3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('c' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != ('e' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let ci4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
+    }
+    if ((!(unimplemented!())) != false) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
-    }
-    if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut cs: () = unimplemented!();
     let ci5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != ('A' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    return failures;
+    return (*failures.borrow());
 }
-pub fn vector_stuff_11() -> () {
-    let mut failures: () = 0_();
+pub fn vector_stuff_10() -> () {
+    let failures: Value<()> = Rc::new(RefCell::new(0_()));
     let mut v: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -509,276 +452,276 @@ pub fn vector_stuff_11() -> () {
     unimplemented!();
     let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 2_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 2_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 3_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 4_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 4_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 3_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut d1: () = unimplemented!();
     d1 = unimplemented!();
     if (d1 != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut v1: () = unimplemented!();
     v1 = (unimplemented!().read());
     if (v1 != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let r1: () = unimplemented!();
     if ((r1.read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     r1.write(9_());
     if ((r1.read()) != 9_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     r1.write(1_());
-    if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+    if ((!(unimplemented!())) != true) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let i3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!().write(9_());
     if ((unimplemented!().read()) != 9_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!().write(5_());
     unimplemented!().write(9_());
     if ((unimplemented!().read()) != 9_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!().write(3_());
     let ci1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 2_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 2_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 3_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 4_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 4_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 3_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!().read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let ci2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut d2: () = unimplemented!();
     d2 = unimplemented!();
     if (d2 != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut v2: () = unimplemented!();
     v2 = (unimplemented!().read());
     if (v2 != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let r2: () = unimplemented!();
     if ((r2.read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if ((unimplemented!()) != true) {
-        failures.prefix_inc();
-    }
-    if ((unimplemented!()) != false) {
-        failures.prefix_inc();
-    }
-    if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+    if ((!(unimplemented!())) != true) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
+    }
+    if ((unimplemented!()) != true) {
+        (*failures.borrow_mut()).prefix_inc();
+    }
+    if ((unimplemented!()) != false) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     let ci3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 3_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!().read()) != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let ci4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
+    }
+    if ((!(unimplemented!())) != false) {
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
-    }
-    if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     unimplemented!();
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != false) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     if ((unimplemented!()) != true) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut cv: () = unimplemented!();
     let ci5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != 1_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let ivs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((elem!(unimplemented!(), 1_()).read()) != ('b' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
-    return failures;
+    return (*failures.borrow());
 }
-pub fn reverse_stuff_12() -> () {
-    let mut failures: () = 0_();
+pub fn reverse_stuff_11() -> () {
+    let failures: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: () = unimplemented!();
     let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if ((unimplemented!().read()) != ('e' as ())) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut d: () = unimplemented!();
     d = unimplemented!();
     if (d != 5_()) {
-        failures.prefix_inc();
+        (*failures.borrow_mut()).prefix_inc();
     }
     let mut cs: () = unimplemented!();
     let cri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        failures.prefix_inc();
+    if !(unimplemented!()) {
+        (*failures.borrow_mut()).prefix_inc();
     }
-    return failures;
+    return (*failures.borrow());
 }
-pub fn wrong_stuff_13() -> () {
-    let mut failures: () = 0_();
-    return failures;
+pub fn wrong_stuff_12() -> () {
+    let failures: Value<()> = Rc::new(RefCell::new(0_()));
+    return (*failures.borrow());
 }
-pub fn test6642_14() -> () {
+pub fn test6642_13() -> () {
     let mut s: () = unimplemented!();
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cit: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -790,27 +733,16 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut failures: () = 0_();
-    failures += ({ string_stuff_10() });
-    failures += ({ vector_stuff_11() });
-    failures += ({ reverse_stuff_12() });
-    failures += ({ wrong_stuff_13() });
-    failures += ({ test6642_14() });
+    failures += ({ string_stuff_9() });
+    failures += ({ vector_stuff_10() });
+    failures += ({ reverse_stuff_11() });
+    failures += ({ wrong_stuff_12() });
+    failures += ({ test6642_13() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(failures == 0_()) {
-            ({
-                __builtin_fprintf_15(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"string_vector_iterators.cc")).into(),
-                        (605_()).into(),
-                        (Ptr::<()>::from_string_literal(b"int main()")).into(),
-                        (Ptr::<()>::from_string_literal(b"failures == 0")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -820,74 +752,50 @@ impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_16() }) as ::libc::pid_t));
-        field!(this, sem_set_)
-            .write(({ semget_17(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+        field!(this, pid_).write(unimplemented!());
+        field!(this, sem_set_).write(unimplemented!());
         if (this.with(|__s| __s.sem_set_) == -1_()) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not obtain semaphore set",
-                ))
-            });
+            unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (({
-            semctl_18(
-                this.with(|__s| __s.sem_set_),
-                0_(),
-                16_(),
-                Box::new([((*val.borrow()).clone()).into()]),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not initialize semaphore",
-                ))
-            });
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_19(size: Option<()>) {
+pub fn set_memory_limits_14(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_20((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_20((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_20((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn set_file_limit_22(mut size: ()) {
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+pub fn set_file_limit_15(mut size: ()) {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_20((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn verify_demangle_23(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_16(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = ({
-        __cxa_demangle_24(
-            (mangled).clone(),
-            Ptr::<()>::null(),
-            Ptr::<()>::null(),
-            (status.as_pointer()),
-        )
-    });
+    let mut demangled: Ptr<()> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
@@ -913,13 +821,13 @@ pub fn verify_demangle_23(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if unimplemented!() {
-        ({ __throw_runtime_error_3((s).clone()) });
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_17(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -936,19 +844,17 @@ pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                ({
-                    __builtin_fprintf_15 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_26(
+pub fn run_tests_wrapped_env_18(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -968,7 +874,7 @@ pub fn run_tests_wrapped_env_26(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 thread_local!(
@@ -981,16 +887,16 @@ thread_local!(
     static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__5: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static _M_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static next_id__7: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -1003,7 +909,7 @@ impl __gnu_test_semun {
     pub fn val(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<semid_ds>> {
+    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
@@ -1018,7 +924,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_28(
+pub fn test_tm_19(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1028,20 +934,20 @@ pub fn test_tm_28(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_29.with(|rc| *rc.borrow());
+) -> () {
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_20.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_29: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -1115,49 +1021,20 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_16() })) {
-            ({
-                semctl_18(
-                    (*self).with(|__s| __s.sem_set_),
-                    0_(),
-                    0_(),
-                    Box::new([((*val.borrow()).clone()).into()]),
-                )
-            });
+        if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
+            unimplemented!();
         }
     }
     fn signal(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_27(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not signal semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
     fn wait(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_27(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not wait for semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
 }
@@ -1165,8 +1042,8 @@ pub fn __cpp2rust_init_globals() {
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());
     let _ = throw_on__2.with(|_| ());
-    let _ = count__4.with(|_| ());
-    let _ = throw_on__5.with(|_| ());
-    let _ = _M_count_6.with(|_| ());
-    let _ = next_id__7.with(|_| ());
+    let _ = count__3.with(|_| ());
+    let _ = throw_on__4.with(|_| ());
+    let _ = _M_count_5.with(|_| ());
+    let _ = next_id__6.with(|_| ());
 }

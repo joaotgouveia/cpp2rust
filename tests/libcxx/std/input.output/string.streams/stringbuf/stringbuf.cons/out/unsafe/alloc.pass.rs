@@ -184,9 +184,6 @@ pub unsafe fn operator_eq_4(x: *const test_allocator_char_, y: *const test_alloc
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_char__rebind_char_ {}
-#[repr(C)]
 #[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_char_ {
     data_: (),
@@ -283,9 +280,6 @@ pub unsafe fn operator_eq_5(
 ) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_wchar_t__rebind_wchar_t_ {}
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_wchar_t_ {

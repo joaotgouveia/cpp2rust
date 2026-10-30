@@ -6,18 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct constexpr_char_traits_char_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct constexpr_char_traits_wchar_t_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct constexpr_char_traits_char16_t_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct constexpr_char_traits_char32_t_ {}
 pub fn test_string_typedef_0() {
     const _: () = assert!(true, "std::is_same<StdStr, PmrStr>::value");;
     const _: () = assert!(true, "std::is_same<PmrStr, PmrTypedef>::value");;

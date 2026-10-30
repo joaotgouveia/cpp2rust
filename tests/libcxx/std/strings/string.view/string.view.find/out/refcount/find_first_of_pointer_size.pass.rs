@@ -25,6 +25,21 @@ impl constexpr_char_traits_char_ {
         }
         return (*len.borrow());
     }
+    pub fn find(s: Ptr<()>, mut n: (), a: Ptr<()>) -> Ptr<()> {
+        let s: Value<Ptr<()>> = Rc::new(RefCell::new(s));
+        'loop_: while (n != 0) {
+            if ({
+                let _c1: () = ((*s.borrow()).read());
+                let _c2: () = (a.read());
+                constexpr_char_traits_char_::eq(_c1, _c2)
+            }) {
+                return (*s.borrow()).clone();
+            }
+            (*s.borrow_mut()).prefix_inc();
+            n.prefix_dec();
+        }
+        return Ptr::<()>::null();
+    }
 }
 pub fn test_0(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;

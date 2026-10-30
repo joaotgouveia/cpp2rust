@@ -60,12 +60,11 @@ pub fn operator_eq_4(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
-impl std::cmp::PartialEq for min_allocator_std_pair_const_int__double__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
+impl CppEq for min_allocator_std_pair_const_int__double__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_std_pair_const_int__double__ {}
 pub fn test_5() -> () {
     {
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([

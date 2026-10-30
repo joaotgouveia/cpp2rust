@@ -173,31 +173,43 @@ pub unsafe fn classify_2(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+pub unsafe fn test_6(c: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+pub unsafe fn test_7(c: *const (), mut x: ()) {
     unimplemented!();
 }
 pub unsafe fn test_8(c: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn test_9(c: *const (), mut x: ()) {
-    unimplemented!();
+pub unsafe fn test_9() {
+    (unsafe {
+        let mut _c: () = unimplemented!();
+        test_6(&mut _c, unimplemented!())
+    });
 }
-pub unsafe fn test_10(c: *const (), mut x: ()) {
-    unimplemented!();
+pub unsafe fn test_10() {
+    (unsafe {
+        let mut _c: () = unimplemented!();
+        test_7(&mut _c, unimplemented!())
+    });
 }
 pub unsafe fn test_11() {
     (unsafe {
@@ -205,32 +217,20 @@ pub unsafe fn test_11() {
         test_8(&mut _c, unimplemented!())
     });
 }
-pub unsafe fn test_12() {
-    (unsafe {
-        let mut _c: () = unimplemented!();
-        test_9(&mut _c, unimplemented!())
-    });
-}
-pub unsafe fn test_13() {
-    (unsafe {
-        let mut _c: () = unimplemented!();
-        test_10(&mut _c, unimplemented!())
-    });
-}
-pub unsafe fn test_edges_14() {
+pub unsafe fn test_edges_12() {
     let N: () = (::std::mem::size_of::<[(); 153]>() as ())
         .wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         let mut r: () = unimplemented!();
         let mut z: () = unimplemented!();
-        if (unsafe { isnan_4(unimplemented!()) }) {
+        if unimplemented!() {
             unimplemented!();
         } else {
             unimplemented!();
             unimplemented!();
         }
-        if (unsafe { isnan_4(unimplemented!()) }) {
+        if unimplemented!() {
             unimplemented!();
         } else {
             unimplemented!();
@@ -255,10 +255,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_9() });
+    (unsafe { test_10() });
     (unsafe { test_11() });
-    (unsafe { test_12() });
-    (unsafe { test_13() });
-    (unsafe { test_edges_14() });
+    (unsafe { test_edges_12() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

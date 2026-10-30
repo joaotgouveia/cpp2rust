@@ -14,13 +14,7 @@ pub unsafe fn test_constexpr_0() -> () {
     if ((23_()) != (unimplemented!())) || ((v) != (67_())) {
         return false;
     }
-    if ((67_())
-        != (unsafe {
-            let mut ___new_value: () = unimplemented!();
-            exchange_1(&mut v, &mut ___new_value)
-        }))
-        || ((v) != (0_()))
-    {
+    if ((67_()) != (unimplemented!())) || ((v) != (0_())) {
         return false;
     }
     return true;
@@ -37,7 +31,7 @@ impl TestNoexcept_true__false_ {}
 #[derive(FnPtrArg, Default)]
 pub struct TestNoexcept_false__true_ {}
 impl TestNoexcept_false__true_ {}
-pub unsafe fn test_noexcept_2() -> () {
+pub unsafe fn test_noexcept_1() -> () {
     {
         let mut x: () = 42_();
         const _: () = assert!(true, "");;

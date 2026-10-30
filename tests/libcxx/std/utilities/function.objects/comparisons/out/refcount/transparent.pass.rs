@@ -25,7 +25,7 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
-struct is_transparent_std_less_std_string___two {
+struct is_transparent_std_less_std_basic_string_char____two {
     #[offset(0)]
     pub lx: (),
     #[offset(1)]
@@ -33,7 +33,8 @@ struct is_transparent_std_less_std_string___two {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct is_transparent_std_less_std_string__ {}
+pub struct is_transparent_std_less_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_2: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
 );
@@ -59,7 +60,7 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
-struct is_transparent_std_less_equal_std_string___two {
+struct is_transparent_std_less_equal_std_basic_string_char____two {
     #[offset(0)]
     pub lx: (),
     #[offset(1)]
@@ -67,7 +68,8 @@ struct is_transparent_std_less_equal_std_string___two {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct is_transparent_std_less_equal_std_string__ {}
+pub struct is_transparent_std_less_equal_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_5: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
 );
@@ -93,7 +95,7 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
-struct is_transparent_std_equal_to_std_string___two {
+struct is_transparent_std_equal_to_std_basic_string_char____two {
     #[offset(0)]
     pub lx: (),
     #[offset(1)]
@@ -101,7 +103,8 @@ struct is_transparent_std_equal_to_std_string___two {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct is_transparent_std_equal_to_std_string__ {}
+pub struct is_transparent_std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_8: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
 );
@@ -127,7 +130,7 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
-struct is_transparent_std_not_equal_to_std_string___two {
+struct is_transparent_std_not_equal_to_std_basic_string_char____two {
     #[offset(0)]
     pub lx: (),
     #[offset(1)]
@@ -135,7 +138,8 @@ struct is_transparent_std_not_equal_to_std_string___two {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct is_transparent_std_not_equal_to_std_string__ {}
+pub struct is_transparent_std_not_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_11: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
 );
@@ -161,7 +165,7 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
-struct is_transparent_std_greater_std_string___two {
+struct is_transparent_std_greater_std_basic_string_char____two {
     #[offset(0)]
     pub lx: (),
     #[offset(1)]
@@ -169,7 +173,8 @@ struct is_transparent_std_greater_std_string___two {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct is_transparent_std_greater_std_string__ {}
+pub struct is_transparent_std_greater_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_14: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
 );
@@ -195,7 +200,7 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
-struct is_transparent_std_greater_equal_std_string___two {
+struct is_transparent_std_greater_equal_std_basic_string_char____two {
     #[offset(0)]
     pub lx: (),
     #[offset(1)]
@@ -203,7 +208,8 @@ struct is_transparent_std_greater_equal_std_string___two {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct is_transparent_std_greater_equal_std_string__ {}
+pub struct is_transparent_std_greater_equal_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_17: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
 );

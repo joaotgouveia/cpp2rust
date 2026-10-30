@@ -26,11 +26,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut v1: () = unimplemented!();
     let mut v2: () = unimplemented!();
     let mut ztv: () = (unsafe {
-        let mut ___fun: () = unimplemented!();
+        let mut ___f: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_transform_0))(
-            &mut ___fun,
-            &mut v1,
-            &mut v2,
+            &mut ___f, &mut v1, &mut v2,
         )
     });
     let mut expected: () = unimplemented!();

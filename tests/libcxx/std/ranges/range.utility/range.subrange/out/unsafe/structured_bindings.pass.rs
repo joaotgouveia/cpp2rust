@@ -21,74 +21,74 @@ pub unsafe fn test_sized_subrange_2() {
     let mut r: () = unimplemented!();
     unimplemented!();
     {
-        let mut __decomp_3: () = r.clone();
-        let mut first: () = (unsafe { get_4(&mut __decomp_3) });
-        let mut last: () = (unsafe { get_5(&mut __decomp_3) });
+        let mut __decomp_3: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut __decomp_6: () = r;
-        let mut first: () = (unsafe { get_4(&mut __decomp_6) });
-        let mut last: () = (unsafe { get_5(&mut __decomp_6) });
+        let mut __decomp_4: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut __decomp_7: () = r.clone();
-        let mut first: () = (unsafe { get_4(&mut __decomp_7) });
-        let mut last: () = (unsafe { get_5(&mut __decomp_7) });
+        let mut __decomp_5: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut __decomp_8: () = r.clone();
-        let mut first: () = (unsafe { get_4(&mut __decomp_8) });
-        let mut last: () = (unsafe { get_5(&mut __decomp_8) });
+        let mut __decomp_6: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_unsized_subrange_9() {
+pub unsafe fn test_unsized_subrange_7() {
     let mut a: [(); 4] = [1_(), 2_(), 3_(), 4_()];
     let mut r: () = unimplemented!();
     unimplemented!();
     {
-        let mut __decomp_10: () = r.clone();
-        let mut first: () = (unsafe { get_11(&mut __decomp_10) });
-        let mut last: () = (unsafe { get_12(&mut __decomp_10) });
+        let mut __decomp_8: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut __decomp_13: () = r;
-        let mut first: () = (unsafe { get_11(&mut __decomp_13) });
-        let mut last: () = (unsafe { get_12(&mut __decomp_13) });
+        let mut __decomp_9: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut __decomp_14: () = r.clone();
-        let mut first: () = (unsafe { get_11(&mut __decomp_14) });
-        let mut last: () = (unsafe { get_12(&mut __decomp_14) });
+        let mut __decomp_10: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut __decomp_15: () = r.clone();
-        let mut first: () = (unsafe { get_11(&mut __decomp_15) });
-        let mut last: () = (unsafe { get_12(&mut __decomp_15) });
+        let mut __decomp_11: () = unimplemented!();
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
     }
 }
-pub unsafe fn test_copies_not_originals_16() {
+pub unsafe fn test_copies_not_originals_12() {
     let mut a: [(); 4] = [1_(), 2_(), 3_(), 4_()];
     {
         let mut r: () = unimplemented!();
-        let __decomp_17: *mut () = &mut r;
-        let mut first: () = (unsafe { get_18(__decomp_17) });
-        let mut last: () = (unsafe { get_19(__decomp_17) });
+        let __decomp_13: *mut () = &mut r;
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         first = a.as_mut_ptr().offset((2_()) as isize);
@@ -98,9 +98,9 @@ pub unsafe fn test_copies_not_originals_16() {
     }
     {
         let r: () = unimplemented!();
-        let __decomp_20: *const () = &r;
-        let mut first: () = (unsafe { get_18(__decomp_20) });
-        let mut last: () = (unsafe { get_19(__decomp_20) });
+        let __decomp_14: *const () = &r;
+        let mut first: () = unimplemented!();
+        let mut last: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         first = a.as_mut_ptr().offset((2_()) as isize);
@@ -109,10 +109,10 @@ pub unsafe fn test_copies_not_originals_16() {
         unimplemented!();
     }
 }
-pub unsafe fn test_21() -> () {
+pub unsafe fn test_15() -> () {
     (unsafe { test_sized_subrange_2() });
-    (unsafe { test_unsized_subrange_9() });
-    (unsafe { test_copies_not_originals_16() });
+    (unsafe { test_unsized_subrange_7() });
+    (unsafe { test_copies_not_originals_12() });
     return true;
 }
 pub fn main() {
@@ -131,7 +131,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_21() });
+    (unsafe { test_15() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

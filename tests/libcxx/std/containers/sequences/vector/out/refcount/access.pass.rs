@@ -81,18 +81,12 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn new_1(mut p: Ptr<()>) -> Self {
         Self { ptr_: (p).clone() }
     }
-    pub fn new_2(mut _a0: ()) -> Self {
-        Self {
-            ptr_: Ptr::<()>::null(),
-        }
+}
+impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_8(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -101,17 +95,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_sub_10(
+pub fn operator_eq_10(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
-}
-pub fn operator_ne_11(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } != { (y.ptr_).clone() });
+    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -127,6 +115,11 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         }
     }
 }
+impl CppEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_10(__lhs.read(), __rhs.read())
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
@@ -136,8 +129,19 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
+pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: Ptr<()>,
+}
+impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct min_allocator_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct safe_allocator_int_ {}
@@ -151,6 +155,28 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct safe_allocator_unsigned_long_ {}
+impl safe_allocator_unsigned_long_ {}
+pub fn make_11(mut size: (), mut start: ()) -> () {
+    let mut c: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < size) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+    return unimplemented!();
+}
+pub fn make_12(mut size: (), mut start: ()) -> () {
+    let mut c: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < size) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+    return unimplemented!();
+}
 pub fn make_13(mut size: (), mut start: ()) -> () {
     let mut c: () = unimplemented!();
     let mut i: () = 0_();
@@ -160,23 +186,35 @@ pub fn make_13(mut size: (), mut start: ()) -> () {
     }
     return unimplemented!();
 }
-pub fn make_14(mut size: (), mut start: ()) -> () {
-    let mut c: () = unimplemented!();
+pub fn test_get_basic_14(c: Ptr<()>, mut start_value: ()) {
+    let mut n: () = unimplemented!();
     let mut i: () = 0_();
-    'loop_: while (i < size) {
+    'loop_: while (i < n) {
         unimplemented!();
         i.prefix_inc();
     }
-    return unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < n) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
 }
-pub fn make_15(mut size: (), mut start: ()) -> () {
-    let mut c: () = unimplemented!();
+pub fn test_get_basic_15(c: Ptr<()>, mut start_value: ()) {
+    let mut n: () = unimplemented!();
     let mut i: () = 0_();
-    'loop_: while (i < size) {
+    'loop_: while (i < n) {
         unimplemented!();
         i.prefix_inc();
     }
-    return unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < n) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_get_basic_16(c: Ptr<()>, mut start_value: ()) {
     let mut n: () = unimplemented!();
@@ -238,39 +276,20 @@ pub fn test_get_basic_19(c: Ptr<()>, mut start_value: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_get_basic_20(c: Ptr<()>, mut start_value: ()) {
-    let mut n: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_get_basic_21(c: Ptr<()>, mut start_value: ()) {
-    let mut n: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_get_22() {
+pub fn test_get_20() {
     let mut start_value: () = 35_();
-    let c: Value<()> = Rc::new(RefCell::new(({ make_13(10_(), start_value) })));
+    let c: Value<()> = Rc::new(RefCell::new(({ make_11(10_(), start_value) })));
+    let cc: Ptr<()> = c.as_pointer();
+    ({ test_get_basic_14(c.as_pointer(), start_value) });
+    ({
+        let _c: Ptr<()> = (cc).clone();
+        let _start_value: () = start_value;
+        test_get_basic_15(_c, _start_value)
+    });
+}
+pub fn test_get_21() {
+    let mut start_value: () = 35_();
+    let c: Value<()> = Rc::new(RefCell::new(({ make_12(10_(), start_value) })));
     let cc: Ptr<()> = c.as_pointer();
     ({ test_get_basic_16(c.as_pointer(), start_value) });
     ({
@@ -279,9 +298,9 @@ pub fn test_get_22() {
         test_get_basic_17(_c, _start_value)
     });
 }
-pub fn test_get_23() {
+pub fn test_get_22() {
     let mut start_value: () = 35_();
-    let c: Value<()> = Rc::new(RefCell::new(({ make_14(10_(), start_value) })));
+    let c: Value<()> = Rc::new(RefCell::new(({ make_13(10_(), start_value) })));
     let cc: Ptr<()> = c.as_pointer();
     ({ test_get_basic_18(c.as_pointer(), start_value) });
     ({
@@ -290,16 +309,59 @@ pub fn test_get_23() {
         test_get_basic_19(_c, _start_value)
     });
 }
-pub fn test_get_24() {
+pub fn test_set_23() {
     let mut start_value: () = 35_();
-    let c: Value<()> = Rc::new(RefCell::new(({ make_15(10_(), start_value) })));
-    let cc: Ptr<()> = c.as_pointer();
-    ({ test_get_basic_20(c.as_pointer(), start_value) });
-    ({
-        let _c: Ptr<()> = (cc).clone();
-        let _start_value: () = start_value;
-        test_get_basic_21(_c, _start_value)
-    });
+    let mut n: () = 10_();
+    let mut c: () = ({ make_11(n, start_value) });
+    let mut i: () = 0_();
+    'loop_: while (i < n) {
+        unimplemented!();
+        let __rhs = ((start_value + i) + 1_());
+        unimplemented!().write(__rhs);
+        unimplemented!();
+        i.prefix_inc();
+    }
+    let mut i: () = 0_();
+    'loop_: while (i < n) {
+        unimplemented!();
+        let __rhs = ((start_value + i) + 2_());
+        unimplemented!().write(__rhs);
+        unimplemented!();
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!().write((start_value + 3_()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!().write(((start_value + n) + 2_()));
+    unimplemented!();
+}
+pub fn test_set_24() {
+    let mut start_value: () = 35_();
+    let mut n: () = 10_();
+    let mut c: () = ({ make_12(n, start_value) });
+    let mut i: () = 0_();
+    'loop_: while (i < n) {
+        unimplemented!();
+        let __rhs = ((start_value + i) + 1_());
+        unimplemented!().write(__rhs);
+        unimplemented!();
+        i.prefix_inc();
+    }
+    let mut i: () = 0_();
+    'loop_: while (i < n) {
+        unimplemented!();
+        let __rhs = ((start_value + i) + 2_());
+        unimplemented!().write(__rhs);
+        unimplemented!();
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!().write((start_value + 3_()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!().write(((start_value + n) + 2_()));
+    unimplemented!();
 }
 pub fn test_set_25() {
     let mut start_value: () = 35_();
@@ -328,59 +390,33 @@ pub fn test_set_25() {
     unimplemented!().write(((start_value + n) + 2_()));
     unimplemented!();
 }
-pub fn test_set_26() {
-    let mut start_value: () = 35_();
-    let mut n: () = 10_();
-    let mut c: () = ({ make_14(n, start_value) });
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        let __rhs = ((start_value + i) + 1_());
-        unimplemented!().write(__rhs);
-        unimplemented!();
-        i.prefix_inc();
-    }
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        let __rhs = ((start_value + i) + 2_());
-        unimplemented!().write(__rhs);
-        unimplemented!();
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!().write((start_value + 3_()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!().write(((start_value + n) + 2_()));
-    unimplemented!();
+pub fn test_26() {
+    ({ test_get_20() });
+    ({ test_set_23() });
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cc: Ptr<()> = c.as_pointer();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
-pub fn test_set_27() {
-    let mut start_value: () = 35_();
-    let mut n: () = 10_();
-    let mut c: () = ({ make_15(n, start_value) });
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        let __rhs = ((start_value + i) + 1_());
-        unimplemented!().write(__rhs);
-        unimplemented!();
-        i.prefix_inc();
-    }
-    let mut i: () = 0_();
-    'loop_: while (i < n) {
-        unimplemented!();
-        let __rhs = ((start_value + i) + 2_());
-        unimplemented!().write(__rhs);
-        unimplemented!();
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!().write((start_value + 3_()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!().write(((start_value + n) + 2_()));
-    unimplemented!();
+pub fn test_27() {
+    ({ test_get_21() });
+    ({ test_set_24() });
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cc: Ptr<()> = c.as_pointer();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
 pub fn test_28() {
     ({ test_get_22() });
@@ -396,38 +432,10 @@ pub fn test_28() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub fn test_29() {
-    ({ test_get_23() });
-    ({ test_set_26() });
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cc: Ptr<()> = c.as_pointer();
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub fn test_30() {
-    ({ test_get_24() });
-    ({ test_set_27() });
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cc: Ptr<()> = c.as_pointer();
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub fn tests_31() -> () {
+pub fn tests_29() -> () {
+    ({ test_26() });
+    ({ test_27() });
     ({ test_28() });
-    ({ test_29() });
-    ({ test_30() });
     return true;
 }
 pub fn main() {
@@ -450,7 +458,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ tests_31() });
+    ({ tests_29() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }
@@ -472,6 +480,22 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
         unimplemented!();
     }
 }
+pub trait min_allocator_unsigned_long_Impl {
+    fn allocate(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn deallocate(
+        &self,
+        mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
+        mut n: (),
+    ) {
+        unimplemented!()
+    }
+}
+impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {}
 pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -510,10 +534,8 @@ pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
+        n: (),
+    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>;
     fn operator_add(
         &self,
         mut n: (),
@@ -522,11 +544,11 @@ pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_sub(
         &self,
-        mut n: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+        n: (),
+    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__;
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_index(&self, n: ()) -> Ptr<()>;
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>
@@ -534,8 +556,29 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     fn operator_deref(&self) -> Ptr<()> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
-        return (*self).with(|__s| __s.ptr_.clone()).offset((n) as isize);
+    fn operator_sub_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
+        {
+            let _ptr = field!((*self), ptr_);
+            _ptr.write(_ptr.read() - n)
+        };
+        return (*self).clone();
+    }
+    fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+        let tmp: Value<min_pointer_const_int__std_integral_constant_unsigned_long__0__> =
+            Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
+        ({
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl::operator_sub_assign(
+                &tmp.as_pointer(),
+                n,
+            )
+        });
+        return (*tmp.borrow()).clone();
     }
 }
 pub trait min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl {
@@ -558,7 +601,9 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
+    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
     fn operator_post_dec_11(
         &self,
         mut _a0: (),
@@ -575,7 +620,9 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_add(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
     fn operator_sub(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn operator_index(&self, n: ()) -> Ptr<()>;
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
@@ -591,10 +638,6 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
-        return (*self).clone();
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -639,9 +682,70 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         });
         return (*tmp.borrow()).clone();
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
-        return (*self).with(|__s| __s.ptr_.clone()).offset((n) as isize);
+}
+pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
     }
+    fn operator_deref(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_inc_8(
+        &self,
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_inc_9(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_dec_10(
+        &self,
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_dec_11(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_add_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_sub_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_add(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+}
+impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__>
+{
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
@@ -660,36 +764,29 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         let memory: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            ({
-                let ___s: () = (*memory.borrow()).to_any();
-                memset_12(
-                    ___s,
-                    0_(),
-                    (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                )
-            });
+            unimplemented!();
         }
         return (*memory.borrow()).clone();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
         {
             ({
-                let _value: Value<()> = Rc::new(RefCell::new(
-                    ({
-                        let ___s: () = (p).to_any();
-                        memset_12(
-                            ___s,
-                            0_(),
-                            (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                        )
-                    }),
-                ));
+                let _value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 DoNotOptimize_2(_value.as_pointer())
             });
         }
         unimplemented!();
     }
 }
+pub trait safe_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+        unimplemented!()
+    }
+}
+impl safe_allocator_unsigned_long_Impl for Ptr<safe_allocator_unsigned_long_> {}
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_3.with(|_| ());
     let _ = alloc_count_4.with(|_| ());

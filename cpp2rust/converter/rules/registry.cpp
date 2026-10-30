@@ -163,6 +163,37 @@ void checkGenerics(const std::string &dir, const std::string &name,
   }
 }
 
+TranslationRule::TypeRule placeholderTypeRule() {
+  TranslationRule::TypeRule rule;
+  rule.initializer.emplace_back(
+      TranslationRule::TextFragment{"unimplemented!()"});
+  rule.type_info.type = "()";
+  return rule;
+}
+
+TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
+  unsigned num_params = 0;
+  if (auto function = decl->getAsFunction()) {
+    num_params = function->getNumParams();
+  } else {
+    auto proto = llvm::cast<clang::VarDecl>(decl)
+                     ->getType()
+                     ->getPointeeType()
+                     ->getAs<clang::FunctionProtoType>();
+    assert(proto && "placeholder expression rule is neither a function nor a "
+                    "function pointer");
+    num_params = proto->getNumParams();
+  }
+  TranslationRule::ExprRule rule;
+  rule.params.resize(num_params);
+  for (auto &param : rule.params) {
+    param.type = "()";
+  }
+  rule.return_type.type = "()";
+  rule.body.emplace_back(TranslationRule::TextFragment{"unimplemented!()"});
+  return rule;
+}
+
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
   const llvm::json::Object *rule = nullptr;
@@ -175,23 +206,19 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     }
     assert(rule && "rule has no target");
   }
-
-  auto make_type_rule = [&] {
-    return rule ? TranslationRule::ParseTypeRuleJSON(*rule)
-                : TranslationRule::TypeRule();
-  };
   if (!name.starts_with('f')) {
-    auto type_rule = make_type_rule();
-    auto keys = RuleKeys::GetTypeKeys(decl);
+    auto keys = RuleKeys::GetTypeKeys(*sema_, decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
-      types_.emplace(key, TypeRuleDecl{decl, make_type_rule()});
+      auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                            : placeholderTypeRule();
+      types_.emplace(key, TypeRuleDecl{decl, std::move(type_rule)});
     }
     return;
   }
   auto make_expr_rule = [&] {
     return rule ? TranslationRule::ParseExprRuleJSON(*rule)
-                : TranslationRule::ExprRule();
+                : placeholderExprRule(decl);
   };
   if (auto function = decl->getAsFunction()) {
     if (rule) {
@@ -338,7 +365,7 @@ TypeRuleMatch findType(clang::QualType use) {
         }
         auto match = AstMatcher::MatchType(*sema_, type, it->second.decl);
         if (match && llvm::none_of(matches, [&](const TypeRuleMatch &other) {
-              return other.rule_decl == &it->second;
+              return other.rule_decl->decl == it->second.decl;
             })) {
           matches.push_back({&it->second, *std::move(match)});
         }

@@ -27,22 +27,22 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let ip: Value<()> = Rc::new(RefCell::new(({ get_temporary_buffer_0(5_()) })));
+    let ip: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    ({ return_temporary_buffer_1({ (*ip.borrow()).first.clone() }) });
+    unimplemented!();
     {
-        let ret: Value<()> = Rc::new(RefCell::new(({ get_temporary_buffer_0(0_()) })));
+        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let ret: Value<()> = Rc::new(RefCell::new(({ get_temporary_buffer_0(-5_()) })));
+        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let ret: Value<()> = Rc::new(RefCell::new(({ get_temporary_buffer_0(unimplemented!()) })));
+        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

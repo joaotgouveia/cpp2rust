@@ -260,11 +260,7 @@ impl TailClobberer_1_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_1_>();
-                memset_17(___s, 1_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -345,11 +341,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_17(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -392,11 +384,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_17(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -536,7 +524,7 @@ impl Data {
         return &mut (*(self as *mut Data));
     }
 }
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_17() -> () {
     {
         let mut e1: () = unimplemented!();
         let mut e2: () = unimplemented!();
@@ -553,7 +541,7 @@ pub unsafe fn test_18() -> () {
     }
     return true;
 }
-pub unsafe fn testException_19() {}
+pub unsafe fn testException_18() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -570,9 +558,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_17() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_19() });
+    (unsafe { testException_18() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

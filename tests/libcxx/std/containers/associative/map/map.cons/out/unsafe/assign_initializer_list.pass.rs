@@ -335,15 +335,15 @@ pub unsafe fn test_basic_8() -> () {
 pub unsafe fn duplicate_keys_test_9() -> () {
     let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
     {
-        unimplemented!();
+        const _: () = assert!(true, "");;
         let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return true;
 }
 pub unsafe fn test_10() -> () {

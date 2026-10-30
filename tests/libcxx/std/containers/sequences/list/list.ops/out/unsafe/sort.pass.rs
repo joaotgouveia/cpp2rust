@@ -45,12 +45,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
 pub static mut randomness_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
@@ -126,9 +120,9 @@ pub unsafe fn test_stable_5(mut N: ()) {
         };
     }
     let mut it: () = unimplemented!();
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let mut next: () = unimplemented!();
-        if (unimplemented!()) && (((*unimplemented!()).val) == ((*unimplemented!()).val)) {
+        if (!(unimplemented!())) && (((*it).val) == ((*next).val)) {
             unimplemented!();
         }
         unimplemented!();

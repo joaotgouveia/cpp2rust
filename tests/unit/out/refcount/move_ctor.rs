@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct MoveOnly {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl MoveOnly {
-    pub fn new(mut v: i32) -> Self {
+    pub fn new(mut v: ()) -> Self {
         Self { v: v }
     }
     pub fn move_from(o: Ptr<MoveOnly>) -> Self {
         let __this: MoveOnly = Self {
             v: o.with(|__s| __s.v),
         };
-        field!(o, v).write(0);
+        field!(o, v).write(0_());
         __this
     }
 }
@@ -28,20 +28,20 @@ impl MoveOnly {
 #[byte_size(4)]
 pub struct ConstMove {
     #[offset(0)]
-    pub mark: i32,
+    pub mark: (),
 }
 impl ConstMove {
     pub fn new() -> Self {
-        Self { mark: 0 }
+        Self { mark: 0_() }
     }
     pub fn new_1(o: Ptr<ConstMove>) -> Self {
         Self {
-            mark: (o.with(|__s| __s.mark) + 1),
+            mark: (o.with(|__s| __s.mark) + 1_()),
         }
     }
     pub fn new_2(o: Ptr<ConstMove>) -> Self {
         Self {
-            mark: (o.with(|__s| __s.mark) + 10),
+            mark: (o.with(|__s| __s.mark) + 10_()),
         }
     }
 }
@@ -54,24 +54,24 @@ impl Default for ConstMove {
 #[byte_size(12)]
 pub struct ThrowingMove {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
     #[offset(4)]
-    pub copies: i32,
+    pub copies: (),
     #[offset(8)]
-    pub moves: i32,
+    pub moves: (),
 }
 impl ThrowingMove {
-    pub fn new(mut v: i32) -> Self {
+    pub fn new(mut v: ()) -> Self {
         Self {
             v: v,
-            copies: 0,
-            moves: 0,
+            copies: 0_(),
+            moves: 0_(),
         }
     }
     pub fn copy_from(o: Ptr<ThrowingMove>) -> Self {
         Self {
             v: o.with(|__s| __s.v),
-            copies: (o.with(|__s| __s.copies) + 1),
+            copies: (o.with(|__s| __s.copies) + 1_()),
             moves: o.with(|__s| __s.moves),
         }
     }
@@ -79,9 +79,9 @@ impl ThrowingMove {
         let __this: ThrowingMove = Self {
             v: o.with(|__s| __s.v),
             copies: o.with(|__s| __s.copies),
-            moves: (o.with(|__s| __s.moves) + 1),
+            moves: (o.with(|__s| __s.moves) + 1_()),
         };
-        field!(o, v).write(0);
+        field!(o, v).write(0_());
         __this
     }
 }
@@ -99,24 +99,24 @@ impl Clone for ThrowingMove {
 #[byte_size(12)]
 pub struct NoexceptMove {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
     #[offset(4)]
-    pub copies: i32,
+    pub copies: (),
     #[offset(8)]
-    pub moves: i32,
+    pub moves: (),
 }
 impl NoexceptMove {
-    pub fn new(mut v: i32) -> Self {
+    pub fn new(mut v: ()) -> Self {
         Self {
             v: v,
-            copies: 0,
-            moves: 0,
+            copies: 0_(),
+            moves: 0_(),
         }
     }
     pub fn copy_from(o: Ptr<NoexceptMove>) -> Self {
         Self {
             v: o.with(|__s| __s.v),
-            copies: (o.with(|__s| __s.copies) + 1),
+            copies: (o.with(|__s| __s.copies) + 1_()),
             moves: o.with(|__s| __s.moves),
         }
     }
@@ -124,9 +124,9 @@ impl NoexceptMove {
         let __this: NoexceptMove = Self {
             v: o.with(|__s| __s.v),
             copies: o.with(|__s| __s.copies),
-            moves: (o.with(|__s| __s.moves) + 1),
+            moves: (o.with(|__s| __s.moves) + 1_()),
         };
-        field!(o, v).write(0);
+        field!(o, v).write(0_());
         __this
     }
 }
@@ -140,10 +140,10 @@ impl Clone for NoexceptMove {
         NoexceptMove::copy_from(__src.as_pointer())
     }
 }
-pub fn by_value_0(mut m: MoveOnly) -> i32 {
+pub fn by_value_0(mut m: MoveOnly) -> () {
     return m.v;
 }
-pub fn make_1(mut v: i32) -> MoveOnly {
+pub fn make_1(mut v: ()) -> MoveOnly {
     let m: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ v })));
     return MoveOnly::move_from({ m.as_pointer() });
 }
@@ -151,56 +151,55 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let a: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 1 })));
+fn main_0() -> () {
+    let a: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 1_() })));
     let b: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::move_from({ a.as_pointer() })));
-    assert!(({ (*b.borrow()).v } == 1));
-    assert!(({ (*a.borrow()).v } == 0));
+    unimplemented!();
+    unimplemented!();
     let c: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::move_from({ b.as_pointer() })));
-    assert!(({ (*c.borrow()).v } == 1));
-    assert!(({ (*b.borrow()).v } == 0));
+    unimplemented!();
+    unimplemented!();
     let mut d: MoveOnly = MoveOnly::move_from({ c.as_pointer() });
-    assert!((d.v == 1));
-    assert!(({ (*c.borrow()).v } == 0));
-    let e: Value<MoveOnly> = Rc::new(RefCell::new(({ make_1(5) })));
-    assert!(({ (*e.borrow()).v } == 5));
-    assert!((({ by_value_0(MoveOnly::new({ 6 },),) }) == 6));
-    assert!((({ by_value_0(MoveOnly::move_from({ e.as_pointer() },),) }) == 5));
-    assert!(({ (*e.borrow()).v } == 0));
-    let mut vec_: Vec<MoveOnly> = Vec::new();
-    {
-        let __a1 = MoveOnly::new({ 7 });
-        vec_.push(__a1)
-    };
-    let f: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 8 })));
-    {
-        let __a1 = MoveOnly::move_from({ f.as_pointer() });
-        vec_.push(__a1)
-    };
-    assert!((vec_[0_usize].v == 7) && (vec_[1_usize].v == 8));
-    assert!(({ (*f.borrow()).v } == 0));
+    unimplemented!();
+    unimplemented!();
+    let e: Value<MoveOnly> = Rc::new(RefCell::new(({ make_1(5_()) })));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let vec_: Value<std_vector_MoveOnly__std_allocator_MoveOnly__> = Rc::new(RefCell::new(
+        <std_vector_MoveOnly__std_allocator_MoveOnly__>::default(),
+    ));
+    ({
+        let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 7_() })));
+        (*vec_.borrow()).push_back_58(___x.as_pointer())
+    });
+    let f: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 8_() })));
+    ({ (*vec_.borrow()).push_back_58(f.as_pointer()) });
+    unimplemented!();
+    unimplemented!();
     let m: Value<ConstMove> = Rc::new(RefCell::new(ConstMove::new()));
     let mut m1: ConstMove = ConstMove::new_1({ m.as_pointer() });
     let cm: Value<ConstMove> = Rc::new(RefCell::new(ConstMove::new()));
     let mut m2: ConstMove = ConstMove::new_2({ cm.as_pointer() });
-    assert!((m1.mark == 1));
-    assert!((m2.mark == 10));
-    let t: Value<ThrowingMove> = Rc::new(RefCell::new(ThrowingMove::new({ 1 })));
+    unimplemented!();
+    unimplemented!();
+    let t: Value<ThrowingMove> = Rc::new(RefCell::new(ThrowingMove::new({ 1_() })));
     let mut t1: ThrowingMove = ThrowingMove::copy_from({ t.as_pointer() });
-    assert!((t1.v == 1));
-    assert!((t1.copies == 1));
-    assert!((t1.moves == 0));
-    assert!(({ (*t.borrow()).v } == 1));
-    let n: Value<NoexceptMove> = Rc::new(RefCell::new(NoexceptMove::new({ 2 })));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let n: Value<NoexceptMove> = Rc::new(RefCell::new(NoexceptMove::new({ 2_() })));
     let mut n1: NoexceptMove = NoexceptMove::move_from({ n.as_pointer() });
-    assert!((n1.v == 2));
-    assert!((n1.copies == 0));
-    assert!((n1.moves == 1));
-    assert!(({ (*n.borrow()).v } == 0));
-    let g: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 3 })));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let g: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 3_() })));
     let mut g1: MoveOnly = MoveOnly::move_from({ g.as_pointer() });
-    assert!((g1.v == 3));
-    assert!(({ (*g.borrow()).v } == 0));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -3685,9 +3685,16 @@ void Converter::ConvertCXXConstructExprArgs(clang::CXXConstructExpr *expr) {
          GetCtorName(ctor));
   PushParen paren(*this);
 
+  // The parameters of an inheriting constructor don't have the default
+  // arguments of the inherited one.
+  auto params_ctor = ctor;
+  if (auto inherited = ctor->getInheritedConstructor()) {
+    params_ctor = inherited.getConstructor();
+  }
+
   unsigned arg_idx = 0;
   for (unsigned param_idx = 0; param_idx < ctor->getNumParams(); ++param_idx) {
-    auto param = ctor->getParamDecl(param_idx);
+    auto param = params_ctor->getParamDecl(param_idx);
     auto param_type = param->getType();
     bool has_default = HasUsableDefaultArg(param);
 
@@ -3887,6 +3894,10 @@ bool Converter::VisitLambdaExpr(clang::LambdaExpr *expr) {
     }
   }
   ForEachLambdaCallOperator(decl, [&](clang::CXXMethodDecl *call_operator) {
+    // A specialization that is never called is not defined.
+    if (!call_operator->hasBody()) {
+      return;
+    }
     StrCat(token::kComma);
     ConvertLambdaClosure(decl, call_operator);
   });

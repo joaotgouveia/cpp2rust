@@ -203,32 +203,40 @@ pub fn classify_5(mut x: ()) -> () {
     if (x == 0_()) {
         return (anon_1_zero as ());
     }
-    if ({ isinf_6(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if ({ isnan_7(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub fn is_about_6(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub fn is_about_7(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub fn is_about_8(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub fn is_about_9(mut x: (), mut y: ()) {
+pub fn test_9(rho: Ptr<()>, x: ()) {
+    let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
-pub fn is_about_10(mut x: (), mut y: ()) {
+pub fn test_10(rho: Ptr<()>, x: ()) {
+    let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
 pub fn test_11(rho: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
-pub fn test_12(rho: Ptr<()>, x: ()) {
+pub fn test_12(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
-pub fn test_13(rho: Ptr<()>, x: ()) {
+pub fn test_13(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
@@ -236,13 +244,63 @@ pub fn test_14(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
-pub fn test_15(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+pub fn test_15() {
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        test_9(_rho.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        test_9(_rho.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        test_9(_rho.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        test_12(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        test_12(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        test_12(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
+    });
 }
-pub fn test_16(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+pub fn test_16() {
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        test_10(_rho.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        test_10(_rho.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        test_10(_rho.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        test_13(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        test_13(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
+    });
+    ({
+        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        test_13(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
+    });
 }
 pub fn test_17() {
     ({
@@ -273,65 +331,7 @@ pub fn test_17() {
         test_14(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
 }
-pub fn test_18() {
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        test_12(_rho.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        test_12(_rho.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        test_12(_rho.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
-        test_15(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
-        test_15(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
-        test_15(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
-    });
-}
-pub fn test_19() {
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        test_13(_rho.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        test_13(_rho.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        test_13(_rho.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
-        test_16(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
-        test_16(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
-    });
-    ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
-        test_16(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
-    });
-}
-pub fn test_edges_20() {
+pub fn test_edges_18() {
     let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
@@ -341,7 +341,7 @@ pub fn test_edges_20() {
         'switch: {
             match { ({ classify_5(r) }) } {
                 __v if __v == (anon_1_zero as ()) => {
-                    if (({ signbit_21(r) }) || (({ classify_5(theta) }) == (anon_1_inf as ())))
+                    if ((unimplemented!()) || (({ classify_5(theta) }) == (anon_1_inf as ())))
                         || (({ classify_5(theta) }) == (anon_1_NaN as ()))
                     {
                         let mut c: () = ({ classify_4(z.as_pointer()) });
@@ -352,13 +352,13 @@ pub fn test_edges_20() {
                     break 'switch;
                 }
                 __v if __v == (anon_1_non_zero as ()) => {
-                    if (({ signbit_21(r) }) || (({ classify_5(theta) }) == (anon_1_inf as ())))
+                    if ((unimplemented!()) || (({ classify_5(theta) }) == (anon_1_inf as ())))
                         || (({ classify_5(theta) }) == (anon_1_NaN as ()))
                     {
                         let mut c: () = ({ classify_4(z.as_pointer()) });
                         unimplemented!();
                     } else {
-                        ({ is_about_9(unimplemented!(), r) });
+                        ({ is_about_7(unimplemented!(), r) });
                     }
                     break 'switch;
                 }
@@ -410,10 +410,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_15() });
+    ({ test_16() });
     ({ test_17() });
-    ({ test_18() });
-    ({ test_19() });
-    ({ test_edges_20() });
+    ({ test_edges_18() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

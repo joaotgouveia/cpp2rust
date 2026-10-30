@@ -64,44 +64,16 @@ impl SomeInt {
         Self { value_: value }
     }
 }
-impl std::cmp::Ord for SomeInt {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            SomeIntImpl::operator_cmp(
-                &Rc::new(RefCell::new(SomeInt {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(SomeInt {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for SomeInt {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SomeIntImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for SomeInt {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for SomeInt {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SomeIntImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for SomeInt {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            SomeIntImpl::operator_cmp(
-                &Rc::new(RefCell::new(SomeInt {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(SomeInt {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for SomeInt {}
 impl Default for SomeInt {
     fn default() -> Self {
         { SomeInt::new(None) }
@@ -145,23 +117,11 @@ impl NotIncrementable {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for NotIncrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            NotIncrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(NotIncrementable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NotIncrementable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for NotIncrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        NotIncrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for NotIncrementable {}
 impl Default for NotIncrementable {
     fn default() -> Self {
         { NotIncrementable::new(None) }
@@ -206,23 +166,11 @@ impl NotDecrementable {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for NotDecrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            NotDecrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(NotDecrementable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NotDecrementable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for NotDecrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        NotDecrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for NotDecrementable {}
 impl Default for NotDecrementable {
     fn default() -> Self {
         { NotDecrementable::new(None) }
@@ -242,23 +190,11 @@ impl Int42_DefaultTo42_ {
         Self { value_: 42_() }
     }
 }
-impl std::cmp::PartialEq for Int42_DefaultTo42_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            Int42_DefaultTo42_Impl::operator_eq(
-                &Rc::new(RefCell::new(Int42_DefaultTo42_ {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Int42_DefaultTo42_ {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Int42_DefaultTo42_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Int42_DefaultTo42_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for Int42_DefaultTo42_ {}
 impl Default for Int42_DefaultTo42_ {
     fn default() -> Self {
         { Int42_DefaultTo42_::new_1() }

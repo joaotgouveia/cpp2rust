@@ -10,13 +10,13 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1_____std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_1__1_____std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_1__1____
 {}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_int__std_ratio_86400__1_____std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_int__std_ratio_86400__1____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1_____std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1____
 {}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
@@ -28,13 +28,13 @@ pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_int__std_ratio_86400__1____std_chrono_duration_int__std_ratio_86400__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___
 {}
 pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1____std_chrono_duration_long_long__std_ratio_1__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

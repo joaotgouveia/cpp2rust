@@ -108,7 +108,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
-    const _: () = assert!(true, "std::is_same<UT, unsigned >::value");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     const _: () = assert!(
         true,

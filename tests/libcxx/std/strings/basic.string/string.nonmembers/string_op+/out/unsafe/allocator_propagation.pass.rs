@@ -39,6 +39,9 @@ impl soccc_allocator_char_ {
     pub unsafe fn get_self_soccc(&self) -> () {
         return self.self_soccc_count;
     }
+    pub unsafe fn operator_eq_8_char(&self, that: *const soccc_allocator_char_) -> () {
+        return ((self.soccc_count) == (unsafe { soccc_allocator_char_::get_soccc(&(*that)) }));
+    }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -72,6 +75,9 @@ impl soccc_allocator_wchar_t_ {
     }
     pub unsafe fn get_self_soccc(&self) -> () {
         return self.self_soccc_count;
+    }
+    pub unsafe fn operator_eq_8_wchar_t(&self, that: *const soccc_allocator_wchar_t_) -> () {
+        return ((self.soccc_count) == (unsafe { soccc_allocator_wchar_t_::get_soccc(&(*that)) }));
     }
 }
 pub unsafe fn test_0() -> () {

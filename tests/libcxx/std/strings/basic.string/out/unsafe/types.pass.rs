@@ -184,9 +184,6 @@ impl Default for test_allocator_void_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_char__rebind_char_ {}
-#[repr(C)]
 #[derive(FnPtrArg)]
 pub struct test_allocator_char_ {
     data_: (),

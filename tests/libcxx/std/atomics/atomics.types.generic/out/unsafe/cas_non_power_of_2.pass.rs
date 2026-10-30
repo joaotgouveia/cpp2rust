@@ -7,14 +7,9 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn operator_eq_0(lhs: *const S_1_, rhs: *const S_1_) -> () {
-    return ((unsafe {
-        let ___s1: () = ((&(*lhs).data[(0_()) as usize] as *const ()) as ());
-        let ___s2: () = ((&(*rhs).data[(0_()) as usize] as *const ()) as ());
-        let ___n: () = ::std::mem::size_of::<[(); 1]>();
-        memcmp_1(___s1, ___s2, ___n)
-    }) == (0_()));
+    return ((unimplemented!()) == (0_()));
 }
-pub unsafe fn operator_ne_2(lhs: *const S_1_, rhs: *const S_1_) -> () {
+pub unsafe fn operator_ne_1(lhs: *const S_1_, rhs: *const S_1_) -> () {
     return !(unsafe {
         let _lhs: *const S_1_ = lhs;
         let _rhs: *const S_1_ = rhs;
@@ -22,20 +17,17 @@ pub unsafe fn operator_ne_2(lhs: *const S_1_, rhs: *const S_1_) -> () {
     });
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_1_ {
     pub data: [(); 1],
 }
 impl S_1_ {
-    pub unsafe fn new(mut v: ()) -> Self {
+    pub unsafe fn new(mut v: Option<()>) -> Self {
+        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
             data: [unimplemented!(); 1],
         };
-        (unsafe {
-            let ___s: () = ((&mut this.data[(0_()) as usize] as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<[(); 1]>();
-            memset_3(___s, v, ___n)
-        });
+        unimplemented!();
         this
     }
 }
@@ -45,201 +37,191 @@ impl std::cmp::PartialEq for S_1_ {
     }
 }
 impl std::cmp::Eq for S_1_ {}
-pub unsafe fn operator_eq_4(lhs: *const S_2_, rhs: *const S_2_) -> () {
-    return ((unsafe {
-        let ___s1: () = ((&(*lhs).data[(0_()) as usize] as *const ()) as ());
-        let ___s2: () = ((&(*rhs).data[(0_()) as usize] as *const ()) as ());
-        let ___n: () = ::std::mem::size_of::<[(); 2]>();
-        memcmp_1(___s1, ___s2, ___n)
-    }) == (0_()));
+impl Default for S_1_ {
+    fn default() -> Self {
+        unsafe { S_1_::new(None) }
+    }
 }
-pub unsafe fn operator_ne_5(lhs: *const S_2_, rhs: *const S_2_) -> () {
+pub unsafe fn operator_eq_2(lhs: *const S_2_, rhs: *const S_2_) -> () {
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn operator_ne_3(lhs: *const S_2_, rhs: *const S_2_) -> () {
     return !(unsafe {
         let _lhs: *const S_2_ = lhs;
         let _rhs: *const S_2_ = rhs;
-        operator_eq_4(_lhs, _rhs)
+        operator_eq_2(_lhs, _rhs)
     });
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_2_ {
     pub data: [(); 2],
 }
 impl S_2_ {
-    pub unsafe fn new(mut v: ()) -> Self {
+    pub unsafe fn new(mut v: Option<()>) -> Self {
+        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
             data: [unimplemented!(); 2],
         };
-        (unsafe {
-            let ___s: () = ((&mut this.data[(0_()) as usize] as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<[(); 2]>();
-            memset_3(___s, v, ___n)
-        });
+        unimplemented!();
         this
     }
 }
 impl std::cmp::PartialEq for S_2_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_4(self as *const S_2_, other as *const S_2_) }
+        unsafe { operator_eq_2(self as *const S_2_, other as *const S_2_) }
     }
 }
 impl std::cmp::Eq for S_2_ {}
-pub unsafe fn operator_eq_6(lhs: *const S_3_, rhs: *const S_3_) -> () {
-    return ((unsafe {
-        let ___s1: () = ((&(*lhs).data[(0_()) as usize] as *const ()) as ());
-        let ___s2: () = ((&(*rhs).data[(0_()) as usize] as *const ()) as ());
-        let ___n: () = ::std::mem::size_of::<[(); 3]>();
-        memcmp_1(___s1, ___s2, ___n)
-    }) == (0_()));
+impl Default for S_2_ {
+    fn default() -> Self {
+        unsafe { S_2_::new(None) }
+    }
 }
-pub unsafe fn operator_ne_7(lhs: *const S_3_, rhs: *const S_3_) -> () {
+pub unsafe fn operator_eq_4(lhs: *const S_3_, rhs: *const S_3_) -> () {
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn operator_ne_5(lhs: *const S_3_, rhs: *const S_3_) -> () {
     return !(unsafe {
         let _lhs: *const S_3_ = lhs;
         let _rhs: *const S_3_ = rhs;
-        operator_eq_6(_lhs, _rhs)
+        operator_eq_4(_lhs, _rhs)
     });
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_3_ {
     pub data: [(); 3],
 }
 impl S_3_ {
-    pub unsafe fn new(mut v: ()) -> Self {
+    pub unsafe fn new(mut v: Option<()>) -> Self {
+        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
             data: [unimplemented!(); 3],
         };
-        (unsafe {
-            let ___s: () = ((&mut this.data[(0_()) as usize] as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<[(); 3]>();
-            memset_3(___s, v, ___n)
-        });
+        unimplemented!();
         this
     }
 }
 impl std::cmp::PartialEq for S_3_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_6(self as *const S_3_, other as *const S_3_) }
+        unsafe { operator_eq_4(self as *const S_3_, other as *const S_3_) }
     }
 }
 impl std::cmp::Eq for S_3_ {}
-pub unsafe fn operator_eq_8(lhs: *const S_4_, rhs: *const S_4_) -> () {
-    return ((unsafe {
-        let ___s1: () = ((&(*lhs).data[(0_()) as usize] as *const ()) as ());
-        let ___s2: () = ((&(*rhs).data[(0_()) as usize] as *const ()) as ());
-        let ___n: () = ::std::mem::size_of::<[(); 4]>();
-        memcmp_1(___s1, ___s2, ___n)
-    }) == (0_()));
+impl Default for S_3_ {
+    fn default() -> Self {
+        unsafe { S_3_::new(None) }
+    }
 }
-pub unsafe fn operator_ne_9(lhs: *const S_4_, rhs: *const S_4_) -> () {
+pub unsafe fn operator_eq_6(lhs: *const S_4_, rhs: *const S_4_) -> () {
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn operator_ne_7(lhs: *const S_4_, rhs: *const S_4_) -> () {
     return !(unsafe {
         let _lhs: *const S_4_ = lhs;
         let _rhs: *const S_4_ = rhs;
-        operator_eq_8(_lhs, _rhs)
+        operator_eq_6(_lhs, _rhs)
     });
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_4_ {
     pub data: [(); 4],
 }
 impl S_4_ {
-    pub unsafe fn new(mut v: ()) -> Self {
+    pub unsafe fn new(mut v: Option<()>) -> Self {
+        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
             data: [unimplemented!(); 4],
         };
-        (unsafe {
-            let ___s: () = ((&mut this.data[(0_()) as usize] as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<[(); 4]>();
-            memset_3(___s, v, ___n)
-        });
+        unimplemented!();
         this
     }
 }
 impl std::cmp::PartialEq for S_4_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const S_4_, other as *const S_4_) }
+        unsafe { operator_eq_6(self as *const S_4_, other as *const S_4_) }
     }
 }
 impl std::cmp::Eq for S_4_ {}
-pub unsafe fn operator_eq_10(lhs: *const S_5_, rhs: *const S_5_) -> () {
-    return ((unsafe {
-        let ___s1: () = ((&(*lhs).data[(0_()) as usize] as *const ()) as ());
-        let ___s2: () = ((&(*rhs).data[(0_()) as usize] as *const ()) as ());
-        let ___n: () = ::std::mem::size_of::<[(); 5]>();
-        memcmp_1(___s1, ___s2, ___n)
-    }) == (0_()));
+impl Default for S_4_ {
+    fn default() -> Self {
+        unsafe { S_4_::new(None) }
+    }
 }
-pub unsafe fn operator_ne_11(lhs: *const S_5_, rhs: *const S_5_) -> () {
+pub unsafe fn operator_eq_8(lhs: *const S_5_, rhs: *const S_5_) -> () {
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn operator_ne_9(lhs: *const S_5_, rhs: *const S_5_) -> () {
     return !(unsafe {
         let _lhs: *const S_5_ = lhs;
         let _rhs: *const S_5_ = rhs;
-        operator_eq_10(_lhs, _rhs)
+        operator_eq_8(_lhs, _rhs)
     });
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_5_ {
     pub data: [(); 5],
 }
 impl S_5_ {
-    pub unsafe fn new(mut v: ()) -> Self {
+    pub unsafe fn new(mut v: Option<()>) -> Self {
+        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
             data: [unimplemented!(); 5],
         };
-        (unsafe {
-            let ___s: () = ((&mut this.data[(0_()) as usize] as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<[(); 5]>();
-            memset_3(___s, v, ___n)
-        });
+        unimplemented!();
         this
     }
 }
 impl std::cmp::PartialEq for S_5_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self as *const S_5_, other as *const S_5_) }
+        unsafe { operator_eq_8(self as *const S_5_, other as *const S_5_) }
     }
 }
 impl std::cmp::Eq for S_5_ {}
-pub unsafe fn operator_eq_12(lhs: *const S_6_, rhs: *const S_6_) -> () {
-    return ((unsafe {
-        let ___s1: () = ((&(*lhs).data[(0_()) as usize] as *const ()) as ());
-        let ___s2: () = ((&(*rhs).data[(0_()) as usize] as *const ()) as ());
-        let ___n: () = ::std::mem::size_of::<[(); 6]>();
-        memcmp_1(___s1, ___s2, ___n)
-    }) == (0_()));
+impl Default for S_5_ {
+    fn default() -> Self {
+        unsafe { S_5_::new(None) }
+    }
 }
-pub unsafe fn operator_ne_13(lhs: *const S_6_, rhs: *const S_6_) -> () {
+pub unsafe fn operator_eq_10(lhs: *const S_6_, rhs: *const S_6_) -> () {
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn operator_ne_11(lhs: *const S_6_, rhs: *const S_6_) -> () {
     return !(unsafe {
         let _lhs: *const S_6_ = lhs;
         let _rhs: *const S_6_ = rhs;
-        operator_eq_12(_lhs, _rhs)
+        operator_eq_10(_lhs, _rhs)
     });
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_6_ {
     pub data: [(); 6],
 }
 impl S_6_ {
-    pub unsafe fn new(mut v: ()) -> Self {
+    pub unsafe fn new(mut v: Option<()>) -> Self {
+        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
             data: [unimplemented!(); 6],
         };
-        (unsafe {
-            let ___s: () = ((&mut this.data[(0_()) as usize] as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<[(); 6]>();
-            memset_3(___s, v, ___n)
-        });
+        unimplemented!();
         this
     }
 }
 impl std::cmp::PartialEq for S_6_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const S_6_, other as *const S_6_) }
+        unsafe { operator_eq_10(self as *const S_6_, other as *const S_6_) }
     }
 }
 impl std::cmp::Eq for S_6_ {}
+impl Default for S_6_ {
+    fn default() -> Self {
+        unsafe { S_6_::new(None) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct Expected_1_ {
@@ -372,9 +354,41 @@ impl Default for Expected_6_ {
         }
     }
 }
+pub unsafe fn test_12() {
+    let mut a: () = unimplemented!();
+    let mut expected: Expected_1_ = Expected_1_::new({ S_1_::new({ Some(17_()) }) });
+    unimplemented!();
+    unimplemented!();
+    let mut r1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_13() {
+    let mut a: () = unimplemented!();
+    let mut expected: Expected_2_ = Expected_2_::new({ S_2_::new({ Some(17_()) }) });
+    unimplemented!();
+    unimplemented!();
+    let mut r1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_14() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_1_ = Expected_1_::new({ S_1_::new({ 17_() }) });
+    let mut expected: Expected_3_ = Expected_3_::new({ S_3_::new({ Some(17_()) }) });
     unimplemented!();
     unimplemented!();
     let mut r1: () = unimplemented!();
@@ -390,7 +404,7 @@ pub unsafe fn test_14() {
 }
 pub unsafe fn test_15() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_2_ = Expected_2_::new({ S_2_::new({ 17_() }) });
+    let mut expected: Expected_4_ = Expected_4_::new({ S_4_::new({ Some(17_()) }) });
     unimplemented!();
     unimplemented!();
     let mut r1: () = unimplemented!();
@@ -406,7 +420,7 @@ pub unsafe fn test_15() {
 }
 pub unsafe fn test_16() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_3_ = Expected_3_::new({ S_3_::new({ 17_() }) });
+    let mut expected: Expected_5_ = Expected_5_::new({ S_5_::new({ Some(17_()) }) });
     unimplemented!();
     unimplemented!();
     let mut r1: () = unimplemented!();
@@ -422,39 +436,7 @@ pub unsafe fn test_16() {
 }
 pub unsafe fn test_17() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_4_ = Expected_4_::new({ S_4_::new({ 17_() }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_18() {
-    let mut a: () = unimplemented!();
-    let mut expected: Expected_5_ = Expected_5_::new({ S_5_::new({ 17_() }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_19() {
-    let mut a: () = unimplemented!();
-    let mut expected: Expected_6_ = Expected_6_::new({ S_6_::new({ 17_() }) });
+    let mut expected: Expected_6_ = Expected_6_::new({ S_6_::new({ Some(17_()) }) });
     unimplemented!();
     unimplemented!();
     let mut r1: () = unimplemented!();
@@ -484,12 +466,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_12() });
+    (unsafe { test_13() });
     (unsafe { test_14() });
     (unsafe { test_15() });
     (unsafe { test_16() });
     (unsafe { test_17() });
-    (unsafe { test_18() });
-    (unsafe { test_19() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -129,11 +129,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -176,11 +172,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -330,7 +322,7 @@ const _: () = assert!(
     true,
     "has_transform_error<const std::expected<int, MoveOnlyErrorType>&&, int(const MoveOnlyErrorType&&)>"
 );
-pub unsafe fn test_val_types_3() {
+pub unsafe fn test_val_types_2() {
     {
         {
             let mut e: () = unimplemented!();
@@ -392,7 +384,7 @@ pub unsafe fn test_val_types_3() {
         }
     }
 }
-pub unsafe fn test_direct_non_list_init_4() {
+pub unsafe fn test_direct_non_list_init_3() {
     let mut xform: FnPtr<fn(()) -> NonCopy> =
         FnPtr::<fn(()) -> NonCopy>::new(|mut i: ()| -> NonCopy {
             unsafe {
@@ -403,7 +395,7 @@ pub unsafe fn test_direct_non_list_init_4() {
     let mut n: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_sfinae_5() {
+pub unsafe fn test_sfinae_4() {
     let mut e: () = unimplemented!();
     let mut l: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -433,7 +425,7 @@ pub unsafe fn test_sfinae_5() {
         (*ce1).transform_error(___f)
     });
 }
-pub unsafe fn test_move_only_error_type_6() {
+pub unsafe fn test_move_only_error_type_5() {
     {
         let mut e: () = unimplemented!();
         let mut l: FnPtr<fn(*mut MoveOnlyErrorType) -> ()> =
@@ -479,11 +471,11 @@ pub unsafe fn test_move_only_error_type_6() {
         &(unsafe { e.transform_error(&mut l) });
     }
 }
-pub unsafe fn test_7() -> () {
-    (unsafe { test_sfinae_5() });
-    (unsafe { test_val_types_3() });
-    (unsafe { test_direct_non_list_init_4() });
-    (unsafe { test_move_only_error_type_6() });
+pub unsafe fn test_6() -> () {
+    (unsafe { test_sfinae_4() });
+    (unsafe { test_val_types_2() });
+    (unsafe { test_direct_non_list_init_3() });
+    (unsafe { test_move_only_error_type_5() });
     return true;
 }
 pub fn main() {
@@ -502,7 +494,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_7() });
+    (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

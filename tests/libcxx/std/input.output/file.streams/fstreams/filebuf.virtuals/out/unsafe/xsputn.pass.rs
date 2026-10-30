@@ -36,7 +36,7 @@ pub unsafe fn sputn_seekoff_0(
         let mut p1: () = unimplemented!();
         let mut c: () = unimplemented!();
         if ((unimplemented!()) < (0_())) {
-            p1 = unimplemented!();
+            unimplemented!();
             unimplemented!();
             c = ('^' as ());
         } else {
@@ -56,7 +56,7 @@ pub unsafe fn sputn_seekoff_0(
         unimplemented!();
         (*unimplemented!()) = ('Z' as ());
         unimplemented!();
-        (*unimplemented!()) = (unsafe { toupper_1(c) });
+        (*unimplemented!()) = unimplemented!();
         unimplemented!();
         let mut new_pos: () = unimplemented!();
         let mut p2: () = unimplemented!();
@@ -80,14 +80,14 @@ pub unsafe fn sputn_seekoff_0(
         i.prefix_inc();
     }
 }
-pub unsafe fn sputn_not_open_2() {
+pub unsafe fn sputn_not_open_1() {
     let mut data: () = unimplemented!();
     let mut f: () = unimplemented!();
     let mut len: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn sputn_not_open_wchar_3() {
+pub unsafe fn sputn_not_open_wchar_2() {
     let mut data: () = unimplemented!();
     let mut f: () = unimplemented!();
     let mut len: () = unimplemented!();
@@ -110,8 +110,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { sputn_not_open_2() });
-    (unsafe { sputn_not_open_wchar_3() });
+    (unsafe { sputn_not_open_1() });
+    (unsafe { sputn_not_open_wchar_2() });
     (unsafe { sputn_seekoff_0(std::ptr::null_mut(), 10_(), 21_(), -27_(), 1_()) });
     (unsafe { sputn_seekoff_0(std::ptr::null_mut(), 10_(), 1_(), -27_(), 1_()) });
     (unsafe { sputn_seekoff_0(std::ptr::null_mut(), 10_(), 10_(), 14_(), 12_()) });

@@ -23,59 +23,16 @@ impl LessAndEqComp {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for LessAndEqComp {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_0(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_0(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for LessAndEqComp {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for LessAndEqComp {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for LessAndEqComp {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for LessAndEqComp {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for LessAndEqComp {}
 pub fn operator_cmp_2(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
@@ -96,22 +53,16 @@ impl StrongOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for StrongOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_2(self.clone(), other.clone()) }
+impl CppLess for StrongOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_2(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for StrongOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for StrongOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_2(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for StrongOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_2(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for StrongOrder {}
 pub fn operator_cmp_3(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -132,22 +83,16 @@ impl WeakOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for WeakOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_3(self.clone(), other.clone()) }
+impl CppLess for WeakOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_3(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for WeakOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for WeakOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_3(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for WeakOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_3(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_4(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
@@ -171,22 +116,16 @@ impl PartialOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for PartialOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_4(self.clone(), other.clone()) }
+impl CppLess for PartialOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_4(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for PartialOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for PartialOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::PartialEq for PartialOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for PartialOrder {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
@@ -212,23 +151,11 @@ impl EqualityComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for EqualityComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_6(
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for EqualityComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -258,44 +185,16 @@ impl ThreeWayComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::Ord for ThreeWayComparable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_8(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for ThreeWayComparable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_8(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for ThreeWayComparable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for ThreeWayComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for ThreeWayComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for ThreeWayComparable {}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -366,7 +265,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -376,12 +275,19 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -391,14 +297,27 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 pub fn operator_eq_10(
     x: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
     y: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+pub fn operator_ne_11(
+    x: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
+    y: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
+) -> () {
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     #[offset(0)]
@@ -422,41 +341,25 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_10(
-                Rc::new(RefCell::new(
-                    cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-                        it_: self.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: self.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-                        it_: other.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: other.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
+impl CppEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub fn operator_eq_11(
+pub fn operator_eq_12(
     x: Ptr<forward_iterator_const_int_ptr_>,
     y: Ptr<forward_iterator_const_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+pub fn operator_ne_13(
+    x: Ptr<forward_iterator_const_int_ptr_>,
+    y: Ptr<forward_iterator_const_int_ptr_>,
+) -> () {
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -480,36 +383,24 @@ impl forward_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_11(
-                Rc::new(RefCell::new(forward_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
-pub fn operator_eq_12(
+pub fn operator_eq_14(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+pub fn operator_ne_15(
+    x: Ptr<bidirectional_iterator_const_int_ptr_>,
+    y: Ptr<bidirectional_iterator_const_int_ptr_>,
+) -> () {
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -533,42 +424,24 @@ impl bidirectional_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_12(
-                Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for bidirectional_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
-pub fn operator_sub_13(
-    mut x: random_access_iterator_const_int_ptr_,
-    mut y: random_access_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
-}
-pub fn operator_eq_14(
+pub fn operator_eq_16(
     x: Ptr<random_access_iterator_const_int_ptr_>,
     y: Ptr<random_access_iterator_const_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+pub fn operator_ne_17(
+    x: Ptr<random_access_iterator_const_int_ptr_>,
+    y: Ptr<random_access_iterator_const_int_ptr_>,
+) -> () {
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -592,30 +465,12 @@ impl random_access_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_14(
-                Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for random_access_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_16(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -625,24 +480,31 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub fn operator_sub_15(
-    mut x: contiguous_iterator_const_int_ptr_,
-    mut y: contiguous_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
-}
-pub fn operator_eq_16(
+pub fn operator_eq_18(
     x: Ptr<contiguous_iterator_const_int_ptr_>,
     y: Ptr<contiguous_iterator_const_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+pub fn operator_ne_19(
+    x: Ptr<contiguous_iterator_const_int_ptr_>,
+    y: Ptr<contiguous_iterator_const_int_ptr_>,
+) -> () {
+    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -666,29 +528,11 @@ impl contiguous_iterator_const_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_16(
-                Rc::new(RefCell::new(contiguous_iterator_const_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(contiguous_iterator_const_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for contiguous_iterator_const_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_18(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for contiguous_iterator_const_int_ptr_ {}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_input_iterator_int_ptr_ {
@@ -754,7 +598,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_17(
+pub fn operator_eq_20(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -768,23 +612,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_17(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_20(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -799,36 +631,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_18(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_21(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_19(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_22(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_18(_i, n)
+        operator_add_21(_i, n)
     });
 }
-pub fn iter_swap_20(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_23(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_21(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_24(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -871,52 +703,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_23(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_26(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_25(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_22(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -936,44 +732,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -982,27 +751,6 @@ impl util_iterator_error {
     pub fn new(mut what: Ptr<()>) -> Self {
         Self {}
     }
-}
-pub fn test_lexicographical_compare_24(a: (), b: (), expected: ()) {
-    let a: Value<()> = Rc::new(RefCell::new(a));
-    let b: Value<()> = Rc::new(RefCell::new(b));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-}
-pub fn test_lexicographical_compare_25(a: (), b: (), expected: ()) {
-    let a: Value<()> = Rc::new(RefCell::new(a));
-    let b: Value<()> = Rc::new(RefCell::new(b));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-}
-pub fn test_lexicographical_compare_26(a: (), b: (), expected: ()) {
-    let a: Value<()> = Rc::new(RefCell::new(a));
-    let b: Value<()> = Rc::new(RefCell::new(b));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
 }
 pub fn test_lexicographical_compare_27(a: (), b: (), expected: ()) {
     let a: Value<()> = Rc::new(RefCell::new(a));
@@ -3083,635 +2831,656 @@ pub fn test_lexicographical_compare_323(a: (), b: (), expected: ()) {
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_given_iterator_types_324() {
-    ({ test_lexicographical_compare_24(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_25(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_26(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!()) });
+pub fn test_lexicographical_compare_324(a: (), b: (), expected: ()) {
+    let a: Value<()> = Rc::new(RefCell::new(a));
+    let b: Value<()> = Rc::new(RefCell::new(b));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+}
+pub fn test_lexicographical_compare_325(a: (), b: (), expected: ()) {
+    let a: Value<()> = Rc::new(RefCell::new(a));
+    let b: Value<()> = Rc::new(RefCell::new(b));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+}
+pub fn test_lexicographical_compare_326(a: (), b: (), expected: ()) {
+    let a: Value<()> = Rc::new(RefCell::new(a));
+    let b: Value<()> = Rc::new(RefCell::new(b));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+}
+pub fn test_given_iterator_types_327() {
     ({ test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_28(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_29(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_325() {
+    ({ test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_31(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_32(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_328() {
     ({ test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_34(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_35(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_326() {
+    ({ test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_37(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_38(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_329() {
     ({ test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_40(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_41(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_327() {
+    ({ test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_43(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_44(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_330() {
     ({ test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_46(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_47(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_328() {
+    ({ test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_49(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_50(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_331() {
     ({ test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_52(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_53(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_329() {
+    ({ test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_55(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_56(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_332() {
     ({ test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_58(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_59(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_330() {
+    ({ test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_61(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_62(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_333() {
     ({ test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_64(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_65(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_331() {
+    ({ test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_67(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_68(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_334() {
     ({ test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_70(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_71(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_332() {
+    ({ test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_73(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_74(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_335() {
     ({ test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_76(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_77(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_333() {
+    ({ test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_79(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_80(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_336() {
     ({ test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_82(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_83(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_334() {
+    ({ test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_85(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_86(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_337() {
     ({ test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_88(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_89(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_335() {
+    ({ test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_91(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_92(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_338() {
     ({ test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_94(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_95(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_336() {
+    ({ test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_97(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_98(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_339() {
     ({ test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_100(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_101(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_337() {
+    ({ test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_103(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_104(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_340() {
     ({ test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_106(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_107(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_338() {
+    ({ test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_109(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_110(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_341() {
     ({ test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_112(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_113(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_339() {
+    ({ test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_115(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_116(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_342() {
     ({ test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_118(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_119(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_340() {
+    ({ test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_121(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_122(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_343() {
     ({ test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_124(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_125(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_341() {
+    ({ test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_127(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_128(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_344() {
     ({ test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_130(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_131(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_342() {
+    ({ test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_133(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_134(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_345() {
     ({ test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_136(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_137(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_343() {
+    ({ test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_139(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_140(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_346() {
     ({ test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_142(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_143(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_344() {
+    ({ test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_145(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_146(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_347() {
     ({ test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_148(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_149(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_345() {
+    ({ test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_151(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_152(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_348() {
     ({ test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_154(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_155(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_346() {
+    ({ test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_157(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_158(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_349() {
     ({ test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_160(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_161(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_347() {
+    ({ test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_163(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_164(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_350() {
     ({ test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_166(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_167(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_348() {
+    ({ test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_169(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_170(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_351() {
     ({ test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_172(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_173(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_349() {
+    ({ test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_175(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_176(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_352() {
     ({ test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_178(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_179(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_350() {
+    ({ test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_181(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_182(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_353() {
     ({ test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_184(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_185(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_351() {
+    ({ test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_187(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_188(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_354() {
     ({ test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_190(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_191(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_352() {
+    ({ test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_193(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_194(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_355() {
     ({ test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_196(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_197(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_353() {
+    ({ test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_199(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_200(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_356() {
     ({ test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_202(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_203(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_354() {
+    ({ test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_205(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_206(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_357() {
     ({ test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_208(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_209(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_355() {
+    ({ test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_211(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_212(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_358() {
     ({ test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_214(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_215(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_356() {
+    ({ test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_217(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_218(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_359() {
     ({ test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_220(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_221(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_357() {
+    ({ test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_223(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_224(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_360() {
     ({ test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_226(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_227(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_358() {
+    ({ test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_229(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_230(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_361() {
     ({ test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_232(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_233(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_359() {
+    ({ test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_235(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_236(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_362() {
     ({ test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_238(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_239(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_360() {
+    ({ test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_241(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_242(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_363() {
     ({ test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_244(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_245(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_361() {
+    ({ test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_247(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_248(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_364() {
     ({ test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_250(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_251(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_362() {
+    ({ test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_253(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_254(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_365() {
     ({ test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_256(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_257(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_363() {
+    ({ test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_259(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_260(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_366() {
     ({ test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_262(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_263(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_364() {
+    ({ test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_265(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_266(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_367() {
     ({ test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_268(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_269(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_365() {
+    ({ test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_271(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_272(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_368() {
     ({ test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_274(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_275(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_366() {
+    ({ test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_277(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_278(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_369() {
     ({ test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_280(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_281(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_367() {
+    ({ test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_283(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_284(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_370() {
     ({ test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_286(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_287(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_368() {
+    ({ test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_289(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_290(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_371() {
     ({ test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_292(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_293(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_369() {
+    ({ test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_295(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_296(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_372() {
     ({ test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_298(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_299(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_370() {
+    ({ test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_301(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_302(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_373() {
     ({ test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_304(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_305(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_371() {
+    ({ test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_307(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_308(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_374() {
     ({ test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_310(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_311(unimplemented!(), unimplemented!(), unimplemented!()) });
-}
-pub fn test_given_iterator_types_372() {
+    ({ test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_313(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_314(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!()) });
+}
+pub fn test_given_iterator_types_375() {
     ({ test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_316(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_317(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_319(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_320(unimplemented!(), unimplemented!(), unimplemented!()) });
 }
-pub fn test_iterator_types1_373() {
-    ({ test_given_iterator_types_324() });
-    ({ test_given_iterator_types_325() });
-    ({ test_given_iterator_types_326() });
+pub fn test_iterator_types1_376() {
     ({ test_given_iterator_types_327() });
     ({ test_given_iterator_types_328() });
     ({ test_given_iterator_types_329() });
     ({ test_given_iterator_types_330() });
-}
-pub fn test_iterator_types1_374() {
     ({ test_given_iterator_types_331() });
     ({ test_given_iterator_types_332() });
     ({ test_given_iterator_types_333() });
+}
+pub fn test_iterator_types1_377() {
     ({ test_given_iterator_types_334() });
     ({ test_given_iterator_types_335() });
     ({ test_given_iterator_types_336() });
     ({ test_given_iterator_types_337() });
-}
-pub fn test_iterator_types1_375() {
     ({ test_given_iterator_types_338() });
     ({ test_given_iterator_types_339() });
     ({ test_given_iterator_types_340() });
+}
+pub fn test_iterator_types1_378() {
     ({ test_given_iterator_types_341() });
     ({ test_given_iterator_types_342() });
     ({ test_given_iterator_types_343() });
     ({ test_given_iterator_types_344() });
-}
-pub fn test_iterator_types1_376() {
     ({ test_given_iterator_types_345() });
     ({ test_given_iterator_types_346() });
     ({ test_given_iterator_types_347() });
+}
+pub fn test_iterator_types1_379() {
     ({ test_given_iterator_types_348() });
     ({ test_given_iterator_types_349() });
     ({ test_given_iterator_types_350() });
     ({ test_given_iterator_types_351() });
-}
-pub fn test_iterator_types1_377() {
     ({ test_given_iterator_types_352() });
     ({ test_given_iterator_types_353() });
     ({ test_given_iterator_types_354() });
+}
+pub fn test_iterator_types1_380() {
     ({ test_given_iterator_types_355() });
     ({ test_given_iterator_types_356() });
     ({ test_given_iterator_types_357() });
     ({ test_given_iterator_types_358() });
-}
-pub fn test_iterator_types1_378() {
     ({ test_given_iterator_types_359() });
     ({ test_given_iterator_types_360() });
     ({ test_given_iterator_types_361() });
+}
+pub fn test_iterator_types1_381() {
     ({ test_given_iterator_types_362() });
     ({ test_given_iterator_types_363() });
     ({ test_given_iterator_types_364() });
     ({ test_given_iterator_types_365() });
-}
-pub fn test_iterator_types1_379() {
     ({ test_given_iterator_types_366() });
     ({ test_given_iterator_types_367() });
     ({ test_given_iterator_types_368() });
+}
+pub fn test_iterator_types1_382() {
     ({ test_given_iterator_types_369() });
     ({ test_given_iterator_types_370() });
     ({ test_given_iterator_types_371() });
     ({ test_given_iterator_types_372() });
+    ({ test_given_iterator_types_373() });
+    ({ test_given_iterator_types_374() });
+    ({ test_given_iterator_types_375() });
 }
-pub fn test_iterator_types_380() {
-    ({ test_iterator_types1_373() });
-    ({ test_iterator_types1_374() });
-    ({ test_iterator_types1_375() });
+pub fn test_iterator_types_383() {
     ({ test_iterator_types1_376() });
     ({ test_iterator_types1_377() });
     ({ test_iterator_types1_378() });
     ({ test_iterator_types1_379() });
+    ({ test_iterator_types1_380() });
+    ({ test_iterator_types1_381() });
+    ({ test_iterator_types1_382() });
 }
-pub fn test_comparison_categories_381() {
-    ({ test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_319(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_320(unimplemented!(), unimplemented!(), unimplemented!()) });
+pub fn test_comparison_categories_384() {
     ({ test_lexicographical_compare_321(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_322(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({ test_lexicographical_compare_323(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({ test_lexicographical_compare_323(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_324(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_325(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_326(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_lexicographical_compare_326(unimplemented!(), unimplemented!(), unimplemented!()) });
 }
-pub fn test_proxy_iterators_382() {
+pub fn test_proxy_iterators_385() {
     let mut vec_: () = unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_383() -> () {
-    ({ test_iterator_types_380() });
-    ({ test_comparison_categories_381() });
-    ({ test_proxy_iterators_382() });
+pub fn test_386() -> () {
+    ({ test_iterator_types_383() });
+    ({ test_comparison_categories_384() });
+    ({ test_proxy_iterators_385() });
     return true;
 }
 pub fn main() {
@@ -3734,7 +3503,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_383() });
+    ({ test_386() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -3830,6 +3599,10 @@ pub trait bidirectional_iterator_const_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_const_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_const_int_ptr_>;
 }
 impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3837,6 +3610,17 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_const_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3867,6 +3651,10 @@ pub trait contiguous_iterator_const_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_const_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_const_int_ptr_>;
 }
 impl contiguous_iterator_const_int_ptr_Impl for Ptr<contiguous_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3874,6 +3662,17 @@ impl contiguous_iterator_const_int_ptr_Impl for Ptr<contiguous_iterator_const_in
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_const_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3886,6 +3685,10 @@ pub trait cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl {
     ) -> cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>;
 }
 impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
     for Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>
@@ -3895,6 +3698,17 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3908,8 +3722,24 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -3920,8 +3750,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -4001,6 +3847,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -4009,6 +3859,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_const_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -4016,6 +3877,10 @@ pub trait forward_iterator_const_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_const_int_ptr_>,
+    ) -> Ptr<forward_iterator_const_int_ptr_>;
 }
 impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -4023,6 +3888,17 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_const_int_ptr_>,
+    ) -> Ptr<forward_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -4059,6 +3935,10 @@ pub trait random_access_iterator_const_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_const_int_ptr_>,
+    ) -> Ptr<random_access_iterator_const_int_ptr_>;
 }
 impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -4066,6 +3946,17 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_const_int_ptr_>,
+    ) -> Ptr<random_access_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

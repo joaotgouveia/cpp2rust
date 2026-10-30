@@ -27,13 +27,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut x1: () = unimplemented!();
         let mut x2: () = unimplemented!();
-        let f: *const () = (unsafe { use_facet_0(&l) });
+        let f: *const () = unimplemented!();
         unimplemented!();
     }
     {
         let mut x1: () = unimplemented!();
         let mut x2: () = unimplemented!();
-        let f: *const () = (unsafe { use_facet_1(&l) });
+        let f: *const () = unimplemented!();
         unimplemented!();
     }
     return 0_();

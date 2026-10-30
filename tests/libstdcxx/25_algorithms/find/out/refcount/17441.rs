@@ -6,9 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn find_0(mut first: Ptr<()>, mut _a1: Ptr<()>, _a2: Ptr<()>, _a3: ()) -> Ptr<()> {
+pub fn find_0(first: Ptr<()>, mut _a1: Ptr<()>, _a2: Ptr<()>, _a3: ()) -> Ptr<()> {
+    let first: Value<Ptr<()>> = Rc::new(RefCell::new(first));
     let _a3: Value<()> = Rc::new(RefCell::new(_a3));
-    return first;
+    return (*first.borrow()).clone();
 }
 pub fn test01_1() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));

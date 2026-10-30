@@ -328,31 +328,75 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 pub unsafe fn operator_eq_10(
     x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_11(
+    x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -381,6 +425,17 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    ) -> *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
@@ -394,14 +449,20 @@ impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ 
 }
 impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub unsafe fn operator_eq_11(
+pub unsafe fn operator_eq_12(
     x: *const forward_iterator_const_int_ptr_,
     y: *const forward_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_13(
+    x: *const forward_iterator_const_int_ptr_,
+    y: *const forward_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -428,11 +489,22 @@ impl forward_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_const_int_ptr_,
+    ) -> *mut forward_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_11(
+            operator_eq_12(
                 self as *const forward_iterator_const_int_ptr_,
                 other as *const forward_iterator_const_int_ptr_,
             )
@@ -440,14 +512,20 @@ impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_14(
     x: *const bidirectional_iterator_const_int_ptr_,
     y: *const bidirectional_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_15(
+    x: *const bidirectional_iterator_const_int_ptr_,
+    y: *const bidirectional_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct bidirectional_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -474,11 +552,22 @@ impl bidirectional_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut bidirectional_iterator_const_int_ptr_,
+    ) -> *mut bidirectional_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut bidirectional_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_14(
                 self as *const bidirectional_iterator_const_int_ptr_,
                 other as *const bidirectional_iterator_const_int_ptr_,
             )
@@ -486,20 +575,20 @@ impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
-pub unsafe fn operator_sub_13(
-    mut x: random_access_iterator_const_int_ptr_,
-    mut y: random_access_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_14(
+pub unsafe fn operator_eq_16(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_17(
+    x: *const random_access_iterator_const_int_ptr_,
+    y: *const random_access_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -526,11 +615,22 @@ impl random_access_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut random_access_iterator_const_int_ptr_,
+    ) -> *mut random_access_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut random_access_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_14(
+            operator_eq_16(
                 self as *const random_access_iterator_const_int_ptr_,
                 other as *const random_access_iterator_const_int_ptr_,
             )
@@ -539,7 +639,7 @@ impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
 }
 impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -551,25 +651,43 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub unsafe fn operator_sub_15(
-    mut x: contiguous_iterator_const_int_ptr_,
-    mut y: contiguous_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_18(
     x: *const contiguous_iterator_const_int_ptr_,
     y: *const contiguous_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_19(
+    x: *const contiguous_iterator_const_int_ptr_,
+    y: *const contiguous_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -596,11 +714,22 @@ impl contiguous_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut contiguous_iterator_const_int_ptr_,
+    ) -> *mut contiguous_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut contiguous_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_16(
+            operator_eq_18(
                 self as *const contiguous_iterator_const_int_ptr_,
                 other as *const contiguous_iterator_const_int_ptr_,
             )
@@ -691,7 +820,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_17(
+pub unsafe fn operator_eq_20(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -706,7 +835,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_17(
+            operator_eq_20(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -728,33 +857,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_18(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_21(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_19(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_22(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_18(_i, n)
+        operator_add_21(_i, n)
     });
 }
-pub unsafe fn iter_swap_20(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_23(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_21(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_24(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_22(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_25(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_23(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -838,7 +967,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_23(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_26(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -848,7 +977,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_22(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_25(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -915,18 +1044,6 @@ impl util_iterator_error {
         let mut this = Self {};
         this
     }
-}
-pub unsafe fn test_lexicographical_compare_24(mut a: (), mut b: (), mut expected: ()) {
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_lexicographical_compare_25(mut a: (), mut b: (), mut expected: ()) {
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_lexicographical_compare_26(mut a: (), mut b: (), mut expected: ()) {
-    let mut result: () = unimplemented!();
-    unimplemented!();
 }
 pub unsafe fn test_lexicographical_compare_27(mut a: (), mut b: (), mut expected: ()) {
     let mut result: () = unimplemented!();
@@ -2116,25 +2233,19 @@ pub unsafe fn test_lexicographical_compare_323(mut a: (), mut b: (), mut expecte
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_given_iterator_types_324() {
-    (unsafe {
-        test_lexicographical_compare_24(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_25(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_26(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+pub unsafe fn test_lexicographical_compare_324(mut a: (), mut b: (), mut expected: ()) {
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_lexicographical_compare_325(mut a: (), mut b: (), mut expected: ()) {
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_lexicographical_compare_326(mut a: (), mut b: (), mut expected: ()) {
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_given_iterator_types_327() {
     (unsafe {
         test_lexicographical_compare_27(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2144,8 +2255,15 @@ pub unsafe fn test_given_iterator_types_324() {
     (unsafe {
         test_lexicographical_compare_29(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_325() {
+    (unsafe {
+        test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_30(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2155,15 +2273,8 @@ pub unsafe fn test_given_iterator_types_325() {
     (unsafe {
         test_lexicographical_compare_32(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_328() {
     (unsafe {
         test_lexicographical_compare_33(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2173,8 +2284,15 @@ pub unsafe fn test_given_iterator_types_325() {
     (unsafe {
         test_lexicographical_compare_35(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_326() {
+    (unsafe {
+        test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_36(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2184,15 +2302,8 @@ pub unsafe fn test_given_iterator_types_326() {
     (unsafe {
         test_lexicographical_compare_38(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_329() {
     (unsafe {
         test_lexicographical_compare_39(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2202,8 +2313,15 @@ pub unsafe fn test_given_iterator_types_326() {
     (unsafe {
         test_lexicographical_compare_41(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_327() {
+    (unsafe {
+        test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_42(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2213,15 +2331,8 @@ pub unsafe fn test_given_iterator_types_327() {
     (unsafe {
         test_lexicographical_compare_44(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_330() {
     (unsafe {
         test_lexicographical_compare_45(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2231,8 +2342,15 @@ pub unsafe fn test_given_iterator_types_327() {
     (unsafe {
         test_lexicographical_compare_47(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_328() {
+    (unsafe {
+        test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_48(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2242,15 +2360,8 @@ pub unsafe fn test_given_iterator_types_328() {
     (unsafe {
         test_lexicographical_compare_50(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_331() {
     (unsafe {
         test_lexicographical_compare_51(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2260,8 +2371,15 @@ pub unsafe fn test_given_iterator_types_328() {
     (unsafe {
         test_lexicographical_compare_53(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_329() {
+    (unsafe {
+        test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_54(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2271,15 +2389,8 @@ pub unsafe fn test_given_iterator_types_329() {
     (unsafe {
         test_lexicographical_compare_56(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_332() {
     (unsafe {
         test_lexicographical_compare_57(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2289,8 +2400,15 @@ pub unsafe fn test_given_iterator_types_329() {
     (unsafe {
         test_lexicographical_compare_59(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_330() {
+    (unsafe {
+        test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_60(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2300,15 +2418,8 @@ pub unsafe fn test_given_iterator_types_330() {
     (unsafe {
         test_lexicographical_compare_62(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_333() {
     (unsafe {
         test_lexicographical_compare_63(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2318,8 +2429,15 @@ pub unsafe fn test_given_iterator_types_330() {
     (unsafe {
         test_lexicographical_compare_65(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_331() {
+    (unsafe {
+        test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_66(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2329,15 +2447,8 @@ pub unsafe fn test_given_iterator_types_331() {
     (unsafe {
         test_lexicographical_compare_68(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_334() {
     (unsafe {
         test_lexicographical_compare_69(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2347,8 +2458,15 @@ pub unsafe fn test_given_iterator_types_331() {
     (unsafe {
         test_lexicographical_compare_71(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_332() {
+    (unsafe {
+        test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_72(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2358,15 +2476,8 @@ pub unsafe fn test_given_iterator_types_332() {
     (unsafe {
         test_lexicographical_compare_74(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_335() {
     (unsafe {
         test_lexicographical_compare_75(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2376,8 +2487,15 @@ pub unsafe fn test_given_iterator_types_332() {
     (unsafe {
         test_lexicographical_compare_77(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_333() {
+    (unsafe {
+        test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_78(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2387,15 +2505,8 @@ pub unsafe fn test_given_iterator_types_333() {
     (unsafe {
         test_lexicographical_compare_80(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_336() {
     (unsafe {
         test_lexicographical_compare_81(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2405,8 +2516,15 @@ pub unsafe fn test_given_iterator_types_333() {
     (unsafe {
         test_lexicographical_compare_83(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_334() {
+    (unsafe {
+        test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_84(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2416,15 +2534,8 @@ pub unsafe fn test_given_iterator_types_334() {
     (unsafe {
         test_lexicographical_compare_86(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_337() {
     (unsafe {
         test_lexicographical_compare_87(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2434,8 +2545,15 @@ pub unsafe fn test_given_iterator_types_334() {
     (unsafe {
         test_lexicographical_compare_89(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_335() {
+    (unsafe {
+        test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_90(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2445,15 +2563,8 @@ pub unsafe fn test_given_iterator_types_335() {
     (unsafe {
         test_lexicographical_compare_92(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_338() {
     (unsafe {
         test_lexicographical_compare_93(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2463,8 +2574,15 @@ pub unsafe fn test_given_iterator_types_335() {
     (unsafe {
         test_lexicographical_compare_95(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_336() {
+    (unsafe {
+        test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_96(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2474,15 +2592,8 @@ pub unsafe fn test_given_iterator_types_336() {
     (unsafe {
         test_lexicographical_compare_98(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_339() {
     (unsafe {
         test_lexicographical_compare_99(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2492,8 +2603,15 @@ pub unsafe fn test_given_iterator_types_336() {
     (unsafe {
         test_lexicographical_compare_101(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_337() {
+    (unsafe {
+        test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_102(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2503,15 +2621,8 @@ pub unsafe fn test_given_iterator_types_337() {
     (unsafe {
         test_lexicographical_compare_104(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_340() {
     (unsafe {
         test_lexicographical_compare_105(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2521,8 +2632,15 @@ pub unsafe fn test_given_iterator_types_337() {
     (unsafe {
         test_lexicographical_compare_107(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_338() {
+    (unsafe {
+        test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_108(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2532,15 +2650,8 @@ pub unsafe fn test_given_iterator_types_338() {
     (unsafe {
         test_lexicographical_compare_110(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_341() {
     (unsafe {
         test_lexicographical_compare_111(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2550,8 +2661,15 @@ pub unsafe fn test_given_iterator_types_338() {
     (unsafe {
         test_lexicographical_compare_113(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_339() {
+    (unsafe {
+        test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_114(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2561,15 +2679,8 @@ pub unsafe fn test_given_iterator_types_339() {
     (unsafe {
         test_lexicographical_compare_116(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_342() {
     (unsafe {
         test_lexicographical_compare_117(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2579,8 +2690,15 @@ pub unsafe fn test_given_iterator_types_339() {
     (unsafe {
         test_lexicographical_compare_119(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_340() {
+    (unsafe {
+        test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_120(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2590,15 +2708,8 @@ pub unsafe fn test_given_iterator_types_340() {
     (unsafe {
         test_lexicographical_compare_122(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_343() {
     (unsafe {
         test_lexicographical_compare_123(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2608,8 +2719,15 @@ pub unsafe fn test_given_iterator_types_340() {
     (unsafe {
         test_lexicographical_compare_125(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_341() {
+    (unsafe {
+        test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_126(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2619,15 +2737,8 @@ pub unsafe fn test_given_iterator_types_341() {
     (unsafe {
         test_lexicographical_compare_128(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_344() {
     (unsafe {
         test_lexicographical_compare_129(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2637,8 +2748,15 @@ pub unsafe fn test_given_iterator_types_341() {
     (unsafe {
         test_lexicographical_compare_131(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_342() {
+    (unsafe {
+        test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_132(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2648,15 +2766,8 @@ pub unsafe fn test_given_iterator_types_342() {
     (unsafe {
         test_lexicographical_compare_134(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_345() {
     (unsafe {
         test_lexicographical_compare_135(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2666,8 +2777,15 @@ pub unsafe fn test_given_iterator_types_342() {
     (unsafe {
         test_lexicographical_compare_137(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_343() {
+    (unsafe {
+        test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_138(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2677,15 +2795,8 @@ pub unsafe fn test_given_iterator_types_343() {
     (unsafe {
         test_lexicographical_compare_140(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_346() {
     (unsafe {
         test_lexicographical_compare_141(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2695,8 +2806,15 @@ pub unsafe fn test_given_iterator_types_343() {
     (unsafe {
         test_lexicographical_compare_143(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_344() {
+    (unsafe {
+        test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_144(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2706,15 +2824,8 @@ pub unsafe fn test_given_iterator_types_344() {
     (unsafe {
         test_lexicographical_compare_146(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_347() {
     (unsafe {
         test_lexicographical_compare_147(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2724,8 +2835,15 @@ pub unsafe fn test_given_iterator_types_344() {
     (unsafe {
         test_lexicographical_compare_149(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_345() {
+    (unsafe {
+        test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_150(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2735,15 +2853,8 @@ pub unsafe fn test_given_iterator_types_345() {
     (unsafe {
         test_lexicographical_compare_152(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_348() {
     (unsafe {
         test_lexicographical_compare_153(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2753,8 +2864,15 @@ pub unsafe fn test_given_iterator_types_345() {
     (unsafe {
         test_lexicographical_compare_155(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_346() {
+    (unsafe {
+        test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_156(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2764,15 +2882,8 @@ pub unsafe fn test_given_iterator_types_346() {
     (unsafe {
         test_lexicographical_compare_158(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_349() {
     (unsafe {
         test_lexicographical_compare_159(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2782,8 +2893,15 @@ pub unsafe fn test_given_iterator_types_346() {
     (unsafe {
         test_lexicographical_compare_161(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_347() {
+    (unsafe {
+        test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_162(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2793,15 +2911,8 @@ pub unsafe fn test_given_iterator_types_347() {
     (unsafe {
         test_lexicographical_compare_164(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_350() {
     (unsafe {
         test_lexicographical_compare_165(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2811,8 +2922,15 @@ pub unsafe fn test_given_iterator_types_347() {
     (unsafe {
         test_lexicographical_compare_167(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_348() {
+    (unsafe {
+        test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_168(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2822,15 +2940,8 @@ pub unsafe fn test_given_iterator_types_348() {
     (unsafe {
         test_lexicographical_compare_170(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_351() {
     (unsafe {
         test_lexicographical_compare_171(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2840,8 +2951,15 @@ pub unsafe fn test_given_iterator_types_348() {
     (unsafe {
         test_lexicographical_compare_173(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_349() {
+    (unsafe {
+        test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_174(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2851,15 +2969,8 @@ pub unsafe fn test_given_iterator_types_349() {
     (unsafe {
         test_lexicographical_compare_176(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_352() {
     (unsafe {
         test_lexicographical_compare_177(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2869,8 +2980,15 @@ pub unsafe fn test_given_iterator_types_349() {
     (unsafe {
         test_lexicographical_compare_179(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_350() {
+    (unsafe {
+        test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_180(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2880,15 +2998,8 @@ pub unsafe fn test_given_iterator_types_350() {
     (unsafe {
         test_lexicographical_compare_182(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_353() {
     (unsafe {
         test_lexicographical_compare_183(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2898,8 +3009,15 @@ pub unsafe fn test_given_iterator_types_350() {
     (unsafe {
         test_lexicographical_compare_185(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_351() {
+    (unsafe {
+        test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_186(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2909,15 +3027,8 @@ pub unsafe fn test_given_iterator_types_351() {
     (unsafe {
         test_lexicographical_compare_188(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_354() {
     (unsafe {
         test_lexicographical_compare_189(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2927,8 +3038,15 @@ pub unsafe fn test_given_iterator_types_351() {
     (unsafe {
         test_lexicographical_compare_191(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_352() {
+    (unsafe {
+        test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_192(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2938,15 +3056,8 @@ pub unsafe fn test_given_iterator_types_352() {
     (unsafe {
         test_lexicographical_compare_194(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_355() {
     (unsafe {
         test_lexicographical_compare_195(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2956,8 +3067,15 @@ pub unsafe fn test_given_iterator_types_352() {
     (unsafe {
         test_lexicographical_compare_197(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_353() {
+    (unsafe {
+        test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_198(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2967,15 +3085,8 @@ pub unsafe fn test_given_iterator_types_353() {
     (unsafe {
         test_lexicographical_compare_200(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_356() {
     (unsafe {
         test_lexicographical_compare_201(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2985,8 +3096,15 @@ pub unsafe fn test_given_iterator_types_353() {
     (unsafe {
         test_lexicographical_compare_203(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_354() {
+    (unsafe {
+        test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_204(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -2996,15 +3114,8 @@ pub unsafe fn test_given_iterator_types_354() {
     (unsafe {
         test_lexicographical_compare_206(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_357() {
     (unsafe {
         test_lexicographical_compare_207(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3014,8 +3125,15 @@ pub unsafe fn test_given_iterator_types_354() {
     (unsafe {
         test_lexicographical_compare_209(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_355() {
+    (unsafe {
+        test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_210(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3025,15 +3143,8 @@ pub unsafe fn test_given_iterator_types_355() {
     (unsafe {
         test_lexicographical_compare_212(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_358() {
     (unsafe {
         test_lexicographical_compare_213(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3043,8 +3154,15 @@ pub unsafe fn test_given_iterator_types_355() {
     (unsafe {
         test_lexicographical_compare_215(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_356() {
+    (unsafe {
+        test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_216(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3054,15 +3172,8 @@ pub unsafe fn test_given_iterator_types_356() {
     (unsafe {
         test_lexicographical_compare_218(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_359() {
     (unsafe {
         test_lexicographical_compare_219(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3072,8 +3183,15 @@ pub unsafe fn test_given_iterator_types_356() {
     (unsafe {
         test_lexicographical_compare_221(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_357() {
+    (unsafe {
+        test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_222(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3083,15 +3201,8 @@ pub unsafe fn test_given_iterator_types_357() {
     (unsafe {
         test_lexicographical_compare_224(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_360() {
     (unsafe {
         test_lexicographical_compare_225(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3101,8 +3212,15 @@ pub unsafe fn test_given_iterator_types_357() {
     (unsafe {
         test_lexicographical_compare_227(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_358() {
+    (unsafe {
+        test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_228(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3112,15 +3230,8 @@ pub unsafe fn test_given_iterator_types_358() {
     (unsafe {
         test_lexicographical_compare_230(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_361() {
     (unsafe {
         test_lexicographical_compare_231(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3130,8 +3241,15 @@ pub unsafe fn test_given_iterator_types_358() {
     (unsafe {
         test_lexicographical_compare_233(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_359() {
+    (unsafe {
+        test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_234(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3141,15 +3259,8 @@ pub unsafe fn test_given_iterator_types_359() {
     (unsafe {
         test_lexicographical_compare_236(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_362() {
     (unsafe {
         test_lexicographical_compare_237(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3159,8 +3270,15 @@ pub unsafe fn test_given_iterator_types_359() {
     (unsafe {
         test_lexicographical_compare_239(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_360() {
+    (unsafe {
+        test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_240(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3170,15 +3288,8 @@ pub unsafe fn test_given_iterator_types_360() {
     (unsafe {
         test_lexicographical_compare_242(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_363() {
     (unsafe {
         test_lexicographical_compare_243(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3188,8 +3299,15 @@ pub unsafe fn test_given_iterator_types_360() {
     (unsafe {
         test_lexicographical_compare_245(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_361() {
+    (unsafe {
+        test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_246(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3199,15 +3317,8 @@ pub unsafe fn test_given_iterator_types_361() {
     (unsafe {
         test_lexicographical_compare_248(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_364() {
     (unsafe {
         test_lexicographical_compare_249(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3217,8 +3328,15 @@ pub unsafe fn test_given_iterator_types_361() {
     (unsafe {
         test_lexicographical_compare_251(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_362() {
+    (unsafe {
+        test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_252(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3228,15 +3346,8 @@ pub unsafe fn test_given_iterator_types_362() {
     (unsafe {
         test_lexicographical_compare_254(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_365() {
     (unsafe {
         test_lexicographical_compare_255(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3246,8 +3357,15 @@ pub unsafe fn test_given_iterator_types_362() {
     (unsafe {
         test_lexicographical_compare_257(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_363() {
+    (unsafe {
+        test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_258(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3257,15 +3375,8 @@ pub unsafe fn test_given_iterator_types_363() {
     (unsafe {
         test_lexicographical_compare_260(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_366() {
     (unsafe {
         test_lexicographical_compare_261(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3275,8 +3386,15 @@ pub unsafe fn test_given_iterator_types_363() {
     (unsafe {
         test_lexicographical_compare_263(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_364() {
+    (unsafe {
+        test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_264(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3286,15 +3404,8 @@ pub unsafe fn test_given_iterator_types_364() {
     (unsafe {
         test_lexicographical_compare_266(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_367() {
     (unsafe {
         test_lexicographical_compare_267(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3304,8 +3415,15 @@ pub unsafe fn test_given_iterator_types_364() {
     (unsafe {
         test_lexicographical_compare_269(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_365() {
+    (unsafe {
+        test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_270(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3315,15 +3433,8 @@ pub unsafe fn test_given_iterator_types_365() {
     (unsafe {
         test_lexicographical_compare_272(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_368() {
     (unsafe {
         test_lexicographical_compare_273(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3333,8 +3444,15 @@ pub unsafe fn test_given_iterator_types_365() {
     (unsafe {
         test_lexicographical_compare_275(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_366() {
+    (unsafe {
+        test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_276(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3344,15 +3462,8 @@ pub unsafe fn test_given_iterator_types_366() {
     (unsafe {
         test_lexicographical_compare_278(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_369() {
     (unsafe {
         test_lexicographical_compare_279(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3362,8 +3473,15 @@ pub unsafe fn test_given_iterator_types_366() {
     (unsafe {
         test_lexicographical_compare_281(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_367() {
+    (unsafe {
+        test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_282(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3373,15 +3491,8 @@ pub unsafe fn test_given_iterator_types_367() {
     (unsafe {
         test_lexicographical_compare_284(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_370() {
     (unsafe {
         test_lexicographical_compare_285(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3391,8 +3502,15 @@ pub unsafe fn test_given_iterator_types_367() {
     (unsafe {
         test_lexicographical_compare_287(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_368() {
+    (unsafe {
+        test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_288(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3402,15 +3520,8 @@ pub unsafe fn test_given_iterator_types_368() {
     (unsafe {
         test_lexicographical_compare_290(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_371() {
     (unsafe {
         test_lexicographical_compare_291(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3420,8 +3531,15 @@ pub unsafe fn test_given_iterator_types_368() {
     (unsafe {
         test_lexicographical_compare_293(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_369() {
+    (unsafe {
+        test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_294(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3431,15 +3549,8 @@ pub unsafe fn test_given_iterator_types_369() {
     (unsafe {
         test_lexicographical_compare_296(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_372() {
     (unsafe {
         test_lexicographical_compare_297(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3449,8 +3560,15 @@ pub unsafe fn test_given_iterator_types_369() {
     (unsafe {
         test_lexicographical_compare_299(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_370() {
+    (unsafe {
+        test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_300(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3460,15 +3578,8 @@ pub unsafe fn test_given_iterator_types_370() {
     (unsafe {
         test_lexicographical_compare_302(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_373() {
     (unsafe {
         test_lexicographical_compare_303(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3478,8 +3589,15 @@ pub unsafe fn test_given_iterator_types_370() {
     (unsafe {
         test_lexicographical_compare_305(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_371() {
+    (unsafe {
+        test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_306(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3489,15 +3607,8 @@ pub unsafe fn test_given_iterator_types_371() {
     (unsafe {
         test_lexicographical_compare_308(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_374() {
     (unsafe {
         test_lexicographical_compare_309(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3507,8 +3618,15 @@ pub unsafe fn test_given_iterator_types_371() {
     (unsafe {
         test_lexicographical_compare_311(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_given_iterator_types_372() {
+    (unsafe {
+        test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_312(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3518,15 +3636,8 @@ pub unsafe fn test_given_iterator_types_372() {
     (unsafe {
         test_lexicographical_compare_314(unimplemented!(), unimplemented!(), unimplemented!())
     });
-    (unsafe {
-        test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!())
-    });
+}
+pub unsafe fn test_given_iterator_types_375() {
     (unsafe {
         test_lexicographical_compare_315(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3536,80 +3647,15 @@ pub unsafe fn test_given_iterator_types_372() {
     (unsafe {
         test_lexicographical_compare_317(unimplemented!(), unimplemented!(), unimplemented!())
     });
-}
-pub unsafe fn test_iterator_types1_373() {
-    (unsafe { test_given_iterator_types_324() });
-    (unsafe { test_given_iterator_types_325() });
-    (unsafe { test_given_iterator_types_326() });
-    (unsafe { test_given_iterator_types_327() });
-    (unsafe { test_given_iterator_types_328() });
-    (unsafe { test_given_iterator_types_329() });
-    (unsafe { test_given_iterator_types_330() });
-}
-pub unsafe fn test_iterator_types1_374() {
-    (unsafe { test_given_iterator_types_331() });
-    (unsafe { test_given_iterator_types_332() });
-    (unsafe { test_given_iterator_types_333() });
-    (unsafe { test_given_iterator_types_334() });
-    (unsafe { test_given_iterator_types_335() });
-    (unsafe { test_given_iterator_types_336() });
-    (unsafe { test_given_iterator_types_337() });
-}
-pub unsafe fn test_iterator_types1_375() {
-    (unsafe { test_given_iterator_types_338() });
-    (unsafe { test_given_iterator_types_339() });
-    (unsafe { test_given_iterator_types_340() });
-    (unsafe { test_given_iterator_types_341() });
-    (unsafe { test_given_iterator_types_342() });
-    (unsafe { test_given_iterator_types_343() });
-    (unsafe { test_given_iterator_types_344() });
-}
-pub unsafe fn test_iterator_types1_376() {
-    (unsafe { test_given_iterator_types_345() });
-    (unsafe { test_given_iterator_types_346() });
-    (unsafe { test_given_iterator_types_347() });
-    (unsafe { test_given_iterator_types_348() });
-    (unsafe { test_given_iterator_types_349() });
-    (unsafe { test_given_iterator_types_350() });
-    (unsafe { test_given_iterator_types_351() });
-}
-pub unsafe fn test_iterator_types1_377() {
-    (unsafe { test_given_iterator_types_352() });
-    (unsafe { test_given_iterator_types_353() });
-    (unsafe { test_given_iterator_types_354() });
-    (unsafe { test_given_iterator_types_355() });
-    (unsafe { test_given_iterator_types_356() });
-    (unsafe { test_given_iterator_types_357() });
-    (unsafe { test_given_iterator_types_358() });
-}
-pub unsafe fn test_iterator_types1_378() {
-    (unsafe { test_given_iterator_types_359() });
-    (unsafe { test_given_iterator_types_360() });
-    (unsafe { test_given_iterator_types_361() });
-    (unsafe { test_given_iterator_types_362() });
-    (unsafe { test_given_iterator_types_363() });
-    (unsafe { test_given_iterator_types_364() });
-    (unsafe { test_given_iterator_types_365() });
-}
-pub unsafe fn test_iterator_types1_379() {
-    (unsafe { test_given_iterator_types_366() });
-    (unsafe { test_given_iterator_types_367() });
-    (unsafe { test_given_iterator_types_368() });
-    (unsafe { test_given_iterator_types_369() });
-    (unsafe { test_given_iterator_types_370() });
-    (unsafe { test_given_iterator_types_371() });
-    (unsafe { test_given_iterator_types_372() });
-}
-pub unsafe fn test_iterator_types_380() {
-    (unsafe { test_iterator_types1_373() });
-    (unsafe { test_iterator_types1_374() });
-    (unsafe { test_iterator_types1_375() });
-    (unsafe { test_iterator_types1_376() });
-    (unsafe { test_iterator_types1_377() });
-    (unsafe { test_iterator_types1_378() });
-    (unsafe { test_iterator_types1_379() });
-}
-pub unsafe fn test_comparison_categories_381() {
+    (unsafe {
+        test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!())
+    });
     (unsafe {
         test_lexicographical_compare_318(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3619,6 +3665,80 @@ pub unsafe fn test_comparison_categories_381() {
     (unsafe {
         test_lexicographical_compare_320(unimplemented!(), unimplemented!(), unimplemented!())
     });
+}
+pub unsafe fn test_iterator_types1_376() {
+    (unsafe { test_given_iterator_types_327() });
+    (unsafe { test_given_iterator_types_328() });
+    (unsafe { test_given_iterator_types_329() });
+    (unsafe { test_given_iterator_types_330() });
+    (unsafe { test_given_iterator_types_331() });
+    (unsafe { test_given_iterator_types_332() });
+    (unsafe { test_given_iterator_types_333() });
+}
+pub unsafe fn test_iterator_types1_377() {
+    (unsafe { test_given_iterator_types_334() });
+    (unsafe { test_given_iterator_types_335() });
+    (unsafe { test_given_iterator_types_336() });
+    (unsafe { test_given_iterator_types_337() });
+    (unsafe { test_given_iterator_types_338() });
+    (unsafe { test_given_iterator_types_339() });
+    (unsafe { test_given_iterator_types_340() });
+}
+pub unsafe fn test_iterator_types1_378() {
+    (unsafe { test_given_iterator_types_341() });
+    (unsafe { test_given_iterator_types_342() });
+    (unsafe { test_given_iterator_types_343() });
+    (unsafe { test_given_iterator_types_344() });
+    (unsafe { test_given_iterator_types_345() });
+    (unsafe { test_given_iterator_types_346() });
+    (unsafe { test_given_iterator_types_347() });
+}
+pub unsafe fn test_iterator_types1_379() {
+    (unsafe { test_given_iterator_types_348() });
+    (unsafe { test_given_iterator_types_349() });
+    (unsafe { test_given_iterator_types_350() });
+    (unsafe { test_given_iterator_types_351() });
+    (unsafe { test_given_iterator_types_352() });
+    (unsafe { test_given_iterator_types_353() });
+    (unsafe { test_given_iterator_types_354() });
+}
+pub unsafe fn test_iterator_types1_380() {
+    (unsafe { test_given_iterator_types_355() });
+    (unsafe { test_given_iterator_types_356() });
+    (unsafe { test_given_iterator_types_357() });
+    (unsafe { test_given_iterator_types_358() });
+    (unsafe { test_given_iterator_types_359() });
+    (unsafe { test_given_iterator_types_360() });
+    (unsafe { test_given_iterator_types_361() });
+}
+pub unsafe fn test_iterator_types1_381() {
+    (unsafe { test_given_iterator_types_362() });
+    (unsafe { test_given_iterator_types_363() });
+    (unsafe { test_given_iterator_types_364() });
+    (unsafe { test_given_iterator_types_365() });
+    (unsafe { test_given_iterator_types_366() });
+    (unsafe { test_given_iterator_types_367() });
+    (unsafe { test_given_iterator_types_368() });
+}
+pub unsafe fn test_iterator_types1_382() {
+    (unsafe { test_given_iterator_types_369() });
+    (unsafe { test_given_iterator_types_370() });
+    (unsafe { test_given_iterator_types_371() });
+    (unsafe { test_given_iterator_types_372() });
+    (unsafe { test_given_iterator_types_373() });
+    (unsafe { test_given_iterator_types_374() });
+    (unsafe { test_given_iterator_types_375() });
+}
+pub unsafe fn test_iterator_types_383() {
+    (unsafe { test_iterator_types1_376() });
+    (unsafe { test_iterator_types1_377() });
+    (unsafe { test_iterator_types1_378() });
+    (unsafe { test_iterator_types1_379() });
+    (unsafe { test_iterator_types1_380() });
+    (unsafe { test_iterator_types1_381() });
+    (unsafe { test_iterator_types1_382() });
+}
+pub unsafe fn test_comparison_categories_384() {
     (unsafe {
         test_lexicographical_compare_321(unimplemented!(), unimplemented!(), unimplemented!())
     });
@@ -3629,18 +3749,27 @@ pub unsafe fn test_comparison_categories_381() {
         test_lexicographical_compare_323(unimplemented!(), unimplemented!(), unimplemented!())
     });
     (unsafe {
-        test_lexicographical_compare_323(unimplemented!(), unimplemented!(), unimplemented!())
+        test_lexicographical_compare_324(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_325(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_326(unimplemented!(), unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        test_lexicographical_compare_326(unimplemented!(), unimplemented!(), unimplemented!())
     });
 }
-pub unsafe fn test_proxy_iterators_382() {
+pub unsafe fn test_proxy_iterators_385() {
     let mut vec_: () = unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_383() -> () {
-    (unsafe { test_iterator_types_380() });
-    (unsafe { test_comparison_categories_381() });
-    (unsafe { test_proxy_iterators_382() });
+pub unsafe fn test_386() -> () {
+    (unsafe { test_iterator_types_383() });
+    (unsafe { test_comparison_categories_384() });
+    (unsafe { test_proxy_iterators_385() });
     return true;
 }
 pub fn main() {
@@ -3659,7 +3788,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_383() });
+    (unsafe { test_386() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

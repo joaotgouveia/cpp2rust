@@ -82,62 +82,8 @@ pub fn test_0(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -148,7 +94,62 @@ pub fn test_0(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -176,62 +177,8 @@ pub fn test_1(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -242,7 +189,62 @@ pub fn test_1(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -270,62 +272,8 @@ pub fn test_2(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -336,7 +284,62 @@ pub fn test_2(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -364,62 +367,8 @@ pub fn test_3(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -430,7 +379,62 @@ pub fn test_3(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -458,62 +462,8 @@ pub fn test_4(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -524,7 +474,62 @@ pub fn test_4(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -552,62 +557,8 @@ pub fn test_5(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -618,7 +569,62 @@ pub fn test_5(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -646,62 +652,8 @@ pub fn test_6(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -712,7 +664,62 @@ pub fn test_6(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -740,62 +747,8 @@ pub fn test_7(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -806,7 +759,62 @@ pub fn test_7(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -834,62 +842,8 @@ pub fn test_8(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -900,7 +854,62 @@ pub fn test_8(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -928,62 +937,8 @@ pub fn test_9(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -994,7 +949,62 @@ pub fn test_9(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1022,62 +1032,8 @@ pub fn test_10(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1088,7 +1044,62 @@ pub fn test_10(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1116,62 +1127,8 @@ pub fn test_11(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1182,7 +1139,62 @@ pub fn test_11(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1210,62 +1222,8 @@ pub fn test_12(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1276,7 +1234,62 @@ pub fn test_12(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1304,62 +1317,8 @@ pub fn test_13(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1370,7 +1329,62 @@ pub fn test_13(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1398,62 +1412,8 @@ pub fn test_14(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1464,7 +1424,62 @@ pub fn test_14(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1492,62 +1507,8 @@ pub fn test_15(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1558,7 +1519,62 @@ pub fn test_15(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1586,62 +1602,8 @@ pub fn test_16(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1652,7 +1614,62 @@ pub fn test_16(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1680,62 +1697,8 @@ pub fn test_17(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1746,7 +1709,62 @@ pub fn test_17(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1774,62 +1792,8 @@ pub fn test_18(mut value: Ptr<()>) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1840,7 +1804,62 @@ pub fn test_18(mut value: Ptr<()>) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1869,62 +1888,8 @@ pub fn test_19(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1935,7 +1900,62 @@ pub fn test_19(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1963,62 +1983,8 @@ pub fn test_20(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2029,7 +1995,62 @@ pub fn test_20(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2058,62 +2079,8 @@ pub fn test_21(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2124,7 +2091,62 @@ pub fn test_21(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2152,62 +2174,8 @@ pub fn test_22(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2218,7 +2186,62 @@ pub fn test_22(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2246,62 +2269,8 @@ pub fn test_23(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2312,7 +2281,62 @@ pub fn test_23(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2340,62 +2364,8 @@ pub fn test_24(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2406,7 +2376,62 @@ pub fn test_24(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2434,62 +2459,8 @@ pub fn test_25(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2500,7 +2471,62 @@ pub fn test_25(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2528,62 +2554,8 @@ pub fn test_26(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2594,7 +2566,62 @@ pub fn test_26(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2622,62 +2649,8 @@ pub fn test_27(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2688,7 +2661,62 @@ pub fn test_27(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2716,62 +2744,8 @@ pub fn test_28(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2782,7 +2756,62 @@ pub fn test_28(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2810,62 +2839,8 @@ pub fn test_29(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2876,7 +2851,62 @@ pub fn test_29(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2904,62 +2934,8 @@ pub fn test_30(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2970,7 +2946,62 @@ pub fn test_30(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2998,62 +3029,8 @@ pub fn test_31(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3064,7 +3041,62 @@ pub fn test_31(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3092,62 +3124,8 @@ pub fn test_32(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3158,7 +3136,62 @@ pub fn test_32(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3186,62 +3219,8 @@ pub fn test_33(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3252,7 +3231,62 @@ pub fn test_33(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3280,62 +3314,8 @@ pub fn test_34(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3346,7 +3326,62 @@ pub fn test_34(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3374,62 +3409,8 @@ pub fn test_35(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3440,7 +3421,62 @@ pub fn test_35(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3468,62 +3504,8 @@ pub fn test_36(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3534,7 +3516,62 @@ pub fn test_36(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3562,62 +3599,8 @@ pub fn test_37(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3628,7 +3611,62 @@ pub fn test_37(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3656,62 +3694,8 @@ pub fn test_38(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3722,7 +3706,62 @@ pub fn test_38(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3750,62 +3789,8 @@ pub fn test_39(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3816,7 +3801,62 @@ pub fn test_39(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3844,62 +3884,8 @@ pub fn test_40(mut value: Ptr<()>) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3910,7 +3896,62 @@ pub fn test_40(mut value: Ptr<()>) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3939,62 +3980,8 @@ pub fn test_41(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4005,7 +3992,62 @@ pub fn test_41(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4033,62 +4075,8 @@ pub fn test_42(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4099,7 +4087,62 @@ pub fn test_42(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4128,62 +4171,8 @@ pub fn test_43(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4194,7 +4183,62 @@ pub fn test_43(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4216,47 +4260,52 @@ pub fn test_handle_44(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
@@ -4276,47 +4325,52 @@ pub fn test_handle_45(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
@@ -4336,47 +4390,52 @@ pub fn test_handle_46(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
@@ -4396,47 +4455,52 @@ pub fn test_handle_47(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));

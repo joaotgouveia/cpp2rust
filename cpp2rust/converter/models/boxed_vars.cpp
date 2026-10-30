@@ -70,10 +70,12 @@ template <typename E> E *IgnoreNoOpCasts(E *expr) {
 }
 
 // The object copied by a trivial copy or move constructor, which copies its
-// value, like an lvalue-to-rvalue conversion in C.
+// value, like an lvalue-to-rvalue conversion in C, unless it is translated to
+// a call to the constructor.
 clang::Expr *GetTrivialCopySource(clang::CXXConstructExpr *expr) {
   auto *ctor = expr->getConstructor();
-  if (!ctor->isCopyOrMoveConstructor() || !ctor->isTrivial()) {
+  if (!ctor->isCopyOrMoveConstructor() || !ctor->isTrivial() ||
+      IsConvertibleCopyOrMoveConstructor(ctor)) {
     return nullptr;
   }
   return IgnoreNoOpCasts(expr->getArg(0));
@@ -182,6 +184,10 @@ public:
   }
 
   bool VisitCallExpr(clang::CallExpr *expr) {
+    // std::move and the like are their operand, whatever rule they have.
+    if (IsTransparentStdCall(expr)) {
+      return true;
+    }
     AddRuleArgs(expr, expr->getArgs(), expr->getNumArgs());
     return true;
   }
@@ -221,6 +227,12 @@ public:
         AddressTaken(capture.getCapturedVar());
       }
     }
+    // The instantiations of a generic lambda are not traversed with it.
+    if (expr->getLambdaClass()->isGenericLambda()) {
+      ForEachLambdaCallOperator(
+          expr->getLambdaClass(),
+          [&](clang::CXXMethodDecl *op) { TraverseDecl(op); });
+    }
     return true;
   }
 
@@ -247,7 +259,7 @@ private:
   // An element of an array or vector, or a field of a struct, is accessed
   // without making a pointer to it.
   void AddValueUse(const clang::Expr *expr, bool write = false) {
-    expr = expr->IgnoreParens();
+    expr = IgnoreTransparentStdCall(expr)->IgnoreParens();
     // The value of a conditional lvalue is the value of either operand; it is
     // written through a pointer to the operand.
     if (auto *cond = clang::dyn_cast<clang::ConditionalOperator>(expr)) {
@@ -355,7 +367,7 @@ private:
   // more than once, e.g., in a loop or in a closure.
   bool IsExcluded(clang::Stmt *stmt) const {
     if (auto *call = clang::dyn_cast<clang::CallExpr>(stmt)) {
-      return Mapper::Contains(ctx_, call->getCallee());
+      return Mapper::Contains(ctx_, call);
     }
     if (auto *construct = clang::dyn_cast<clang::CXXConstructExpr>(stmt)) {
       return !GetTrivialCopySource(construct);

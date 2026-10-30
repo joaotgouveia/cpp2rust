@@ -93,7 +93,7 @@ impl Default for TracedBase_false__false__state {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
 pub struct TracedBase_false__false_ {
     pub state_: *mut TracedBase_false__false__state,
     pub copiedFromInt: (),
@@ -114,10 +114,47 @@ impl TracedBase_false__false_ {
         };
         this
     }
+    pub unsafe fn copy_from(other: *const TracedBase_false__false_) -> Self {
+        let mut this = Self {
+            state_: (*other).state_,
+            copiedFromInt: false,
+            movedFromInt: false,
+            copiedFromTmp: false,
+            movedFromTmp: false,
+            data_: (*other).data_,
+        };
+        if !(this.state_).is_null() {
+            (*this.state_).copyCtorCalled = true;
+        } else {
+            this.copiedFromTmp = true;
+        }
+        this
+    }
+    pub unsafe fn move_from(other: *mut TracedBase_false__false_) -> Self {
+        let mut this = Self {
+            state_: (*other).state_,
+            copiedFromInt: false,
+            movedFromInt: false,
+            copiedFromTmp: false,
+            movedFromTmp: false,
+            data_: (*other).data_,
+        };
+        if !(this.state_).is_null() {
+            (*this.state_).moveCtorCalled = true;
+        } else {
+            this.movedFromTmp = true;
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         if !(self.state_).is_null() {
             (*self.state_).dtorCalled = true;
         }
+    }
+}
+impl Clone for TracedBase_false__false_ {
+    fn clone(&self) -> Self {
+        unsafe { TracedBase_false__false_::copy_from(self as *const TracedBase_false__false_) }
     }
 }
 impl Default for TracedBase_false__false_ {
@@ -195,11 +232,7 @@ impl TailClobberer_0_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -276,11 +309,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -323,11 +352,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -455,7 +480,7 @@ const _: () = assert!(
     !(false),
     "!CanEmplace<std::expected<CtorFromInt<false>, int>, int, int>"
 );
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_2() -> () {
     {
         let mut oldState: TracedBase_true__state = <TracedBase_true__state>::default();
         let mut newState: TracedBase_true__state = <TracedBase_true__state>::default();
@@ -515,7 +540,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3() });
+    (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

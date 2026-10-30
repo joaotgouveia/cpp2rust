@@ -8,28 +8,21 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn get_temp_file_name_0() -> () {
     let mut Name: () = unimplemented!();
-    let mut FD: () = (unsafe { mkstemp_1((&mut (*unimplemented!()) as *mut ())) });
+    let mut FD: () = unimplemented!();
     if ((FD) == (-1_())) {
-        (unsafe { perror_2(c"mkstemp".as_ptr()) });
+        unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn glibc_version_less_than_3(mut version: *const ()) -> () {
+pub unsafe fn glibc_version_less_than_1(mut version: *const ()) -> () {
     let mut test_version: () = unimplemented!();
-    let mut n: () = (unsafe {
-        confstr_4(
-            (anon_5__CS_GNU_LIBC_VERSION as ()),
-            std::ptr::null_mut(),
-            0_(),
-        )
-    });
+    let mut n: () = unimplemented!();
     let mut current_version: *mut () =
         Box::leak((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-    (unsafe { confstr_4((anon_5__CS_GNU_LIBC_VERSION as ()), current_version, n) });
-    let mut result: () =
-        ((unsafe { strverscmp_6((current_version).cast_const(), unimplemented!()) }) < (0_()));
+    unimplemented!();
+    let mut result: () = ((unimplemented!()) < (0_()));
     {
         let __p = current_version;
         if !__p.is_null() {
@@ -42,14 +35,14 @@ pub unsafe fn glibc_version_less_than_3(mut version: *const ()) -> () {
     };
     return result;
 }
-pub unsafe fn get_temp_file_names_7() -> () {
+pub unsafe fn get_temp_file_names_2() -> () {
     let mut names: () = unimplemented!();
     unimplemented!();
-    let mut fd1: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"w".as_ptr());
+    let mut fd1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    libc::fclose(fd1);
-    (unsafe { remove_8(unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
     return unimplemented!();
 }
 pub fn main() {
@@ -68,7 +61,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut temp_files: () = (unsafe { get_temp_file_names_7() });
+    let mut temp_files: () = (unsafe { get_temp_file_names_2() });
     let temp1: *mut () = &mut temp_files.first;
     let temp2: *mut () = &mut temp_files.second;
     unimplemented!();
@@ -91,8 +84,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { remove_8(unimplemented!()) });
-    (unsafe { remove_8(unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
     {
         let mut fs1: () = unimplemented!();
         let mut fs2: () = unimplemented!();
@@ -112,8 +105,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { remove_8(unimplemented!()) });
-    (unsafe { remove_8(unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

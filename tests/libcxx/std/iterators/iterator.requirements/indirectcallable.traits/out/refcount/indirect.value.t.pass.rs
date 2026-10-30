@@ -9,12 +9,9 @@ use std::rc::{Rc, Weak};
 pub fn test_0() {
     let ints: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___start: Value<()> = Rc::new(RefCell::new(0_()));
-            let ___bound_sentinel: Value<()> = Rc::new(RefCell::new(5_()));
-            (*iota_1.with(Value::clone).borrow_mut())(
-                ___start.as_pointer(),
-                ___bound_sentinel.as_pointer(),
-            )
+            let ___e: Value<()> = Rc::new(RefCell::new(0_()));
+            let ___f: Value<()> = Rc::new(RefCell::new(5_()));
+            (*iota_1.with(Value::clone).borrow_mut())(___e.as_pointer(), ___f.as_pointer())
         })
         .clone(),
     ));

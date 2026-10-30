@@ -15,7 +15,7 @@ pub struct Sent {
     pub i: (),
 }
 pub unsafe fn test_1() -> () {
-    let st: () = unimplemented!();
+    let st : () = std_ranges_elements_view_std_ranges_subrange_std_tuple_int__ptr__Sent___0___Sentinel_true_ :: new_1 ( { Sent { i : 5_() , } } , )  ;
     let mut base: Sent = (unsafe { st.base() });
     unimplemented!();
     return true;

@@ -148,7 +148,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sz: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 4_(), 3_()])));
         let st: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([19_(), 4_(), 1_()])));
-        let v: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

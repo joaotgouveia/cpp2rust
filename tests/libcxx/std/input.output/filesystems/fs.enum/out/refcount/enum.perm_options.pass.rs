@@ -19,11 +19,11 @@ pub struct test_macros_detail_is_same_std_filesystem_perm_options_ref__std_files
 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_char____x01_____b_____x00___0_
+pub struct check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_
 {}
-impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_char____x01_____b_____x00___0_ { pub fn dcast ( mut e : ()  , ) -> ()  { return ( e as () )   ;
- } pub fn unpromote ( mut promoted : ()  , ) -> ()  { return promoted   ;
- } pub fn check ( ) -> ()  { { let mut ValRef : ()  = ( ( ( '\x01' as ()  ) ) as () )  ;
+impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_ { pub fn dcast ( mut e : ()  , ) -> ()  { return ( e as () )   ;
+ } pub fn unpromote ( mut promoted : ()  , ) -> ()  { return ( promoted as () )   ;
+ } pub fn check ( ) -> ()  { { let mut ValRef : ()  = ( ( 1_() ) as () )  ;
   ;
  ;
  const _: () = assert!(true, ""); ;
@@ -58,7 +58,7 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  const _: () = assert!(true, "dcast(~Val1) == unpromote(~UVal1)"); ;
  ;
- { let e : Value<() > = Rc::new(RefCell::new(( ( ( '\x01' as ()  ) ) as () ) )) ;
+ { let e : Value<() > = Rc::new(RefCell::new(( ( 1_() ) as () ) )) ;
   ;
  ;
  let eref : Ptr< ()  > = ( unimplemented!()  )  ;
@@ -66,7 +66,7 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } { let e : Value<() > = Rc::new(RefCell::new(( ( ( '\x01' as ()  ) ) as () ) )) ;
+ } { let e : Value<() > = Rc::new(RefCell::new(( ( 1_() ) as () ) )) ;
   ;
  ;
  let eref : Ptr< ()  > = ( unimplemented!()  )  ;
@@ -74,7 +74,7 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } { let e : Value<() > = Rc::new(RefCell::new(( ( ( '\x01' as ()  ) ) as () ) )) ;
+ } { let e : Value<() > = Rc::new(RefCell::new(( ( 1_() ) as () ) )) ;
   ;
  ;
  let eref : Ptr< ()  > = ( unimplemented!()  )  ;
@@ -109,7 +109,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
-    const _: () = assert!(true, "std::is_same<UT, unsigned char >::value");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     const _: () = assert!(
         true,

@@ -273,20 +273,7 @@ pub static mut disable_default_constructor_8: std::cell::LazyCell<()> =
 pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
-impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *mut (),
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-}
+impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {

@@ -193,6 +193,9 @@ impl other_allocator_int_ {
         let mut this = Self { data_: i };
         this
     }
+    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         unimplemented!();
     }
@@ -229,6 +232,9 @@ pub struct other_allocator_int_ptr_ {
     data_: (),
 }
 impl other_allocator_int_ptr_ {
+    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut *mut () {
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut (), mut s: ()) {
         unimplemented!();
     }
@@ -237,21 +243,6 @@ impl Default for other_allocator_int_ptr_ {
     fn default() -> Self {
         unsafe {
             other_allocator_int_ptr_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_const_int_ptr_ {
-    data_: (),
-}
-impl other_allocator_const_int_ptr_ {}
-impl Default for other_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_const_int_ptr_ {
                 data_: unimplemented!(),
             }
         }

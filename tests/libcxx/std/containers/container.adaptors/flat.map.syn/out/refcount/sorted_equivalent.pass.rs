@@ -23,7 +23,7 @@ pub fn test_0() -> () {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
-        let s: Ptr<()> = (sorted_equivalent_1.with(|v| v.as_pointer()));
+        let s: Ptr<()> = (unimplemented!());
     }
     {
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));

@@ -1063,8 +1063,7 @@ impl Default for LargeUserAtomicType {
     }
 }
 pub unsafe fn check_always_lock_free_51(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_52));
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_0));
@@ -1079,9 +1078,8 @@ pub unsafe fn check_always_lock_free_51(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_53(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_54));
+pub unsafe fn check_always_lock_free_52(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_4));
@@ -1096,9 +1094,8 @@ pub unsafe fn check_always_lock_free_53(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_55(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_56));
+pub unsafe fn check_always_lock_free_53(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_12));
@@ -1113,9 +1110,8 @@ pub unsafe fn check_always_lock_free_55(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_57(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_58));
+pub unsafe fn check_always_lock_free_54(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_14));
@@ -1130,9 +1126,8 @@ pub unsafe fn check_always_lock_free_57(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_59(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_60));
+pub unsafe fn check_always_lock_free_55(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_16));
@@ -1147,9 +1142,8 @@ pub unsafe fn check_always_lock_free_59(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_61(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_62));
+pub unsafe fn check_always_lock_free_56(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19));
@@ -1164,9 +1158,8 @@ pub unsafe fn check_always_lock_free_61(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_63(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_64));
+pub unsafe fn check_always_lock_free_57(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {
         let mut is_lock_free: () = unimplemented!();
@@ -1174,51 +1167,44 @@ pub unsafe fn check_always_lock_free_63(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_65(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_66));
+pub unsafe fn check_always_lock_free_58(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_67(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_68));
+pub unsafe fn check_always_lock_free_59(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_69(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_70));
+pub unsafe fn check_always_lock_free_60(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_71(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_72));
+pub unsafe fn check_always_lock_free_61(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_73(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_74));
+pub unsafe fn check_always_lock_free_62(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_75(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_76));
+pub unsafe fn check_always_lock_free_63(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_77(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_78));
+pub unsafe fn check_always_lock_free_64(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_43));
@@ -1233,9 +1219,8 @@ pub unsafe fn check_always_lock_free_77(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn check_always_lock_free_79(a: *const ()) {
-    let is_always_lock_free: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_80));
+pub unsafe fn check_always_lock_free_65(a: *const ()) {
+    let is_always_lock_free: () = unimplemented!();
     {
         let known_status: LockFreeStatus =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut value_46));
@@ -1250,7 +1235,7 @@ pub unsafe fn check_always_lock_free_79(a: *const ()) {
     }
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_81() {
+pub unsafe fn test_66() {
     let mut c: () = ('x' as ());
     (unsafe {
         let mut _a: () = unimplemented!();
@@ -1259,94 +1244,94 @@ pub unsafe fn test_81() {
     let mut i: () = 0_();
     (unsafe {
         let mut _a: () = unimplemented!();
-        check_always_lock_free_53(&mut _a)
+        check_always_lock_free_52(&mut _a)
     });
     let mut f: () = 0_f32;
     (unsafe {
         let mut _a: () = unimplemented!();
-        check_always_lock_free_55(&mut _a)
+        check_always_lock_free_53(&mut _a)
     });
     let mut p: *mut () = (&mut i as *mut ());
     (unsafe {
         let mut _a: () = unimplemented!();
-        check_always_lock_free_57(&mut _a)
+        check_always_lock_free_54(&mut _a)
     });
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: Empty_17 = <Empty_17>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_59(&a) });
+        (unsafe { check_always_lock_free_55(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: OneInt_20 = <OneInt_20>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_61(&a) });
+        (unsafe { check_always_lock_free_56(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: IntArr2_23 = <IntArr2_23>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_63(&a) });
+        (unsafe { check_always_lock_free_57(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: FloatArr3_26 = <FloatArr3_26>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_65(&a) });
+        (unsafe { check_always_lock_free_58(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: LLIArr2_29 = <LLIArr2_29>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_67(&a) });
+        (unsafe { check_always_lock_free_59(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: LLIArr4_32 = <LLIArr4_32>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_69(&a) });
+        (unsafe { check_always_lock_free_60(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: LLIArr8_35 = <LLIArr8_35>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_71(&a) });
+        (unsafe { check_always_lock_free_61(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: LLIArr16_38 = <LLIArr16_38>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_73(&a) });
+        (unsafe { check_always_lock_free_62(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: Padding_41 = <Padding_41>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_75(&a) });
+        (unsafe { check_always_lock_free_63(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: IntFloat_44 = <IntFloat_44>::default();
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_77(&a) });
+        (unsafe { check_always_lock_free_64(&a) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: CharEnumClass_47 = CharEnumClass_47_foo;
         let mut a: () = unimplemented!();
-        (unsafe { check_always_lock_free_79(&a) });
+        (unsafe { check_always_lock_free_65(&a) });
     }
 }
 #[repr(C)]
@@ -1422,7 +1407,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_81() });
+    (unsafe { test_66() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

@@ -10,31 +10,25 @@ pub fn DoNotOptimize_0(value: Ptr<()>) -> Ptr<()> {
     b"";
     return (value).clone();
 }
-pub fn is_double_ended_contiguous_container_asan_correct_1(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_double_ended_contiguous_container_asan_correct_2(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn operator_eq_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_1(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_6(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_7(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_8(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_6(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_9(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_7(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -65,68 +59,40 @@ impl MoveOnly {
         __this
     }
 }
-impl std::cmp::Ord for MoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_9(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for MoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for MoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for MoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for MoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for MoveOnly {}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_8(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_13(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_14(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_15(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_13(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_16(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_14(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -155,44 +121,16 @@ impl TrivialMoveOnly {
         }
     }
 }
-impl std::cmp::Ord for TrivialMoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_16(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for TrivialMoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_10(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for TrivialMoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TrivialMoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for TrivialMoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_10(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for TrivialMoveOnly {}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -204,28 +142,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_18.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_19.with(|rc| *rc.borrow())));
+        return ((alloc_count_16.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_17.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_20.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_17.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_18.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_19.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_18.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_15.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_16.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_17.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_17: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_15: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_18: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_16: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_19: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_17: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_20: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_18: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
@@ -240,24 +178,16 @@ impl Default for safe_allocator_MoveOnly_ {
         { safe_allocator_MoveOnly_::new() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct safe_allocator_MoveOnly_ptr_ {}
 impl safe_allocator_MoveOnly_ptr_ {
-    pub fn new() -> Self {
+    pub fn new_1(mut _a0: safe_allocator_MoveOnly_) -> Self {
         Self {}
-    }
-}
-impl Default for safe_allocator_MoveOnly_ptr_ {
-    fn default() -> Self {
-        { safe_allocator_MoveOnly_ptr_::new() }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct safe_allocator_const_MoveOnly_ptr_ {}
-impl safe_allocator_const_MoveOnly_ptr_ {}
-pub fn make_22(mut size: (), mut start: ()) -> () {
+pub struct safe_allocator_MoveOnly_ptr_ {}
+impl safe_allocator_MoveOnly_ptr_ {}
+pub fn make_19(mut size: (), mut start: ()) -> () {
     let mut b: () = (4096_()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut init: () = 0_();
     if (start > 0_()) {
@@ -283,7 +213,7 @@ pub fn make_22(mut size: (), mut start: ()) -> () {
     }
     return unimplemented!();
 }
-pub fn make_23(mut size: (), mut start: ()) -> () {
+pub fn make_20(mut size: (), mut start: ()) -> () {
     let mut b: () = (4096_()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut init: () = 0_();
     if (start > 0_()) {
@@ -309,14 +239,14 @@ pub fn make_23(mut size: (), mut start: ()) -> () {
     }
     return unimplemented!();
 }
-pub fn test_24(c1: Ptr<()>, mut x: ()) {
+pub fn test_21(c1: Ptr<()>, mut x: ()) {
     let mut c1_osize: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     let mut j: () = 0_();
     'loop_: while (j < c1_osize) {
@@ -327,14 +257,14 @@ pub fn test_24(c1: Ptr<()>, mut x: ()) {
         };
     }
 }
-pub fn test_25(c1: Ptr<()>, mut x: ()) {
+pub fn test_22(c1: Ptr<()>, mut x: ()) {
     let mut c1_osize: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     let mut j: () = 0_();
     'loop_: while (j < c1_osize) {
@@ -345,13 +275,13 @@ pub fn test_25(c1: Ptr<()>, mut x: ()) {
         };
     }
 }
-pub fn testN_26(mut start: (), mut N: ()) {
-    let c1: Value<()> = Rc::new(RefCell::new(({ make_22(N, start) })));
-    ({ test_24(c1.as_pointer(), -10_()) });
+pub fn testN_23(mut start: (), mut N: ()) {
+    let c1: Value<()> = Rc::new(RefCell::new(({ make_19(N, start) })));
+    ({ test_21(c1.as_pointer(), -10_()) });
 }
-pub fn testN_27(mut start: (), mut N: ()) {
-    let c1: Value<()> = Rc::new(RefCell::new(({ make_23(N, start) })));
-    ({ test_25(c1.as_pointer(), -10_()) });
+pub fn testN_24(mut start: (), mut N: ()) {
+    let c1: Value<()> = Rc::new(RefCell::new(({ make_20(N, start) })));
+    ({ test_22(c1.as_pointer(), -10_()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -395,7 +325,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 ({
                     let _start: () = rng[(i) as usize];
                     let _N: () = rng[(j) as usize];
-                    testN_26(_start, _N)
+                    testN_23(_start, _N)
                 });
                 j.prefix_inc();
             }
@@ -424,7 +354,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 ({
                     let _start: () = rng[(i) as usize];
                     let _N: () = rng[(j) as usize];
-                    testN_27(_start, _N)
+                    testN_24(_start, _N)
                 });
                 j.prefix_inc();
             }
@@ -492,22 +422,14 @@ impl safe_allocator_MoveOnly_Impl for Ptr<safe_allocator_MoveOnly_> {
     fn allocate(&self, mut n: ()) -> Ptr<MoveOnly> {
         let memory: Value<Ptr<MoveOnly>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            ({
-                memset_21(
-                    (*memory.borrow()).to_any(),
-                    0_(),
-                    (4usize as ()).wrapping_mul(n),
-                )
-            });
+            unimplemented!();
         }
         return (*memory.borrow()).clone();
     }
     fn deallocate(&self, mut p: Ptr<MoveOnly>, mut n: ()) {
         {
             ({
-                let _value: Value<()> = Rc::new(RefCell::new(
-                    ({ memset_21((p).to_any(), 0_(), (4usize as ()).wrapping_mul(n)) }),
-                ));
+                let _value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
@@ -522,40 +444,23 @@ impl safe_allocator_MoveOnly_ptr_Impl for Ptr<safe_allocator_MoveOnly_ptr_> {
     fn allocate(&self, mut n: ()) -> Ptr<Ptr<MoveOnly>> {
         let memory: Value<Ptr<Ptr<MoveOnly>>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            ({
-                memset_21(
-                    (*memory.borrow()).to_any(),
-                    0_(),
-                    (8usize as ()).wrapping_mul(n),
-                )
-            });
+            unimplemented!();
         }
         return (*memory.borrow()).clone();
     }
     fn deallocate(&self, mut p: Ptr<Ptr<MoveOnly>>, mut n: ()) {
         {
             ({
-                let _value: Value<()> = Rc::new(RefCell::new(
-                    ({ memset_21((p).to_any(), 0_(), (8usize as ()).wrapping_mul(n)) }),
-                ));
+                let _value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
         unimplemented!();
     }
 }
-pub trait safe_allocator_const_MoveOnly_ptr_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<MoveOnly>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<MoveOnly>>, mut n: ()) {
-        unimplemented!()
-    }
-}
-impl safe_allocator_const_MoveOnly_ptr_Impl for Ptr<safe_allocator_const_MoveOnly_ptr_> {}
 pub fn __cpp2rust_init_globals() {
-    let _ = outstanding_bytes_17.with(|_| ());
-    let _ = alloc_count_18.with(|_| ());
-    let _ = dealloc_count_19.with(|_| ());
-    let _ = disable_default_constructor_20.with(|_| ());
+    let _ = outstanding_bytes_15.with(|_| ());
+    let _ = alloc_count_16.with(|_| ());
+    let _ = dealloc_count_17.with(|_| ());
+    let _ = disable_default_constructor_18.with(|_| ());
 }

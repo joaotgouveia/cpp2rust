@@ -37,50 +37,40 @@ pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_
     ptr_: *mut (),
 }
 impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut (),
 }
-impl min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *const ()) -> Self {
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn new_1(mut p: *mut ()) -> Self {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
+    pub unsafe fn new_2(mut _a0: ()) -> Self {
+        let mut this = Self {
+            ptr_: std::ptr::null_mut(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
     }
     pub unsafe fn pointer_to(
-        t: *const (),
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
+        t: *mut (),
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
+            unimplemented!()
+        });
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_5(
+pub unsafe fn operator_eq_4(
     mut _a0: min_allocator_std_pair_const_int__int__,
     mut _a1: min_allocator_std_pair_const_int__int__,
 ) -> () {
@@ -91,7 +81,7 @@ pub unsafe fn operator_eq_5(
 pub struct min_allocator_std_pair_const_int__int__ {}
 impl std::cmp::PartialEq for min_allocator_std_pair_const_int__int__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self.clone(), other.clone()) }
+        unsafe { operator_eq_4(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_std_pair_const_int__int__ {}
@@ -106,14 +96,14 @@ pub struct Counter_int_ {
 impl Counter_int_ {
     pub unsafe fn new_1(data: *const ()) -> Self {
         let mut this = Self { data_: (*data) };
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_6)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(rhs: *const Counter_int_) -> Self {
         let mut this = Self {
             data_: (*rhs).data_,
         };
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_6)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)).prefix_inc();
         this
     }
     pub unsafe fn copy_assign(&mut self, rhs: *const Counter_int_) -> *mut Counter_int_ {
@@ -121,7 +111,7 @@ impl Counter_int_ {
         return &mut (*(self as *mut Counter_int_));
     }
     pub unsafe fn destructor(&mut self) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_6)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)).prefix_dec();
     }
     pub unsafe fn operator_eq(&self, x: *const Counter_int_) -> () {
         return ((self.data_) == ((*x).data_));
@@ -159,14 +149,33 @@ impl Clone for Counter_int_ {
         unsafe { Counter_int_::copy_from(self as *const Counter_int_) }
     }
 }
-pub static mut gConstructed_6: std::cell::LazyCell<()> =
+pub static mut gConstructed_5: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
+pub unsafe fn test_6(c: *mut ()) -> () {
+    let mut sz: () = unimplemented!();
+    let mut some_key: () = (*unimplemented!()).first;
+    let mut first: () = unimplemented!();
+    'loop_: while !(unimplemented!()) {
+        let mut key_value: () = (*first).first;
+        let mut t: () = unimplemented!();
+        sz.prefix_dec();
+        {
+            unimplemented!();
+            (*unimplemented!()) = some_key;
+            unimplemented!();
+        }
+        unimplemented!();
+        unimplemented!();
+    }
+    unimplemented!();
+    return true;
+}
 pub unsafe fn test_7(c: *mut ()) -> () {
     let mut sz: () = unimplemented!();
     let mut some_key: () = (*unimplemented!()).first;
     let mut first: () = unimplemented!();
-    'loop_: while unimplemented!() {
-        let mut key_value: () = (*unimplemented!()).first;
+    'loop_: while !(unimplemented!()) {
+        let mut key_value: () = (*first).first;
         let mut t: () = unimplemented!();
         sz.prefix_dec();
         {
@@ -182,30 +191,11 @@ pub unsafe fn test_7(c: *mut ()) -> () {
 }
 pub unsafe fn test_8(c: *mut ()) -> () {
     let mut sz: () = unimplemented!();
-    let mut some_key : () = ( * ( unsafe { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . first  ;
-    let mut first: () = unimplemented!();
-    'loop_: while unimplemented!() {
-        let mut key_value : () = ( * ( unsafe { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . first  ;
-        let mut t: () = unimplemented!();
-        sz.prefix_dec();
-        {
-            unimplemented!();
-            (*unimplemented!()) = some_key;
-            unimplemented!();
-        }
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_9(c: *mut ()) -> () {
-    let mut sz: () = unimplemented!();
     let mut some_key: Counter_int_ = Counter_int_::copy_from({ &(*unimplemented!()).first });
     let _dtor_some_key = ScopedDestructorUnsafe::new(&raw mut some_key, Counter_int_::destructor);
     let mut first: () = unimplemented!();
-    'loop_: while unimplemented!() {
-        let mut key_value: Counter_int_ = Counter_int_::copy_from({ &(*unimplemented!()).first });
+    'loop_: while !(unimplemented!()) {
+        let mut key_value: Counter_int_ = Counter_int_::copy_from({ &(*first).first });
         let _dtor_key_value =
             ScopedDestructorUnsafe::new(&raw mut key_value, Counter_int_::destructor);
         let mut t: () = unimplemented!();
@@ -221,14 +211,14 @@ pub unsafe fn test_9(c: *mut ()) -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_10() -> () {
+pub unsafe fn test_9() -> () {
     {
         let mut m: () = unimplemented!();
-        (unsafe { test_7(&mut m) });
+        (unsafe { test_6(&mut m) });
     }
     {
         let mut m: () = unimplemented!();
-        (unsafe { test_8(&mut m) });
+        (unsafe { test_7(&mut m) });
     }
     return true;
 }
@@ -251,10 +241,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut m: () = unimplemented!();
         unimplemented!();
-        (unsafe { test_9(&mut m) });
+        (unsafe { test_8(&mut m) });
         unimplemented!();
     }
-    (unsafe { test_10() });
+    (unsafe { test_9() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
@@ -262,5 +252,5 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const alloc_count_1);
     std::cell::LazyCell::force(&*&raw const dealloc_count_2);
     std::cell::LazyCell::force(&*&raw const disable_default_constructor_3);
-    std::cell::LazyCell::force(&*&raw const gConstructed_6);
+    std::cell::LazyCell::force(&*&raw const gConstructed_5);
 }

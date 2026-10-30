@@ -7,66 +7,66 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn testConstexprSpan_0(mut sp: ()) -> () {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return ((unimplemented!())
         == (unimplemented!()
             .offset((unimplemented!()) as isize)
             .offset(-((1_()) as isize))));
 }
 pub unsafe fn testConstexprSpan_1(mut sp: ()) -> () {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return ((unimplemented!())
         == (unimplemented!()
             .offset((unimplemented!()) as isize)
             .offset(-((1_()) as isize))));
 }
 pub unsafe fn testConstexprSpan_2(mut sp: ()) -> () {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return ((unimplemented!())
         == (unimplemented!()
             .offset((unimplemented!()) as isize)
             .offset(-((1_()) as isize))));
 }
 pub unsafe fn testConstexprSpan_3(mut sp: ()) -> () {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return ((unimplemented!())
         == (unimplemented!()
             .offset((unimplemented!()) as isize)
             .offset(-((1_()) as isize))));
 }
 pub unsafe fn testConstexprSpan_4(mut sp: ()) -> () {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return ((unimplemented!())
         == (unimplemented!()
             .offset((unimplemented!()) as isize)
             .offset(-((1_()) as isize))));
 }
 pub unsafe fn testRuntimeSpan_5(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testRuntimeSpan_6(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testRuntimeSpan_7(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testRuntimeSpan_8(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testRuntimeSpan_9(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testRuntimeSpan_10(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testRuntimeSpan_11(mut sp: ()) {
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub unsafe fn testEmptySpan_12(mut sp: ()) {

@@ -47,11 +47,7 @@ pub unsafe fn test_0() -> () {
     {
         let mut __tmp_0: () = (unsafe {
             let mut ___value: () = 31_();
-            let mut ___bound_sentinel: () = 100_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut repeat_1))(
-                &mut ___value,
-                &mut ___bound_sentinel,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut repeat_1))(&mut ___value, 100_())
         });
         let __range1: *mut () = &mut __tmp_0;
         'loop_: for val in IterRange::new(unimplemented!(), unimplemented!()) {

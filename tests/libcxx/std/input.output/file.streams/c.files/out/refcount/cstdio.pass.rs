@@ -27,8 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut fp: *mut ::libc::FILE = std::ptr::null_mut();
-    let fpos: Value<::libc::fpos_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let mut fp: () = unimplemented!();
+    let fpos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut s: () = 0_();
     let mut cp: Ptr<()> = Ptr::<()>::null();
     let va: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));

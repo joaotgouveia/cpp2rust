@@ -215,9 +215,6 @@ pub struct test_allocator_int__rebind_int_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_const_int_ptr_ {}
-#[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
@@ -268,6 +265,19 @@ impl test_allocator_int_ {
         }
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
+    }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         unimplemented!();
@@ -325,40 +335,13 @@ impl test_allocator_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
+#[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ptr_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ptr_ {
-    pub unsafe fn copy_from(a: *const test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
-        this
-    }
-    pub unsafe fn move_from(a: *mut test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
-        }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_2));
-        this
-    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -368,6 +351,19 @@ impl test_allocator_int_ptr_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
     }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut (), mut s: ()) {
         unimplemented!();
         if !((self.stats_).is_null()) {
@@ -376,40 +372,11 @@ impl test_allocator_int_ptr_ {
         }
         unimplemented!();
     }
-    pub unsafe fn destroy(&mut self, mut p: *mut *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).destroy_count.prefix_inc();
-        };
-    }
-}
-impl Clone for test_allocator_int_ptr_ {
-    fn clone(&self) -> Self {
-        unsafe { test_allocator_int_ptr_::copy_from(self as *const test_allocator_int_ptr_) }
-    }
 }
 impl Default for test_allocator_int_ptr_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_const_int_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_const_int_ptr_ {}
-impl Default for test_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_const_int_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
@@ -506,31 +473,88 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct three_way_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl three_way_random_access_iterator_int_ptr_ {}
+impl three_way_random_access_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut three_way_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut three_way_random_access_iterator_int_ptr_,
+    ) -> *mut three_way_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut three_way_random_access_iterator_int_ptr_));
+    }
+}
 pub unsafe fn operator_add_6(
     mut x: three_way_random_access_iterator_const_int_ptr_,
     mut n: (),
@@ -545,7 +569,7 @@ pub unsafe fn operator_eq_7(
     return (((*x).it_) == ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct three_way_random_access_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -557,9 +581,6 @@ impl three_way_random_access_iterator_const_int_ptr_ {
             tracker_: support_double_move_tracker::new(),
         };
         this
-    }
-    pub unsafe fn operator_deref(&self) -> () {
-        return &(*self.it_);
     }
     pub unsafe fn operator_add_assign(
         &mut self,
@@ -575,6 +596,17 @@ impl three_way_random_access_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut three_way_random_access_iterator_const_int_ptr_,
+    ) -> *mut three_way_random_access_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut three_way_random_access_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for three_way_random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
@@ -588,7 +620,7 @@ impl std::cmp::PartialEq for three_way_random_access_iterator_const_int_ptr_ {
 }
 impl std::cmp::Eq for three_way_random_access_iterator_const_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -599,6 +631,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -914,7 +964,7 @@ impl util_iterator_error {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__
 {
     data_: (),
@@ -923,6 +973,9 @@ impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_
  } pub unsafe fn end_15 ( &self , ) -> three_way_random_access_iterator_const_int_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_const_int_ptr_  = ( unsafe { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: begin_12 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: size ( self , ) } )  ; operator_add_6 ( _x , _n , ) } )   ;
  } pub unsafe fn size ( &self , ) -> () { return unimplemented!()   ;
  } pub unsafe fn empty ( &self , ) -> () { return unimplemented!()   ;
+ } pub unsafe fn move_from ( _a0 : *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ , ) -> Self { let mut this = Self { data_ : unimplemented!() , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ , ) -> *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { unimplemented!()  ;
+ return & mut ( * ( self as *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  )  )  ;
  } }
 const _: () = assert!(!(false), "!HasAllocatorType<MinSequenceContainer<int>>");
 const _: () = assert!(!(false), "!HasEmplace<MinSequenceContainer<int>>");
@@ -978,19 +1031,16 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
     }
-    pub unsafe fn operator_dec_10(
+    pub unsafe fn operator_inc_8(
         &mut self,
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_dec();
+        self.ptr_.prefix_inc();
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
 }
@@ -1017,12 +1067,6 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
             ptr_: (p.ptr_).cast_const(),
         };
         this
-    }
-    pub unsafe fn operator_deref(&self) -> *const () {
-        return &(*self.ptr_);
-    }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
     }
 }
 impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
@@ -1051,7 +1095,12 @@ impl min_allocator_int_ {
 }
 pub unsafe fn test_compare_23() {
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 3_() });
+            std_flat_set_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
+                &mut __tmp_0
+            })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1077,7 +1126,10 @@ pub unsafe fn test_compare_23() {
 }
 pub unsafe fn test_compare_24() {
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_1: test_less_int_ = test_less_int_::new_1({ 3_() });
+            std_flat_set_int__test_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { & mut __tmp_1 } , )
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1103,7 +1155,12 @@ pub unsafe fn test_compare_24() {
 }
 pub unsafe fn test_compare_25() {
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 3_() });
+            std_flat_set_int__test_less_int___std_vector_int__min_allocator_int___::new_1({
+                &mut __tmp_2
+            })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1129,7 +1186,12 @@ pub unsafe fn test_compare_25() {
 }
 pub unsafe fn test_compare_26() {
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_3: test_less_int_ = test_less_int_::new_1({ 3_() });
+            std_flat_set_int__test_less_int___std_deque_int__std_allocator_int___::new_1({
+                &mut __tmp_3
+            })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1155,37 +1217,65 @@ pub unsafe fn test_compare_26() {
 }
 pub unsafe fn test_compare_alloc_27() {
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_4: test_less_int_ = test_less_int_::new_1({ 4_() });
+            let mut __tmp_5: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
+                { &mut __tmp_4 },
+                { &mut __tmp_5 },
+            )
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_6: test_less_int_ = test_less_int_::new_1({ 4_() });
+            let mut __tmp_7: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
+                { &mut __tmp_6 },
+                { &mut __tmp_7 },
+            )
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_compare_alloc_28() {
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_8: test_less_int_ = test_less_int_::new_1({ 4_() });
+            let mut __tmp_9: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
+                { &mut __tmp_8 },
+                { &mut __tmp_9 },
+            )
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_10: test_less_int_ = test_less_int_::new_1({ 4_() });
+            let mut __tmp_11: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
+            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
+                { &mut __tmp_10 },
+                { &mut __tmp_11 },
+            )
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
 }

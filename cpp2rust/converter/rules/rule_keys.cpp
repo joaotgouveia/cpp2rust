@@ -85,6 +85,9 @@ matchingDefinitions(clang::Sema &sema, clang::ClassTemplateDecl *tmpl,
   llvm::SmallVector<clang::ClassTemplatePartialSpecializationDecl *> partials;
   tmpl->getPartialSpecializations(partials);
   llvm::SmallVector<clang::CXXRecordDecl *> records;
+  // a constrained partial specialization takes only some of the dependent
+  // arguments (chunk_view<T1> of a forward range), the primary the others
+  bool constrained = false;
   for (auto partial : partials) {
     RuleDecls::Trial trial(sema);
     clang::sema::TemplateDeductionInfo info(partial->getLocation());
@@ -93,9 +96,11 @@ matchingDefinitions(clang::Sema &sema, clang::ClassTemplateDecl *tmpl,
             clang::TemplateDeductionResult::Success &&
         !trial.failed()) {
       records.push_back(partial);
+      constrained |=
+          spec->isDependentType() && partial->hasAssociatedConstraints();
     }
   }
-  if (!records.empty()) {
+  if (!records.empty() && !constrained) {
     return records;
   }
   records.push_back(tmpl->getTemplatedDecl());
@@ -127,6 +132,11 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
   assert(qualifier && "member type is not qualified by a type");
   std::vector<clang::QualType> resolved;
   for (auto owner : resolveMemberType(sema, clang::QualType(qualifier, 0))) {
+    // a member of a template parameter names no class
+    // (typename _Traits::char_type of basic_string's value_type)
+    if (owner->getAs<clang::TemplateTypeParmType>()) {
+      continue;
+    }
     llvm::SmallVector<clang::CXXRecordDecl *> records;
     // an owner resolved to a class nested in a class template
     // (lazy_split_view::__outer_iterator of its value_type)
@@ -139,7 +149,11 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
           owner_spec ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
                            owner_spec->getTemplateName().getAsTemplateDecl())
                      : nullptr;
-      assert(tmpl && "member type is not qualified by a class template");
+      // an owner that is no class template names no member here (an alias
+      // template specialization); the keys of a rule needing one fail later
+      if (!tmpl) {
+        continue;
+      }
       records = matchingDefinitions(sema, tmpl, owner_spec);
     }
     for (auto record : records) {
@@ -158,6 +172,17 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
         } else if (auto nested = llvm::dyn_cast<clang::CXXRecordDecl>(decl)) {
           // a class nested in the class template (basic_ostream::sentry)
           resolved.push_back(sema.Context.getCanonicalTagType(nested));
+        } else if (auto using_decl =
+                       llvm::dyn_cast<clang::UnresolvedUsingTypenameDecl>(
+                           decl)) {
+          // a member type taken from a base with a using-declaration
+          // (using typename _Impl::value_compare of flat_map)
+          auto types = resolveMemberType(
+              sema,
+              sema.Context.getDependentNameType(
+                  clang::ElaboratedTypeKeyword::Typename,
+                  using_decl->getQualifier(), using_decl->getIdentifier()));
+          resolved.insert(resolved.end(), types.begin(), types.end());
         }
       }
     }
@@ -388,6 +413,31 @@ std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
     }
     return keys;
   }
+  // a dependent cast of an object of a member type calls a conversion function
+  // of the class the member names (static_cast<bool>(a0) of
+  // const typename vector<bool, T1>::reference &)
+  if (auto cast = llvm::dyn_cast<clang::ExplicitCastExpr>(returned)) {
+    auto operand = RuleDecls::SkipImplicit(cast->getSubExpr());
+    auto type = operand->getType().getNonReferenceType();
+    if (llvm::isa<clang::DeclRefExpr>(operand) &&
+        type->getAs<clang::DependentNameType>()) {
+      std::vector<ExprKey> keys;
+      for (auto resolved : resolveMemberType(sema, type)) {
+        auto key = getConstructorKey(getParent(resolved));
+        if (key && !llvm::is_contained(keys, *key)) {
+          keys.push_back(*key);
+        }
+      }
+      if (keys.empty()) {
+        llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
+                     << " has no key: cast member type "
+                     << type.getAsString() << " has no class\n";
+        rule->dump(llvm::errs());
+      }
+      assert(!keys.empty() && "expression rule has no key");
+      return keys;
+    }
+  }
   auto key = GetExprKey(ctx, returned);
   if (!key && llvm::isa<clang::InitListExpr>(returned)) {
     key = getConstructorKey(getParent(rule->getAsFunction()->getReturnType()));
@@ -444,7 +494,8 @@ const clang::Decl *getAliasTemplate(clang::QualType type) {
   return alias ? alias->getCanonicalDecl() : nullptr;
 }
 
-std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
+std::vector<TypeKey> GetTypeKeys(clang::Sema &sema,
+                                 const clang::NamedDecl *rule) {
   auto alias = llvm::dyn_cast<clang::TypedefNameDecl>(rule);
   if (auto tmpl = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(rule)) {
     alias = tmpl->getTemplatedDecl();
@@ -455,23 +506,43 @@ std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
     return {kAnyClass};
   }
   if (auto qualifier = enclosingQualifier(pattern.getTypePtr())) {
-    while (auto outer = enclosingQualifier(qualifier)) {
-      qualifier = outer;
+    auto outermost = qualifier;
+    while (auto outer = enclosingQualifier(outermost)) {
+      outermost = outer;
     }
-    auto parent = getParent(clang::QualType(qualifier, 0));
+    auto parent = getParent(clang::QualType(outermost, 0));
+    // a member of a class template that is an internal class whichever the
+    // arguments (_Bit_reference of vector<bool, T1>::reference) has the key of
+    // that class too, as uses spell it without the member
+    std::vector<TypeKey> keys;
+    auto spec = qualifier->getAs<clang::TemplateSpecializationType>();
+    if (outermost == qualifier && spec &&
+        llvm::isa_and_nonnull<clang::ClassTemplateDecl>(
+            spec->getTemplateName().getAsTemplateDecl())) {
+      for (auto resolved : resolveMemberType(sema, pattern)) {
+        auto key = GetTypeKey(resolved);
+        auto decl = key ? std::get_if<const clang::Decl *>(&*key) : nullptr;
+        if (decl && *decl &&
+            RuleDecls::IsInternal(llvm::cast<clang::NamedDecl>(*decl)) &&
+            !llvm::is_contained(keys, *key)) {
+          keys.push_back(*key);
+        }
+      }
+    }
     if (!parent) {
-      parent = getAliasTemplate(clang::QualType(qualifier, 0));
+      parent = getAliasTemplate(clang::QualType(outermost, 0));
     }
     if (!parent) {
       llvm::errs() << "type rule " << rule->getQualifiedNameAsString()
                    << " has no key: qualifier "
-                   << clang::QualType(qualifier, 0).getAsString()
+                   << clang::QualType(outermost, 0).getAsString()
                    << " of " << pattern.getAsString()
                    << " is neither a class nor an alias template\n";
       rule->dump(llvm::errs());
     }
     assert(parent && "type rule has no key");
-    return {parent};
+    keys.insert(keys.begin(), parent);
+    return keys;
   }
   auto key = GetTypeKey(pattern);
   if (!key) {

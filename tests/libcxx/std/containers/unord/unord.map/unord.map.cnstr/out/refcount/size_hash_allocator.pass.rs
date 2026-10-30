@@ -10,17 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct NotConstructible {}
 impl NotConstructible {}
-impl std::cmp::PartialEq for NotConstructible {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(NotConstructible {})).as_pointer(),
-                Rc::new(RefCell::new(NotConstructible {})).as_pointer(),
-            )
-        }
+impl CppEq for NotConstructible {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for NotConstructible {}
 pub fn operator_eq_0(_a0: Ptr<NotConstructible>, _a1: Ptr<NotConstructible>) -> () {
     return true;
 }
@@ -41,56 +35,38 @@ impl test_equal_to_NotConstructible_ {
         Self { data_: 0_() }
     }
 }
-impl std::cmp::PartialEq for test_equal_to_NotConstructible_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(test_equal_to_NotConstructible_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_equal_to_NotConstructible_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_equal_to_NotConstructible_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_equal_to_NotConstructible_ {}
 impl Default for test_equal_to_NotConstructible_ {
     fn default() -> Self {
         { test_equal_to_NotConstructible_::new_1() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct test_hash_NotConstructible_ {
     #[offset(0)]
     data_: (),
 }
 impl test_hash_NotConstructible_ {
-    pub fn new(mut data: ()) -> Self {
+    pub fn new(data: Option<()>) -> Self {
+        let mut data: () = data.unwrap_or_else(|| 0_());
         Self { data_: data }
     }
 }
-impl std::cmp::PartialEq for test_hash_NotConstructible_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            test_hash_NotConstructible_Impl::operator_eq(
-                &Rc::new(RefCell::new(test_hash_NotConstructible_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_hash_NotConstructible_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_hash_NotConstructible_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        test_hash_NotConstructible_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_hash_NotConstructible_ {}
+impl Default for test_hash_NotConstructible_ {
+    fn default() -> Self {
+        { test_hash_NotConstructible_::new(None) }
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -207,27 +183,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -259,7 +219,7 @@ pub fn operator_eq_6(
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_NotConstructible__NotConstructible___rebind_std_pair_const_NotConstructible__NotConstructible__
 {}
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
     #[offset(0)]
@@ -278,63 +238,10 @@ impl test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn copy_from(
-        a: Ptr<test_allocator_std_pair_const_NotConstructible__NotConstructible__>,
-    ) -> Self {
-        let __this: Value<test_allocator_std_pair_const_NotConstructible__NotConstructible__> =
-            Rc::new(RefCell::new(Self {
-                data_: a.with(|__s| __s.data_),
-                id_: a.with(|__s| __s.id_),
-                stats_: a.with(|__s| __s.stats_.clone()),
-            }));
-        let this: Ptr<test_allocator_std_pair_const_NotConstructible__NotConstructible__> =
-            __this.as_pointer();
-        unimplemented!();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
 }
-impl std::cmp::PartialEq for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_6(
-                Rc::new(RefCell::new(
-                    test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-                        data_: self.data_.clone(),
-                        id_: self.id_.clone(),
-                        stats_: self.stats_.clone(),
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-                        data_: other.data_.clone(),
-                        id_: other.id_.clone(),
-                        stats_: other.stats_.clone(),
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {}
-impl Clone for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn clone(&self) -> Self {
-        let __src: Value<test_allocator_std_pair_const_NotConstructible__NotConstructible__> =
-            Rc::new(RefCell::new(
-                test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                },
-            ));
-        test_allocator_std_pair_const_NotConstructible__NotConstructible__::copy_from(
-            __src.as_pointer(),
-        )
+impl CppEq for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
 impl Default for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
@@ -411,10 +318,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { #[offset(0)] #[byte_size(8)] ptr_ : Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >  , }
-impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut _a0 : ()  , ) -> Self { Self { ptr_ : Ptr::<min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__>::null()  , }  } }
 pub fn operator_eq_11(
     mut _a0: min_allocator_std_pair_const_NotConstructible__NotConstructible__,
     mut _a1: min_allocator_std_pair_const_NotConstructible__NotConstructible__,
@@ -424,18 +327,11 @@ pub fn operator_eq_11(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_NotConstructible__NotConstructible__ {}
-impl std::cmp::PartialEq for min_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_11(self.clone(), other.clone()) }
+impl CppEq for min_allocator_std_pair_const_NotConstructible__NotConstructible__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_11(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_std_pair_const_NotConstructible__NotConstructible__ {}
-impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { pub fn new_1 ( mut _a0 : min_allocator_std_pair_const_NotConstructible__NotConstructible__  , ) -> Self { Self { }  } }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___
-{}
-impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { }
 pub fn operator_eq_12(
     mut _a0: explicit_allocator_std_pair_const_NotConstructible__NotConstructible__,
     mut _a1: explicit_allocator_std_pair_const_NotConstructible__NotConstructible__,
@@ -450,14 +346,11 @@ impl explicit_allocator_std_pair_const_NotConstructible__NotConstructible__ {
         Self {}
     }
 }
-impl std::cmp::PartialEq
-    for explicit_allocator_std_pair_const_NotConstructible__NotConstructible__
-{
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_12(self.clone(), other.clone()) }
+impl CppEq for explicit_allocator_std_pair_const_NotConstructible__NotConstructible__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for explicit_allocator_std_pair_const_NotConstructible__NotConstructible__ {}
 impl Default for explicit_allocator_std_pair_const_NotConstructible__NotConstructible__ {
     fn default() -> Self {
         { explicit_allocator_std_pair_const_NotConstructible__NotConstructible__::new() }
@@ -465,7 +358,7 @@ impl Default for explicit_allocator_std_pair_const_NotConstructible__NotConstruc
 }
 pub fn test_13(alloc: Ptr<test_allocator_std_pair_const_NotConstructible__NotConstructible__>) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -477,7 +370,7 @@ pub fn test_13(alloc: Ptr<test_allocator_std_pair_const_NotConstructible__NotCon
 }
 pub fn test_14(alloc: Ptr<min_allocator_std_pair_const_NotConstructible__NotConstructible__>) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -489,7 +382,7 @@ pub fn test_14(alloc: Ptr<min_allocator_std_pair_const_NotConstructible__NotCons
 }
 pub fn test_15(alloc: Ptr<explicit_allocator_std_pair_const_NotConstructible__NotConstructible__>) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -544,9 +437,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     return 0_();
 }
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub trait NotConstructibleImpl {
     fn copy_assign(&self, _a0: Ptr<NotConstructible>) -> Ptr<NotConstructible> {
         unimplemented!()
@@ -577,19 +467,6 @@ impl explicit_allocator_std_pair_const_NotConstructible__NotConstructible__Impl
     for Ptr<explicit_allocator_std_pair_const_NotConstructible__NotConstructible__>
 {
 }
-pub trait min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___Impl
-{
-    fn allocate ( &self , n : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
-    fn deallocate(
-        &self,
-        p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        n: (),
-    );
-}
-impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___Impl for Ptr<min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___> {
-fn allocate ( &self , mut n : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { return min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
- } fn deallocate ( &self , mut p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  , mut n : ()  , ) { unimplemented!()  ;
- } }
 pub trait min_allocator_std_pair_const_NotConstructible__NotConstructible__Impl {
     fn allocate ( &self , mut n : ()  , ) -> min_pointer_std_pair_const_NotConstructible__NotConstructible___std_integral_constant_unsigned_long__0__{
         unimplemented!()
@@ -606,36 +483,6 @@ impl min_allocator_std_pair_const_NotConstructible__NotConstructible__Impl
     for Ptr<min_allocator_std_pair_const_NotConstructible__NotConstructible__>
 {
 }
-pub trait min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_(&self) -> ();
-    fn operator_deref ( &self , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_arrow ( &self , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index ( &self , n : ()  , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  > ;
-}
-impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__> {
-fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
- } fn operator_index ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_NotConstructible__NotConstructible___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  > { return (* self ) .with(|__s| __s . ptr_ .clone()) . offset ( ( n ) as isize )   ;
- } }
 pub trait min_pointer_std_pair_const_NotConstructible__NotConstructible___std_integral_constant_unsigned_long__0__Impl
 {
     fn to_(&self) -> () {

@@ -44,7 +44,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -54,12 +54,19 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -69,7 +76,14 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_eq_0(
     x: Ptr<bidirectional_iterator_int_ptr_>,
@@ -110,29 +124,11 @@ impl bidirectional_iterator_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for bidirectional_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for bidirectional_iterator_int_ptr_ {}
 pub fn operator_add_3(
     x: random_access_iterator_int_ptr_,
     mut n: (),
@@ -142,24 +138,32 @@ pub fn operator_add_3(
     return random_access_iterator_int_ptr_::move_from({ x.as_pointer() });
 }
 pub fn operator_sub_4(
+    x: random_access_iterator_int_ptr_,
+    mut n: (),
+) -> random_access_iterator_int_ptr_ {
+    let x: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(x));
+    ({ random_access_iterator_int_ptr_Impl::operator_sub_assign(&x.as_pointer(), n) });
+    return random_access_iterator_int_ptr_::move_from({ x.as_pointer() });
+}
+pub fn operator_sub_5(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
 ) -> () {
     return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
-pub fn operator_eq_5(
+pub fn operator_eq_6(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_6(
+pub fn operator_ne_7(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-pub fn base_7(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_8(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -186,30 +190,12 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(random_access_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(random_access_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for random_access_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -219,35 +205,47 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub fn operator_add_8(x: contiguous_iterator_int_ptr_, mut n: ()) -> contiguous_iterator_int_ptr_ {
+pub fn operator_add_9(x: contiguous_iterator_int_ptr_, mut n: ()) -> contiguous_iterator_int_ptr_ {
     let x: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(x));
     ({ contiguous_iterator_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return contiguous_iterator_int_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_9(
+pub fn operator_sub_10(x: contiguous_iterator_int_ptr_, mut n: ()) -> contiguous_iterator_int_ptr_ {
+    let x: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(x));
+    ({ contiguous_iterator_int_ptr_Impl::operator_sub_assign(&x.as_pointer(), n) });
+    return contiguous_iterator_int_ptr_::move_from({ x.as_pointer() });
+}
+pub fn operator_sub_11(
     mut x: contiguous_iterator_int_ptr_,
     mut y: contiguous_iterator_int_ptr_,
 ) -> () {
     return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
-pub fn operator_eq_10(
+pub fn operator_eq_12(
     x: Ptr<contiguous_iterator_int_ptr_>,
     y: Ptr<contiguous_iterator_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_11(
+pub fn operator_ne_13(
     x: Ptr<contiguous_iterator_int_ptr_>,
     y: Ptr<contiguous_iterator_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-pub fn base_12(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_14(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -274,30 +272,12 @@ impl contiguous_iterator_int_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_10(
-                Rc::new(RefCell::new(contiguous_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(contiguous_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for contiguous_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for contiguous_iterator_int_ptr_ {}
-pub fn base_13(i: Ptr<()>) -> Ptr<()> {
+pub fn base_15(i: Ptr<()>) -> Ptr<()> {
     let i: Value<Ptr<()>> = Rc::new(RefCell::new(i));
     return (*i.borrow()).clone();
 }
@@ -432,7 +412,7 @@ pub struct sentinel_wrapper_int_ptr_ {
 impl sentinel_wrapper_int_ptr_ {
     pub fn new_1(it: Ptr<Ptr<()>>) -> Self {
         Self {
-            base_: ({ base_13((it.read())) }),
+            base_: ({ base_15((it.read())) }),
         }
     }
 }
@@ -460,7 +440,7 @@ pub struct sentinel_wrapper_random_access_iterator_int_ptr__ {
 impl sentinel_wrapper_random_access_iterator_int_ptr__ {
     pub fn new_1(it: Ptr<random_access_iterator_int_ptr_>) -> Self {
         Self {
-            base_: ({ base_7((it).clone()) }),
+            base_: ({ base_8((it).clone()) }),
         }
     }
 }
@@ -474,11 +454,11 @@ pub struct sentinel_wrapper_contiguous_iterator_int_ptr__ {
 impl sentinel_wrapper_contiguous_iterator_int_ptr__ {
     pub fn new_1(it: Ptr<contiguous_iterator_int_ptr_>) -> Self {
         Self {
-            base_: ({ base_12((it).clone()) }),
+            base_: ({ base_14((it).clone()) }),
         }
     }
 }
-pub fn operator_eq_14(
+pub fn operator_eq_16(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -492,23 +472,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_14(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_16(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -523,36 +491,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_15(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_17(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_18(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_15(_i, n)
+        operator_add_17(_i, n)
     });
 }
-pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_19(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_20(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -595,52 +563,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_20(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_22(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_21(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_19(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -660,44 +592,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -861,17 +766,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for ForwardIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotDerivedFrom {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(true, "std::incrementable<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(
@@ -885,17 +784,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotIncrementable {}
-impl std::cmp::PartialEq for ForwardIteratorNotIncrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotIncrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotIncrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotIncrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotIncrementable {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotIncrementable>");
 const _: () = assert!(
     !(false),
@@ -912,17 +805,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDerivedFrom>"
@@ -938,17 +825,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDecrementable {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDecrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDecrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDecrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDecrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDecrementable {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDecrementable>"
@@ -976,17 +857,11 @@ pub struct PermutableNotSwappable_NotSwappable {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PermutableNotSwappable {}
-impl std::cmp::PartialEq for PermutableNotSwappable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            PermutableNotSwappableImpl::operator_eq(
-                &Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-                Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-            )
-        }
+impl CppEq for PermutableNotSwappable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PermutableNotSwappableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for PermutableNotSwappable {}
 const _: () = assert!(true, "std::input_iterator<PermutableNotSwappable>");
 const _: () = assert!(true, "std::forward_iterator<PermutableNotSwappable>");
 const _: () = assert!(!(false), "!std::permutable<PermutableNotSwappable>");
@@ -1042,32 +917,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorNotDerivedFrom {}
-impl std::cmp::Ord for RandomAccessIteratorNotDerivedFrom {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorNotDerivedFrom {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorNotDerivedFrom {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorNotDerivedFrom>"
@@ -1079,32 +940,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadIndex {}
-impl std::cmp::Ord for RandomAccessIteratorBadIndex {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadIndex {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadIndex {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadIndex {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadIndex {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadIndex {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorBadIndex>"
@@ -1116,32 +963,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadDifferenceType {}
-impl std::cmp::Ord for RandomAccessIteratorBadDifferenceType {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadDifferenceType {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadDifferenceType {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadDifferenceType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadDifferenceType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadDifferenceType {}
 const _: () = assert!(true, "std::regular<RandomAccessIteratorBadDifferenceType>");
 const _: () = assert!(
     !(false),
@@ -1209,65 +1042,6 @@ const _: () = assert!(
     !(false),
     "!HasStablePartitionRange<R<PermutableNotSwappable>, UnaryPred>"
 );
-pub fn test_one_21(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: (), expected: ()) {
-    let input: Value<()> = Rc::new(RefCell::new(input));
-    let pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(pred));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let neg_pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(lambda!(
-        {
-            let pred: Ptr<FnPtr<fn(()) -> ()>> = pred.as_pointer();
-        },
-        |mut x: ()| -> () {
-            return !({ (*pred.upgrade().deref()).call(x) });
-        }
-    )));
-    {
-        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
-                    (b).clone(),
-                    (e).clone(),
-                    (*pred.borrow()).copy_from(),
-                    None,
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
-        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
-                    range.as_pointer(),
-                    (*pred.borrow()).copy_from(),
-                    None,
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
 pub fn test_one_23(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(pred));
@@ -1289,7 +1063,7 @@ pub fn test_one_23(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1313,66 +1087,7 @@ pub fn test_one_23(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
-                    range.as_pointer(),
-                    (*pred.borrow()).copy_from(),
-                    None,
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub fn test_one_24(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: (), expected: ()) {
-    let input: Value<()> = Rc::new(RefCell::new(input));
-    let pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(pred));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let neg_pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(lambda!(
-        {
-            let pred: Ptr<FnPtr<fn(()) -> ()>> = pred.as_pointer();
-        },
-        |mut x: ()| -> () {
-            return !({ (*pred.upgrade().deref()).call(x) });
-        }
-    )));
-    {
-        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
-                    (b).clone(),
-                    (e).clone(),
-                    (*pred.borrow()).copy_from(),
-                    None,
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
-        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1407,7 +1122,7 @@ pub fn test_one_25(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1431,7 +1146,7 @@ pub fn test_one_25(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1466,7 +1181,7 @@ pub fn test_one_26(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1490,7 +1205,7 @@ pub fn test_one_26(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1525,7 +1240,7 @@ pub fn test_one_27(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1549,7 +1264,7 @@ pub fn test_one_27(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1584,7 +1299,7 @@ pub fn test_one_28(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1608,7 +1323,7 @@ pub fn test_one_28(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1638,16 +1353,12 @@ pub fn test_one_29(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_0: Value<bidirectional_iterator_int_ptr_> =
-                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_0.as_pointer() })
-        };
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1665,17 +1376,13 @@ pub fn test_one_29(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_1: Value<bidirectional_iterator_int_ptr_> =
-                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_1.as_pointer() })
-        };
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1705,16 +1412,12 @@ pub fn test_one_30(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_2: Value<bidirectional_iterator_int_ptr_> =
-                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_2.as_pointer() })
-        };
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1732,17 +1435,13 @@ pub fn test_one_30(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_3: Value<bidirectional_iterator_int_ptr_> =
-                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_3.as_pointer() })
-        };
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1773,15 +1472,15 @@ pub fn test_one_31(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_4: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_0: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_4.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_0.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1800,16 +1499,16 @@ pub fn test_one_31(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_5: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_1: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_5.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_1.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1840,15 +1539,15 @@ pub fn test_one_32(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_6: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_2: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_6.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_2.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1867,16 +1566,16 @@ pub fn test_one_32(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_7: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_3: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_7.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_3.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1907,15 +1606,15 @@ pub fn test_one_33(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_8: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_4: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_8.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_4.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -1934,16 +1633,16 @@ pub fn test_one_33(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_9: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_5: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_9.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_5.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -1974,15 +1673,15 @@ pub fn test_one_34(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_10: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_6: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_10.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_6.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2001,16 +1700,16 @@ pub fn test_one_34(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_11: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_7: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_11.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_7.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2041,15 +1740,15 @@ pub fn test_one_35(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_12: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_8: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_12.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_8.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2068,16 +1767,16 @@ pub fn test_one_35(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
-            let __tmp_13: Value<bidirectional_iterator_int_ptr_> =
+            let __tmp_9: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_13.as_pointer() })
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_9.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2105,14 +1804,18 @@ pub fn test_one_36(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     )));
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
+            let __tmp_10: Value<bidirectional_iterator_int_ptr_> =
+                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_10.as_pointer() })
+        };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2128,15 +1831,19 @@ pub fn test_one_36(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     }
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
+            let __tmp_11: Value<bidirectional_iterator_int_ptr_> =
+                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_11.as_pointer() })
+        };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2164,14 +1871,18 @@ pub fn test_one_37(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     )));
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
+            let __tmp_12: Value<bidirectional_iterator_int_ptr_> =
+                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_12.as_pointer() })
+        };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2187,15 +1898,19 @@ pub fn test_one_37(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     }
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
+            let __tmp_13: Value<bidirectional_iterator_int_ptr_> =
+                Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_13.as_pointer() })
+        };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2230,7 +1945,7 @@ pub fn test_one_38(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2254,7 +1969,7 @@ pub fn test_one_38(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2289,7 +2004,7 @@ pub fn test_one_39(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2313,7 +2028,7 @@ pub fn test_one_39(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2348,7 +2063,7 @@ pub fn test_one_40(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2372,7 +2087,7 @@ pub fn test_one_40(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2407,7 +2122,7 @@ pub fn test_one_41(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2431,7 +2146,7 @@ pub fn test_one_41(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2466,7 +2181,7 @@ pub fn test_one_42(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2490,7 +2205,7 @@ pub fn test_one_42(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2520,16 +2235,12 @@ pub fn test_one_43(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_14: Value<random_access_iterator_int_ptr_> =
-                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_14.as_pointer() })
-        };
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2547,17 +2258,13 @@ pub fn test_one_43(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_15: Value<random_access_iterator_int_ptr_> =
-                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_15.as_pointer() })
-        };
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2587,16 +2294,12 @@ pub fn test_one_44(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_16: Value<random_access_iterator_int_ptr_> =
-                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_16.as_pointer() })
-        };
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2614,17 +2317,13 @@ pub fn test_one_44(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_17: Value<random_access_iterator_int_ptr_> =
-                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_17.as_pointer() })
-        };
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2655,15 +2354,15 @@ pub fn test_one_45(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_18: Value<random_access_iterator_int_ptr_> =
+            let __tmp_14: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_18.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_14.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2682,16 +2381,16 @@ pub fn test_one_45(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_19: Value<random_access_iterator_int_ptr_> =
+            let __tmp_15: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_19.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_15.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2722,15 +2421,15 @@ pub fn test_one_46(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_20: Value<random_access_iterator_int_ptr_> =
+            let __tmp_16: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_20.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_16.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2749,16 +2448,16 @@ pub fn test_one_46(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_21: Value<random_access_iterator_int_ptr_> =
+            let __tmp_17: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_21.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_17.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2789,15 +2488,15 @@ pub fn test_one_47(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_22: Value<random_access_iterator_int_ptr_> =
+            let __tmp_18: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_22.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_18.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2816,16 +2515,16 @@ pub fn test_one_47(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_23: Value<random_access_iterator_int_ptr_> =
+            let __tmp_19: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_23.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_19.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2856,15 +2555,15 @@ pub fn test_one_48(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_24: Value<random_access_iterator_int_ptr_> =
+            let __tmp_20: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_24.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_20.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2883,16 +2582,16 @@ pub fn test_one_48(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_25: Value<random_access_iterator_int_ptr_> =
+            let __tmp_21: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_25.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_21.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2923,15 +2622,15 @@ pub fn test_one_49(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_26: Value<random_access_iterator_int_ptr_> =
+            let __tmp_22: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_26.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_22.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -2950,16 +2649,16 @@ pub fn test_one_49(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
-            let __tmp_27: Value<random_access_iterator_int_ptr_> =
+            let __tmp_23: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_27.as_pointer() })
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_23.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -2987,14 +2686,18 @@ pub fn test_one_50(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     )));
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
+            let __tmp_24: Value<random_access_iterator_int_ptr_> =
+                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_24.as_pointer() })
+        };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3010,15 +2713,19 @@ pub fn test_one_50(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     }
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
+            let __tmp_25: Value<random_access_iterator_int_ptr_> =
+                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_25.as_pointer() })
+        };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3046,14 +2753,18 @@ pub fn test_one_51(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     )));
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
+            let __tmp_26: Value<random_access_iterator_int_ptr_> =
+                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_26.as_pointer() })
+        };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3069,15 +2780,19 @@ pub fn test_one_51(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     }
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
-            unimplemented!().offset((unimplemented!()) as isize)
-        });
+        let mut b: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_random_access_iterator_int_ptr__ = {
+            let __tmp_27: Value<random_access_iterator_int_ptr_> =
+                Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_27.as_pointer() })
+        };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3112,7 +2827,7 @@ pub fn test_one_52(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3136,7 +2851,7 @@ pub fn test_one_52(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3171,7 +2886,7 @@ pub fn test_one_53(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3195,7 +2910,7 @@ pub fn test_one_53(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3230,7 +2945,7 @@ pub fn test_one_54(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3254,7 +2969,7 @@ pub fn test_one_54(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3289,7 +3004,7 @@ pub fn test_one_55(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3313,7 +3028,7 @@ pub fn test_one_55(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3348,7 +3063,7 @@ pub fn test_one_56(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3372,7 +3087,7 @@ pub fn test_one_56(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3402,16 +3117,12 @@ pub fn test_one_57(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_28: Value<contiguous_iterator_int_ptr_> =
-                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_28.as_pointer() })
-        };
+        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3429,17 +3140,13 @@ pub fn test_one_57(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_29: Value<contiguous_iterator_int_ptr_> =
-                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_29.as_pointer() })
-        };
+        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3469,16 +3176,12 @@ pub fn test_one_58(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_30: Value<contiguous_iterator_int_ptr_> =
-                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_30.as_pointer() })
-        };
+        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3496,17 +3199,13 @@ pub fn test_one_58(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_31: Value<contiguous_iterator_int_ptr_> =
-                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_31.as_pointer() })
-        };
+        let mut e: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
+            unimplemented!().offset((unimplemented!()) as isize)
+        });
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3537,15 +3236,15 @@ pub fn test_one_59(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_32: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_28: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_32.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_28.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3564,16 +3263,16 @@ pub fn test_one_59(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_33: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_29: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_33.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_29.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3604,15 +3303,15 @@ pub fn test_one_60(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_34: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_30: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_34.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_30.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3631,16 +3330,16 @@ pub fn test_one_60(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_35: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_31: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_35.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_31.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3671,15 +3370,15 @@ pub fn test_one_61(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_36: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_32: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_36.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_32.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3698,16 +3397,16 @@ pub fn test_one_61(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_37: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_33: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_37.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_33.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3738,15 +3437,15 @@ pub fn test_one_62(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_38: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_34: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_38.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_34.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3765,16 +3464,16 @@ pub fn test_one_62(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_39: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_35: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_39.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_35.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3805,15 +3504,15 @@ pub fn test_one_63(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_40: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_36: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_40.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_36.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3832,16 +3531,16 @@ pub fn test_one_63(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut b: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
-            let __tmp_41: Value<contiguous_iterator_int_ptr_> =
+            let __tmp_37: Value<contiguous_iterator_int_ptr_> =
                 Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 })));
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_41.as_pointer() })
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_37.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3869,11 +3568,18 @@ pub fn test_one_64(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     )));
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+        let mut b: contiguous_iterator_int_ptr_ =
+            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
+            let __tmp_38: Value<contiguous_iterator_int_ptr_> =
+                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_38.as_pointer() })
+        };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3889,12 +3595,19 @@ pub fn test_one_64(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     }
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+        let mut b: contiguous_iterator_int_ptr_ =
+            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
+            let __tmp_39: Value<contiguous_iterator_int_ptr_> =
+                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_39.as_pointer() })
+        };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3922,11 +3635,18 @@ pub fn test_one_65(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     )));
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+        let mut b: contiguous_iterator_int_ptr_ =
+            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
+            let __tmp_40: Value<contiguous_iterator_int_ptr_> =
+                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_40.as_pointer() })
+        };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -3942,12 +3662,19 @@ pub fn test_one_65(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     }
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+        let mut b: contiguous_iterator_int_ptr_ =
+            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let mut e: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
+            let __tmp_41: Value<contiguous_iterator_int_ptr_> =
+                Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                })));
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_41.as_pointer() })
+        };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -3979,7 +3706,7 @@ pub fn test_one_66(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4000,7 +3727,7 @@ pub fn test_one_66(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4032,7 +3759,7 @@ pub fn test_one_67(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4053,7 +3780,7 @@ pub fn test_one_67(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4085,7 +3812,7 @@ pub fn test_one_68(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4106,7 +3833,7 @@ pub fn test_one_68(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4138,7 +3865,7 @@ pub fn test_one_69(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4159,7 +3886,7 @@ pub fn test_one_69(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4191,7 +3918,7 @@ pub fn test_one_70(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4212,7 +3939,7 @@ pub fn test_one_70(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4241,15 +3968,10 @@ pub fn test_one_71(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
-        let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_42: Value<Ptr<()>> = Rc::new(RefCell::new(
-                unimplemented!().offset((unimplemented!()) as isize),
-            ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_42.as_pointer() })
-        };
+        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4266,16 +3988,11 @@ pub fn test_one_71(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
-        let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_43: Value<Ptr<()>> = Rc::new(RefCell::new(
-                unimplemented!().offset((unimplemented!()) as isize),
-            ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_43.as_pointer() })
-        };
+        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4304,15 +4021,10 @@ pub fn test_one_72(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
-        let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_44: Value<Ptr<()>> = Rc::new(RefCell::new(
-                unimplemented!().offset((unimplemented!()) as isize),
-            ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_44.as_pointer() })
-        };
+        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4329,16 +4041,11 @@ pub fn test_one_72(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
     {
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
-        let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_45: Value<Ptr<()>> = Rc::new(RefCell::new(
-                unimplemented!().offset((unimplemented!()) as isize),
-            ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_45.as_pointer() })
-        };
+        let mut e: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4368,14 +4075,14 @@ pub fn test_one_73(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_46: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_42: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_46.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_42.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4393,15 +4100,15 @@ pub fn test_one_73(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_47: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_43: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_47.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_43.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4431,14 +4138,14 @@ pub fn test_one_74(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_48: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_44: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_48.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_44.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4456,15 +4163,15 @@ pub fn test_one_74(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_49: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_45: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_49.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_45.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4494,14 +4201,14 @@ pub fn test_one_75(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_50: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_46: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_50.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_46.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4519,15 +4226,15 @@ pub fn test_one_75(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_51: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_47: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_51.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_47.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4557,14 +4264,14 @@ pub fn test_one_76(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_52: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_48: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_52.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_48.as_pointer() })
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4582,15 +4289,15 @@ pub fn test_one_76(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
-            let __tmp_53: Value<Ptr<()>> = Rc::new(RefCell::new(
+            let __tmp_49: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
-            sentinel_wrapper_int_ptr_::new_1({ __tmp_53.as_pointer() })
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_49.as_pointer() })
         };
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4620,6 +4327,132 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
         let mut b: Ptr<()> = unimplemented!();
         let mut e: sentinel_wrapper_int_ptr_ = {
+            let __tmp_50: Value<Ptr<()>> = Rc::new(RefCell::new(
+                unimplemented!().offset((unimplemented!()) as isize),
+            ));
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_50.as_pointer() })
+        };
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
+                    (b).clone(),
+                    (e).clone(),
+                    (*pred.borrow()).copy_from(),
+                    None,
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
+        let mut b: Ptr<()> = unimplemented!();
+        let mut e: sentinel_wrapper_int_ptr_ = {
+            let __tmp_51: Value<Ptr<()>> = Rc::new(RefCell::new(
+                unimplemented!().offset((unimplemented!()) as isize),
+            ));
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_51.as_pointer() })
+        };
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
+                    range.as_pointer(),
+                    (*pred.borrow()).copy_from(),
+                    None,
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_one_78(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: (), expected: ()) {
+    let input: Value<()> = Rc::new(RefCell::new(input));
+    let pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(pred));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let neg_pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(lambda!(
+        {
+            let pred: Ptr<FnPtr<fn(()) -> ()>> = pred.as_pointer();
+        },
+        |mut x: ()| -> () {
+            return !({ (*pred.upgrade().deref()).call(x) });
+        }
+    )));
+    {
+        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
+        let mut b: Ptr<()> = unimplemented!();
+        let mut e: sentinel_wrapper_int_ptr_ = {
+            let __tmp_52: Value<Ptr<()>> = Rc::new(RefCell::new(
+                unimplemented!().offset((unimplemented!()) as isize),
+            ));
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_52.as_pointer() })
+        };
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
+                    (b).clone(),
+                    (e).clone(),
+                    (*pred.borrow()).copy_from(),
+                    None,
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
+        let mut b: Ptr<()> = unimplemented!();
+        let mut e: sentinel_wrapper_int_ptr_ = {
+            let __tmp_53: Value<Ptr<()>> = Rc::new(RefCell::new(
+                unimplemented!().offset((unimplemented!()) as isize),
+            ));
+            sentinel_wrapper_int_ptr_::new_1({ __tmp_53.as_pointer() })
+        };
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
+                    range.as_pointer(),
+                    (*pred.borrow()).copy_from(),
+                    None,
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_one_79(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: (), expected: ()) {
+    let input: Value<()> = Rc::new(RefCell::new(input));
+    let pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(pred));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let neg_pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(lambda!(
+        {
+            let pred: Ptr<FnPtr<fn(()) -> ()>> = pred.as_pointer();
+        },
+        |mut x: ()| -> () {
+            return !({ (*pred.upgrade().deref()).call(x) });
+        }
+    )));
+    {
+        let partitioned: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
+        let mut b: Ptr<()> = unimplemented!();
+        let mut e: sentinel_wrapper_int_ptr_ = {
             let __tmp_54: Value<Ptr<()>> = Rc::new(RefCell::new(
                 unimplemented!().offset((unimplemented!()) as isize),
             ));
@@ -4627,7 +4460,7 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         };
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     (b).clone(),
                     (e).clone(),
                     (*pred.borrow()).copy_from(),
@@ -4653,7 +4486,7 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     (*pred.borrow()).copy_from(),
                     None,
@@ -4667,262 +4500,6 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, mut partition_point: ()
         unimplemented!();
     }
 }
-pub fn test_iterators_2_78() {
-    let is_odd: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
-        |mut x: ()| -> () {
-            {
-                return ((x % 2_()) != 0_());
-            }
-        },
-    )));
-    ({
-        test_one_21(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_23(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_23(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_24(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_24(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_25(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            2_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_26(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            4_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_26(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_25(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_25(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_27(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_27(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_27(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    let is_negative: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
-            {
-                return (x < 0_());
-            }
-        }),
-    ));
-    ({
-        test_one_28(
-            unimplemented!(),
-            (*is_negative.borrow()).copy_from(),
-            2_(),
-            unimplemented!(),
-        )
-    });
-}
-pub fn test_iterators_2_79() {
-    let is_odd: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
-        |mut x: ()| -> () {
-            {
-                return ((x % 2_()) != 0_());
-            }
-        },
-    )));
-    ({
-        test_one_29(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_30(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_30(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_31(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_31(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_32(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            2_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_33(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            4_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_33(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_32(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_32(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_34(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_34(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_one_34(
-            unimplemented!(),
-            (*is_odd.borrow()).copy_from(),
-            3_(),
-            unimplemented!(),
-        )
-    });
-    let is_negative: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
-            {
-                return (x < 0_());
-            }
-        }),
-    ));
-    ({
-        test_one_35(
-            unimplemented!(),
-            (*is_negative.borrow()).copy_from(),
-            2_(),
-            unimplemented!(),
-        )
-    });
-}
 pub fn test_iterators_2_80() {
     let is_odd: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
         |mut x: ()| -> () {
@@ -4932,7 +4509,7 @@ pub fn test_iterators_2_80() {
         },
     )));
     ({
-        test_one_36(
+        test_one_23(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -4940,7 +4517,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_37(
+        test_one_25(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -4948,7 +4525,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_37(
+        test_one_25(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -4956,7 +4533,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_38(
+        test_one_26(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -4964,7 +4541,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_38(
+        test_one_26(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -4972,7 +4549,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_39(
+        test_one_27(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             2_(),
@@ -4980,7 +4557,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_40(
+        test_one_28(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             4_(),
@@ -4988,7 +4565,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_40(
+        test_one_28(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -4996,7 +4573,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_39(
+        test_one_27(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5004,7 +4581,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_39(
+        test_one_27(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5012,7 +4589,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_41(
+        test_one_29(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5020,7 +4597,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_41(
+        test_one_29(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5028,7 +4605,7 @@ pub fn test_iterators_2_80() {
         )
     });
     ({
-        test_one_41(
+        test_one_29(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5043,7 +4620,7 @@ pub fn test_iterators_2_80() {
         }),
     ));
     ({
-        test_one_42(
+        test_one_30(
             unimplemented!(),
             (*is_negative.borrow()).copy_from(),
             2_(),
@@ -5060,7 +4637,7 @@ pub fn test_iterators_2_81() {
         },
     )));
     ({
-        test_one_43(
+        test_one_31(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5068,7 +4645,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_44(
+        test_one_32(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5076,7 +4653,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_44(
+        test_one_32(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5084,7 +4661,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_45(
+        test_one_33(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5092,7 +4669,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_45(
+        test_one_33(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5100,7 +4677,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_46(
+        test_one_34(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             2_(),
@@ -5108,7 +4685,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_47(
+        test_one_35(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             4_(),
@@ -5116,7 +4693,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_47(
+        test_one_35(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5124,7 +4701,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_46(
+        test_one_34(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5132,7 +4709,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_46(
+        test_one_34(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5140,7 +4717,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_48(
+        test_one_36(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5148,7 +4725,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_48(
+        test_one_36(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5156,7 +4733,7 @@ pub fn test_iterators_2_81() {
         )
     });
     ({
-        test_one_48(
+        test_one_36(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5171,7 +4748,7 @@ pub fn test_iterators_2_81() {
         }),
     ));
     ({
-        test_one_49(
+        test_one_37(
             unimplemented!(),
             (*is_negative.borrow()).copy_from(),
             2_(),
@@ -5188,7 +4765,7 @@ pub fn test_iterators_2_82() {
         },
     )));
     ({
-        test_one_50(
+        test_one_38(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5196,7 +4773,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_51(
+        test_one_39(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5204,7 +4781,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_51(
+        test_one_39(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5212,7 +4789,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_52(
+        test_one_40(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5220,7 +4797,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_52(
+        test_one_40(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5228,7 +4805,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_53(
+        test_one_41(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             2_(),
@@ -5236,7 +4813,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_54(
+        test_one_42(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             4_(),
@@ -5244,7 +4821,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_54(
+        test_one_42(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5252,7 +4829,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_53(
+        test_one_41(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5260,7 +4837,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_53(
+        test_one_41(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5268,7 +4845,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_55(
+        test_one_43(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5276,7 +4853,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_55(
+        test_one_43(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5284,7 +4861,7 @@ pub fn test_iterators_2_82() {
         )
     });
     ({
-        test_one_55(
+        test_one_43(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5299,7 +4876,7 @@ pub fn test_iterators_2_82() {
         }),
     ));
     ({
-        test_one_56(
+        test_one_44(
             unimplemented!(),
             (*is_negative.borrow()).copy_from(),
             2_(),
@@ -5316,7 +4893,7 @@ pub fn test_iterators_2_83() {
         },
     )));
     ({
-        test_one_57(
+        test_one_45(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5324,7 +4901,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_58(
+        test_one_46(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5332,7 +4909,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_58(
+        test_one_46(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5340,7 +4917,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_59(
+        test_one_47(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5348,7 +4925,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_59(
+        test_one_47(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5356,7 +4933,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_60(
+        test_one_48(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             2_(),
@@ -5364,7 +4941,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_61(
+        test_one_49(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             4_(),
@@ -5372,7 +4949,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_61(
+        test_one_49(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5380,7 +4957,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_60(
+        test_one_48(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5388,7 +4965,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_60(
+        test_one_48(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5396,7 +4973,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_62(
+        test_one_50(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5404,7 +4981,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_62(
+        test_one_50(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5412,7 +4989,7 @@ pub fn test_iterators_2_83() {
         )
     });
     ({
-        test_one_62(
+        test_one_50(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5427,7 +5004,7 @@ pub fn test_iterators_2_83() {
         }),
     ));
     ({
-        test_one_63(
+        test_one_51(
             unimplemented!(),
             (*is_negative.borrow()).copy_from(),
             2_(),
@@ -5444,7 +5021,7 @@ pub fn test_iterators_2_84() {
         },
     )));
     ({
-        test_one_64(
+        test_one_52(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5452,7 +5029,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_65(
+        test_one_53(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5460,7 +5037,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_65(
+        test_one_53(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5468,7 +5045,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_66(
+        test_one_54(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5476,7 +5053,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_66(
+        test_one_54(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5484,7 +5061,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_67(
+        test_one_55(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             2_(),
@@ -5492,7 +5069,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_68(
+        test_one_56(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             4_(),
@@ -5500,7 +5077,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_68(
+        test_one_56(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5508,7 +5085,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_67(
+        test_one_55(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5516,7 +5093,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_67(
+        test_one_55(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5524,7 +5101,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_69(
+        test_one_57(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5532,7 +5109,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_69(
+        test_one_57(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5540,7 +5117,7 @@ pub fn test_iterators_2_84() {
         )
     });
     ({
-        test_one_69(
+        test_one_57(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5555,7 +5132,7 @@ pub fn test_iterators_2_84() {
         }),
     ));
     ({
-        test_one_70(
+        test_one_58(
             unimplemented!(),
             (*is_negative.borrow()).copy_from(),
             2_(),
@@ -5572,7 +5149,7 @@ pub fn test_iterators_2_85() {
         },
     )));
     ({
-        test_one_71(
+        test_one_59(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5580,7 +5157,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_72(
+        test_one_60(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5588,7 +5165,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_72(
+        test_one_60(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5596,7 +5173,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_73(
+        test_one_61(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5604,7 +5181,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_73(
+        test_one_61(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             1_(),
@@ -5612,7 +5189,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_74(
+        test_one_62(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             2_(),
@@ -5620,7 +5197,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_75(
+        test_one_63(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             4_(),
@@ -5628,7 +5205,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_75(
+        test_one_63(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5636,7 +5213,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_74(
+        test_one_62(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5644,7 +5221,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_74(
+        test_one_62(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             0_(),
@@ -5652,7 +5229,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_76(
+        test_one_64(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5660,7 +5237,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_76(
+        test_one_64(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5668,7 +5245,7 @@ pub fn test_iterators_2_85() {
         )
     });
     ({
-        test_one_76(
+        test_one_64(
             unimplemented!(),
             (*is_odd.borrow()).copy_from(),
             3_(),
@@ -5683,7 +5260,7 @@ pub fn test_iterators_2_85() {
         }),
     ));
     ({
-        test_one_77(
+        test_one_65(
             unimplemented!(),
             (*is_negative.borrow()).copy_from(),
             2_(),
@@ -5691,34 +5268,290 @@ pub fn test_iterators_2_85() {
         )
     });
 }
-pub fn test_iterators_1_86() {
-    ({ test_iterators_2_78() });
-    ({ test_iterators_2_79() });
+pub fn test_iterators_2_86() {
+    let is_odd: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
+        |mut x: ()| -> () {
+            {
+                return ((x % 2_()) != 0_());
+            }
+        },
+    )));
+    ({
+        test_one_66(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_67(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_67(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_68(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_68(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_69(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_70(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_70(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_69(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_69(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_71(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_71(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_71(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    let is_negative: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(
+        FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
+            {
+                return (x < 0_());
+            }
+        }),
+    ));
+    ({
+        test_one_72(
+            unimplemented!(),
+            (*is_negative.borrow()).copy_from(),
+            2_(),
+            unimplemented!(),
+        )
+    });
 }
-pub fn test_iterators_1_87() {
+pub fn test_iterators_2_87() {
+    let is_odd: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
+        |mut x: ()| -> () {
+            {
+                return ((x % 2_()) != 0_());
+            }
+        },
+    )));
+    ({
+        test_one_73(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_74(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_74(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_75(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_75(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_76(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_77(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_77(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_76(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_76(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_78(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_78(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_one_78(
+            unimplemented!(),
+            (*is_odd.borrow()).copy_from(),
+            3_(),
+            unimplemented!(),
+        )
+    });
+    let is_negative: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(
+        FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
+            {
+                return (x < 0_());
+            }
+        }),
+    ));
+    ({
+        test_one_79(
+            unimplemented!(),
+            (*is_negative.borrow()).copy_from(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+}
+pub fn test_iterators_1_88() {
     ({ test_iterators_2_80() });
     ({ test_iterators_2_81() });
 }
-pub fn test_iterators_1_88() {
+pub fn test_iterators_1_89() {
     ({ test_iterators_2_82() });
     ({ test_iterators_2_83() });
 }
-pub fn test_iterators_1_89() {
+pub fn test_iterators_1_90() {
     ({ test_iterators_2_84() });
     ({ test_iterators_2_85() });
 }
-pub fn test_iterators_90() {
-    ({ test_iterators_1_86() });
-    ({ test_iterators_1_87() });
+pub fn test_iterators_1_91() {
+    ({ test_iterators_2_86() });
+    ({ test_iterators_2_87() });
+}
+pub fn test_iterators_92() {
     ({ test_iterators_1_88() });
     ({ test_iterators_1_89() });
+    ({ test_iterators_1_90() });
+    ({ test_iterators_1_91() });
 }
-pub fn test_91() -> () {
-    ({ test_iterators_90() });
+pub fn test_93() -> () {
+    ({ test_iterators_92() });
     {
-        let is_odd: Value<FnPtr<fn(OrderedValue_92) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(OrderedValue_92) -> ()>::new(
-                |mut x: OrderedValue_92| -> () {
+        let is_odd: Value<FnPtr<fn(OrderedValue_94) -> ()>> =
+            Rc::new(RefCell::new(FnPtr::<fn(OrderedValue_94) -> ()>::new(
+                |mut x: OrderedValue_94| -> () {
                     {
                         return ((x.value % 2_()) != 0_());
                     }
@@ -5729,9 +5562,9 @@ pub fn test_91() -> () {
         {
             let in_: Value<()> = Rc::new(RefCell::new((*orig_in.borrow()).clone()));
             ({
-                let ___first: Ptr<OrderedValue_92> = unimplemented!();
-                let ___last: Ptr<OrderedValue_92> = unimplemented!();
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                let ___first: Ptr<OrderedValue_94> = unimplemented!();
+                let ___last: Ptr<OrderedValue_94> = unimplemented!();
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*is_odd.borrow()).copy_from(),
@@ -5743,7 +5576,7 @@ pub fn test_91() -> () {
         {
             let in_: Value<()> = Rc::new(RefCell::new((*orig_in.borrow()).clone()));
             ({
-                (*stable_partition_22.with(Value::clone).borrow_mut())(
+                (*stable_partition_24.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     (*is_odd.borrow()).copy_from(),
                     None,
@@ -5776,7 +5609,7 @@ pub fn test_91() -> () {
                 ({
                     let ___first: Ptr<()> = unimplemented!();
                     let ___last: Ptr<()> = unimplemented!();
-                    (*partition_93.with(Value::clone).borrow_mut())(
+                    (*partition_95.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         (*is_negative.borrow()).copy_from(),
@@ -5790,7 +5623,7 @@ pub fn test_91() -> () {
                 ({
                     let ___first: Ptr<()> = unimplemented!();
                     let ___last: Ptr<()> = unimplemented!();
-                    (*partition_93.with(Value::clone).borrow_mut())(
+                    (*partition_95.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         (*is_negative.borrow()).copy_from(),
@@ -5804,7 +5637,7 @@ pub fn test_91() -> () {
             {
                 let in_: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
                 ({
-                    (*partition_93.with(Value::clone).borrow_mut())(
+                    (*partition_95.with(Value::clone).borrow_mut())(
                         in_.as_pointer(),
                         (*is_negative.borrow()).copy_from(),
                         None,
@@ -5815,7 +5648,7 @@ pub fn test_91() -> () {
             {
                 let in_: Value<()> = Rc::new(RefCell::new((*input.borrow()).clone()));
                 ({
-                    (*partition_93.with(Value::clone).borrow_mut())(
+                    (*partition_95.with(Value::clone).borrow_mut())(
                         in_.as_pointer(),
                         (*is_negative.borrow()).copy_from(),
                         (*negate.borrow()).copy_from(),
@@ -5829,31 +5662,17 @@ pub fn test_91() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
-pub struct OrderedValue_92 {
+pub struct OrderedValue_94 {
     #[offset(0)]
     pub value: (),
     #[offset(8)]
     pub original_order: (),
 }
-impl std::cmp::PartialEq for OrderedValue_92 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            OrderedValue_92Impl::operator_eq(
-                &Rc::new(RefCell::new(OrderedValue_92 {
-                    value: self.value.clone(),
-                    original_order: self.original_order.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(OrderedValue_92 {
-                    value: other.value.clone(),
-                    original_order: other.original_order.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for OrderedValue_94 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        OrderedValue_94Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for OrderedValue_92 {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -5874,7 +5693,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_91() });
+    ({ test_93() });
     return 0_();
 }
 pub trait BidirectionalIteratorNotDecrementableImpl {
@@ -6017,11 +5836,11 @@ pub trait InputIteratorNotInputOrOutputIteratorImpl {
     }
 }
 impl InputIteratorNotInputOrOutputIteratorImpl for Ptr<InputIteratorNotInputOrOutputIterator> {}
-pub trait OrderedValue_92Impl {
-    fn operator_eq(&self, _a0: Ptr<OrderedValue_92>) -> ();
+pub trait OrderedValue_94Impl {
+    fn operator_eq(&self, _a0: Ptr<OrderedValue_94>) -> ();
 }
-impl OrderedValue_92Impl for Ptr<OrderedValue_92> {
-    fn operator_eq(&self, _a0: Ptr<OrderedValue_92>) -> () {
+impl OrderedValue_94Impl for Ptr<OrderedValue_94> {
+    fn operator_eq(&self, _a0: Ptr<OrderedValue_94>) -> () {
         return ({ (*self).with(|__s| __s.value) } == { _a0.with(|__s| __s.value) })
             && ({ (*self).with(|__s| __s.original_order) } == {
                 _a0.with(|__s| __s.original_order)
@@ -6459,9 +6278,7 @@ pub trait contiguous_iterator_int_ptr_Impl {
         unimplemented!()
     }
     fn operator_add_assign(&self, n: ()) -> Ptr<contiguous_iterator_int_ptr_>;
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
-        unimplemented!()
-    }
+    fn operator_sub_assign(&self, n: ()) -> Ptr<contiguous_iterator_int_ptr_>;
     fn move_assign(
         &self,
         _a0: Ptr<contiguous_iterator_int_ptr_>,
@@ -6489,6 +6306,13 @@ impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
         };
         return (*self).clone();
     }
+    fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
+        {
+            let _ptr = field!((*self), it_);
+            _ptr.write(_ptr.read() - n)
+        };
+        return (*self).clone();
+    }
     fn move_assign(
         &self,
         _a0: Ptr<contiguous_iterator_int_ptr_>,
@@ -6511,8 +6335,24 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -6523,8 +6363,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -6604,6 +6460,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -6611,6 +6471,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
     }
 }
 pub trait forward_sized_iterator_int_ptr_Impl {
@@ -6639,9 +6510,7 @@ pub trait random_access_iterator_int_ptr_Impl {
         unimplemented!()
     }
     fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_int_ptr_>;
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
-        unimplemented!()
-    }
+    fn operator_sub_assign(&self, n: ()) -> Ptr<random_access_iterator_int_ptr_>;
     fn move_assign(
         &self,
         _a0: Ptr<random_access_iterator_int_ptr_>,
@@ -6663,6 +6532,13 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
         {
             let _ptr = field!((*self), it_);
             _ptr.write(_ptr.read() + n)
+        };
+        return (*self).clone();
+    }
+    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
+        {
+            let _ptr = field!((*self), it_);
+            _ptr.write(_ptr.read() - n)
         };
         return (*self).clone();
     }
@@ -6814,7 +6690,7 @@ impl sentinel_wrapper_contiguous_iterator_int_ptr__Impl
 {
     fn operator_eq(&self, other: Ptr<contiguous_iterator_int_ptr_>) -> () {
         {}
-        return ({ (*self).with(|__s| __s.base_.clone()) } == { ({ base_12((other).clone()) }) });
+        return ({ (*self).with(|__s| __s.base_.clone()) } == { ({ base_14((other).clone()) }) });
     }
 }
 pub trait sentinel_wrapper_int_ptr_Impl {
@@ -6823,7 +6699,7 @@ pub trait sentinel_wrapper_int_ptr_Impl {
 impl sentinel_wrapper_int_ptr_Impl for Ptr<sentinel_wrapper_int_ptr_> {
     fn operator_eq(&self, other: Ptr<Ptr<()>>) -> () {
         {}
-        return ({ (*self).with(|__s| __s.base_.clone()) } == { ({ base_13((other.read())) }) });
+        return ({ (*self).with(|__s| __s.base_.clone()) } == { ({ base_15((other.read())) }) });
     }
 }
 pub trait sentinel_wrapper_random_access_iterator_int_ptr__Impl {
@@ -6834,7 +6710,7 @@ impl sentinel_wrapper_random_access_iterator_int_ptr__Impl
 {
     fn operator_eq(&self, other: Ptr<random_access_iterator_int_ptr_>) -> () {
         {}
-        return ({ (*self).with(|__s| __s.base_.clone()) } == { ({ base_7((other).clone()) }) });
+        return ({ (*self).with(|__s| __s.base_.clone()) } == { ({ base_8((other).clone()) }) });
     }
 }
 pub trait support_double_move_trackerImpl {

@@ -6,15 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn lerp_0(mut _a0: (), mut _a1: (), mut _a2: ()) -> () {
-    return 32_();
-}
-pub fn lerp_1(mut _a0: (), mut _a1: (), mut _a2: ()) -> () {
-    return 32_();
-}
-pub fn lerp_2(mut _a0: (), mut _a1: (), mut _a2: ()) -> () {
-    return 32_();
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

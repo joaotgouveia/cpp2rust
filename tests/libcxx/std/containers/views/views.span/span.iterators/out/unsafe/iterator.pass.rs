@@ -9,7 +9,10 @@ use std::rc::Rc;
 pub unsafe fn test_type_0() {
     let mut ii1: () = unimplemented!();
     let mut ii2: () = unimplemented!();
-    let mut ii4: () = unimplemented!();
+    let mut ii4: () = ii1.clone();
+    let mut cii: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -21,13 +24,24 @@ pub unsafe fn test_type_0() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut r1: () = unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_type_1() {
     let mut ii1: () = unimplemented!();
     let mut ii2: () = unimplemented!();
-    let mut ii4: () = unimplemented!();
+    let mut ii4: () = ii1.clone();
+    let mut cii: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -39,13 +53,24 @@ pub unsafe fn test_type_1() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut r1: () = unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_type_2() {
     let mut ii1: () = unimplemented!();
     let mut ii2: () = unimplemented!();
-    let mut ii4: () = unimplemented!();
+    let mut ii4: () = ii1.clone();
+    let mut cii: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -57,7 +82,15 @@ pub unsafe fn test_type_2() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut r1: () = unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_3() -> () {

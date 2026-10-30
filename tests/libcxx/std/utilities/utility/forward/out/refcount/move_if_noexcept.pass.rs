@@ -55,11 +55,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut i: () = 0_();
-    let mut ci: () = 0_();
-    let mut l: legacy = legacy::new();
-    let mut a: A = A::new();
-    let mut ca: A = A::new();
+    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    let ci: Value<()> = Rc::new(RefCell::new(0_()));
+    let l: Value<legacy> = Rc::new(RefCell::new(legacy::new()));
+    let a: Value<A> = Rc::new(RefCell::new(A::new()));
+    let ca: Value<A> = Rc::new(RefCell::new(A::new()));
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::move_if_noexcept(i)), int&&>::value)"

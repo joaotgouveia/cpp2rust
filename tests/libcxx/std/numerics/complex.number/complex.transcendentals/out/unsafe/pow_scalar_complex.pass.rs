@@ -173,21 +173,39 @@ pub unsafe fn classify_2(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+pub unsafe fn test_6(a: *const (), b: *const (), mut x: ()) {
+    let mut c: () = unimplemented!();
+    (unsafe {
+        let _x: () = unimplemented!();
+        let _y: () = unimplemented!();
+        is_about_3(_x, _y)
+    });
     unimplemented!();
 }
-pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+pub unsafe fn test_7(a: *const (), b: *const (), mut x: ()) {
+    let mut c: () = unimplemented!();
+    (unsafe {
+        let _x: () = unimplemented!();
+        let _y: () = unimplemented!();
+        is_about_4(_x, _y)
+    });
     unimplemented!();
 }
 pub unsafe fn test_8(a: *const (), b: *const (), mut x: ()) {
@@ -199,23 +217,19 @@ pub unsafe fn test_8(a: *const (), b: *const (), mut x: ()) {
     });
     unimplemented!();
 }
-pub unsafe fn test_9(a: *const (), b: *const (), mut x: ()) {
-    let mut c: () = unimplemented!();
+pub unsafe fn test_9() {
     (unsafe {
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
-        is_about_6(_x, _y)
+        let mut _a: () = 2_();
+        let mut _b: () = unimplemented!();
+        test_6(&mut _a, &mut _b, unimplemented!())
     });
-    unimplemented!();
 }
-pub unsafe fn test_10(a: *const (), b: *const (), mut x: ()) {
-    let mut c: () = unimplemented!();
+pub unsafe fn test_10() {
     (unsafe {
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
-        is_about_7(_x, _y)
+        let mut _a: () = 2_();
+        let mut _b: () = unimplemented!();
+        test_7(&mut _a, &mut _b, unimplemented!())
     });
-    unimplemented!();
 }
 pub unsafe fn test_11() {
     (unsafe {
@@ -224,21 +238,7 @@ pub unsafe fn test_11() {
         test_8(&mut _a, &mut _b, unimplemented!())
     });
 }
-pub unsafe fn test_12() {
-    (unsafe {
-        let mut _a: () = 2_();
-        let mut _b: () = unimplemented!();
-        test_9(&mut _a, &mut _b, unimplemented!())
-    });
-}
-pub unsafe fn test_13() {
-    (unsafe {
-        let mut _a: () = 2_();
-        let mut _b: () = unimplemented!();
-        test_10(&mut _a, &mut _b, unimplemented!())
-    });
-}
-pub unsafe fn test_edges_14() {
+pub unsafe fn test_edges_12() {
     let N: () = (::std::mem::size_of::<[(); 153]>() as ())
         .wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut i: () = 0_();
@@ -247,12 +247,12 @@ pub unsafe fn test_edges_14() {
         'loop_: while ((j) < (N)) {
             let mut r: () = unimplemented!();
             let mut z: () = unimplemented!();
-            if (unsafe { isnan_4(unimplemented!()) }) {
+            if unimplemented!() {
                 unimplemented!();
             } else {
                 unimplemented!();
             }
-            if (unsafe { isnan_4(unimplemented!()) }) {
+            if unimplemented!() {
                 unimplemented!();
             } else {
                 unimplemented!();
@@ -278,10 +278,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_9() });
+    (unsafe { test_10() });
     (unsafe { test_11() });
-    (unsafe { test_12() });
-    (unsafe { test_13() });
-    (unsafe { test_edges_14() });
+    (unsafe { test_edges_12() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

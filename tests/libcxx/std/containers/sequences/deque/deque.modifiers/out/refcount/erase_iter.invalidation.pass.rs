@@ -6,10 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn is_double_ended_contiguous_container_asan_correct_0(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn del_at_start_1(c: ()) {
+pub fn del_at_start_0(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -24,7 +21,7 @@ pub fn del_at_start_1(c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn del_at_end_2(c: ()) {
+pub fn del_at_end_1(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -38,7 +35,7 @@ pub fn del_at_end_2(c: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -67,8 +64,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         i.prefix_inc();
     }
     'loop_: while (unimplemented!() > 1_()) {
-        ({ del_at_start_1(unimplemented!()) });
-        ({ del_at_end_2(unimplemented!()) });
+        ({ del_at_start_0(unimplemented!()) });
+        ({ del_at_end_1(unimplemented!()) });
         unimplemented!();
     }
     return 0_();

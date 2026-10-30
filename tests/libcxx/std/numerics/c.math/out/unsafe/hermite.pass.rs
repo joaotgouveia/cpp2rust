@@ -122,14 +122,14 @@ impl CompareFloatingValues_float_ {
         this
     }
     pub unsafe fn operator_call(&self, mut result: (), mut expected: ()) -> () {
-        if (unsafe { isinf_10(expected) }) && (unsafe { isinf_10(result) }) {
+        if (unimplemented!()) && (unimplemented!()) {
             return ((result) == (expected));
         }
-        if (unsafe { isnan_11(expected) }) || (unsafe { isnan_11(result) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             return false;
         }
-        let mut tol: () = ((self.abs_tol) + ((unsafe { abs_12(expected) }) * (self.rel_tol)));
-        return ((unsafe { abs_12(((result) - (expected))) }) < (tol));
+        let mut tol: () = ((self.abs_tol) + ((unimplemented!()) * (self.rel_tol)));
+        return ((unimplemented!()) < (tol));
     }
 }
 impl Default for CompareFloatingValues_float_ {
@@ -166,14 +166,14 @@ impl CompareFloatingValues_double_ {
         this
     }
     pub unsafe fn operator_call(&self, mut result: (), mut expected: ()) -> () {
-        if (unsafe { isinf_13(expected) }) && (unsafe { isinf_13(result) }) {
+        if (unimplemented!()) && (unimplemented!()) {
             return ((result) == (expected));
         }
-        if (unsafe { isnan_14(expected) }) || (unsafe { isnan_14(result) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             return false;
         }
-        let mut tol: () = ((self.abs_tol) + ((unsafe { abs_15(expected) }) * (self.rel_tol)));
-        return ((unsafe { abs_15(((result) - (expected))) }) < (tol));
+        let mut tol: () = ((self.abs_tol) + ((unimplemented!()) * (self.rel_tol)));
+        return ((unimplemented!()) < (tol));
     }
 }
 impl Default for CompareFloatingValues_double_ {
@@ -210,14 +210,14 @@ impl CompareFloatingValues_long_double_ {
         this
     }
     pub unsafe fn operator_call(&self, mut result: (), mut expected: ()) -> () {
-        if (unsafe { isinf_16(expected) }) && (unsafe { isinf_16(result) }) {
+        if (unimplemented!()) && (unimplemented!()) {
             return ((result) == (expected));
         }
-        if (unsafe { isnan_17(expected) }) || (unsafe { isnan_17(result) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             return false;
         }
-        let mut tol: () = ((self.abs_tol) + ((unsafe { abs_18(expected) }) * (self.rel_tol)));
-        return ((unsafe { abs_18(((result) - (expected))) }) < (tol));
+        let mut tol: () = ((self.abs_tol) + ((unimplemented!()) * (self.rel_tol)));
+        return ((unimplemented!()) < (tol));
     }
 }
 impl Default for CompareFloatingValues_long_double_ {
@@ -225,7 +225,7 @@ impl Default for CompareFloatingValues_long_double_ {
         unsafe { CompareFloatingValues_long_double_::new() }
     }
 }
-pub unsafe fn get_roots_19(mut n: ()) -> () {
+pub unsafe fn get_roots_10(mut n: ()) -> () {
     'switch: {
         match { n } {
             __v if __v == 0_() => {
@@ -299,7 +299,7 @@ pub unsafe fn get_roots_19(mut n: ()) -> () {
     };
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn get_roots_20(mut n: ()) -> () {
+pub unsafe fn get_roots_11(mut n: ()) -> () {
     'switch: {
         match { n } {
             __v if __v == 0_() => {
@@ -373,7 +373,7 @@ pub unsafe fn get_roots_20(mut n: ()) -> () {
     };
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn get_roots_21(mut n: ()) -> () {
+pub unsafe fn get_roots_12(mut n: ()) -> () {
     'switch: {
         match { n } {
             __v if __v == 0_() => {
@@ -447,7 +447,7 @@ pub unsafe fn get_roots_21(mut n: ()) -> () {
     };
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn test_22() {
+pub unsafe fn test_13() {
     {
         let mut __tmp_0: () = unimplemented!();
         let __range2: *mut () = &mut __tmp_0;
@@ -495,15 +495,13 @@ pub unsafe fn test_22() {
         });
         let h4: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut y: ()| -> () {
             unsafe {
-                return ((((16_()) * (unsafe { pow_23(y, 4_()) })) - (((48_()) * (y)) * (y)))
-                    + (12_()));
+                return ((((16_()) * (unimplemented!())) - (((48_()) * (y)) * (y))) + (12_()));
             }
         });
         let h5: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut y: ()| -> () {
             unsafe {
                 return ((y)
-                    * ((((32_()) * (unsafe { pow_23(y, 4_()) })) - (((160_()) * (y)) * (y)))
-                        + (120_())));
+                    * ((((32_()) * (unimplemented!())) - (((160_()) * (y)) * (y))) + (120_())));
             }
         });
         let mut __tmp_2: () = (unsafe { sample_points_7() });
@@ -546,7 +544,7 @@ pub unsafe fn test_22() {
                 let mut H_next: () = unimplemented!();
                 let mut H_next_recurrence: () =
                     ((2_()) * (((x) * (unimplemented!())) - ((n) * (unimplemented!()))));
-                if (unsafe { isinf_10(H_next) }) {
+                if unimplemented!() {
                     break;
                 }
                 let compare: CompareFloatingValues_float_ = CompareFloatingValues_float_::new();
@@ -577,7 +575,7 @@ pub unsafe fn test_22() {
         );
         let mut n: () = 0_();
         'loop_: while ((n) <= (20_())) {
-            let mut __tmp_5: () = (unsafe { get_roots_19(n) });
+            let mut __tmp_5: () = (unsafe { get_roots_10(n) });
             let __range3: *mut () = &mut __tmp_5;
             'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut x: () = (*unimplemented!());
@@ -600,7 +598,7 @@ pub unsafe fn test_22() {
     }
     { {} }
 }
-pub unsafe fn test_24() {
+pub unsafe fn test_14() {
     {
         let mut __tmp_6: () = unimplemented!();
         let __range2: *mut () = &mut __tmp_6;
@@ -648,15 +646,13 @@ pub unsafe fn test_24() {
         });
         let h4: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut y: ()| -> () {
             unsafe {
-                return ((((16_()) * (unsafe { pow_25(y, 4_()) })) - (((48_()) * (y)) * (y)))
-                    + (12_()));
+                return ((((16_()) * (unimplemented!())) - (((48_()) * (y)) * (y))) + (12_()));
             }
         });
         let h5: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut y: ()| -> () {
             unsafe {
                 return ((y)
-                    * ((((32_()) * (unsafe { pow_25(y, 4_()) })) - (((160_()) * (y)) * (y)))
-                        + (120_())));
+                    * ((((32_()) * (unimplemented!())) - (((160_()) * (y)) * (y))) + (120_())));
             }
         });
         let mut __tmp_8: () = (unsafe { sample_points_9() });
@@ -688,7 +684,7 @@ pub unsafe fn test_24() {
                 let mut H_next: () = unimplemented!();
                 let mut H_next_recurrence: () =
                     ((2_()) * (((x) * (unimplemented!())) - ((n) * (unimplemented!()))));
-                if (unsafe { isinf_13(H_next) }) {
+                if unimplemented!() {
                     break;
                 }
                 let compare: CompareFloatingValues_double_ = CompareFloatingValues_double_::new();
@@ -721,7 +717,7 @@ pub unsafe fn test_24() {
         );
         let mut n: () = 0_();
         'loop_: while ((n) <= (20_())) {
-            let mut __tmp_10: () = (unsafe { get_roots_20(n) });
+            let mut __tmp_10: () = (unsafe { get_roots_11(n) });
             let __range3: *mut () = &mut __tmp_10;
             'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut x: () = (*unimplemented!());
@@ -763,7 +759,7 @@ pub unsafe fn test_24() {
         }
     }
 }
-pub unsafe fn test_26() {
+pub unsafe fn test_15() {
     {
         let mut __tmp_11: () = unimplemented!();
         let __range2: *mut () = &mut __tmp_11;
@@ -811,15 +807,13 @@ pub unsafe fn test_26() {
         });
         let h4: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut y: ()| -> () {
             unsafe {
-                return ((((16_()) * (unsafe { pow_27(y, 4_()) })) - (((48_()) * (y)) * (y)))
-                    + (12_()));
+                return ((((16_()) * (unimplemented!())) - (((48_()) * (y)) * (y))) + (12_()));
             }
         });
         let h5: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut y: ()| -> () {
             unsafe {
                 return ((y)
-                    * ((((32_()) * (unsafe { pow_27(y, 4_()) })) - (((160_()) * (y)) * (y)))
-                        + (120_())));
+                    * ((((32_()) * (unimplemented!())) - (((160_()) * (y)) * (y))) + (120_())));
             }
         });
         let mut __tmp_13: () = (unsafe { sample_points_8() });
@@ -863,7 +857,7 @@ pub unsafe fn test_26() {
                 let mut H_next: () = unimplemented!();
                 let mut H_next_recurrence: () =
                     ((2_()) * (((x) * (unimplemented!())) - ((n) * (unimplemented!()))));
-                if (unsafe { isinf_16(H_next) }) {
+                if unimplemented!() {
                     break;
                 }
                 let compare: CompareFloatingValues_long_double_ =
@@ -897,7 +891,7 @@ pub unsafe fn test_26() {
         );
         let mut n: () = 0_();
         'loop_: while ((n) <= (20_())) {
-            let mut __tmp_16: () = (unsafe { get_roots_21(n) });
+            let mut __tmp_16: () = (unsafe { get_roots_12(n) });
             let __range3: *mut () = &mut __tmp_16;
             'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut x: () = (*unimplemented!());
@@ -925,13 +919,13 @@ pub unsafe fn test_26() {
 pub struct TestFloat {}
 impl TestFloat {
     pub unsafe fn operator_call_1_float(&mut self) {
-        (unsafe { test_22() });
+        (unsafe { test_13() });
     }
     pub unsafe fn operator_call_1_double(&mut self) {
-        (unsafe { test_24() });
+        (unsafe { test_14() });
     }
     pub unsafe fn operator_call_1_long_double(&mut self) {
-        (unsafe { test_26() });
+        (unsafe { test_15() });
     }
 }
 #[repr(C)]

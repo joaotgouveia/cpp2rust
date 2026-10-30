@@ -156,16 +156,6 @@ pub unsafe fn test_0(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -191,16 +181,6 @@ pub unsafe fn test_1(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -338,16 +318,6 @@ pub unsafe fn test_2(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -373,16 +343,6 @@ pub unsafe fn test_3(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -520,16 +480,6 @@ pub unsafe fn test_4(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -555,16 +505,6 @@ pub unsafe fn test_5(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -702,16 +642,6 @@ pub unsafe fn test_6(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -737,16 +667,6 @@ pub unsafe fn test_7(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -884,16 +804,6 @@ pub unsafe fn test_8(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -919,16 +829,6 @@ pub unsafe fn test_9(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -1066,16 +966,6 @@ pub unsafe fn test_10(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -1101,16 +991,6 @@ pub unsafe fn test_11(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -1248,16 +1128,6 @@ pub unsafe fn test_12(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -1283,16 +1153,6 @@ pub unsafe fn test_13(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -1430,16 +1290,6 @@ pub unsafe fn test_14(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -1465,16 +1315,6 @@ pub unsafe fn test_15(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -1612,16 +1452,6 @@ pub unsafe fn test_16(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -1647,16 +1477,6 @@ pub unsafe fn test_17(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -1794,16 +1614,6 @@ pub unsafe fn test_18(mut value: *const ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -1829,16 +1639,6 @@ pub unsafe fn test_19(mut value: ()) {
         Generic,
         {
             let v: () = unimplemented!();
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -1976,16 +1776,6 @@ pub unsafe fn test_20(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -2011,16 +1801,6 @@ pub unsafe fn test_21(mut value: ()) {
         Generic,
         {
             let v: () = unimplemented!();
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -2158,16 +1938,6 @@ pub unsafe fn test_22(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -2193,16 +1963,6 @@ pub unsafe fn test_23(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -2340,16 +2100,6 @@ pub unsafe fn test_24(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -2375,16 +2125,6 @@ pub unsafe fn test_25(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -2522,16 +2262,6 @@ pub unsafe fn test_26(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -2557,16 +2287,6 @@ pub unsafe fn test_27(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -2704,16 +2424,6 @@ pub unsafe fn test_28(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -2739,16 +2449,6 @@ pub unsafe fn test_29(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -2886,16 +2586,6 @@ pub unsafe fn test_30(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -2921,16 +2611,6 @@ pub unsafe fn test_31(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -3068,16 +2748,6 @@ pub unsafe fn test_32(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -3103,16 +2773,6 @@ pub unsafe fn test_33(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -3250,16 +2910,6 @@ pub unsafe fn test_34(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -3285,16 +2935,6 @@ pub unsafe fn test_35(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -3432,16 +3072,6 @@ pub unsafe fn test_36(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -3467,16 +3097,6 @@ pub unsafe fn test_37(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -3614,16 +3234,6 @@ pub unsafe fn test_38(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -3649,16 +3259,6 @@ pub unsafe fn test_39(mut value: ()) {
         Generic,
         {
             let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -3796,16 +3396,6 @@ pub unsafe fn test_40(mut value: *const ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -3831,16 +3421,6 @@ pub unsafe fn test_41(mut value: ()) {
         Generic,
         {
             let v: () = unimplemented!();
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -3978,16 +3558,6 @@ pub unsafe fn test_42(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
         |mut a: *const ()| {
             {
                 unimplemented!();
@@ -4013,16 +3583,6 @@ pub unsafe fn test_43(mut value: ()) {
         Generic,
         {
             let v: () = unimplemented!();
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
         },
         |mut a: ()| {
             {
@@ -4136,12 +3696,6 @@ pub unsafe fn test_handle_44(mut value: ()) {
         |mut a: ()| {
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
         |mut a: *const ()| {
             unimplemented!();
         },
@@ -4160,12 +3714,6 @@ pub unsafe fn test_handle_45(mut value: ()) {
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
         |mut a: ()| {
             unimplemented!();
         },
@@ -4250,12 +3798,6 @@ pub unsafe fn test_handle_46(mut value: ()) {
         |mut a: ()| {
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
         |mut a: *const ()| {
             unimplemented!();
         },
@@ -4274,12 +3816,6 @@ pub unsafe fn test_handle_47(mut value: ()) {
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
         |mut a: ()| {
             unimplemented!();
         },

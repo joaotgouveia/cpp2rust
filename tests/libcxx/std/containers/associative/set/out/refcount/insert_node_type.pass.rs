@@ -43,12 +43,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -57,22 +51,16 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-pub fn verify_insert_return_type_5(t: Ptr<()>) {
+pub fn verify_insert_return_type_4(t: Ptr<()>) {
     const _: () = assert!(true, "std::is_aggregate_v<verified_type>");;
     const _: () = assert!(
         true,
         "std::is_same_v<verified_type, typename Container::insert_return_type>"
     );;
-    let __decomp_6: Ptr<()> = (t).clone();
+    let __decomp_5: Ptr<()> = (t).clone();
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(pos), typename Container::iterator>"
@@ -95,13 +83,13 @@ pub fn verify_insert_return_type_5(t: Ptr<()>) {
     );;
     unimplemented!();
 }
-pub fn verify_insert_return_type_7(t: Ptr<()>) {
+pub fn verify_insert_return_type_6(t: Ptr<()>) {
     const _: () = assert!(true, "std::is_aggregate_v<verified_type>");;
     const _: () = assert!(
         true,
         "std::is_same_v<verified_type, typename Container::insert_return_type>"
     );;
-    let __decomp_8: Ptr<()> = (t).clone();
+    let __decomp_7: Ptr<()> = (t).clone();
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(pos), typename Container::iterator>"
@@ -123,16 +111,64 @@ pub fn verify_insert_return_type_7(t: Ptr<()>) {
         "std::is_same_v<decltype(t.node), typename Container::node_type>"
     );;
     unimplemented!();
+}
+pub fn node_factory_8(c: Ptr<()>, key: Ptr<()>) -> () {
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn node_factory_9(c: Ptr<()>, key: Ptr<()>) -> () {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return unimplemented!();
 }
-pub fn node_factory_10(c: Ptr<()>, key: Ptr<()>) -> () {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_10(c: Ptr<()>) {
+    let mut nf: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
+        (FnPtr::<fn(Ptr<()>, Ptr<()>) -> ()>::new(node_factory_8));
+    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    'loop_: while ((*i.borrow()) != 10_()) {
+        let node: Value<()> = Rc::new(RefCell::new(({ nf.call(c2.as_pointer(), i.as_pointer()) })));
+        unimplemented!();
+        let irt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        ({ verify_insert_return_type_4(irt.as_pointer()) });
+        (*i.borrow_mut()).prefix_inc();
+    }
     unimplemented!();
-    return unimplemented!();
+    {
+        let def: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let irt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        ({ verify_insert_return_type_4(irt.as_pointer()) });
+    }
+    {
+        let dupl: Value<()> = Rc::new(RefCell::new(
+            ({
+                let _arg1: Value<()> = Rc::new(RefCell::new(0_()));
+                nf.call(c2.as_pointer(), _arg1.as_pointer())
+            }),
+        ));
+        let irt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        ({ verify_insert_return_type_4(irt.as_pointer()) });
+    }
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i != 10_()) {
+        unimplemented!();
+        i.prefix_inc();
+    }
 }
 pub fn test_11(c: Ptr<()>) {
     let mut nf: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
@@ -147,7 +183,7 @@ pub fn test_11(c: Ptr<()>) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ verify_insert_return_type_5(irt.as_pointer()) });
+        ({ verify_insert_return_type_6(irt.as_pointer()) });
         (*i.borrow_mut()).prefix_inc();
     }
     unimplemented!();
@@ -158,7 +194,7 @@ pub fn test_11(c: Ptr<()>) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ verify_insert_return_type_5(irt.as_pointer()) });
+        ({ verify_insert_return_type_6(irt.as_pointer()) });
     }
     {
         let dupl: Value<()> = Rc::new(RefCell::new(
@@ -173,7 +209,7 @@ pub fn test_11(c: Ptr<()>) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ verify_insert_return_type_5(irt.as_pointer()) });
+        ({ verify_insert_return_type_6(irt.as_pointer()) });
     }
     unimplemented!();
     let mut i: () = 0_();
@@ -182,59 +218,11 @@ pub fn test_11(c: Ptr<()>) {
         i.prefix_inc();
     }
 }
-pub fn test_12(c: Ptr<()>) {
-    let mut nf: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
-        (FnPtr::<fn(Ptr<()>, Ptr<()>) -> ()>::new(node_factory_10));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) != 10_()) {
-        let node: Value<()> = Rc::new(RefCell::new(({ nf.call(c2.as_pointer(), i.as_pointer()) })));
-        unimplemented!();
-        let irt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        ({ verify_insert_return_type_7(irt.as_pointer()) });
-        (*i.borrow_mut()).prefix_inc();
-    }
-    unimplemented!();
-    {
-        let def: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let irt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        ({ verify_insert_return_type_7(irt.as_pointer()) });
-    }
-    {
-        let dupl: Value<()> = Rc::new(RefCell::new(
-            ({
-                let _arg1: Value<()> = Rc::new(RefCell::new(0_()));
-                nf.call(c2.as_pointer(), _arg1.as_pointer())
-            }),
-        ));
-        let irt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        ({ verify_insert_return_type_7(irt.as_pointer()) });
-    }
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i != 10_()) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-}
-pub fn test_13() -> () {
+pub fn test_12() -> () {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_11(m.as_pointer()) });
+    ({ test_10(m.as_pointer()) });
     let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_12(m2.as_pointer()) });
+    ({ test_11(m2.as_pointer()) });
     return true;
 }
 pub fn main() {
@@ -257,7 +245,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_13() });
+    ({ test_12() });
     return 0_();
 }
 pub trait min_allocator_int_Impl {

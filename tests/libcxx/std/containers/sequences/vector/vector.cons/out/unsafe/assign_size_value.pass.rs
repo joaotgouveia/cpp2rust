@@ -62,20 +62,11 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
-    }
     pub unsafe fn to_(&self) -> () {
         return !((self.ptr_).is_null());
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*self.ptr_);
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
     }
     pub unsafe fn operator_inc_8(
         &mut self,
@@ -83,24 +74,11 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_.prefix_inc();
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
-    pub unsafe fn operator_dec_10(
-        &mut self,
-    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_dec();
-        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
-    }
     pub unsafe fn operator_add_assign(
         &mut self,
         mut n: (),
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
-        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
-    }
-    pub unsafe fn operator_sub_assign(
-        &mut self,
-        mut n: (),
-    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add(
@@ -111,19 +89,6 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
             (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
         (unsafe {
             min_pointer_int__std_integral_constant_unsigned_long__0__::operator_add_assign(
-                &mut tmp, n,
-            )
-        });
-        return tmp;
-    }
-    pub unsafe fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
-            (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
-        (unsafe {
-            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_sub_assign(
                 &mut tmp, n,
             )
         });
@@ -142,37 +107,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_7(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_ne_8(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) != (y.ptr_));
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(mut p: min_pointer_int__std_integral_constant_unsigned_long__0__) -> Self {
-        let mut this = Self {
-            ptr_: (p.ptr_).cast_const(),
-        };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
@@ -193,47 +127,47 @@ impl min_allocator_int_ {
         unimplemented!();
     }
 }
-pub unsafe fn is_contiguous_container_asan_correct_9(_a0: *const ()) -> () {
+pub unsafe fn is_contiguous_container_asan_correct_7(_a0: *const ()) -> () {
     return true;
 }
-pub unsafe fn is_contiguous_container_asan_correct_10(_a0: *const ()) -> () {
+pub unsafe fn is_contiguous_container_asan_correct_8(_a0: *const ()) -> () {
     return true;
 }
-pub unsafe fn is6_11(mut x: ()) -> () {
+pub unsafe fn is6_9(mut x: ()) -> () {
     return ((x) == (6_()));
 }
-pub unsafe fn test_12(v: *mut ()) {
+pub unsafe fn test_10(v: *mut ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_13(v: *mut ()) {
+pub unsafe fn test_11(v: *mut ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn tests_14() -> () {
+pub unsafe fn tests_12() -> () {
     {
         let mut d1: () = unimplemented!();
         let mut d2: () = unimplemented!();
         unimplemented!();
-        (unsafe { test_12(&mut d1) });
-        (unsafe { test_12(&mut d2) });
+        (unsafe { test_10(&mut d1) });
+        (unsafe { test_10(&mut d2) });
     }
     {
         let mut vec_: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { test_12(&mut vec_) });
+        (unsafe { test_10(&mut vec_) });
     }
     {
         let mut d1: () = unimplemented!();
         let mut d2: () = unimplemented!();
         unimplemented!();
-        (unsafe { test_13(&mut d1) });
-        (unsafe { test_13(&mut d2) });
+        (unsafe { test_11(&mut d1) });
+        (unsafe { test_11(&mut d2) });
     }
     return true;
 }
@@ -253,7 +187,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_14() });
+    (unsafe { tests_12() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

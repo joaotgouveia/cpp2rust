@@ -360,25 +360,16 @@ impl min_pointer_double__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
     }
     pub unsafe fn operator_inc_8(
         &mut self,
     ) -> *mut min_pointer_double__std_integral_constant_unsigned_long__0__ {
         self.ptr_.prefix_inc();
-        return &mut (*(self as *mut min_pointer_double__std_integral_constant_unsigned_long__0__));
-    }
-    pub unsafe fn operator_dec_10(
-        &mut self,
-    ) -> *mut min_pointer_double__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_dec();
         return &mut (*(self as *mut min_pointer_double__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add_assign(
@@ -414,18 +405,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_12(
-    mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_ne_13(
-    mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) != (y.ptr_));
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
@@ -450,6 +429,19 @@ impl min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self
             as *mut min_pointer_const_double__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add(
+        &self,
+        mut n: (),
+    ) -> min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_const_double__std_integral_constant_unsigned_long__0__ =
+            (*(self as *const min_pointer_const_double__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_const_double__std_integral_constant_unsigned_long__0__::operator_add_assign(
+                &mut tmp, n,
+            )
+        });
+        return tmp;
     }
 }
 #[repr(C)]
@@ -489,26 +481,14 @@ impl safe_allocator_double_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
         let mut memory: *mut () = unimplemented!();
         {
-            (unsafe {
-                memset_14(
-                    (memory as ()),
-                    0_(),
-                    (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                )
-            });
+            unimplemented!();
         }
         return memory;
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
         {
             (unsafe {
-                let mut _value: () = (unsafe {
-                    memset_14(
-                        (p as ()),
-                        0_(),
-                        (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                    )
-                });
+                let mut _value: () = unimplemented!();
                 DoNotOptimize_0(&mut _value)
             });
         }
@@ -520,6 +500,27 @@ impl Default for safe_allocator_double_ {
         unsafe { safe_allocator_double_::new() }
     }
 }
+pub unsafe fn test_contiguous_12(c: *const ()) {
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_contiguous_13(c: *const ()) {
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_contiguous_14(c: *const ()) {
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
 pub unsafe fn test_contiguous_15(c: *const ()) {
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
@@ -527,28 +528,37 @@ pub unsafe fn test_contiguous_15(c: *const ()) {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_contiguous_16(c: *const ()) {
-    let mut i: () = 0_();
-    'loop_: while ((i) < (unimplemented!())) {
-        unimplemented!();
-        i.prefix_inc();
+pub unsafe fn tests_16() -> () {
+    {
+        (unsafe {
+            let mut _c: () = unimplemented!();
+            test_contiguous_12(&mut _c)
+        });
+        (unsafe {
+            let mut _c: () = unimplemented!();
+            test_contiguous_12(&mut _c)
+        });
     }
-}
-pub unsafe fn test_contiguous_17(c: *const ()) {
-    let mut i: () = 0_();
-    'loop_: while ((i) < (unimplemented!())) {
-        unimplemented!();
-        i.prefix_inc();
+    {
+        (unsafe {
+            let mut _c: () = unimplemented!();
+            test_contiguous_13(&mut _c)
+        });
+        (unsafe {
+            let mut _c: () = unimplemented!();
+            test_contiguous_13(&mut _c)
+        });
     }
-}
-pub unsafe fn test_contiguous_18(c: *const ()) {
-    let mut i: () = 0_();
-    'loop_: while ((i) < (unimplemented!())) {
-        unimplemented!();
-        i.prefix_inc();
+    {
+        (unsafe {
+            let mut _c: () = unimplemented!();
+            test_contiguous_14(&mut _c)
+        });
+        (unsafe {
+            let mut _c: () = unimplemented!();
+            test_contiguous_14(&mut _c)
+        });
     }
-}
-pub unsafe fn tests_19() -> () {
     {
         (unsafe {
             let mut _c: () = unimplemented!();
@@ -557,36 +567,6 @@ pub unsafe fn tests_19() -> () {
         (unsafe {
             let mut _c: () = unimplemented!();
             test_contiguous_15(&mut _c)
-        });
-    }
-    {
-        (unsafe {
-            let mut _c: () = unimplemented!();
-            test_contiguous_16(&mut _c)
-        });
-        (unsafe {
-            let mut _c: () = unimplemented!();
-            test_contiguous_16(&mut _c)
-        });
-    }
-    {
-        (unsafe {
-            let mut _c: () = unimplemented!();
-            test_contiguous_17(&mut _c)
-        });
-        (unsafe {
-            let mut _c: () = unimplemented!();
-            test_contiguous_17(&mut _c)
-        });
-    }
-    {
-        (unsafe {
-            let mut _c: () = unimplemented!();
-            test_contiguous_18(&mut _c)
-        });
-        (unsafe {
-            let mut _c: () = unimplemented!();
-            test_contiguous_18(&mut _c)
         });
     }
     return true;
@@ -607,7 +587,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_19() });
+    (unsafe { tests_16() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

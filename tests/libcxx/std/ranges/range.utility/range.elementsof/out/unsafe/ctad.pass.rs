@@ -404,6 +404,78 @@ pub unsafe fn for_each_10(
         swallow_11(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
     });
 }
+pub unsafe fn for_each_12(
+    mut _a0 : types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__,
+    mut f: FnPtr<Generic>,
+) {
+    (unsafe {
+        let _arg0: () = {
+            (unsafe { f.spec::<fn()>(0).call() });
+            0_()
+        };
+        let _arg1: () = {
+            (unsafe { f.spec::<fn()>(1).call() });
+            0_()
+        };
+        let _arg2: () = {
+            (unsafe { f.spec::<fn()>(2).call() });
+            0_()
+        };
+        let _arg3: () = {
+            (unsafe { f.spec::<fn()>(3).call() });
+            0_()
+        };
+        let _arg4: () = {
+            (unsafe { f.spec::<fn()>(4).call() });
+            0_()
+        };
+        let _arg5: () = {
+            (unsafe { f.spec::<fn()>(5).call() });
+            0_()
+        };
+        let _arg6: () = {
+            (unsafe { f.spec::<fn()>(6).call() });
+            0_()
+        };
+        swallow_11(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
+    });
+}
+pub unsafe fn for_each_13(
+    mut _a0 : types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__,
+    mut f: FnPtr<Generic>,
+) {
+    (unsafe {
+        let _arg0: () = {
+            (unsafe { f.spec::<fn()>(0).call() });
+            0_()
+        };
+        let _arg1: () = {
+            (unsafe { f.spec::<fn()>(1).call() });
+            0_()
+        };
+        let _arg2: () = {
+            (unsafe { f.spec::<fn()>(2).call() });
+            0_()
+        };
+        let _arg3: () = {
+            (unsafe { f.spec::<fn()>(3).call() });
+            0_()
+        };
+        let _arg4: () = {
+            (unsafe { f.spec::<fn()>(4).call() });
+            0_()
+        };
+        let _arg5: () = {
+            (unsafe { f.spec::<fn()>(5).call() });
+            0_()
+        };
+        let _arg6: () = {
+            (unsafe { f.spec::<fn()>(6).call() });
+            0_()
+        };
+        swallow_11(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
+    });
+}
 pub unsafe fn swallow_11(
     mut _a0: (),
     mut _a1: (),
@@ -416,47 +488,142 @@ pub unsafe fn swallow_11(
 }
 pub unsafe fn swallow_9(mut _a0: (), mut _a1: (), mut _a2: ()) {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_int_ptr_ {}
+impl forward_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut forward_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_int_ptr_,
+    ) -> *mut forward_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_int_ptr_));
+    }
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct bidirectional_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl bidirectional_iterator_int_ptr_ {}
+impl bidirectional_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut bidirectional_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut bidirectional_iterator_int_ptr_,
+    ) -> *mut bidirectional_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut bidirectional_iterator_int_ptr_));
+    }
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl random_access_iterator_int_ptr_ {}
+impl random_access_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut random_access_iterator_int_ptr_,
+    ) -> *mut random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut random_access_iterator_int_ptr_));
+    }
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -468,18 +635,55 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl contiguous_iterator_int_ptr_ {}
+impl contiguous_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut contiguous_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut contiguous_iterator_int_ptr_,
+    ) -> *mut contiguous_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut contiguous_iterator_int_ptr_));
+    }
+}
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_input_iterator_int_ptr_ {
@@ -605,7 +809,7 @@ pub struct sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ {
     base_: *mut (),
 }
 impl sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ {}
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_14(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -620,7 +824,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_14(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -642,33 +846,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_13(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_15(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_13(_i, n)
+        operator_add_15(_i, n)
     });
 }
-pub unsafe fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -752,7 +956,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_20(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -762,7 +966,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -830,123 +1034,10 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_impl_19() {
-    let mut a: () = unimplemented!();
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
-pub unsafe fn test_impl_20() {
-    let mut a: () = unimplemented!();
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let mut r: Range_contiguous_iterator_int_ptr__ =
-                <Range_contiguous_iterator_int_ptr__>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let mut r: Range_contiguous_iterator_int_ptr__ =
-                <Range_contiguous_iterator_int_ptr__>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
 pub unsafe fn test_impl_21() {
     let mut a: () = unimplemented!();
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -954,8 +1045,7 @@ pub unsafe fn test_impl_21() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -963,8 +1053,7 @@ pub unsafe fn test_impl_21() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -972,8 +1061,7 @@ pub unsafe fn test_impl_21() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -982,8 +1070,7 @@ pub unsafe fn test_impl_21() {
     }
     {
         {
-            let mut r: Range_random_access_iterator_int_ptr__ =
-                <Range_random_access_iterator_int_ptr__>::default();
+            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -991,8 +1078,7 @@ pub unsafe fn test_impl_21() {
             );;
         }
         {
-            let mut r: Range_random_access_iterator_int_ptr__ =
-                <Range_random_access_iterator_int_ptr__>::default();
+            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1004,8 +1090,8 @@ pub unsafe fn test_impl_21() {
 pub unsafe fn test_impl_22() {
     let mut a: () = unimplemented!();
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1013,8 +1099,8 @@ pub unsafe fn test_impl_22() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1022,8 +1108,8 @@ pub unsafe fn test_impl_22() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1031,8 +1117,8 @@ pub unsafe fn test_impl_22() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1041,8 +1127,8 @@ pub unsafe fn test_impl_22() {
     }
     {
         {
-            let mut r: Range_bidirectional_iterator_int_ptr__ =
-                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut r: Range_contiguous_iterator_int_ptr__ =
+                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1050,8 +1136,8 @@ pub unsafe fn test_impl_22() {
             );;
         }
         {
-            let mut r: Range_bidirectional_iterator_int_ptr__ =
-                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut r: Range_contiguous_iterator_int_ptr__ =
+                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1063,7 +1149,8 @@ pub unsafe fn test_impl_22() {
 pub unsafe fn test_impl_23() {
     let mut a: () = unimplemented!();
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1071,7 +1158,8 @@ pub unsafe fn test_impl_23() {
         );;
     }
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1079,7 +1167,8 @@ pub unsafe fn test_impl_23() {
         );;
     }
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1087,7 +1176,8 @@ pub unsafe fn test_impl_23() {
         );;
     }
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1096,8 +1186,8 @@ pub unsafe fn test_impl_23() {
     }
     {
         {
-            let mut r: Range_forward_iterator_int_ptr__ =
-                <Range_forward_iterator_int_ptr__>::default();
+            let mut r: Range_random_access_iterator_int_ptr__ =
+                <Range_random_access_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1105,8 +1195,8 @@ pub unsafe fn test_impl_23() {
             );;
         }
         {
-            let mut r: Range_forward_iterator_int_ptr__ =
-                <Range_forward_iterator_int_ptr__>::default();
+            let mut r: Range_random_access_iterator_int_ptr__ =
+                <Range_random_access_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1118,6 +1208,120 @@ pub unsafe fn test_impl_23() {
 pub unsafe fn test_impl_24() {
     let mut a: () = unimplemented!();
     {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let mut r: Range_bidirectional_iterator_int_ptr__ =
+                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let mut r: Range_bidirectional_iterator_int_ptr__ =
+                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub unsafe fn test_impl_25() {
+    let mut a: () = unimplemented!();
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let mut r: Range_forward_iterator_int_ptr__ =
+                <Range_forward_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let mut r: Range_forward_iterator_int_ptr__ =
+                <Range_forward_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub unsafe fn test_impl_26() {
+    let mut a: () = unimplemented!();
+    {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
         let mut elements: () = r;
@@ -1174,7 +1378,7 @@ pub unsafe fn test_impl_24() {
         }
     }
 }
-pub unsafe fn test_impl_25() {
+pub unsafe fn test_impl_27() {
     let mut a: () = unimplemented!();
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
@@ -1233,123 +1437,10 @@ pub unsafe fn test_impl_25() {
         }
     }
 }
-pub unsafe fn test_impl_26() {
-    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
-pub unsafe fn test_impl_27() {
-    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let mut r: Range_contiguous_iterator_int_ptr__ =
-                <Range_contiguous_iterator_int_ptr__>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let mut r: Range_contiguous_iterator_int_ptr__ =
-                <Range_contiguous_iterator_int_ptr__>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
 pub unsafe fn test_impl_28() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1357,8 +1448,7 @@ pub unsafe fn test_impl_28() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1366,8 +1456,7 @@ pub unsafe fn test_impl_28() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1375,8 +1464,7 @@ pub unsafe fn test_impl_28() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1385,8 +1473,7 @@ pub unsafe fn test_impl_28() {
     }
     {
         {
-            let mut r: Range_random_access_iterator_int_ptr__ =
-                <Range_random_access_iterator_int_ptr__>::default();
+            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1394,8 +1481,7 @@ pub unsafe fn test_impl_28() {
             );;
         }
         {
-            let mut r: Range_random_access_iterator_int_ptr__ =
-                <Range_random_access_iterator_int_ptr__>::default();
+            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1407,8 +1493,8 @@ pub unsafe fn test_impl_28() {
 pub unsafe fn test_impl_29() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1416,8 +1502,8 @@ pub unsafe fn test_impl_29() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1425,8 +1511,8 @@ pub unsafe fn test_impl_29() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1434,8 +1520,8 @@ pub unsafe fn test_impl_29() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1444,8 +1530,8 @@ pub unsafe fn test_impl_29() {
     }
     {
         {
-            let mut r: Range_bidirectional_iterator_int_ptr__ =
-                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut r: Range_contiguous_iterator_int_ptr__ =
+                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1453,8 +1539,8 @@ pub unsafe fn test_impl_29() {
             );;
         }
         {
-            let mut r: Range_bidirectional_iterator_int_ptr__ =
-                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut r: Range_contiguous_iterator_int_ptr__ =
+                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1466,7 +1552,8 @@ pub unsafe fn test_impl_29() {
 pub unsafe fn test_impl_30() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1474,7 +1561,8 @@ pub unsafe fn test_impl_30() {
         );;
     }
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1482,7 +1570,8 @@ pub unsafe fn test_impl_30() {
         );;
     }
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1490,7 +1579,8 @@ pub unsafe fn test_impl_30() {
         );;
     }
     {
-        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1499,8 +1589,8 @@ pub unsafe fn test_impl_30() {
     }
     {
         {
-            let mut r: Range_forward_iterator_int_ptr__ =
-                <Range_forward_iterator_int_ptr__>::default();
+            let mut r: Range_random_access_iterator_int_ptr__ =
+                <Range_random_access_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1508,8 +1598,8 @@ pub unsafe fn test_impl_30() {
             );;
         }
         {
-            let mut r: Range_forward_iterator_int_ptr__ =
-                <Range_forward_iterator_int_ptr__>::default();
+            let mut r: Range_random_access_iterator_int_ptr__ =
+                <Range_random_access_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1521,6 +1611,120 @@ pub unsafe fn test_impl_30() {
 pub unsafe fn test_impl_31() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let mut r: Range_bidirectional_iterator_int_ptr__ =
+                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let mut r: Range_bidirectional_iterator_int_ptr__ =
+                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub unsafe fn test_impl_32() {
+    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let mut r: Range_forward_iterator_int_ptr__ =
+                <Range_forward_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let mut r: Range_forward_iterator_int_ptr__ =
+                <Range_forward_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub unsafe fn test_impl_33() {
+    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
+    {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
         let mut elements: () = r;
@@ -1577,7 +1781,7 @@ pub unsafe fn test_impl_31() {
         }
     }
 }
-pub unsafe fn test_impl_32() {
+pub unsafe fn test_impl_34() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
@@ -1628,120 +1832,6 @@ pub unsafe fn test_impl_32() {
         {
             let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
                 <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
-pub unsafe fn test_impl_33() {
-    let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
-    let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
-pub unsafe fn test_impl_34() {
-    let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
-    let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let mut r: Range_contiguous_iterator_int_ptr__ =
-            <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = r;
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let mut r: Range_contiguous_iterator_int_ptr__ =
-                <Range_contiguous_iterator_int_ptr__>::default();
-            let mut elements: () = unimplemented!();
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let mut r: Range_contiguous_iterator_int_ptr__ =
-                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1754,8 +1844,7 @@ pub unsafe fn test_impl_35() {
     let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1763,8 +1852,7 @@ pub unsafe fn test_impl_35() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1772,8 +1860,7 @@ pub unsafe fn test_impl_35() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1781,8 +1868,7 @@ pub unsafe fn test_impl_35() {
         );;
     }
     {
-        let mut r: Range_random_access_iterator_int_ptr__ =
-            <Range_random_access_iterator_int_ptr__>::default();
+        let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1791,8 +1877,7 @@ pub unsafe fn test_impl_35() {
     }
     {
         {
-            let mut r: Range_random_access_iterator_int_ptr__ =
-                <Range_random_access_iterator_int_ptr__>::default();
+            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1800,8 +1885,7 @@ pub unsafe fn test_impl_35() {
             );;
         }
         {
-            let mut r: Range_random_access_iterator_int_ptr__ =
-                <Range_random_access_iterator_int_ptr__>::default();
+            let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1814,8 +1898,8 @@ pub unsafe fn test_impl_36() {
     let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1823,8 +1907,8 @@ pub unsafe fn test_impl_36() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1832,8 +1916,8 @@ pub unsafe fn test_impl_36() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1841,8 +1925,8 @@ pub unsafe fn test_impl_36() {
         );;
     }
     {
-        let mut r: Range_bidirectional_iterator_int_ptr__ =
-            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut r: Range_contiguous_iterator_int_ptr__ =
+            <Range_contiguous_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
             true,
@@ -1851,8 +1935,8 @@ pub unsafe fn test_impl_36() {
     }
     {
         {
-            let mut r: Range_bidirectional_iterator_int_ptr__ =
-                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut r: Range_contiguous_iterator_int_ptr__ =
+                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1860,8 +1944,8 @@ pub unsafe fn test_impl_36() {
             );;
         }
         {
-            let mut r: Range_bidirectional_iterator_int_ptr__ =
-                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut r: Range_contiguous_iterator_int_ptr__ =
+                <Range_contiguous_iterator_int_ptr__>::default();
             let mut elements: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -1874,6 +1958,126 @@ pub unsafe fn test_impl_37() {
     let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
     {
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let mut r: Range_random_access_iterator_int_ptr__ =
+            <Range_random_access_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let mut r: Range_random_access_iterator_int_ptr__ =
+                <Range_random_access_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let mut r: Range_random_access_iterator_int_ptr__ =
+                <Range_random_access_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub unsafe fn test_impl_38() {
+    let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
+    let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let mut r: Range_bidirectional_iterator_int_ptr__ =
+            <Range_bidirectional_iterator_int_ptr__>::default();
+        let mut elements: () = r;
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let mut r: Range_bidirectional_iterator_int_ptr__ =
+                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let mut r: Range_bidirectional_iterator_int_ptr__ =
+                <Range_bidirectional_iterator_int_ptr__>::default();
+            let mut elements: () = unimplemented!();
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub unsafe fn test_impl_39() {
+    let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
+    let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
+    {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
         let mut elements: () = r;
         const _: () = assert!(
@@ -1926,7 +2130,7 @@ pub unsafe fn test_impl_37() {
         }
     }
 }
-pub unsafe fn test_impl_38() {
+pub unsafe fn test_impl_40() {
     let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
     {
@@ -1986,7 +2190,7 @@ pub unsafe fn test_impl_38() {
         }
     }
 }
-pub unsafe fn test_impl_39() {
+pub unsafe fn test_impl_41() {
     let mut a: test_allocator_std_byte_ = <test_allocator_std_byte_>::default();
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_std_byte_::destructor);
     {
@@ -2067,31 +2271,31 @@ pub struct Range_cpp20_input_iterator_int_ptr__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Range_cpp17_input_iterator_int_ptr__int_ptr__ {}
-pub unsafe fn test_40() -> () {
+pub unsafe fn test_42() -> () {
     (unsafe {
-        for_each_8 ( <types_type_list_std_allocator_std_byte___min_allocator_std_byte___test_allocator_std_byte__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_10 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_impl_19 ( ) } )  ;
- } , | | { ( unsafe { test_impl_20 ( ) } )  ;
- } , | | { ( unsafe { test_impl_21 ( ) } )  ;
+        for_each_8 ( <types_type_list_std_allocator_std_byte___min_allocator_std_byte___test_allocator_std_byte__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_10 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_impl_21 ( ) } )  ;
  } , | | { ( unsafe { test_impl_22 ( ) } )  ;
  } , | | { ( unsafe { test_impl_23 ( ) } )  ;
  } , | | { ( unsafe { test_impl_24 ( ) } )  ;
  } , | | { ( unsafe { test_impl_25 ( ) } )  ;
- } ) , ) } )  ;
- } , | | { ( unsafe { for_each_41 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_impl_26 ( ) } )  ;
+ } , | | { ( unsafe { test_impl_26 ( ) } )  ;
  } , | | { ( unsafe { test_impl_27 ( ) } )  ;
- } , | | { ( unsafe { test_impl_28 ( ) } )  ;
+ } ) , ) } )  ;
+ } , | | { ( unsafe { for_each_12 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_impl_28 ( ) } )  ;
  } , | | { ( unsafe { test_impl_29 ( ) } )  ;
  } , | | { ( unsafe { test_impl_30 ( ) } )  ;
  } , | | { ( unsafe { test_impl_31 ( ) } )  ;
  } , | | { ( unsafe { test_impl_32 ( ) } )  ;
- } ) , ) } )  ;
- } , | | { ( unsafe { for_each_42 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_impl_33 ( ) } )  ;
+ } , | | { ( unsafe { test_impl_33 ( ) } )  ;
  } , | | { ( unsafe { test_impl_34 ( ) } )  ;
- } , | | { ( unsafe { test_impl_35 ( ) } )  ;
+ } ) , ) } )  ;
+ } , | | { ( unsafe { for_each_13 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_impl_35 ( ) } )  ;
  } , | | { ( unsafe { test_impl_36 ( ) } )  ;
  } , | | { ( unsafe { test_impl_37 ( ) } )  ;
  } , | | { ( unsafe { test_impl_38 ( ) } )  ;
  } , | | { ( unsafe { test_impl_39 ( ) } )  ;
+ } , | | { ( unsafe { test_impl_40 ( ) } )  ;
+ } , | | { ( unsafe { test_impl_41 ( ) } )  ;
  } ) , ) } )  ;
  } ) , )
     });
@@ -2113,7 +2317,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_40() });
+    (unsafe { test_42() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
