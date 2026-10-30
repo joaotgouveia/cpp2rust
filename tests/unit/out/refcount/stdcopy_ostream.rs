@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let str: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"Hello, world!\n").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     let file: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(

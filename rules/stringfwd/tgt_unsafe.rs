@@ -7,3 +7,19 @@ use std::io::Read;
 fn t1() -> Vec<libc::c_char> {
     vec![0]
 }
+
+fn t2() -> Vec<u16> {
+    vec![0]
+}
+
+fn t3() -> Vec<u32> {
+    vec![0]
+}
+
+fn t4() -> Vec<u8> {
+    vec![0]
+}
+
+fn t5() -> Vec<i32> {
+    vec![0]
+}

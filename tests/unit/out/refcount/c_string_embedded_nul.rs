@@ -42,7 +42,7 @@ fn main_0() -> i32 {
     };
     let mut s: Vec<i8> = {
         let mut __bytes = (buf.as_pointer() as Ptr<i8>).to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     };
     println!("{}", (s.len() - 1));
@@ -57,7 +57,7 @@ fn main_0() -> i32 {
             (buf.as_pointer() as Ptr<i8>).with_c_str(|__lookup| {
                 s.iter()
                     .take(__end)
-                    .rposition(|&__x| __lookup.contains(&__x))
+                    .rposition(|__x| __lookup.contains(__x))
                     .unwrap_or(usize::MAX)
             })
         }
@@ -65,7 +65,7 @@ fn main_0() -> i32 {
     let mut lit: Ptr<i8> = Ptr::<i8>::from_string_literal(b"xy\0zw");
     let mut t: Vec<i8> = {
         let mut __bytes = lit.to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     };
     println!("{}", (t.len() - 1));

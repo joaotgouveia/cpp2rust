@@ -558,12 +558,8 @@ clang::QualType iteratorValueType(clang::QualType iterator) {
   assert(record && sema_->isCompleteType(clang::SourceLocation(), iterator) &&
          "iterator is not a complete class");
   auto value = valueTypeMember(record->getDefinition());
-  if (value.isNull()) {
-    llvm::errs() << "iterator class has no value_type: "
-                 << iterator.getAsString() << '\n';
-  }
-  assert(!value.isNull() && "iterator class has no value_type");
-  return value;
+  // output iterators declare value_type void
+  return value.isNull() || value->isVoidType() ? clang::QualType() : value;
 }
 
 clang::QualType iteratorElementType(clang::ASTContext &ctx,
@@ -578,7 +574,8 @@ clang::QualType iteratorElementType(clang::ASTContext &ctx,
   auto [rule, bindings] = Search(ctx, iterator);
   assert(rule && "iterator has no type rule");
   // the element generic the rule declares (T1: CppIterator<T2>), else the
-  // iterator class's value_type (the rule names a concrete element)
+  // iterator class's value_type (the rule names a concrete element), else
+  // the rule's first generic (ostream_iterator<T1> has value_type void)
   for (unsigned n = 1; n <= rule->generics.size(); ++n) {
     if (iteratorOverGeneric(rule->generics, n)) {
       assert(n <= bindings.size() &&
@@ -587,7 +584,13 @@ clang::QualType iteratorElementType(clang::ASTContext &ctx,
       return bindings[n - 1].getAsType();
     }
   }
-  return iteratorValueType(iterator);
+  if (auto value = iteratorValueType(iterator); !value.isNull()) {
+    return value;
+  }
+  assert(!bindings.empty() &&
+         bindings[0].getKind() == clang::TemplateArgument::Type &&
+         "iterator type rule declares no element");
+  return bindings[0].getAsType();
 }
 
 clang::QualType GetGenericType(clang::ASTContext &ctx, const clang::Expr *expr,
@@ -654,7 +657,9 @@ Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
     assert(owner && owner < n &&
            "unbound type rule generic is not the element of an iterator "
            "or allocator");
-    bindings.emplace_back(iteratorValueType(bindings[owner - 1].getAsType()));
+    auto element = iteratorValueType(bindings[owner - 1].getAsType());
+    assert(!element.isNull() && "owner of an element generic has no value_type");
+    bindings.emplace_back(element);
   }
   if (auto generic = match.rule_decl->rule.generic) {
     auto bound = bindings.at(generic - 1).getAsType();

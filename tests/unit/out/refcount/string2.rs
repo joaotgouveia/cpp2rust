@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let arr: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"foo").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     arr.decay().offset(1_usize as isize).write(('b' as i8));
@@ -26,7 +26,7 @@ fn main_0() -> i32 {
     let mut names: [Ptr<i8>; 1] = [arr.decay()];
     let mut copy: Vec<i8> = {
         let mut __bytes = names[(0) as usize].to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     };
     assert!(

@@ -5,62 +5,62 @@ use libcc2rs::*;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-fn f10() -> Vec<i8> {
-    vec![0]
+fn f10<T1: CChar, T2, T3>() -> Vec<T1> {
+    vec![T1::default()]
 }
 
-fn f12(a0: Vec<i8>) -> Vec<i8> {
+fn f12<T1: CChar, T2, T3>(a0: Vec<T1>) -> Vec<T1> {
     a0
 }
 
-fn f17(a0: &mut Vec<i8>) -> Vec<i8> {
+fn f17<T1: CChar, T2, T3>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
 
-fn f21(a0: Ptr<Vec<i8>>, a1: Vec<i8>) {
+fn f21<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) {
     a0.write(a1)
 }
 
-fn f24(a0: Ptr<Vec<i8>>, a1: &mut Vec<i8>) {
+fn f24<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) {
     a0.write(std::mem::take(&mut *a1))
 }
 
-fn f27(a0: Ptr<i8>) -> RandomAccessIterator<i8> {
+fn f27<T1: CChar, T2, T3>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
     RandomAccessIterator::Vec(a0)
 }
 
-fn f29(a0: Ptr<i8>) -> RandomAccessIterator<i8> {
+fn f29<T1: CChar, T2, T3>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
     RandomAccessIterator::Vec(a0.to_last())
 }
 
-fn f39(a0: Vec<i8>) -> usize {
+fn f39<T1: CChar, T2, T3>(a0: Vec<T1>) -> usize {
     (a0.len() - 1)
 }
 
-fn f40(a0: Vec<i8>) -> usize {
+fn f40<T1: CChar, T2, T3>(a0: Vec<T1>) -> usize {
     (a0.len() - 1)
 }
 
-fn f43(a0: &mut Vec<i8>, a1: usize) {
+fn f43<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize) {
     a0.pop();
-    a0.resize((a1) as usize, 0);
-    a0.push(0)
+    a0.resize((a1) as usize, T1::default());
+    a0.push(T1::default())
 }
 
-fn f44(a0: &mut Vec<i8>) {
+fn f44<T1: CChar, T2, T3>(a0: &mut Vec<T1>) {
     a0.shrink_to_fit()
 }
 
-fn f48(a0: &mut Vec<i8>) {
+fn f48<T1: CChar, T2, T3>(a0: &mut Vec<T1>) {
     a0.clear();
-    a0.push(0)
+    a0.push(T1::default())
 }
 
-fn f49(a0: Vec<i8>) -> bool {
+fn f49<T1: CChar, T2, T3>(a0: Vec<T1>) -> bool {
     a0.len() <= 1
 }
 
-fn f53(a0: Ptr<Vec<i8>>, a1: usize) -> Ptr<i8> {
+fn f53<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
     if a1 as usize >= (*a0.upgrade().deref()).len().saturating_sub(1) {
         panic!("out of bounds access")
     } else {
@@ -68,49 +68,49 @@ fn f53(a0: Ptr<Vec<i8>>, a1: usize) -> Ptr<i8> {
     }
 }
 
-fn f64(a0: Ptr<Vec<i8>>, a1: Ptr<i8>, a2: usize) -> Ptr<Vec<i8>> {
-    a0.with_mut(|__v: &mut Vec<i8>| {
+fn f64<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Ptr<T1>, a2: usize) -> Ptr<Vec<T1>> {
+    a0.with_mut(|__v: &mut Vec<T1>| {
         __v.pop();
         a1.with_slice(a2 as usize, |__s| __v.extend_from_slice(__s));
-        __v.push(0);
+        __v.push(T1::default());
     });
     a0
 }
 
-fn f66(a0: &mut Vec<i8>, a1: usize, a2: i8) -> Vec<i8> {
+fn f66<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: T1) -> Vec<T1> {
     a0.pop();
     a0.resize(a0.len() + (a1) as usize, a2);
-    a0.push(0);
+    a0.push(T1::default());
     a0.clone()
 }
 
-fn f90(a0: Ptr<Vec<i8>>, a1: usize, a2: usize, a3: Ptr<i8>, a4: usize) -> Ptr<Vec<i8>> {
-    let pos = a1 as usize;
-    let end = std::cmp::min(
-        pos + a2 as usize,
+fn f90<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize, a2: usize, a3: Ptr<T1>, a4: usize) -> Ptr<Vec<T1>> {
+    let __pos = a1 as usize;
+    let __end = std::cmp::min(
+        __pos + a2 as usize,
         (*a0.upgrade().deref()).len().saturating_sub(1),
     );
-    a0.with_mut(|__v: &mut Vec<i8>| {
+    a0.with_mut(|__v: &mut Vec<T1>| {
         a3.with_slice(a4 as usize, |__s| {
-            __v.splice(pos..end, __s.iter().copied());
+            __v.splice(__pos..__end, __s.iter().copied());
         });
     });
     a0
 }
 
-fn f104(a0: Ptr<i8>) -> Ptr<i8> {
+fn f104<T1: CChar, T2, T3>(a0: Ptr<T1>) -> Ptr<T1> {
     a0
 }
 
-fn f105(a0: Ptr<i8>) -> Ptr<i8> {
+fn f105<T1: CChar, T2, T3>(a0: Ptr<T1>) -> Ptr<T1> {
     a0
 }
 
-fn f106(a0: Ptr<i8>) -> Ptr<i8> {
+fn f106<T1: CChar, T2, T3>(a0: Ptr<T1>) -> Ptr<T1> {
     a0
 }
 
-fn f110(a0: Vec<i8>, a1: Ptr<i8>, a2: usize) -> usize {
+fn f110<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>, a2: usize) -> usize {
     let __hay = &a0[..a0.len().saturating_sub(1)];
     a1.with_c_str(|__needle| {
         (a2..=__hay.len().saturating_sub(__needle.len()))
@@ -119,35 +119,35 @@ fn f110(a0: Vec<i8>, a1: Ptr<i8>, a2: usize) -> usize {
     })
 }
 
-fn f132(a0: Vec<i8>, a1: usize, a2: usize) -> Vec<i8> {
+fn f132<T1: CChar, T2, T3>(a0: Vec<T1>, a1: usize, a2: usize) -> Vec<T1> {
     let mut __tmp1 =
         a0[(a1) as usize..::std::cmp::min((a1 + a2) as usize, a0.len().saturating_sub(1))].to_vec();
-    __tmp1.push(0);
+    __tmp1.push(T1::default());
     __tmp1
 }
 
-fn f189(a0: Vec<i8>, a1: Ptr<i8>) -> Vec<i8> {
+fn f189<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>) -> Vec<T1> {
     let mut __tmp2 = a0;
     __tmp2.pop();
     a1.with_c_str(|__s| __tmp2.extend_from_slice(__s));
-    __tmp2.push(0);
+    __tmp2.push(T1::default());
     __tmp2
 }
 
-fn f193(a0: Vec<i8>, a1: Ptr<i8>) -> Vec<i8> {
-    let mut r = a0;
-    r.pop();
-    a1.with_c_str(|__s| r.extend_from_slice(__s));
-    r.push(0);
-    r
+fn f193<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>) -> Vec<T1> {
+    let mut __r = a0;
+    __r.pop();
+    a1.with_c_str(|__s| __r.extend_from_slice(__s));
+    __r.push(T1::default());
+    __r
 }
 
-fn t1() -> Vec<i8> {
-    vec![0]
+fn t1<T1: CChar, T2, T3>() -> Vec<T1> {
+    vec![T1::default()]
 }
 
-fn t3() -> i8 {
-    0_i8
+fn t3<T1: CChar, T2, T3>() -> T1 {
+    T1::default()
 }
 
 fn t7<T1>() -> Ptr<T1> {
@@ -170,48 +170,52 @@ fn t12<T1>() -> RandomAccessIterator<T1> {
     RandomAccessIterator::default()
 }
 
-fn f148<T1, T2, T3>(a0: Ptr<i8>, a1: T3) -> Vec<i8> {
+fn f148<T1: CChar, T2, T3>(a0: Ptr<T1>, a1: T3) -> Vec<T1> {
     let mut __bytes = a0.to_c_bytes();
-    __bytes.push(0);
+    __bytes.push(T1::default());
     __bytes
 }
 
-fn f16<T1, T2, T3>(a0: Ptr<i8>, a1: usize, a2: T3) -> Vec<i8> {
+fn f16<T1: CChar, T2, T3>(a0: Ptr<T1>, a1: usize, a2: T3) -> Vec<T1> {
     let mut __v = Vec::with_capacity(a1 as usize + 1);
     a0.with_slice(a1 as usize, |__s| __v.extend_from_slice(__s));
-    __v.push(0);
+    __v.push(T1::default());
     __v
 }
 
-fn f149<T1, T2, T3>(a0: usize, a1: i8, a2: T3) -> Vec<i8> {
+fn f149<T1: CChar, T2, T3>(a0: usize, a1: T1, a2: T3) -> Vec<T1> {
     vec![a1; (a0) as usize]
         .iter()
         .cloned()
-        .chain(std::iter::once(0))
+        .chain(std::iter::once(T1::default()))
         .collect()
 }
 
-fn f122<T1, T2, T3>(a0: Vec<i8>, a1: Ptr<i8>, a2: usize) -> usize {
+fn f122<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>, a2: usize) -> usize {
     let __n = a0.len().saturating_sub(1);
     let __end = a2.saturating_add(1).min(__n);
     a1.with_c_str(|__lookup| {
         a0.iter()
             .take(__end)
-            .rposition(|&__x| __lookup.contains(&__x))
+            .rposition(|__x| __lookup.contains(__x))
             .unwrap_or(usize::MAX)
     })
 }
 
-fn f203<T1, T2, T3>(a0: Vec<i8>, a1: Ptr<i8>) -> bool {
+fn f203<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>) -> bool {
     a1.with_c_str(|__s| a0[..a0.len().saturating_sub(1)] == *__s)
 }
 
-fn f51<T1, T2, T3>(a0: Ptr<i8>, a1: usize) -> Ptr<i8> {
+fn f51<T1: CChar, T2, T3>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {
     a0.offset(a1 as isize)
 }
 
-fn f200<T1, T2, T3>(a0: Ptr<::std::fs::File>, a1: Vec<i8>) -> Ptr<::std::fs::File> {
+fn f200<T1: StreamChar, T2, T3>(a0: Ptr<::std::fs::File>, a1: Vec<T1>) -> Ptr<::std::fs::File> {
     let __s = a0;
-    let _ = __s.write_all(&a1[..a1.len().saturating_sub(1)].iter().map(|&__c| __c as u8).collect::<Vec<u8>>());
+    let mut __bytes = Vec::new();
+    for &__c in &a1[..a1.len().saturating_sub(1)] {
+        __c.push_stream_bytes(&mut __bytes);
+    }
+    let _ = __s.write_all(&__bytes);
     __s
 }

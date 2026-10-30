@@ -235,8 +235,11 @@ pub unsafe fn RndStuff_2() {
     }
 }
 pub unsafe fn unique_ptr_that_wraps_container_3() {
-    let mut v: Option<Box<[Vec<libc::c_char>]>> =
-        Some((0..2_usize).map(|_| vec![0]).collect::<Box<[_]>>());
+    let mut v: Option<Box<[Vec<libc::c_char>]>> = Some(
+        (0..2_usize)
+            .map(|_| vec![libc::c_char::default()])
+            .collect::<Box<[_]>>(),
+    );
     assert!(
         (((*v
             .as_deref()

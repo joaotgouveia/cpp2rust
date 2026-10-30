@@ -95,6 +95,92 @@ impl CChar for i8 {
     }
 }
 
+// Wide characters (wchar_t = i32, char16_t = u16, char32_t = u32) as C-string
+// elements: a byte buffer is viewed through their byte representation, and a
+// single byte round-trips through widening and truncation.
+macro_rules! impl_cchar_wide {
+    ($($t:ty),*) => {
+        $(impl CChar for $t {
+            #[inline(always)]
+            fn to_byte(self) -> u8 {
+                self as u8
+            }
+            #[inline(always)]
+            fn from_byte(b: u8) -> Self {
+                b as Self
+            }
+            fn with_bytes_mut<R>(buf: &mut [u8], f: impl FnOnce(&mut [Self]) -> R) -> R {
+                let size = std::mem::size_of::<$t>();
+                with_scratch(buf.len() / size, |chars: &mut [$t]| {
+                    for (c, b) in chars.iter_mut().zip(buf.chunks_exact(size)) {
+                        *c = <$t>::from_bytes(b);
+                    }
+                    let r = f(chars);
+                    for (b, c) in buf.chunks_exact_mut(size).zip(chars.iter()) {
+                        c.to_bytes(b);
+                    }
+                    r
+                })
+            }
+            fn with_u8_slice<R>(s: &[Self], f: impl FnOnce(&[u8]) -> R) -> R {
+                let size = std::mem::size_of::<$t>();
+                with_scratch(s.len() * size, |buf: &mut [u8]| {
+                    for (b, c) in buf.chunks_exact_mut(size).zip(s) {
+                        c.to_bytes(b);
+                    }
+                    f(buf)
+                })
+            }
+            fn into_byte_vec(v: Vec<Self>) -> Vec<u8> {
+                v.iter().flat_map(|c| c.to_ne_bytes()).collect()
+            }
+            fn from_byte_vec(v: Vec<u8>) -> Vec<Self> {
+                v.chunks_exact(std::mem::size_of::<$t>()).map(<$t>::from_bytes).collect()
+            }
+        })*
+    };
+}
+
+impl_cchar_wide!(u16, u32, i32);
+
+// The length of a NUL-terminated string behind a raw pointer, like strlen,
+// for any character type.
+pub unsafe fn c_str_len<T: CChar>(s: *const T) -> usize {
+    unsafe { (0..).take_while(|&i| *s.add(i) != T::default()).count() }
+}
+
+// How a character reaches a byte stream: narrow chars as themselves, wide
+// chars as the UTF-8 encoding of their code point.
+pub trait StreamChar: CChar {
+    fn push_stream_bytes(self, out: &mut Vec<u8>);
+}
+
+impl StreamChar for i8 {
+    fn push_stream_bytes(self, out: &mut Vec<u8>) {
+        out.push(self as u8);
+    }
+}
+
+impl StreamChar for u8 {
+    fn push_stream_bytes(self, out: &mut Vec<u8>) {
+        out.push(self);
+    }
+}
+
+macro_rules! impl_stream_char_wide {
+    ($($t:ty),*) => {
+        $(impl StreamChar for $t {
+            fn push_stream_bytes(self, out: &mut Vec<u8>) {
+                let c = char::from_u32(self as u32).unwrap_or(char::REPLACEMENT_CHARACTER);
+                let mut buf = [0u8; 4];
+                out.extend_from_slice(c.encode_utf8(&mut buf).as_bytes());
+            }
+        })*
+    };
+}
+
+impl_stream_char_wide!(u16, u32, i32);
+
 impl<T: CChar> fmt::Display for Ptr<T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {
@@ -234,6 +320,42 @@ impl<T: CChar> Ptr<T> {
         CStringIterator { ptr: self.clone() }
     }
 
+    // Copies `bytes` to the buffer pointed to, without adding a NUL.
+    pub fn write_c_bytes(&self, bytes: &[u8]) {
+        self.with_slice_mut(bytes.len(), |s| {
+            for (d, &b) in s.iter_mut().zip(bytes) {
+                *d = T::from_byte(b);
+            }
+        })
+    }
+
+    // Allocates a heap copy of `bytes` followed by a NUL, like `strdup`.
+    pub fn alloc_c_str(bytes: &[u8]) -> Self {
+        Ptr::alloc_array(
+            bytes
+                .iter()
+                .map(|&b| T::from_byte(b))
+                .chain(std::iter::once(T::default()))
+                .collect(),
+        )
+    }
+
+    // Like `with_c_str`, with the C string viewed as bytes.
+    pub fn with_c_bytes<R>(&self, f: impl FnOnce(&[u8]) -> R) -> R {
+        self.with_c_str(|s| T::with_u8_slice(s, f))
+    }
+
+    // Like `to_c_bytes`, as bytes.
+    pub fn to_c_u8_bytes(&self) -> Vec<u8> {
+        T::into_byte_vec(self.to_c_bytes())
+    }
+
+    pub fn to_rust_string(&self) -> String {
+        self.with_c_bytes(|s| String::from_utf8_lossy(s).into_owned())
+    }
+}
+
+impl<T: CChar> Ptr<T> {
     // Calls `f` with the bytes of the C string, excluding the terminating NUL.
     // The bytes are borrowed from the allocation, so `f` must not write to it.
     pub fn with_c_str<R>(&self, f: impl FnOnce(&[T]) -> R) -> R {
@@ -291,40 +413,6 @@ impl<T: CChar> Ptr<T> {
             bytes.extend_from_slice(s);
             bytes
         })
-    }
-
-    // Copies `bytes` to the buffer pointed to, without adding a NUL.
-    pub fn write_c_bytes(&self, bytes: &[u8]) {
-        self.with_slice_mut(bytes.len(), |s| {
-            for (d, &b) in s.iter_mut().zip(bytes) {
-                *d = T::from_byte(b);
-            }
-        })
-    }
-
-    // Allocates a heap copy of `bytes` followed by a NUL, like `strdup`.
-    pub fn alloc_c_str(bytes: &[u8]) -> Self {
-        Ptr::alloc_array(
-            bytes
-                .iter()
-                .map(|&b| T::from_byte(b))
-                .chain(std::iter::once(T::default()))
-                .collect(),
-        )
-    }
-
-    // Like `with_c_str`, with the C string viewed as bytes.
-    pub fn with_c_bytes<R>(&self, f: impl FnOnce(&[u8]) -> R) -> R {
-        self.with_c_str(|s| T::with_u8_slice(s, f))
-    }
-
-    // Like `to_c_bytes`, as bytes.
-    pub fn to_c_u8_bytes(&self) -> Vec<u8> {
-        T::into_byte_vec(self.to_c_bytes())
-    }
-
-    pub fn to_rust_string(&self) -> String {
-        self.with_c_bytes(|s| String::from_utf8_lossy(s).into_owned())
     }
 }
 

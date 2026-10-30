@@ -8,11 +8,11 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn fn_0(mut v: Vec<i8>) -> Vec<i8> {
     return {
-        let mut r = (v).clone();
-        r.pop();
-        Ptr::<i8>::from_string_literal(b" str").with_c_str(|__s| r.extend_from_slice(__s));
-        r.push(0);
-        r
+        let mut __r = (v).clone();
+        __r.pop();
+        Ptr::<i8>::from_string_literal(b" str").with_c_str(|__s| __r.extend_from_slice(__s));
+        __r.push(0_i8);
+        __r
     };
 }
 pub fn fn2_1(v: Ptr<Vec<i8>>) -> Ptr<Vec<i8>> {
@@ -56,7 +56,7 @@ fn main_0() -> i32 {
     print!("hello world");
     let s: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"a string").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     println!("{}", s.decay());
@@ -66,7 +66,7 @@ fn main_0() -> i32 {
             ({
                 fn_0({
                     let mut __bytes = Ptr::<i8>::from_string_literal(b"foo").to_c_bytes();
-                    __bytes.push(0);
+                    __bytes.push(0_i8);
                     __bytes
                 })
             })

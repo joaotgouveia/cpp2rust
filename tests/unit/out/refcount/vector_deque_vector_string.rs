@@ -24,7 +24,7 @@ fn main_0() -> i32 {
     {
         let __a1 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"a").to_c_bytes();
-            __bytes.push(0);
+            __bytes.push(0_i8);
             __bytes
         };
         (*row.borrow_mut()).push(__a1)
@@ -32,7 +32,7 @@ fn main_0() -> i32 {
     {
         let __a1 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"bc").to_c_bytes();
-            __bytes.push(0);
+            __bytes.push(0_i8);
             __bytes
         };
         (*row.borrow_mut()).push(__a1)
@@ -43,7 +43,7 @@ fn main_0() -> i32 {
     {
         let __a1 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"def").to_c_bytes();
-            __bytes.push(0);
+            __bytes.push(0_i8);
             __bytes
         };
         (*row.borrow_mut()).push(__a1)
@@ -59,7 +59,7 @@ fn main_0() -> i32 {
     };
     {
         let __a1 = {
-            let mut r = (*v
+            let mut __r = (*v
                 .decay()
                 .offset(0_usize as isize)
                 .decay()
@@ -68,10 +68,10 @@ fn main_0() -> i32 {
                 .upgrade()
                 .deref())
             .clone();
-            r.pop();
-            Ptr::<i8>::from_string_literal(b"x").with_c_str(|__s| r.extend_from_slice(__s));
-            r.push(0);
-            r
+            __r.pop();
+            Ptr::<i8>::from_string_literal(b"x").with_c_str(|__s| __r.extend_from_slice(__s));
+            __r.push(0_i8);
+            __r
         };
         v.decay()
             .offset(1_usize as isize)
@@ -130,7 +130,7 @@ fn main_0() -> i32 {
         .offset(0_usize as isize)
         .write({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"z").to_c_bytes();
-            __bytes.push(0);
+            __bytes.push(0_i8);
             __bytes
         });
     if 0_usize as usize

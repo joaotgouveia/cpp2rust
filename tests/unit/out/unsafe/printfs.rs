@@ -10,12 +10,11 @@ pub unsafe fn fn_0(mut v: Vec<libc::c_char>) -> Vec<libc::c_char> {
     return {
         let mut __tmp2 = v.clone();
         __tmp2.pop();
-        let __from = c" str".as_ptr();
         __tmp2.extend_from_slice(::std::slice::from_raw_parts(
-            __from,
-            (0..).position(|i| *__from.add(i) == 0).unwrap(),
+            c" str".as_ptr(),
+            libcc2rs::c_str_len(c" str".as_ptr()),
         ));
-        __tmp2.push(0);
+        __tmp2.push((0 as libc::c_char));
         __tmp2
     };
 }
@@ -81,24 +80,23 @@ unsafe fn main_0() -> i32 {
         )
     });
     (unsafe { libc::printf(c"hello world".as_ptr() as *const libc::c_char) });
-    let mut s: Vec<libc::c_char> = {
-        let __s = c"a string".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"a string".as_ptr(),
+        libcc2rs::c_str_len(c"a string".as_ptr()) + 1,
+    )
+    .to_vec();
     (unsafe { libc::printf(c"%s\n".as_ptr() as *const libc::c_char, (s.as_mut_ptr())) });
     (unsafe {
         libc::printf(
             c"%s\n".as_ptr() as *const libc::c_char,
             ((unsafe {
-                fn_0({
-                    let __s = c"foo".as_ptr();
+                fn_0(
                     std::slice::from_raw_parts(
-                        __s,
-                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                        c"foo".as_ptr(),
+                        libcc2rs::c_str_len(c"foo".as_ptr()) + 1,
                     )
-                    .to_vec()
-                })
+                    .to_vec(),
+                )
             })
             .as_ptr()),
         )

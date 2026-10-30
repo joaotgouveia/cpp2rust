@@ -13,11 +13,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut x: Vec<libc::c_char> = {
-        let __s = c"hello".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut x: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"hello".as_ptr(),
+        libcc2rs::c_str_len(c"hello".as_ptr()) + 1,
+    )
+    .to_vec();
     'loop_: for c in IterRange::new(
         UnsafeRandomAccessIterator::Vec(x.as_mut_ptr()),
         UnsafeRandomAccessIterator::Vec(x.as_mut_ptr().add(x.len() - 1)),

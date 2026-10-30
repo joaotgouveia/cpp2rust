@@ -29,11 +29,11 @@ unsafe fn main_0() -> i32 {
     let mut s: Vec<libc::c_char> = p;
     assert!(((s.len() - 1) == (12_usize)));
     assert!(
-        s == {
-            let __s = c"dir/file.txt".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        }
+        s == std::slice::from_raw_parts(
+            c"dir/file.txt".as_ptr(),
+            libcc2rs::c_str_len(c"dir/file.txt".as_ptr()) + 1
+        )
+        .to_vec()
     );
     return 0;
 }

@@ -15,7 +15,7 @@ fn main_0() -> i32 {
     let mut i: i32 = 27;
     let mut str: Vec<i8> = {
         let mut __bytes = Ptr::<i8>::from_string_literal(b"bar.").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     };
     {
@@ -57,12 +57,12 @@ fn main_0() -> i32 {
                                                         let _ = __s.write_all(&[('o' as i8) as u8]);
                                                         __s
                                                     };
-                                                    let _ = __s.write_all(
-                                                        &str[..str.len().saturating_sub(1)]
-                                                            .iter()
-                                                            .map(|&__c| __c as u8)
-                                                            .collect::<Vec<u8>>(),
-                                                    );
+                                                    let mut __bytes = Vec::new();
+                                                    for &__c in &str[..str.len().saturating_sub(1)]
+                                                    {
+                                                        __c.push_stream_bytes(&mut __bytes);
+                                                    }
+                                                    let _ = __s.write_all(&__bytes);
                                                     __s
                                                 };
                                                 libcc2rs::endl_refcount.call(__s)

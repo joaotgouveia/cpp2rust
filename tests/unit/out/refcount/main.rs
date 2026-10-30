@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(argc: i32, argv: Ptr<Ptr<i8>>) -> i32 {
     let mut s: Vec<i8> = {
         let mut __bytes = (elem!(argv, 0).read()).to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     };
     assert!((argc == 1));

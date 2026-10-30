@@ -122,7 +122,7 @@ pub struct Box_int_ {
 }
 impl Box_int_ {
     pub fn new(mut v: i32) -> Self {
-        Self { val: (v as i32) }
+        Self { val: v }
     }
     pub fn copy_from(o: Ptr<Box_int_>) -> Self {
         Self {

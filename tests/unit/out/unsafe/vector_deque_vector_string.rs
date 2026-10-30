@@ -24,28 +24,22 @@ unsafe fn main_0() -> i32 {
     };
     let mut row: Vec<Vec<libc::c_char>> = Vec::new();
     {
-        let __a1 = {
-            let __s = c"a".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        };
+        let __a1 =
+            std::slice::from_raw_parts(c"a".as_ptr(), libcc2rs::c_str_len(c"a".as_ptr()) + 1)
+                .to_vec();
         row.push(__a1)
     };
     {
-        let __a1 = {
-            let __s = c"bc".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        };
+        let __a1 =
+            std::slice::from_raw_parts(c"bc".as_ptr(), libcc2rs::c_str_len(c"bc".as_ptr()) + 1)
+                .to_vec();
         row.push(__a1)
     };
     (*(&mut v).as_mut_ptr().add(0_usize as usize)).push((row).clone());
     {
-        let __a1 = {
-            let __s = c"def".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        };
+        let __a1 =
+            std::slice::from_raw_parts(c"def".as_ptr(), libcc2rs::c_str_len(c"def".as_ptr()) + 1)
+                .to_vec();
         row.push(__a1)
     };
     (*(&mut v).as_mut_ptr().add(1_usize as usize)).push((row).clone());
@@ -62,12 +56,11 @@ unsafe fn main_0() -> i32 {
                 .add(1_usize as usize))
             .clone();
             __tmp2.pop();
-            let __from = c"x".as_ptr();
             __tmp2.extend_from_slice(::std::slice::from_raw_parts(
-                __from,
-                (0..).position(|i| *__from.add(i) == 0).unwrap(),
+                c"x".as_ptr(),
+                libcc2rs::c_str_len(c"x".as_ptr()),
             ));
-            __tmp2.push(0);
+            __tmp2.push((0 as libc::c_char));
             __tmp2
         };
         (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
@@ -93,14 +86,11 @@ unsafe fn main_0() -> i32 {
                 .unwrap())))
                 .as_mut_ptr()
                 .add(2_usize as usize))
-                == {
-                    let __s = c"def".as_ptr();
-                    std::slice::from_raw_parts(
-                        __s,
-                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                    )
-                    .to_vec()
-                })
+                == std::slice::from_raw_parts(
+                    c"def".as_ptr(),
+                    libcc2rs::c_str_len(c"def".as_ptr()) + 1
+                )
+                .to_vec())
     );
     assert!(
         (*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
@@ -108,25 +98,19 @@ unsafe fn main_0() -> i32 {
             .unwrap())))
             .as_mut_ptr()
             .add(0_usize as usize))
-            == {
-                let __s = c"bcx".as_ptr();
-                std::slice::from_raw_parts(
-                    __s,
-                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                )
-                .to_vec()
-            }
+            == std::slice::from_raw_parts(
+                c"bcx".as_ptr(),
+                libcc2rs::c_str_len(c"bcx".as_ptr()) + 1
+            )
+            .to_vec()
     );
     let mut copy: Vec<Vec<Vec<Vec<libc::c_char>>>> = v.clone();
     (*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
         .first_mut()
         .unwrap())))
         .as_mut_ptr()
-        .add(0_usize as usize)) = {
-        let __s = c"z".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+        .add(0_usize as usize)) =
+        std::slice::from_raw_parts(c"z".as_ptr(), libcc2rs::c_str_len(c"z".as_ptr()) + 1).to_vec();
     (*if 0_usize as usize
         >= (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
             .first_mut()
@@ -150,27 +134,18 @@ unsafe fn main_0() -> i32 {
             .unwrap())))
             .as_mut_ptr()
             .add(0_usize as usize))
-            == {
-                let __s = c"a".as_ptr();
-                std::slice::from_raw_parts(
-                    __s,
-                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                )
-                .to_vec()
-            })
+            == std::slice::from_raw_parts(c"a".as_ptr(), libcc2rs::c_str_len(c"a".as_ptr()) + 1)
+                .to_vec())
             && ((*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
                 .first_mut()
                 .unwrap())))
                 .as_mut_ptr()
                 .add(0_usize as usize))
-                == {
-                    let __s = c"z".as_ptr();
-                    std::slice::from_raw_parts(
-                        __s,
-                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                    )
-                    .to_vec()
-                })
+                == std::slice::from_raw_parts(
+                    c"z".as_ptr(),
+                    libcc2rs::c_str_len(c"z".as_ptr()) + 1
+                )
+                .to_vec())
     );
     assert!(
         ((*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
@@ -178,27 +153,18 @@ unsafe fn main_0() -> i32 {
             .unwrap())))
             .as_mut_ptr()
             .add(1_usize as usize))
-            == {
-                let __s = c"Bc".as_ptr();
-                std::slice::from_raw_parts(
-                    __s,
-                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                )
-                .to_vec()
-            })
+            == std::slice::from_raw_parts(c"Bc".as_ptr(), libcc2rs::c_str_len(c"Bc".as_ptr()) + 1)
+                .to_vec())
             && ((*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
                 .first_mut()
                 .unwrap())))
                 .as_mut_ptr()
                 .add(1_usize as usize))
-                == {
-                    let __s = c"bc".as_ptr();
-                    std::slice::from_raw_parts(
-                        __s,
-                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                    )
-                    .to_vec()
-                })
+                == std::slice::from_raw_parts(
+                    c"bc".as_ptr(),
+                    libcc2rs::c_str_len(c"bc".as_ptr()) + 1
+                )
+                .to_vec())
     );
     (*(&mut v).as_mut_ptr().add(1_usize as usize)).remove(0);
     assert!(
@@ -207,14 +173,11 @@ unsafe fn main_0() -> i32 {
             .unwrap())))
             .as_mut_ptr()
             .add(0_usize as usize))
-            == {
-                let __s = c"bcx".as_ptr();
-                std::slice::from_raw_parts(
-                    __s,
-                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
-                )
-                .to_vec()
-            }
+            == std::slice::from_raw_parts(
+                c"bcx".as_ptr(),
+                libcc2rs::c_str_len(c"bcx".as_ptr()) + 1
+            )
+            .to_vec()
     );
     assert!(
         (((*((*(&mut copy).as_mut_ptr().add(1_usize as usize))

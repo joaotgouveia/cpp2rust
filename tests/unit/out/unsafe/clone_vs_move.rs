@@ -240,70 +240,34 @@ unsafe fn main_0() -> i32 {
     let mut s1: Vec<libc::c_char> = vec![('a' as libc::c_char); (3_usize) as usize]
         .iter()
         .cloned()
-        .chain(std::iter::once(0))
+        .chain(std::iter::once((0 as libc::c_char)))
         .collect();
     let mut s2: Vec<libc::c_char> = s1.clone();
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<libc::c_char> = &mut s2;
-        __v.as_mut_ptr().add(__idx)
-    }) = ('b' as libc::c_char);
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<libc::c_char> = &mut s2;
-        __v.as_mut_ptr().add(__idx)
-    }) = ('b' as libc::c_char);
-    (*{
-        let __idx = 2_usize as usize;
-        let __v: &mut Vec<libc::c_char> = &mut s2;
-        __v.as_mut_ptr().add(__idx)
-    }) = ('b' as libc::c_char);
+    (*(&mut s2).as_mut_ptr().add(0_usize as usize)) = ('b' as libc::c_char);
+    (*(&mut s2).as_mut_ptr().add(1_usize as usize)) = ('b' as libc::c_char);
+    (*(&mut s2).as_mut_ptr().add(2_usize as usize)) = ('b' as libc::c_char);
     assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<libc::c_char> = &mut s2;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut s2).as_mut_ptr().add(0_usize as usize)) as i32)
             == (('b' as libc::c_char) as i32))
     );
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<libc::c_char> = &mut s2;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut s2).as_mut_ptr().add(1_usize as usize)) as i32)
             == (('b' as libc::c_char) as i32))
     );
     assert!(
-        (((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<libc::c_char> = &mut s2;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut s2).as_mut_ptr().add(2_usize as usize)) as i32)
             == (('b' as libc::c_char) as i32))
     );
     assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<libc::c_char> = &mut s1;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut s1).as_mut_ptr().add(0_usize as usize)) as i32)
             == (('a' as libc::c_char) as i32))
     );
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<libc::c_char> = &mut s1;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut s1).as_mut_ptr().add(1_usize as usize)) as i32)
             == (('a' as libc::c_char) as i32))
     );
     assert!(
-        (((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<libc::c_char> = &mut s1;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut s1).as_mut_ptr().add(2_usize as usize)) as i32)
             == (('a' as libc::c_char) as i32))
     );
     let mut b1: Bar = Bar { w: 1 };

@@ -15,11 +15,9 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut vec_: Vec<u8> = Vec::from([195_u8, 167_u8]);
     let mut i: i32 = 27;
-    let mut str: Vec<libc::c_char> = {
-        let __s = c"bar.".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut str: Vec<libc::c_char> =
+        std::slice::from_raw_parts(c"bar.".as_ptr(), libcc2rs::c_str_len(c"bar.".as_ptr()) + 1)
+            .to_vec();
     {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*{
@@ -69,12 +67,13 @@ unsafe fn main_0() -> i32 {
                                                         __s
                                                     });
                                                     let __s: *mut ::std::fs::File = __r;
+                                                    let mut __bytes = Vec::new();
+                                                    for &__c in &str[..str.len().saturating_sub(1)]
+                                                    {
+                                                        __c.push_stream_bytes(&mut __bytes);
+                                                    }
                                                     let _ = ::std::io::Write::write_all(
-                                                        &mut *__s,
-                                                        &str[..str.len().saturating_sub(1)]
-                                                            .iter()
-                                                            .map(|&__c| __c as u8)
-                                                            .collect::<Vec<u8>>(),
+                                                        &mut *__s, &__bytes,
                                                     );
                                                     __s
                                                 });

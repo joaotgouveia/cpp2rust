@@ -13,13 +13,13 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut empty: Vec<libc::c_char> = vec![0];
+    let mut empty: Vec<libc::c_char> = vec![libc::c_char::default()];
     assert!(((empty.len() - 1) == (0_usize)));
-    let mut s1: Vec<libc::c_char> = {
-        let __s = c"hello".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut s1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"hello".as_ptr(),
+        libcc2rs::c_str_len(c"hello".as_ptr()) + 1,
+    )
+    .to_vec();
     assert!(((s1.len() - 1) == (5_usize)));
     assert!(((s1.len() - 1) == (s1.len() - 1)));
     assert!(
@@ -43,25 +43,26 @@ unsafe fn main_0() -> i32 {
             == (('o' as libc::c_char) as i32))
     );
     assert!(
-        s1 == {
-            let __s = c"hello".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        }
+        s1 == std::slice::from_raw_parts(
+            c"hello".as_ptr(),
+            libcc2rs::c_str_len(c"hello".as_ptr()) + 1
+        )
+        .to_vec()
     );
     assert!(
-        !(s1 == {
-            let __s = c"world".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        })
+        !(s1 == std::slice::from_raw_parts(
+            c"world".as_ptr(),
+            libcc2rs::c_str_len(c"world".as_ptr()) + 1
+        )
+        .to_vec())
     );
     assert!(
-        !(!(s1 == {
-            let __s = c"hello".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        }))
+        !(!(s1
+            == std::slice::from_raw_parts(
+                c"hello".as_ptr(),
+                libcc2rs::c_str_len(c"hello".as_ptr()) + 1
+            )
+            .to_vec()))
     );
     let mut p1: *const libc::c_char = (s1.as_mut_ptr()).cast_const();
     assert!((((*p1.offset((0) as isize)) as i32) == (('h' as libc::c_char) as i32)));
@@ -72,7 +73,7 @@ unsafe fn main_0() -> i32 {
     let mut s2: Vec<libc::c_char> = vec![('a' as libc::c_char); (10_usize) as usize]
         .iter()
         .cloned()
-        .chain(std::iter::once(0))
+        .chain(std::iter::once((0 as libc::c_char)))
         .collect();
     let mut p2: *const libc::c_char = (s2.as_mut_ptr()).cast_const();
     let mut i: u32 = 0_u32;
@@ -109,7 +110,7 @@ unsafe fn main_0() -> i32 {
         let mut __tmp1 = s2
             [(2_usize) as usize..::std::cmp::min((2_usize + 5_usize) as usize, s2.len() - 1)]
             .to_vec();
-        __tmp1.push(0);
+        __tmp1.push((0 as libc::c_char));
         __tmp1
     };
     assert!(((s3.len() - 1) == (5_usize)));
@@ -129,12 +130,15 @@ unsafe fn main_0() -> i32 {
                 (1_usize + {
                     let __n = s1.len().saturating_sub(1);
                     let __end = usize::MAX.saturating_add(1).min(__n);
-                    match s1.iter().take(__end).rposition(|&__c| {
-                        ::std::ffi::CStr::from_ptr(c"l".as_ptr())
-                            .to_str()
-                            .unwrap()
-                            .contains(__c as u8 as char)
-                    }) {
+                    let __lookup = ::std::slice::from_raw_parts(
+                        c"l".as_ptr(),
+                        libcc2rs::c_str_len(c"l".as_ptr()),
+                    );
+                    match s1
+                        .iter()
+                        .take(__end)
+                        .rposition(|__c| __lookup.contains(__c))
+                    {
                         Some(__idx) => __idx,
                         None => usize::MAX,
                     }
@@ -142,7 +146,7 @@ unsafe fn main_0() -> i32 {
                 s1.len() - 1,
             )]
             .to_vec();
-        __tmp1.push(0);
+        __tmp1.push((0 as libc::c_char));
         __tmp1
     };
     assert!(((s4.len() - 1) == (3_usize)));
@@ -159,12 +163,11 @@ unsafe fn main_0() -> i32 {
     let mut s5: Vec<libc::c_char> = {
         let mut __tmp2 = s1.clone();
         __tmp2.pop();
-        let __from = c", world".as_ptr();
         __tmp2.extend_from_slice(::std::slice::from_raw_parts(
-            __from,
-            (0..).position(|i| *__from.add(i) == 0).unwrap(),
+            c", world".as_ptr(),
+            libcc2rs::c_str_len(c", world".as_ptr()),
         ));
-        __tmp2.push(0);
+        __tmp2.push((0 as libc::c_char));
         __tmp2
     };
     assert!(((s5.len() - 1) == (12_usize)));
@@ -192,7 +195,7 @@ unsafe fn main_0() -> i32 {
             .to_vec()
             .iter()
             .copied()
-            .chain(std::iter::once(0))
+            .chain(std::iter::once((0 as libc::c_char)))
             .collect();
     assert!(((string.len() - 1) == (3_usize)));
     assert!(
@@ -208,16 +211,17 @@ unsafe fn main_0() -> i32 {
             == (('r' as libc::c_char) as i32))
     );
     assert!(
-        string == {
-            let __s = c"bar".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        }
+        string
+            == std::slice::from_raw_parts(
+                c"bar".as_ptr(),
+                libcc2rs::c_str_len(c"bar".as_ptr()) + 1
+            )
+            .to_vec()
     );
     {
         string.pop();
-        string.resize((3_usize) as usize, 0);
-        string.push(0)
+        string.resize((3_usize) as usize, (0 as libc::c_char));
+        string.push((0 as libc::c_char))
     };
     assert!(((string.len() - 1) == (3_usize)));
     assert!(
@@ -233,16 +237,17 @@ unsafe fn main_0() -> i32 {
             == (('r' as libc::c_char) as i32))
     );
     assert!(
-        string == {
-            let __s = c"bar".as_ptr();
-            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-                .to_vec()
-        }
+        string
+            == std::slice::from_raw_parts(
+                c"bar".as_ptr(),
+                libcc2rs::c_str_len(c"bar".as_ptr()) + 1
+            )
+            .to_vec()
     );
     {
         string.pop();
-        string.resize((5_usize) as usize, 0);
-        string.push(0)
+        string.resize((5_usize) as usize, (0 as libc::c_char));
+        string.push((0 as libc::c_char))
     };
     assert!(((string.len() - 1) == (5_usize)));
     assert!(
@@ -273,8 +278,8 @@ unsafe fn main_0() -> i32 {
     (*(&mut string).as_mut_ptr().add(4_usize as usize)) = (0 as libc::c_char);
     {
         string.pop();
-        string.resize((4_usize) as usize, 0);
-        string.push(0)
+        string.resize((4_usize) as usize, (0 as libc::c_char));
+        string.push((0 as libc::c_char))
     };
     assert!(((string.len() - 1) == (4_usize)));
     assert!(
@@ -293,12 +298,11 @@ unsafe fn main_0() -> i32 {
     let mut result: Vec<libc::c_char> = {
         let mut __tmp2 = string.clone();
         __tmp2.pop();
-        let __from = c" foo".as_ptr();
         __tmp2.extend_from_slice(::std::slice::from_raw_parts(
-            __from,
-            (0..).position(|i| *__from.add(i) == 0).unwrap(),
+            c" foo".as_ptr(),
+            libcc2rs::c_str_len(c" foo".as_ptr()),
         ));
-        __tmp2.push(0);
+        __tmp2.push((0 as libc::c_char));
         __tmp2
     };
     assert!(((result.len() - 1) == (8_usize)));
@@ -335,7 +339,7 @@ unsafe fn main_0() -> i32 {
         let mut __tmp1 = result
             [(5_usize) as usize..::std::cmp::min((5_usize + 3_usize) as usize, result.len() - 1)]
             .to_vec();
-        __tmp1.push(0);
+        __tmp1.push((0 as libc::c_char));
         __tmp1
     };
     assert!(((substr_0.len() - 1) == (3_usize)));
@@ -355,7 +359,7 @@ unsafe fn main_0() -> i32 {
         let mut __tmp1 = result
             [(0_usize) as usize..::std::cmp::min((0_usize + 5_usize) as usize, result.len() - 1)]
             .to_vec();
-        __tmp1.push(0);
+        __tmp1.push((0 as libc::c_char));
         __tmp1
     };
     assert!(((substr_1.len() - 1) == (5_usize)));
@@ -380,7 +384,7 @@ unsafe fn main_0() -> i32 {
         let mut __tmp1 = result
             [(0_usize) as usize..::std::cmp::min((0_usize + 15_usize) as usize, result.len() - 1)]
             .to_vec();
-        __tmp1.push(0);
+        __tmp1.push((0 as libc::c_char));
         __tmp1
     };
     assert!(((substr_2.len() - 1) == (8_usize)));
@@ -416,12 +420,13 @@ unsafe fn main_0() -> i32 {
     let mut pos: usize = {
         let __n = result.len().saturating_sub(1);
         let __end = usize::MAX.saturating_add(1).min(__n);
-        match result.iter().take(__end).rposition(|&__c| {
-            ::std::ffi::CStr::from_ptr(c"b".as_ptr())
-                .to_str()
-                .unwrap()
-                .contains(__c as u8 as char)
-        }) {
+        let __lookup =
+            ::std::slice::from_raw_parts(c"b".as_ptr(), libcc2rs::c_str_len(c"b".as_ptr()));
+        match result
+            .iter()
+            .take(__end)
+            .rposition(|__c| __lookup.contains(__c))
+        {
             Some(__idx) => __idx,
             None => usize::MAX,
         }
@@ -430,12 +435,13 @@ unsafe fn main_0() -> i32 {
     pos = {
         let __n = result.len().saturating_sub(1);
         let __end = usize::MAX.saturating_add(1).min(__n);
-        match result.iter().take(__end).rposition(|&__c| {
-            ::std::ffi::CStr::from_ptr(c"f".as_ptr())
-                .to_str()
-                .unwrap()
-                .contains(__c as u8 as char)
-        }) {
+        let __lookup =
+            ::std::slice::from_raw_parts(c"f".as_ptr(), libcc2rs::c_str_len(c"f".as_ptr()));
+        match result
+            .iter()
+            .take(__end)
+            .rposition(|__c| __lookup.contains(__c))
+        {
             Some(__idx) => __idx,
             None => usize::MAX,
         }
@@ -444,12 +450,13 @@ unsafe fn main_0() -> i32 {
     pos = {
         let __n = result.len().saturating_sub(1);
         let __end = usize::MAX.saturating_add(1).min(__n);
-        match result.iter().take(__end).rposition(|&__c| {
-            ::std::ffi::CStr::from_ptr(c"o".as_ptr())
-                .to_str()
-                .unwrap()
-                .contains(__c as u8 as char)
-        }) {
+        let __lookup =
+            ::std::slice::from_raw_parts(c"o".as_ptr(), libcc2rs::c_str_len(c"o".as_ptr()));
+        match result
+            .iter()
+            .take(__end)
+            .rposition(|__c| __lookup.contains(__c))
+        {
             Some(__idx) => __idx,
             None => usize::MAX,
         }
@@ -458,12 +465,13 @@ unsafe fn main_0() -> i32 {
     pos = {
         let __n = result.len().saturating_sub(1);
         let __end = usize::MAX.saturating_add(1).min(__n);
-        match result.iter().take(__end).rposition(|&__c| {
-            ::std::ffi::CStr::from_ptr(c"x".as_ptr())
-                .to_str()
-                .unwrap()
-                .contains(__c as u8 as char)
-        }) {
+        let __lookup =
+            ::std::slice::from_raw_parts(c"x".as_ptr(), libcc2rs::c_str_len(c"x".as_ptr()));
+        match result
+            .iter()
+            .take(__end)
+            .rposition(|__c| __lookup.contains(__c))
+        {
             Some(__idx) => __idx,
             None => usize::MAX,
         }
@@ -471,7 +479,8 @@ unsafe fn main_0() -> i32 {
     assert!(((pos) == ((-1_i64 as u64) as usize)));
     pos = {
         let __hay = &result[..result.len() - 1];
-        let __needle = ::std::slice::from_raw_parts(c"f".as_ptr(), libc::strlen(c"f".as_ptr()));
+        let __needle =
+            ::std::slice::from_raw_parts(c"f".as_ptr(), libcc2rs::c_str_len(c"f".as_ptr()));
         (0_usize..=__hay.len().saturating_sub(__needle.len()))
             .find(|&__i| __hay[__i..].starts_with(__needle))
             .unwrap_or(usize::MAX)
@@ -479,7 +488,8 @@ unsafe fn main_0() -> i32 {
     assert!(((pos) == (5_usize)));
     pos = {
         let __hay = &result[..result.len() - 1];
-        let __needle = ::std::slice::from_raw_parts(c"oo".as_ptr(), libc::strlen(c"oo".as_ptr()));
+        let __needle =
+            ::std::slice::from_raw_parts(c"oo".as_ptr(), libcc2rs::c_str_len(c"oo".as_ptr()));
         (0_usize..=__hay.len().saturating_sub(__needle.len()))
             .find(|&__i| __hay[__i..].starts_with(__needle))
             .unwrap_or(usize::MAX)
@@ -487,17 +497,16 @@ unsafe fn main_0() -> i32 {
     assert!(((pos) == (6_usize)));
     pos = {
         let __hay = &result[..result.len() - 1];
-        let __needle = ::std::slice::from_raw_parts(c"x".as_ptr(), libc::strlen(c"x".as_ptr()));
+        let __needle =
+            ::std::slice::from_raw_parts(c"x".as_ptr(), libcc2rs::c_str_len(c"x".as_ptr()));
         (0_usize..=__hay.len().saturating_sub(__needle.len()))
             .find(|&__i| __hay[__i..].starts_with(__needle))
             .unwrap_or(usize::MAX)
     };
     assert!(((pos) == ((-1_i64 as u64) as usize)));
-    let mut string_to_cast: Vec<libc::c_char> = {
-        let __s = c"cast".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut string_to_cast: Vec<libc::c_char> =
+        std::slice::from_raw_parts(c"cast".as_ptr(), libcc2rs::c_str_len(c"cast".as_ptr()) + 1)
+            .to_vec();
     let mut output_data: *mut u8 =
         ((&mut (*(&mut string_to_cast).as_mut_ptr().add(0_usize as usize)) as *mut libc::c_char)
             as *mut libc::c_char as *mut u8);

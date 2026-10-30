@@ -60,7 +60,7 @@ thread_local!(
 thread_local!(
     pub static str_9: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
 );

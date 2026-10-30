@@ -322,7 +322,17 @@ fn main_0() -> i32 {
                 == 10)
     );
     assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    unimplemented!();
+    {
+        let __src = m2
+            .as_pointer()
+            .with_mut(|__m: &mut Map<i32, (Value<i32>, Value<Tracked>)>| std::mem::take(__m));
+        let __dst = m1
+            .as_pointer()
+            .with_mut(|__m: &mut Map<i32, (Value<i32>, Value<Tracked>)>| {
+                std::mem::replace(__m, __src)
+            });
+        m2.as_pointer().write(__dst)
+    };
     assert!(
         ((*m1.borrow()).len() == 1_usize)
             && (Map::subscript_move(
@@ -495,7 +505,17 @@ fn main_0() -> i32 {
                 .with(|__s| __s.v)
                 == 2)
     );
-    unimplemented!();
+    {
+        let __src = grid
+            .decay()
+            .offset(1_usize as isize)
+            .with_mut(|__v: &mut Vec<Tracked>| std::mem::take(__v));
+        let __dst = grid
+            .decay()
+            .offset(0_usize as isize)
+            .with_mut(|__v: &mut Vec<Tracked>| std::mem::replace(__v, __src));
+        grid.decay().offset(1_usize as isize).write(__dst)
+    };
     assert!(
         ((*grid.decay().offset(0_usize as isize).upgrade().deref()).len() == 1_usize)
             && (grid
@@ -534,7 +554,19 @@ fn main_0() -> i32 {
             _o.as_pointer(),
         )
     });
-    unimplemented!();
+    {
+        let __src = (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>)
+            .offset(1)
+            .with_mut(|__m: &mut Map<i32, (Value<i32>, Value<Tracked>)>| std::mem::take(__m));
+        let __dst = (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>)
+            .offset(0)
+            .with_mut(|__m: &mut Map<i32, (Value<i32>, Value<Tracked>)>| {
+                std::mem::replace(__m, __src)
+            });
+        (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>)
+            .offset(1)
+            .write(__dst)
+    };
     assert!(
         ((*maps.borrow())[(0) as usize].len() == 1_usize)
             && (Map::subscript_move(

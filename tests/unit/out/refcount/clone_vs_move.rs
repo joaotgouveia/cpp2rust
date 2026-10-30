@@ -291,7 +291,7 @@ fn main_0() -> i32 {
         vec![('a' as i8); (3_usize) as usize]
             .iter()
             .cloned()
-            .chain(std::iter::once(0))
+            .chain(std::iter::once(0_i8))
             .collect(),
     ));
     let s2: Value<Vec<i8>> = Rc::new(RefCell::new((*s1.borrow()).clone()));

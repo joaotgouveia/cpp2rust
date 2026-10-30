@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"ABCD").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     let mut bytes: Ptr<u8> = s.decay().reinterpret_cast::<u8>();

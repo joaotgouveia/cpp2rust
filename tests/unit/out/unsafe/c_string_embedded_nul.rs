@@ -24,11 +24,11 @@ unsafe fn main_0() -> i32 {
     libc::fputs((buf.as_mut_ptr()).cast_const(), libcc2rs::stdout_unsafe());
     libc::fputc((('|' as libc::c_char) as i32), libcc2rs::stdout_unsafe());
     libc::puts((buf.as_mut_ptr()).cast_const());
-    let mut s: Vec<libc::c_char> = {
-        let __s = (buf.as_mut_ptr()).cast_const();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+        (buf.as_mut_ptr()).cast_const(),
+        libcc2rs::c_str_len((buf.as_mut_ptr()).cast_const()) + 1,
+    )
+    .to_vec();
     (unsafe { libc::printf(c"%zu\n".as_ptr() as *const libc::c_char, (s.len() - 1)) });
     (unsafe {
         libc::printf(
@@ -37,12 +37,11 @@ unsafe fn main_0() -> i32 {
             ({
                 let __n = s.len().saturating_sub(1);
                 let __end = usize::MAX.saturating_add(1).min(__n);
-                match s.iter().take(__end).rposition(|&__c| {
-                    ::std::ffi::CStr::from_ptr((buf.as_mut_ptr()).cast_const())
-                        .to_str()
-                        .unwrap()
-                        .contains(__c as u8 as char)
-                }) {
+                let __lookup = ::std::slice::from_raw_parts(
+                    (buf.as_mut_ptr()).cast_const(),
+                    libcc2rs::c_str_len((buf.as_mut_ptr()).cast_const()),
+                );
+                match s.iter().take(__end).rposition(|__c| __lookup.contains(__c)) {
                     Some(__idx) => __idx,
                     None => usize::MAX,
                 }
@@ -58,11 +57,8 @@ unsafe fn main_0() -> i32 {
         (0 as libc::c_char),
     ])
         .as_ptr();
-    let mut t: Vec<libc::c_char> = {
-        let __s = lit;
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut t: Vec<libc::c_char> =
+        std::slice::from_raw_parts(lit, libcc2rs::c_str_len(lit) + 1).to_vec();
     (unsafe { libc::printf(c"%zu\n".as_ptr() as *const libc::c_char, (t.len() - 1)) });
     return 0;
 }

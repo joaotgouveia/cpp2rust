@@ -383,7 +383,7 @@ unsafe fn main_0() -> i32 {
             && (((*m1.subscript_move(&mut 2, |__k| cpp_move_unsafe!(__k))).v) == (10))
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    unimplemented!();
+    std::ptr::swap(&mut m1, &mut m2);
     assert!(
         ((m1.len()) == (1_usize))
             && (((*m1.subscript_move(&mut 3, |__k| cpp_move_unsafe!(__k))).v) == (30))
@@ -487,7 +487,10 @@ unsafe fn main_0() -> i32 {
                 .add(0_usize as usize))
             .v) == (2))
     );
-    unimplemented!();
+    std::ptr::swap(
+        (&mut grid).as_mut_ptr().add(0_usize as usize),
+        (&mut grid).as_mut_ptr().add(1_usize as usize),
+    );
     assert!(
         (((*(&mut grid).as_mut_ptr().add(0_usize as usize)).len()) == (1_usize))
             && (((*(&mut (*(&mut grid).as_mut_ptr().add(0_usize as usize)))
@@ -512,7 +515,7 @@ unsafe fn main_0() -> i32 {
             &mut _o,
         )
     });
-    unimplemented!();
+    std::ptr::swap(&mut maps[(0) as usize], &mut maps[(1) as usize]);
     assert!(
         ((maps[(0) as usize].len()) == (1_usize))
             && (((*maps[(0) as usize].subscript_move(&mut 2, |__k| cpp_move_unsafe!(__k))).v)

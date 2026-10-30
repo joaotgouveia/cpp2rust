@@ -13,11 +13,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut str: Vec<libc::c_char> = {
-        let __s = c"Hello, world!\n".as_ptr();
-        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
-            .to_vec()
-    };
+    let mut str: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"Hello, world!\n".as_ptr(),
+        libcc2rs::c_str_len(c"Hello, world!\n".as_ptr()) + 1,
+    )
+    .to_vec();
     let file: [libc::c_char; 25] = std::mem::transmute(*b"test_stdcopy_ostream.txt\0");
     {
         let mut ofs: ::std::fs::File =
