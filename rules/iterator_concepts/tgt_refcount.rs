@@ -114,3 +114,7 @@ fn t1<T1: CppIterator<T2>, T2>() -> BidirectionalIterator<T2> {
 fn t2<T1: CppIterator<T2>, T2>() -> RandomAccessIterator<T2> {
     RandomAccessIterator::default()
 }
+
+fn f37<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> std::cmp::Ordering {
+    a0.partial_cmp(&a1).unwrap()
+}

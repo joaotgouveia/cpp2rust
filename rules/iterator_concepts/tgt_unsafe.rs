@@ -114,3 +114,7 @@ fn t1<T1: UnsafeCppIterator<T2>, T2>() -> UnsafeBidirectionalIterator<T2> {
 fn t2<T1: UnsafeCppIterator<T2>, T2>() -> UnsafeRandomAccessIterator<T2> {
     UnsafeRandomAccessIterator::default()
 }
+
+unsafe fn f37<T1: UnsafeCppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> std::cmp::Ordering {
+    a0.partial_cmp(&a1).unwrap()
+}

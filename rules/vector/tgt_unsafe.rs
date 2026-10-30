@@ -80,8 +80,12 @@ unsafe fn f146<T1>(a0: &mut Vec<T1>, a1: usize) {
     }
 }
 
-unsafe fn f149<T1>(a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
-    (&mut (a0)[a1 as usize] as *mut T1)
+unsafe fn f149<T1>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
+    if a1 as usize >= (&mut a0).len() {
+        panic!("out of bounds access")
+    } else {
+        (&mut a0).as_mut_ptr().add(a1 as usize)
+    }
 }
 
 unsafe fn f150<T1: Copy>(a0: &Vec<T1>, a1: usize) -> *const T1 {

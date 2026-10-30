@@ -112,12 +112,12 @@ unsafe fn main_0() -> i32 {
         .add(0_usize as usize)) =
         std::slice::from_raw_parts(c"z".as_ptr(), libcc2rs::c_str_len(c"z".as_ptr()) + 1).to_vec();
     (*if 0_usize as usize
-        >= (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+        >= (&mut (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
-            .add(1_usize as usize))
-        .len()
+            .add(1_usize as usize)))
+            .len()
             - 1
     {
         panic!("out of bounds access")
@@ -126,7 +126,9 @@ unsafe fn main_0() -> i32 {
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
-            .add(1_usize as usize))[0_usize as usize] as *mut libc::c_char)
+            .add(1_usize as usize)))
+            .as_mut_ptr()
+            .add(0_usize as usize)
     }) = ('B' as libc::c_char);
     assert!(
         ((*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
