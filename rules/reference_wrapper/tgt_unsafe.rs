@@ -20,3 +20,7 @@ fn t1<T1>() -> *mut T1 {
 fn t2<T1>() -> T1 {
     unimplemented!()
 }
+
+unsafe fn f1<T1>(a0: *mut T1) -> *mut T1 {
+    a0
+}

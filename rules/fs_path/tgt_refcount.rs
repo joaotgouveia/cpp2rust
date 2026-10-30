@@ -14,3 +14,10 @@ fn t2() -> Vec<i8> {
 fn t4() -> Vec<i8> {
     vec![0]
 }
+
+fn f74<T1>(a0: Ptr<i8>) -> Vec<i8> {
+    let mut __v = Vec::new();
+    a0.with_c_str(|__s| __v.extend_from_slice(__s));
+    __v.push(0);
+    __v
+}

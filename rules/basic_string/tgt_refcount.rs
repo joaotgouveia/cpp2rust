@@ -209,3 +209,9 @@ fn f203<T1, T2, T3>(a0: Vec<i8>, a1: Ptr<i8>) -> bool {
 fn f51<T1, T2, T3>(a0: Ptr<i8>, a1: usize) -> Ptr<i8> {
     a0.offset(a1 as isize)
 }
+
+fn f200<T1, T2, T3>(a0: Ptr<::std::fs::File>, a1: Vec<i8>) -> Ptr<::std::fs::File> {
+    let __s = a0;
+    let _ = __s.write_all(&a1[..a1.len().saturating_sub(1)].iter().map(|&__c| __c as u8).collect::<Vec<u8>>());
+    __s
+}

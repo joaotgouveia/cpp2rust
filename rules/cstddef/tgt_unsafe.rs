@@ -36,3 +36,10 @@ fn t1005() -> usize {
 fn t1006() -> isize {
     0_isize
 }
+
+fn f3<T1>(a0: u8, a1: T1) -> u8
+where
+    u8: ::std::ops::Shl<T1, Output = u8>,
+{
+    a0 << a1
+}

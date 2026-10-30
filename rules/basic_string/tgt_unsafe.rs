@@ -227,3 +227,10 @@ unsafe fn f51<T1, T2, T3>(mut a0: &mut Vec<libc::c_char>, a1: usize) -> *mut lib
 unsafe fn f183<T1, T2, T3>() -> usize {
     usize::MAX
 }
+
+unsafe fn f200<T1, T2, T3>(mut a0: &mut ::std::fs::File, a1: Vec<libc::c_char>) -> *mut ::std::fs::File {
+    let __r: &mut ::std::fs::File = &mut a0;
+    let __s: *mut ::std::fs::File = __r;
+    let _ = ::std::io::Write::write_all(&mut *__s, &a1[..a1.len().saturating_sub(1)].iter().map(|&__c| __c as u8).collect::<Vec<u8>>());
+    __s
+}

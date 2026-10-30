@@ -1,0 +1,22 @@
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
+use std::io::Write;
+
+fn t1<T1, T2>() -> ::std::fs::File {
+    ::std::fs::File::open("").unwrap()
+}
+
+unsafe fn f7<T1, T2>(mut a0: &mut ::std::fs::File, a1: bool) -> *mut ::std::fs::File {
+    let __r: &mut ::std::fs::File = &mut a0;
+    let __s: *mut ::std::fs::File = __r;
+    let _ = write!(*__s, "{}", a1 as i32);
+    __s
+}
+
+unsafe fn f10<T1, T2>(mut a0: &mut ::std::fs::File, a1: i32) -> *mut ::std::fs::File {
+    let __r: &mut ::std::fs::File = &mut a0;
+    let __s: *mut ::std::fs::File = __r;
+    let _ = write!(*__s, "{}", a1);
+    __s
+}

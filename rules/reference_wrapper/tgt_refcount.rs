@@ -18,3 +18,7 @@ fn f5<T1>(a0: Ptr<T1>) -> Ptr<T1> {
 fn t1<T1>() -> Ptr<T1> {
     Ptr::null()
 }
+
+fn f1<T1>(a0: Ptr<T1>) -> Ptr<T1> {
+    a0
+}
