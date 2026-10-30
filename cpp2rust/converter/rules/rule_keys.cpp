@@ -310,6 +310,11 @@ std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
       if (auto parent = getParent(operand->getType())) {
         return getConstructorKey(parent);
       }
+      // or of any class (static_cast<bool>(a0) of const N &)
+      if (operand->getType().getNonReferenceType()->getAs<
+              clang::TemplateTypeParmType>()) {
+        return kAnyConstructor;
+      }
     }
     return GetExprKey(ctx, cast->getSubExpr());
   }

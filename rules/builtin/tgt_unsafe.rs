@@ -71,6 +71,6 @@ unsafe fn f18(a0: *const ::core::ffi::c_char) -> f32 {
     f32::NAN
 }
 
-unsafe fn f19() -> bool {
-    false
+unsafe fn f19(a0: *const libc::c_char) -> f64 {
+    f64::NAN
 }

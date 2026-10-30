@@ -24,8 +24,6 @@ import re
 import sys
 from pathlib import Path
 
-RE_COMMENT = re.compile(r"//[^\n]*|/\*.*?\*/", re.S)
-RE_STRING = re.compile(r'b?"(?:\\.|[^"\\])*"')
 RE_DEFINED = re.compile(
     r"\b(?:fn|struct|enum|union|type|const|static(?:\s+mut)?|trait|mod|macro_rules!)"
     r"\s+(\w+)"
@@ -42,8 +40,48 @@ RE_CANNOT_FIND = re.compile(
 RE_TEST_BLOCK = re.compile(r"\*{20} TEST '(cpp2rust :: [^']+)' FAILED \*{20}\n")
 
 
+RE_CHAR = re.compile(r"b?'(?:\\(?:u\{[0-9a-fA-F]+\}|x[0-9a-fA-F]{2}|.)|[^\\'\n])'")
+RE_RAW_STRING = re.compile(r'b?r(#*)"')
+
+
 def strip(text):
-    return RE_STRING.sub('""', RE_COMMENT.sub("", text))
+    """Blanks comments, string and char literals, keeping all code."""
+    out = []
+    i, n = 0, len(text)
+    while i < n:
+        c = text[i]
+        if text.startswith("//", i):
+            j = text.find("\n", i)
+            i = n if j < 0 else j
+        elif text.startswith("/*", i):
+            depth, i = 1, i + 2
+            while i < n and depth:
+                if text.startswith("/*", i):
+                    depth, i = depth + 1, i + 2
+                elif text.startswith("*/", i):
+                    depth, i = depth - 1, i + 2
+                else:
+                    i += 1
+        elif (m := RE_RAW_STRING.match(text, i)) and (i == 0 or not (
+                text[i - 1].isalnum() or text[i - 1] == "_")):
+            end = text.find('"' + m.group(1), m.end())
+            i = n if end < 0 else end + 1 + len(m.group(1))
+            out.append('""')
+        elif c == '"' or (c == "b" and text.startswith('b"', i) and (
+                i == 0 or not (text[i - 1].isalnum() or text[i - 1] == "_"))):
+            i += 1 if c == '"' else 2
+            while i < n and text[i] != '"':
+                i += 2 if text[i] == "\\" else 1
+            i += 1
+            out.append('""')
+        elif c in "'b" and (m := RE_CHAR.match(text, i)) and (
+                c == "'" or i == 0 or not (text[i - 1].isalnum() or text[i - 1] == "_")):
+            i = m.end()
+            out.append("' '")
+        else:
+            out.append(c)
+            i += 1
+    return "".join(out)
 
 
 def defined_names(text):

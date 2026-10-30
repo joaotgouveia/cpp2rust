@@ -16,3 +16,15 @@ unsafe fn f3(a0: f64) -> f64 {
 unsafe fn f99(a0: f64) -> f64 {
     a0.log2()
 }
+
+unsafe fn f167(a0: *const ::core::ffi::c_char) -> f64 {
+    f64::NAN
+}
+
+unsafe fn f168(a0: *const ::core::ffi::c_char) -> f32 {
+    f32::NAN
+}
+
+unsafe fn f169(a0: *const ::core::ffi::c_char) -> f64 {
+    f64::NAN
+}

@@ -219,9 +219,7 @@ unsafe fn f203<T1, T2, T3>(a0: Vec<libc::c_char>, a1: *const libc::c_char) -> bo
 }
 
 unsafe fn f51<T1, T2, T3>(mut a0: &mut Vec<libc::c_char>, a1: usize) -> *mut libc::c_char {
-    let __idx = a1 as usize;
-    let __v: &mut Vec<libc::c_char> = &mut a0;
-    __v.as_mut_ptr().add(__idx)
+    (&mut a0).as_mut_ptr().add(a1 as usize)
 }
 
 unsafe fn f183<T1, T2, T3>() -> usize {

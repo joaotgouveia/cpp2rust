@@ -165,9 +165,14 @@ private:
   void AddReferencedDecl(const clang::ValueDecl *decl) {
     AddType(decl->getType());
     // a member uses the class declaring it, also when named through a derived
-    // class (std::ios::xalloc of ios_base)
-    if (const auto *record =
-            llvm::dyn_cast<clang::RecordDecl>(decl->getDeclContext())) {
+    // class (std::ios::xalloc of ios_base); an enumerator is a member of the
+    // class declaring its enumeration (codecvt<wchar_t, ...>::ok of
+    // codecvt_base)
+    const auto *context = decl->getDeclContext();
+    if (llvm::isa<clang::EnumDecl>(context)) {
+      context = context->getParent();
+    }
+    if (const auto *record = llvm::dyn_cast<clang::RecordDecl>(context)) {
       AddKey(ClassKey(record));
     }
     if (const auto *fn = llvm::dyn_cast<clang::FunctionDecl>(decl)) {
@@ -264,6 +269,22 @@ private:
           method->isCopyAssignmentOperator() ||
           method->isMoveAssignmentOperator()) {
         AddKey(FunctionKey(method));
+      }
+    }
+    // a class may be constructed inside the library (path of
+    // pair<path, path>{"", ""}), whose constructor rules require the types of
+    // the constructor parameters (path::format of path(const T1 &, format))
+    for (const auto *decl : record->getDefinition()->decls()) {
+      const clang::FunctionDecl *ctor = nullptr;
+      if (auto tmpl = llvm::dyn_cast<clang::FunctionTemplateDecl>(decl)) {
+        ctor = tmpl->getTemplatedDecl();
+      } else {
+        ctor = llvm::dyn_cast<clang::FunctionDecl>(decl);
+      }
+      if (ctor && llvm::isa<clang::CXXConstructorDecl>(ctor)) {
+        for (const auto *param : ctor->parameters()) {
+          AddType(param->getType());
+        }
       }
     }
   }

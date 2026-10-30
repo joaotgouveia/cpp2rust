@@ -6,6 +6,10 @@
 typedef mbstate_t t1;
 typedef wint_t t2;
 
+#ifdef __GLIBC__
+typedef __mbstate_t t3;
+#endif
+
 wchar_t *f1(wchar_t *dst, const wchar_t *src) { return wcscpy(dst, src); }
 
 #include <stdio.h>

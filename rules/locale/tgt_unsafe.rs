@@ -4,3 +4,7 @@
 unsafe fn f1(a0: i32, a1: *const libc::c_char) -> *mut libc::c_char {
     libc::setlocale(a0, a1)
 }
+
+fn t1() -> ::libc::lconv {
+    unsafe { std::mem::zeroed() }
+}

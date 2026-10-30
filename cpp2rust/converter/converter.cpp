@@ -4172,13 +4172,16 @@ std::string Converter::GetDefaultAsString(clang::QualType qual_type) {
 }
 
 std::string Converter::GetDefaultAsStringFallback(clang::QualType qual_type) {
-  qual_type = qual_type.getUnqualifiedType().getCanonicalType();
+  // the type as written names the rule (mbstate_t, not glibc's anonymous
+  // struct behind it)
+  auto written = qual_type.getUnqualifiedType();
+  qual_type = written.getCanonicalType();
 
   if (auto record = qual_type->getAsRecordDecl()) {
     if (ctx_.getSourceManager().isInSystemHeader(record->getLocation()) &&
         qual_type.isPODType(ctx_)) {
       return std::format("unsafe {{ std::mem::zeroed::<{}>() }}",
-                         ToString(qual_type));
+                         ToString(written));
     }
   }
 
@@ -4577,11 +4580,8 @@ void Converter::ConvertOrdAndPartialOrdTraitsBase(
     StrCat("}}}");
 
     StrCat(keyword::kImpl, "std::cmp::PartialOrd for", record_name, '{');
-    StrCat(R"(
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-      Some(self.cmp(other))
-    }
-  })");
+    StrCat("fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> "
+           "{ Some(self.cmp(other)) }}");
   }
 
   StrCat(keyword::kImpl, "std::cmp::PartialEq for", record_name, '{');

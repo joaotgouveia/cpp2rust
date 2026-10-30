@@ -334,3 +334,9 @@ double f164(double a0, double a1) { return remainder(a0, a1); }
 float f165(float a0) { return fabsf(a0); }
 
 long double f166(long double a0) { return fabsl(a0); }
+
+double f167(const char *a0) { return nan(a0); }
+
+float f168(const char *a0) { return nanf(a0); }
+
+long double f169(const char *a0) { return nanl(a0); }

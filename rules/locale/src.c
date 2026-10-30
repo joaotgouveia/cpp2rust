@@ -3,6 +3,8 @@
 
 #include <locale.h>
 
+typedef struct lconv t1;
+
 char *f1(int category, const char *locale) {
   return setlocale(category, locale);
 }
