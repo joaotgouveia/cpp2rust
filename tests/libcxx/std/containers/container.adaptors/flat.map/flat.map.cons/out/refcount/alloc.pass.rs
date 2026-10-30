@@ -434,26 +434,14 @@ pub struct test_less_int_ {
 }
 impl test_less_int_ {}
 pub fn test_4() {
-    let m: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<test_allocator_short_> =
-            Rc::new(RefCell::new(test_allocator_short_::new_1({ 0_() }, {
-                5_()
-            })));
-        std_flat_map_int__long__std_less_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { __tmp_0.as_pointer() } , )
-    }));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_5() {
-    let m: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<test_allocator_short_> =
-            Rc::new(RefCell::new(test_allocator_short_::new_1({ 0_() }, {
-                5_()
-            })));
-        std_flat_map_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { __tmp_1.as_pointer() } , )
-    }));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -461,13 +461,7 @@ pub unsafe fn test_4() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const A1&>");;
     }
     {
-        let mut m: () = {
-            let mut __tmp_0: test_allocator_short_ =
-                test_allocator_short_::new_1({ 0_() }, { 5_() });
-            std_flat_multiset_int__std_less_int___std_vector_int__test_allocator_int___::new_1({
-                &mut __tmp_0
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -485,13 +479,7 @@ pub unsafe fn test_5() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const A1&>");;
     }
     {
-        let mut m: () = {
-            let mut __tmp_1: test_allocator_short_ =
-                test_allocator_short_::new_1({ 0_() }, { 5_() });
-            std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_1({
-                &mut __tmp_1
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -817,13 +817,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_int_ {}
 pub fn test_compare_23() {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_set_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -849,11 +843,7 @@ pub fn test_compare_23() {
 }
 pub fn test_compare_24() {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_set_int__test_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { __tmp_1.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -879,13 +869,7 @@ pub fn test_compare_24() {
 }
 pub fn test_compare_25() {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_set_int__test_less_int___std_vector_int__min_allocator_int___::new_1({
-                __tmp_2.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -911,13 +895,7 @@ pub fn test_compare_25() {
 }
 pub fn test_compare_26() {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_set_int__test_less_int___std_deque_int__std_allocator_int___::new_1({
-                __tmp_3.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -943,16 +921,7 @@ pub fn test_compare_26() {
 }
 pub fn test_compare_alloc_27() {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_5: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { __tmp_4.as_pointer() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -960,16 +929,7 @@ pub fn test_compare_alloc_27() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_7: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { __tmp_6.as_pointer() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -979,16 +939,7 @@ pub fn test_compare_alloc_27() {
 }
 pub fn test_compare_alloc_28() {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_9: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { __tmp_8.as_pointer() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -996,16 +947,7 @@ pub fn test_compare_alloc_28() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_11: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { __tmp_10.as_pointer() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

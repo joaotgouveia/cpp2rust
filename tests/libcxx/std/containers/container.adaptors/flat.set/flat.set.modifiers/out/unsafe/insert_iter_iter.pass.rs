@@ -1283,19 +1283,11 @@ pub unsafe fn test_one_33() {
     let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected: () =
-        std_flat_set_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut expected: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected2: () =
-        std_flat_set_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut expected2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_one_34() {
@@ -1304,19 +1296,11 @@ pub unsafe fn test_one_34() {
     let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected: () =
-        std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut expected: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected2: () =
-        std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut expected2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_one_35() {
@@ -1325,11 +1309,11 @@ pub unsafe fn test_one_35() {
     let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected : () = std_flat_set_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!() } , None , )  ;
+    let mut expected: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected2 : () = std_flat_set_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!() } , None , )  ;
+    let mut expected2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_one_36() {
@@ -1338,19 +1322,11 @@ pub unsafe fn test_one_36() {
     let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected: () =
-        std_flat_set_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut expected: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut expected2: () =
-        std_flat_set_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut expected2: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_37() -> () {
@@ -1361,10 +1337,7 @@ pub unsafe fn test_37() -> () {
     (unsafe { test_one_35() });
     (unsafe { test_one_36() });
     {
-        let mut m: () = std_flat_set_int__std_less_int___SillyReserveVector_int__::new_1(
-            { unimplemented!() },
-            None,
-        );
+        let mut m: () = unimplemented!();
         let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();

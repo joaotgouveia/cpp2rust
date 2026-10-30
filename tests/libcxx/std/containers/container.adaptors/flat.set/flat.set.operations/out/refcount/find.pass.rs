@@ -647,12 +647,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_int_ {}
 pub fn test_one_31() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_void___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -673,12 +668,7 @@ pub fn test_one_31() {
 }
 pub fn test_one_32() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_void___std_deque_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -699,7 +689,7 @@ pub fn test_one_32() {
 }
 pub fn test_one_33() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_less_void___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -720,12 +710,7 @@ pub fn test_one_33() {
 }
 pub fn test_one_34() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_void___std_vector_int__min_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();

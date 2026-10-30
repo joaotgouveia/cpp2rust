@@ -879,21 +879,11 @@ pub fn test_one_33() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let expected: Value<()> = Rc::new(RefCell::new(
-        std_flat_set_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let expected2: Value<()> = Rc::new(RefCell::new(
-        std_flat_set_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let expected2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_one_34() {
@@ -902,21 +892,11 @@ pub fn test_one_34() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let expected: Value<()> = Rc::new(RefCell::new(
-        std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let expected2: Value<()> = Rc::new(RefCell::new(
-        std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let expected2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_one_35() {
@@ -925,11 +905,11 @@ pub fn test_one_35() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let expected : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let expected2 : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let expected2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_one_36() {
@@ -938,21 +918,11 @@ pub fn test_one_36() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let expected: Value<()> = Rc::new(RefCell::new(
-        std_flat_set_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let expected2: Value<()> = Rc::new(RefCell::new(
-        std_flat_set_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let expected2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_37() -> () {

@@ -546,7 +546,7 @@ pub unsafe fn test_15() -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut r : () = std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { a .as_mut_ptr() } , { { let mut __tmp_0 : *mut ()  = a .as_mut_ptr() . offset ( ( 3_() ) as isize ) ; sentinel_wrapper_int_ptr_ :: new_1 ( { & mut __tmp_0 } , )  } } , { 3_() } , )  ;
+        let mut r: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

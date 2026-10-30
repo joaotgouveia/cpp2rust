@@ -616,21 +616,15 @@ const _: () = assert!(
     "std::is_constructible_v<SizedIntPtrSubrange, int*, int*, std::size_t>"
 );
 pub fn test_20() -> () {
-    let a : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_ConditionallyConvertibleBase_false___ConditionallyConvertibleBase_false___std_ranges_subrange_kind_sized_ :: new_1 ( { ConditionallyConvertibleBase_false_ :: new_1 ( { ( globalBuff_8.with(|v| v.as_pointer())  as Ptr::<()> )  } , )   } , { ConditionallyConvertibleBase_false_ :: new_1 ( { ( globalBuff_8.with(|v| v.as_pointer())  as Ptr::<()> ) . offset ( ( 8_() ) as isize )  } , )   } , { 8_()  } , )  )) ;
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let b : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_ConditionallyConvertibleBase_true___int_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { ConditionallyConvertibleBase_true_ :: new_1 ( { ( globalBuff_8.with(|v| v.as_pointer())  as Ptr::<()> )  } , )   } , { ( { ConditionallyConvertibleBase_true_Impl :: to_pmut_10_1 ( &Rc::new(RefCell::new(ConditionallyConvertibleBase_true_ :: new_1 ( { ( globalBuff_8.with(|v| v.as_pointer())  as Ptr::<()> ) . offset ( ( 8_() ) as isize )  } , )  )).as_pointer() , ) } )   } , { 8_()  } , )  )) ;
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-            { (globalBuff_8.with(|v| v.as_pointer()) as Ptr<()>) },
-            { (globalBuff_8.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize) },
-            { 8_() },
-        ),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

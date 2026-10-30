@@ -365,15 +365,7 @@ pub fn test_4() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const A1&>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_short_> =
-                Rc::new(RefCell::new(test_allocator_short_::new_1({ 0_() }, {
-                    5_()
-                })));
-            std_flat_multiset_int__std_less_int___std_vector_int__test_allocator_int___::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -391,15 +383,7 @@ pub fn test_5() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const A1&>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_short_> =
-                Rc::new(RefCell::new(test_allocator_short_::new_1({ 0_() }, {
-                    5_()
-                })));
-            std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

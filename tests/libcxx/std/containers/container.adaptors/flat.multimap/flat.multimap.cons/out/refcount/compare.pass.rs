@@ -858,11 +858,7 @@ pub fn test_compare_18() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multimap_int__int__test_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { __tmp_0.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -888,11 +884,7 @@ pub fn test_compare_19() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multimap_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { __tmp_1.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -918,11 +910,7 @@ pub fn test_compare_20() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multimap_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { __tmp_2.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -948,11 +936,7 @@ pub fn test_compare_21() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multimap_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { __tmp_3.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -978,11 +962,7 @@ pub fn test_compare_22() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multimap_int__int__test_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { __tmp_4.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1008,11 +988,7 @@ pub fn test_compare_23() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multimap_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { __tmp_5.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1028,13 +1004,7 @@ pub fn test_compare_alloc_24() {
         const _: () = assert!(true, "!std::is_constructible_v<M, std::less<>, A>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_7: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multimap_int__short__test_less_int___std_vector_int__test_allocator_int____std_vector_short__test_allocator_short___ :: new_1 ( { __tmp_6.as_pointer() } , { __tmp_7.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1042,13 +1012,7 @@ pub fn test_compare_alloc_24() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_9: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multimap_int__short__test_less_int___std_vector_int__test_allocator_int____std_vector_short__test_allocator_short___ :: new_1 ( { __tmp_8.as_pointer() } , { __tmp_9.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1066,13 +1030,7 @@ pub fn test_compare_alloc_25() {
         const _: () = assert!(true, "!std::is_constructible_v<M, std::less<>, A>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_11: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multimap_int__short__test_less_int___std_deque_int__test_allocator_int____std_deque_short__test_allocator_short___ :: new_1 ( { __tmp_10.as_pointer() } , { __tmp_11.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1080,13 +1038,7 @@ pub fn test_compare_alloc_25() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_13: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multimap_int__short__test_less_int___std_deque_int__test_allocator_int____std_deque_short__test_allocator_short___ :: new_1 ( { __tmp_12.as_pointer() } , { __tmp_13.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -585,20 +585,14 @@ pub struct test_less_int_ {
 }
 impl test_less_int_ {}
 pub unsafe fn test_4() {
-    let mut m: () = {
-        let mut __tmp_0: test_allocator_short_ = test_allocator_short_::new_1({ 0_() }, { 5_() });
-        std_flat_multimap_int__long__std_less_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { & mut __tmp_0 } , )
-    };
+    let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_5() {
-    let mut m: () = {
-        let mut __tmp_1: test_allocator_short_ = test_allocator_short_::new_1({ 0_() }, { 5_() });
-        std_flat_multimap_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { & mut __tmp_1 } , )
-    };
+    let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

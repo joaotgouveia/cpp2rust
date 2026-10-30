@@ -747,13 +747,7 @@ pub fn test_compare_17() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -779,13 +773,7 @@ pub fn test_compare_18() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -811,13 +799,7 @@ pub fn test_compare_19() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
-                __tmp_2.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -843,13 +825,7 @@ pub fn test_compare_20() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
-                __tmp_3.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -863,32 +839,14 @@ pub fn test_compare_alloc_21() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const C&, const A1&>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_5: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multiset_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { __tmp_4.as_pointer() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_7: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multiset_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { __tmp_6.as_pointer() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -903,32 +861,14 @@ pub fn test_compare_alloc_22() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const C&, const A1&>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_9: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multiset_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { __tmp_8.as_pointer() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 4_() })));
-            let __tmp_11: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_flat_multiset_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { __tmp_10.as_pointer() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

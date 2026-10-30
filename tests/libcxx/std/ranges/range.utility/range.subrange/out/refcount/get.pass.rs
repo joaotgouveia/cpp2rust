@@ -420,7 +420,7 @@ pub fn test_15() -> () {
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let r : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { ( a .as_pointer()  as Ptr::<()> )  } , { { let __tmp_0 : Value<Ptr< ()  > > = Rc::new(RefCell::new(( a .as_pointer()  as Ptr::<()> ) . offset ( ( 3_() ) as isize ) )); sentinel_wrapper_int_ptr_ :: new_1 ( { __tmp_0.as_pointer() } , )  }  } , { 3_()  } , )  )) ;
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

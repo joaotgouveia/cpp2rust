@@ -804,7 +804,7 @@ pub static mut enable_borrowed_range_21: std::cell::LazyCell<()> =
 pub unsafe fn test_22() -> () {
     let mut buff: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
     {
-        let mut a : () = std_ranges_subrange_MoveOnlyForwardIter__int_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { MoveOnlyForwardIter :: new_1 ( { buff .as_mut_ptr() } , )  } , { buff .as_mut_ptr() . offset ( ( 5_() ) as isize ) } , { 5_() } , )  ;
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -831,7 +831,7 @@ pub unsafe fn test_22() -> () {
             SizedSentinelForwardIter::new_1({ buff.as_mut_ptr().offset((5_()) as isize) }, {
                 (&mut minusWasCalled as *mut ())
             });
-        let mut e : () = std_ranges_subrange_SizedSentinelForwardIter__SizedSentinelForwardIter__std_ranges_subrange_kind_sized_ :: new_1 ( { beg } , { end } , { 5_() } , )  ;
+        let mut e: () = unimplemented!();
         unimplemented!();
         minusWasCalled = false;
         unimplemented!();

@@ -994,11 +994,7 @@ impl min_allocator_int_ {
     }
 }
 pub unsafe fn test_one_32() {
-    let mut m: () =
-        std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut m: () = unimplemented!();
     let mut expected: [(); 6] = [1_(), 1_(), 2_(), 2_(), 3_(), 4_()];
     let cm: *const () = &m;
     const _: () = assert!(true, "");;
@@ -1041,11 +1037,7 @@ pub unsafe fn test_one_32() {
     unimplemented!();
 }
 pub unsafe fn test_one_33() {
-    let mut m: () =
-        std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut m: () = unimplemented!();
     let mut expected: [(); 6] = [1_(), 1_(), 2_(), 2_(), 3_(), 4_()];
     let cm: *const () = &m;
     const _: () = assert!(true, "");;
@@ -1088,7 +1080,7 @@ pub unsafe fn test_one_33() {
     unimplemented!();
 }
 pub unsafe fn test_one_34() {
-    let mut m : () = std_flat_multiset_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!() } , None , )  ;
+    let mut m: () = unimplemented!();
     let mut expected: [(); 6] = [1_(), 1_(), 2_(), 2_(), 3_(), 4_()];
     let cm: *const () = &m;
     const _: () = assert!(true, "");;
@@ -1131,11 +1123,7 @@ pub unsafe fn test_one_34() {
     unimplemented!();
 }
 pub unsafe fn test_one_35() {
-    let mut m: () =
-        std_flat_multiset_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
+    let mut m: () = unimplemented!();
     let mut expected: [(); 6] = [1_(), 1_(), 2_(), 2_(), 3_(), 4_()];
     let cm: *const () = &m;
     const _: () = assert!(true, "");;

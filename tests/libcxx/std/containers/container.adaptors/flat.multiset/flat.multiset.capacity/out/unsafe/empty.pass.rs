@@ -875,10 +875,7 @@ pub unsafe fn test_one_25() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    m = std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-        { unimplemented!() },
-        None,
-    );
+    m = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -889,10 +886,7 @@ pub unsafe fn test_one_26() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    m = std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-        { unimplemented!() },
-        None,
-    );
+    m = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -903,7 +897,7 @@ pub unsafe fn test_one_27() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    m  = std_flat_multiset_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!() } , None , )   ;
+    m = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -914,10 +908,7 @@ pub unsafe fn test_one_28() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    m = std_flat_multiset_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-        { unimplemented!() },
-        None,
-    );
+    m = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

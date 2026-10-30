@@ -867,7 +867,7 @@ pub unsafe fn test_20() -> () {
     {
         let mut transparent_used: () = false;
         let mut c: TransparentComparator = TransparentComparator::new_1({ &mut transparent_used });
-        let mut m : () = std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & c } , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
         let mut res: () = unimplemented!();
         unimplemented!();
@@ -878,7 +878,7 @@ pub unsafe fn test_20() -> () {
     {
         let mut transparent_used: () = false;
         let mut c: TransparentComparator = TransparentComparator::new_1({ &mut transparent_used });
-        let mut m : () = std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & c } , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
         let mut res: () = unimplemented!();
         unimplemented!();
@@ -902,7 +902,7 @@ pub unsafe fn test_20() -> () {
         }
     }
     {
-        let mut m : () = std_flat_map_std_basic_string_char__std_char_traits_char___std_allocator_char____int__std_less_void___std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , None , )  ;
+        let mut m: () = unimplemented!();
         let mut __decomp_22: () = unimplemented!();
         let it: *mut () = unimplemented!();
         let inserted: *mut () = unimplemented!();

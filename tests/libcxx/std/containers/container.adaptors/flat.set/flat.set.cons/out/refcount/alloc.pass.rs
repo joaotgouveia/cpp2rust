@@ -718,15 +718,7 @@ pub fn test_11() {
         const _: () = assert!(true, "!std::is_convertible_v<test_allocator<int>, M>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_short_> =
-                Rc::new(RefCell::new(test_allocator_short_::new_1({ 0_() }, {
-                    5_()
-                })));
-            std_flat_set_int__std_less_int___std_vector_int__test_allocator_int___::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -745,15 +737,7 @@ pub fn test_12() {
         const _: () = assert!(true, "!std::is_convertible_v<test_allocator<int>, M>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_short_> =
-                Rc::new(RefCell::new(test_allocator_short_::new_1({ 0_() }, {
-                    5_()
-                })));
-            std_flat_set_int__std_less_int___std_deque_int__test_allocator_int___::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));

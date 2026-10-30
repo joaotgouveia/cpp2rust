@@ -652,11 +652,9 @@ const _: () = assert!(!(false), "!CanInsert<Map, Iter, int>");
 pub fn test_20() -> () {
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
-        let c: Value<TransparentComparator> =
-            Rc::new(RefCell::new(TransparentComparator::new_1({
-                transparent_used.as_pointer()
-            })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { c .as_pointer()  } , )  )) ;
+        let mut c: TransparentComparator =
+            TransparentComparator::new_1({ transparent_used.as_pointer() });
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -666,11 +664,9 @@ pub fn test_20() -> () {
     }
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
-        let c: Value<TransparentComparator> =
-            Rc::new(RefCell::new(TransparentComparator::new_1({
-                transparent_used.as_pointer()
-            })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { c .as_pointer()  } , )  )) ;
+        let mut c: TransparentComparator =
+            TransparentComparator::new_1({ transparent_used.as_pointer() });
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -695,7 +691,7 @@ pub fn test_20() -> () {
         }
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_std_basic_string_char__std_char_traits_char___std_allocator_char____int__std_less_void___std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __decomp_22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Ptr<()> = unimplemented!();
         let inserted: Ptr<()> = unimplemented!();

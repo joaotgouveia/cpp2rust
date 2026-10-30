@@ -594,7 +594,7 @@ thread_local!(
 pub fn test_22() -> () {
     let buff: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
     {
-        let a : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_MoveOnlyForwardIter__int_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { MoveOnlyForwardIter :: new_1 ( { ( buff .as_pointer()  as Ptr::<()> )  } , )   } , { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( 5_() ) as isize )  } , { 5_()  } , )  )) ;
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -621,7 +621,7 @@ pub fn test_22() -> () {
             { (buff.as_pointer() as Ptr<()>).offset((5_()) as isize) },
             { (minusWasCalled.as_pointer()) },
         );
-        let e : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_SizedSentinelForwardIter__SizedSentinelForwardIter__std_ranges_subrange_kind_sized_ :: new_1 ( { (beg ).clone()  } , { (end ).clone()  } , { 5_()  } , )  )) ;
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         (*minusWasCalled.borrow_mut()) = false;
         unimplemented!();

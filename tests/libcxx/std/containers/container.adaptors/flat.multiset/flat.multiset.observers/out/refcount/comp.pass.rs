@@ -42,7 +42,7 @@ pub fn test_4() -> () {
     }
     {
         let comp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { comp .as_pointer()  } , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

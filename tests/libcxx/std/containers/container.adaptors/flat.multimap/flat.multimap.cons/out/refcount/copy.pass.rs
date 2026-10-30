@@ -570,12 +570,8 @@ pub fn test_9() {
     {
         let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__char__test_less_int___std_vector_int__test_allocator_int____std_vector_char__test_allocator_char___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_0.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new((*mo.borrow()).clone()));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -590,12 +586,8 @@ pub fn test_9() {
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__char__test_less_int___std_vector_int__other_allocator_int____std_vector_char__other_allocator_char___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_1.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new((*mo.borrow()).clone()));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -612,12 +604,8 @@ pub fn test_10() {
     {
         let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__char__test_less_int___std_deque_int__test_allocator_int____std_deque_char__test_allocator_char___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_2.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new((*mo.borrow()).clone()));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -632,12 +620,8 @@ pub fn test_10() {
     {
         let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__char__test_less_int___std_deque_int__other_allocator_int____std_deque_char__other_allocator_char___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_3.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new((*mo.borrow()).clone()));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

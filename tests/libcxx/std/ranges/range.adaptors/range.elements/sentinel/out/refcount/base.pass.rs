@@ -16,7 +16,7 @@ pub struct Sent {
     pub i: (),
 }
 pub fn test_1() -> () {
-    let st : Value<() > = Rc::new(RefCell::new(std_ranges_elements_view_std_ranges_subrange_std_tuple_int__ptr__Sent___0___Sentinel_true_ :: new_1 ( { Sent { i : 5_()  , }  } , )  )) ;
+    let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut base: Sent = ({ (*st.borrow()).base() });
     unimplemented!();
     return true;

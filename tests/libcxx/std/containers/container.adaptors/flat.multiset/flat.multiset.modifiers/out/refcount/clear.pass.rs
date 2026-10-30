@@ -812,12 +812,7 @@ pub struct min_allocator_int_ {}
 const _: () = assert!(true, "NoExceptClear<std::flat_multiset<int>>");
 pub fn test_one_28() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -833,12 +828,7 @@ pub fn test_one_28() {
 }
 pub fn test_one_29() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -854,7 +844,7 @@ pub fn test_one_29() {
 }
 pub fn test_one_30() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -870,12 +860,7 @@ pub fn test_one_30() {
 }
 pub fn test_one_31() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

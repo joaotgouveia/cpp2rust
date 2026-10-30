@@ -62,7 +62,7 @@ pub unsafe fn test_7() -> () {
     }
     {
         let mut comp: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & comp } , )  ;
+        let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -92,17 +92,14 @@ pub unsafe fn test_7() -> () {
     }
     {
         let mut comp: () = unimplemented!();
-        let mut m : () = std_flat_multimap_std_vector_int__std_allocator_int____int__std_function_bool__const_std_vector_int__std_allocator_int___ref__const_std_vector_int__std_allocator_int___ref____std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & comp } , )  ;
+        let mut m: () = unimplemented!();
         let mut vc: () = unimplemented!();
         const _: () = assert!(
             ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
             "sizeof(vc) >= sizeof(Comp)"
         );;
         unimplemented!();
-        m = {
-            let mut __tmp_0: () = unimplemented!();
-            std_flat_multimap_std_vector_int__std_allocator_int____int__std_function_bool__const_std_vector_int__std_allocator_int___ref__const_std_vector_int__std_allocator_int___ref____std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_0 } , )
-        };
+        m = unimplemented!();
         unimplemented!();
         let mut a: () = unimplemented!();
         let mut b: () = unimplemented!();
