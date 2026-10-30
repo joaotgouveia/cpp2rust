@@ -647,13 +647,7 @@ thread_local!(
     pub static enable_borrowed_range_23: Value<()> = Rc::new(RefCell::new(true));
 );
 pub fn test_24() -> () {
-    let a: Value<()> = Rc::new(RefCell::new(
-        std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-            { (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>) },
-            { (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize) },
-            { 8_() },
-        ),
-    ));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();

@@ -1056,12 +1056,7 @@ pub struct HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_
 impl HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { pub fn new ( mut key : ()  , it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
  Self { key_ : key  , it_ : ((*it.borrow()) ).clone()  , }  } }
 pub fn test_one_49() {
-    let m: Value<()> = Rc::new(RefCell::new(
-        std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let mut n: () = unimplemented!();
     unimplemented!();
@@ -1076,12 +1071,7 @@ pub fn test_one_49() {
     unimplemented!();
 }
 pub fn test_one_50() {
-    let m: Value<()> = Rc::new(RefCell::new(
-        std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let mut n: () = unimplemented!();
     unimplemented!();
@@ -1096,7 +1086,7 @@ pub fn test_one_50() {
     unimplemented!();
 }
 pub fn test_one_51() {
-    let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let mut n: () = unimplemented!();
     unimplemented!();
@@ -1111,12 +1101,7 @@ pub fn test_one_51() {
     unimplemented!();
 }
 pub fn test_one_52() {
-    let m: Value<()> = Rc::new(RefCell::new(
-        std_flat_multiset_int__std_less_int___std_vector_int__min_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let mut n: () = unimplemented!();
     unimplemented!();
@@ -1132,11 +1117,11 @@ pub fn test_one_52() {
 }
 pub fn test_transparent_comparator_53() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let mut n: () = unimplemented!();
         unimplemented!();
-        let expected : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n2: () = unimplemented!();
         unimplemented!();
@@ -1151,11 +1136,11 @@ pub fn test_transparent_comparator_53() {
 }
 pub fn test_transparent_comparator_54() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_deque_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let mut n: () = unimplemented!();
         unimplemented!();
-        let expected : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_deque_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n2: () = unimplemented!();
         unimplemented!();
@@ -1170,11 +1155,11 @@ pub fn test_transparent_comparator_54() {
 }
 pub fn test_transparent_comparator_55() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let mut n: () = unimplemented!();
         unimplemented!();
-        let expected : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n2: () = unimplemented!();
         unimplemented!();
@@ -1189,11 +1174,11 @@ pub fn test_transparent_comparator_55() {
 }
 pub fn test_transparent_comparator_56() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____min_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let mut n: () = unimplemented!();
         unimplemented!();
-        let expected : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____min_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n2: () = unimplemented!();
         unimplemented!();
@@ -1220,12 +1205,7 @@ pub fn test_57() -> () {
     ({ test_transparent_comparator_55() });
     ({ test_transparent_comparator_56() });
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_void___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let h1 : Value<HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { 8_()  } , { unimplemented!()   } , )  )) ;
         let mut n: () = unimplemented!();
         unimplemented!();
@@ -1235,12 +1215,7 @@ pub fn test_57() -> () {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_void___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let h1 : Value<HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ :: new ( { 8_()  } , { unimplemented!()   } , )  )) ;
         let mut n: () = unimplemented!();
         unimplemented!();
@@ -1251,18 +1226,16 @@ pub fn test_57() -> () {
     }
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
-        let c: Value<TransparentComparator> =
-            Rc::new(RefCell::new(TransparentComparator::new_1({
-                transparent_used.as_pointer()
-            })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__TransparentComparator__std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { c .as_pointer()  } , )  )) ;
+        let mut c: TransparentComparator =
+            TransparentComparator::new_1({ transparent_used.as_pointer() });
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_void___std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = unimplemented!();
         unimplemented!();
         unimplemented!();

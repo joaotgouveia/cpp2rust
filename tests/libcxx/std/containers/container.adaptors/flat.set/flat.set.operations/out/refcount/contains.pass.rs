@@ -612,12 +612,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_int_ {}
 pub fn test_one_26() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_void___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -632,12 +627,7 @@ pub fn test_one_26() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_greater_int___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -659,12 +649,7 @@ pub fn test_one_26() {
 }
 pub fn test_one_27() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_void___std_deque_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -679,12 +664,7 @@ pub fn test_one_27() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_greater_int___std_deque_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -706,7 +686,7 @@ pub fn test_one_27() {
 }
 pub fn test_one_28() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_less_void___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -721,7 +701,7 @@ pub fn test_one_28() {
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_greater_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -743,12 +723,7 @@ pub fn test_one_28() {
 }
 pub fn test_one_29() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_void___std_vector_int__min_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -763,12 +738,7 @@ pub fn test_one_29() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_greater_int___std_vector_int__min_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

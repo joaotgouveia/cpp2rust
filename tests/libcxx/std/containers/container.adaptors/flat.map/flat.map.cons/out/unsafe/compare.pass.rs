@@ -1152,10 +1152,7 @@ pub unsafe fn test_compare_18() {
         );;
     }
     {
-        let mut m: () = {
-            let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_map_int__int__test_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { & mut __tmp_0 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1181,10 +1178,7 @@ pub unsafe fn test_compare_19() {
         );;
     }
     {
-        let mut m: () = {
-            let mut __tmp_1: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_map_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { & mut __tmp_1 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1210,10 +1204,7 @@ pub unsafe fn test_compare_20() {
         );;
     }
     {
-        let mut m: () = {
-            let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_map_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { & mut __tmp_2 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1239,10 +1230,7 @@ pub unsafe fn test_compare_21() {
         );;
     }
     {
-        let mut m: () = {
-            let mut __tmp_3: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_map_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { & mut __tmp_3 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1268,10 +1256,7 @@ pub unsafe fn test_compare_22() {
         );;
     }
     {
-        let mut m: () = {
-            let mut __tmp_4: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_map_int__int__test_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { & mut __tmp_4 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1297,10 +1282,7 @@ pub unsafe fn test_compare_23() {
         );;
     }
     {
-        let mut m: () = {
-            let mut __tmp_5: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_map_int__double__test_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { & mut __tmp_5 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1316,11 +1298,7 @@ pub unsafe fn test_compare_alloc_24() {
         const _: () = assert!(true, "!std::is_constructible_v<M, std::less<>, A>");;
     }
     {
-        let mut m: () = {
-            let mut __tmp_6: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_7: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_map_int__short__test_less_int___std_vector_int__test_allocator_int____std_vector_short__test_allocator_short___ :: new_1 ( { & mut __tmp_6 } , { & mut __tmp_7 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1328,11 +1306,7 @@ pub unsafe fn test_compare_alloc_24() {
         unimplemented!();
     }
     {
-        let mut m: () = {
-            let mut __tmp_8: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_9: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_map_int__short__test_less_int___std_vector_int__test_allocator_int____std_vector_short__test_allocator_short___ :: new_1 ( { & mut __tmp_8 } , { & mut __tmp_9 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1350,11 +1324,7 @@ pub unsafe fn test_compare_alloc_25() {
         const _: () = assert!(true, "!std::is_constructible_v<M, std::less<>, A>");;
     }
     {
-        let mut m: () = {
-            let mut __tmp_10: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_11: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_map_int__short__test_less_int___std_deque_int__test_allocator_int____std_deque_short__test_allocator_short___ :: new_1 ( { & mut __tmp_10 } , { & mut __tmp_11 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1362,11 +1332,7 @@ pub unsafe fn test_compare_alloc_25() {
         unimplemented!();
     }
     {
-        let mut m: () = {
-            let mut __tmp_12: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_13: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_map_int__short__test_less_int___std_deque_int__test_allocator_int____std_deque_short__test_allocator_short___ :: new_1 ( { & mut __tmp_12 } , { & mut __tmp_13 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

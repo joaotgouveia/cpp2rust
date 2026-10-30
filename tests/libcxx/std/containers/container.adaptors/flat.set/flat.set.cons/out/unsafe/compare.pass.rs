@@ -1095,12 +1095,7 @@ impl min_allocator_int_ {
 }
 pub unsafe fn test_compare_23() {
     {
-        let mut m: () = {
-            let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_set_int__test_less_int___std_vector_int__std_allocator_int___::new_1({
-                &mut __tmp_0
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1126,10 +1121,7 @@ pub unsafe fn test_compare_23() {
 }
 pub unsafe fn test_compare_24() {
     {
-        let mut m: () = {
-            let mut __tmp_1: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_set_int__test_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { & mut __tmp_1 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1155,12 +1147,7 @@ pub unsafe fn test_compare_24() {
 }
 pub unsafe fn test_compare_25() {
     {
-        let mut m: () = {
-            let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_set_int__test_less_int___std_vector_int__min_allocator_int___::new_1({
-                &mut __tmp_2
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1186,12 +1173,7 @@ pub unsafe fn test_compare_25() {
 }
 pub unsafe fn test_compare_26() {
     {
-        let mut m: () = {
-            let mut __tmp_3: test_less_int_ = test_less_int_::new_1({ 3_() });
-            std_flat_set_int__test_less_int___std_deque_int__std_allocator_int___::new_1({
-                &mut __tmp_3
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1217,14 +1199,7 @@ pub unsafe fn test_compare_26() {
 }
 pub unsafe fn test_compare_alloc_27() {
     {
-        let mut m: () = {
-            let mut __tmp_4: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_5: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { &mut __tmp_4 },
-                { &mut __tmp_5 },
-            )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1232,14 +1207,7 @@ pub unsafe fn test_compare_alloc_27() {
         unimplemented!();
     }
     {
-        let mut m: () = {
-            let mut __tmp_6: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_7: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { &mut __tmp_6 },
-                { &mut __tmp_7 },
-            )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1249,14 +1217,7 @@ pub unsafe fn test_compare_alloc_27() {
 }
 pub unsafe fn test_compare_alloc_28() {
     {
-        let mut m: () = {
-            let mut __tmp_8: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_9: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { &mut __tmp_8 },
-                { &mut __tmp_9 },
-            )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1264,14 +1225,7 @@ pub unsafe fn test_compare_alloc_28() {
         unimplemented!();
     }
     {
-        let mut m: () = {
-            let mut __tmp_10: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_11: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { &mut __tmp_10 },
-                { &mut __tmp_11 },
-            )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -822,23 +822,15 @@ const _: () = assert!(
     "std::is_constructible_v<SizedIntPtrSubrange, int*, int*, std::size_t>"
 );
 pub unsafe fn test_20() -> () {
-    let mut a : () = std_ranges_subrange_ConditionallyConvertibleBase_false___ConditionallyConvertibleBase_false___std_ranges_subrange_kind_sized_ :: new_1 ( { ConditionallyConvertibleBase_false_ :: new_1 ( { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_8)) .as_mut_ptr() } , )  } , { ConditionallyConvertibleBase_false_ :: new_1 ( { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_8)) .as_mut_ptr() . offset ( ( 8_() ) as isize ) } , )  } , { 8_() } , )  ;
+    let mut a: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut b : () = std_ranges_subrange_ConditionallyConvertibleBase_true___int_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { ConditionallyConvertibleBase_true_ :: new_1 ( { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_8)) .as_mut_ptr() } , )  } , { ( unsafe { ConditionallyConvertibleBase_true_ :: to_pmut_10_1 ( & ConditionallyConvertibleBase_true_ :: new_1 ( { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_8)) .as_mut_ptr() . offset ( ( 8_() ) as isize ) } , )   , ) } )  } , { 8_() } , )  ;
+    let mut b: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut c: () = std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-        { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_8)).as_mut_ptr() },
-        {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_8))
-                .as_mut_ptr()
-                .offset((8_()) as isize)
-        },
-        { 8_() },
-    );
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

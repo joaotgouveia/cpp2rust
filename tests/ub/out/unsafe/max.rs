@@ -13,16 +13,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let a: *const () = (unsafe {
-        let mut ___a: () = 1_();
-        let mut ___b: () = 2_();
-        min_0(&mut ___a, &mut ___b)
-    });
-    let b: *const () = (unsafe {
-        let mut ___a: () = 1_();
-        let mut ___b: () = 2_();
-        max_1(&mut ___a, &mut ___b)
-    });
+    let a: *const () = unimplemented!();
+    let b: *const () = unimplemented!();
     return ((*a) == (*b));
 }
 pub unsafe fn __cpp2rust_init_globals() {}

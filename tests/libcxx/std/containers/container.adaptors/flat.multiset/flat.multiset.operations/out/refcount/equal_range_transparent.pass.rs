@@ -908,7 +908,7 @@ pub fn test_one_35() {
         }
     )));
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cm: Ptr<()> = m.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1083,7 +1083,7 @@ pub fn test_one_40() {
         }
     )));
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_deque_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cm: Ptr<()> = m.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1268,7 +1268,7 @@ pub fn test_one_45() {
         }
     )));
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cm: Ptr<()> = m.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1443,7 +1443,7 @@ pub fn test_one_50() {
         }
     )));
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____TransparentComparator__std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____min_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cm: Ptr<()> = m.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1579,18 +1579,16 @@ pub fn test_55() -> () {
     ({ test_one_50() });
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
-        let c: Value<TransparentComparator> =
-            Rc::new(RefCell::new(TransparentComparator::new_1({
-                transparent_used.as_pointer()
-            })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__TransparentComparator__std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { c .as_pointer()  } , )  )) ;
+        let mut c: TransparentComparator =
+            TransparentComparator::new_1({ transparent_used.as_pointer() });
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_void___std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __decomp_56: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let first: Ptr<()> = unimplemented!();
         let last: Ptr<()> = unimplemented!();

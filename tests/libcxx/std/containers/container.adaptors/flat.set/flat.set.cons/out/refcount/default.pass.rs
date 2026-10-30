@@ -560,9 +560,8 @@ pub fn test_29() {
             unimplemented!();
         }
         {
-            let a1: Value<explicit_allocator_int_> =
-                Rc::new(RefCell::new(explicit_allocator_int_::new()));
-            let m : Value<() > = Rc::new(RefCell::new(std_flat_set_int__DefaultCtableComp__std_vector_int__explicit_allocator_int___ :: new_1 ( { a1 .as_pointer()  } , )  )) ;
+            let mut a1: explicit_allocator_int_ = explicit_allocator_int_::new();
+            let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
         }
@@ -598,9 +597,8 @@ pub fn test_30() {
             unimplemented!();
         }
         {
-            let a1: Value<explicit_allocator_int_> =
-                Rc::new(RefCell::new(explicit_allocator_int_::new()));
-            let m : Value<() > = Rc::new(RefCell::new(std_flat_set_int__DefaultCtableComp__std_deque_int__explicit_allocator_int___ :: new_1 ( { a1 .as_pointer()  } , )  )) ;
+            let mut a1: explicit_allocator_int_ = explicit_allocator_int_::new();
+            let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
         }

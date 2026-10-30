@@ -880,15 +880,7 @@ impl DifferentSentinelWithSizeMember {
 pub static mut enable_borrowed_range_23: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 pub unsafe fn test_24() -> () {
-    let mut a: () = std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-        { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr() },
-        {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
-                .as_mut_ptr()
-                .offset((8_()) as isize)
-        },
-        { 8_() },
-    );
+    let mut a: () = unimplemented!();
     let mut a1: () = unimplemented!();
     unimplemented!();
     unimplemented!();

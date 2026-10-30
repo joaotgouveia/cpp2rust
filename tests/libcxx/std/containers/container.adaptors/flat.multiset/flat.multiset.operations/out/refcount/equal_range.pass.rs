@@ -639,12 +639,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_int_ {}
 pub fn test_one_31() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_void___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let begin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -660,12 +655,7 @@ pub fn test_one_31() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_greater_int___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let begin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -688,12 +678,7 @@ pub fn test_one_31() {
 }
 pub fn test_one_32() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_void___std_deque_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let begin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -709,12 +694,7 @@ pub fn test_one_32() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_greater_int___std_deque_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let begin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -737,7 +717,7 @@ pub fn test_one_32() {
 }
 pub fn test_one_33() {
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__std_less_void___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let mut begin: three_way_random_access_iterator_const_int_ptr_ = unimplemented!();
@@ -753,7 +733,7 @@ pub fn test_one_33() {
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multiset_int__std_greater_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let mut begin: three_way_random_access_iterator_const_int_ptr_ = unimplemented!();
@@ -776,12 +756,7 @@ pub fn test_one_33() {
 }
 pub fn test_one_34() {
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_less_void___std_vector_int__min_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let begin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -797,12 +772,7 @@ pub fn test_one_34() {
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(
-            std_flat_multiset_int__std_greater_int___std_vector_int__min_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let begin: Value<()> = Rc::new(RefCell::new(unimplemented!()));

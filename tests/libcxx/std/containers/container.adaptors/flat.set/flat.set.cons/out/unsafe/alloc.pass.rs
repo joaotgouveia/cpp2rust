@@ -951,13 +951,7 @@ pub unsafe fn test_11() {
         const _: () = assert!(true, "!std::is_convertible_v<test_allocator<int>, M>");;
     }
     {
-        let mut m: () = {
-            let mut __tmp_0: test_allocator_short_ =
-                test_allocator_short_::new_1({ 0_() }, { 5_() });
-            std_flat_set_int__std_less_int___std_vector_int__test_allocator_int___::new_1({
-                &mut __tmp_0
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut v: () = unimplemented!();
@@ -976,13 +970,7 @@ pub unsafe fn test_12() {
         const _: () = assert!(true, "!std::is_convertible_v<test_allocator<int>, M>");;
     }
     {
-        let mut m: () = {
-            let mut __tmp_1: test_allocator_short_ =
-                test_allocator_short_::new_1({ 0_() }, { 5_() });
-            std_flat_set_int__std_less_int___std_deque_int__test_allocator_int___::new_1({
-                &mut __tmp_1
-            })
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut v: () = unimplemented!();
