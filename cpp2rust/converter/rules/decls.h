@@ -79,6 +79,10 @@ std::optional<std::vector<clang::TemplateArgument>>
 DeduceFromDefaults(clang::Sema &sema, const clang::TemplateDecl *rule,
                    clang::QualType pattern, clang::QualType actual);
 
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceMemberType(clang::Sema &sema, const clang::TemplateDecl *rule,
+                 clang::QualType pattern, clang::QualType use);
+
 bool IsInternal(const clang::NamedDecl *decl);
 
 const clang::TypeAliasTemplateDecl *AliasTemplateOf(clang::QualType type);

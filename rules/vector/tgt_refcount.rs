@@ -9,6 +9,10 @@ fn t5<T1>() -> Vec<T1> {
     Default::default()
 }
 
+fn t6<T1>() -> Ptr<bool> {
+    Ptr::null()
+}
+
 fn t9() -> usize {
     0_usize
 }
@@ -21,16 +25,20 @@ fn t11<T1>() -> Vec<T1> {
     Vec::new()
 }
 
-fn t12() -> bool {
-    false
-}
-
 fn t13<T1>() -> Ptr<T1> {
     Ptr::null()
 }
 
 fn t14<T1>() -> Ptr<T1> {
     Ptr::null()
+}
+
+fn t15<T1>() -> Ptr<bool> {
+    Ptr::null()
+}
+
+fn t16<T1>() -> bool {
+    false
 }
 
 fn f38(a0: usize, a1: bool) -> Vec<bool> {
@@ -41,8 +49,8 @@ fn f40<T1>(a0: Ptr<T1>) -> Ptr<T1> {
     a0.to_end()
 }
 
-fn f47(a0: Vec<bool>) -> Vec<bool> {
-    a0
+fn f47(a0: Ptr<bool>) -> bool {
+    a0.read()
 }
 
 fn f60<T1: ByteRepr>(a0: Ptr<Vec<T1>>, a1: RandomAccessIterator<T1>) -> RandomAccessIterator<T1> {
@@ -310,6 +318,25 @@ fn f116<T1: ByteRepr>(
     __it
 }
 
-fn f117(a0: bool) -> bool {
+fn f117(a0: Ptr<bool>) -> Ptr<bool> {
+    a0
+}
+
+fn f118<T1>(a0: Ptr<bool>, a1: usize) -> Ptr<bool> {
+    a0.offset(a1 as isize)
+}
+
+fn f119(a0: Ptr<bool>, a1: bool) -> Ptr<bool> {
+    a0.write(a1);
+    a0
+}
+
+fn f120(a0: Ptr<bool>, a1: bool) -> Ptr<bool> {
+    a0.write(a1);
+    a0
+}
+
+fn f121(a0: Ptr<bool>, a1: Ptr<bool>) -> Ptr<bool> {
+    a0.write(a1.read());
     a0
 }
