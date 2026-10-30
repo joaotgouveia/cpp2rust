@@ -264,14 +264,7 @@ unsafe fn main_0() -> i32 {
         let a0_clone = a.clone();
         vec_.push(a0_clone)
     };
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Counted> = &mut vec_;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .v) == (1))
-    );
+    assert!((((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (1)));
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (10)));
     let mut i1: Ignored = Ignored::new({ 1 });
     let mut i2: Ignored = Ignored::copy_from({ &i1 });

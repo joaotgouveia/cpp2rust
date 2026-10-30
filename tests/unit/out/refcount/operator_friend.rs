@@ -29,11 +29,11 @@ pub fn operator_cmp_1(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> std::cm
             &(_a0.with(|__s| __s.a)),
             &(_a1.with(|__s| __s.a)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 pub fn operator_eq_2(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> bool {
     return ({ _a0.with(|__s| __s.a) } == { _a1.with(|__s| __s.a) });
@@ -175,8 +175,18 @@ fn main_0() -> i32 {
     );
     let o1: Value<DefaultedOrd> = Rc::new(RefCell::new(DefaultedOrd { a: 1 }));
     let o2: Value<DefaultedOrd> = Rc::new(RefCell::new(DefaultedOrd { a: 2 }));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(
+        ({
+            let _arg0: Ptr<DefaultedOrd> = o1.as_pointer();
+            operator_cmp_1(_arg0, o2.as_pointer())
+        }) == std::cmp::Ordering::Less
+    );
+    assert!(
+        ({
+            let _arg0: Ptr<DefaultedOrd> = o2.as_pointer();
+            operator_cmp_1(_arg0, o1.as_pointer())
+        }) == std::cmp::Ordering::Greater
+    );
     assert!(
         ({
             let _arg0: Ptr<DefaultedOrd> = o1.as_pointer();
@@ -184,7 +194,12 @@ fn main_0() -> i32 {
             operator_eq_2(_arg0, _arg1)
         })
     );
-    assert!(unimplemented!());
+    assert!(
+        ({
+            let _arg0: Ptr<DefaultedOrd> = o1.as_pointer();
+            operator_cmp_1(_arg0, o2.as_pointer())
+        }) == std::cmp::Ordering::Less
+    );
     let i1: Value<Inline> = Rc::new(RefCell::new(Inline { a: 1 }));
     let i2: Value<Inline> = Rc::new(RefCell::new(Inline { a: 2 }));
     let i3: Value<Inline> = Rc::new(RefCell::new(Inline { a: 1 }));

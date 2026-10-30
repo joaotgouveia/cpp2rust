@@ -45,16 +45,8 @@ pub unsafe fn run_1(mut h: *mut S) {
     };
     assert!(
         ((((*h).v.len()) == (2_usize))
-            && ((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<i32> = &mut (*h).v;
-                __v.as_mut_ptr().add(__idx)
-            }) == (7)))
-            && ((*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<i32> = &mut (*h).v;
-                __v.as_mut_ptr().add(__idx)
-            }) == (1))
+            && ((*(&mut (*h).v).as_mut_ptr().add(0_usize as usize)) == (7)))
+            && ((*(&mut (*h).v).as_mut_ptr().add(1_usize as usize)) == (1))
     );
     assert!((((*h).tag) == (7)));
 }

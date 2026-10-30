@@ -152,13 +152,8 @@ unsafe fn main_0() -> i32 {
     }
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (indexes.len())) {
-        (*m2.subscript(
-            &(*{
-                let __idx = (i as usize) as usize;
-                let __v: &mut Vec<i32> = &mut indexes;
-                __v.as_mut_ptr().add(__idx)
-            }),
-        )) = ((i).wrapping_rem(2_u32) != 0);
+        (*m2.subscript(&(*(&mut indexes).as_mut_ptr().add((i as usize) as usize)))) =
+            ((i).wrapping_rem(2_u32) != 0);
         i.prefix_inc();
     }
     assert!(((m2.len()) == (indexes.len())));

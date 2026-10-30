@@ -70,15 +70,10 @@ unsafe fn main_0() -> i32 {
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < ((v.len()).wrapping_sub(1_usize))) {
         assert!(
-            ((*{
-                let __idx = (i as usize) as usize;
-                let __v: &mut Vec<i32> = &mut v;
-                __v.as_mut_ptr().add(__idx)
-            }) < (*{
-                let __idx = (((i).wrapping_add(1_u32)) as usize) as usize;
-                let __v: &mut Vec<i32> = &mut v;
-                __v.as_mut_ptr().add(__idx)
-            }))
+            ((*(&mut v).as_mut_ptr().add((i as usize) as usize))
+                < (*(&mut v)
+                    .as_mut_ptr()
+                    .add((((i).wrapping_add(1_u32)) as usize) as usize)))
         );
         i.prefix_inc();
     }

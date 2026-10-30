@@ -135,12 +135,7 @@ unsafe fn main_0() -> i32 {
         Outer::push(&mut o, _k)
     });
     assert!(
-        ((o.v.len()) == (1_usize))
-            && ((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<i32> = &mut o.v;
-                __v.as_mut_ptr().add(__idx)
-            }) == (7))
+        ((o.v.len()) == (1_usize)) && ((*(&mut o.v).as_mut_ptr().add(0_usize as usize)) == (7))
     );
     assert!(((unsafe { Outer::sum(&o,) }) == (7)));
     let mut y: i32 = 0;

@@ -35,7 +35,7 @@ fn main_0() -> i32 {
         let mut __v = Vec::new();
         let mut __it = (src.as_pointer() as Ptr<u32>);
         while __it != (src.as_pointer() as Ptr<u32>).offset((3) as isize) {
-            __v.push(__it.iter_deref().read());
+            __v.push((__it.iter_deref().read()));
             __it.iter_inc();
         }
         __v
@@ -50,7 +50,7 @@ fn main_0() -> i32 {
         let mut __v = Vec::new();
         let mut __it = (src.as_pointer() as Ptr<u32>);
         while __it != (src.as_pointer() as Ptr<u32>).offset((3) as isize) {
-            __v.push(__it.iter_deref().read());
+            __v.push(((__it.iter_deref().read()) as u64));
             __it.iter_inc();
         }
         __v
@@ -65,7 +65,7 @@ fn main_0() -> i32 {
         let mut __v = Vec::new();
         let mut __it = (src.as_pointer() as Ptr<u32>);
         while __it != (src.as_pointer() as Ptr<u32>).offset((3) as isize) {
-            __v.push(__it.iter_deref().read());
+            __v.push(((__it.iter_deref().read()) as i32));
             __it.iter_inc();
         }
         __v
@@ -80,8 +80,8 @@ fn main_0() -> i32 {
     let v4: Value<Vec<u32>> = Rc::new(RefCell::new({
         let mut __v = Vec::new();
         let mut __it = (src1.as_pointer() as Ptr<u32>);
-        while __it != unimplemented!() {
-            __v.push(__it.iter_deref().read());
+        while __it != (src1.as_pointer() as Ptr<u32>).to_end() {
+            __v.push((__it.iter_deref().read()));
             __it.iter_inc();
         }
         __v
@@ -100,7 +100,7 @@ fn main_0() -> i32 {
         let mut __v = Vec::new();
         let mut __it = (start).clone();
         while __it != start.offset((len) as isize) {
-            __v.push(__it.iter_deref().read());
+            __v.push((__it.iter_deref().read()));
             __it.iter_inc();
         }
         __v
@@ -138,7 +138,10 @@ fn main_0() -> i32 {
             != m.as_pointer()
                 .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.end())
         {
-            __v.push(__it.iter_deref().read());
+            __v.push(<(Value<i32>, Value<i32>) as CppFrom<(
+                Value<i32>,
+                Value<i32>,
+            )>>::cpp_from(__it.iter_deref()));
             __it.iter_inc();
         }
         __v
@@ -206,7 +209,7 @@ fn main_0() -> i32 {
         let mut __v = Vec::new();
         let mut __it = (ints.as_pointer() as Ptr<i32>);
         while __it != (ints.as_pointer() as Ptr<i32>).offset((3) as isize) {
-            __v.push(__it.iter_deref().read());
+            __v.push(<Degrees as CppFrom<i32>>::cpp_from(__it.iter_deref()));
             __it.iter_inc();
         }
         __v
@@ -220,7 +223,7 @@ fn main_0() -> i32 {
         let mut __v = Vec::new();
         let mut __it = (readings.as_pointer() as Ptr<Reading>);
         while __it != (readings.as_pointer() as Ptr<Reading>).offset((2) as isize) {
-            __v.push(__it.iter_deref().read());
+            __v.push(<i64 as CppFrom<Reading>>::cpp_from(__it.iter_deref()));
             __it.iter_inc();
         }
         __v

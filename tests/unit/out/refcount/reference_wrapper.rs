@@ -33,21 +33,77 @@ fn main_0() -> i32 {
     {
         i2.with_mut(|__v| *__v = *__v + 5)
     };
-    unimplemented!();
+    {
+        let __s = {
+            let __s = libcc2rs::cout();
+            let _ = write!(__s, "{}", (*i1.borrow()));
+            __s
+        };
+        let _ = __s.write_all(&[('\n' as i8) as u8]);
+        __s
+    };
     let i3: Value<i32> = Rc::new(RefCell::new(1));
     let i4: Value<i32> = Rc::new(RefCell::new(2));
     let mut ref_3: Ptr<i32> = i3.as_pointer();
     let mut ref_4: Ptr<i32> = i4.as_pointer();
     let __rhs = (ref_4.read());
     ref_3.write(__rhs);
-    unimplemented!();
-    ({ set_0(unimplemented!(), 99) });
-    unimplemented!();
+    {
+        let __s = {
+            let __s = {
+                let __s = {
+                    let __s = libcc2rs::cout();
+                    let _ = write!(__s, "{}", (*i3.borrow()));
+                    __s
+                };
+                let _ = __s.write_all(&[(' ' as i8) as u8]);
+                __s
+            };
+            let _ = write!(__s, "{}", (*i4.borrow()));
+            __s
+        };
+        let _ = __s.write_all(&[('\n' as i8) as u8]);
+        __s
+    };
+    ({ set_0((ref_1).clone(), 99) });
+    {
+        let __s = {
+            let __s = {
+                let __s = {
+                    let __s = libcc2rs::cout();
+                    let _ = write!(__s, "{}", (*i1.borrow()));
+                    __s
+                };
+                let _ = __s.write_all(&[(' ' as i8) as u8]);
+                __s
+            };
+            let _ = write!(__s, "{}", ({ read_1((ref_1).clone(),) }));
+            __s
+        };
+        let _ = __s.write_all(&[('\n' as i8) as u8]);
+        __s
+    };
     let point: Value<Point> = Rc::new(RefCell::new(Point { x: 3, y: 4 }));
     let mut point_ref: Ptr<Point> = point.as_pointer();
     field!(point_ref, x).write(30);
     field!(point_ref, y).write(40);
-    unimplemented!();
+    {
+        let __s = {
+            let __s = {
+                let __s = {
+                    let __s = libcc2rs::cout();
+                    let _ = write!(__s, "{}", { (*point.borrow()).x });
+                    __s
+                };
+                let _ = __s.write_all(&[(' ' as i8) as u8]);
+                __s
+            };
+            let _ = write!(__s, "{}", { (*point.borrow()).y });
+            __s
+        };
+        let _ = __s.write_all(&[('\n' as i8) as u8]);
+        __s
+    };
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

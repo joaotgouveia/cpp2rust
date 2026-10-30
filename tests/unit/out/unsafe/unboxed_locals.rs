@@ -140,33 +140,12 @@ unsafe fn main_0() -> i32 {
         let a0_clone = four.clone();
         vec_.push(a0_clone)
     };
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut vec_;
-        __v.as_mut_ptr().add(__idx)
-    }) = ((*{
-        let __idx = 3_usize as usize;
-        let __v: &mut Vec<i32> = &mut vec_;
-        __v.as_mut_ptr().add(__idx)
-    }) + (1));
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i32> = &mut vec_;
-        __v.as_mut_ptr().add(__idx)
-    })
-    .postfix_inc();
+    (*(&mut vec_).as_mut_ptr().add(0_usize as usize)) =
+        ((*(&mut vec_).as_mut_ptr().add(3_usize as usize)) + (1));
+    (*(&mut vec_).as_mut_ptr().add(1_usize as usize)).postfix_inc();
     assert!(
-        (((vec_.len()) == (4_usize))
-            && ((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<i32> = &mut vec_;
-                __v.as_mut_ptr().add(__idx)
-            }) == (5)))
-            && ((*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<i32> = &mut vec_;
-                __v.as_mut_ptr().add(__idx)
-            }) == (2))
+        (((vec_.len()) == (4_usize)) && ((*(&mut vec_).as_mut_ptr().add(0_usize as usize)) == (5)))
+            && ((*(&mut vec_).as_mut_ptr().add(1_usize as usize)) == (2))
     );
     let mut high: i32 = 3;
     let mut low: i32 = {
@@ -183,30 +162,14 @@ unsafe fn main_0() -> i32 {
     let mut elem_ptr: Vec<i32> = vec![0; 2_usize as usize];
     (unsafe {
         set_0(
-            (&mut (*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<i32> = &mut elem_ptr;
-                __v.as_mut_ptr().add(__idx)
-            }) as *mut i32),
+            (&mut (*(&mut elem_ptr).as_mut_ptr().add(1_usize as usize)) as *mut i32),
             7,
         )
     });
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut elem_ptr;
-            __v.as_mut_ptr().add(__idx)
-        }) == (7))
-    );
+    assert!(((*(&mut elem_ptr).as_mut_ptr().add(1_usize as usize)) == (7)));
     let mut data: Vec<i32> = vec![0; 2_usize as usize];
     (unsafe { set_0(data.as_mut_ptr(), 8) });
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut data;
-            __v.as_mut_ptr().add(__idx)
-        }) == (8))
-    );
+    assert!(((*(&mut data).as_mut_ptr().add(0_usize as usize)) == (8)));
     let mut square: Square = <Square>::default();
     let mut shape: *mut dyn Shape = (&mut square as *mut Square);
     assert!(((unsafe { (*shape).scale(3,) }) == (6)));

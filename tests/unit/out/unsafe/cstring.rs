@@ -266,7 +266,7 @@ pub unsafe fn test_strdup_10() {
     let mut d: *mut libc::c_char = libcc2rs::strdup_unsafe(c"hello".as_ptr());
     assert!(!((d).is_null()));
     assert!(((libc::strcmp((d).cast_const(), c"hello".as_ptr())) == (0)));
-    unimplemented!();
+    libcc2rs::free_unsafe((d as *mut ::libc::c_void));
     let mut p: *const libc::c_char = c"world".as_ptr();
     let mut buf: [libc::c_char; 4] = [
         ('a' as libc::c_char),
@@ -277,11 +277,11 @@ pub unsafe fn test_strdup_10() {
     let mut d2: *mut libc::c_char = libcc2rs::strdup_unsafe(p);
     assert!(!((d2).is_null()));
     assert!(((libc::strcmp((d2).cast_const(), p)) == (0)));
-    unimplemented!();
+    libcc2rs::free_unsafe((d2 as *mut ::libc::c_void));
     let mut d3: *mut libc::c_char = libcc2rs::strdup_unsafe((buf.as_mut_ptr()).cast_const());
     assert!(!((d3).is_null()));
     assert!(((libc::strcmp((d3).cast_const(), (buf.as_mut_ptr()).cast_const())) == (0)));
-    unimplemented!();
+    libcc2rs::free_unsafe((d3 as *mut ::libc::c_void));
 }
 pub unsafe fn test_strcspn_11() {
     assert!(((libc::strcspn(c"hello".as_ptr(), c"el".as_ptr())) == (1_usize)));

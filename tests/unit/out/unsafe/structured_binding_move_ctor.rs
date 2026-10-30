@@ -91,20 +91,8 @@ unsafe fn main_0() -> i32 {
     let mut __decomp_3: Holder = (unsafe { Holder::extract(&mut h) });
     assert!(((__decomp_3.xs.len()) == (3_usize)));
     assert!(((__decomp_3.ys.len()) == (2_usize)));
-    assert!(
-        ((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<i32> = &mut __decomp_3.xs;
-            __v.as_mut_ptr().add(__idx)
-        }) == (3))
-    );
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut __decomp_3.ys;
-            __v.as_mut_ptr().add(__idx)
-        }) == (4))
-    );
+    assert!(((*(&mut __decomp_3.xs).as_mut_ptr().add(2_usize as usize)) == (3)));
+    assert!(((*(&mut __decomp_3.ys).as_mut_ptr().add(0_usize as usize)) == (4)));
     assert!(h.xs.is_empty());
     assert!(h.ys.is_empty());
     return 0;

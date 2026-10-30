@@ -27,11 +27,11 @@ pub unsafe fn operator_cmp_1(
 ) -> std::cmp::Ordering {
     {
         let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).a), &((*_a1).a));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 pub unsafe fn operator_eq_2(_a0: *const DefaultedOrd, _a1: *const DefaultedOrd) -> bool {
     return (((*_a0).a) == ((*_a1).a));
@@ -213,8 +213,18 @@ unsafe fn main_0() -> i32 {
     );
     let mut o1: DefaultedOrd = DefaultedOrd { a: 1 };
     let mut o2: DefaultedOrd = DefaultedOrd { a: 2 };
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(
+        (unsafe {
+            let _arg0: *const DefaultedOrd = &o1;
+            operator_cmp_1(_arg0, &o2)
+        }) == std::cmp::Ordering::Less
+    );
+    assert!(
+        (unsafe {
+            let _arg0: *const DefaultedOrd = &o2;
+            operator_cmp_1(_arg0, &o1)
+        }) == std::cmp::Ordering::Greater
+    );
     assert!(
         (unsafe {
             let _arg0: *const DefaultedOrd = &o1;
@@ -222,7 +232,12 @@ unsafe fn main_0() -> i32 {
             operator_eq_2(_arg0, _arg1)
         })
     );
-    assert!(unimplemented!());
+    assert!(
+        (unsafe {
+            let _arg0: *const DefaultedOrd = &o1;
+            operator_cmp_1(_arg0, &o2)
+        }) == std::cmp::Ordering::Less
+    );
     let mut i1: Inline = Inline { a: 1 };
     let mut i2: Inline = Inline { a: 2 };
     let mut i3: Inline = Inline { a: 1 };

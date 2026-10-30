@@ -55,13 +55,7 @@ unsafe fn main_0() -> i32 {
     };
     assert!(((*(*h.ref_).as_mut_ptr()) == (1)));
     (*((*h.ref_).first_mut().unwrap())) = 9;
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        }) == (9))
-    );
+    assert!(((*(&mut v).as_mut_ptr().add(0_usize as usize)) == (9)));
     (*((*h.ref_).first_mut().unwrap())) = 1;
     assert!(((*((h.vec_).last_mut().unwrap())) == (5)));
     let mut p: *mut Vec<i32> = (&mut h.vec_ as *mut Vec<i32>);
@@ -69,13 +63,7 @@ unsafe fn main_0() -> i32 {
     (*((*(unsafe { pick_0(&mut v, &mut h.vec_, false) }))
         .first_mut()
         .unwrap())) = 7;
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut h.vec_;
-            __v.as_mut_ptr().add(__idx)
-        }) == (7))
-    );
+    assert!(((*(&mut h.vec_).as_mut_ptr().add(0_usize as usize)) == (7)));
     let mut m: UnsafeMap<i32, (i32, Vec<i32>)> = UnsafeMap::new();
     {
         let __a1 = 8;

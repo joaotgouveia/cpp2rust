@@ -32,28 +32,14 @@ unsafe fn main_0() -> i32 {
         .collect::<Vec<_>>();
     {
         let mut __a1 = (arr.as_ptr().offset((1) as isize), n);
-        (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<(*const i32, u64)> = &mut const_ptr_pairs;
-            __v.as_mut_ptr().add(__idx)
-        }) = (
+        (*(&mut const_ptr_pairs).as_mut_ptr().add(0_usize as usize)) = (
             <*const i32 as CppFromUnsafe<*const i32>>::cpp_from_move(&mut __a1.0),
             ((*&mut __a1.1) as u64),
         )
     };
     assert!(
-        ((*(*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<(*const i32, u64)> = &mut const_ptr_pairs;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .0) == (2))
-            && (((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<(*const i32, u64)> = &mut const_ptr_pairs;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .1) == (2_u64))
+        ((*(*(&mut const_ptr_pairs).as_mut_ptr().add(0_usize as usize)).0) == (2))
+            && (((*(&mut const_ptr_pairs).as_mut_ptr().add(0_usize as usize)).1) == (2_u64))
     );
     return 0;
 }

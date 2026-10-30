@@ -52,11 +52,10 @@ unsafe fn main_0() -> i32 {
     assert!(((arr[(0) as usize].tag) == (7)));
     assert!(((arr[(1) as usize].data.len()) == (1_usize)));
     assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut arr[(1) as usize].data;
-            __v.as_mut_ptr().add(__idx)
-        }) == (42))
+        ((*(&mut arr[(1) as usize].data)
+            .as_mut_ptr()
+            .add(0_usize as usize))
+            == (42))
     );
     assert!(((arr[(2) as usize].tag) == (0)));
     assert!(((arr[(2) as usize].data.len()) == (0_usize)));

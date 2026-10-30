@@ -55,16 +55,8 @@ unsafe fn main_0() -> i32 {
         }
     };
     assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        }) == (4))
-            && ((*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<i32> = &mut v;
-                __v.as_mut_ptr().add(__idx)
-            }) == (7))
+        ((*(&mut v).as_mut_ptr().add(0_usize as usize)) == (4))
+            && ((*(&mut v).as_mut_ptr().add(1_usize as usize)) == (7))
     );
     return 0;
 }

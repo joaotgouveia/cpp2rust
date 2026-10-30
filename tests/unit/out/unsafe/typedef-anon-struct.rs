@@ -45,24 +45,8 @@ unsafe fn main_0() -> i32 {
         o.runs.push(a0_clone)
     };
     assert!(((o.runs.len()) == (1_usize)));
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Outer_RunInfo> = &mut o.runs;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .block_idx)
-            == (1))
-    );
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Outer_RunInfo> = &mut o.runs;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .num_extra_zero_runs)
-            == (2))
-    );
+    assert!((((*(&mut o.runs).as_mut_ptr().add(0_usize as usize)).block_idx) == (1)));
+    assert!((((*(&mut o.runs).as_mut_ptr().add(0_usize as usize)).num_extra_zero_runs) == (2)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

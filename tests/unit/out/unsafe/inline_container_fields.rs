@@ -121,27 +121,14 @@ pub unsafe fn fill_1(mut s: *mut State) {
     };
     let mut i: i32 = 0;
     'loop_: while ((i) < (3)) {
-        (*{
-            let __idx = (i as usize) as usize;
-            let __v: &mut Vec<Elem> = &mut (*s).elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .id = i;
-        (*{
-            let __idx = (i as usize) as usize;
-            let __v: &mut Vec<Elem> = &mut (*s).elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .hist[(i) as usize] = ((10) * (i));
+        (*(&mut (*s).elems).as_mut_ptr().add((i as usize) as usize)).id = i;
+        (*(&mut (*s).elems).as_mut_ptr().add((i as usize) as usize)).hist[(i) as usize] =
+            ((10) * (i));
         {
             let __a0 = 4_usize as usize;
-            (*{
-                let __idx = (i as usize) as usize;
-                let __v: &mut Vec<Elem> = &mut (*s).elems;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .coeffs
-            .resize(__a0, (i as i16))
+            (*(&mut (*s).elems).as_mut_ptr().add((i as usize) as usize))
+                .coeffs
+                .resize(__a0, (i as i16))
         };
         i.prefix_inc();
     }
@@ -170,23 +157,12 @@ unsafe fn main_0() -> i32 {
             __v.as_mut_ptr().add(__idx)
         }) == (7))
     );
-    let mut e: *mut Elem = (&mut (*{
-        let __idx = 2_usize as usize;
-        let __v: &mut Vec<Elem> = &mut s.elems;
-        __v.as_mut_ptr().add(__idx)
-    }) as *mut Elem);
+    let mut e: *mut Elem = (&mut (*(&mut s.elems).as_mut_ptr().add(2_usize as usize)) as *mut Elem);
     let mut h: *mut i32 = (*e).hist.as_mut_ptr();
-    let mut c: *mut i16 = (&mut (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i16> = &mut (*e).coeffs;
-        __v.as_mut_ptr().add(__idx)
-    }) as *mut i16);
-    let mut id: *mut i32 = (&mut (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<Elem> = &mut s.elems;
-        __v.as_mut_ptr().add(__idx)
-    })
-    .id as *mut i32);
+    let mut c: *mut i16 =
+        (&mut (*(&mut (*e).coeffs).as_mut_ptr().add(1_usize as usize)) as *mut i16);
+    let mut id: *mut i32 =
+        (&mut (*(&mut s.elems).as_mut_ptr().add(1_usize as usize)).id as *mut i32);
     let mut k: i32 = 0;
     'loop_: while ((k) < (4)) {
         (*h.offset((k) as isize)) += k;
@@ -198,206 +174,93 @@ unsafe fn main_0() -> i32 {
     assert!(
         ((unsafe {
             sum_0(
-                ((*{
-                    let __idx = 2_usize as usize;
-                    let __v: &mut Vec<Elem> = &mut s.elems;
-                    __v.as_mut_ptr().add(__idx)
-                })
-                .hist
-                .as_mut_ptr())
+                ((*(&mut s.elems).as_mut_ptr().add(2_usize as usize))
+                    .hist
+                    .as_mut_ptr())
                 .cast_const(),
                 4,
             )
         }) == (26))
-            && (((*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<i16> = &mut (*{
-                    let __idx = 2_usize as usize;
-                    let __v: &mut Vec<Elem> = &mut s.elems;
-                    __v.as_mut_ptr().add(__idx)
-                })
-                .coeffs;
-                __v.as_mut_ptr().add(__idx)
-            }) as i32)
+            && (((*(&mut (*(&mut s.elems).as_mut_ptr().add(2_usize as usize)).coeffs)
+                .as_mut_ptr()
+                .add(1_usize as usize)) as i32)
                 == (7))
     );
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Elem> = &mut s.elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .id) == (11))
+        (((*(&mut s.elems).as_mut_ptr().add(1_usize as usize)).id) == (11))
             && ((h.offset((3) as isize))
-                == (&mut (*{
-                    let __idx = 2_usize as usize;
-                    let __v: &mut Vec<Elem> = &mut s.elems;
-                    __v.as_mut_ptr().add(__idx)
-                })
-                .hist[(3) as usize] as *mut i32))
+                == (&mut (*(&mut s.elems).as_mut_ptr().add(2_usize as usize)).hist[(3) as usize]
+                    as *mut i32))
     );
-    let mut row: *mut i32 = (&mut (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut s.rows;
-            __v.as_mut_ptr().add(__idx)
-        });
-        __v.as_mut_ptr().add(__idx)
-    }) as *mut i32);
+    let mut row: *mut i32 = (&mut (*(&mut (*(&mut s.rows).as_mut_ptr().add(0_usize as usize)))
+        .as_mut_ptr()
+        .add(0_usize as usize)) as *mut i32);
     (*row.offset((2) as isize)) = 9;
     assert!(
-        ((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<i32> = &mut (*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<Vec<i32>> = &mut s.rows;
-                __v.as_mut_ptr().add(__idx)
-            });
-            __v.as_mut_ptr().add(__idx)
-        }) == (9))
+        ((*(&mut (*(&mut s.rows).as_mut_ptr().add(0_usize as usize)))
+            .as_mut_ptr()
+            .add(2_usize as usize))
+            == (9))
     );
     let mut t: State = s.clone();
-    (*{
-        let __idx = 2_usize as usize;
-        let __v: &mut Vec<Elem> = &mut t.elems;
-        __v.as_mut_ptr().add(__idx)
-    })
-    .hist[(0) as usize] = 100;
+    (*(&mut t.elems).as_mut_ptr().add(2_usize as usize)).hist[(0) as usize] = 100;
     t.grid[(0) as usize][(0) as usize] = 100;
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut t.rows;
-            __v.as_mut_ptr().add(__idx)
-        });
-        __v.as_mut_ptr().add(__idx)
-    }) = 100;
+    (*(&mut (*(&mut t.rows).as_mut_ptr().add(0_usize as usize)))
+        .as_mut_ptr()
+        .add(0_usize as usize)) = 100;
     assert!(
-        ((((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<Elem> = &mut s.elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .hist[(0) as usize])
-            == (0))
+        ((((*(&mut s.elems).as_mut_ptr().add(2_usize as usize)).hist[(0) as usize]) == (0))
             && ((s.grid[(0) as usize][(0) as usize]) == (0)))
-            && ((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<i32> = &mut (*{
-                    let __idx = 0_usize as usize;
-                    let __v: &mut Vec<Vec<i32>> = &mut s.rows;
-                    __v.as_mut_ptr().add(__idx)
-                });
-                __v.as_mut_ptr().add(__idx)
-            }) == (1))
+            && ((*(&mut (*(&mut s.rows).as_mut_ptr().add(0_usize as usize)))
+                .as_mut_ptr()
+                .add(0_usize as usize))
+                == (1))
     );
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i16> = &mut (*{
-                let __idx = 2_usize as usize;
-                let __v: &mut Vec<Elem> = &mut t.elems;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .coeffs;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut (*(&mut t.elems).as_mut_ptr().add(2_usize as usize)).coeffs)
+            .as_mut_ptr()
+            .add(1_usize as usize)) as i32)
             == (7))
     );
     let mut p: *mut State = (&mut t as *mut State);
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<Elem> = &mut (*p).elems;
-        __v.as_mut_ptr().add(__idx)
-    })
-    .hist[(3) as usize] = (((*p).grid[(1) as usize][(1) as usize])
+    (*(&mut (*p).elems).as_mut_ptr().add(0_usize as usize)).hist[(3) as usize] = (((*p).grid
+        [(1) as usize][(1) as usize])
         + (*{
             let __idx = 1_usize as usize;
             let __v: &mut Vec<i32> = &mut (*p).arr;
             __v.as_mut_ptr().add(__idx)
         }));
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Elem> = &mut t.elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .hist[(3) as usize])
-            == (11))
-    );
+    assert!((((*(&mut t.elems).as_mut_ptr().add(0_usize as usize)).hist[(3) as usize]) == (11)));
     {
-        let a0_clone = (*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<Elem> = &mut (*p).elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .clone();
+        let a0_clone = (*(&mut (*p).elems).as_mut_ptr().add(2_usize as usize)).clone();
         (*p).elems.push(a0_clone)
     };
     assert!(
         (((*p).elems.len()) == (4_usize))
-            && (((*{
-                let __idx = 3_usize as usize;
-                let __v: &mut Vec<Elem> = &mut (*p).elems;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .hist[(0) as usize])
+            && (((*(&mut (*p).elems).as_mut_ptr().add(3_usize as usize)).hist[(0) as usize])
                 == (100))
     );
     let mut elems: Vec<Elem> = (0..(2_usize) as usize)
         .map(|_| <Elem>::default())
         .collect::<Vec<_>>();
-    let mut first: *mut Elem = (&mut (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<Elem> = &mut elems;
-        __v.as_mut_ptr().add(__idx)
-    }) as *mut Elem);
+    let mut first: *mut Elem =
+        (&mut (*(&mut elems).as_mut_ptr().add(0_usize as usize)) as *mut Elem);
     {
         let __a0 = 2_usize as usize;
-        (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Elem> = &mut elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .coeffs
-        .resize_with(__a0, || 0_i16)
+        (*(&mut elems).as_mut_ptr().add(1_usize as usize))
+            .coeffs
+            .resize_with(__a0, || 0_i16)
     };
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i16> = &mut (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Elem> = &mut elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .coeffs;
-        __v.as_mut_ptr().add(__idx)
-    }) = 4_i16;
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<Elem> = &mut elems;
-        __v.as_mut_ptr().add(__idx)
-    })
-    .hist[(2) as usize] = (((*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i16> = &mut (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Elem> = &mut elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .coeffs;
-        __v.as_mut_ptr().add(__idx)
-    }) as i32)
-        + (1));
+    (*(&mut (*(&mut elems).as_mut_ptr().add(1_usize as usize)).coeffs)
+        .as_mut_ptr()
+        .add(1_usize as usize)) = 4_i16;
+    (*(&mut elems).as_mut_ptr().add(1_usize as usize)).hist[(2) as usize] =
+        (((*(&mut (*(&mut elems).as_mut_ptr().add(1_usize as usize)).coeffs)
+            .as_mut_ptr()
+            .add(1_usize as usize)) as i32)
+            + (1));
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Elem> = &mut elems;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .hist[(2) as usize])
-            == (5))
+        (((*(&mut elems).as_mut_ptr().add(1_usize as usize)).hist[(2) as usize]) == (5))
             && (((*first).hist[(2) as usize]) == (0))
     );
     let mut moved: State = State::move_from({ &mut t });
@@ -413,16 +276,9 @@ unsafe fn main_0() -> i32 {
             && ((assigned.grid[(1) as usize][(1) as usize]) == (4))
     );
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i16> = &mut (*{
-                let __idx = 2_usize as usize;
-                let __v: &mut Vec<Elem> = &mut assigned.elems;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .coeffs;
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut (*(&mut assigned.elems).as_mut_ptr().add(2_usize as usize)).coeffs)
+            .as_mut_ptr()
+            .add(1_usize as usize)) as i32)
             == (7))
             && (moved.elems.is_empty())
     );

@@ -24,7 +24,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut s: *mut S = (unimplemented!() as *mut S);
+    let mut s: *mut S = (libcc2rs::calloc_unsafe(1_usize, ::std::mem::size_of::<S>()) as *mut S);
     assert!(!((s).is_null()));
     (*s).b = 1;
     (*s).a = (unsafe { bump_0(s) });
@@ -55,7 +55,7 @@ unsafe fn main_0() -> i32 {
     assert!((((*s).c) == (99)) && ((y) == (99)));
     (*s).a += (unsafe { bump_0(s) });
     assert!(((((*s).a) == (18)) && (((*s).b) == (13))) && (((*s).c) == (99)));
-    unimplemented!();
+    libcc2rs::free_unsafe((s as *mut ::libc::c_void));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

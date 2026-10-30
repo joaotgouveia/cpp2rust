@@ -8,12 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn second_row_0() -> *mut i32 {
     let mut rows: Vec<Vec<i32>> = Vec::from([Vec::from([1, 2, 3]), Vec::from([4, 5, 6])]);
-    return (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<Vec<i32>> = &mut rows;
-        __v.as_mut_ptr().add(__idx)
-    })
-    .as_mut_ptr();
+    return (*(&mut rows).as_mut_ptr().add(1_usize as usize)).as_mut_ptr();
 }
 pub fn main() {
     unsafe {

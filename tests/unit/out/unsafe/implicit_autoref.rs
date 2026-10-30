@@ -43,16 +43,8 @@ unsafe fn main_0() -> i32 {
         v.push(__a1)
     };
     let mut p: *mut Vec<i32> = (&mut v as *mut Vec<i32>);
-    let mut a: i32 = (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*p);
-        __v.as_mut_ptr().add(__idx)
-    });
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*p);
-        __v.as_mut_ptr().add(__idx)
-    }) = 30;
+    let mut a: i32 = (*(&mut (*p)).as_mut_ptr().add(0_usize as usize));
+    (*(&mut (*p)).as_mut_ptr().add(1_usize as usize)) = 30;
     let mut h: Holder = <Holder>::default();
     {
         let __a1 = 40;
@@ -63,40 +55,14 @@ unsafe fn main_0() -> i32 {
         h.v.push(__a1)
     };
     let mut hp: *mut Holder = (&mut h as *mut Holder);
-    let mut b: i32 = (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*hp).v;
-        __v.as_mut_ptr().add(__idx)
-    });
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*hp).v;
-        __v.as_mut_ptr().add(__idx)
-    }) = 60;
+    let mut b: i32 = (*(&mut (*hp).v).as_mut_ptr().add(0_usize as usize));
+    (*(&mut (*hp).v).as_mut_ptr().add(1_usize as usize)) = 60;
     assert!(((a) == (10)));
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut (*p);
-            __v.as_mut_ptr().add(__idx)
-        }) == (30))
-    );
+    assert!(((*(&mut (*p)).as_mut_ptr().add(1_usize as usize)) == (30)));
     assert!(((b) == (40)));
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut (*hp).v;
-            __v.as_mut_ptr().add(__idx)
-        }) == (60))
-    );
+    assert!(((*(&mut (*hp).v).as_mut_ptr().add(1_usize as usize)) == (60)));
     (unsafe { write_through_0((&mut (&mut (*p))[0_usize as usize] as *mut i32)) });
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut (*p);
-            __v.as_mut_ptr().add(__idx)
-        }) == (42))
-    );
+    assert!(((*(&mut (*p)).as_mut_ptr().add(0_usize as usize)) == (42)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

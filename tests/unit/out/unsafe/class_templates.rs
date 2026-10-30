@@ -223,14 +223,7 @@ unsafe fn main_0() -> i32 {
         let __a1 = Elem { i: 2 };
         ev.push(__a1)
     };
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Elem> = &mut ev;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .i) == (2))
-    );
+    assert!((((*(&mut ev).as_mut_ptr().add(0_usize as usize)).i) == (2)));
     assert!((((unsafe { Boxed_short_::twice(2_i16,) }) as i32) == (4)));
     let mut oi: Outer_int_ = Outer_int_ { v: 3 };
     assert!(

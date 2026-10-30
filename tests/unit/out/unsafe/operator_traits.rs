@@ -152,24 +152,9 @@ unsafe fn main_0() -> i32 {
         }
     };
     assert!(
-        ((((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Lt> = &mut lts;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .v) == (1))
-            && (((*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<Lt> = &mut lts;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .v) == (2)))
-            && (((*{
-                let __idx = 2_usize as usize;
-                let __v: &mut Vec<Lt> = &mut lts;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .v) == (3))
+        ((((*(&mut lts).as_mut_ptr().add(0_usize as usize)).v) == (1))
+            && (((*(&mut lts).as_mut_ptr().add(1_usize as usize)).v) == (2)))
+            && (((*(&mut lts).as_mut_ptr().add(2_usize as usize)).v) == (3))
     );
     let mut eqs: Vec<Eq> = Vec::from([Eq { v: 1 }, Eq { v: 2 }, Eq { v: 3 }]);
     let mut two: Eq = Eq { v: 2 };
@@ -213,18 +198,8 @@ unsafe fn main_0() -> i32 {
         }
     };
     assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Cmp> = &mut cmps;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .v) == (1))
-            && (((*{
-                let __idx = 2_usize as usize;
-                let __v: &mut Vec<Cmp> = &mut cmps;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .v) == (3))
+        (((*(&mut cmps).as_mut_ptr().add(0_usize as usize)).v) == (1))
+            && (((*(&mut cmps).as_mut_ptr().add(2_usize as usize)).v) == (3))
     );
     let mut three: Cmp = Cmp { v: 3 };
     assert!(
@@ -254,14 +229,7 @@ unsafe fn main_0() -> i32 {
             std::ptr::write(__first.iter_at(__i), __v);
         }
     };
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Free> = &mut frees;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .v) == (1))
-    );
+    assert!((((*(&mut frees).as_mut_ptr().add(0_usize as usize)).v) == (1)));
     let mut ftwo: Free = Free { v: 2 };
     assert!(
         (((*{

@@ -28,19 +28,10 @@ unsafe fn main_0() -> i32 {
     let mut v: Vec<i32> = Vec::from([4, 5, 6]);
     assert!(((v.len()) == (3_usize)));
     assert!(
-        ((((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        }) + (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })) + (*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<i32> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })) == (15))
+        ((((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            + (*(&mut v).as_mut_ptr().add(1_usize as usize)))
+            + (*(&mut v).as_mut_ptr().add(2_usize as usize)))
+            == (15))
     );
     let mut l: Vec<i32> = Vec::from([7, 8]);
     assert!(((l.len()) == (2_usize)));

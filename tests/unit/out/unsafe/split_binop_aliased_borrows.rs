@@ -15,19 +15,9 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut v: Vec<i32> = Vec::from([1, 2]);
     let mut p: UnsafeRandomAccessIterator<i32> = v.begin();
-    let r: *const i32 = &(*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i32> = &mut v;
-        __v.as_mut_ptr().add(__idx)
-    });
+    let r: *const i32 = &(*(&mut v).as_mut_ptr().add(1_usize as usize));
     (*p.iter_deref()) = (*r);
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        }) == (2))
-    );
+    assert!(((*(&mut v).as_mut_ptr().add(0_usize as usize)) == (2)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

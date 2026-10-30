@@ -96,11 +96,7 @@ pub unsafe fn run_0(mut o: *mut S) {
     };
     assert!(
         (((*o).v.len()) == (1_usize))
-            && ((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<i32> = &mut (*o).v;
-                __v.as_mut_ptr().add(__idx)
-            }) == (1))
+            && ((*(&mut (*o).v).as_mut_ptr().add(0_usize as usize)) == (1))
     );
     assert!((((*o).tag) == (1)));
 }

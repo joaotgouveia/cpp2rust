@@ -171,18 +171,8 @@ unsafe fn main_0() -> i32 {
         vec_.push(__a1)
     };
     assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<MoveOnly> = &mut vec_;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .v) == (7))
-            && (((*{
-                let __idx = 1_usize as usize;
-                let __v: &mut Vec<MoveOnly> = &mut vec_;
-                __v.as_mut_ptr().add(__idx)
-            })
-            .v) == (8))
+        (((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (7))
+            && (((*(&mut vec_).as_mut_ptr().add(1_usize as usize)).v) == (8))
     );
     assert!(((f.v) == (0)));
     let mut m: ConstMove = ConstMove::new();

@@ -26,83 +26,27 @@ pub unsafe fn fn_0(v: *mut Vec<i32>, mut v3: Vec<i32>) {
         let __a1 = 3;
         v2.push(__a1)
     };
-    x = (*{
-        let __idx = 2_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*v);
-        __v.as_mut_ptr().add(__idx)
-    });
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut v2;
-        __v.as_mut_ptr().add(__idx)
-    }) = 1;
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*if true {
-            (&mut v3 as *mut Vec<i32>)
-        } else {
-            (v)
-        });
-        __v.as_mut_ptr().add(__idx)
-    }) = 7;
+    x = (*(&mut (*v)).as_mut_ptr().add(2_usize as usize));
+    (*(&mut v2).as_mut_ptr().add(0_usize as usize)) = 1;
+    (*(&mut (*if true {
+        (&mut v3 as *mut Vec<i32>)
+    } else {
+        (v)
+    }))
+        .as_mut_ptr()
+        .add(0_usize as usize)) = 7;
     v2 = (*v).clone();
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*v4);
-        __v.as_mut_ptr().add(__idx)
-    }) = 13;
+    (*(&mut (*v4)).as_mut_ptr().add(1_usize as usize)) = 13;
     assert!(((x) == (6)));
     assert!(((*((*v).first_mut().unwrap())) == (4)));
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut (*v);
-            __v.as_mut_ptr().add(__idx)
-        }) == (5))
-    );
-    assert!(
-        ((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<i32> = &mut (*v);
-            __v.as_mut_ptr().add(__idx)
-        }) == (6))
-    );
+    assert!(((*(&mut (*v)).as_mut_ptr().add(1_usize as usize)) == (5)));
+    assert!(((*(&mut (*v)).as_mut_ptr().add(2_usize as usize)) == (6)));
     assert!(((*((*v).last_mut().unwrap())) == (20)));
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v2;
-            __v.as_mut_ptr().add(__idx)
-        }) == (4))
-    );
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut v2;
-            __v.as_mut_ptr().add(__idx)
-        }) == (5))
-    );
-    assert!(
-        ((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<i32> = &mut v2;
-            __v.as_mut_ptr().add(__idx)
-        }) == (6))
-    );
-    assert!(
-        ((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v3;
-            __v.as_mut_ptr().add(__idx)
-        }) == (7))
-    );
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut v3;
-            __v.as_mut_ptr().add(__idx)
-        }) == (13))
-    );
+    assert!(((*(&mut v2).as_mut_ptr().add(0_usize as usize)) == (4)));
+    assert!(((*(&mut v2).as_mut_ptr().add(1_usize as usize)) == (5)));
+    assert!(((*(&mut v2).as_mut_ptr().add(2_usize as usize)) == (6)));
+    assert!(((*(&mut v3).as_mut_ptr().add(0_usize as usize)) == (7)));
+    assert!(((*(&mut v3).as_mut_ptr().add(1_usize as usize)) == (13)));
     {
         let __a1 = 20;
         (*v).push(__a1)

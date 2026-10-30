@@ -15,7 +15,12 @@ fn main_0() -> i32 {
     let d: Value<u32> = Rc::new(RefCell::new(n));
     assert!(((*d.borrow()) == 17_u32));
     let mut name: Ptr<i8> = Ptr::<i8>::from_string_literal(b"dir/file.txt");
-    let p: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v = Vec::new();
+        name.with_c_str(|__s| __v.extend_from_slice(__s));
+        __v.push(0);
+        __v
+    }));
     let mut s: Vec<i8> = (*p.borrow()).clone();
     assert!(((s.len() - 1) == 12_usize));
     assert!(

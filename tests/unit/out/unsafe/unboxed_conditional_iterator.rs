@@ -38,11 +38,7 @@ pub unsafe fn lehmer_2(mut sigma: *const u32, mut len: u32, mut code: *mut u32) 
         .collect::<Vec<_>>();
     let mut i: u32 = 0_u32;
     'loop_: while ((i) < (len)) {
-        (*{
-            let __idx = (i as usize) as usize;
-            let __v: &mut Vec<u32> = &mut items;
-            __v.as_mut_ptr().add(__idx)
-        }) = i;
+        (*(&mut items).as_mut_ptr().add((i as usize) as usize)) = i;
         i.prefix_inc();
     }
     let mut i: u32 = 0_u32;

@@ -151,18 +151,28 @@ fn main_0() -> i32 {
     let c2: Value<Cmp> = Rc::new(RefCell::new(Cmp { a: 1, b: 3 }));
     let c3: Value<Cmp> = Rc::new(RefCell::new(Cmp { a: 2, b: 0 }));
     let c4: Value<Cmp> = Rc::new(RefCell::new(Cmp { a: 1, b: 9 }));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(
+        ({ CmpImpl::operator_cmp(&c1.as_pointer(), c2.as_pointer(),) }) == std::cmp::Ordering::Less
+    );
+    assert!(
+        ({ CmpImpl::operator_cmp(&c3.as_pointer(), c4.as_pointer(),) })
+            == std::cmp::Ordering::Greater
+    );
     assert!(
         ({
             let _arg0: Ptr<Cmp> = c1.as_pointer();
             CmpImpl::operator_eq(&c1.as_pointer(), _arg0)
         })
     );
-    assert!(unimplemented!());
+    assert!(
+        ({ CmpImpl::operator_cmp(&c1.as_pointer(), c2.as_pointer(),) }) == std::cmp::Ordering::Less
+    );
     let b1: Value<Both> = Rc::new(RefCell::new(Both { a: 1 }));
     let b2: Value<Both> = Rc::new(RefCell::new(Both { a: 2 }));
-    assert!(unimplemented!());
+    assert!(
+        ({ BothImpl::operator_cmp(&b1.as_pointer(), b2.as_pointer(),) })
+            == std::cmp::Ordering::Less
+    );
     assert!(
         ({
             let _arg0: Ptr<Both> = b2.as_pointer();
@@ -171,8 +181,14 @@ fn main_0() -> i32 {
     );
     let o1: Value<OrdOnly> = Rc::new(RefCell::new(OrdOnly { a: 1 }));
     let o2: Value<OrdOnly> = Rc::new(RefCell::new(OrdOnly { a: 2 }));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(
+        ({ OrdOnlyImpl::operator_cmp(&o1.as_pointer(), o2.as_pointer(),) })
+            == std::cmp::Ordering::Less
+    );
+    assert!(
+        ({ OrdOnlyImpl::operator_cmp(&o2.as_pointer(), o1.as_pointer(),) })
+            == std::cmp::Ordering::Greater
+    );
     let x1: Value<Outer> = Rc::new(RefCell::new(Outer {
         i: Inner { x: 1 },
         y: 9,
@@ -185,9 +201,15 @@ fn main_0() -> i32 {
         i: Inner { x: 1 },
         y: 9,
     }));
-    assert!(unimplemented!());
+    assert!(
+        ({ OuterImpl::operator_cmp(&x1.as_pointer(), x2.as_pointer(),) })
+            == std::cmp::Ordering::Less
+    );
     assert!(({ OuterImpl::operator_eq(&x1.as_pointer(), x3.as_pointer(),) }));
-    assert!(unimplemented!());
+    assert!(
+        ({ OuterImpl::operator_cmp(&x2.as_pointer(), x1.as_pointer(),) })
+            == std::cmp::Ordering::Greater
+    );
     let s1: Value<Secondary> = Rc::new(RefCell::new(Secondary { a: 1 }));
     let s2: Value<Secondary> = Rc::new(RefCell::new(Secondary { a: 2 }));
     assert!(({ SecondaryImpl::operator_ne(&s1.as_pointer(), s2.as_pointer(),) }));
@@ -204,9 +226,15 @@ fn main_0() -> i32 {
     let p3: Value<PtrMember> = Rc::new(RefCell::new(PtrMember {
         p: (arr.as_pointer() as Ptr<i32>),
     }));
-    assert!(unimplemented!());
+    assert!(
+        ({ PtrMemberImpl::operator_cmp(&p1.as_pointer(), p2.as_pointer(),) })
+            == std::cmp::Ordering::Less
+    );
     assert!(({ PtrMemberImpl::operator_eq(&p1.as_pointer(), p3.as_pointer(),) }));
-    assert!(unimplemented!());
+    assert!(
+        ({ PtrMemberImpl::operator_cmp(&p2.as_pointer(), p1.as_pointer(),) })
+            == std::cmp::Ordering::Greater
+    );
     return 0;
 }
 pub trait BothImpl {
@@ -223,11 +251,11 @@ impl BothImpl for Ptr<Both> {
                 &((*self).with(|__s| __s.a)),
                 &(_a0.with(|__s| __s.a)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
 }
 pub trait CmpImpl {
@@ -241,8 +269,8 @@ impl CmpImpl for Ptr<Cmp> {
                 &((*self).with(|__s| __s.a)),
                 &(_a0.with(|__s| __s.a)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
         {
@@ -250,11 +278,11 @@ impl CmpImpl for Ptr<Cmp> {
                 &((*self).with(|__s| __s.b)),
                 &(_a0.with(|__s| __s.b)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
     fn operator_eq(&self, _a0: Ptr<Cmp>) -> bool {
         return ({ (*self).with(|__s| __s.a) } == { _a0.with(|__s| __s.a) })
@@ -281,11 +309,11 @@ impl InnerImpl for Ptr<Inner> {
                 &((*self).with(|__s| __s.x)),
                 &(_a0.with(|__s| __s.x)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
     fn operator_eq(&self, _a0: Ptr<Inner>) -> bool {
         return ({ (*self).with(|__s| __s.x) } == { _a0.with(|__s| __s.x) });
@@ -301,11 +329,11 @@ impl OrdOnlyImpl for Ptr<OrdOnly> {
                 &((*self).with(|__s| __s.a)),
                 &(_a0.with(|__s| __s.a)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
 }
 pub trait OuterImpl {
@@ -321,8 +349,8 @@ impl OuterImpl for Ptr<Outer> {
                     InnerImpl::operator_cmp(&field_ptr!((*self), i), _arg0)
                 }),
             ));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
         {
@@ -330,11 +358,11 @@ impl OuterImpl for Ptr<Outer> {
                 &((*self).with(|__s| __s.y)),
                 &(_a0.with(|__s| __s.y)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
     fn operator_eq(&self, _a0: Ptr<Outer>) -> bool {
         return ({
@@ -354,11 +382,11 @@ impl PtrMemberImpl for Ptr<PtrMember> {
                 &((*self).with(|__s| __s.p.clone())),
                 &(_a0.with(|__s| __s.p.clone())),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
     fn operator_eq(&self, _a0: Ptr<PtrMember>) -> bool {
         return ({ (*self).with(|__s| __s.p.clone()) } == { _a0.with(|__s| __s.p.clone()) });
@@ -387,17 +415,23 @@ impl SecondaryImpl for Ptr<Secondary> {
                 &((*self).with(|__s| __s.a)),
                 &(_a0.with(|__s| __s.a)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
     fn operator_lt(&self, _a0: Ptr<Secondary>) -> bool {
-        return unimplemented!();
+        return ({
+            let _arg0: Ptr<Secondary> = (_a0).clone();
+            SecondaryImpl::operator_cmp(&(*self), _arg0)
+        }) == std::cmp::Ordering::Less;
     }
     fn operator_ge(&self, _a0: Ptr<Secondary>) -> bool {
-        return unimplemented!();
+        return ({
+            let _arg0: Ptr<Secondary> = (_a0).clone();
+            SecondaryImpl::operator_cmp(&(*self), _arg0)
+        }) != std::cmp::Ordering::Less;
     }
 }
 pub fn __cpp2rust_init_globals() {}

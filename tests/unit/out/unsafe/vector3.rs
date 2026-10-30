@@ -20,49 +20,21 @@ unsafe fn main_0() -> i32 {
     };
     {
         let __a0 = 2_usize as usize;
-        (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .resize_with(__a0, || 0_i32)
+        (*(&mut v).as_mut_ptr().add(0_usize as usize)).resize_with(__a0, || 0_i32)
     };
     {
         let __a0 = 1_usize as usize;
-        (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .resize_with(__a0, || 0_i32)
+        (*(&mut v).as_mut_ptr().add(1_usize as usize)).resize_with(__a0, || 0_i32)
     };
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        });
-        __v.as_mut_ptr().add(__idx)
-    }) = 1;
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        });
-        __v.as_mut_ptr().add(__idx)
-    }) = 5;
-    (*{
-        let __idx = 0_usize as usize;
-        let __v: &mut Vec<i32> = &mut (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Vec<i32>> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        });
-        __v.as_mut_ptr().add(__idx)
-    }) = 6;
+    (*(&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
+        .as_mut_ptr()
+        .add(0_usize as usize)) = 1;
+    (*(&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
+        .as_mut_ptr()
+        .add(1_usize as usize)) = 5;
+    (*(&mut (*(&mut v).as_mut_ptr().add(1_usize as usize)))
+        .as_mut_ptr()
+        .add(0_usize as usize)) = 6;
     'loop_: for v2 in IterRange::new(v.begin(), v.end()) {
         let v2: *mut Vec<i32> = &mut (*v2.iter_deref());
         'loop_: for i in IterRange::new((*v2).begin(), (*v2).end()) {

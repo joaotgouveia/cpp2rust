@@ -19,39 +19,32 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (*{
-        let __idx = 1_usize as usize;
-        let __v: &mut Vec<u8> = &mut (*(unsafe { get_1() }));
-        __v.as_mut_ptr().add(__idx)
-    }) = 4_u8;
+    (*(&mut (*(unsafe { get_1() })))
+        .as_mut_ptr()
+        .add(1_usize as usize)) = 4_u8;
     let mut v: Option<Box<Vec<u8>>> = Some(Box::from_raw(
         (Box::leak(Box::new(
             (0..(3_usize) as usize).map(|_| 0_u8).collect::<Vec<_>>(),
         )) as *mut Vec<u8>),
     ));
-    (*{
-        let __idx = 2_usize as usize;
-        let __v: &mut Vec<u8> = &mut (*v.as_deref().map_or(::std::ptr::null_mut(), |v| {
-            v as *const Vec<u8> as *mut Vec<u8>
-        }));
-        __v.as_mut_ptr().add(__idx)
-    }) = 5_u8;
+    (*(&mut (*v.as_deref().map_or(::std::ptr::null_mut(), |v| {
+        v as *const Vec<u8> as *mut Vec<u8>
+    })))
+        .as_mut_ptr()
+        .add(2_usize as usize)) = 5_u8;
     assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<u8> = &mut (*(unsafe { get_1() }));
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut (*(unsafe { get_1() })))
+            .as_mut_ptr()
+            .add(1_usize as usize)) as i32)
             == (4))
     );
     assert!(
-        (((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<u8> = &mut (*v.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                v as *const Vec<u8> as *mut Vec<u8>
-            }));
-            __v.as_mut_ptr().add(__idx)
-        }) as i32)
+        (((*(&mut (*v
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const Vec<u8>
+                as *mut Vec<u8>)))
+            .as_mut_ptr()
+            .add(2_usize as usize)) as i32)
             == (5))
     );
     return 0;

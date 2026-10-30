@@ -32,12 +32,7 @@ unsafe fn main_0() -> i32 {
         __it
     };
     assert!(
-        (((*r.iter_deref()) == (9))
-            && ((*{
-                let __idx = 0_usize as usize;
-                let __v: &mut Vec<i32> = &mut v;
-                __v.as_mut_ptr().add(__idx)
-            }) == (9)))
+        (((*r.iter_deref()) == (9)) && ((*(&mut v).as_mut_ptr().add(0_usize as usize)) == (9)))
             && ((v.len()) == (4_usize))
     );
     let c: *const Vec<i32> = &v;

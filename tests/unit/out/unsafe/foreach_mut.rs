@@ -45,27 +45,15 @@ unsafe fn main_0() -> i32 {
     }
     let mut v2: Vec<*mut i32> = Vec::new();
     {
-        let __a1 = (&mut (*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<i32> = &mut v1;
-            __v.as_mut_ptr().add(__idx)
-        }) as *mut i32);
+        let __a1 = (&mut (*(&mut v1).as_mut_ptr().add(0_usize as usize)) as *mut i32);
         v2.push(__a1)
     };
     {
-        let __a1 = (&mut (*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<i32> = &mut v1;
-            __v.as_mut_ptr().add(__idx)
-        }) as *mut i32);
+        let __a1 = (&mut (*(&mut v1).as_mut_ptr().add(1_usize as usize)) as *mut i32);
         v2.push(__a1)
     };
     {
-        let __a1 = (&mut (*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<i32> = &mut v1;
-            __v.as_mut_ptr().add(__idx)
-        }) as *mut i32);
+        let __a1 = (&mut (*(&mut v1).as_mut_ptr().add(2_usize as usize)) as *mut i32);
         v2.push(__a1)
     };
     'loop_: for p in IterRange::new(v2.begin(), v2.end()) {

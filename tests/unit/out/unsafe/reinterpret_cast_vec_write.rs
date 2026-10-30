@@ -30,13 +30,7 @@ unsafe fn main_0() -> i32 {
     assert!((((*bytes.offset((4) as isize)) as i32) == (5)));
     assert!((((*bytes.offset((7) as isize)) as i32) == (8)));
     (*bytes.offset((4) as isize)) = 255_u8;
-    assert!(
-        ((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<u32> = &mut vec_;
-            __v.as_mut_ptr().add(__idx)
-        }) == (134678271_u32))
-    );
+    assert!(((*(&mut vec_).as_mut_ptr().add(1_usize as usize)) == (134678271_u32)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

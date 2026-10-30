@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut b1: u8 = 1_u8;
     let mut ushift1: u32 = 3_u32;
-    let mut shl1: u8 = unimplemented!();
+    let mut shl1: u8 = b1 << ushift1;
     assert!((shl1 == ((8) as u8)));
     let mut ushift2: u32 = 2_u32;
     let mut shr1: u8 = shl1 >> ushift2;
@@ -33,7 +33,7 @@ fn main_0() -> i32 {
     };
     assert!((b1 == ((4) as u8)));
     let mut ishift: i32 = 1;
-    let mut shl2: u8 = unimplemented!();
+    let mut shl2: u8 = b1 << ishift;
     assert!((shl2 == ((8) as u8)));
     return 0;
 }

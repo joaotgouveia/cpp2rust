@@ -59,33 +59,9 @@ unsafe fn main_0() -> i32 {
             std::ptr::write(__first.iter_at(__i), __v);
         }
     };
-    assert!(
-        (((*{
-            let __idx = 0_usize as usize;
-            let __v: &mut Vec<Item> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .key)
-            == (1))
-    );
-    assert!(
-        (((*{
-            let __idx = 1_usize as usize;
-            let __v: &mut Vec<Item> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .key)
-            == (2))
-    );
-    assert!(
-        (((*{
-            let __idx = 2_usize as usize;
-            let __v: &mut Vec<Item> = &mut v;
-            __v.as_mut_ptr().add(__idx)
-        })
-        .key)
-            == (3))
-    );
+    assert!((((*(&mut v).as_mut_ptr().add(0_usize as usize)).key) == (1)));
+    assert!((((*(&mut v).as_mut_ptr().add(1_usize as usize)).key) == (2)));
+    assert!((((*(&mut v).as_mut_ptr().add(2_usize as usize)).key) == (3)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

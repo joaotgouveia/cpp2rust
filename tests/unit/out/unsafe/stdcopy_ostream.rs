@@ -20,7 +20,9 @@ unsafe fn main_0() -> i32 {
     };
     let file: [libc::c_char; 25] = std::mem::transmute(*b"test_stdcopy_ostream.txt\0");
     {
-        let mut ofs: ::std::fs::File = unimplemented!();
+        let mut ofs: ::std::fs::File =
+            ::std::fs::File::create(::std::ffi::CStr::from_ptr(file.as_ptr()).to_str().unwrap())
+                .unwrap();
         {
             let mut __first = UnsafeRandomAccessIterator::Vec(str.as_mut_ptr());
             let __last = UnsafeRandomAccessIterator::Vec(str.as_mut_ptr().add(str.len() - 1));

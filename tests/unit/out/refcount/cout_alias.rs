@@ -12,18 +12,30 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut cond: bool = true;
-    let mut os1: Ptr<Ptr<std::fs::File>> = if cond {
+    let mut os1: Ptr<::std::fs::File> = if cond {
         (libcc2rs::cout())
     } else {
         (libcc2rs::cerr())
     };
-    unimplemented!();
-    let os2: Ptr<Ptr<std::fs::File>> = if cond {
+    {
+        let __s = (os1).clone();
+        let _ = Ptr::<i8>::from_string_literal(b"hello\n").with_c_str(|__cs| {
+            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+        });
+        __s
+    };
+    let os2: Ptr<::std::fs::File> = if cond {
         (libcc2rs::cout())
     } else {
         (libcc2rs::cerr())
     };
-    unimplemented!();
+    {
+        let __s = (os2).clone();
+        let _ = Ptr::<i8>::from_string_literal(b"hello\n").with_c_str(|__cs| {
+            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+        });
+        __s
+    };
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

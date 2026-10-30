@@ -20,7 +20,10 @@ fn main_0() -> i32 {
         b"test_stdcopy_ostream.txt\0",
     )));
     {
-        let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::create((file.as_pointer() as Ptr<i8>).to_string())
+                .expect("Failed to open file"),
+        ));
         {
             let mut __first = RandomAccessIterator::Vec(str.decay());
             let __last = RandomAccessIterator::Vec(str.decay().to_last());
