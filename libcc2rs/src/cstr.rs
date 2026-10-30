@@ -6,9 +6,9 @@ use std::collections::HashMap;
 use std::fmt;
 use std::rc::Rc;
 
-use crate::rc::{FieldShape, Ptr, PtrKind};
-use crate::reinterpret::{with_scratch, ByteRepr};
 use crate::CStringIterator;
+use crate::rc::{FieldShape, Ptr, PtrKind};
+use crate::reinterpret::{ByteRepr, with_scratch};
 
 // The element types of C strings: `char` and `signed char` map to `i8`,
 // `unsigned char` to `u8`.

@@ -108,11 +108,11 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
   // (typename elements_view<T1, T2>::template __sentinel<T3>)
   if (auto nested = pattern->getAs<clang::TemplateSpecializationType>();
       nested && nested->getTemplateName().getAsDependentTemplateName()) {
-    auto record = RuleDecls::GetSugar(spelled) ? nullptr
-                                               : spelled->getAsCXXRecordDecl();
-    auto args = record ? RuleDecls::DeduceFromClass(sema, params, pattern,
-                                                    record)
-                       : std::nullopt;
+    auto record =
+        RuleDecls::GetSugar(spelled) ? nullptr : spelled->getAsCXXRecordDecl();
+    auto args = record
+                    ? RuleDecls::DeduceFromClass(sema, params, pattern, record)
+                    : std::nullopt;
     if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
         !satisfiesConstraints(sema, tmpl, *args)) {
       return std::nullopt;
@@ -150,8 +150,7 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
                  ? std::nullopt
                  : from_defaults();
     }
-    auto owner =
-        llvm::dyn_cast<clang::CXXRecordDecl>(named->getDeclContext());
+    auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(named->getDeclContext());
     if (!owner) {
       return from_defaults();
     }
@@ -171,7 +170,7 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
       unsigned n = 0;
       for (const auto &arg : list) {
         n += arg.getKind() == clang::TemplateArgument::Pack ? arg.pack_size()
-                                                             : 1;
+                                                            : 1;
       }
       return n;
     };
@@ -180,9 +179,9 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     mtal.addOuterTemplateArguments(
         const_cast<clang::TypeAliasTemplateDecl *>(tmpl), *args,
         /*Final=*/true);
-    auto qualified = sema.SubstType(clang::QualType(qualifier, 0), mtal,
-                                    tmpl->getLocation(),
-                                    clang::DeclarationName());
+    auto qualified =
+        sema.SubstType(clang::QualType(qualifier, 0), mtal, tmpl->getLocation(),
+                       clang::DeclarationName());
     // unless the ones left out are defaulted (map<T1, T2> of
     // map<int, int, less<int>, allocator<pair<const int, int>>>)
     auto defaulted = [](const clang::ClassTemplateDecl *tmpl, unsigned from) {

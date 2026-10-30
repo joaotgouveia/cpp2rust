@@ -100,7 +100,7 @@ template <
     typename = typename std::enable_if<!(std::is_same<T1, T3>::value &&
                                          std::is_same<T2, T4>::value)>::type>
 std::pair<T1, T2> &f25(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
-  return a0.template operator=<T3, T4>(a1);
+  return a0.template operator= <T3, T4>(a1);
 }
 
 template <
@@ -108,7 +108,7 @@ template <
     typename = typename std::enable_if<!(std::is_same<T1, T3>::value &&
                                          std::is_same<T2, T4>::value)>::type>
 std::pair<T1, T2> &f26(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
-  return a0.template operator=<T3, T4>(std::move(a1));
+  return a0.template operator= <T3, T4>(std::move(a1));
 }
 
 template <typename T1, typename T2>

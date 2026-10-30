@@ -223,7 +223,6 @@ impl<K: CppLess + 'static, V> Map<K, Entry<K, V>> {
         next.borrow_mut().prev = Rc::downgrade(&prev);
         next
     }
-
 }
 
 // The functions that modify a map take a pointer to it, and borrow it after
@@ -486,7 +485,11 @@ impl<K: Ord, V> UnsafeMap<K, (K, V)> {
     ///
     /// # Safety
     /// `key` must point to a live key.
-    pub unsafe fn subscript_move(&mut self, key: *mut K, new_key: impl FnOnce(*mut K) -> K) -> *mut V
+    pub unsafe fn subscript_move(
+        &mut self,
+        key: *mut K,
+        new_key: impl FnOnce(*mut K) -> K,
+    ) -> *mut V
     where
         V: Default,
     {
@@ -498,7 +501,9 @@ impl<K: Ord, V> UnsafeMap<K, (K, V)> {
 
     pub fn get(&self, key: &K) -> Option<*mut (K, V)> {
         self.nodes.get(&UnsafeMapKey(key)).map(|node| {
-            UnsafeMapNode::value(&**node as *const UnsafeMapNode<(K, V)> as *mut UnsafeMapNode<(K, V)>)
+            UnsafeMapNode::value(
+                &**node as *const UnsafeMapNode<(K, V)> as *mut UnsafeMapNode<(K, V)>,
+            )
         })
     }
 
