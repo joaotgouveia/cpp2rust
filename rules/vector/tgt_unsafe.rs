@@ -265,7 +265,7 @@ unsafe fn f149<T1: CppFromUnsafe<T5>, T2, T3: UnsafeCppInputIterator<T5>, T4, T5
     __v
 }
 
-unsafe fn f155<T1: Clone, T2, T3: UnsafeCppInputIterator<T1>>(
+unsafe fn f155<T1: CppFromUnsafe<T5>, T2, T3: UnsafeCppInputIterator<T5>, T4, T5>(
     a0: &mut Vec<T1>,
     a1: UnsafeRandomAccessIterator<T1>,
     a2: T3,
@@ -275,7 +275,7 @@ unsafe fn f155<T1: Clone, T2, T3: UnsafeCppInputIterator<T1>>(
     let mut __tmp = Vec::new();
     let mut __it = a2;
     while __it != a3 {
-        __tmp.push((*__it.iter_deref()).clone());
+        __tmp.push(T1::cpp_from(__it.iter_deref()));
         __it.iter_inc();
     }
     a0.splice(__off..__off, __tmp);

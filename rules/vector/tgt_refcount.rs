@@ -156,7 +156,7 @@ fn f149<T1: CppFrom<T5>, T2, T3: CppInputIterator<T5>, T4, T5: ByteRepr>(
     __v
 }
 
-fn f155<T1: Clone + ByteRepr, T2, T3: CppInputIterator<T1>>(
+fn f155<T1: CppFrom<T5> + ByteRepr, T2, T3: CppInputIterator<T5>, T4, T5: ByteRepr>(
     a0: Ptr<Vec<T1>>,
     a1: RandomAccessIterator<T1>,
     a2: T3,
@@ -167,7 +167,7 @@ fn f155<T1: Clone + ByteRepr, T2, T3: CppInputIterator<T1>>(
     let mut __tmp: Vec<T1> = Vec::new();
     let mut __it = a2;
     while __it != a3 {
-        __tmp.push(__it.iter_deref().read());
+        __tmp.push(T1::cpp_from(__it.iter_deref()));
         __it.iter_inc();
     }
     a0.with_mut(|__v: &mut Vec<T1>| {
