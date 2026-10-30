@@ -41,51 +41,16 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut tree: std_unique_ptr_node_t__std_default_delete_node_t__ = (unsafe {
-        let mut ___args: node_t = node_t {
-            left: std::ptr::null_mut(),
-            right: std::ptr::null_mut(),
-            value: 0_(),
-        };
-        make_unique_2(&mut ___args)
-    });
-    let mut n1: std_unique_ptr_node_t__std_default_delete_node_t__ = (unsafe {
-        let mut ___args: node_t = node_t {
-            left: std::ptr::null_mut(),
-            right: std::ptr::null_mut(),
-            value: 1_(),
-        };
-        make_unique_2(&mut ___args)
-    });
-    let mut n2: std_unique_ptr_node_t__std_default_delete_node_t__ = (unsafe {
-        let mut ___args: node_t = node_t {
-            left: std::ptr::null_mut(),
-            right: std::ptr::null_mut(),
-            value: 2_(),
-        };
-        make_unique_2(&mut ___args)
-    });
-    let mut n3: std_unique_ptr_node_t__std_default_delete_node_t__ = (unsafe {
-        let mut ___args: node_t = node_t {
-            left: std::ptr::null_mut(),
-            right: std::ptr::null_mut(),
-            value: 3_(),
-        };
-        make_unique_2(&mut ___args)
-    });
-    let mut n4: std_unique_ptr_node_t__std_default_delete_node_t__ = (unsafe {
-        let mut ___args: node_t = node_t {
-            left: std::ptr::null_mut(),
-            right: std::ptr::null_mut(),
-            value: 4_(),
-        };
-        make_unique_2(&mut ___args)
-    });
-    let mut ptr1: *mut node_t = (&mut (*tree) as *mut node_t);
-    ptr1 = (unsafe { insert_1(ptr1, (&mut (*n1) as *mut node_t)) });
-    ptr1 = (unsafe { insert_1(ptr1, (&mut (*n2) as *mut node_t)) });
-    ptr1 = (unsafe { insert_1(ptr1, (&mut (*n3) as *mut node_t)) });
-    ptr1 = (unsafe { insert_1(ptr1, (&mut (*n4) as *mut node_t)) });
+    let mut tree: () = unimplemented!();
+    let mut n1: () = unimplemented!();
+    let mut n2: () = unimplemented!();
+    let mut n3: () = unimplemented!();
+    let mut n4: () = unimplemented!();
+    let mut ptr1: *mut node_t = (&mut (*unimplemented!()) as *mut node_t);
+    ptr1 = (unsafe { insert_1(ptr1, (&mut (*unimplemented!()) as *mut node_t)) });
+    ptr1 = (unsafe { insert_1(ptr1, (&mut (*unimplemented!()) as *mut node_t)) });
+    ptr1 = (unsafe { insert_1(ptr1, (&mut (*unimplemented!()) as *mut node_t)) });
+    ptr1 = (unsafe { insert_1(ptr1, (&mut (*unimplemented!()) as *mut node_t)) });
     unimplemented!();
     return 0_();
 }

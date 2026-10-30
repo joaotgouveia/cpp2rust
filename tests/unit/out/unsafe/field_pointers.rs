@@ -24,7 +24,7 @@ pub struct Outer {
     pub x: (),
     pub inner: Inner,
     pub items: [Inner; 3],
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
     pub cursor: *mut (),
     pub buf: [(); 4],
 }
@@ -36,17 +36,14 @@ impl Outer {
         return ((self.x) + (self.inner.a));
     }
     pub unsafe fn push(&mut self, mut k: ()) {
-        (unsafe {
-            let mut ___x: () = ((k) + (self.x));
-            self.v.push_back_58(&mut ___x)
-        });
+        unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut Outer) -> Self {
         let mut this = Self {
             x: (*_a0).x,
             inner: (*_a0).inner,
             items: std::array::from_fn::<_, 3, _>(|__i: usize| (*_a0).items[(__i) as usize]),
-            v: (*_a0).v,
+            v: unimplemented!(),
             cursor: (*_a0).cursor,
             buf: std::array::from_fn::<_, 4, _>(|__i: usize| (*_a0).buf[(__i) as usize]),
         };
@@ -56,7 +53,7 @@ impl Outer {
         self.x = (*_a0).x;
         self.inner = (*_a0).inner;
         unimplemented!();
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
         self.cursor = (*_a0).cursor;
         unimplemented!();
         return &mut (*(self as *mut Outer));

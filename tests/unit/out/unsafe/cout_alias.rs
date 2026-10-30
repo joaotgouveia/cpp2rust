@@ -14,20 +14,16 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut cond: () = true;
-    let mut os1: *mut std_basic_ostream_char__std_char_traits_char__ = if cond {
-        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0))
-            as *mut std_basic_ostream_char__std_char_traits_char__)
+    let mut os1: () = if cond {
+        (&raw mut (*unimplemented!()) as ())
     } else {
-        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cerr_1))
-            as *mut std_basic_ostream_char__std_char_traits_char__)
+        (&raw mut (*unimplemented!()) as ())
     };
     write!((*os1), "hello\n",);
-    let os2: *mut std_basic_ostream_char__std_char_traits_char__ = if cond {
-        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0))
-            as *mut std_basic_ostream_char__std_char_traits_char__)
+    let os2: () = if cond {
+        (&raw mut (*unimplemented!()) as ())
     } else {
-        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cerr_1))
-            as *mut std_basic_ostream_char__std_char_traits_char__)
+        (&raw mut (*unimplemented!()) as ())
     };
     write!((*os2), "hello\n",);
     return 0_();

@@ -13,19 +13,15 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut a: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
-    a[(1_()) as usize] = 10_();
-    let mut b: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        a.clone();
-    b[(1_()) as usize] = 20_();
+    let mut a: () = unimplemented!();
+    (*unimplemented!()) = 10_();
+    let mut b: () = unimplemented!();
+    (*unimplemented!()) = 20_();
     unimplemented!();
-    let mut x: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
-    x[(2_()) as usize] = 3_();
-    let mut y: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        x.clone();
-    y[(2_()) as usize] = 4_();
+    let mut x: () = unimplemented!();
+    (*unimplemented!()) = 3_();
+    let mut y: () = unimplemented!();
+    (*unimplemented!()) = 4_();
     unimplemented!();
     return 0_();
 }

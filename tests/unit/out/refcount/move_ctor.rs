@@ -167,15 +167,10 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let vec_: Value<std_vector_MoveOnly__std_allocator_MoveOnly__> = Rc::new(RefCell::new(
-        <std_vector_MoveOnly__std_allocator_MoveOnly__>::default(),
-    ));
-    ({
-        let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 7_() })));
-        (*vec_.borrow()).push_back_58(___x.as_pointer())
-    });
-    let f: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 8_() })));
-    ({ (*vec_.borrow()).push_back_58(f.as_pointer()) });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    let mut f: MoveOnly = MoveOnly::new({ 8_() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let m: Value<ConstMove> = Rc::new(RefCell::new(ConstMove::new()));

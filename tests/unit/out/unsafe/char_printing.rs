@@ -13,20 +13,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut vec_: std_vector_unsigned_char__std_allocator_unsigned_char__ =
-        std_vector_unsigned_char__std_allocator_unsigned_char__::new_1({ unimplemented!() }, None);
+    let mut vec_: () = unimplemented!();
     let mut i: () = 27_();
-    let mut str: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"foo.".as_ptr() },
-            None,
-        );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)),
-        "{:} a",
-        i,
-    );
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)).write_all(
+    let mut str: () = unimplemented!();
+    write!((*unimplemented!()), "{:} a", i,);
+    (*unimplemented!()).write_all(
         &([
             (&[vec_[(0_()) as usize] as u8] as &[u8]),
             (&[vec_[(1_()) as usize] as u8] as &[u8]),
@@ -34,13 +25,8 @@ unsafe fn main_0() -> () {
         ]
         .concat()),
     );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)),
-        "{:}\n0x{:x}",
-        str,
-        27_(),
-    );
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)).write_all(
+    write!((*unimplemented!()), "{:}\n0x{:x}", str, 27_(),);
+    (*unimplemented!()).write_all(
         &([
             (b" a\xc3\xa7ordas?" as &[u8]),
             (&[('\n' as ()) as u8] as &[u8]),
@@ -48,16 +34,9 @@ unsafe fn main_0() -> () {
         ]
         .concat()),
     );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)),
-        "{:x}.\n",
-        i,
-    );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)),
-        "Hello, World!\n",
-    );
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0)).write_all(
+    write!((*unimplemented!()), "{:x}.\n", i,);
+    write!((*unimplemented!()), "Hello, World!\n",);
+    (*unimplemented!()).write_all(
         &([
             (&[vec_[(0_()) as usize] as u8] as &[u8]),
             (&[('\n' as ()) as u8] as &[u8]),

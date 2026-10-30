@@ -16,7 +16,7 @@ pub struct Elem {
     pub hist: Box<[()]>,
     #[offset(24)]
     #[byte_size(24)]
-    pub coeffs: std_vector_short__std_allocator_short__,
+    pub coeffs: (),
 }
 impl Elem {
     pub fn move_from(_a0: Ptr<Elem>) -> Self {
@@ -25,7 +25,7 @@ impl Elem {
             hist: Box::new(std::array::from_fn::<_, 4, _>(|__i: usize| {
                 (*_a0.upgrade().deref()).hist[(__i) as usize]
             })),
-            coeffs: field!(_a0, coeffs).with_mut(std::mem::take),
+            coeffs: unimplemented!(),
         }
     }
 }
@@ -35,14 +35,29 @@ impl Default for Elem {
             Elem {
                 id: unimplemented!(),
                 hist: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                coeffs: <std_vector_short__std_allocator_short__>::default(),
+                coeffs: unimplemented!(),
             }
         }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(88)]
-pub struct State { #[offset(0)] pub count : ()  , #[offset(4)] #[byte_size(24)] pub grid : Box<[ Box<[ ()  ]>  ]>  , #[offset(28)] #[byte_size(12)] pub arr : std_array_int__3_  , #[offset(40)] #[byte_size(24)] pub elems : std_vector_Elem__std_allocator_Elem__  , #[offset(64)] #[byte_size(24)] pub rows : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  , }
+pub struct State {
+    #[offset(0)]
+    pub count: (),
+    #[offset(4)]
+    #[byte_size(24)]
+    pub grid: Box<[Box<[()]>]>,
+    #[offset(28)]
+    #[byte_size(12)]
+    pub arr: (),
+    #[offset(40)]
+    #[byte_size(24)]
+    pub elems: (),
+    #[offset(64)]
+    #[byte_size(24)]
+    pub rows: (),
+}
 impl State {
     pub fn move_from(_a0: Ptr<State>) -> Self {
         Self {
@@ -52,16 +67,24 @@ impl State {
                     (*_a0.upgrade().deref()).grid[(__i) as usize][(__i2) as usize]
                 }))
             })),
-            arr: field!(_a0, arr).with_mut(std::mem::take),
-            elems: field!(_a0, elems).with_mut(std::mem::take),
-            rows: field!(_a0, rows).with_mut(std::mem::take),
+            arr: unimplemented!(),
+            elems: unimplemented!(),
+            rows: unimplemented!(),
         }
     }
 }
 impl Default for State {
     fn default() -> Self {
         {
-            State { count : unimplemented!() , grid : (0..2).map(|_| (0..3).map(|_| unimplemented!()).collect::<Box<[()  ]>>()).collect::<Box<[Box<[ ()  ]>  ]>>() , arr : <std_array_int__3_  >::default() , elems : <std_vector_Elem__std_allocator_Elem__  >::default() , rows : <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() , }
+            State {
+                count: unimplemented!(),
+                grid: (0..2)
+                    .map(|_| (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>())
+                    .collect::<Box<[Box<[()]>]>>(),
+                arr: unimplemented!(),
+                elems: unimplemented!(),
+                rows: unimplemented!(),
+            }
         }
     }
 }
@@ -85,27 +108,17 @@ pub fn fill_1(mut s: Ptr<State>) {
         i.prefix_inc();
     }
     elem!(field_ptr!(s, arr), 1_()).write(7_());
-    ({ (*s.upgrade().deref()).elems.resize_40(3_()) });
+    unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < 3_()) {
         let __rhs = i;
         field!(elem!(field_ptr!(s, elems), i), id).write(__rhs);
         let __rhs = (10_() * i);
         index!(field!(elem!(field_ptr!(s, elems), i), hist), i).write(__rhs);
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(i));
-            (*elem!(field_ptr!(s, elems), i).upgrade().deref())
-                .coeffs
-                .resize_41(4_(), ___x.as_pointer())
-        });
+        unimplemented!();
         i.prefix_inc();
     }
-    ({
-        let ___x: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-        ));
-        (*s.upgrade().deref()).rows.push_back_58(___x.as_pointer())
-    });
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -154,16 +167,11 @@ fn main_0() -> () {
     });
     index!(field!(elem!(field_ptr!(p, elems), 0_()), hist), 3_()).write(__rhs);
     unimplemented!();
-    ({
-        let ___x: Ptr<Elem> = field_ptr!(p, elems).offset(2_());
-        (*p.upgrade().deref()).elems.push_back_57(___x)
-    });
     unimplemented!();
-    let elems: Value<std_vector_Elem__std_allocator_Elem__> = Rc::new(RefCell::new(
-        std_vector_Elem__std_allocator_Elem__::new_1({ 2_() }, None),
-    ));
+    unimplemented!();
+    let elems: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut first: Ptr<Elem> = (elems.as_pointer().offset(0_()));
-    ({ (*elems.borrow())[1_()].coeffs.resize_40(2_()) });
+    unimplemented!();
     elem!(field_ptr!(elems.as_pointer().offset(1_()), coeffs), 1_()).write(4_());
     let __rhs = ((elem!(field_ptr!(elems.as_pointer().offset(1_()), coeffs), 1_()).read()) + 1_());
     array_elem!(elems.as_pointer().offset(1_()), hist, 2_()).write(__rhs);
@@ -184,7 +192,7 @@ impl ElemImpl for Ptr<Elem> {
     fn move_assign(&self, _a0: Ptr<Elem>) -> Ptr<Elem> {
         field!((*self), id).write({ { (*_a0.upgrade().deref()).id } });
         unimplemented!();
-        field!((*self), coeffs).write({ { (*_a0.upgrade().deref()).coeffs.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }
@@ -195,9 +203,9 @@ impl StateImpl for Ptr<State> {
     fn move_assign(&self, _a0: Ptr<State>) -> Ptr<State> {
         field!((*self), count).write({ { (*_a0.upgrade().deref()).count } });
         unimplemented!();
-        field!((*self), arr).write({ { (*_a0.upgrade().deref()).arr.clone() } });
-        field!((*self), elems).write({ { (*_a0.upgrade().deref()).elems.clone() } });
-        field!((*self), rows).write({ { (*_a0.upgrade().deref()).rows.clone() } });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         return (*self).clone();
     }
 }

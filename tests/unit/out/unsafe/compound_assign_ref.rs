@@ -13,13 +13,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 10_();
-        v.push_back_58(&mut ___x)
-    });
-    (*(unsafe { v.front_51() })) += 5_();
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    (*unimplemented!()) += 5_();
     unimplemented!();
     return 0_();
 }

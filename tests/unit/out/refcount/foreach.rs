@@ -11,17 +11,15 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) < 10_()) {
-        ({ (*v.borrow()).push_back_57(i.as_pointer()) });
-        (*i.borrow_mut()).prefix_inc();
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: () = 0_();
+    'loop_: while (i < 10_()) {
+        unimplemented!();
+        i.prefix_inc();
     }
     let mut sum: () = 0_();
-    'loop_: for x in IterRange::new(({ (*v.borrow()).begin_26() }), ({ (*v.borrow()).end_28() })) {
-        let mut x: () = (x.read());
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (unimplemented!().read());
         sum += x;
     }
     unimplemented!();

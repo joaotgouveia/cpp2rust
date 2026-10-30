@@ -12,16 +12,16 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut cond: () = true;
-    let mut os1: Ptr<std_basic_ostream_char__std_char_traits_char__> = if cond {
-        (cout_0.with(|v| v.as_pointer()))
+    let mut os1: () = if cond {
+        (unimplemented!())
     } else {
-        (cerr_1.with(|v| v.as_pointer()))
+        (unimplemented!())
     };
     write!(os1, "hello\n",);
-    let os2: Ptr<std_basic_ostream_char__std_char_traits_char__> = if cond {
-        (cout_0.with(|v| v.as_pointer()))
+    let os2: () = if cond {
+        (unimplemented!())
     } else {
-        (cerr_1.with(|v| v.as_pointer()))
+        (unimplemented!())
     };
     write!(os2, "hello\n",);
     return 0_();

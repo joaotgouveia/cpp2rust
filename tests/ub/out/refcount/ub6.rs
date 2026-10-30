@@ -22,10 +22,7 @@ pub fn mkPair_0(x1: Ptr<()>, x2: Ptr<()>) -> Pair {
         x2: (x2).clone(),
     };
 }
-pub fn fill_1(
-    arr: Ptr<std_unique_ptr_int_ptrarrarr__std_default_delete_int_ptrarrarr__>,
-    n1: Ptr<()>,
-) {
+pub fn fill_1(arr: Ptr<()>, n1: Ptr<()>) {
     let n2: Value<()> = Rc::new(RefCell::new((n1.read())));
     let pair: Value<Pair> = Rc::new(RefCell::new(
         ({
@@ -34,17 +31,14 @@ pub fn fill_1(
             mkPair_0(_x1, _x2)
         }),
     ));
-    elem!(arr, 0_()).write(({ (*pair.borrow()).x1.clone() }).clone());
-    elem!(arr, 1_()).write(({ (*pair.borrow()).x2.clone() }).clone());
+    unimplemented!().write(({ (*pair.borrow()).x1.clone() }).clone());
+    unimplemented!().write(({ (*pair.borrow()).x2.clone() }).clone());
 }
-pub fn any_2(
-    arr: Ptr<std_unique_ptr_int_ptrarrarr__std_default_delete_int_ptrarrarr__>,
-    n1: Ptr<()>,
-) -> () {
+pub fn any_2(arr: Ptr<()>, n1: Ptr<()>) -> () {
     let mut out: () = false;
     let mut i: () = 0_();
     'loop_: while ({ i } < { (n1.read()) }) {
-        let __rhs = (out) || (((elem!(arr, i).read()).read()) == 0_());
+        let __rhs = (out) || (((unimplemented!().read()).read()) == 0_());
         out = __rhs;
         i.prefix_inc();
     }
@@ -56,8 +50,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     let n: Value<()> = Rc::new(RefCell::new(2_()));
-    let arr: Value<std_unique_ptr_int_ptrarrarr__std_default_delete_int_ptrarrarr__> =
-        Rc::new(RefCell::new(({ make_unique_3((*n.borrow())) })));
+    let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ fill_1(arr.as_pointer(), n.as_pointer()) });
     return ({ any_2(arr.as_pointer(), n.as_pointer()) });
 }

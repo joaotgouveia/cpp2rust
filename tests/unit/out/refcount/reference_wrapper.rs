@@ -14,13 +14,13 @@ pub struct Point {
     #[offset(4)]
     pub y: (),
 }
-pub fn set_0(ref_: std_reference_wrapper_int_, mut val: ()) {
-    let ref_: Value<std_reference_wrapper_int_> = Rc::new(RefCell::new(ref_));
-    ({ (*ref_.borrow()).get() }).write(val);
+pub fn set_0(ref_: (), mut val: ()) {
+    let ref_: Value<()> = Rc::new(RefCell::new(ref_));
+    unimplemented!().write(val);
 }
-pub fn read_1(ref_: std_reference_wrapper_int_) -> () {
-    let ref_: Value<std_reference_wrapper_int_> = Rc::new(RefCell::new(ref_));
-    let r: Ptr<()> = ({ (*ref_.borrow())() });
+pub fn read_1(ref_: ()) -> () {
+    let ref_: Value<()> = Rc::new(RefCell::new(ref_));
+    let r: Ptr<()> = unimplemented!();
     return (r.read());
 }
 pub fn main() {
@@ -28,55 +28,33 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let i1: Value<()> = Rc::new(RefCell::new(10_()));
-    let ref_1: Value<std_reference_wrapper_int_> =
-        Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i1.as_pointer()
-        })));
-    ({ (*ref_1.borrow()).get() }).write(20_());
-    let i2: Ptr<()> = ({ (*ref_1.borrow())() });
+    let mut i1: () = 10_();
+    let ref_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!().write(20_());
+    let i2: Ptr<()> = unimplemented!();
     {
         i2.with_mut(|__v| *__v = *__v + 5_())
     };
-    write!(cout_2.with(|v| v.as_pointer()), "{:}\n", (*i1.borrow()),);
-    let i3: Value<()> = Rc::new(RefCell::new(1_()));
-    let i4: Value<()> = Rc::new(RefCell::new(2_()));
-    let ref_3: Value<std_reference_wrapper_int_> =
-        Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i3.as_pointer()
-        })));
-    let ref_4: Value<std_reference_wrapper_int_> =
-        Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i4.as_pointer()
-        })));
-    let __rhs = (({ (*ref_4.borrow()).get() }).read());
-    ({ (*ref_3.borrow()).get() }).write(__rhs);
-    write!(
-        cout_2.with(|v| v.as_pointer()),
-        "{:} {:}\n",
-        (*i3.borrow()),
-        (*i4.borrow()),
-    );
+    write!(unimplemented!(), "{:}\n", i1,);
+    let mut i3: () = 1_();
+    let mut i4: () = 2_();
+    let ref_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ref_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let __rhs = (unimplemented!().read());
+    unimplemented!().write(__rhs);
+    write!(unimplemented!(), "{:} {:}\n", i3, i4,);
     ({ set_0((*ref_1.borrow()).clone(), 99_()) });
     write!(
-        cout_2.with(|v| v.as_pointer()),
+        unimplemented!(),
         "{:} {:}\n",
-        (*i1.borrow()),
+        i1,
         ({ read_1((*ref_1.borrow()).clone(),) }),
     );
-    let point: Value<Point> = Rc::new(RefCell::new(Point { x: 3_(), y: 4_() }));
-    let point_ref: Value<std_reference_wrapper_Point_> =
-        Rc::new(RefCell::new(std_reference_wrapper_Point_::new({
-            point.as_pointer()
-        })));
-    field!(({ (*point_ref.borrow()).get() }), x).write(30_());
-    field!(({ (*point_ref.borrow())() }), y).write(40_());
-    write!(
-        cout_2.with(|v| v.as_pointer()),
-        "{:} {:}\n",
-        { (*point.borrow()).x },
-        { (*point.borrow()).y },
-    );
+    let mut point: Point = Point { x: 3_(), y: 4_() };
+    let point_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    field!(unimplemented!(), x).write(30_());
+    field!(unimplemented!(), y).write(40_());
+    write!(unimplemented!(), "{:} {:}\n", point.x, point.y,);
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

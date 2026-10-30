@@ -6,8 +6,14 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn f1_0(mut first: Ptr<()>, mut last: Ptr<()>) {
-    ({ sort_1(first, last) });
+pub fn f1_0(first: (), last: ()) {
+    let first: Value<()> = Rc::new(RefCell::new(first));
+    let last: Value<()> = Rc::new(RefCell::new(last));
+    unimplemented!();
+    return;
+}
+pub fn f1_1(mut first: Ptr<()>, mut last: Ptr<()>) {
+    unimplemented!();
     return;
 }
 pub fn main() {
@@ -15,21 +21,17 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-    ));
+    let mut v: () = unimplemented!();
     ({
-        let _first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            ({ (*v.borrow()).begin_26() });
-        let _last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            ({ (*v.borrow()).end_28() });
-        f1_2(_first, _last)
+        let _first: () = unimplemented!();
+        let _last: () = unimplemented!();
+        f1_0(_first, _last)
     });
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
         let _first: Ptr<()> = (a.as_pointer() as Ptr<()>);
         let _last: Ptr<()> = (a.as_pointer() as Ptr<()>).offset((2_()) as isize);
-        f1_0(_first, _last)
+        f1_1(_first, _last)
     });
     return 0_();
 }

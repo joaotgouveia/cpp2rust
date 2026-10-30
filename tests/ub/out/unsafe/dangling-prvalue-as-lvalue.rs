@@ -16,10 +16,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
-    let b: *const () = (unsafe { foo_0(&(*(unsafe { v.begin_26() }))) });
-    (unsafe { v.clear() });
+    let mut v: () = unimplemented!();
+    let b: *const () = (unsafe { foo_0(&(*unimplemented!())) });
+    unimplemented!();
     return (*b);
 }
 pub unsafe fn __cpp2rust_init_globals() {}

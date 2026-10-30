@@ -14,12 +14,12 @@ pub fn unused_param_0(mut x: ()) {
 pub struct NonTrivial {
     #[offset(0)]
     #[byte_size(24)]
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
 }
 impl NonTrivial {
     pub fn move_from(_a0: Ptr<NonTrivial>) -> Self {
         Self {
-            data: field!(_a0, data).with_mut(std::mem::take),
+            data: unimplemented!(),
         }
     }
 }
@@ -47,12 +47,12 @@ pub struct Holder {
 pub struct NonCopyable {
     #[offset(0)]
     #[byte_size(8)]
-    pub value: std_unique_ptr_int__std_default_delete_int__,
+    pub value: (),
 }
 impl NonCopyable {
     pub fn move_from(_a0: Ptr<NonCopyable>) -> Self {
         Self {
-            value: field!(_a0, value).with_mut(std::mem::take),
+            value: unimplemented!(),
         }
     }
 }
@@ -124,10 +124,7 @@ fn main_0() -> () {
     ({ unused_ref_param_1(nt.as_pointer()) });
     ({ unused_ptr_param_2((nt.as_pointer())) });
     let g: Value<NonCopyable> = Rc::new(RefCell::new(NonCopyable {
-        value: ({
-            let ___args: Value<()> = Rc::new(RefCell::new(9_()));
-            make_unique_6(___args.as_pointer())
-        }),
+        value: unimplemented!(),
     }));
     (&(*g.borrow_mut()));
     &(*g.borrow_mut());
@@ -140,7 +137,7 @@ pub trait NonCopyableImpl {
 }
 impl NonCopyableImpl for Ptr<NonCopyable> {
     fn move_assign(&self, _a0: Ptr<NonCopyable>) -> Ptr<NonCopyable> {
-        field!((*self), value).write({ { (*_a0.upgrade().deref()).value.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }
@@ -149,7 +146,7 @@ pub trait NonTrivialImpl {
 }
 impl NonTrivialImpl for Ptr<NonTrivial> {
     fn move_assign(&self, _a0: Ptr<NonTrivial>) -> Ptr<NonTrivial> {
-        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

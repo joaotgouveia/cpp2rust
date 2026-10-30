@@ -48,24 +48,16 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_Elem__std_allocator_Elem__> = Rc::new(RefCell::new(
-        <std_vector_Elem__std_allocator_Elem__>::default(),
-    ));
-    ({ (*v.borrow()).reserve(4_()) });
+    let mut v: () = unimplemented!();
+    unimplemented!();
     let a: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 1_() })));
-    let b: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 2_() })));
-    ({
-        let ___position: __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___   = { let __tmp_0 : Value<__gnu_cxx___normal_iterator_Elem_ptr__std_vector_Elem__std_allocator_Elem___ > = Rc::new(RefCell::new(( { (*v.borrow()) . end_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___ :: new_1 ( { __tmp_0.as_pointer() } , )  }  ;
-        (*v.borrow()).insert_63(___position, a.as_pointer())
-    });
-    ({
-        let ___position: __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___   = { let __tmp_1 : Value<__gnu_cxx___normal_iterator_Elem_ptr__std_vector_Elem__std_allocator_Elem___ > = Rc::new(RefCell::new(( { (*v.borrow()) . end_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___ :: new_1 ( { __tmp_1.as_pointer() } , )  }  ;
-        (*v.borrow()).insert_62(___position, b.as_pointer())
-    });
+    let mut b: Elem = Elem::new({ 2_() });
+    unimplemented!();
+    unimplemented!();
     let mut ok: () = (((copies_0.with(|rc| *rc.borrow()) == 1_())
         && (moves_1.with(|rc| *rc.borrow()) == 1_()))
-        && ({ (*v.borrow())[0_()].v } == 1_()))
-        && ({ (*v.borrow())[1_()].v } == 2_());
+        && (v[0_()].v == 1_()))
+        && (v[1_()].v == 2_());
     let mut pa: Ptr<Elem> = (a.as_pointer());
     println!(
         "{} {} {}",

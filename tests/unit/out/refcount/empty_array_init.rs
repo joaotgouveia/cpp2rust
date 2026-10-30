@@ -11,7 +11,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let vec_: Value<std_array_int__3_> = Rc::new(RefCell::new(<std_array_int__3_>::default()));
+    let vec_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

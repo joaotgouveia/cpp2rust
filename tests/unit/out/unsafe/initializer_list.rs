@@ -6,12 +6,9 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn f_0(mut bytes: std_initializer_list_int_) -> () {
-    let mut buf: *mut std_vector_int__std_allocator_int__ = (Box::leak(Box::new(
-        std_vector_int__std_allocator_int__::new_1({ bytes }, None),
-    ))
-        as *mut std_vector_int__std_allocator_int__);
-    let mut n: () = (unsafe { bytes.size() });
+pub unsafe fn f_0(mut bytes: ()) -> () {
+    let mut buf: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
+    let mut n: () = unimplemented!();
     {
         let __p = buf;
         if !__p.is_null() {
@@ -28,11 +25,10 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     unimplemented!();
-    let mut v: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let mut v: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut l: std_initializer_list_int_ = unimplemented!();
+    let mut l: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

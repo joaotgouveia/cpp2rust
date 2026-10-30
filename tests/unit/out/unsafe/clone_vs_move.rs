@@ -95,14 +95,13 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut N: () = 5_();
-    let mut v1: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
+    let mut v1: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
-        (unsafe { v1.push_back_57(&i) });
+        unimplemented!();
         i.prefix_inc();
     }
-    let mut v2: std_vector_int__std_allocator_int__ = v1.clone();
+    let mut v2: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();
@@ -119,17 +118,13 @@ unsafe fn main_0() -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    let mut m1 : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
+    let mut m1: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
-        (unsafe {
-            let mut ___x: std_vector_int__std_allocator_int__ =
-                std_vector_int__std_allocator_int__::new_1({ 10_() }, None);
-            m1.push_back_58(&mut ___x)
-        });
+        unimplemented!();
         i.prefix_inc();
     }
-    let mut m2 : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = m1 .clone() ;
+    let mut m2: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();
@@ -163,19 +158,17 @@ unsafe fn main_0() -> () {
         }
         i.prefix_inc();
     }
-    let mut map1: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
+    let mut map1: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
-        map1[(i) as usize] = i;
+        (*unimplemented!()) = i;
         i.prefix_inc();
     }
-    let mut map2: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        map1.clone();
+    let mut map2: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();
-        map2[(i) as usize].prefix_inc();
+        (*unimplemented!()).prefix_inc();
         i.prefix_inc();
     }
     let mut i: () = 0_();
@@ -184,43 +177,24 @@ unsafe fn main_0() -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    let mut pair1: std_pair_int__int_ = {
-        let mut __tmp_0: () = 1_();
-        let mut __tmp_1: () = 2_();
-        std_pair_int__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
-    let mut pair2: std_pair_int__int_ = pair1;
-    pair2.first = ((pair2.first) * (10_()));
-    pair2.second = ((pair2.second) * (10_()));
+    let mut pair1: () = unimplemented!();
+    let mut pair2: () = unimplemented!();
+    unimplemented!() = ((unimplemented!()) * (10_()));
+    unimplemented!() = ((unimplemented!()) * (10_()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut pair3: std_pair_std_vector_int__std_allocator_int____int_ = {
-        let mut __tmp_2: std_vector_int__std_allocator_int__ =
-            std_vector_int__std_allocator_int__::new_1({ 0_() }, None);
-        let mut __tmp_3: () = 0_();
-        std_pair_std_vector_int__std_allocator_int____int_::new_1({ &mut __tmp_2 }, {
-            &mut __tmp_3
-        })
-    };
-    let mut pair4: std_pair_std_vector_int__std_allocator_int____int_ = pair3.clone();
-    (unsafe {
-        let mut ___x: () = 1_();
-        pair4.first.push_back_58(&mut ___x)
-    });
-    pair4.second = 1_();
+    let mut pair3: () = unimplemented!();
+    let mut pair4: () = unimplemented!();
+    unimplemented!();
+    unimplemented!() = 1_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s1: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { 3_() },
-            { ('a' as ()) },
-            None,
-        );
-    let mut s2: std_basic_string_char__std_char_traits_char___std_allocator_char__ = s1.clone();
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     s2[(0_()) as usize] = ('b' as ());
     s2[(1_()) as usize] = ('b' as ());
     s2[(2_()) as usize] = ('b' as ());
@@ -236,9 +210,8 @@ unsafe fn main_0() -> () {
     b2.w.postfix_inc();
     unimplemented!();
     unimplemented!();
-    let mut v4: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    v4 = (v2).clone();
+    let mut v4: () = unimplemented!();
+    unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();

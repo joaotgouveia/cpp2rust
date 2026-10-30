@@ -115,22 +115,34 @@ impl Clone for UserCopyDefaultMove {
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(64)]
-pub struct Buffer { #[offset(0)] #[byte_size(24)] pub data : std_vector_int__std_allocator_int__  , #[offset(24)] #[byte_size(24)] pub rows : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  , #[offset(48)] pub n : ()  , #[offset(52)] #[byte_size(8)] pub arr : Box<[ ()  ]>  , }
+pub struct Buffer {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub data: (),
+    #[offset(24)]
+    #[byte_size(24)]
+    pub rows: (),
+    #[offset(48)]
+    pub n: (),
+    #[offset(52)]
+    #[byte_size(8)]
+    pub arr: Box<[()]>,
+}
 impl Buffer {
-    pub fn new(n: ()) -> Self {
-        let n: Value<()> = Rc::new(RefCell::new(n));
-        let __this : Value<Buffer> = Rc::new(RefCell::new(Self { data : std_vector_int__std_allocator_int__ :: new_1 ( { (*n.borrow())  } , { n .as_pointer()  } , None , )   , rows : <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default()  , n : (*n.borrow())  , arr : Box::new( [ (*n.borrow())  , ( (*n.borrow()) + 1_() )  , ] )  , } )) ;
-        let this: Ptr<Buffer> = __this.as_pointer();
-        ({
-            let ___x: Ptr<std_vector_int__std_allocator_int__> = field_ptr!(this, data);
-            (*this.upgrade().deref()).rows.push_back_57(___x)
-        });
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    pub fn new(mut n: ()) -> Self {
+        let __this: Buffer = Self {
+            data: unimplemented!(),
+            rows: unimplemented!(),
+            n: n,
+            arr: Box::new([n, (n + 1_())]),
+        };
+        unimplemented!();
+        __this
     }
     pub fn move_from(_a0: Ptr<Buffer>) -> Self {
         Self {
-            data: field!(_a0, data).with_mut(std::mem::take),
-            rows: field!(_a0, rows).with_mut(std::mem::take),
+            data: unimplemented!(),
+            rows: unimplemented!(),
             n: { (*_a0.upgrade().deref()).n },
             arr: Box::new(std::array::from_fn::<_, 2, _>(|__i: usize| {
                 (*_a0.upgrade().deref()).arr[(__i) as usize]
@@ -141,7 +153,12 @@ impl Buffer {
 impl Default for Buffer {
     fn default() -> Self {
         {
-            Buffer { data : <std_vector_int__std_allocator_int__  >::default() , rows : <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() , n : unimplemented!() , arr : (0..2).map(|_| unimplemented!()).collect::<Box<[()  ]>>() , }
+            Buffer {
+                data: unimplemented!(),
+                rows: unimplemented!(),
+                n: unimplemented!(),
+                arr: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            }
         }
     }
 }
@@ -150,7 +167,7 @@ impl Default for Buffer {
 pub struct Owner {
     #[offset(0)]
     #[byte_size(24)]
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
     #[offset(24)]
     pub n: (),
     #[offset(28)]
@@ -158,17 +175,17 @@ pub struct Owner {
     pub arr: Box<[()]>,
     #[offset(40)]
     #[byte_size(8)]
-    pub p: std_unique_ptr_int__std_default_delete_int__,
+    pub p: (),
 }
 impl Owner {
     pub fn move_from(_a0: Ptr<Owner>) -> Self {
         Self {
-            data: field!(_a0, data).with_mut(std::mem::take),
+            data: unimplemented!(),
             n: { (*_a0.upgrade().deref()).n },
             arr: Box::new(std::array::from_fn::<_, 2, _>(|__i: usize| {
                 (*_a0.upgrade().deref()).arr[(__i) as usize]
             })),
-            p: field!(_a0, p).with_mut(std::mem::take),
+            p: unimplemented!(),
         }
     }
 }
@@ -176,10 +193,10 @@ impl Default for Owner {
     fn default() -> Self {
         {
             Owner {
-                data: <std_vector_int__std_allocator_int__>::default(),
+                data: unimplemented!(),
                 n: unimplemented!(),
                 arr: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                p: <std_unique_ptr_int__std_default_delete_int__>::default(),
+                p: unimplemented!(),
             }
         }
     }
@@ -189,12 +206,12 @@ impl Default for Owner {
 pub struct Copyable {
     #[offset(0)]
     #[byte_size(24)]
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
 }
 impl Copyable {
     pub fn move_from(_a0: Ptr<Copyable>) -> Self {
         Self {
-            data: field!(_a0, data).with_mut(std::mem::take),
+            data: unimplemented!(),
         }
     }
 }
@@ -209,21 +226,21 @@ pub struct Holder {
     pub e: Explicit,
     #[offset(24)]
     #[byte_size(8)]
-    pub p: std_unique_ptr_int__std_default_delete_int__,
+    pub p: (),
 }
 impl Holder {
     pub fn new(mut v: ()) -> Self {
         Self {
             inner: Inner { x: v },
             e: Explicit::new({ v }),
-            p: <std_unique_ptr_int__std_default_delete_int__>::default(),
+            p: unimplemented!(),
         }
     }
     pub fn move_from(_a0: Ptr<Holder>) -> Self {
         Self {
             inner: { (*_a0.upgrade().deref()).inner.clone() },
             e: { (*_a0.upgrade().deref()).e.clone() },
-            p: field!(_a0, p).with_mut(std::mem::take),
+            p: unimplemented!(),
         }
     }
 }
@@ -277,14 +294,9 @@ fn main_0() -> () {
     };
     l = (j).clone();
     unimplemented!();
-    let vec_: Value<std_vector_Explicit__std_allocator_Explicit__> = Rc::new(RefCell::new(
-        <std_vector_Explicit__std_allocator_Explicit__>::default(),
-    ));
-    ({ (*vec_.borrow()).push_back_57(b.as_pointer()) });
-    ({
-        let ___x: Value<Explicit> = Rc::new(RefCell::new(Explicit::new({ 9_() })));
-        (*vec_.borrow()).push_back_58(___x.as_pointer())
-    });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let m: Value<DefaultCopyUserMove> = Rc::new(RefCell::new(DefaultCopyUserMove::new({ 7_() })));
     let m1: Value<DefaultCopyUserMove> = Rc::new(RefCell::new((*m.borrow()).clone()));
@@ -313,24 +325,16 @@ fn main_0() -> () {
     ({ BufferImpl::move_assign(&r.as_pointer(), q.as_pointer()) });
     unimplemented!();
     unimplemented!();
-    let bufs: Value<std_vector_Buffer__std_allocator_Buffer__> = Rc::new(RefCell::new(
-        <std_vector_Buffer__std_allocator_Buffer__>::default(),
-    ));
-    ({ (*bufs.borrow()).push_back_58(r.as_pointer()) });
-    ({
-        let ___args: Ptr<Buffer> = bufs.as_pointer().offset(0_());
-        (*bufs.borrow()).emplace_back(___args)
-    });
+    let mut bufs: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let o1: Value<Owner> = Rc::new(RefCell::new(<Owner>::default()));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(5_()));
-        (*o1.borrow()).data.push_back_58(___x.as_pointer())
-    });
+    unimplemented!();
     (*o1.borrow_mut()).n = 5_();
     array_elem!(o1.as_pointer(), arr, 0_()).write(5_());
     array_elem!(o1.as_pointer(), arr, 1_()).write(6_());
-    ({ { (*o1.borrow()).p.clone() }.reset(Ptr::alloc(7_())) });
+    unimplemented!();
     let o2: Value<Owner> = Rc::new(RefCell::new(Owner::move_from({ o1.as_pointer() })));
     unimplemented!();
     unimplemented!();
@@ -339,9 +343,9 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let c1: Value<Copyable> = Rc::new(RefCell::new(Copyable {
-        data: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+        data: unimplemented!(),
     }));
-    let c2: Value<Copyable> = Rc::new(RefCell::new((*c1.borrow()).clone()));
+    let mut c2: Copyable = (*c1.borrow()).clone();
     let c3: Value<Copyable> = Rc::new(RefCell::new(Copyable::move_from({ c1.as_pointer() })));
     unimplemented!();
     unimplemented!();
@@ -350,7 +354,7 @@ fn main_0() -> () {
     unimplemented!();
     let h1: Value<Holder> = Rc::new(RefCell::new(Holder::new({ 4_() })));
     let _dtor_h1 = ScopedDestructor::new(&h1, |__p| __p.destructor());
-    ({ { (*h1.borrow()).p.clone() }.reset(Ptr::alloc(9_())) });
+    unimplemented!();
     let h2: Value<Holder> = Rc::new(RefCell::new(Holder::move_from({ h1.as_pointer() })));
     let _dtor_h2 = ScopedDestructor::new(&h2, |__p| __p.destructor());
     unimplemented!();
@@ -365,8 +369,8 @@ pub trait BufferImpl {
 }
 impl BufferImpl for Ptr<Buffer> {
     fn move_assign(&self, _a0: Ptr<Buffer>) -> Ptr<Buffer> {
-        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
-        field!((*self), rows).write({ { (*_a0.upgrade().deref()).rows.clone() } });
+        unimplemented!();
+        unimplemented!();
         field!((*self), n).write({ { (*_a0.upgrade().deref()).n } });
         unimplemented!();
         return (*self).clone();
@@ -377,7 +381,7 @@ pub trait CopyableImpl {
 }
 impl CopyableImpl for Ptr<Copyable> {
     fn move_assign(&self, _a0: Ptr<Copyable>) -> Ptr<Copyable> {
-        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }
@@ -405,7 +409,7 @@ impl HolderImpl for Ptr<Holder> {
     fn move_assign(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
         field!((*self), inner).write({ { (*_a0.upgrade().deref()).inner.clone() } });
         field!((*self), e).write({ { (*_a0.upgrade().deref()).e.clone() } });
-        field!((*self), p).write({ { (*_a0.upgrade().deref()).p.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
     fn destructor(&self) {
@@ -417,10 +421,10 @@ pub trait OwnerImpl {
 }
 impl OwnerImpl for Ptr<Owner> {
     fn move_assign(&self, _a0: Ptr<Owner>) -> Ptr<Owner> {
-        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
+        unimplemented!();
         field!((*self), n).write({ { (*_a0.upgrade().deref()).n } });
         unimplemented!();
-        field!((*self), p).write({ { (*_a0.upgrade().deref()).p.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

@@ -17,49 +17,25 @@ unsafe fn main_0() -> () {
     (*buf.offset((0_()) as isize)) = 1_();
     (*buf.offset((1_()) as isize)) = 2_();
     (*buf.offset((2_()) as isize)) = 3_();
-    (unsafe {
-        let ___a: *mut () = &mut (*buf.offset((0_()) as isize));
-        let ___b: *mut () = &mut (*buf.offset((2_()) as isize));
-        swap_0(___a, ___b)
-    });
     unimplemented!();
-    (unsafe {
-        let ___a: *mut () = &mut (*buf.offset((1_()) as isize));
-        let ___b: *mut () = &mut (*buf.offset((1_()) as isize));
-        swap_0(___a, ___b)
-    });
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let mut local: () = 4_();
-    (unsafe {
-        let ___a: *mut () = &mut (*buf.offset((1_()) as isize));
-        let ___b: *mut () = &mut local;
-        swap_0(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     let mut other: *mut () = (unimplemented!() as *mut ());
     (*other) = 5_();
-    (unsafe {
-        let ___a: *mut () = &mut (*buf);
-        let ___b: *mut () = &mut (*other);
-        swap_0(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     let mut bytes: *mut () = (buf as *mut ());
     (*bytes.offset((0_()) as isize)) = 170_();
     (*bytes.offset((4_()) as isize)) = 187_();
-    (unsafe {
-        let ___a: *mut () = &mut (*bytes.offset((0_()) as isize));
-        let ___b: *mut () = &mut (*bytes.offset((4_()) as isize));
-        swap_1(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     let mut words: [(); 2] = [16909060_(), 84281096_()];
     let mut halves: *mut () = (words.as_mut_ptr() as *mut ());
-    (unsafe {
-        let ___a: *mut () = &mut (*halves.offset((0_()) as isize));
-        let ___b: *mut () = &mut (*halves.offset((3_()) as isize));
-        swap_2(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

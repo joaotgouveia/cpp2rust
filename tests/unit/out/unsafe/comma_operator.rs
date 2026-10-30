@@ -62,17 +62,9 @@ unsafe fn main_0() -> () {
         unimplemented!();
         unimplemented!();
     }
-    let mut v1: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
-    let mut v2: std_vector_int__std_allocator_int__ = {
-        a = 5_();
-        (v1).clone()
-    }
-    .clone();
-    (unsafe {
-        let mut ___x: () = 3_();
-        v2.push_back_58(&mut ___x)
-    });
+    let mut v1: () = unimplemented!();
+    let mut v2: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

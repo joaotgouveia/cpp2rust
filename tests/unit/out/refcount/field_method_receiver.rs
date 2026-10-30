@@ -25,7 +25,7 @@ pub struct S {
     pub arr: Box<[Counter]>,
     #[offset(16)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl S {
     pub fn move_from(_a0: Ptr<S>) -> Self {
@@ -35,7 +35,7 @@ impl S {
             arr: Box::new(std::array::from_fn::<_, 2, _>(|__i: usize| {
                 ((*_a0.upgrade().deref()).arr[(__i) as usize]).clone()
             })),
-            v: field!(_a0, v).with_mut(std::mem::take),
+            v: unimplemented!(),
         }
     }
 }
@@ -48,7 +48,7 @@ impl Default for S {
                 arr: (0..2)
                     .map(|_| <Counter>::default())
                     .collect::<Box<[Counter]>>(),
-                v: <std_vector_int__std_allocator_int__>::default(),
+                v: unimplemented!(),
             }
         }
     }
@@ -82,10 +82,7 @@ pub fn run_0(mut o: Ptr<S>) {
     unimplemented!();
     ({ SImpl::bump(&o) });
     unimplemented!();
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(({ CounterImpl::get(&field_ptr!(o, c)) })));
-        (*o.upgrade().deref()).v.push_back_58(___x.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -145,7 +142,7 @@ impl SImpl for Ptr<S> {
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
         field!((*self), c).write({ { (*_a0.upgrade().deref()).c.clone() } });
         unimplemented!();
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

@@ -12,19 +12,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([5_(), 2_(), 8_(), 1_(), 3_()])));
-    ({
-        let ___first: Ptr<()> = (arr1.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (arr1.as_pointer() as Ptr<()>).offset((5_()) as isize);
-        stable_sort_0(
-            ___first,
-            ___last,
-            FnPtr::<fn((), ()) -> ()>::new(|mut x: (), mut y: ()| -> () {
-                {
-                    return (x < y);
-                }
-            }),
-        )
-    });
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

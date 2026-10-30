@@ -11,14 +11,14 @@ use std::rc::{Rc, Weak};
 pub struct NonCopy {
     #[offset(0)]
     #[byte_size(24)]
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
     #[offset(24)]
     pub tag: (),
 }
 impl NonCopy {
     pub fn move_from(_a0: Ptr<NonCopy>) -> Self {
         Self {
-            data: field!(_a0, data).with_mut(std::mem::take),
+            data: unimplemented!(),
             tag: { (*_a0.upgrade().deref()).tag },
         }
     }
@@ -27,7 +27,7 @@ impl Default for NonCopy {
     fn default() -> Self {
         {
             NonCopy {
-                data: <std_vector_int__std_allocator_int__>::default(),
+                data: unimplemented!(),
                 tag: 0_(),
             }
         }
@@ -38,18 +38,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let arr: Value<Box<[NonCopy]>> = Rc::new(RefCell::new(
-        (0..3)
-            .map(|_| <NonCopy>::default())
-            .collect::<Box<[NonCopy]>>(),
-    ));
-    (*arr.borrow_mut())[(0_()) as usize].tag = 7_();
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(42_()));
-        (*arr.borrow())[(1_()) as usize]
-            .data
-            .push_back_58(___x.as_pointer())
-    });
+    let mut arr: [NonCopy; 3] = std::array::from_fn::<_, 3, _>(|_| <NonCopy>::default());
+    arr[(0_()) as usize].tag = 7_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -62,7 +53,7 @@ pub trait NonCopyImpl {
 }
 impl NonCopyImpl for Ptr<NonCopy> {
     fn move_assign(&self, _a0: Ptr<NonCopy>) -> Ptr<NonCopy> {
-        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
+        unimplemented!();
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
         return (*self).clone();
     }

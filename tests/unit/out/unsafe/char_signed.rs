@@ -32,11 +32,7 @@ unsafe fn main_0() -> () {
     let mut p: *const () = c"\x80".as_ptr();
     unimplemented!();
     unimplemented!();
-    let mut s: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"\xfe!".as_ptr() },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let mut sum: () = ((c) + (c));
     unimplemented!();

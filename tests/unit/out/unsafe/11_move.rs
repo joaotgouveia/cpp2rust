@@ -6,12 +6,9 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn change_0(n: *mut std_unique_ptr_int__std_default_delete_int__) {
-    let mut m: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
-        let mut ___args: () = 20_();
-        make_unique_1(&mut ___args)
-    });
-    (*n) = (m).clone();
+pub unsafe fn change_0(n: *mut ()) {
+    let mut m: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {
@@ -21,10 +18,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut n: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
-        let mut ___args: () = 10_();
-        make_unique_1(&mut ___args)
-    });
+    let mut n: () = unimplemented!();
     (unsafe { change_0(&mut n) });
     unimplemented!();
     return 0_();

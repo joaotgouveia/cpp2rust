@@ -84,66 +84,37 @@ pub fn main() {
 fn main_0() -> () {
     let mut w: Wrapped_int_ = Wrapped_int_ { v: 2_() };
     unimplemented!();
-    let lts: Value<std_vector_Lt__std_allocator_Lt__> = Rc::new(RefCell::new(
-        std_vector_Lt__std_allocator_Lt__::new_1({ unimplemented!() }, None),
-    ));
-    ({
-        let ___first: __gnu_cxx___normal_iterator_Lt_ptr__std_vector_Lt__std_allocator_Lt___ =
-            ({ (*lts.borrow()).begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_Lt_ptr__std_vector_Lt__std_allocator_Lt___ =
-            ({ (*lts.borrow()).end_28() });
-        sort_2(___first, ___last)
-    });
-    unimplemented!();
-    let eqs: Value<std_vector_Eq__std_allocator_Eq__> = Rc::new(RefCell::new(
-        std_vector_Eq__std_allocator_Eq__::new_1({ unimplemented!() }, None),
-    ));
-    let two: Value<Eq> = Rc::new(RefCell::new(Eq { v: 2_() }));
-    let nine: Value<Eq> = Rc::new(RefCell::new(Eq { v: 9_() }));
+    let mut lts: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let cmps: Value<std_vector_Cmp__std_allocator_Cmp__> = Rc::new(RefCell::new(
-        std_vector_Cmp__std_allocator_Cmp__::new_1({ unimplemented!() }, None),
-    ));
-    ({
-        let ___first: __gnu_cxx___normal_iterator_Cmp_ptr__std_vector_Cmp__std_allocator_Cmp___ =
-            ({ (*cmps.borrow()).begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_Cmp_ptr__std_vector_Cmp__std_allocator_Cmp___ =
-            ({ (*cmps.borrow()).end_28() });
-        sort_3(___first, ___last)
-    });
+    let mut eqs: () = unimplemented!();
+    let mut two: Eq = Eq { v: 2_() };
+    let mut nine: Eq = Eq { v: 9_() };
     unimplemented!();
-    let three: Value<Cmp> = Rc::new(RefCell::new(Cmp { v: 3_() }));
     unimplemented!();
-    let frees: Value<std_vector_Free__std_allocator_Free__> = Rc::new(RefCell::new(
-        std_vector_Free__std_allocator_Free__::new_1({ unimplemented!() }, None),
-    ));
-    ({
-        let ___first: __gnu_cxx___normal_iterator_Free_ptr__std_vector_Free__std_allocator_Free___ =
-            ({ (*frees.borrow()).begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_Free_ptr__std_vector_Free__std_allocator_Free___ =
-            ({ (*frees.borrow()).end_28() });
-        sort_4(___first, ___last)
-    });
+    let mut cmps: () = unimplemented!();
     unimplemented!();
-    let ftwo: Value<Free> = Rc::new(RefCell::new(Free { v: 2_() }));
     unimplemented!();
-    let m: Value<std_map_Lt__int__std_less_Lt___std_allocator_std_pair_const_Lt__int___> =
-        Rc::new(RefCell::new(
-            <std_map_Lt__int__std_less_Lt___std_allocator_std_pair_const_Lt__int___>::default(),
-        ));
-    (*m.borrow_mut())[Lt { v: 2_() }] = 20_();
-    (*m.borrow_mut())[Lt { v: 1_() }] = 10_();
+    let mut three: Cmp = Cmp { v: 3_() };
+    unimplemented!();
+    let mut frees: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ftwo: Free = Free { v: 2_() };
+    unimplemented!();
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!().write(20_());
+    unimplemented!().write(10_());
     unimplemented!();
     unimplemented!();
     return 0_();
 }
 pub trait CmpImpl {
-    fn operator_cmp(&self, o: Ptr<Cmp>) -> std_strong_ordering;
+    fn operator_cmp(&self, o: Ptr<Cmp>) -> ();
     fn operator_eq(&self, o: Ptr<Cmp>) -> ();
 }
 impl CmpImpl for Ptr<Cmp> {
-    fn operator_cmp(&self, o: Ptr<Cmp>) -> std_strong_ordering {
+    fn operator_cmp(&self, o: Ptr<Cmp>) -> () {
         return std::cmp::Ord::cmp(&((*self).with(|__s| __s.v)), &(o.with(|__s| __s.v)));
     }
     fn operator_eq(&self, o: Ptr<Cmp>) -> () {

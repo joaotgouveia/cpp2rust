@@ -84,30 +84,14 @@ unsafe fn main_0() -> () {
     let mut x4: () = 20_();
     let mut p1: *mut () = (&mut x1 as *mut ());
     let mut p2: *mut () = (&mut x2 as *mut ());
-    let mut r1: () = (*(unsafe { max_5(&x1, &x2) }));
-    let mut r2: () = (*(unsafe { min_6(&x3, &x4) }));
-    let mut r3: () = (*(unsafe {
-        let ___a: *const () = &(*p1);
-        let ___b: *const () = &x2;
-        max_5(___a, ___b)
-    }));
-    let mut r4: () = (*(unsafe {
-        let ___a: *const () = &(*p2);
-        let ___b: *const () = &x3;
-        min_6(___a, ___b)
-    }));
-    let mut r5: () = (*(unsafe {
-        let mut ___a: () = 30_();
-        let mut ___b: () = 40_();
-        max_5(&mut ___a, &mut ___b)
-    }));
+    let mut r1: () = (*unimplemented!());
+    let mut r2: () = (*unimplemented!());
+    let mut r3: () = (*unimplemented!());
+    let mut r4: () = (*unimplemented!());
+    let mut r5: () = (*unimplemented!());
     unimplemented!();
     let mut values: [(); 4] = [1_(), 7_(), 7_(), 3_()];
-    let mut max: *mut () = (unsafe {
-        let ___first: *mut () = values.as_mut_ptr();
-        let ___last: *mut () = values.as_mut_ptr().offset((4_()) as isize);
-        max_element_7(___first, ___last)
-    });
+    let mut max: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

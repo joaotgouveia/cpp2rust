@@ -19,12 +19,12 @@ pub struct Outer_RunInfo {
 pub struct Outer {
     #[offset(0)]
     #[byte_size(24)]
-    pub runs: std_vector_Outer_RunInfo__std_allocator_Outer_RunInfo__,
+    pub runs: (),
 }
 impl Outer {
     pub fn move_from(_a0: Ptr<Outer>) -> Self {
         Self {
-            runs: field!(_a0, runs).with_mut(std::mem::take),
+            runs: unimplemented!(),
         }
     }
 }
@@ -33,11 +33,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let o: Value<Outer> = Rc::new(RefCell::new(<Outer>::default()));
-    let info: Value<Outer_RunInfo> = Rc::new(RefCell::new(<Outer_RunInfo>::default()));
-    (*info.borrow_mut()).block_idx = 1_();
-    (*info.borrow_mut()).num_extra_zero_runs = 2_();
-    ({ (*o.borrow()).runs.push_back_57(info.as_pointer()) });
+    let mut o: Outer = <Outer>::default();
+    let mut info: Outer_RunInfo = <Outer_RunInfo>::default();
+    info.block_idx = 1_();
+    info.num_extra_zero_runs = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -48,7 +48,7 @@ pub trait OuterImpl {
 }
 impl OuterImpl for Ptr<Outer> {
     fn move_assign(&self, _a0: Ptr<Outer>) -> Ptr<Outer> {
-        field!((*self), runs).write({ { (*_a0.upgrade().deref()).runs.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

@@ -94,7 +94,7 @@ fn main_0() -> () {
     let g: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*f.borrow()).copy_from()));
     unimplemented!();
     unimplemented!();
-    let h: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*f.borrow()).move_from()));
+    let h: Value<()> = Rc::new(RefCell::new((*f.borrow()).move_from()));
     unimplemented!();
     let mut returned: () = {
         ({
@@ -132,7 +132,7 @@ fn main_0() -> () {
     unimplemented!();
     let a2: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*a.borrow()).copy_from()));
     unimplemented!();
-    let a3: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*a.borrow()).move_from()));
+    let a3: Value<()> = Rc::new(RefCell::new((*a.borrow()).move_from()));
     unimplemented!();
     {
         let m: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -142,7 +142,7 @@ fn main_0() -> () {
             || {}
         )));
         let _dtor_m = ScopedDestructor::new(&m, |__p| __p.with(|__f| __f.destroy()));
-        let m2: Value<FnPtr<fn()>> = Rc::new(RefCell::new((*m.borrow()).move_from()));
+        let m2: Value<()> = Rc::new(RefCell::new((*m.borrow()).move_from()));
         let _dtor_m2 = ScopedDestructor::new(&m2, |__p| __p.with(|__f| __f.destroy()));
     }
     unimplemented!();

@@ -157,14 +157,10 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut vec_: std_vector_MoveOnly__std_allocator_MoveOnly__ =
-        <std_vector_MoveOnly__std_allocator_MoveOnly__>::default();
-    (unsafe {
-        let mut ___x: MoveOnly = MoveOnly::new({ 7_() });
-        vec_.push_back_58(&mut ___x)
-    });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
     let mut f: MoveOnly = MoveOnly::new({ 8_() });
-    (unsafe { vec_.push_back_58(&mut f) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut m: ConstMove = ConstMove::new();

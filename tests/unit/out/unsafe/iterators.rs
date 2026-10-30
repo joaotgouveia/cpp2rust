@@ -13,35 +13,24 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut x: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"hello".as_ptr() },
-            None,
-        );
-    'loop_: for c in IterRange::new((unsafe { x.begin_59() }), (unsafe { x.end_61() })) {
-        let c: *mut () = &mut (*c);
+    let mut x: () = unimplemented!();
+    'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
+        let c: *mut () = &mut (*unimplemented!());
         (*c).prefix_inc();
     }
-    'loop_: for c in IterRange::new((unsafe { x.begin_59() }), (unsafe { x.end_61() })) {
-        let c: *mut () = &mut (*c);
+    'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
+        let c: *mut () = &mut (*unimplemented!());
         unimplemented!();
     }
-    'loop_: for c in IterRange::new((unsafe { x.begin_59() }), (unsafe { x.end_61() })) {
-        let mut c: () = (*c);
+    'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut c: () = (*unimplemented!());
         unimplemented!();
     }
-    let mut v: std_vector_int_ptr__std_allocator_int_ptr__ =
-        <std_vector_int_ptr__std_allocator_int_ptr__>::default();
-    (unsafe {
-        let mut ___x: *mut () = (Box::leak(Box::new(2_())) as *mut ());
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: *mut () = (Box::leak(Box::new(3_())) as *mut ());
-        v.push_back_58(&mut ___x)
-    });
-    'loop_: for p in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let mut p: *mut () = (*p);
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *mut () = (*unimplemented!());
         unimplemented!();
     }
     return 0_();

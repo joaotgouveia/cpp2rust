@@ -32,7 +32,7 @@ pub struct S {
     pub tag: (),
     pub c: Counter,
     pub arr: [Counter; 2],
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl S {
     pub unsafe fn bump(&mut self) {
@@ -46,7 +46,7 @@ impl S {
             tag: (*_a0).tag,
             c: (*_a0).c,
             arr: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).arr[(__i) as usize]),
-            v: (*_a0).v,
+            v: unimplemented!(),
         };
         this
     }
@@ -54,7 +54,7 @@ impl S {
         self.tag = (*_a0).tag;
         self.c = (*_a0).c;
         unimplemented!();
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
         return &mut (*(self as *mut S));
     }
 }
@@ -78,10 +78,7 @@ pub unsafe fn run_0(mut o: *mut S) {
     unimplemented!();
     (unsafe { S::bump(&mut (*o)) });
     unimplemented!();
-    (unsafe {
-        let mut ___x: () = (unsafe { Counter::get(&(*o).c) });
-        (*o).v.push_back_58(&mut ___x)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }

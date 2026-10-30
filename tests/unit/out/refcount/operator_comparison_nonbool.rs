@@ -155,11 +155,7 @@ fn main_0() -> () {
         X { v: 1_() },
         X { v: 2_() },
     ])));
-    ({
-        let ___first: Ptr<X> = (xs.as_pointer() as Ptr<X>);
-        let ___last: Ptr<X> = (xs.as_pointer() as Ptr<X>).offset((3_()) as isize);
-        sort_9(___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     let p: Value<Custom> = Rc::new(RefCell::new(Custom { v: 5_() }));
     let q: Value<Custom> = Rc::new(RefCell::new(Custom { v: 2_() }));
@@ -174,11 +170,7 @@ fn main_0() -> () {
         Mixed { v: 4_() },
         Mixed { v: 5_() },
     ])));
-    ({
-        let ___first: Ptr<Mixed> = (ms.as_pointer() as Ptr<Mixed>);
-        let ___last: Ptr<Mixed> = (ms.as_pointer() as Ptr<Mixed>).offset((3_()) as isize);
-        sort_10(___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut b1: Boolish = Boolish { v: 1_() };
@@ -195,11 +187,7 @@ fn main_0() -> () {
         Boolish { v: 1_() },
         Boolish { v: 2_() },
     ])));
-    ({
-        let ___first: Ptr<Boolish> = (bs.as_pointer() as Ptr<Boolish>);
-        let ___last: Ptr<Boolish> = (bs.as_pointer() as Ptr<Boolish>).offset((3_()) as isize);
-        sort_11(___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     let ri1: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 1_() }));
     let ri2: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 2_() }));

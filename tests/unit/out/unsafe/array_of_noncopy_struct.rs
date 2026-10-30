@@ -9,19 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct NonCopy {
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
     pub tag: (),
 }
 impl NonCopy {
     pub unsafe fn move_from(_a0: *mut NonCopy) -> Self {
         let mut this = Self {
-            data: (*_a0).data,
+            data: unimplemented!(),
             tag: (*_a0).tag,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut NonCopy) -> *mut NonCopy {
-        self.data = ((*_a0).data).clone();
+        unimplemented!();
         self.tag = (*_a0).tag;
         return &mut (*(self as *mut NonCopy));
     }
@@ -30,7 +30,7 @@ impl Default for NonCopy {
     fn default() -> Self {
         unsafe {
             NonCopy {
-                data: <std_vector_int__std_allocator_int__>::default(),
+                data: unimplemented!(),
                 tag: 0_(),
             }
         }
@@ -45,10 +45,7 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut arr: [NonCopy; 3] = std::array::from_fn::<_, 3, _>(|_| <NonCopy>::default());
     arr[(0_()) as usize].tag = 7_();
-    (unsafe {
-        let mut ___x: () = 42_();
-        arr[(1_()) as usize].data.push_back_58(&mut ___x)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -95,17 +95,17 @@ impl Container {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct VecHolder {
-    pub items: std_vector_NoCopy__std_allocator_NoCopy__,
+    pub items: (),
 }
 impl VecHolder {
     pub unsafe fn move_from(_a0: *mut VecHolder) -> Self {
         let mut this = Self {
-            items: (*_a0).items,
+            items: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut VecHolder) -> *mut VecHolder {
-        self.items = ((*_a0).items).clone();
+        unimplemented!();
         return &mut (*(self as *mut VecHolder));
     }
 }

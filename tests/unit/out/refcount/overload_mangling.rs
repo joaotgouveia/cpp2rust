@@ -98,25 +98,13 @@ pub trait SImpl {
     fn plain_5(&self, x: ()) -> ();
     fn take_6(&self, x: Ptr<()>) -> ();
     fn take_7(&self, x: Ptr<()>) -> ();
-    fn pick_8(&self, p: std_pair_int__int_) -> ();
-    fn pick_9(&self, p: std_pair_int__long_) -> ();
+    fn pick_8(&self, p: ()) -> ();
+    fn pick_9(&self, p: ()) -> ();
     fn apply_10(&self, f: FnPtr<fn(Ptr<()>)>, x: ()) -> ();
     fn apply_11(&self, f: FnPtr<fn(Ptr<()>, ())>, x: ()) -> ();
     fn apply_12(&self, f: FnPtr<fn(()) -> ()>, x: ()) -> ();
-    fn combine_13(
-        &self,
-        p: Ptr<std_pair_int__long_>,
-        f: FnPtr<fn(()) -> ()>,
-        q: Ptr<()>,
-        n: (),
-    ) -> ();
-    fn combine_14(
-        &self,
-        p: Ptr<std_pair_int__int_>,
-        f: FnPtr<fn(Ptr<()>, ())>,
-        q: Ptr<()>,
-        n: (),
-    ) -> ();
+    fn combine_13(&self, p: Ptr<()>, f: FnPtr<fn(()) -> ()>, q: Ptr<()>, n: ()) -> ();
+    fn combine_14(&self, p: Ptr<()>, f: FnPtr<fn(Ptr<()>, ())>, q: Ptr<()>, n: ()) -> ();
     fn width_1_char(&self, x: ()) -> ();
     fn width_1_int(&self, x: ()) -> ();
     fn scale_2_2(&self, x: ()) -> ();
@@ -137,13 +125,13 @@ impl SImpl for Ptr<S> {
     fn take_7(&self, x: Ptr<()>) -> () {
         return (({ (*self).with(|__s| __s.base) } + { (x.read()) }) + 2_());
     }
-    fn pick_8(&self, p: std_pair_int__int_) -> () {
-        let p: Value<std_pair_int__int_> = Rc::new(RefCell::new(p));
-        return ((*self).with(|__s| __s.base) + { (*p.borrow()).first });
+    fn pick_8(&self, p: ()) -> () {
+        let p: Value<()> = Rc::new(RefCell::new(p));
+        return ((*self).with(|__s| __s.base) + (*unimplemented!().borrow()));
     }
-    fn pick_9(&self, p: std_pair_int__long_) -> () {
-        let p: Value<std_pair_int__long_> = Rc::new(RefCell::new(p));
-        return ((*self).with(|__s| __s.base) + { (*p.borrow()).second });
+    fn pick_9(&self, p: ()) -> () {
+        let p: Value<()> = Rc::new(RefCell::new(p));
+        return ((*self).with(|__s| __s.base) + (*unimplemented!().borrow()));
     }
     fn apply_10(&self, mut f: FnPtr<fn(Ptr<()>)>, x: ()) -> () {
         let x: Value<()> = Rc::new(RefCell::new(x));
@@ -158,22 +146,16 @@ impl SImpl for Ptr<S> {
     fn apply_12(&self, mut f: FnPtr<fn(()) -> ()>, mut x: ()) -> () {
         return ({ (*self).with(|__s| __s.base) } + { ({ f.call(x) }) });
     }
-    fn combine_13(
-        &self,
-        p: Ptr<std_pair_int__long_>,
-        mut f: FnPtr<fn(()) -> ()>,
-        mut q: Ptr<()>,
-        mut n: (),
-    ) -> () {
+    fn combine_13(&self, p: Ptr<()>, mut f: FnPtr<fn(()) -> ()>, mut q: Ptr<()>, mut n: ()) -> () {
         return ({
-            ({ ({ (*self).with(|__s| __s.base) } + { p.with(|__s| __s.second) }) } + {
+            ({ ({ (*self).with(|__s| __s.base) } + { (*unimplemented!().borrow()) }) } + {
                 ({ f.call((q.read())) })
             })
         } + { n });
     }
     fn combine_14(
         &self,
-        p: Ptr<std_pair_int__int_>,
+        p: Ptr<()>,
         mut f: FnPtr<fn(Ptr<()>, ())>,
         mut q: Ptr<()>,
         mut n: (),
@@ -183,7 +165,7 @@ impl SImpl for Ptr<S> {
             let _arg1: () = n;
             f.call(_arg0, _arg1)
         });
-        return ({ ({ (*self).with(|__s| __s.base) } + { p.with(|__s| __s.first) }) } + {
+        return ({ ({ (*self).with(|__s| __s.base) } + { (*unimplemented!().borrow()) }) } + {
             (q.read())
         });
     }

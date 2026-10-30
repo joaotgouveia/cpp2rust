@@ -15,7 +15,7 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut a0: () = 3.14_f64;
     let mut a1: () = 2.71_f64;
-    (unsafe { min_0(&a0, &a1) });
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

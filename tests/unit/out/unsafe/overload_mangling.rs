@@ -50,11 +50,11 @@ impl S {
     pub unsafe fn take_7(&self, x: *mut ()) -> () {
         return (((self.base) + (*x)) + (2_()));
     }
-    pub unsafe fn pick_8(&self, mut p: std_pair_int__int_) -> () {
-        return ((self.base) + (p.first));
+    pub unsafe fn pick_8(&self, mut p: ()) -> () {
+        return ((self.base) + (unimplemented!()));
     }
-    pub unsafe fn pick_9(&self, mut p: std_pair_int__long_) -> () {
-        return ((self.base) + (p.second));
+    pub unsafe fn pick_9(&self, mut p: ()) -> () {
+        return ((self.base) + (unimplemented!()));
     }
     pub unsafe fn apply_10(&self, mut f: Option<unsafe fn(*mut ())>, mut x: ()) -> () {
         (unsafe { (f).unwrap()((&mut x as *mut ())) });
@@ -69,16 +69,16 @@ impl S {
     }
     pub unsafe fn combine_13(
         &self,
-        p: *const std_pair_int__long_,
+        p: *const (),
         mut f: Option<unsafe fn(()) -> ()>,
         mut q: *const (),
         mut n: (),
     ) -> () {
-        return ((((self.base) + ((*p).second)) + (unsafe { (f).unwrap()((*q)) })) + (n));
+        return ((((self.base) + (unimplemented!())) + (unsafe { (f).unwrap()((*q)) })) + (n));
     }
     pub unsafe fn combine_14(
         &self,
-        p: *const std_pair_int__int_,
+        p: *const (),
         mut f: Option<unsafe fn(*mut (), ())>,
         mut q: *mut (),
         mut n: (),
@@ -88,7 +88,7 @@ impl S {
             let _arg1: () = n;
             (f).unwrap()(_arg0, _arg1)
         });
-        return (((self.base) + ((*p).first)) + (*q));
+        return (((self.base) + (unimplemented!())) + (*q));
     }
     pub unsafe fn width_1_char(&self, mut x: ()) -> () {
         return ((self.base) + ((x) * (::std::mem::size_of::<()>())));

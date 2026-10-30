@@ -81,13 +81,8 @@ fn main_0() -> () {
         MoveOnlyImpl::move_assign(&a.as_pointer(), _o)
     });
     unimplemented!();
-    let vec_: Value<std_vector_MoveOnly__std_allocator_MoveOnly__> = Rc::new(RefCell::new(
-        <std_vector_MoveOnly__std_allocator_MoveOnly__>::default(),
-    ));
-    ({
-        let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 7_() })));
-        (*vec_.borrow()).push_back_58(___x.as_pointer())
-    });
+    let vec_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
     let d: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ 8_() })));
     ({ MoveOnlyImpl::move_assign(&vec_.as_pointer().offset(0_()), d.as_pointer()) });
     unimplemented!();

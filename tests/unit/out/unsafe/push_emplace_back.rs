@@ -14,87 +14,63 @@ pub struct Chunk {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Writer {
-    pub output: *mut std_vector_Chunk__std_allocator_Chunk__,
+    pub output: *mut (),
     pub chunk: Chunk,
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct JPEGData { pub com_data : std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ , pub app_data : std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ , }
+pub struct JPEGData {
+    pub com_data: (),
+    pub app_data: (),
+}
 impl JPEGData {
     pub unsafe fn move_from(_a0: *mut JPEGData) -> Self {
         let mut this = Self {
-            com_data: (*_a0).com_data,
-            app_data: (*_a0).app_data,
+            com_data: unimplemented!(),
+            app_data: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut JPEGData) -> *mut JPEGData {
-        self.com_data = ((*_a0).com_data).clone();
-        self.app_data = ((*_a0).app_data).clone();
+        unimplemented!();
+        unimplemented!();
         return &mut (*(self as *mut JPEGData));
     }
 }
-pub unsafe fn push_param_0(
-    mut dest : *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____,
-) {
-    (unsafe {
-        let mut ___x: std_vector_unsigned_char__std_allocator_unsigned_char__ =
-            <std_vector_unsigned_char__std_allocator_unsigned_char__>::default();
-        (*dest).push_back_58(&mut ___x)
-    });
+pub unsafe fn push_param_0(mut dest: *mut ()) {
+    unimplemented!();
 }
 pub unsafe fn push_local_from_field_1(mut jpg: *mut JPEGData, mut cond: ()) {
     let mut head: [(); 3] = [1_(), 2_(), 3_()];
-    let mut dest : *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ = std::ptr::null_mut() ;
+    let mut dest: *mut () = std::ptr::null_mut();
     if cond {
-        dest  = ( & mut ( * jpg  ) . com_data  as *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ )  ;
+        dest = (&mut (*jpg).com_data as *mut ());
     } else {
-        dest  = ( & mut ( * jpg  ) . app_data  as *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ )  ;
+        dest = (&mut (*jpg).app_data as *mut ());
     }
-    (unsafe {
-        let mut ___x: std_vector_unsigned_char__std_allocator_unsigned_char__ =
-            std_vector_unsigned_char__std_allocator_unsigned_char__::new_1(
-                { head.as_mut_ptr() },
-                { head.as_mut_ptr().offset((3_()) as isize) },
-                None,
-            );
-        (*dest).push_back_58(&mut ___x)
-    });
+    unimplemented!();
 }
-pub unsafe fn shrink_through_ptr_2(mut comps: *mut std_vector_Chunk__std_allocator_Chunk__) {
-    (unsafe { (*comps).shrink_to_fit() });
+pub unsafe fn shrink_through_ptr_2(mut comps: *mut ()) {
+    unimplemented!();
 }
 pub unsafe fn nested_push_move_3(mut bw: *mut Writer) {
-    (unsafe {
-        let ___x: *mut Chunk = &mut (*bw).chunk;
-        (*(*bw).output).push_back_58(___x)
-    });
+    unimplemented!();
 }
 pub unsafe fn emplace_local_from_field_4(mut jpg: *mut JPEGData, mut cond: ()) {
     let mut head: [(); 3] = [1_(), 2_(), 3_()];
-    let mut dest : *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ = std::ptr::null_mut() ;
+    let mut dest: *mut () = std::ptr::null_mut();
     if cond {
-        dest  = ( & mut ( * jpg  ) . com_data  as *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ )  ;
+        dest = (&mut (*jpg).com_data as *mut ());
     } else {
-        dest  = ( & mut ( * jpg  ) . app_data  as *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ )  ;
+        dest = (&mut (*jpg).app_data as *mut ());
     }
-    (unsafe {
-        let ___args_0: *mut [(); 3] = &mut head;
-        let mut ___args_1: *mut () = head.as_mut_ptr().offset((3_()) as isize);
-        (*dest).emplace_back(___args_0, &mut ___args_1)
-    });
+    unimplemented!();
 }
 pub unsafe fn nested_emplace_move_5(mut bw: *mut Writer) {
-    (unsafe {
-        let ___args: *mut Chunk = &mut (*bw).chunk;
-        (*(*bw).output).emplace_back(___args)
-    });
+    unimplemented!();
 }
-pub unsafe fn self_ref_push_6(mut comps: *mut std_vector_Chunk__std_allocator_Chunk__) {
-    (unsafe {
-        let ___x: *const Chunk = (unsafe { (*comps).front_51() });
-        (*comps).push_back_57(___x)
-    });
+pub unsafe fn self_ref_push_6(mut comps: *mut ()) {
+    unimplemented!();
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
@@ -130,29 +106,18 @@ impl Default for Pair {
         unsafe { Pair::new_1() }
     }
 }
-pub unsafe fn emplace_ctor_args_7(mut pairs: *mut std_vector_Pair__std_allocator_Pair__) {
-    (unsafe { (*pairs).emplace_back() });
-    (unsafe {
-        let mut ___args: () = 3_();
-        (*pairs).emplace_back(&mut ___args)
-    });
-    (unsafe {
-        let mut ___args_0: () = 4_();
-        let mut ___args_1: () = 5_();
-        (*pairs).emplace_back(&mut ___args_0, &mut ___args_1)
-    });
+pub unsafe fn emplace_ctor_args_7(mut pairs: *mut ()) {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
-pub unsafe fn emplace_deque_8(mut queue: *mut std_deque_Pair__std_allocator_Pair__) {
-    (unsafe {
-        let mut ___args_0: () = 6_();
-        let mut ___args_1: () = 7_();
-        (*queue).emplace_back(&mut ___args_0, &mut ___args_1)
-    });
-    (unsafe { (*queue).emplace_back() });
+pub unsafe fn emplace_deque_8(mut queue: *mut ()) {
+    unimplemented!();
+    unimplemented!();
 }
-pub unsafe fn emplace_scalar_9(mut values: *mut std_vector_long__std_allocator_long__, mut x: ()) {
-    (unsafe { (*values).emplace_back() });
-    (unsafe { (*values).emplace_back(&mut x) });
+pub unsafe fn emplace_scalar_9(mut values: *mut (), mut x: ()) {
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -161,10 +126,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut vecs : std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ = <std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ >::default() ;
-    (unsafe {
-        push_param_0 ( ( & mut vecs as *mut std_vector_std_vector_unsigned_char__std_allocator_unsigned_char____std_allocator_std_vector_unsigned_char__std_allocator_unsigned_char____ ) , )
-    });
+    let mut vecs: () = unimplemented!();
+    (unsafe { push_param_0((&mut vecs as *mut ())) });
     unimplemented!();
     unimplemented!();
     let mut jpg: JPEGData = <JPEGData>::default();
@@ -175,15 +138,12 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut chunks: std_vector_Chunk__std_allocator_Chunk__ =
-        <std_vector_Chunk__std_allocator_Chunk__>::default();
-    (unsafe {
-        shrink_through_ptr_2((&mut chunks as *mut std_vector_Chunk__std_allocator_Chunk__))
-    });
+    let mut chunks: () = unimplemented!();
+    (unsafe { shrink_through_ptr_2((&mut chunks as *mut ())) });
     unimplemented!();
     let mut w: Writer = <Writer>::default();
     w.chunk.data = 42_();
-    w.output = (&mut chunks as *mut std_vector_Chunk__std_allocator_Chunk__);
+    w.output = (&mut chunks as *mut ());
     (unsafe { nested_push_move_3((&mut w as *mut Writer)) });
     unimplemented!();
     unimplemented!();
@@ -194,33 +154,25 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     w.chunk.data = 99_();
-    w.output = (&mut chunks as *mut std_vector_Chunk__std_allocator_Chunk__);
+    w.output = (&mut chunks as *mut ());
     (unsafe { nested_emplace_move_5((&mut w as *mut Writer)) });
     unimplemented!();
     unimplemented!();
-    (unsafe { self_ref_push_6((&mut chunks as *mut std_vector_Chunk__std_allocator_Chunk__)) });
+    (unsafe { self_ref_push_6((&mut chunks as *mut ())) });
     unimplemented!();
     unimplemented!();
-    let mut pairs: std_vector_Pair__std_allocator_Pair__ =
-        <std_vector_Pair__std_allocator_Pair__>::default();
-    (unsafe { emplace_ctor_args_7((&mut pairs as *mut std_vector_Pair__std_allocator_Pair__)) });
+    let mut pairs: () = unimplemented!();
+    (unsafe { emplace_ctor_args_7((&mut pairs as *mut ())) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut queue: std_deque_Pair__std_allocator_Pair__ =
-        <std_deque_Pair__std_allocator_Pair__>::default();
-    (unsafe { emplace_deque_8((&mut queue as *mut std_deque_Pair__std_allocator_Pair__)) });
+    let mut queue: () = unimplemented!();
+    (unsafe { emplace_deque_8((&mut queue as *mut ())) });
     unimplemented!();
     unimplemented!();
-    let mut values: std_vector_long__std_allocator_long__ =
-        <std_vector_long__std_allocator_long__>::default();
-    (unsafe {
-        emplace_scalar_9(
-            (&mut values as *mut std_vector_long__std_allocator_long__),
-            7_(),
-        )
-    });
+    let mut values: () = unimplemented!();
+    (unsafe { emplace_scalar_9((&mut values as *mut ()), 7_()) });
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -15,35 +15,34 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let N: () = 10000_();
     let sentinel: () = ((N) / (2_()));
-    let mut m: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
-        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
-    m[(sentinel) as usize] = sentinel;
-    let mut it: std__Rb_tree_iterator_std_pair_const_int__int__ = (unsafe { m.find_71(&sentinel) });
-    let mut p: *mut () = (&mut (*it).second as *mut ());
+    let mut m: () = unimplemented!();
+    (*unimplemented!()) = sentinel;
+    let mut it: () = unimplemented!();
+    let mut p: *mut () = (&mut unimplemented!() as *mut ());
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (sentinel)) {
-        m[(i) as usize] = i;
+        (*unimplemented!()) = i;
         i.prefix_inc();
     }
     let mut i: () = ((sentinel) + (1_()));
     'loop_: while ((i) <= (N)) {
-        m[(i) as usize] = i;
+        (*unimplemented!()) = i;
         i.prefix_inc();
     }
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*it).second = 57005_();
+    unimplemented!() = 57005_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut prev: () = -1_();
-    'loop_: for pair in IterRange::new((unsafe { m.begin_18() }), (unsafe { m.end_20() })) {
-        let pair: *mut std_pair_const_int__int_ = &mut (*pair);
+    'loop_: for pair in IterRange::new(unimplemented!(), unimplemented!()) {
+        let pair: *mut () = &mut (*unimplemented!());
         unimplemented!();
-        prev = (*pair).first;
+        prev = unimplemented!();
     }
     return 0_();
 }

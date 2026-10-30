@@ -25,13 +25,13 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut x: () = 0_();
-    write!(cout_3.with(|v| v.as_pointer()), "{:}\n", x,);
+    write!(unimplemented!(), "{:}\n", x,);
     let mut a: () = 1_();
     let mut b: () = ({ identity_0(a) });
-    write!(cout_3.with(|v| v.as_pointer()), "{:}\n", b,);
+    write!(unimplemented!(), "{:}\n", b,);
     let c: Value<()> = Rc::new(RefCell::new(2_()));
     let mut p: Ptr<()> = (c.as_pointer());
-    write!(cout_3.with(|v| v.as_pointer()), "{:}\n", (p.read()),);
+    write!(unimplemented!(), "{:}\n", (p.read()),);
     let d: Value<()> = Rc::new(RefCell::new(3_()));
     let e: Value<()> = Rc::new(RefCell::new(4_()));
     ({ swap_by_ptr_1((d.as_pointer()), (e.as_pointer())) });
@@ -39,11 +39,11 @@ fn main_0() -> () {
     let g: Value<()> = Rc::new(RefCell::new(5_()));
     ({ swap_by_ref_2(f.as_pointer(), g.as_pointer()) });
     let mut h: Ptr<()> = Ptr::alloc(6_());
-    write!(cout_3.with(|v| v.as_pointer()), "{:}\n", (h.read()),);
+    write!(unimplemented!(), "{:}\n", (h.read()),);
     h.delete();
     let mut i: Ptr<()> = Ptr::alloc_array(Box::new([7_(), 8_(), unimplemented!()]));
     write!(
-        cout_3.with(|v| v.as_pointer()),
+        unimplemented!(),
         "{:} {:}\n",
         (elem!(i, 0_()).read()),
         (elem!(i, 1_()).read()),
@@ -63,19 +63,12 @@ fn main_0() -> () {
             (Ptr::alloc(10_())).offset((0_()) as isize),
         )
     });
-    let j: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
-        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(11_()) }),
-    ));
-    let mut k: Ptr<()> = ({ (*j.borrow()).get() });
-    write!(cout_3.with(|v| v.as_pointer()), "{:}\n", (k.read()),);
-    let l: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<()> = Rc::new(RefCell::new(11_()));
-            make_unique_4(___args.as_pointer())
-        }),
-    ));
-    let mut m: Ptr<()> = ({ (*l.borrow()).get() });
-    write!(cout_3.with(|v| v.as_pointer()), "{:}\n", (m.read()),);
+    let mut j: () = unimplemented!();
+    let mut k: Ptr<()> = unimplemented!();
+    write!(unimplemented!(), "{:}\n", (k.read()),);
+    let mut l: () = unimplemented!();
+    let mut m: Ptr<()> = unimplemented!();
+    write!(unimplemented!(), "{:}\n", (m.read()),);
     unimplemented!();
     return 0_();
 }

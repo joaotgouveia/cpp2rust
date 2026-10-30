@@ -9,26 +9,26 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
     pub n: [(); 2],
 }
 impl S {
     pub unsafe fn new(mut x: ()) -> Self {
         let mut this = Self {
-            v: std_vector_int__std_allocator_int__::new_1({ x }, { &x }, None),
+            v: unimplemented!(),
             n: [x, ((x) + (1_()))],
         };
         this
     }
     pub unsafe fn move_from(_a0: *mut S) -> Self {
         let mut this = Self {
-            v: (*_a0).v,
+            v: unimplemented!(),
             n: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).n[(__i) as usize]),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
         unimplemented!();
         return &mut (*(self as *mut S));
     }
@@ -36,23 +36,25 @@ impl S {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct T {
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl T {
     pub unsafe fn size(&self) -> () {
-        return (unsafe { self.v.size() });
+        return unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut T) -> Self {
-        let mut this = Self { v: (*_a0).v };
+        let mut this = Self {
+            v: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut T) -> *mut T {
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
         return &mut (*(self as *mut T));
     }
 }
 pub unsafe fn sum_0(s: *const S) -> () {
-    return (((unsafe { (*s).v.size() }) + ((*s).n[(0_()) as usize])) + ((*s).n[(1_()) as usize]));
+    return (((unimplemented!()) + ((*s).n[(0_()) as usize])) + ((*s).n[(1_()) as usize]));
 }
 pub fn main() {
     unsafe {
@@ -65,7 +67,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut t: T = T {
-        v: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+        v: unimplemented!(),
     };
     unimplemented!();
     return 0_();
@@ -78,7 +80,7 @@ pub unsafe fn shuffle_1(mut x: ()) -> () {
     (unsafe { S::move_assign(&mut c, &mut b) });
     unimplemented!();
     let mut t: T = T {
-        v: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+        v: unimplemented!(),
     };
     let mut u: T = T::move_from({ &mut t });
     let mut w: T = <T>::default();

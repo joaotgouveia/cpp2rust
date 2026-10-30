@@ -14,22 +14,22 @@ pub struct Data {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Holder {
-    pub data: std_unique_ptr_Data__std_default_delete_Data__,
+    pub data: (),
     pub n: (),
 }
 impl Holder {
     pub unsafe fn set(&mut self, mut p: *mut Data) {
-        (unsafe { self.data.reset(p) });
+        unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut Holder) -> Self {
         let mut this = Self {
-            data: (*_a0).data,
+            data: unimplemented!(),
             n: (*_a0).n,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
-        self.data = ((*_a0).data).clone();
+        unimplemented!();
         self.n = (*_a0).n;
         return &mut (*(self as *mut Holder));
     }
@@ -44,15 +44,11 @@ unsafe fn main_0() -> () {
     let mut h: Holder = <Holder>::default();
     h.n = 1_();
     let mut hp: *mut Holder = (&mut h as *mut Holder);
-    (unsafe {
-        (*hp)
-            .data
-            .reset((Box::leak(Box::new(Data { v: 3_() })) as *mut Data))
-    });
+    unimplemented!();
     unimplemented!();
     (unsafe { Holder::set(&mut h, (Box::leak(Box::new(Data { v: 4_() })) as *mut Data)) });
     unimplemented!();
-    (*(*hp).data).v += (*hp).n;
+    (*unimplemented!()).v += (*hp).n;
     unimplemented!();
     return 0_();
 }

@@ -24,11 +24,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (buf.as_mut_ptr()).cast_const() },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut lit: *const () = (&[
@@ -40,8 +36,7 @@ unsafe fn main_0() -> () {
         (0 as libc::c_char),
     ])
         .as_ptr();
-    let mut t: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ lit }, None);
+    let mut t: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

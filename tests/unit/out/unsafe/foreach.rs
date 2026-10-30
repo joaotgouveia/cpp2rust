@@ -13,16 +13,15 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
+    let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        (unsafe { v.push_back_57(&i) });
+        unimplemented!();
         i.prefix_inc();
     }
     let mut sum: () = 0_();
-    'loop_: for x in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let mut x: () = (*x);
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (*unimplemented!());
         sum += x;
     }
     unimplemented!();

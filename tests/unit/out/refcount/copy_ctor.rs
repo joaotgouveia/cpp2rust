@@ -245,10 +245,8 @@ fn main_0() -> () {
     let mut hold2: Holder = (*hold.borrow()).clone();
     unimplemented!();
     unimplemented!();
-    let vec_: Value<std_vector_Counted__std_allocator_Counted__> = Rc::new(RefCell::new(
-        <std_vector_Counted__std_allocator_Counted__>::default(),
-    ));
-    ({ (*vec_.borrow()).push_back_57(a.as_pointer()) });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let i1: Value<Ignored> = Rc::new(RefCell::new(Ignored::new({ 1_() })));

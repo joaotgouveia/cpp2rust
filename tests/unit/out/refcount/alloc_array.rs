@@ -6,27 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn All_0(
-    arr: Ptr<std_unique_ptr_intarrarr__std_default_delete_intarrarr__>,
-    mut N: (),
-    mut element: (),
-) {
-    let all: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
-        Rc::new(RefCell::new(({ make_unique_1(N) })));
+pub fn All_0(arr: Ptr<()>, mut N: (), mut element: ()) {
+    let mut all: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < N) {
-        (*all.borrow_mut())[i] = element;
+        unimplemented!().write(element);
         i.prefix_inc();
     }
-    arr.write({ (*all.borrow()).clone() });
+    unimplemented!();
 }
-pub fn Consume_2(arr: std_unique_ptr_intarrarr__std_default_delete_intarrarr__, mut N: ()) -> () {
-    let arr: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
-        Rc::new(RefCell::new(arr));
+pub fn Consume_1(mut arr: (), mut N: ()) -> () {
     let mut sum: () = 0_();
     let mut i: () = -1_();
     'loop_: while (i.prefix_inc() < N) {
-        sum += { (*arr.borrow())[i] };
+        sum += (unimplemented!().read());
     }
     return sum;
 }
@@ -36,8 +29,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut N: () = 10_();
-    let arr: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
-        Rc::new(RefCell::new(({ make_unique_1(N) })));
+    let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ All_0(arr.as_pointer(), N, 1_()) });
     unimplemented!();
     return 0_();

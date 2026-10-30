@@ -11,11 +11,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let g: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
-        Rc::new(RefCell::new(({ make_unique_0(2_()) })));
-    (*g.borrow_mut())[0_()] = 11_();
-    (*g.borrow_mut())[1_()] = 12_();
-    let mut g_ptr: Ptr<()> = ({ (*g.borrow()).get() });
+    let mut g: () = unimplemented!();
+    unimplemented!().write(11_());
+    unimplemented!().write(12_());
+    let mut g_ptr: Ptr<()> = unimplemented!();
     elem!(g_ptr, 0_()).write(13_());
     elem!(g_ptr, 1_()).write(14_());
     unimplemented!();

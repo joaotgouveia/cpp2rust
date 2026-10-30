@@ -11,15 +11,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let outer : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
-    let inner: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    ({ (*outer.borrow()).push_back_57(inner.as_pointer()) });
-    let mut sink: Ptr<std_vector_int__std_allocator_int__> = ({ (*outer.borrow()).back_53() });
+    let outer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut inner: () = unimplemented!();
     unimplemented!();
-    let mut p : Ptr< std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >  = ( outer .as_pointer()  )  ;
-    sink = ({ (*p.upgrade().deref()).back_53() });
+    let mut sink: Ptr<()> = (unimplemented!());
+    unimplemented!();
+    let mut p: Ptr<()> = (outer.as_pointer());
+    sink = (unimplemented!());
     unimplemented!();
     return 0_();
 }

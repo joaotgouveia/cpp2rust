@@ -27,25 +27,13 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut x: () = 0_();
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
-        "{:}\n",
-        x,
-    );
+    write!((*unimplemented!()), "{:}\n", x,);
     let mut a: () = 1_();
     let mut b: () = (unsafe { identity_0(a) });
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
-        "{:}\n",
-        b,
-    );
+    write!((*unimplemented!()), "{:}\n", b,);
     let mut c: () = 2_();
     let mut p: *mut () = (&mut c as *mut ());
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
-        "{:}\n",
-        (*p),
-    );
+    write!((*unimplemented!()), "{:}\n", (*p),);
     let mut d: () = 3_();
     let mut e: () = 4_();
     (unsafe { swap_by_ptr_1((&mut d as *mut ()), (&mut e as *mut ())) });
@@ -53,11 +41,7 @@ unsafe fn main_0() -> () {
     let mut g: () = 5_();
     (unsafe { swap_by_ref_2(&mut f, &mut g) });
     let mut h: *mut () = (Box::leak(Box::new(6_())) as *mut ());
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
-        "{:}\n",
-        (*h),
-    );
+    write!((*unimplemented!()), "{:}\n", (*h),);
     {
         let __p = h;
         if !__p.is_null() {
@@ -66,7 +50,7 @@ unsafe fn main_0() -> () {
     };
     let mut i: *mut () = Box::leak(Box::new([7_(), 8_(), unimplemented!()])).as_mut_ptr();
     write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
+        (*unimplemented!()),
         "{:} {:}\n",
         (*i.offset((0_()) as isize)),
         (*i.offset((1_()) as isize)),
@@ -105,26 +89,12 @@ unsafe fn main_0() -> () {
             &mut (*(Box::leak(Box::new(10_())) as *mut ()).offset((0_()) as isize)),
         )
     });
-    let mut j: std_unique_ptr_int__std_default_delete_int__ =
-        std_unique_ptr_int__std_default_delete_int__::new_1({
-            (Box::leak(Box::new(11_())) as *mut ())
-        });
-    let mut k: *mut () = (unsafe { j.get() });
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
-        "{:}\n",
-        (*k),
-    );
-    let mut l: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
-        let mut ___args: () = 11_();
-        make_unique_4(&mut ___args)
-    });
-    let mut m: *mut () = (unsafe { l.get() });
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3)),
-        "{:}\n",
-        (*m),
-    );
+    let mut j: () = unimplemented!();
+    let mut k: *mut () = unimplemented!();
+    write!((*unimplemented!()), "{:}\n", (*k),);
+    let mut l: () = unimplemented!();
+    let mut m: *mut () = unimplemented!();
+    write!((*unimplemented!()), "{:}\n", (*m),);
     unimplemented!();
     return 0_();
 }

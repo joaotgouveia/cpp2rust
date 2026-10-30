@@ -11,9 +11,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let a0: Value<()> = Rc::new(RefCell::new(3.14_f64));
-    let a1: Value<()> = Rc::new(RefCell::new(2.71_f64));
-    ({ min_0(a0.as_pointer(), a1.as_pointer()) });
+    let mut a0: () = 3.14_f64;
+    let mut a1: () = 2.71_f64;
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

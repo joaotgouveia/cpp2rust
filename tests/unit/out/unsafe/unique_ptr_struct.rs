@@ -22,13 +22,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut p: std_unique_ptr_Point__std_default_delete_Point__ = (unsafe {
-        let mut ___args: Point = Point { x: 3_(), y: 4_() };
-        make_unique_1(&mut ___args)
-    });
-    (*p).x += 10_();
-    (*p).y = (((*p).x) + ((*p).y));
-    let mut s: () = (unsafe { sum_0((*p)) });
+    let mut p: () = unimplemented!();
+    (*unimplemented!()).x += 10_();
+    (*unimplemented!()).y = (((*unimplemented!()).x) + ((*unimplemented!()).y));
+    let mut s: () = (unsafe { sum_0((*unimplemented!())) });
     unimplemented!();
     return 0_();
 }

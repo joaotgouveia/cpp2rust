@@ -46,7 +46,7 @@ pub struct Outer {
     pub items: Box<[Inner]>,
     #[offset(56)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
     #[offset(80)]
     #[byte_size(8)]
     pub cursor: Ptr<()>,
@@ -62,7 +62,7 @@ impl Outer {
             items: Box::new(std::array::from_fn::<_, 3, _>(|__i: usize| {
                 ((*_a0.upgrade().deref()).items[(__i) as usize]).clone()
             })),
-            v: field!(_a0, v).with_mut(std::mem::take),
+            v: unimplemented!(),
             cursor: { (*_a0.upgrade().deref()).cursor.clone() },
             buf: Box::new(std::array::from_fn::<_, 4, _>(|__i: usize| {
                 (*_a0.upgrade().deref()).buf[(__i) as usize]
@@ -77,7 +77,7 @@ impl Default for Outer {
                 x: unimplemented!(),
                 inner: <Inner>::default(),
                 items: (0..3).map(|_| <Inner>::default()).collect::<Box<[Inner]>>(),
-                v: <std_vector_int__std_allocator_int__>::default(),
+                v: unimplemented!(),
                 cursor: Ptr::<()>::null(),
                 buf: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
@@ -183,18 +183,13 @@ impl OuterImpl for Ptr<Outer> {
         return ((*self).with(|__s| __s.x) + (*self).with(|__s| __s.inner.a));
     }
     fn push(&self, mut k: ()) {
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new((k + (*self).with(|__s| __s.x))));
-            (*(*self).upgrade().deref())
-                .v
-                .push_back_58(___x.as_pointer())
-        });
+        unimplemented!();
     }
     fn move_assign(&self, _a0: Ptr<Outer>) -> Ptr<Outer> {
         field!((*self), x).write({ { (*_a0.upgrade().deref()).x } });
         field!((*self), inner).write({ { (*_a0.upgrade().deref()).inner.clone() } });
         unimplemented!();
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        unimplemented!();
         field!((*self), cursor).write({ { (*_a0.upgrade().deref()).cursor.clone() } });
         unimplemented!();
         return (*self).clone();

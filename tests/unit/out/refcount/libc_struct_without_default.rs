@@ -11,16 +11,16 @@ use std::rc::{Rc, Weak};
 pub struct UserDefined {
     #[offset(0)]
     #[byte_size(4)]
-    pub a: std_array_int__1_,
+    pub a: (),
     #[offset(8)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl UserDefined {
     pub fn move_from(_a0: Ptr<UserDefined>) -> Self {
         Self {
-            a: field!(_a0, a).with_mut(std::mem::take),
-            v: field!(_a0, v).with_mut(std::mem::take),
+            a: unimplemented!(),
+            v: unimplemented!(),
         }
     }
 }
@@ -28,8 +28,8 @@ impl Default for UserDefined {
     fn default() -> Self {
         {
             UserDefined {
-                a: <std_array_int__1_>::default(),
-                v: <std_vector_int__std_allocator_int__>::default(),
+                a: unimplemented!(),
+                v: unimplemented!(),
             }
         }
     }
@@ -87,8 +87,8 @@ pub trait UserDefinedImpl {
 }
 impl UserDefinedImpl for Ptr<UserDefined> {
     fn move_assign(&self, _a0: Ptr<UserDefined>) -> Ptr<UserDefined> {
-        field!((*self), a).write({ { (*_a0.upgrade().deref()).a.clone() } });
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        unimplemented!();
+        unimplemented!();
         return (*self).clone();
     }
 }

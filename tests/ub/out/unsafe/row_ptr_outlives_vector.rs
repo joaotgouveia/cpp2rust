@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn second_row_0() -> *mut () {
-    let mut rows : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ :: new_1 ( { unimplemented!() } , None , )  ;
-    return (unsafe { rows[(1_()) as usize].data_55() });
+    let mut rows: () = unimplemented!();
+    return unimplemented!();
 }
 pub fn main() {
     unsafe {

@@ -18,10 +18,10 @@ pub struct Pair {
     pub first: (),
     pub second: (),
 }
-pub unsafe fn total_2(v: *const std_vector_int__std_allocator_int__) -> () {
+pub unsafe fn total_2(v: *const ()) -> () {
     let mut s: () = 0_();
-    'loop_: for x in IterRange::new((unsafe { (*v).begin_27() }), (unsafe { (*v).end_29() })) {
-        let mut x: () = (*x);
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (*unimplemented!());
         s += x;
     }
     return s;
@@ -145,37 +145,22 @@ unsafe fn main_0() -> () {
             ::std::mem::drop(Box::from_raw(__p))
         }
     };
-    let mut vec_: std_vector_int__std_allocator_int__ = {
-        let mut __tmp_0: () = 1_();
-        std_vector_int__std_allocator_int__::new_1({ 3_() }, { &mut __tmp_0 }, None)
-    };
+    let mut vec_: () = unimplemented!();
     let mut four: () = 4_();
-    (unsafe { vec_.push_back_57(&four) });
+    unimplemented!();
     vec_[(0_()) as usize] = ((vec_[(3_()) as usize]) + (1_()));
     vec_[(1_()) as usize].postfix_inc();
     unimplemented!();
     let mut high: () = 3_();
-    let mut low: () = (*(unsafe {
-        let mut ___b: () = 2_();
-        min_5(&high, &mut ___b)
-    }));
+    let mut low: () = (*unimplemented!());
     unimplemented!();
-    let mut by_ref: std_vector_int__std_allocator_int__ = {
-        let mut __tmp_1: () = 3_();
-        std_vector_int__std_allocator_int__::new_1({ 2_() }, { &mut __tmp_1 }, None)
-    };
+    let mut by_ref: () = unimplemented!();
     unimplemented!();
-    let mut elem_ptr: std_vector_int__std_allocator_int__ = {
-        let mut __tmp_2: () = 0_();
-        std_vector_int__std_allocator_int__::new_1({ 2_() }, { &mut __tmp_2 }, None)
-    };
+    let mut elem_ptr: () = unimplemented!();
     (unsafe { set_0((&mut elem_ptr[(1_()) as usize] as *mut ()), 7_()) });
     unimplemented!();
-    let mut data: std_vector_int__std_allocator_int__ = {
-        let mut __tmp_3: () = 0_();
-        std_vector_int__std_allocator_int__::new_1({ 2_() }, { &mut __tmp_3 }, None)
-    };
-    (unsafe { set_0((unsafe { data.data_55() }), 8_()) });
+    let mut data: () = unimplemented!();
+    (unsafe { set_0(unimplemented!(), 8_()) });
     unimplemented!();
     let mut square: Square = <Square>::default();
     let mut shape: *mut dyn Shape = (&mut square as *mut Square);

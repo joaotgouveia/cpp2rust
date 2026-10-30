@@ -22,36 +22,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_Item__std_allocator_Item__ =
-        <std_vector_Item__std_allocator_Item__>::default();
-    (unsafe {
-        let mut ___x: Item = Item {
-            key: 3_(),
-            value: 30_(),
-        };
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: Item = Item {
-            key: 1_(),
-            value: 10_(),
-        };
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: Item = Item {
-            key: 2_(),
-            value: 20_(),
-        };
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let ___first: __gnu_cxx___normal_iterator_Item_ptr__std_vector_Item__std_allocator_Item___ =
-            (unsafe { v.begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_Item_ptr__std_vector_Item__std_allocator_Item___ =
-            (unsafe { v.end_28() });
-        stable_sort_1(___first, ___last, Some(Compare_0))
-    });
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

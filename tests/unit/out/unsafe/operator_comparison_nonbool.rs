@@ -227,11 +227,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut xs: [X; 3] = [X { v: 3_() }, X { v: 1_() }, X { v: 2_() }];
-    (unsafe {
-        let ___first: *mut X = xs.as_mut_ptr();
-        let ___last: *mut X = xs.as_mut_ptr().offset((3_()) as isize);
-        sort_9(___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     let mut p: Custom = Custom { v: 5_() };
     let mut q: Custom = Custom { v: 2_() };
@@ -242,11 +238,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut ms: [Mixed; 3] = [Mixed { v: 6_() }, Mixed { v: 4_() }, Mixed { v: 5_() }];
-    (unsafe {
-        let ___first: *mut Mixed = ms.as_mut_ptr();
-        let ___last: *mut Mixed = ms.as_mut_ptr().offset((3_()) as isize);
-        sort_10(___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut b1: Boolish = Boolish { v: 1_() };
@@ -263,11 +255,7 @@ unsafe fn main_0() -> () {
         Boolish { v: 1_() },
         Boolish { v: 2_() },
     ];
-    (unsafe {
-        let ___first: *mut Boolish = bs.as_mut_ptr();
-        let ___last: *mut Boolish = bs.as_mut_ptr().offset((3_()) as isize);
-        sort_11(___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     let mut ri1: RefInt = RefInt { v: 1_() };
     let mut ri2: RefInt = RefInt { v: 2_() };

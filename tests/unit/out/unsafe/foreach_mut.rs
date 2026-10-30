@@ -13,65 +13,45 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v1: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 1_();
-        v1.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 2_();
-        v1.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 3_();
-        v1.push_back_58(&mut ___x)
-    });
+    let mut v1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut sum: () = 0_();
-    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
-        let mut x: () = (*x);
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (*unimplemented!());
         sum += x.prefix_inc();
     }
-    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
-        let x: () = (*x);
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: () = (*unimplemented!());
         sum += x;
     }
-    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
-        let x: *mut () = &mut (*x);
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: *mut () = &mut (*unimplemented!());
         (*x) += 10_();
     }
-    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
-        let x: *const () = &(*x);
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: *const () = &(*unimplemented!());
         sum += (*x);
     }
-    let mut v2: std_vector_int_ptr__std_allocator_int_ptr__ =
-        <std_vector_int_ptr__std_allocator_int_ptr__>::default();
-    (unsafe {
-        let mut ___x: *mut () = (&mut v1[(0_()) as usize] as *mut ());
-        v2.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: *mut () = (&mut v1[(1_()) as usize] as *mut ());
-        v2.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: *mut () = (&mut v1[(2_()) as usize] as *mut ());
-        v2.push_back_58(&mut ___x)
-    });
-    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
-        let mut p: *mut () = (*p);
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *mut () = (*unimplemented!());
         (*p) += 5_();
     }
-    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
-        let p: *mut () = (*p);
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let p: *mut () = (*unimplemented!());
         sum += (*p);
     }
-    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
-        let mut p: *mut () = (*p);
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *mut () = (*unimplemented!());
         (*p) += 5_();
     }
-    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
-        let mut p: *const () = (*p).cast_const();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *const () = (*unimplemented!()).cast_const();
         sum += (*p);
     }
     unimplemented!();

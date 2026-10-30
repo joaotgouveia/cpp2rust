@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn second_row_0() -> Ptr<()> {
-    let rows : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-    return ({ (*rows.borrow())[1_()].data_55() });
+    let rows: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    return unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();

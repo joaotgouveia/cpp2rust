@@ -10,38 +10,33 @@ use std::rc::Rc;
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
     pub tag: (),
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl S {
     pub unsafe fn move_from(_a0: *mut S) -> Self {
         let mut this = Self {
             tag: (*_a0).tag,
-            v: (*_a0).v,
+            v: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
         self.tag = (*_a0).tag;
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
         return &mut (*(self as *mut S));
     }
 }
-pub unsafe fn add_0(mut v: *mut std_vector_int__std_allocator_int__, mut k: ()) {
-    (unsafe { (*v).push_back_57(&k) });
+pub unsafe fn add_0(mut v: *mut (), mut k: ()) {
+    unimplemented!();
 }
 pub unsafe fn run_1(mut h: *mut S) {
     (unsafe {
-        let _v: *mut std_vector_int__std_allocator_int__ =
-            (&mut (*h).v as *mut std_vector_int__std_allocator_int__);
+        let _v: *mut () = (&mut (*h).v as *mut ());
         let _k: () = (*h).tag;
         add_0(_v, _k)
     });
-    let mut pv: *mut std_vector_int__std_allocator_int__ =
-        (&mut (*h).v as *mut std_vector_int__std_allocator_int__);
-    (unsafe {
-        let mut ___x: () = (unsafe { (*(pv).cast_const()).size() });
-        (*pv).push_back_58(&mut ___x)
-    });
+    let mut pv: *mut () = (&mut (*h).v as *mut ());
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }

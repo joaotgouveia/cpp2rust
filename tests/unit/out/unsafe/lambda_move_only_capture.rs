@@ -62,7 +62,7 @@ unsafe fn main_0() -> () {
     let _dtor_f = ScopedDestructorUnsafe::new(&raw mut f, |__f| __f.destroy());
     unimplemented!();
     unimplemented!();
-    let mut g: FnPtr<fn() -> ()> = f.move_from();
+    let mut g: () = f.move_from();
     let _dtor_g = ScopedDestructorUnsafe::new(&raw mut g, |__f| __f.destroy());
     unimplemented!();
     let mut total: () = 0_();

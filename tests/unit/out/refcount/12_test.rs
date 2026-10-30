@@ -11,13 +11,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
-    ({
-        let ___x: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-            std_vector_int__std_allocator_int__::new_1({ 10_() }, None),
-        ));
-        (*v.borrow()).push_back_58(___x.as_pointer())
-    });
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

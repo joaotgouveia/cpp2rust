@@ -12,17 +12,11 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut n: () = 17_();
-    let d: Value<std_chrono_day> = Rc::new(RefCell::new(std_chrono_day::new_1({ n })));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let name: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::from_string_literal(
-        b"dir/file.txt",
-    )));
-    let p: Value<std_filesystem_path> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-        { name.as_pointer() },
-        None,
-    )));
-    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(({ (*p.borrow())() })));
+    let mut name: Ptr<()> = Ptr::<()>::from_string_literal(b"dir/file.txt");
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();

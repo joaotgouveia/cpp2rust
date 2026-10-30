@@ -62,17 +62,9 @@ fn main_0() -> () {
         unimplemented!();
         unimplemented!();
     }
-    let v1: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-    ));
-    let v2: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new({
-        a = 5_();
-        (*v1.borrow()).clone()
-    }));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(3_()));
-        (*v2.borrow()).push_back_58(___x.as_pointer())
-    });
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v2: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

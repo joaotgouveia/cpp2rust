@@ -11,41 +11,33 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new(lambda!(
         {
-            let v: Value<std_vector_int__std_allocator_int__> =
-                Rc::new(RefCell::new((*v.borrow()).clone()));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
         || -> () {
-            return ({ (*v.borrow()).size() });
+            return unimplemented!();
         }
     )));
     let g: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*f.borrow()).copy_from()));
-    let h: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*f.borrow()).move_from()));
+    let h: Value<()> = Rc::new(RefCell::new((*f.borrow()).move_from()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let p: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new(lambda!(
         {
-            let u: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<()> = Rc::new(RefCell::new(5_()));
-                    make_unique_0(___args.as_pointer())
-                }),
-            ));
+            let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
         || -> () {
-            return if !({ (*u.borrow()).get() }).is_null() {
-                ((*u.borrow()).read())
+            return if !(unimplemented!()).is_null() {
+                (unimplemented!().read())
             } else {
                 0_()
             };
         }
     )));
-    let q: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*p.borrow()).move_from()));
+    let q: Value<()> = Rc::new(RefCell::new((*p.borrow()).move_from()));
     unimplemented!();
     unimplemented!();
     let n: Value<()> = Rc::new(RefCell::new(0_()));
@@ -70,7 +62,7 @@ fn main_0() -> () {
     let outer2: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*outer.borrow()).copy_from()));
     unimplemented!();
     unimplemented!();
-    let outer3: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*outer.borrow()).move_from()));
+    let outer3: Value<()> = Rc::new(RefCell::new((*outer.borrow()).move_from()));
     unimplemented!();
     return 0_();
 }

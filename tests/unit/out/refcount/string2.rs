@@ -11,25 +11,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let arr: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"foo") },
-                None,
-            ),
-        ));
-    (*arr.borrow_mut())[1_()] = ('b' as ());
-    let mut p: Ptr<()> = ({ (*arr.borrow()).c_str() }).offset((1_()) as isize);
+    let mut arr: () = unimplemented!();
+    arr[1_()] = ('b' as ());
+    let mut p: Ptr<()> = unimplemented!().offset((1_()) as isize);
     unimplemented!();
     unimplemented!();
-    let mut names: [Ptr<()>; 1] = [({ (*arr.borrow()).data_159() })];
-    let copy: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (names[(0_()) as usize]).clone() },
-                None,
-            ),
-        ));
+    let mut names: [Ptr<()>; 1] = [unimplemented!()];
+    let mut copy: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

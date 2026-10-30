@@ -12,15 +12,17 @@ pub unsafe fn unused_param_0(mut x: ()) {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct NonTrivial {
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
 }
 impl NonTrivial {
     pub unsafe fn move_from(_a0: *mut NonTrivial) -> Self {
-        let mut this = Self { data: (*_a0).data };
+        let mut this = Self {
+            data: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut NonTrivial) -> *mut NonTrivial {
-        self.data = ((*_a0).data).clone();
+        unimplemented!();
         return &mut (*(self as *mut NonTrivial));
     }
 }
@@ -44,17 +46,17 @@ pub struct Holder {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct NonCopyable {
-    pub value: std_unique_ptr_int__std_default_delete_int__,
+    pub value: (),
 }
 impl NonCopyable {
     pub unsafe fn move_from(_a0: *mut NonCopyable) -> Self {
         let mut this = Self {
-            value: (*_a0).value,
+            value: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut NonCopyable) -> *mut NonCopyable {
-        self.value = ((*_a0).value).clone();
+        unimplemented!();
         return &mut (*(self as *mut NonCopyable));
     }
 }
@@ -130,10 +132,7 @@ unsafe fn main_0() -> () {
     (unsafe { unused_ref_param_1(&nt) });
     (unsafe { unused_ptr_param_2((&mut nt as *mut NonTrivial).cast_const()) });
     let mut g: NonCopyable = NonCopyable {
-        value: (unsafe {
-            let mut ___args: () = 9_();
-            make_unique_6(&mut ___args)
-        }),
+        value: unimplemented!(),
     };
     (&(g));
     &(g);

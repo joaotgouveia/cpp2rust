@@ -46,26 +46,26 @@ impl Clone for Movable {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Holder {
-    pub xs: std_vector_int__std_allocator_int__,
-    pub ys: std_vector_int__std_allocator_int__,
+    pub xs: (),
+    pub ys: (),
 }
 impl Holder {
     pub unsafe fn extract(&mut self) -> Holder {
         return Holder {
-            xs: self.xs,
-            ys: self.ys,
+            xs: unimplemented!(),
+            ys: unimplemented!(),
         };
     }
     pub unsafe fn move_from(_a0: *mut Holder) -> Self {
         let mut this = Self {
-            xs: (*_a0).xs,
-            ys: (*_a0).ys,
+            xs: unimplemented!(),
+            ys: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
-        self.xs = ((*_a0).xs).clone();
-        self.ys = ((*_a0).ys).clone();
+        unimplemented!();
+        unimplemented!();
         return &mut (*(self as *mut Holder));
     }
 }
@@ -85,8 +85,8 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut h: Holder = Holder {
-        xs: std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-        ys: std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
+        xs: unimplemented!(),
+        ys: unimplemented!(),
     };
     let mut __decomp_3: Holder = (unsafe { Holder::extract(&mut h) });
     unimplemented!();

@@ -20,34 +20,31 @@ impl Point {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Holder {
-    pub values: std_vector_int__std_allocator_int__,
-    pub points: std_vector_Point__std_allocator_Point__,
+    pub values: (),
+    pub points: (),
 }
 impl Holder {
     pub unsafe fn move_from(_a0: *mut Holder) -> Self {
         let mut this = Self {
-            values: (*_a0).values,
-            points: (*_a0).points,
+            values: unimplemented!(),
+            points: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
-        self.values = ((*_a0).values).clone();
-        self.points = ((*_a0).points).clone();
+        unimplemented!();
+        unimplemented!();
         return &mut (*(self as *mut Holder));
     }
 }
-pub unsafe fn push_and_index_0(v: *mut std_vector_int__std_allocator_int__) -> () {
-    (unsafe {
-        let mut ___x: () = 42_();
-        (*v).push_back_58(&mut ___x)
-    });
-    return ((unsafe { (*v).size() }) - (1_()));
+pub unsafe fn push_and_index_0(v: *mut ()) -> () {
+    unimplemented!();
+    return ((unimplemented!()) - (1_()));
 }
-pub unsafe fn sum_ref_1(v: *const std_vector_int__std_allocator_int__) -> () {
+pub unsafe fn sum_ref_1(v: *const ()) -> () {
     let mut s: () = 0_();
     let mut i: () = 0_();
-    'loop_: while ((i) < (unsafe { (*v).size() })) {
+    'loop_: while ((i) < (unimplemented!())) {
         s += (&(*v))[(i) as usize];
         i.prefix_inc();
     }
@@ -60,8 +57,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let mut v: () = unimplemented!();
     v[(0_()) as usize] = 10_();
     unimplemented!();
     v[(1_()) as usize] += 5_();
@@ -85,12 +81,9 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut h: Holder = <Holder>::default();
-    (unsafe { h.values.resize_40(2_()) });
+    unimplemented!();
     h.values[(1_()) as usize] = 6_();
-    (unsafe {
-        let mut ___x: Point = Point { x: 1_(), y: 2_() };
-        h.points.push_back_58(&mut ___x)
-    });
+    unimplemented!();
     h.points[(0_()) as usize].y = 5_();
     unimplemented!();
     unimplemented!();
@@ -101,27 +94,15 @@ unsafe fn main_0() -> () {
     let mut q: Point = h.points[(0_()) as usize];
     q.x = 0_();
     unimplemented!();
-    let mut grid : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
-    (unsafe {
-        let mut ___x: std_vector_int__std_allocator_int__ = {
-            let mut __tmp_0: () = 0_();
-            std_vector_int__std_allocator_int__::new_2({ 3_() }, { &mut __tmp_0 }, None)
-        };
-        grid.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: std_vector_int__std_allocator_int__ = {
-            let mut __tmp_1: () = 0_();
-            std_vector_int__std_allocator_int__::new_2({ 3_() }, { &mut __tmp_1 }, None)
-        };
-        grid.push_back_58(&mut ___x)
-    });
+    let mut grid: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     grid[(1_()) as usize][(2_()) as usize] = 8_();
     unimplemented!();
     grid[(0_()) as usize][(1_()) as usize] = grid[(1_()) as usize][(2_()) as usize];
     grid[(1_()) as usize][(0_()) as usize] += grid[(0_()) as usize][(1_()) as usize];
     unimplemented!();
-    let mut a: std_array_int__3_ = unimplemented!();
+    let mut a: () = unimplemented!();
     a[(1_()) as usize] = ((a[(0_()) as usize]) + (a[(2_()) as usize]));
     unimplemented!();
     return 0_();

@@ -17,8 +17,8 @@ fn main_0() -> () {
     let pb: Value<Ptr<()>> = Rc::new(RefCell::new((b.as_pointer())));
     let mut ppa: Ptr<Ptr<()>> = (pa.as_pointer());
     let mut ppb: Ptr<Ptr<()>> = (pb.as_pointer());
-    let mut r1: () = (({ max_0((ppa.read()), (ppb.read())) }).read());
-    let mut r2: () = (({ min_1((ppa.read()), (ppb.read())) }).read());
+    let mut r1: () = (unimplemented!().read());
+    let mut r2: () = (unimplemented!().read());
     unimplemented!();
     return 0_();
 }

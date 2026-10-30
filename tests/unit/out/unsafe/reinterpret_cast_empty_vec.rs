@@ -13,9 +13,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_unsigned_int__std_allocator_unsigned_int__ =
-        <std_vector_unsigned_int__std_allocator_unsigned_int__>::default();
-    let mut bytes: *mut () = ((unsafe { v.data_55() }) as *mut ());
+    let mut v: () = unimplemented!();
+    let mut bytes: *mut () = (unimplemented!() as *mut ());
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

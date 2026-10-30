@@ -99,28 +99,35 @@ impl Clone for UserCopyDefaultMove {
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
-pub struct Buffer { pub data : std_vector_int__std_allocator_int__ , pub rows : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ , pub n : () , pub arr : [ () ; 2] , }
+pub struct Buffer {
+    pub data: (),
+    pub rows: (),
+    pub n: (),
+    pub arr: [(); 2],
+}
 impl Buffer {
     pub unsafe fn new(mut n: ()) -> Self {
-        let mut this = Self { data : std_vector_int__std_allocator_int__ :: new_1 ( { n } , { & n } , None , )  , rows : <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() , n : n , arr : [ n , ( ( n ) + ( 1_() ) ) , ] , } ;
-        (unsafe {
-            let ___x: *const std_vector_int__std_allocator_int__ = &this.data;
-            this.rows.push_back_57(___x)
-        });
+        let mut this = Self {
+            data: unimplemented!(),
+            rows: unimplemented!(),
+            n: n,
+            arr: [n, ((n) + (1_()))],
+        };
+        unimplemented!();
         this
     }
     pub unsafe fn move_from(_a0: *mut Buffer) -> Self {
         let mut this = Self {
-            data: (*_a0).data,
-            rows: (*_a0).rows,
+            data: unimplemented!(),
+            rows: unimplemented!(),
             n: (*_a0).n,
             arr: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).arr[(__i) as usize]),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Buffer) -> *mut Buffer {
-        self.data = ((*_a0).data).clone();
-        self.rows = ((*_a0).rows).clone();
+        unimplemented!();
+        unimplemented!();
         self.n = (*_a0).n;
         unimplemented!();
         return &mut (*(self as *mut Buffer));
@@ -129,41 +136,43 @@ impl Buffer {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Owner {
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
     pub n: (),
     pub arr: [(); 2],
-    pub p: std_unique_ptr_int__std_default_delete_int__,
+    pub p: (),
 }
 impl Owner {
     pub unsafe fn move_from(_a0: *mut Owner) -> Self {
         let mut this = Self {
-            data: (*_a0).data,
+            data: unimplemented!(),
             n: (*_a0).n,
             arr: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).arr[(__i) as usize]),
-            p: (*_a0).p,
+            p: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Owner) -> *mut Owner {
-        self.data = ((*_a0).data).clone();
+        unimplemented!();
         self.n = (*_a0).n;
         unimplemented!();
-        self.p = ((*_a0).p).clone();
+        unimplemented!();
         return &mut (*(self as *mut Owner));
     }
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Copyable {
-    pub data: std_vector_int__std_allocator_int__,
+    pub data: (),
 }
 impl Copyable {
     pub unsafe fn move_from(_a0: *mut Copyable) -> Self {
-        let mut this = Self { data: (*_a0).data };
+        let mut this = Self {
+            data: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Copyable) -> *mut Copyable {
-        self.data = ((*_a0).data).clone();
+        unimplemented!();
         return &mut (*(self as *mut Copyable));
     }
 }
@@ -172,14 +181,14 @@ impl Copyable {
 pub struct Holder {
     pub inner: Inner,
     pub e: Explicit,
-    pub p: std_unique_ptr_int__std_default_delete_int__,
+    pub p: (),
 }
 impl Holder {
     pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self {
             inner: Inner { x: v },
             e: Explicit::new({ v }),
-            p: <std_unique_ptr_int__std_default_delete_int__>::default(),
+            p: unimplemented!(),
         };
         this
     }
@@ -187,14 +196,14 @@ impl Holder {
         let mut this = Self {
             inner: (*_a0).inner,
             e: (*_a0).e.clone(),
-            p: (*_a0).p,
+            p: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
         self.inner = (*_a0).inner;
         self.e = ((*_a0).e).clone();
-        self.p = ((*_a0).p).clone();
+        unimplemented!();
         return &mut (*(self as *mut Holder));
     }
 }
@@ -254,13 +263,9 @@ unsafe fn main_0() -> () {
     };
     l = j;
     unimplemented!();
-    let mut vec_: std_vector_Explicit__std_allocator_Explicit__ =
-        <std_vector_Explicit__std_allocator_Explicit__>::default();
-    (unsafe { vec_.push_back_57(&b) });
-    (unsafe {
-        let mut ___x: Explicit = Explicit::new({ 9_() });
-        vec_.push_back_58(&mut ___x)
-    });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let mut m: DefaultCopyUserMove = DefaultCopyUserMove::new({ 7_() });
     let mut m1: DefaultCopyUserMove = m;
@@ -287,23 +292,16 @@ unsafe fn main_0() -> () {
     (unsafe { Buffer::move_assign(&mut r, &mut q) });
     unimplemented!();
     unimplemented!();
-    let mut bufs: std_vector_Buffer__std_allocator_Buffer__ =
-        <std_vector_Buffer__std_allocator_Buffer__>::default();
-    (unsafe { bufs.push_back_58(&mut r) });
-    (unsafe {
-        let ___args: *mut Buffer = &mut bufs[(0_()) as usize];
-        bufs.emplace_back(___args)
-    });
+    let mut bufs: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let mut o1: Owner = <Owner>::default();
-    (unsafe {
-        let mut ___x: () = 5_();
-        o1.data.push_back_58(&mut ___x)
-    });
+    unimplemented!();
     o1.n = 5_();
     o1.arr[(0_()) as usize] = 5_();
     o1.arr[(1_()) as usize] = 6_();
-    (unsafe { o1.p.reset((Box::leak(Box::new(7_())) as *mut ())) });
+    unimplemented!();
     let mut o2: Owner = Owner::move_from({ &mut o1 });
     unimplemented!();
     unimplemented!();
@@ -312,7 +310,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut c1: Copyable = Copyable {
-        data: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+        data: unimplemented!(),
     };
     let mut c2: Copyable = c1.clone();
     let mut c3: Copyable = Copyable::move_from({ &mut c1 });
@@ -323,7 +321,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut h1: Holder = Holder::new({ 4_() });
     let _dtor_h1 = ScopedDestructorUnsafe::new(&raw mut h1, Holder::destructor);
-    (unsafe { h1.p.reset((Box::leak(Box::new(9_())) as *mut ())) });
+    unimplemented!();
     let mut h2: Holder = Holder::move_from({ &mut h1 });
     let _dtor_h2 = ScopedDestructorUnsafe::new(&raw mut h2, Holder::destructor);
     unimplemented!();

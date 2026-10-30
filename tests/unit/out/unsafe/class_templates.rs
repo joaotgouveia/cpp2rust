@@ -9,102 +9,99 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MyContainer_int_ {
-    vec_: std_vector_int__std_allocator_int__,
+    vec_: (),
 }
 impl MyContainer_int_ {
     pub unsafe fn empty(&self) -> () {
-        return (unsafe { self.vec_.empty() });
+        return unimplemented!();
     }
     pub unsafe fn size(&self) -> () {
-        return (unsafe { self.vec_.size() });
+        return unimplemented!();
     }
     pub unsafe fn back_4(&mut self) -> *mut () {
-        return (unsafe { self.vec_.back_53() });
+        return unimplemented!();
     }
     pub unsafe fn pop_back(&mut self) {
-        (unsafe { self.vec_.pop_back() });
+        unimplemented!();
         return;
     }
     pub unsafe fn push_back(&mut self, item: *const ()) {
-        (unsafe {
-            let ___x: *const () = item;
-            self.vec_.push_back_57(___x)
-        });
+        unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut MyContainer_int_) -> Self {
-        let mut this = Self { vec_: (*_a0).vec_ };
+        let mut this = Self {
+            vec_: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut MyContainer_int_) -> *mut MyContainer_int_ {
-        self.vec_ = ((*_a0).vec_).clone();
+        unimplemented!();
         return &mut (*(self as *mut MyContainer_int_));
     }
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MyContainer_char_ {
-    vec_: std_vector_char__std_allocator_char__,
+    vec_: (),
 }
 impl MyContainer_char_ {
     pub unsafe fn empty(&self) -> () {
-        return (unsafe { self.vec_.empty() });
+        return unimplemented!();
     }
     pub unsafe fn size(&self) -> () {
-        return (unsafe { self.vec_.size() });
+        return unimplemented!();
     }
     pub unsafe fn back_4(&mut self) -> *mut () {
-        return (unsafe { self.vec_.back_53() });
+        return unimplemented!();
     }
     pub unsafe fn pop_back(&mut self) {
-        (unsafe { self.vec_.pop_back() });
+        unimplemented!();
         return;
     }
     pub unsafe fn push_back(&mut self, item: *const ()) {
-        (unsafe {
-            let ___x: *const () = item;
-            self.vec_.push_back_57(___x)
-        });
+        unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut MyContainer_char_) -> Self {
-        let mut this = Self { vec_: (*_a0).vec_ };
+        let mut this = Self {
+            vec_: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut MyContainer_char_) -> *mut MyContainer_char_ {
-        self.vec_ = ((*_a0).vec_).clone();
+        unimplemented!();
         return &mut (*(self as *mut MyContainer_char_));
     }
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MyContainer_float_ {
-    vec_: std_vector_float__std_allocator_float__,
+    vec_: (),
 }
 impl MyContainer_float_ {
     pub unsafe fn empty(&self) -> () {
-        return (unsafe { self.vec_.empty() });
+        return unimplemented!();
     }
     pub unsafe fn size(&self) -> () {
-        return (unsafe { self.vec_.size() });
+        return unimplemented!();
     }
     pub unsafe fn back_4(&mut self) -> *mut () {
-        return (unsafe { self.vec_.back_53() });
+        return unimplemented!();
     }
     pub unsafe fn pop_back(&mut self) {
-        (unsafe { self.vec_.pop_back() });
+        unimplemented!();
         return;
     }
     pub unsafe fn push_back(&mut self, item: *const ()) {
-        (unsafe {
-            let ___x: *const () = item;
-            self.vec_.push_back_57(___x)
-        });
+        unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut MyContainer_float_) -> Self {
-        let mut this = Self { vec_: (*_a0).vec_ };
+        let mut this = Self {
+            vec_: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut MyContainer_float_) -> *mut MyContainer_float_ {
-        self.vec_ = ((*_a0).vec_).clone();
+        unimplemented!();
         return &mut (*(self as *mut MyContainer_float_));
     }
 }
@@ -212,12 +209,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut ev: std_vector_Elem__std_allocator_Elem__ =
-        <std_vector_Elem__std_allocator_Elem__>::default();
-    (unsafe {
-        let mut ___x: Elem = Elem { i: 2_() };
-        ev.push_back_58(&mut ___x)
-    });
+    let mut ev: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut oi: Outer_int_ = Outer_int_ { v: 3_() };

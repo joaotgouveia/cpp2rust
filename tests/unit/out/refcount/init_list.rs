@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn f_0(list: std_initializer_list_int_) {
-    let list: Value<std_initializer_list_int_> = Rc::new(RefCell::new(list));
+pub fn f_0(list: ()) {
+    let list: Value<()> = Rc::new(RefCell::new(list));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -45,9 +45,8 @@ fn main_0() -> () {
     let mut i2: () = unimplemented!();
     let mut carr1: [(); 2] = [1_(), 2_()];
     let mut carr2: [(); 3] = [1_(), unimplemented!(), unimplemented!()];
-    let arr: Value<std_array_int__3_> = Rc::new(RefCell::new(unimplemented!()));
-    let mut vec_: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut vec_: () = unimplemented!();
     ({ f_0(unimplemented!()) });
     let p: Value<Pair> = Rc::new(RefCell::new(Pair { a: 1_(), b: 2_() }));
     let h: Value<Holder> = Rc::new(RefCell::new(<Holder>::default()));

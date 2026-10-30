@@ -13,31 +13,27 @@ pub struct S {
     pub tag: (),
     #[offset(8)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl S {
     pub fn move_from(_a0: Ptr<S>) -> Self {
         Self {
             tag: { (*_a0.upgrade().deref()).tag },
-            v: field!(_a0, v).with_mut(std::mem::take),
+            v: unimplemented!(),
         }
     }
 }
-pub fn add_0(mut v: Ptr<std_vector_int__std_allocator_int__>, k: ()) {
-    let k: Value<()> = Rc::new(RefCell::new(k));
-    ({ (*v.upgrade().deref()).push_back_57(k.as_pointer()) });
+pub fn add_0(mut v: Ptr<()>, mut k: ()) {
+    unimplemented!();
 }
 pub fn run_1(mut h: Ptr<S>) {
     ({
-        let _v: Ptr<std_vector_int__std_allocator_int__> = (field_ptr!(h, v));
+        let _v: Ptr<()> = (field_ptr!(h, v));
         let _k: () = h.with(|__s| __s.tag);
         add_0(_v, _k)
     });
-    let mut pv: Ptr<std_vector_int__std_allocator_int__> = (field_ptr!(h, v));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(({ (*pv.upgrade().deref()).size() })));
-        (*pv.upgrade().deref()).push_back_58(___x.as_pointer())
-    });
+    let mut pv: Ptr<()> = (field_ptr!(h, v));
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -61,7 +57,7 @@ pub trait SImpl {
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

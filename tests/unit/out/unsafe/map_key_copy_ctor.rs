@@ -77,63 +77,51 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut ok: () = true;
-    let mut m: std_map_Key__int__std_less_Key___std_allocator_std_pair_const_Key__int___ =
-        <std_map_Key__int__std_less_Key___std_allocator_std_pair_const_Key__int___>::default();
+    let mut m: () = unimplemented!();
     let mut a: Key = Key::new({ 1_() });
     let mut b: Key = Key::new({ 2_() });
     let mut c: Key = Key::new({ 3_() });
-    m[(a) as usize] = 10_();
+    (*unimplemented!()) = 10_();
     ok &= ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (1_()));
-    m[(b) as usize] = 20_();
+    (*unimplemented!()) = 20_();
     ok &= ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (2_()));
-    m[(a) as usize] = 11_();
+    (*unimplemented!()) = 11_();
     ok &= ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (2_()));
-    ok &= (((*(unsafe { m.find_71(&a) })).second) == (11_()));
-    ok &= ((*(unsafe { m.at_35(&b) })) == (20_()));
+    ok &= ((unimplemented!()) == (11_()));
+    ok &= ((*unimplemented!()) == (20_()));
     ok &= ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (2_()));
-    m[(unsafe { make_key_3(4_()) }) as usize] = 40_();
-    m[(unsafe { make_key_3(4_()) }) as usize] = 41_();
+    (*unimplemented!()) = 40_();
+    (*unimplemented!()) = 41_();
     ok &= ((((*std::cell::LazyCell::force_mut(&mut *&raw mut made_2)) == (2_()))
         && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)) == (1_())))
         && ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (2_())));
-    m[(c) as usize] = 30_();
-    m[(c) as usize] = 31_();
+    (*unimplemented!()) = 30_();
+    (*unimplemented!()) = 31_();
     ok &= ((((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)) == (2_()))
         && ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (2_())))
         && ((c.k) == (3_())));
-    ok &= ((unsafe { m.size() }) == (4_()));
-    (*{
-        let __idx = (*(unsafe { m.begin_18() })).first as usize;
-        &mut m[__idx]
-    }) += 1_();
+    ok &= ((unimplemented!()) == (4_()));
+    (*unimplemented!()) += 1_();
     ok &= (((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (2_()))
-        && ((m[(a) as usize]) == (12_())));
-    let mut first: *const Key = (&(*(unsafe { m.begin_18() })).first as *const Key);
-    m[(Key::new({ 0_() })) as usize] = 0_();
+        && ((*unimplemented!()) == (12_())));
+    let mut first: *const Key = (&unimplemented!() as *const Key);
+    (*unimplemented!()) = 0_();
     ok &= ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)) == (3_()));
-    ok &= ((&(*(unsafe { m.find_71(&a) })).first as *const Key) == (first));
-    let mut n: std_map_Key__int__std_less_Key___std_allocator_std_pair_const_Key__int___ =
-        m.clone();
+    ok &= ((&unimplemented!() as *const Key) == (first));
+    let mut n: () = unimplemented!();
     ok &= ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == ((2_()) + (5_())));
-    ok &= (((unsafe { n.size() }) == (5_())) && ((n[(a) as usize]) == (12_())));
-    (unsafe {
-        let ___position: std__Rb_tree_iterator_std_pair_const_Key__int__ =
-            (unsafe { m.find_71(&a) });
-        m.erase_64(___position)
-    });
-    ok &= ((unsafe { m.erase_65(&b) }) == (1_()));
-    ok &= ((unsafe { m.erase_65(&b) }) == (0_()));
-    ok &= ((unsafe {
-        let ___x: *const Key = &(*(unsafe { m.begin_18() })).first;
-        m.erase_65(___x)
-    }) == (1_()));
+    ok &= (((unimplemented!()) == (5_())) && ((*unimplemented!()) == (12_())));
+    unimplemented!();
+    ok &= ((unimplemented!()) == (1_()));
+    ok &= ((unimplemented!()) == (0_()));
+    ok &= ((unimplemented!()) == (1_()));
     ok &= (((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (7_()))
         && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)) == (3_())));
-    ok &= (((unsafe { m.size() }) == (2_())) && ((unsafe { n.size() }) == (5_())));
+    ok &= (((unimplemented!()) == (2_())) && ((unimplemented!()) == (5_())));
     let mut sum: () = 0_();
-    'loop_: for entry in IterRange::new((unsafe { m.begin_18() }), (unsafe { m.end_20() })) {
-        let entry: *const std_pair_const_Key__int_ = &(*entry);
-        sum += (((*entry).first.k) * ((*entry).second));
+    'loop_: for entry in IterRange::new(unimplemented!(), unimplemented!()) {
+        let entry: *const () = &(*unimplemented!());
+        sum += ((unimplemented!().k) * (unimplemented!()));
     }
     ok &= ((sum) == (((3_()) * (31_())) + ((4_()) * (41_()))));
     ok &= (((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (7_()))

@@ -50,64 +50,19 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let tree: Value<std_unique_ptr_node_t__std_default_delete_node_t__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<node_t> = Rc::new(RefCell::new(node_t {
-                left: Ptr::<node_t>::null(),
-                right: Ptr::<node_t>::null(),
-                value: 0_(),
-            }));
-            make_unique_2(___args.as_pointer())
-        }),
-    ));
-    let n1: Value<std_unique_ptr_node_t__std_default_delete_node_t__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<node_t> = Rc::new(RefCell::new(node_t {
-                left: Ptr::<node_t>::null(),
-                right: Ptr::<node_t>::null(),
-                value: 1_(),
-            }));
-            make_unique_2(___args.as_pointer())
-        }),
-    ));
-    let n2: Value<std_unique_ptr_node_t__std_default_delete_node_t__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<node_t> = Rc::new(RefCell::new(node_t {
-                left: Ptr::<node_t>::null(),
-                right: Ptr::<node_t>::null(),
-                value: 2_(),
-            }));
-            make_unique_2(___args.as_pointer())
-        }),
-    ));
-    let n3: Value<std_unique_ptr_node_t__std_default_delete_node_t__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<node_t> = Rc::new(RefCell::new(node_t {
-                left: Ptr::<node_t>::null(),
-                right: Ptr::<node_t>::null(),
-                value: 3_(),
-            }));
-            make_unique_2(___args.as_pointer())
-        }),
-    ));
-    let n4: Value<std_unique_ptr_node_t__std_default_delete_node_t__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<node_t> = Rc::new(RefCell::new(node_t {
-                left: Ptr::<node_t>::null(),
-                right: Ptr::<node_t>::null(),
-                value: 4_(),
-            }));
-            make_unique_2(___args.as_pointer())
-        }),
-    ));
-    let mut ptr1: Ptr<node_t> = (tree.as_pointer());
-    let __rhs = ({ insert_1((ptr1).clone(), (n1.as_pointer())) });
+    let mut tree: () = unimplemented!();
+    let mut n1: () = unimplemented!();
+    let mut n2: () = unimplemented!();
+    let mut n3: () = unimplemented!();
+    let mut n4: () = unimplemented!();
+    let mut ptr1: Ptr<node_t> = (unimplemented!());
+    let __rhs = ({ insert_1((ptr1).clone(), (unimplemented!())) });
     ptr1 = __rhs;
-    let __rhs = ({ insert_1((ptr1).clone(), (n2.as_pointer())) });
+    let __rhs = ({ insert_1((ptr1).clone(), (unimplemented!())) });
     ptr1 = __rhs;
-    let __rhs = ({ insert_1((ptr1).clone(), (n3.as_pointer())) });
+    let __rhs = ({ insert_1((ptr1).clone(), (unimplemented!())) });
     ptr1 = __rhs;
-    let __rhs = ({ insert_1((ptr1).clone(), (n4.as_pointer())) });
+    let __rhs = ({ insert_1((ptr1).clone(), (unimplemented!())) });
     ptr1 = __rhs;
     unimplemented!();
     return 0_();

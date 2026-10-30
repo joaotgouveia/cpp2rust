@@ -11,14 +11,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ABCD") },
-                None,
-            ),
-        ));
-    let mut bytes: Ptr<()> = ({ (*s.borrow()).c_str() }).reinterpret_cast::<()>();
+    let mut s: () = unimplemented!();
+    let mut bytes: Ptr<()> = unimplemented!().reinterpret_cast::<()>();
     unimplemented!();
     unimplemented!();
     unimplemented!();

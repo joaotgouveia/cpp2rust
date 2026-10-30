@@ -13,57 +13,20 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 10_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 1_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 9_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 2_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 8_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 3_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 7_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 4_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 5_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 6_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.end_28() });
-        sort_0(___first, ___last)
-    });
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut i: () = 0_();
-    'loop_: while ((i) < ((unsafe { v.size() }).wrapping_sub(1_()))) {
+    'loop_: while ((i) < ((unimplemented!()).wrapping_sub(1_()))) {
         unimplemented!();
         i.prefix_inc();
     }

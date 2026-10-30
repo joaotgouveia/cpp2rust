@@ -9,20 +9,20 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct UserDefined {
-    pub a: std_array_int__1_,
-    pub v: std_vector_int__std_allocator_int__,
+    pub a: (),
+    pub v: (),
 }
 impl UserDefined {
     pub unsafe fn move_from(_a0: *mut UserDefined) -> Self {
         let mut this = Self {
-            a: (*_a0).a,
-            v: (*_a0).v,
+            a: unimplemented!(),
+            v: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut UserDefined) -> *mut UserDefined {
-        self.a = (*_a0).a;
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
+        unimplemented!();
         return &mut (*(self as *mut UserDefined));
     }
 }
@@ -30,8 +30,8 @@ impl Default for UserDefined {
     fn default() -> Self {
         unsafe {
             UserDefined {
-                a: unsafe { std::mem::zeroed::<std_array_int__1_>() },
-                v: <std_vector_int__std_allocator_int__>::default(),
+                a: unimplemented!(),
+                v: unimplemented!(),
             }
         }
     }

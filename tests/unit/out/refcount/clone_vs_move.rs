@@ -120,16 +120,13 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut N: () = 5_();
-    let v1: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) < N) {
-        ({ (*v1.borrow()).push_back_57(i.as_pointer()) });
-        (*i.borrow_mut()).prefix_inc();
+    let mut v1: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < N) {
+        unimplemented!();
+        i.prefix_inc();
     }
-    let v2: Value<std_vector_int__std_allocator_int__> =
-        Rc::new(RefCell::new((*v1.borrow()).clone()));
+    let mut v2: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
@@ -137,7 +134,7 @@ fn main_0() -> () {
     }
     let mut i: () = 0_();
     'loop_: while (i < N) {
-        (*v2.borrow_mut())[i].prefix_inc();
+        v2[i].prefix_inc();
         i.prefix_inc();
     }
     let mut i: () = 0_();
@@ -146,18 +143,13 @@ fn main_0() -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    let m1 : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
+    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
-        ({
-            let ___x: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-                std_vector_int__std_allocator_int__::new_1({ 10_() }, None),
-            ));
-            (*m1.borrow()).push_back_58(___x.as_pointer())
-        });
+        unimplemented!();
         i.prefix_inc();
     }
-    let m2 : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(((*m1.borrow()) ).clone() )) ;
+    let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
@@ -191,72 +183,44 @@ fn main_0() -> () {
         }
         i.prefix_inc();
     }
-    let map1: Value<std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___> =
-        Rc::new(RefCell::new(
-            <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default(),
-        ));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) < N) {
-        let __rhs = (*i.borrow());
-        (*map1.borrow_mut())[(*i.borrow())] = __rhs;
-        (*i.borrow_mut()).prefix_inc();
+    let map1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: () = 0_();
+    'loop_: while (i < N) {
+        let __rhs = i;
+        unimplemented!().write(__rhs);
+        i.prefix_inc();
     }
-    let map2: Value<std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___> =
-        Rc::new(RefCell::new((*map1.borrow()).clone()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) < N) {
+    let map2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: () = 0_();
+    'loop_: while (i < N) {
         unimplemented!();
-        (*map2.borrow_mut())[(*i.borrow())].prefix_inc();
-        (*i.borrow_mut()).prefix_inc();
+        unimplemented!().with_mut(|__v| __v.prefix_inc());
+        i.prefix_inc();
     }
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) < N) {
+    let mut i: () = 0_();
+    'loop_: while (i < N) {
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
-    let pair1: Value<std_pair_int__int_> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-        std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
-    let pair2: Value<std_pair_int__int_> = Rc::new(RefCell::new((*pair1.borrow()).clone()));
-    (*pair2.borrow_mut()).first = { ({ (*pair2.borrow()).first } * 10_()) };
-    (*pair2.borrow_mut()).second = { ({ (*pair2.borrow()).second } * 10_()) };
+    let pair1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let pair2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    (*unimplemented!().borrow_mut()) = { ((*unimplemented!().borrow()) * 10_()) };
+    (*unimplemented!().borrow_mut()) = { ((*unimplemented!().borrow()) * 10_()) };
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let pair3: Value<std_pair_std_vector_int__std_allocator_int____int_> = Rc::new(RefCell::new({
-        let __tmp_2: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-            std_vector_int__std_allocator_int__::new_1({ 0_() }, None),
-        ));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
-        std_pair_std_vector_int__std_allocator_int____int_::new_1({ __tmp_2.as_pointer() }, {
-            __tmp_3.as_pointer()
-        })
-    }));
-    let pair4: Value<std_pair_std_vector_int__std_allocator_int____int_> =
-        Rc::new(RefCell::new((*pair3.borrow()).clone()));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(1_()));
-        (*pair4.borrow()).first.push_back_58(___x.as_pointer())
-    });
-    (*pair4.borrow_mut()).second = 1_();
+    let pair3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let pair4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    (*unimplemented!().borrow_mut()) = 1_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let s1: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 3_() },
-                { ('a' as ()) },
-                None,
-            ),
-        ));
-    let mut s2: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        (*s1.borrow()).clone();
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     s2[0_()] = ('b' as ());
     s2[1_()] = ('b' as ());
     s2[2_()] = ('b' as ());
@@ -272,14 +236,12 @@ fn main_0() -> () {
     b2.w.postfix_inc();
     unimplemented!();
     unimplemented!();
-    let v4: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    (*v4.borrow_mut()) = (*v2.borrow()).clone();
+    let mut v4: () = unimplemented!();
+    unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
-        (*v4.borrow_mut())[i].prefix_inc();
+        v4[i].prefix_inc();
         i.prefix_inc();
     }
     let mut i: () = 0_();

@@ -38,18 +38,18 @@ fn main_0() -> () {
     return 0_();
 }
 pub trait SImpl {
-    fn operator_cmp(&self, o: Ptr<S>) -> std_strong_ordering;
+    fn operator_cmp(&self, o: Ptr<S>) -> ();
     fn operator_eq(&self, o: Ptr<S>) -> ();
 }
 impl SImpl for Ptr<S> {
-    fn operator_cmp(&self, o: Ptr<S>) -> std_strong_ordering {
+    fn operator_cmp(&self, o: Ptr<S>) -> () {
         if ({ (*self).with(|__s| __s.v) } < { o.with(|__s| __s.v) }) {
-            return (*less_0.with(Value::clone).borrow()).clone();
+            return unimplemented!();
         }
         if ({ (*self).with(|__s| __s.v) } > { o.with(|__s| __s.v) }) {
-            return (*greater_1.with(Value::clone).borrow()).clone();
+            return unimplemented!();
         }
-        return (*equal_2.with(Value::clone).borrow()).clone();
+        return unimplemented!();
     }
     fn operator_eq(&self, o: Ptr<S>) -> () {
         return ({ (*self).with(|__s| __s.v) } == { o.with(|__s| __s.v) });

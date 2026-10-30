@@ -14,21 +14,12 @@ fn main_0() -> () {
     let mut x1: () = 1_();
     let mut x2: () = 2_();
     let mut x3: () = 4_();
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(1_()));
-        (*v.borrow()).push_back_58(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(2_()));
-        (*v.borrow()).push_back_58(___x.as_pointer())
-    });
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
     let mut sum: () = 0_();
-    'loop_: for elem in IterRange::new(({ (*v.borrow()).begin_26() }), ({ (*v.borrow()).end_28() }))
-    {
-        let mut elem: () = (elem.read());
+    'loop_: for elem in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut elem: () = (unimplemented!().read());
         sum += elem;
     }
     unimplemented!();

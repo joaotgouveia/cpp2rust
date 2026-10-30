@@ -13,18 +13,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut p: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
-        let mut ___args: () = 10_();
-        make_unique_0(&mut ___args)
-    });
-    (*p) += 5_();
-    (*p) -= 3_();
-    (*p) *= 2_();
-    let mut q: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
-        let mut ___args: () = 1_();
-        make_unique_0(&mut ___args)
-    });
-    let mut sum: () = ((*p) + (*q));
+    let mut p: () = unimplemented!();
+    (*unimplemented!()) += 5_();
+    (*unimplemented!()) -= 3_();
+    (*unimplemented!()) *= 2_();
+    let mut q: () = unimplemented!();
+    let mut sum: () = ((*unimplemented!()) + (*unimplemented!()));
     unimplemented!();
     return 0_();
 }

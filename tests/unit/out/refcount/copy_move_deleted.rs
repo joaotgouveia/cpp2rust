@@ -85,12 +85,12 @@ impl Container {
 pub struct VecHolder {
     #[offset(0)]
     #[byte_size(24)]
-    pub items: std_vector_NoCopy__std_allocator_NoCopy__,
+    pub items: (),
 }
 impl VecHolder {
     pub fn move_from(_a0: Ptr<VecHolder>) -> Self {
         Self {
-            items: field!(_a0, items).with_mut(std::mem::take),
+            items: unimplemented!(),
         }
     }
 }
@@ -130,7 +130,7 @@ fn main_0() -> () {
     let mut d: Container = Container::move_from({ c.as_pointer() });
     unimplemented!();
     let h: Value<VecHolder> = Rc::new(RefCell::new(<VecHolder>::default()));
-    let h2: Value<VecHolder> = Rc::new(RefCell::new(VecHolder::move_from({ h.as_pointer() })));
+    let mut h2: VecHolder = VecHolder::move_from({ h.as_pointer() });
     unimplemented!();
     return 0_();
 }
@@ -175,7 +175,7 @@ pub trait VecHolderImpl {
 }
 impl VecHolderImpl for Ptr<VecHolder> {
     fn move_assign(&self, _a0: Ptr<VecHolder>) -> Ptr<VecHolder> {
-        field!((*self), items).write({ { (*_a0.upgrade().deref()).items.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

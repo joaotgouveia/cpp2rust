@@ -43,7 +43,7 @@ fn main_0() -> () {
     let _dtor_f = ScopedDestructor::new(&f, |__p| __p.with(|__f| __f.destroy()));
     unimplemented!();
     unimplemented!();
-    let g: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*f.borrow()).move_from()));
+    let g: Value<()> = Rc::new(RefCell::new((*f.borrow()).move_from()));
     let _dtor_g = ScopedDestructor::new(&g, |__p| __p.with(|__f| __f.destroy()));
     unimplemented!();
     let total: Value<()> = Rc::new(RefCell::new(0_()));

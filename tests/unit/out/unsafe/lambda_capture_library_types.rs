@@ -13,37 +13,33 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let mut v: () = unimplemented!();
     let mut f: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
-            let v: std_vector_int__std_allocator_int__ = v.clone();
+            let v: () = unimplemented!();
         },
         || -> () {
-            return (unsafe { v.size() });
+            return unimplemented!();
         }
     );
     let mut g: FnPtr<fn() -> ()> = f.copy_from();
-    let mut h: FnPtr<fn() -> ()> = f.move_from();
+    let mut h: () = f.move_from();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut p: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
-            let u: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
-                let mut ___args: () = 5_();
-                make_unique_0(&mut ___args)
-            });
+            let u: () = unimplemented!();
         },
         || -> () {
-            return if !(unsafe { u.get() }).is_null() {
-                (*u)
+            return if !(unimplemented!()).is_null() {
+                (*unimplemented!())
             } else {
                 0_()
             };
         }
     );
-    let mut q: FnPtr<fn() -> ()> = p.move_from();
+    let mut q: () = p.move_from();
     unimplemented!();
     unimplemented!();
     let mut n: () = 0_();
@@ -67,7 +63,7 @@ unsafe fn main_0() -> () {
     let mut outer2: FnPtr<fn() -> ()> = outer.copy_from();
     unimplemented!();
     unimplemented!();
-    let mut outer3: FnPtr<fn() -> ()> = outer.move_from();
+    let mut outer3: () = outer.move_from();
     unimplemented!();
     return 0_();
 }

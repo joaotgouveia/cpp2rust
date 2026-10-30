@@ -78,19 +78,13 @@ pub fn ret_struct_param_10(mut p: pair_t) -> pair_t {
 pub fn ret_struct_ref_11(p: Ptr<pair_t>) -> pair_t {
     return (*p.upgrade().deref()).clone();
 }
-pub fn ret_vec_12(v: std_vector_int__std_allocator_int__) -> std_vector_int__std_allocator_int__ {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(v));
-    return (*v.borrow_mut()).clone();
+pub fn ret_vec_12(mut v: ()) -> () {
+    return unimplemented!();
 }
-pub fn ret_vec_local_13() -> std_vector_int__std_allocator_int__ {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(1_()));
-        (*v.borrow()).push_back_58(___x.as_pointer())
-    });
-    return (*v.borrow_mut()).clone();
+pub fn ret_vec_local_13() -> () {
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn ret_loop_14(mut n: Ptr<node>) -> Ptr<node> {
     'loop_: while !(n.with(|__s| __s.next.clone())).is_null() {

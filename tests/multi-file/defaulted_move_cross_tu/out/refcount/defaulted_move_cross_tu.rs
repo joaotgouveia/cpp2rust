@@ -11,26 +11,21 @@ use std::rc::{Rc, Weak};
 pub struct S {
     #[offset(0)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
     #[offset(24)]
     #[byte_size(8)]
     pub n: Box<[()]>,
 }
 impl S {
-    pub fn new(x: ()) -> Self {
-        let x: Value<()> = Rc::new(RefCell::new(x));
+    pub fn new(mut x: ()) -> Self {
         Self {
-            v: std_vector_int__std_allocator_int__::new_1(
-                { (*x.borrow()) },
-                { x.as_pointer() },
-                None,
-            ),
-            n: Box::new([(*x.borrow()), ((*x.borrow()) + 1_())]),
+            v: unimplemented!(),
+            n: Box::new([x, (x + 1_())]),
         }
     }
     pub fn move_from(_a0: Ptr<S>) -> Self {
         Self {
-            v: field!(_a0, v).with_mut(std::mem::take),
+            v: unimplemented!(),
             n: Box::new(std::array::from_fn::<_, 2, _>(|__i: usize| {
                 (*_a0.upgrade().deref()).n[(__i) as usize]
             })),
@@ -41,7 +36,7 @@ impl Default for S {
     fn default() -> Self {
         {
             S {
-                v: <std_vector_int__std_allocator_int__>::default(),
+                v: unimplemented!(),
                 n: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -52,19 +47,19 @@ impl Default for S {
 pub struct T {
     #[offset(0)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
 }
 impl T {
     pub fn move_from(_a0: Ptr<T>) -> Self {
         Self {
-            v: field!(_a0, v).with_mut(std::mem::take),
+            v: unimplemented!(),
         }
     }
 }
 pub fn sum_0(s: Ptr<S>) -> () {
-    return ({
-        ({ ({ (*s.upgrade().deref()).v.size() }) } + { (array_elem!(s, n, 0_()).read()) })
-    } + { (array_elem!(s, n, 1_()).read()) });
+    return ({ ({ unimplemented!() } + { (array_elem!(s, n, 0_()).read()) }) } + {
+        (array_elem!(s, n, 1_()).read())
+    });
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -75,7 +70,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let t: Value<T> = Rc::new(RefCell::new(T {
-        v: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+        v: unimplemented!(),
     }));
     unimplemented!();
     return 0_();
@@ -88,7 +83,7 @@ pub fn shuffle_1(mut x: ()) -> () {
     ({ SImpl::move_assign(&c.as_pointer(), b.as_pointer()) });
     unimplemented!();
     let t: Value<T> = Rc::new(RefCell::new(T {
-        v: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+        v: unimplemented!(),
     }));
     let u: Value<T> = Rc::new(RefCell::new(T::move_from({ t.as_pointer() })));
     let w: Value<T> = Rc::new(RefCell::new(<T>::default()));
@@ -101,7 +96,7 @@ pub trait SImpl {
 }
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        unimplemented!();
         unimplemented!();
         return (*self).clone();
     }
@@ -112,10 +107,10 @@ pub trait TImpl {
 }
 impl TImpl for Ptr<T> {
     fn size(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).v.size() });
+        return unimplemented!();
     }
     fn move_assign(&self, _a0: Ptr<T>) -> Ptr<T> {
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

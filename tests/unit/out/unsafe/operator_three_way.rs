@@ -12,14 +12,14 @@ pub struct S {
     pub v: (),
 }
 impl S {
-    pub unsafe fn operator_cmp(&self, o: *const S) -> std_strong_ordering {
+    pub unsafe fn operator_cmp(&self, o: *const S) -> () {
         if ((self.v) < ((*o).v)) {
-            return (*std::cell::LazyCell::force_mut(&mut *&raw mut less_0));
+            return unimplemented!().clone();
         }
         if ((self.v) > ((*o).v)) {
-            return (*std::cell::LazyCell::force_mut(&mut *&raw mut greater_1));
+            return unimplemented!().clone();
         }
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut equal_2));
+        return unimplemented!().clone();
     }
     pub unsafe fn operator_eq(&self, o: *const S) -> () {
         return ((self.v) == ((*o).v));

@@ -37,7 +37,7 @@ fn main_0() -> () {
     let cs: Ptr<S> = s.as_pointer();
     unimplemented!();
     unimplemented!();
-    let mut p: Ptr<S> = ({ launder_2((s.as_pointer())) });
+    let mut p: Ptr<S> = unimplemented!();
     field!(p, v).write(11_());
     unimplemented!();
     unimplemented!();

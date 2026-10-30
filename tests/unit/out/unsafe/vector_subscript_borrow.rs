@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub static mut next_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn bump_1(mut v: *mut std_vector_int__std_allocator_int__, mut x: ()) -> () {
+pub unsafe fn bump_1(mut v: *mut (), mut x: ()) -> () {
     (&mut (*v))[(0_()) as usize] += x;
     return (*std::cell::LazyCell::force_mut(&mut *&raw mut next_0)).postfix_inc();
 }
@@ -18,14 +18,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ = {
-        let mut __tmp_0: () = 1_();
-        std_vector_int__std_allocator_int__::new_1({ 4_() }, { &mut __tmp_0 }, None)
-    };
-    let mut items: std_vector_unsigned_int__std_allocator_unsigned_int__ =
-        std_vector_unsigned_int__std_allocator_unsigned_int__::new_1({ 3_() }, None);
+    let mut v: () = unimplemented!();
+    let mut items: () = unimplemented!();
     let mut i: () = 0_();
-    'loop_: while ((i) < (unsafe { items.size() })) {
+    'loop_: while ((i) < (unimplemented!())) {
         items[(i) as usize] = (i).wrapping_mul(2_());
         i.prefix_inc();
     }
@@ -45,8 +41,7 @@ unsafe fn main_0() -> () {
     v[(*p) as usize] = 9_();
     unimplemented!();
     (*{
-        let __idx = (unsafe { bump_1((&mut v as *mut std_vector_int__std_allocator_int__), 10_()) })
-            as usize;
+        let __idx = (unsafe { bump_1((&mut v as *mut ()), 10_()) }) as usize;
         &mut v[__idx]
     }) = 2_();
     unimplemented!();

@@ -13,11 +13,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_bool__std_allocator_bool__ =
-        std_vector_bool__std_allocator_bool__::new_1({ unimplemented!() }, None);
+    let mut v: () = unimplemented!();
     unimplemented!();
-    let mut r: std__Bit_reference = v[(0_()) as usize];
-    let mut copy: std__Bit_reference = r;
+    let mut r: () = v[(0_()) as usize];
+    let mut copy: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

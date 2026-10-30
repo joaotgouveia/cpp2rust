@@ -318,15 +318,17 @@ pub unsafe fn swapped_once_6() -> () {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Owner {
-    pub p: std_unique_ptr_int__std_default_delete_int__,
+    pub p: (),
 }
 impl Owner {
     pub unsafe fn move_from(_a0: *mut Owner) -> Self {
-        let mut this = Self { p: (*_a0).p };
+        let mut this = Self {
+            p: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Owner) -> *mut Owner {
-        self.p = ((*_a0).p).clone();
+        unimplemented!();
         return &mut (*(self as *mut Owner));
     }
 }
@@ -339,36 +341,28 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut a: Tracked = Tracked::new_2({ 1_() });
     let mut b: Tracked = Tracked::new_2({ 2_() });
-    (unsafe { swap_7(&mut a, &mut b) });
     unimplemented!();
     unimplemented!();
-    let mut m1: std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___ =
-        <std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___>::default(
-        );
+    unimplemented!();
+    let mut m1: () = unimplemented!();
     (unsafe {
         let mut _o: Tracked = Tracked::new_2({ 10_() });
-        Tracked::move_assign(&mut m1[(1_()) as usize], &mut _o)
+        Tracked::move_assign(&mut (*unimplemented!()), &mut _o)
     });
     (unsafe {
         let mut _o: Tracked = Tracked::new_2({ 20_() });
-        Tracked::move_assign(&mut m1[(2_()) as usize], &mut _o)
+        Tracked::move_assign(&mut (*unimplemented!()), &mut _o)
     });
-    let mut m2: std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___ =
-        <std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___>::default(
-        );
+    let mut m2: () = unimplemented!();
     (unsafe {
         let mut _o: Tracked = Tracked::new_2({ 30_() });
-        Tracked::move_assign(&mut m2[(3_()) as usize], &mut _o)
-    });
-    unimplemented!();
-    (unsafe {
-        let ___a: *mut Tracked = &mut m1[(1_()) as usize];
-        let ___b: *mut Tracked = &mut m1[(2_()) as usize];
-        swap_7(___a, ___b)
+        Tracked::move_assign(&mut (*unimplemented!()), &mut _o)
     });
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_8(&mut m1, &mut m2) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -377,34 +371,15 @@ unsafe fn main_0() -> () {
         Tracked::new_2({ 2_() }),
         Tracked::new_2({ 3_() }),
     ];
-    (unsafe {
-        let ___a: *mut Tracked = &mut arr[(0_()) as usize];
-        let ___b: *mut Tracked = &mut arr[(2_()) as usize];
-        swap_7(___a, ___b)
-    });
-    unimplemented!();
-    (unsafe {
-        let ___a: *mut Tracked = &mut arr[(1_()) as usize];
-        let ___b: *mut Tracked = &mut arr[(1_()) as usize];
-        swap_7(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    let mut vec_: std_vector_Tracked__std_allocator_Tracked__ =
-        <std_vector_Tracked__std_allocator_Tracked__>::default();
-    (unsafe {
-        let mut ___args: () = 4_();
-        vec_.emplace_back(&mut ___args)
-    });
-    (unsafe {
-        let mut ___args: () = 5_();
-        vec_.emplace_back(&mut ___args)
-    });
-    (unsafe {
-        let ___a: *mut Tracked = &mut vec_[(0_()) as usize];
-        let ___b: *mut Tracked = &mut vec_[(1_()) as usize];
-        swap_7(___a, ___b)
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut pairs: [Pair; 2] = [
@@ -421,84 +396,43 @@ unsafe fn main_0() -> () {
         x: Tracked::new_2({ 10_() }),
         y: Tracked::new_2({ 11_() }),
     };
-    (unsafe { swap_7(&mut pairs[(0_()) as usize].x, &mut p.y) });
-    unimplemented!();
-    (unsafe {
-        let ___a: *mut Pair = &mut pairs[(0_()) as usize];
-        let ___b: *mut Pair = &mut pairs[(1_()) as usize];
-        swap_9(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    (unsafe {
-        let ___a: *mut Tracked = &mut p.x;
-        let ___b: *mut Tracked = &mut p.y;
-        swap_7(___a, ___b)
-    });
     unimplemented!();
-    (unsafe {
-        let ___a: *mut Tracked = &mut pairs[(0_()) as usize].x;
-        let ___b: *mut Tracked = &mut pairs[(1_()) as usize].y;
-        swap_7(___a, ___b)
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut arrays: Arrays = <Arrays>::default();
     arrays.a[(0_()) as usize].v = 1_();
     arrays.b[(1_()) as usize].v = 2_();
-    (unsafe {
-        let ___a: *mut Tracked = &mut arrays.a[(0_()) as usize];
-        let ___b: *mut Tracked = &mut arrays.b[(1_()) as usize];
-        swap_7(___a, ___b)
-    });
-    unimplemented!();
-    (unsafe {
-        let ___a: *mut Tracked = &mut arrays.a[(0_()) as usize];
-        let ___b: *mut Tracked = &mut arrays.a[(1_()) as usize];
-        swap_7(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    let mut grid : std_vector_std_vector_Tracked__std_allocator_Tracked____std_allocator_std_vector_Tracked__std_allocator_Tracked____ = std_vector_std_vector_Tracked__std_allocator_Tracked____std_allocator_std_vector_Tracked__std_allocator_Tracked____ :: new_1 ( { 2_() } , None , )  ;
-    (unsafe {
-        let mut ___args: () = 1_();
-        grid[(0_()) as usize].emplace_back(&mut ___args)
-    });
-    (unsafe {
-        let mut ___args: () = 2_();
-        grid[(0_()) as usize].emplace_back(&mut ___args)
-    });
-    (unsafe {
-        let mut ___args: () = 3_();
-        grid[(1_()) as usize].emplace_back(&mut ___args)
-    });
-    (unsafe {
-        let ___a: *mut Tracked = &mut grid[(0_()) as usize][(1_()) as usize];
-        let ___b: *mut Tracked = &mut grid[(1_()) as usize][(0_()) as usize];
-        swap_7(___a, ___b)
-    });
-    unimplemented!();
-    (unsafe {
-        let ___x: *mut std_vector_Tracked__std_allocator_Tracked__ = &mut grid[(0_()) as usize];
-        let ___y: *mut std_vector_Tracked__std_allocator_Tracked__ = &mut grid[(1_()) as usize];
-        swap_10(___x, ___y)
-    });
     unimplemented!();
     unimplemented!();
-    let mut maps : [ std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___ ; 2] = std::array::from_fn::<_, 2, _>(|_| <std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___ >::default()) ;
+    unimplemented!();
+    let mut grid: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut maps: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
     (unsafe {
         let mut _o: Tracked = Tracked::new_2({ 1_() });
-        Tracked::move_assign(&mut maps[(0_()) as usize][(1_()) as usize], &mut _o)
+        Tracked::move_assign(&mut (*unimplemented!()), &mut _o)
     });
     (unsafe {
         let mut _o: Tracked = Tracked::new_2({ 2_() });
-        Tracked::move_assign(&mut maps[(1_()) as usize][(2_()) as usize], &mut _o)
+        Tracked::move_assign(&mut (*unimplemented!()), &mut _o)
     });
-    (unsafe {
-        let ___x: *mut std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  = & mut maps [ ( 0_() ) as usize ] ;
-        let ___y: *mut std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  = & mut maps [ ( 1_() ) as usize ] ;
-        swap_8(___x, ___y)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -506,7 +440,7 @@ unsafe fn main_0() -> () {
     let _dtor_c1 = ScopedDestructorUnsafe::new(&raw mut c1, CopyOnly::destructor);
     let mut c2: CopyOnly = CopyOnly::new({ 2_() });
     let _dtor_c2 = ScopedDestructorUnsafe::new(&raw mut c2, CopyOnly::destructor);
-    (unsafe { swap_11(&mut c1, &mut c2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut cp: CopyOnlyPair = CopyOnlyPair {
@@ -514,26 +448,18 @@ unsafe fn main_0() -> () {
         y: CopyOnly::new({ 4_() }),
     };
     let _dtor_cp = ScopedDestructorUnsafe::new(&raw mut cp, CopyOnlyPair::destructor);
-    (unsafe {
-        let ___a: *mut CopyOnly = &mut cp.x;
-        let ___b: *mut CopyOnly = &mut cp.y;
-        swap_11(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut carr: [CopyOnly; 2] = [CopyOnly::new({ 5_() }), CopyOnly::new({ 6_() })];
-    (unsafe {
-        let ___a: *mut CopyOnly = &mut carr[(0_()) as usize];
-        let ___b: *mut CopyOnly = &mut carr[(1_()) as usize];
-        swap_11(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut mv1: Moved = Moved::new({ 1_() });
     let _dtor_mv1 = ScopedDestructorUnsafe::new(&raw mut mv1, Moved::destructor);
     let mut mv2: Moved = Moved::new({ 2_() });
     let _dtor_mv2 = ScopedDestructorUnsafe::new(&raw mut mv2, Moved::destructor);
-    (unsafe { swap_12(&mut mv1, &mut mv2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut mp: MovedPair = MovedPair {
@@ -541,42 +467,24 @@ unsafe fn main_0() -> () {
         y: Moved::new({ 4_() }),
     };
     let _dtor_mp = ScopedDestructorUnsafe::new(&raw mut mp, MovedPair::destructor);
-    (unsafe {
-        let ___a: *mut Moved = &mut mp.x;
-        let ___b: *mut Moved = &mut mp.y;
-        swap_12(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut marr: [Moved; 2] = [Moved::new({ 5_() }), Moved::new({ 6_() })];
-    (unsafe {
-        let ___a: *mut Moved = &mut marr[(0_()) as usize];
-        let ___b: *mut Moved = &mut marr[(1_()) as usize];
-        swap_12(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    (unsafe {
-        let ___a: *mut Moved = &mut mv1;
-        let ___b: *mut Moved = &mut mv1;
-        swap_12(___a, ___b)
-    });
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut o1: Owner = Owner {
-        p: (unsafe {
-            let mut ___args: () = 1_();
-            make_unique_13(&mut ___args)
-        }),
+        p: unimplemented!(),
     };
     let mut o2: Owner = Owner {
-        p: (unsafe {
-            let mut ___args: () = 2_();
-            make_unique_13(&mut ___args)
-        }),
+        p: unimplemented!(),
     };
-    (unsafe { swap_14(&mut o1, &mut o2) });
+    unimplemented!();
     unimplemented!();
     return (*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0));
 }

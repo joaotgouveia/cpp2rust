@@ -22,28 +22,12 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (buf.as_pointer() as Ptr<()>) },
-                None,
-            ),
-        ));
-    println!("{}", ({ (*s.borrow()).size() }));
-    println!(
-        "{} {}",
-        unimplemented!(),
-        ({ (*s.borrow()).find_last_of_179((buf.as_pointer() as Ptr::<()>), None,) })
-    );
+    let mut s: () = unimplemented!();
+    println!("{}", unimplemented!());
+    println!("{} {}", unimplemented!(), unimplemented!());
     let mut lit: Ptr<()> = Ptr::<()>::from_string_literal(b"xy\0zw");
-    let t: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (lit).clone() },
-                None,
-            ),
-        ));
-    println!("{}", ({ (*t.borrow()).size() }));
+    let mut t: () = unimplemented!();
+    println!("{}", unimplemented!());
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

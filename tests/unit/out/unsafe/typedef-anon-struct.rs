@@ -15,15 +15,17 @@ pub struct Outer_RunInfo {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Outer {
-    pub runs: std_vector_Outer_RunInfo__std_allocator_Outer_RunInfo__,
+    pub runs: (),
 }
 impl Outer {
     pub unsafe fn move_from(_a0: *mut Outer) -> Self {
-        let mut this = Self { runs: (*_a0).runs };
+        let mut this = Self {
+            runs: unimplemented!(),
+        };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Outer) -> *mut Outer {
-        self.runs = ((*_a0).runs).clone();
+        unimplemented!();
         return &mut (*(self as *mut Outer));
     }
 }
@@ -38,7 +40,7 @@ unsafe fn main_0() -> () {
     let mut info: Outer_RunInfo = <Outer_RunInfo>::default();
     info.block_idx = 1_();
     info.num_extra_zero_runs = 2_();
-    (unsafe { o.runs.push_back_57(&info) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

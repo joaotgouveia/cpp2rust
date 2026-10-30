@@ -15,11 +15,7 @@ fn main_0() -> () {
     let output: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    ({
-        let ___first: Ptr<()> = (input.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (input.as_pointer() as Ptr<()>).offset((3_()) as isize);
-        copy_0(___first, ___last, (output.as_pointer() as Ptr<()>))
-    });
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

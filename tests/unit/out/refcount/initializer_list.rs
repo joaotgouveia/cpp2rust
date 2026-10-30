@@ -6,12 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn f_0(bytes: std_initializer_list_int_) -> () {
-    let bytes: Value<std_initializer_list_int_> = Rc::new(RefCell::new(bytes));
-    let mut buf: Ptr<std_vector_int__std_allocator_int__> = Ptr::alloc(
-        std_vector_int__std_allocator_int__::new_1({ (*bytes.borrow()).clone() }, None),
-    );
-    let mut n: () = ({ (*bytes.borrow()).size() });
+pub fn f_0(bytes: ()) -> () {
+    let bytes: Value<()> = Rc::new(RefCell::new(bytes));
+    let mut buf: Ptr<()> = Ptr::alloc(unimplemented!());
+    let mut n: () = unimplemented!();
     buf.delete();
     return n;
 }
@@ -21,12 +19,10 @@ pub fn main() {
 }
 fn main_0() -> () {
     unimplemented!();
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-    ));
+    let mut v: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let l: Value<std_initializer_list_int_> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return 0_();
 }

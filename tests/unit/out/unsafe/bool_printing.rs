@@ -21,36 +21,12 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut i1: () = 0_();
     let mut i2: () = 1_();
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        (true as u8),
-    );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        (false as u8),
-    );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        (((i1) != (i2)) as u8),
-    );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        (((i1) == (i2)) as u8),
-    );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        ((unsafe { foo_0() }) as u8),
-    );
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        ((unsafe { bar_1() }) as u8),
-    );
+    write!((*unimplemented!()), "{:}\n", (true as u8),);
+    write!((*unimplemented!()), "{:}\n", (false as u8),);
+    write!((*unimplemented!()), "{:}\n", (((i1) != (i2)) as u8),);
+    write!((*unimplemented!()), "{:}\n", (((i1) == (i2)) as u8),);
+    write!((*unimplemented!()), "{:}\n", ((unsafe { foo_0() }) as u8),);
+    write!((*unimplemented!()), "{:}\n", ((unsafe { bar_1() }) as u8),);
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

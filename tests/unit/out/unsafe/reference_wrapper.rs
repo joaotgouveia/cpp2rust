@@ -12,11 +12,11 @@ pub struct Point {
     pub x: (),
     pub y: (),
 }
-pub unsafe fn set_0(mut ref_: std_reference_wrapper_int_, mut val: ()) {
-    (*(unsafe { ref_.get() })) = val;
+pub unsafe fn set_0(mut ref_: (), mut val: ()) {
+    (*unimplemented!()) = val;
 }
-pub unsafe fn read_1(mut ref_: std_reference_wrapper_int_) -> () {
-    let r: *mut () = (unsafe { ref_() });
+pub unsafe fn read_1(mut ref_: ()) -> () {
+    let r: *mut () = unimplemented!();
     return (*r);
 }
 pub fn main() {
@@ -27,44 +27,29 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut i1: () = 10_();
-    let mut ref_1: std_reference_wrapper_int_ = std_reference_wrapper_int_::new({ &mut i1 });
-    (*(unsafe { ref_1.get() })) = 20_();
-    let i2: *mut () = (unsafe { ref_1() });
+    let mut ref_1: () = unimplemented!();
+    (*unimplemented!()) = 20_();
+    let i2: *mut () = unimplemented!();
     (*i2) += 5_();
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:}\n",
-        i1,
-    );
+    write!((*unimplemented!()), "{:}\n", i1,);
     let mut i3: () = 1_();
     let mut i4: () = 2_();
-    let mut ref_3: std_reference_wrapper_int_ = std_reference_wrapper_int_::new({ &mut i3 });
-    let mut ref_4: std_reference_wrapper_int_ = std_reference_wrapper_int_::new({ &mut i4 });
-    (*(unsafe { ref_3.get() })) = (*(unsafe { ref_4.get() }));
+    let mut ref_3: () = unimplemented!();
+    let mut ref_4: () = unimplemented!();
+    (*unimplemented!()) = (*unimplemented!());
+    write!((*unimplemented!()), "{:} {:}\n", i3, i4,);
+    (unsafe { set_0(ref_1.clone(), 99_()) });
     write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:} {:}\n",
-        i3,
-        i4,
-    );
-    (unsafe { set_0(ref_1, 99_()) });
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
+        (*unimplemented!()),
         "{:} {:}\n",
         i1,
-        (unsafe { read_1(ref_1,) }),
+        (unsafe { read_1(ref_1.clone(),) }),
     );
     let mut point: Point = Point { x: 3_(), y: 4_() };
-    let mut point_ref: std_reference_wrapper_Point_ =
-        std_reference_wrapper_Point_::new({ &mut point });
-    (*(unsafe { point_ref.get() })).x = 30_();
-    (*(unsafe { point_ref() })).y = 40_();
-    write!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
-        "{:} {:}\n",
-        point.x,
-        point.y,
-    );
+    let mut point_ref: () = unimplemented!();
+    (*unimplemented!()).x = 30_();
+    (*unimplemented!()).y = 40_();
+    write!((*unimplemented!()), "{:} {:}\n", point.x, point.y,);
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

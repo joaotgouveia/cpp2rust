@@ -243,9 +243,8 @@ unsafe fn main_0() -> () {
     let mut hold2: Holder = hold.clone();
     unimplemented!();
     unimplemented!();
-    let mut vec_: std_vector_Counted__std_allocator_Counted__ =
-        <std_vector_Counted__std_allocator_Counted__>::default();
-    (unsafe { vec_.push_back_57(&a) });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut i1: Ignored = Ignored::new({ 1_() });

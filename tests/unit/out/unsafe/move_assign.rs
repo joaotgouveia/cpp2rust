@@ -97,12 +97,8 @@ unsafe fn main_0() -> () {
         MoveOnly::move_assign(&mut a, _o)
     });
     unimplemented!();
-    let mut vec_: std_vector_MoveOnly__std_allocator_MoveOnly__ =
-        <std_vector_MoveOnly__std_allocator_MoveOnly__>::default();
-    (unsafe {
-        let mut ___x: MoveOnly = MoveOnly::new({ 7_() });
-        vec_.push_back_58(&mut ___x)
-    });
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
     let mut d: MoveOnly = MoveOnly::new({ 8_() });
     (unsafe { MoveOnly::move_assign(&mut vec_[(0_()) as usize], &mut d) });
     unimplemented!();

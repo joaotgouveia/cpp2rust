@@ -46,20 +46,11 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut fr2: () = (unsafe { take_ulong_1(sz) });
     unimplemented!();
-    let mut lo: () = (*(unsafe {
-        let mut ___b: () = (::std::mem::size_of::<()>() as ()).wrapping_add(ul);
-        min_3(&sz, &mut ___b)
-    }));
-    let mut hi: () = (*(unsafe {
-        let mut ___a: () = (::std::mem::size_of::<()>() as ()).wrapping_add(sz);
-        max_4(&mut ___a, &ul)
-    }));
+    let mut lo: () = (*unimplemented!());
+    let mut hi: () = (*unimplemented!());
     unimplemented!();
     unimplemented!();
-    let mut bound: () = (*(unsafe {
-        let mut ___b: () = 4_();
-        min_3(&sz, &mut ___b)
-    }));
+    let mut bound: () = (*unimplemented!());
     unimplemented!();
     let mut data: [(); 8] = [unimplemented!(); 8];
     let mut count: () =
@@ -98,8 +89,8 @@ unsafe fn main_0() -> () {
     let mut sm: () = ((s2) + (l));
     unimplemented!();
     unimplemented!();
-    let mut smin: () = (*(unsafe { min_5(&sd, &sm) }));
-    let mut smax: () = (*(unsafe { max_6(&sd, &sm) }));
+    let mut smin: () = (*unimplemented!());
+    let mut smax: () = (*unimplemented!());
     unimplemented!();
     unimplemented!();
     let mut delta: () = ((sz) - (ul));
@@ -115,28 +106,13 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mx: () = 5_();
-    let mut mins: [(); 4] = [
-        0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_3(&mut ___a, &mx)
-        })),
-        (*(unsafe {
-            let ___a: *const () = &mx;
-            let mut ___b: () = (mx).wrapping_sub(3_());
-            min_3(___a, &mut ___b)
-        })),
-        mx,
-    ];
+    let mut mins: [(); 4] = [0_(), (*unimplemented!()), (*unimplemented!()), mx];
     unimplemented!();
     unimplemented!();
-    let mut pr: std_pair_unsigned_long__int_ = {
-        let mut __tmp_0: () = 1_();
-        std_pair_unsigned_long__int_::new({ &mut sz }, { &mut __tmp_0 })
-    };
+    let mut pr: () = unimplemented!();
     unimplemented!();
     let sizes: [(); 4] = [1_(), 2_(), 3_(), 4_()];
-    let mut sizes_end: *const () = (unsafe { end_7(&sizes) });
+    let mut sizes_end: *const () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut set: () = unimplemented!();

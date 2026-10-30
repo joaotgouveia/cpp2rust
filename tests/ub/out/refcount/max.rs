@@ -11,16 +11,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let a: Ptr<()> = ({
-        let ___a: Value<()> = Rc::new(RefCell::new(1_()));
-        let ___b: Value<()> = Rc::new(RefCell::new(2_()));
-        min_0(___a.as_pointer(), ___b.as_pointer())
-    });
-    let b: Ptr<()> = ({
-        let ___a: Value<()> = Rc::new(RefCell::new(1_()));
-        let ___b: Value<()> = Rc::new(RefCell::new(2_()));
-        max_1(___a.as_pointer(), ___b.as_pointer())
-    });
+    let a: Ptr<()> = unimplemented!();
+    let b: Ptr<()> = unimplemented!();
     return ({ (a.read()) } == { (b.read()) });
 }
 pub fn __cpp2rust_init_globals() {}

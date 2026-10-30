@@ -13,7 +13,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut vec_: std_array_int__3_ = unsafe { std::mem::zeroed::<std_array_int__3_>() };
+    let mut vec_: () = unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

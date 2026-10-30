@@ -9,19 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: (),
     pub a: (),
 }
 impl S {
     pub unsafe fn move_from(_a0: *mut S) -> Self {
         let mut this = Self {
-            v: (*_a0).v,
+            v: unimplemented!(),
             a: (*_a0).a,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
-        self.v = ((*_a0).v).clone();
+        unimplemented!();
         self.a = (*_a0).a;
         return &mut (*(self as *mut S));
     }
@@ -34,12 +34,9 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut s: S = <S>::default();
-    (unsafe {
-        let mut ___x: () = 1_();
-        s.v.push_back_58(&mut ___x)
-    });
-    'loop_: for e in IterRange::new((unsafe { s.v.begin_26() }), (unsafe { s.v.end_28() })) {
-        let mut e: () = (*e);
+    unimplemented!();
+    'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut e: () = (*unimplemented!());
         s.a.postfix_inc();
     }
     return 0_();

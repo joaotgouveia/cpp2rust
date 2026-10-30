@@ -11,18 +11,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let vec_: Value<std_vector_unsigned_int__std_allocator_unsigned_int__> = Rc::new(RefCell::new(
-        <std_vector_unsigned_int__std_allocator_unsigned_int__>::default(),
-    ));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(67305985_()));
-        (*vec_.borrow()).push_back_58(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(134678021_()));
-        (*vec_.borrow()).push_back_58(___x.as_pointer())
-    });
-    let mut bytes: Ptr<()> = ({ (*vec_.borrow()).data_55() }).reinterpret_cast::<()>();
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut bytes: Ptr<()> = unimplemented!().reinterpret_cast::<()>();
     unimplemented!();
     unimplemented!();
     unimplemented!();

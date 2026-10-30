@@ -19,30 +19,27 @@ pub struct Point {
 pub struct Holder {
     #[offset(0)]
     #[byte_size(24)]
-    pub values: std_vector_int__std_allocator_int__,
+    pub values: (),
     #[offset(24)]
     #[byte_size(24)]
-    pub points: std_vector_Point__std_allocator_Point__,
+    pub points: (),
 }
 impl Holder {
     pub fn move_from(_a0: Ptr<Holder>) -> Self {
         Self {
-            values: field!(_a0, values).with_mut(std::mem::take),
-            points: field!(_a0, points).with_mut(std::mem::take),
+            values: unimplemented!(),
+            points: unimplemented!(),
         }
     }
 }
-pub fn push_and_index_0(v: Ptr<std_vector_int__std_allocator_int__>) -> () {
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(42_()));
-        (*v.upgrade().deref()).push_back_58(___x.as_pointer())
-    });
-    return (({ (*v.upgrade().deref()).size() }) - 1_());
+pub fn push_and_index_0(v: Ptr<()>) -> () {
+    unimplemented!();
+    return (unimplemented!() - 1_());
 }
-pub fn sum_ref_1(v: Ptr<std_vector_int__std_allocator_int__>) -> () {
+pub fn sum_ref_1(v: Ptr<()>) -> () {
     let mut s: () = 0_();
     let mut i: () = 0_();
-    'loop_: while ({ i } < { ({ (*v.upgrade().deref()).size() }) }) {
+    'loop_: while ({ i } < { unimplemented!() }) {
         s += (elem!(v, i).read());
         i.prefix_inc();
     }
@@ -53,9 +50,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*v.borrow_mut())[0_()] = 10_();
     unimplemented!();
     (*v.borrow_mut())[1_()] += 5_();
@@ -77,12 +72,9 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let h: Value<Holder> = Rc::new(RefCell::new(<Holder>::default()));
-    ({ (*h.borrow()).values.resize_40(2_()) });
+    unimplemented!();
     elem!(field_ptr!(h.as_pointer(), values), 1_()).write(6_());
-    ({
-        let ___x: Value<Point> = Rc::new(RefCell::new(Point { x: 1_(), y: 2_() }));
-        (*h.borrow()).points.push_back_58(___x.as_pointer())
-    });
+    unimplemented!();
     field!(elem!(field_ptr!(h.as_pointer(), points), 0_()), y).write(5_());
     unimplemented!();
     unimplemented!();
@@ -95,21 +87,9 @@ fn main_0() -> () {
     let mut q: Point = elem!(field_ptr!(h.as_pointer(), points), 0_()).read();
     q.x = 0_();
     unimplemented!();
-    let grid : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
-    ({
-        let ___x: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-            std_vector_int__std_allocator_int__::new_2({ 3_() }, { __tmp_0.as_pointer() }, None)
-        }));
-        (*grid.borrow()).push_back_58(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(0_()));
-            std_vector_int__std_allocator_int__::new_2({ 3_() }, { __tmp_1.as_pointer() }, None)
-        }));
-        (*grid.borrow()).push_back_58(___x.as_pointer())
-    });
+    let grid: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
     elem!(grid.as_pointer().offset(1_()), 2_()).write(8_());
     unimplemented!();
     let __rhs = (elem!(grid.as_pointer().offset(1_()), 2_()).read());
@@ -119,7 +99,7 @@ fn main_0() -> () {
         elem!(grid.as_pointer().offset(1_()), 0_()).with_mut(|__v| *__v = *__v + __rhs)
     };
     unimplemented!();
-    let a: Value<std_array_int__3_> = Rc::new(RefCell::new(unimplemented!()));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __rhs = ({ (*a.borrow())[0_()] } + { (*a.borrow())[2_()] });
     (*a.borrow_mut())[1_()] = __rhs;
     unimplemented!();
@@ -130,8 +110,8 @@ pub trait HolderImpl {
 }
 impl HolderImpl for Ptr<Holder> {
     fn move_assign(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
-        field!((*self), values).write({ { (*_a0.upgrade().deref()).values.clone() } });
-        field!((*self), points).write({ { (*_a0.upgrade().deref()).points.clone() } });
+        unimplemented!();
+        unimplemented!();
         return (*self).clone();
     }
 }

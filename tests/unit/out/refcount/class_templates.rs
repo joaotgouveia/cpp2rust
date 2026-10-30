@@ -11,12 +11,12 @@ use std::rc::{Rc, Weak};
 pub struct MyContainer_int_ {
     #[offset(0)]
     #[byte_size(24)]
-    vec_: std_vector_int__std_allocator_int__,
+    vec_: (),
 }
 impl MyContainer_int_ {
     pub fn move_from(_a0: Ptr<MyContainer_int_>) -> Self {
         Self {
-            vec_: field!(_a0, vec_).with_mut(std::mem::take),
+            vec_: unimplemented!(),
         }
     }
 }
@@ -25,12 +25,12 @@ impl MyContainer_int_ {
 pub struct MyContainer_char_ {
     #[offset(0)]
     #[byte_size(24)]
-    vec_: std_vector_char__std_allocator_char__,
+    vec_: (),
 }
 impl MyContainer_char_ {
     pub fn move_from(_a0: Ptr<MyContainer_char_>) -> Self {
         Self {
-            vec_: field!(_a0, vec_).with_mut(std::mem::take),
+            vec_: unimplemented!(),
         }
     }
 }
@@ -39,12 +39,12 @@ impl MyContainer_char_ {
 pub struct MyContainer_float_ {
     #[offset(0)]
     #[byte_size(24)]
-    vec_: std_vector_float__std_allocator_float__,
+    vec_: (),
 }
 impl MyContainer_float_ {
     pub fn move_from(_a0: Ptr<MyContainer_float_>) -> Self {
         Self {
-            vec_: field!(_a0, vec_).with_mut(std::mem::take),
+            vec_: unimplemented!(),
         }
     }
 }
@@ -128,13 +128,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let ev: Value<std_vector_Elem__std_allocator_Elem__> = Rc::new(RefCell::new(
-        <std_vector_Elem__std_allocator_Elem__>::default(),
-    ));
-    ({
-        let ___x: Value<Elem> = Rc::new(RefCell::new(Elem { i: 2_() }));
-        (*ev.borrow()).push_back_58(___x.as_pointer())
-    });
+    let mut ev: () = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let oi: Value<Outer_int_> = Rc::new(RefCell::new(Outer_int_ { v: 3_() }));
@@ -218,26 +213,23 @@ pub trait MyContainer_char_Impl {
 }
 impl MyContainer_char_Impl for Ptr<MyContainer_char_> {
     fn empty(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).vec_.empty() });
+        return unimplemented!();
     }
     fn size(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).vec_.size() });
+        return unimplemented!();
     }
     fn back_4(&self) -> Ptr<()> {
-        return ({ (*(*self).upgrade().deref()).vec_.back_53() });
+        return unimplemented!();
     }
     fn pop_back(&self) {
-        ({ (*(*self).upgrade().deref()).vec_.pop_back() });
+        unimplemented!();
         return;
     }
     fn push_back(&self, item: Ptr<()>) {
-        ({
-            let ___x: Ptr<()> = (item).clone();
-            (*(*self).upgrade().deref()).vec_.push_back_57(___x)
-        });
+        unimplemented!();
     }
     fn move_assign(&self, _a0: Ptr<MyContainer_char_>) -> Ptr<MyContainer_char_> {
-        field!((*self), vec_).write({ { (*_a0.upgrade().deref()).vec_.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }
@@ -254,26 +246,23 @@ pub trait MyContainer_float_Impl {
 }
 impl MyContainer_float_Impl for Ptr<MyContainer_float_> {
     fn empty(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).vec_.empty() });
+        return unimplemented!();
     }
     fn size(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).vec_.size() });
+        return unimplemented!();
     }
     fn back_4(&self) -> Ptr<()> {
-        return ({ (*(*self).upgrade().deref()).vec_.back_53() });
+        return unimplemented!();
     }
     fn pop_back(&self) {
-        ({ (*(*self).upgrade().deref()).vec_.pop_back() });
+        unimplemented!();
         return;
     }
     fn push_back(&self, item: Ptr<()>) {
-        ({
-            let ___x: Ptr<()> = (item).clone();
-            (*(*self).upgrade().deref()).vec_.push_back_57(___x)
-        });
+        unimplemented!();
     }
     fn move_assign(&self, _a0: Ptr<MyContainer_float_>) -> Ptr<MyContainer_float_> {
-        field!((*self), vec_).write({ { (*_a0.upgrade().deref()).vec_.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }
@@ -290,26 +279,23 @@ pub trait MyContainer_int_Impl {
 }
 impl MyContainer_int_Impl for Ptr<MyContainer_int_> {
     fn empty(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).vec_.empty() });
+        return unimplemented!();
     }
     fn size(&self) -> () {
-        return ({ (*(*self).upgrade().deref()).vec_.size() });
+        return unimplemented!();
     }
     fn back_4(&self) -> Ptr<()> {
-        return ({ (*(*self).upgrade().deref()).vec_.back_53() });
+        return unimplemented!();
     }
     fn pop_back(&self) {
-        ({ (*(*self).upgrade().deref()).vec_.pop_back() });
+        unimplemented!();
         return;
     }
     fn push_back(&self, item: Ptr<()>) {
-        ({
-            let ___x: Ptr<()> = (item).clone();
-            (*(*self).upgrade().deref()).vec_.push_back_57(___x)
-        });
+        unimplemented!();
     }
     fn move_assign(&self, _a0: Ptr<MyContainer_int_>) -> Ptr<MyContainer_int_> {
-        field!((*self), vec_).write({ { (*_a0.upgrade().deref()).vec_.clone() } });
+        unimplemented!();
         return (*self).clone();
     }
 }

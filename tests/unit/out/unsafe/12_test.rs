@@ -13,12 +13,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
-    (unsafe {
-        let mut ___x: std_vector_int__std_allocator_int__ =
-            std_vector_int__std_allocator_int__::new_1({ 10_() }, None);
-        v.push_back_58(&mut ___x)
-    });
+    let mut v: () = unimplemented!();
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

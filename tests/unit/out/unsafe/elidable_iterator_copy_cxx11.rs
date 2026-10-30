@@ -13,40 +13,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 4_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 7_();
-        v.push_back_58(&mut ___x)
-    });
-    let mut it: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ = (unsafe {
-        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.end_28() });
-        let mut ___val: () = 7_();
-        find_0(___first, ___last, &mut ___val)
-    });
+    let mut v: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe {
-        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.end_28() });
-        random_shuffle_1(___first, ___last)
-    });
-    (unsafe {
-        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.begin_26() });
-        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-            (unsafe { v.end_28() });
-        sort_2(___first, ___last)
-    });
+    let mut it: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     return 0_();
 }

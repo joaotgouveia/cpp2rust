@@ -44,72 +44,64 @@ pub unsafe fn Swap_0(a: *mut MinHeapNode, b: *mut MinHeapNode) {
 pub struct MinHeap {
     pub size: (),
     pub capacity: (),
-    pub arr: std_unique_ptr_MinHeapNode_ptrarrarr__std_default_delete_MinHeapNode_ptrarrarr__,
+    pub arr: (),
     pub next: (),
-    pub alloc: std_unique_ptr_MinHeapNodearrarr__std_default_delete_MinHeapNodearrarr__,
+    pub alloc: (),
 }
 impl MinHeap {
     pub unsafe fn Alloc(&mut self, mut data: (), mut freq: ()) -> *mut MinHeapNode {
-        self.alloc[(self.next) as usize] = MinHeapNode {
+        (*unimplemented!()) = MinHeapNode {
             data: data,
             freq: freq,
             left: std::ptr::null_mut(),
             right: std::ptr::null_mut(),
         };
-        return (&mut self.alloc[(self.next.postfix_inc()) as usize] as *mut MinHeapNode);
+        return (&mut (*unimplemented!()) as *mut MinHeapNode);
     }
     pub unsafe fn Heapify(&mut self, mut idx: ()) {
         let mut smallest: () = idx;
         let mut left: () = (((2_()) * (idx)) + (1_()));
         let mut right: () = (((2_()) * (idx)) + (2_()));
-        if ((left) < (self.size))
-            && (((*self.arr[(left) as usize]).freq) < ((*self.arr[(smallest) as usize]).freq))
+        if ((left) < (self.size)) && (((*(*unimplemented!())).freq) < ((*(*unimplemented!())).freq))
         {
             smallest = left;
         }
         if ((right) < (self.size))
-            && (((*self.arr[(right) as usize]).freq) < ((*self.arr[(smallest) as usize]).freq))
+            && (((*(*unimplemented!())).freq) < ((*(*unimplemented!())).freq))
         {
             smallest = right;
         }
         if ((smallest) != (idx)) {
             (unsafe {
-                let _a: *mut MinHeapNode = &mut (*self.arr[(smallest) as usize]);
-                let _b: *mut MinHeapNode = &mut (*self.arr[(idx) as usize]);
+                let _a: *mut MinHeapNode = &mut (*(*unimplemented!()));
+                let _b: *mut MinHeapNode = &mut (*(*unimplemented!()));
                 Swap_0(_a, _b)
             });
             (unsafe { MinHeap::Heapify(self, smallest) });
         }
     }
     pub unsafe fn ExtractMin(&mut self) -> *mut MinHeapNode {
-        let mut out: *mut MinHeapNode = self.arr[(0_()) as usize];
+        let mut out: *mut MinHeapNode = (*unimplemented!());
         self.size.prefix_dec();
-        self.arr[(0_()) as usize] = self.arr[(self.size) as usize];
+        (*unimplemented!()) = (*unimplemented!());
         (unsafe { MinHeap::Heapify(self, 0_()) });
         return out;
     }
     pub unsafe fn Insert(&mut self, mut node: *mut MinHeapNode) {
         self.size.prefix_inc();
         let mut i: () = ((self.size) - (1_()));
-        'loop_: while ((i) != (0_()))
-            && (((*node).freq) < ((*self.arr[(((i) - (1_())) / (2_())) as usize]).freq))
-        {
-            self.arr[(i) as usize] = self.arr[(((i) - (1_())) / (2_())) as usize];
+        'loop_: while ((i) != (0_())) && (((*node).freq) < ((*(*unimplemented!())).freq)) {
+            (*unimplemented!()) = (*unimplemented!());
             i = (((i) - (1_())) / (2_()));
         }
-        self.arr[(i) as usize] = node;
+        (*unimplemented!()) = node;
     }
-    pub unsafe fn Build(
-        &mut self,
-        data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__,
-        freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
-        mut n: (),
-    ) {
+    pub unsafe fn Build(&mut self, data: *mut (), freq: *mut (), mut n: ()) {
         let mut i: () = 0_();
         'loop_: while ((i) < (n)) {
-            self.arr[(self.size.postfix_inc()) as usize] = (unsafe {
-                let _data: () = (&(*data))[(i) as usize];
-                let _freq: () = (&(*freq))[(i) as usize];
+            (*unimplemented!()) = (unsafe {
+                let _data: () = (*unimplemented!());
+                let _freq: () = (*unimplemented!());
                 MinHeap::Alloc(self, _data, _freq)
             });
             i.prefix_inc();
@@ -124,139 +116,113 @@ impl MinHeap {
         let mut this = Self {
             size: (*_a0).size,
             capacity: (*_a0).capacity,
-            arr: (*_a0).arr,
+            arr: unimplemented!(),
             next: (*_a0).next,
-            alloc: (*_a0).alloc,
+            alloc: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut MinHeap) -> *mut MinHeap {
         self.size = (*_a0).size;
         self.capacity = (*_a0).capacity;
-        self.arr = ((*_a0).arr).clone();
+        unimplemented!();
         self.next = (*_a0).next;
-        self.alloc = ((*_a0).alloc).clone();
+        unimplemented!();
         return &mut (*(self as *mut MinHeap));
     }
 }
-pub unsafe fn AllocMinHeap_1(
-    mut capacity: (),
-) -> std_unique_ptr_MinHeap__std_default_delete_MinHeap__ {
-    let mut minHeap: std_unique_ptr_MinHeap__std_default_delete_MinHeap__ = (unsafe {
-        let mut ___args: MinHeap = MinHeap {
-            size: 0_(),
-            capacity: capacity,
-            arr: (unsafe { make_unique_2(capacity) }),
-            next: 0_(),
-            alloc: (unsafe { make_unique_3(10000_()) }),
-        };
-        make_unique_4(&mut ___args)
-    });
-    return minHeap;
+pub unsafe fn AllocMinHeap_1(mut capacity: ()) -> () {
+    let mut minHeap: () = unimplemented!();
+    return unimplemented!();
 }
-pub unsafe fn Huffman_5(
-    data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__,
-    freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
-    mut size: (),
-) -> std_unique_ptr_MinHeap__std_default_delete_MinHeap__ {
-    let mut minHeap: std_unique_ptr_MinHeap__std_default_delete_MinHeap__ =
-        (unsafe { AllocMinHeap_1(size) });
+pub unsafe fn Huffman_2(data: *mut (), freq: *mut (), mut size: ()) -> () {
+    let mut minHeap: () = (unsafe { AllocMinHeap_1(size) });
     (unsafe {
-        let _data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__ = data;
-        let _freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = freq;
+        let _data: *mut () = data;
+        let _freq: *mut () = freq;
         let _n: () = size;
-        MinHeap::Build(&mut (*minHeap), _data, _freq, _n)
+        MinHeap::Build(&mut (*unimplemented!()), _data, _freq, _n)
     });
-    'loop_: while (((*minHeap).size) != (1_())) {
-        let mut left: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*minHeap)) });
-        let mut right: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*minHeap)) });
+    'loop_: while (((*unimplemented!()).size) != (1_())) {
+        let mut left: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*unimplemented!())) });
+        let mut right: *mut MinHeapNode =
+            (unsafe { MinHeap::ExtractMin(&mut (*unimplemented!())) });
         let mut top: *mut MinHeapNode = (unsafe {
             MinHeap::Alloc(
-                &mut (*minHeap),
+                &mut (*unimplemented!()),
                 ('$' as ()),
                 (((*left).freq) + ((*right).freq)),
             )
         });
         (*top).left = left;
         (*top).right = right;
-        (unsafe { MinHeap::Insert(&mut (*minHeap), top) });
+        (unsafe { MinHeap::Insert(&mut (*unimplemented!()), top) });
     }
-    return minHeap;
+    return unimplemented!();
 }
-pub unsafe fn CollectCode_6(
-    arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
-    mut top: (),
-    out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
-    next: *mut (),
-) {
-    (&(*out))[(*next) as usize] = 0_();
+pub unsafe fn CollectCode_3(arr: *mut (), mut top: (), out: *mut (), next: *mut ()) {
+    (*unimplemented!()) = 0_();
     let mut i: () = 0_();
     'loop_: while ((i) < (top)) {
-        (&(*out))[(*next) as usize] = (((&(*out))[(*next) as usize]) * (10_()));
-        (&(*out))[(*next) as usize] = (((&(*out))[(*next) as usize]) + ((&(*arr))[(i) as usize]));
+        (*unimplemented!()) = ((*unimplemented!()) * (10_()));
+        (*unimplemented!()) = ((*unimplemented!()) + (*unimplemented!()));
         i.prefix_inc();
     }
     (*next).prefix_inc();
 }
-pub unsafe fn CollectCodes_7(
+pub unsafe fn CollectCodes_4(
     mut root: *mut MinHeapNode,
-    arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    arr: *mut (),
     mut top: (),
-    out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    out: *mut (),
     next: *mut (),
 ) {
     if !(((*root).left).is_null()) {
-        (&(*arr))[(top) as usize] = 0_();
+        (*unimplemented!()) = 0_();
         (unsafe {
             let _root: *mut MinHeapNode = (*root).left;
-            let _arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = arr;
+            let _arr: *mut () = arr;
             let _top: () = ((top) + (1_()));
-            let _out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = out;
+            let _out: *mut () = out;
             let _next: *mut () = next;
-            CollectCodes_7(_root, _arr, _top, _out, _next)
+            CollectCodes_4(_root, _arr, _top, _out, _next)
         });
     }
     if !(((*root).right).is_null()) {
-        (&(*arr))[(top) as usize] = 1_();
+        (*unimplemented!()) = 1_();
         (unsafe {
             let _root: *mut MinHeapNode = (*root).right;
-            let _arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = arr;
+            let _arr: *mut () = arr;
             let _top: () = ((top) + (1_()));
-            let _out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = out;
+            let _out: *mut () = out;
             let _next: *mut () = next;
-            CollectCodes_7(_root, _arr, _top, _out, _next)
+            CollectCodes_4(_root, _arr, _top, _out, _next)
         });
     }
     if (unsafe { MinHeapNode::IsLeaf(&(*(root).cast_const())) }) {
         (unsafe {
-            let _arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = arr;
+            let _arr: *mut () = arr;
             let _top: () = top;
-            let _out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = out;
+            let _out: *mut () = out;
             let _next: *mut () = next;
-            CollectCode_6(_arr, _top, _out, _next)
+            CollectCode_3(_arr, _top, _out, _next)
         });
     }
 }
-pub unsafe fn HuffmanCodes_8(
-    data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__,
-    freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
-    mut size: (),
-) -> std_unique_ptr_intarrarr__std_default_delete_intarrarr__ {
-    let mut minHeap: std_unique_ptr_MinHeap__std_default_delete_MinHeap__ = (unsafe {
-        let _data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__ = data;
-        let _freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = freq;
+pub unsafe fn HuffmanCodes_5(data: *mut (), freq: *mut (), mut size: ()) -> () {
+    let mut minHeap: () = (unsafe {
+        let _data: *mut () = data;
+        let _freq: *mut () = freq;
         let _size: () = size;
-        Huffman_5(_data, _freq, _size)
+        Huffman_2(_data, _freq, _size)
     });
-    let mut root: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*minHeap)) });
-    let mut arr: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
-        (unsafe { make_unique_9(100_()) });
-    let mut out: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
-        (unsafe { make_unique_9(100_()) });
+    let mut root: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*unimplemented!())) });
+    let mut arr: () = unimplemented!();
+    let mut out: () = unimplemented!();
     let mut top: () = 0_();
     let mut next: () = 0_();
-    (unsafe { CollectCodes_7(root, &mut arr, top, &mut out, &mut next) });
-    return out;
+    (unsafe { CollectCodes_4(root, &mut arr, top, &mut out, &mut next) });
+    return unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -275,18 +241,15 @@ unsafe fn main_0() -> () {
         ('f' as ()),
     ];
     let mut arr2: [(); 6] = [5_(), 9_(), 12_(), 13_(), 16_(), 45_()];
-    let mut data: std_unique_ptr_chararrarr__std_default_delete_chararrarr__ =
-        (unsafe { make_unique_10(size) });
-    let mut freq: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
-        (unsafe { make_unique_9(size) });
+    let mut data: () = unimplemented!();
+    let mut freq: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (size)) {
-        data[(i) as usize] = arr1[(i) as usize];
-        freq[(i) as usize] = arr2[(i) as usize];
+        (*unimplemented!()) = arr1[(i) as usize];
+        (*unimplemented!()) = arr2[(i) as usize];
         i.prefix_inc();
     }
-    let mut out: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
-        (unsafe { HuffmanCodes_8(&mut data, &mut freq, size) });
+    let mut out: () = (unsafe { HuffmanCodes_5(&mut data, &mut freq, size) });
     unimplemented!();
     return 0_();
 }

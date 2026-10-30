@@ -19,8 +19,8 @@ unsafe fn main_0() -> () {
     let mut pb: *mut () = (&mut b as *mut ());
     let mut ppa: *mut *mut () = (&mut pa as *mut *mut ());
     let mut ppb: *mut *mut () = (&mut pb as *mut *mut ());
-    let mut r1: () = (*(unsafe { max_0(&(*(*ppa)), &(*(*ppb))) }));
-    let mut r2: () = (*(unsafe { min_1(&(*(*ppa)), &(*(*ppb))) }));
+    let mut r1: () = (*unimplemented!());
+    let mut r2: () = (*unimplemented!());
     unimplemented!();
     return 0_();
 }

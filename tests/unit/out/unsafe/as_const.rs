@@ -52,7 +52,7 @@ unsafe fn main_0() -> () {
     let cs: *const S = &s;
     unimplemented!();
     unimplemented!();
-    let mut p: *mut S = (unsafe { launder_2((&mut s as *mut S)) });
+    let mut p: *mut S = unimplemented!();
     (*p).v = 11_();
     unimplemented!();
     unimplemented!();

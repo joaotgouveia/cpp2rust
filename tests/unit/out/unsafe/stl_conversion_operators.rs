@@ -14,12 +14,11 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut n: () = 17_();
-    let mut d: std_chrono_day = std_chrono_day::new_1({ n });
+    let mut d: () = unimplemented!();
     unimplemented!();
     let mut name: *const () = c"dir/file.txt".as_ptr();
-    let mut p: std_filesystem_path = std_filesystem_path::new_1({ &name }, None);
-    let mut s: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        (unsafe { p() });
+    let mut p: () = unimplemented!();
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();

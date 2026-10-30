@@ -13,12 +13,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut s: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"ABCD".as_ptr() },
-            None,
-        );
-    let mut bytes: *const () = ((unsafe { s.c_str() }) as *const ());
+    let mut s: () = unimplemented!();
+    let mut bytes: *const () = (unimplemented!() as *const ());
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -96,7 +96,7 @@ unsafe fn main_0() -> () {
     let mut g: FnPtr<fn() -> ()> = f.copy_from();
     unimplemented!();
     unimplemented!();
-    let mut h: FnPtr<fn() -> ()> = f.move_from();
+    let mut h: () = f.move_from();
     unimplemented!();
     let mut returned: () = (unsafe {
         lambda_unsafe!(
@@ -125,7 +125,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut a2: FnPtr<fn() -> ()> = a.copy_from();
     unimplemented!();
-    let mut a3: FnPtr<fn() -> ()> = a.move_from();
+    let mut a3: () = a.move_from();
     unimplemented!();
     {
         let mut m: FnPtr<fn()> = lambda_unsafe!(
@@ -135,7 +135,7 @@ unsafe fn main_0() -> () {
             || {}
         );
         let _dtor_m = ScopedDestructorUnsafe::new(&raw mut m, |__f| __f.destroy());
-        let mut m2: FnPtr<fn()> = m.move_from();
+        let mut m2: () = m.move_from();
         let _dtor_m2 = ScopedDestructorUnsafe::new(&raw mut m2, |__f| __f.destroy());
     }
     unimplemented!();

@@ -22,18 +22,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let p: Value<std_unique_ptr_Point__std_default_delete_Point__> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<Point> = Rc::new(RefCell::new(Point { x: 3_(), y: 4_() }));
-            make_unique_1(___args.as_pointer())
-        }),
-    ));
-    {
-        field!((*p.borrow_mut()), x).with_mut(|__v| *__v = *__v + 10_())
-    };
-    let __rhs = ({ ((*p.borrow()).read()).x } + { ((*p.borrow()).read()).y });
-    field!((*p.borrow_mut()), y).write(__rhs);
-    let mut s: () = ({ sum_0((*(*p.borrow()).upgrade().deref()).clone()) });
+    let mut p: () = unimplemented!();
+    unimplemented!().x += 10_();
+    let __rhs = ({ unimplemented!().x } + { unimplemented!().y });
+    unimplemented!().y = __rhs;
+    let mut s: () = ({ sum_0((*unimplemented!().upgrade().deref()).clone()) });
     unimplemented!();
     return 0_();
 }

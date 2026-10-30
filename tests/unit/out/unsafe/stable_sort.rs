@@ -14,19 +14,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut arr1: [(); 5] = [5_(), 2_(), 8_(), 1_(), 3_()];
-    (unsafe {
-        let ___first: *mut () = arr1.as_mut_ptr();
-        let ___last: *mut () = arr1.as_mut_ptr().offset((5_()) as isize);
-        stable_sort_0(
-            ___first,
-            ___last,
-            FnPtr::<fn((), ()) -> ()>::new(|mut x: (), mut y: ()| -> () {
-                unsafe {
-                    return ((x) < (y));
-                }
-            }),
-        )
-    });
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

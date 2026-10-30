@@ -13,65 +13,50 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 1_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 2_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 3_();
-        v.push_back_58(&mut ___x)
-    });
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut square: () = 0_();
-    'loop_: for e1 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let mut e1: () = (*e1);
-        'loop_: for e2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-            let mut e2: () = (*e2);
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut e1: () = (*unimplemented!());
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let mut e2: () = (*unimplemented!());
             square += ((e1) * (e2));
         }
     }
-    'loop_: for e1 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let e1: *mut () = &mut (*e1);
-        'loop_: for e2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-            let e2: *const () = &(*e2);
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let e1: *mut () = &mut (*unimplemented!());
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let e2: *const () = &(*unimplemented!());
             square += ((*e1) * (*e2));
         }
     }
-    'loop_: for e1 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let e1: *const () = &(*e1);
-        'loop_: for e2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-            let e2: *mut () = &mut (*e2);
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let e1: *const () = &(*unimplemented!());
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let e2: *mut () = &mut (*unimplemented!());
             square += ((*e1) * (*e2));
         }
     }
-    'loop_: for e1 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let e1: *mut () = &mut (*e1);
-        'loop_: for e2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-            let e2: *mut () = &mut (*e2);
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let e1: *mut () = &mut (*unimplemented!());
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let e2: *mut () = &mut (*unimplemented!());
             square += ((*e1) * (*e2));
         }
     }
-    let mut m : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
-    let mut v1: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe { m.push_back_58(&mut v1) });
-    let mut v2: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe { m.push_back_58(&mut v2) });
-    let mut v3: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe { m.push_back_58(&mut v3) });
-    'loop_: for row in IterRange::new((unsafe { m.begin_26() }), (unsafe { m.end_28() })) {
-        let row: *mut std_vector_int__std_allocator_int__ = &mut (*row);
-        'loop_: for col in
-            IterRange::new((unsafe { (*row).begin_26() }), (unsafe { (*row).end_28() }))
-        {
-            let col: *mut () = &mut (*col);
+    let mut m: () = unimplemented!();
+    let mut v1: () = unimplemented!();
+    unimplemented!();
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    let mut v3: () = unimplemented!();
+    unimplemented!();
+    'loop_: for row in IterRange::new(unimplemented!(), unimplemented!()) {
+        let row: *mut () = &mut (*unimplemented!());
+        'loop_: for col in IterRange::new(unimplemented!(), unimplemented!()) {
+            let col: *mut () = &mut (*unimplemented!());
             square += (*col);
         }
     }

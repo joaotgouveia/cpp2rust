@@ -11,12 +11,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_bool__std_allocator_bool__> = Rc::new(RefCell::new(
-        std_vector_bool__std_allocator_bool__::new_1({ unimplemented!() }, None),
-    ));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let r: Value<std__Bit_reference> = Rc::new(RefCell::new(((*v.borrow())[0_()]).clone()));
-    let copy: Value<std__Bit_reference> = Rc::new(RefCell::new((*r.borrow()).clone()));
+    let r: Value<()> = Rc::new(RefCell::new(((*v.borrow())[0_()]).clone()));
+    let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return 0_();
 }

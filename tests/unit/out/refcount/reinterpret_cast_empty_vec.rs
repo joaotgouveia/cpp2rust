@@ -11,10 +11,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<std_vector_unsigned_int__std_allocator_unsigned_int__> = Rc::new(RefCell::new(
-        <std_vector_unsigned_int__std_allocator_unsigned_int__>::default(),
-    ));
-    let mut bytes: Ptr<()> = ({ (*v.borrow()).data_55() }).reinterpret_cast::<()>();
+    let mut v: () = unimplemented!();
+    let mut bytes: Ptr<()> = unimplemented!().reinterpret_cast::<()>();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

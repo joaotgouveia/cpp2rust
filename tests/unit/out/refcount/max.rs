@@ -64,37 +64,18 @@ pub fn main() {
 fn main_0() -> () {
     let x1: Value<()> = Rc::new(RefCell::new(1_()));
     let x2: Value<()> = Rc::new(RefCell::new(2_()));
-    let x3: Value<()> = Rc::new(RefCell::new(10_()));
-    let x4: Value<()> = Rc::new(RefCell::new(20_()));
+    let mut x3: () = 10_();
+    let mut x4: () = 20_();
     let mut p1: Ptr<()> = (x1.as_pointer());
     let mut p2: Ptr<()> = (x2.as_pointer());
-    let mut r1: () = (({ max_5(x1.as_pointer(), x2.as_pointer()) }).read());
-    let mut r2: () = (({ min_6(x3.as_pointer(), x4.as_pointer()) }).read());
-    let mut r3: () = (({
-        let ___a: Ptr<()> = (p1).clone();
-        let ___b: Ptr<()> = x2.as_pointer();
-        max_5(___a, ___b)
-    })
-    .read());
-    let mut r4: () = (({
-        let ___a: Ptr<()> = (p2).clone();
-        let ___b: Ptr<()> = x3.as_pointer();
-        min_6(___a, ___b)
-    })
-    .read());
-    let mut r5: () = (({
-        let ___a: Value<()> = Rc::new(RefCell::new(30_()));
-        let ___b: Value<()> = Rc::new(RefCell::new(40_()));
-        max_5(___a.as_pointer(), ___b.as_pointer())
-    })
-    .read());
+    let mut r1: () = (unimplemented!().read());
+    let mut r2: () = (unimplemented!().read());
+    let mut r3: () = (unimplemented!().read());
+    let mut r4: () = (unimplemented!().read());
+    let mut r5: () = (unimplemented!().read());
     unimplemented!();
     let values: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 7_(), 7_(), 3_()])));
-    let mut max: Ptr<()> = ({
-        let ___first: Ptr<()> = (values.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (values.as_pointer() as Ptr<()>).offset((4_()) as isize);
-        max_element_7(___first, ___last)
-    });
+    let mut max: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

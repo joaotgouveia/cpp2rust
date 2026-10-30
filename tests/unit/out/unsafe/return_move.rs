@@ -66,19 +66,13 @@ pub unsafe fn ret_struct_param_10(mut p: pair_t) -> pair_t {
 pub unsafe fn ret_struct_ref_11(p: *mut pair_t) -> pair_t {
     return (*p);
 }
-pub unsafe fn ret_vec_12(
-    mut v: std_vector_int__std_allocator_int__,
-) -> std_vector_int__std_allocator_int__ {
-    return v;
+pub unsafe fn ret_vec_12(mut v: ()) -> () {
+    return unimplemented!();
 }
-pub unsafe fn ret_vec_local_13() -> std_vector_int__std_allocator_int__ {
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 1_();
-        v.push_back_58(&mut ___x)
-    });
-    return v;
+pub unsafe fn ret_vec_local_13() -> () {
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn ret_loop_14(mut n: *mut node) -> *mut node {
     'loop_: while !((*n).next).is_null() {

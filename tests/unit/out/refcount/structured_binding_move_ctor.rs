@@ -57,16 +57,16 @@ impl Clone for Movable {
 pub struct Holder {
     #[offset(0)]
     #[byte_size(24)]
-    pub xs: std_vector_int__std_allocator_int__,
+    pub xs: (),
     #[offset(24)]
     #[byte_size(24)]
-    pub ys: std_vector_int__std_allocator_int__,
+    pub ys: (),
 }
 impl Holder {
     pub fn move_from(_a0: Ptr<Holder>) -> Self {
         Self {
-            xs: field!(_a0, xs).with_mut(std::mem::take),
-            ys: field!(_a0, ys).with_mut(std::mem::take),
+            xs: unimplemented!(),
+            ys: unimplemented!(),
         }
     }
 }
@@ -84,8 +84,8 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let h: Value<Holder> = Rc::new(RefCell::new(Holder {
-        xs: std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
-        ys: std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
+        xs: unimplemented!(),
+        ys: unimplemented!(),
     }));
     let __decomp_3: Value<Holder> =
         Rc::new(RefCell::new(({ HolderImpl::extract(&h.as_pointer()) })));
@@ -104,13 +104,13 @@ pub trait HolderImpl {
 impl HolderImpl for Ptr<Holder> {
     fn extract(&self) -> Holder {
         return Holder {
-            xs: field!((*self), xs).with_mut(std::mem::take),
-            ys: field!((*self), ys).with_mut(std::mem::take),
+            xs: unimplemented!(),
+            ys: unimplemented!(),
         };
     }
     fn move_assign(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
-        field!((*self), xs).write({ { (*_a0.upgrade().deref()).xs.clone() } });
-        field!((*self), ys).write({ { (*_a0.upgrade().deref()).ys.clone() } });
+        unimplemented!();
+        unimplemented!();
         return (*self).clone();
     }
 }

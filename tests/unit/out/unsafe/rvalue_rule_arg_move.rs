@@ -45,19 +45,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_Elem__std_allocator_Elem__ =
-        <std_vector_Elem__std_allocator_Elem__>::default();
-    (unsafe { v.reserve(4_()) });
+    let mut v: () = unimplemented!();
+    unimplemented!();
     let mut a: Elem = Elem::new({ 1_() });
     let mut b: Elem = Elem::new({ 2_() });
-    (unsafe {
-        let ___position: __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___  = { let mut __tmp_0 : __gnu_cxx___normal_iterator_Elem_ptr__std_vector_Elem__std_allocator_Elem___  = ( unsafe { v . end_28  ( ) } )  ; __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___ :: new_1 ( { & mut __tmp_0 } , )  } ;
-        v.insert_63(___position, &mut a)
-    });
-    (unsafe {
-        let ___position: __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___  = { let mut __tmp_1 : __gnu_cxx___normal_iterator_Elem_ptr__std_vector_Elem__std_allocator_Elem___  = ( unsafe { v . end_28  ( ) } )  ; __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___ :: new_1 ( { & mut __tmp_1 } , )  } ;
-        v.insert_62(___position, &b)
-    });
+    unimplemented!();
+    unimplemented!();
     let mut ok: () = ((((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (1_()))
         && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)) == (1_())))
         && ((v[(0_()) as usize].v) == (1_())))

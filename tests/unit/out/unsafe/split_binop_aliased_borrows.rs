@@ -13,12 +13,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
-    let mut p: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
-        (unsafe { v.begin_26() });
+    let mut v: () = unimplemented!();
+    let mut p: () = unimplemented!();
     let r: *const () = &v[(1_()) as usize];
-    (*p) = (*r);
+    (*unimplemented!()) = (*r);
     unimplemented!();
     return 0_();
 }

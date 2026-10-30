@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn f_0(mut list: std_initializer_list_int_) {}
+pub unsafe fn f_0(mut list: ()) {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Pair {
@@ -47,9 +47,8 @@ unsafe fn main_0() -> () {
     let mut i2: () = unimplemented!();
     let mut carr1: [(); 2] = [1_(), 2_()];
     let mut carr2: [(); 3] = [1_(), unimplemented!(), unimplemented!()];
-    let mut arr: std_array_int__3_ = unimplemented!();
-    let mut vec_: std_vector_int__std_allocator_int__ =
-        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let mut arr: () = unimplemented!();
+    let mut vec_: () = unimplemented!();
     (unsafe { f_0(unimplemented!()) });
     let mut p: Pair = Pair { a: 1_(), b: 2_() };
     let mut h: Holder = <Holder>::default();

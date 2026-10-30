@@ -16,19 +16,12 @@ unsafe fn main_0() -> () {
     let mut x1: () = 1_();
     let mut x2: () = 2_();
     let mut x3: () = 4_();
-    let mut v: std_vector_int__std_allocator_int__ =
-        <std_vector_int__std_allocator_int__>::default();
-    (unsafe {
-        let mut ___x: () = 1_();
-        v.push_back_58(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = 2_();
-        v.push_back_58(&mut ___x)
-    });
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut sum: () = 0_();
-    'loop_: for elem in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
-        let mut elem: () = (*elem);
+    'loop_: for elem in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut elem: () = (*unimplemented!());
         sum += elem;
     }
     unimplemented!();
