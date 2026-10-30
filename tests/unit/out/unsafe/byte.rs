@@ -22,16 +22,14 @@ unsafe fn main_0() -> i32 {
     assert!(((shr1) == ((2) as u8)));
     let mut ushift3: u32 = 5_u32;
     {
-        let n_ = b1 << ushift3;
-        b1 = n_;
-        b1
+        *&mut b1 = *&mut b1 << ushift3;
+        &mut b1
     };
     assert!(((b1) == ((32) as u8)));
     let mut ushift4: u32 = 3_u32;
     {
-        let n_ = b1 >> ushift4;
-        b1 = n_;
-        b1
+        *&mut b1 = *&mut b1 >> ushift4;
+        &mut b1
     };
     assert!(((b1) == ((4) as u8)));
     let mut ishift: i32 = 1;

@@ -242,18 +242,18 @@ unsafe fn main_0() -> i32 {
     };
     assert!(((v3.capacity()) == (201_usize)));
     assert!(((v3.len()) == (100_usize)));
-    assert!(((*((v2).last_mut().unwrap())) == (3)));
-    assert!(((*((v3).last_mut().unwrap())) == (1)));
-    assert!((*((v4).last_mut().unwrap())).is_null());
-    assert!((*((v5).last_mut().unwrap())).is_null());
-    assert!(((*((v6).last_mut().unwrap())) == (2_f64)));
-    let ref0: *mut f64 = ((v6).last_mut().unwrap());
+    assert!(((*((&mut v2).last_mut().unwrap())) == (3)));
+    assert!(((*((&mut v3).last_mut().unwrap())) == (1)));
+    assert!((*((&mut v4).last_mut().unwrap())).is_null());
+    assert!((*((&mut v5).last_mut().unwrap())).is_null());
+    assert!(((*((&mut v6).last_mut().unwrap())) == (2_f64)));
+    let ref0: *mut f64 = ((&mut v6).last_mut().unwrap());
     (*ref0) = 5_f64;
-    assert!(((*((v6).last_mut().unwrap())) == (5_f64)));
-    let mut x0: f64 = (*((v6).last_mut().unwrap()));
+    assert!(((*((&mut v6).last_mut().unwrap())) == (5_f64)));
+    let mut x0: f64 = (*((&mut v6).last_mut().unwrap()));
     assert!(((x0) == (5_f64)));
     x0 = 6_f64;
-    assert!(((*((v6).last_mut().unwrap())) == (5_f64)));
+    assert!(((*((&mut v6).last_mut().unwrap())) == (5_f64)));
     let mut idx: i32 = 0;
     assert!(
         ((*if (idx as usize) as usize >= (&mut v6).len() {

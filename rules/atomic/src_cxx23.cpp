@@ -4184,90 +4184,144 @@ T1 f1056(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
       a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
+template <typename T1> T1 f1057(volatile std::atomic<T1> *a0, T1 a1) {
+  return std::atomic_fetch_and(a0, std::move(a1));
+}
+
+template <typename T1> T1 f1058(std::atomic<T1> *a0, T1 a1) {
+  return std::atomic_fetch_and(a0, std::move(a1));
+}
+
 template <typename T1>
-T1 f1057(volatile std::atomic<T1> *a0,
+T1 f1059(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+  return std::atomic_fetch_and_explicit(a0, std::move(a1), a2);
+}
+
+template <typename T1>
+T1 f1060(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+  return std::atomic_fetch_and_explicit(a0, std::move(a1), a2);
+}
+
+template <typename T1> T1 f1061(volatile std::atomic<T1> *a0, T1 a1) {
+  return std::atomic_fetch_or(a0, std::move(a1));
+}
+
+template <typename T1> T1 f1062(std::atomic<T1> *a0, T1 a1) {
+  return std::atomic_fetch_or(a0, std::move(a1));
+}
+
+template <typename T1>
+T1 f1063(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+  return std::atomic_fetch_or_explicit(a0, std::move(a1), a2);
+}
+
+template <typename T1>
+T1 f1064(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+  return std::atomic_fetch_or_explicit(a0, std::move(a1), a2);
+}
+
+template <typename T1>
+T1 f1065(volatile std::atomic<T1> *a0,
          typename std::atomic<T1>::difference_type a1) {
   return std::atomic_fetch_sub(
       a0, std::forward<typename std::atomic<T1>::difference_type>(a1));
 }
 
 template <typename T1>
-T1 f1058(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1) {
+T1 f1066(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1) {
   return std::atomic_fetch_sub(
       a0, std::forward<typename std::atomic<T1>::difference_type>(a1));
 }
 
 template <typename T1>
-T1 f1059(volatile std::atomic<T1> *a0,
+T1 f1067(volatile std::atomic<T1> *a0,
          typename std::atomic<T1>::difference_type a1, std::memory_order a2) {
   return std::atomic_fetch_sub_explicit(
       a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
 template <typename T1>
-T1 f1060(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
+T1 f1068(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
          std::memory_order a2) {
   return std::atomic_fetch_sub_explicit(
       a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
-void f1061(std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+template <typename T1> T1 f1069(volatile std::atomic<T1> *a0, T1 a1) {
+  return std::atomic_fetch_xor(a0, std::move(a1));
+}
 
-void f1062(volatile std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+template <typename T1> T1 f1070(std::atomic<T1> *a0, T1 a1) {
+  return std::atomic_fetch_xor(a0, std::move(a1));
+}
 
-void f1063(std::atomic_flag *a0, std::memory_order a1) {
+template <typename T1>
+T1 f1071(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+  return std::atomic_fetch_xor_explicit(a0, std::move(a1), a2);
+}
+
+template <typename T1>
+T1 f1072(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+  return std::atomic_fetch_xor_explicit(a0, std::move(a1), a2);
+}
+
+void f1073(std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+
+void f1074(volatile std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+
+void f1075(std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_clear_explicit(a0, a1);
 }
 
-void f1064(volatile std::atomic_flag *a0, std::memory_order a1) {
+void f1076(volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_clear_explicit(a0, a1);
 }
 
-void f1065(std::atomic_flag *a0) { return std::atomic_flag_notify_all(a0); }
+void f1077(std::atomic_flag *a0) { return std::atomic_flag_notify_all(a0); }
 
-void f1066(std::atomic_flag *a0) { return std::atomic_flag_notify_one(a0); }
+void f1078(std::atomic_flag *a0) { return std::atomic_flag_notify_one(a0); }
 
-bool f1067(const std::atomic_flag *a0) { return std::atomic_flag_test(a0); }
+bool f1079(const std::atomic_flag *a0) { return std::atomic_flag_test(a0); }
 
-bool f1068(const volatile std::atomic_flag *a0) {
+bool f1080(const volatile std::atomic_flag *a0) {
   return std::atomic_flag_test(a0);
 }
 
-bool f1069(std::atomic_flag *a0) { return std::atomic_flag_test_and_set(a0); }
+bool f1081(std::atomic_flag *a0) { return std::atomic_flag_test_and_set(a0); }
 
-bool f1070(volatile std::atomic_flag *a0) {
+bool f1082(volatile std::atomic_flag *a0) {
   return std::atomic_flag_test_and_set(a0);
 }
 
-bool f1071(std::atomic_flag *a0, std::memory_order a1) {
+bool f1083(std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_and_set_explicit(a0, a1);
 }
 
-bool f1072(volatile std::atomic_flag *a0, std::memory_order a1) {
+bool f1084(volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_and_set_explicit(a0, a1);
 }
 
-bool f1073(const std::atomic_flag *a0, std::memory_order a1) {
+bool f1085(const std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_explicit(a0, a1);
 }
 
-bool f1074(const volatile std::atomic_flag *a0, std::memory_order a1) {
+bool f1086(const volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_explicit(a0, a1);
 }
 
-void f1075(std::atomic_flag *a0, bool a1) {
+void f1087(std::atomic_flag *a0, bool a1) {
   return std::atomic_flag_wait(a0, a1);
 }
 
-void f1076(std::atomic_flag *a0, bool a1, std::memory_order a2) {
+void f1088(std::atomic_flag *a0, bool a1, std::memory_order a2) {
   return std::atomic_flag_wait_explicit(a0, a1, a2);
 }
 
-template <typename T1> void f1077(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f1089(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_init(a0, std::move(a1));
 }
 
-template <typename T1> void f1078(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f1090(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_init(a0, std::move(a1));
 }
 
@@ -4301,41 +4355,41 @@ using t48 = std::atomic_intmax_t;
 
 using t49 = std::atomic_intptr_t;
 
-template <typename T1> bool f1079(const std::atomic<T1> *a0) {
+template <typename T1> bool f1091(const std::atomic<T1> *a0) {
   return std::atomic_is_lock_free(a0);
 }
 
-template <typename T1> bool f1080(const volatile std::atomic<T1> *a0) {
+template <typename T1> bool f1092(const volatile std::atomic<T1> *a0) {
   return std::atomic_is_lock_free(a0);
 }
 
 using t50 = std::atomic_llong;
 
-template <typename T1> T1 f1081(const std::atomic<T1> *a0) {
+template <typename T1> T1 f1093(const std::atomic<T1> *a0) {
   return std::atomic_load(a0);
 }
 
-template <typename T1> T1 f1082(const volatile std::atomic<T1> *a0) {
+template <typename T1> T1 f1094(const volatile std::atomic<T1> *a0) {
   return std::atomic_load(a0);
 }
 
 template <typename T1>
-T1 f1083(const std::atomic<T1> *a0, std::memory_order a1) {
+T1 f1095(const std::atomic<T1> *a0, std::memory_order a1) {
   return std::atomic_load_explicit(a0, a1);
 }
 
 template <typename T1>
-T1 f1084(const volatile std::atomic<T1> *a0, std::memory_order a1) {
+T1 f1096(const volatile std::atomic<T1> *a0, std::memory_order a1) {
   return std::atomic_load_explicit(a0, a1);
 }
 
 using t51 = std::atomic_long;
 
-template <typename T1> void f1085(std::atomic<T1> *a0) {
+template <typename T1> void f1097(std::atomic<T1> *a0) {
   return std::atomic_notify_all(a0);
 }
 
-template <typename T1> void f1086(std::atomic<T1> *a0) {
+template <typename T1> void f1098(std::atomic<T1> *a0) {
   return std::atomic_notify_one(a0);
 }
 
@@ -4349,21 +4403,21 @@ using t55 = std::atomic_signed_lock_free;
 
 using t56 = std::atomic_size_t;
 
-template <typename T1> void f1087(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f1099(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_store(a0, std::move(a1));
 }
 
-template <typename T1> void f1088(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f1100(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_store(a0, std::move(a1));
 }
 
 template <typename T1>
-void f1089(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+void f1101(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_store_explicit(a0, std::move(a1), a2);
 }
 
 template <typename T1>
-void f1090(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+void f1102(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_store_explicit(a0, std::move(a1), a2);
 }
 
@@ -4408,13 +4462,13 @@ using t75 = std::atomic_unsigned_lock_free;
 using t76 = std::atomic_ushort;
 
 template <typename T1>
-void f1091(const std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1) {
+void f1103(const std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1) {
   return std::atomic_wait(
       a0, std::forward<typename std::atomic<T1>::value_type>(a1));
 }
 
 template <typename T1>
-void f1092(const std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
+void f1104(const std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
            std::memory_order a2) {
   return std::atomic_wait_explicit(
       a0, std::forward<typename std::atomic<T1>::value_type>(a1), a2);

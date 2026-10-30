@@ -768,9 +768,9 @@ auto f106(const std::expected<T1, T2> &&a0, T3 &&a1)
   return std::move(a0).template transform_error<T3>(std::forward<T3>(a1));
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
-bool f107(const std::expected<T4, T2> &a0, const T3 &a1)
-  requires(std::same_as<T4, T1>)
+template <typename T1, typename T2, typename T3>
+bool f107(const std::expected<T1, T2> &a0, const T3 &a1)
+  requires(std::same_as<T1, T1>)
 {
   return operator==(a0, a1);
 }

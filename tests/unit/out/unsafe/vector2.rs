@@ -38,10 +38,10 @@ pub unsafe fn fn_0(v: *mut Vec<i32>, mut v3: Vec<i32>) {
     v2 = (*v).clone();
     (*(&mut (*v4)).as_mut_ptr().add(1_usize as usize)) = 13;
     assert!(((x) == (6)));
-    assert!(((*((*v).first_mut().unwrap())) == (4)));
+    assert!(((*((&mut (*v)).first_mut().unwrap())) == (4)));
     assert!(((*(&mut (*v)).as_mut_ptr().add(1_usize as usize)) == (5)));
     assert!(((*(&mut (*v)).as_mut_ptr().add(2_usize as usize)) == (6)));
-    assert!(((*((*v).last_mut().unwrap())) == (20)));
+    assert!(((*((&mut (*v)).last_mut().unwrap())) == (20)));
     assert!(((*(&mut v2).as_mut_ptr().add(0_usize as usize)) == (4)));
     assert!(((*(&mut v2).as_mut_ptr().add(1_usize as usize)) == (5)));
     assert!(((*(&mut v2).as_mut_ptr().add(2_usize as usize)) == (6)));

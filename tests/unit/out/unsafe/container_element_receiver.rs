@@ -34,10 +34,10 @@ pub unsafe fn sum_1(v: *const Vec<i32>) -> i32 {
     return ((total)
         + (*{
             let __idx = 0_usize;
-            if __idx as usize >= (*v).len() {
+            if __idx as usize >= (&(*v)).len() {
                 panic!("out of bounds access")
             } else {
-                (*v).as_ptr().add(__idx as usize)
+                (&(*v)).as_ptr().add(__idx as usize)
             }
         }));
 }
@@ -54,13 +54,13 @@ unsafe fn main_0() -> i32 {
         vec_: Vec::from([4, 5]),
     };
     assert!(((*(*h.ref_).as_mut_ptr()) == (1)));
-    (*((*h.ref_).first_mut().unwrap())) = 9;
+    (*((&mut (*h.ref_)).first_mut().unwrap())) = 9;
     assert!(((*(&mut v).as_mut_ptr().add(0_usize as usize)) == (9)));
-    (*((*h.ref_).first_mut().unwrap())) = 1;
-    assert!(((*((h.vec_).last_mut().unwrap())) == (5)));
+    (*((&mut (*h.ref_)).first_mut().unwrap())) = 1;
+    assert!(((*((&mut h.vec_).last_mut().unwrap())) == (5)));
     let mut p: *mut Vec<i32> = (&mut h.vec_ as *mut Vec<i32>);
     assert!(((*(*p).as_mut_ptr()) == (4)));
-    (*((*(unsafe { pick_0(&mut v, &mut h.vec_, false) }))
+    (*((&mut (*(unsafe { pick_0(&mut v, &mut h.vec_, false) })))
         .first_mut()
         .unwrap())) = 7;
     assert!(((*(&mut h.vec_).as_mut_ptr().add(0_usize as usize)) == (7)));
@@ -79,10 +79,10 @@ unsafe fn main_0() -> i32 {
     assert!(
         ((*{
             let __idx = 2_usize;
-            if __idx as usize >= (*c).len() {
+            if __idx as usize >= (&(*c)).len() {
                 panic!("out of bounds access")
             } else {
-                (*c).as_ptr().add(__idx as usize)
+                (&(*c)).as_ptr().add(__idx as usize)
             }
         }) == (3))
     );

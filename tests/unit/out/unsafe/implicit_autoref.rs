@@ -61,7 +61,15 @@ unsafe fn main_0() -> i32 {
     assert!(((*(&mut (*p)).as_mut_ptr().add(1_usize as usize)) == (30)));
     assert!(((b) == (40)));
     assert!(((*(&mut (*hp).v).as_mut_ptr().add(1_usize as usize)) == (60)));
-    (unsafe { write_through_0((&mut (&mut (*p))[0_usize as usize] as *mut i32)) });
+    (unsafe {
+        write_through_0(
+            (if 0_usize as usize >= (&mut (*p)).len() {
+                panic!("out of bounds access")
+            } else {
+                (&mut (*p)).as_mut_ptr().add(0_usize as usize)
+            }),
+        )
+    });
     assert!(((*(&mut (*p)).as_mut_ptr().add(0_usize as usize)) == (42)));
     return 0;
 }

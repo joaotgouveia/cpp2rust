@@ -40,10 +40,10 @@ unsafe fn main_0() -> i32 {
     assert!(
         ((*{
             let __idx = (i.postfix_inc() as usize);
-            if __idx as usize >= (*c).len() {
+            if __idx as usize >= (&(*c)).len() {
                 panic!("out of bounds access")
             } else {
-                (*c).as_ptr().add(__idx as usize)
+                (&(*c)).as_ptr().add(__idx as usize)
             }
         }) == (1))
             && ((i) == (2))

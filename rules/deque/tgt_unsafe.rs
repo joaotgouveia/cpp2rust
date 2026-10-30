@@ -28,11 +28,11 @@ unsafe fn f33<T1>(a0: Vec<T1>) -> bool {
 }
 
 unsafe fn f38<T1>(a0: &mut Vec<T1>) -> *const T1 {
-    ((a0).first_mut().unwrap())
+    ((&mut *a0).first_mut().unwrap())
 }
 
 unsafe fn f40<T1>(a0: &mut Vec<T1>) -> *const T1 {
-    (a0.last_mut().unwrap())
+    ((&mut *a0).last_mut().unwrap())
 }
 
 unsafe fn f44<T1>(a0: &mut Vec<T1>, a1: T1) {

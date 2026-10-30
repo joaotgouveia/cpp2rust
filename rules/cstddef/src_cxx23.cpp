@@ -8,19 +8,19 @@ std::byte f1(std::byte a0, std::byte a1) { return std::operator&(a0, a1); }
 
 std::byte &f2(std::byte &a0, std::byte a1) { return std::operator&=(a0, a1); }
 
-template <typename T1> auto f3(std::byte a0, T1 a1) {
+template <typename T1> std::byte f3(std::byte a0, T1 a1) {
   return std::operator<<(a0, std::move(a1));
 }
 
-template <typename T1> auto f4(std::byte &a0, T1 a1) {
+template <typename T1> std::byte &f4(std::byte &a0, T1 a1) {
   return std::operator<<=(a0, std::move(a1));
 }
 
-template <typename T1> auto f5(std::byte a0, T1 a1) {
+template <typename T1> std::byte f5(std::byte a0, T1 a1) {
   return std::operator>>(a0, std::move(a1));
 }
 
-template <typename T1> auto f6(std::byte &a0, T1 a1) {
+template <typename T1> std::byte &f6(std::byte &a0, T1 a1) {
   return std::operator>>=(a0, std::move(a1));
 }
 
@@ -33,3 +33,5 @@ std::byte f9(std::byte a0, std::byte a1) { return std::operator|(a0, a1); }
 std::byte &f10(std::byte &a0, std::byte a1) { return std::operator|=(a0, a1); }
 
 std::byte f11(std::byte a0) { return std::operator~(a0); }
+
+template <typename T1> T1 f12(std::byte a0) { return std::to_integer<T1>(a0); }

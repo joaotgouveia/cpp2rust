@@ -102,7 +102,7 @@ pub unsafe fn nested_emplace_move_5(mut bw: *mut Writer) {
 }
 pub unsafe fn self_ref_push_6(mut comps: *mut Vec<Chunk>) {
     {
-        let a0_clone = (*((*comps).first_mut().unwrap())).clone();
+        let a0_clone = (*((&mut (*comps)).first_mut().unwrap())).clone();
         (*comps).push(a0_clone)
     };
 }
@@ -260,12 +260,12 @@ unsafe fn main_0() -> i32 {
     let mut queue: Vec<Pair> = Vec::new();
     (unsafe { emplace_deque_8((&mut queue as *mut Vec<Pair>)) });
     assert!(
-        (((*((queue).first_mut().unwrap())).first) == (6))
-            && (((*((queue).first_mut().unwrap())).second) == (14))
+        (((*((&mut queue).first_mut().unwrap())).first) == (6))
+            && (((*((&mut queue).first_mut().unwrap())).second) == (14))
     );
     assert!(
-        (((*(queue.last_mut().unwrap())).first) == (-1_i32))
-            && (((*(queue.last_mut().unwrap())).second) == (-1_i32))
+        (((*((&mut queue).last_mut().unwrap())).first) == (-1_i32))
+            && (((*((&mut queue).last_mut().unwrap())).second) == (-1_i32))
     );
     let mut values: Vec<i64> = Vec::new();
     (unsafe { emplace_scalar_9((&mut values as *mut Vec<i64>), 7) });

@@ -90,23 +90,23 @@ unsafe fn f149<T1>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
 
 unsafe fn f150<T1: Copy>(a0: &Vec<T1>, a1: usize) -> *const T1 {
     let __idx = a1;
-    if __idx as usize >= a0.len() {
+    if __idx as usize >= (&a0).len() {
         panic!("out of bounds access")
     } else {
-        (a0).as_ptr().add(__idx as usize)
+        (&a0).as_ptr().add(__idx as usize)
     }
 }
 
 unsafe fn f151<T1>(a0: &mut Vec<T1>) -> *mut T1 {
-    ((a0).first_mut().unwrap())
+    ((&mut *a0).first_mut().unwrap())
 }
 
 unsafe fn f153<T1>(a0: &mut Vec<T1>) -> *mut T1 {
-    ((a0).last_mut().unwrap())
+    ((&mut *a0).last_mut().unwrap())
 }
 
 unsafe fn f154<T1>(a0: &Vec<T1>) -> &T1 {
-    ((a0).last().unwrap())
+    ((&*a0).last().unwrap())
 }
 
 unsafe fn f155<T1>(a0: &mut Vec<T1>) -> *mut T1 {

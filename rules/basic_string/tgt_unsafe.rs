@@ -56,7 +56,7 @@ unsafe fn f48<T1: CChar, T2, T3>(a0: &mut Vec<T1>) {
 }
 
 unsafe fn f49<T1: CChar, T2, T3>(a0: Vec<T1>) -> bool {
-    a0.len() <= 1
+    Vec::len(&a0) <= 1
 }
 
 unsafe fn f53<T1: CChar, T2, T3>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {

@@ -49,7 +49,7 @@ unsafe fn main_0() -> i32 {
     };
     {
         let __a1 = {
-            let mut __tmp2 = (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            let mut __tmp2 = (*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
                 .first_mut()
                 .unwrap())))
                 .as_mut_ptr()
@@ -63,25 +63,25 @@ unsafe fn main_0() -> i32 {
             __tmp2.push((0 as libc::c_char));
             __tmp2
         };
-        (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+        (*((&mut (*(&mut v).as_mut_ptr().add(1_usize as usize)))
             .last_mut()
             .unwrap()))
         .push(__a1)
     };
     assert!(
-        (((*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+        (((*((&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
             .first_mut()
             .unwrap()))
         .len())
             == (2_usize))
     );
     assert!(
-        (((*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+        (((*((&mut (*(&mut v).as_mut_ptr().add(1_usize as usize)))
             .first_mut()
             .unwrap()))
         .len())
             == (3_usize))
-            && ((*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+            && ((*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(1_usize as usize)))
                 .first_mut()
                 .unwrap())))
                 .as_mut_ptr()
@@ -93,7 +93,7 @@ unsafe fn main_0() -> i32 {
                 .to_vec())
     );
     assert!(
-        (*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+        (*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(1_usize as usize)))
             .last_mut()
             .unwrap())))
             .as_mut_ptr()
@@ -105,14 +105,14 @@ unsafe fn main_0() -> i32 {
             .to_vec()
     );
     let mut copy: Vec<Vec<Vec<Vec<libc::c_char>>>> = v.clone();
-    (*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
+    (*(&mut (*((&mut (*(&mut copy).as_mut_ptr().add(0_usize as usize)))
         .first_mut()
         .unwrap())))
         .as_mut_ptr()
         .add(0_usize as usize)) =
         std::slice::from_raw_parts(c"z".as_ptr(), libcc2rs::c_str_len(c"z".as_ptr()) + 1).to_vec();
     (*if 0_usize as usize
-        >= (&mut (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+        >= (&mut (*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
@@ -122,7 +122,7 @@ unsafe fn main_0() -> i32 {
     {
         panic!("out of bounds access")
     } else {
-        (&mut (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+        (&mut (*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
@@ -131,14 +131,14 @@ unsafe fn main_0() -> i32 {
             .add(0_usize as usize)
     }) = ('B' as libc::c_char);
     assert!(
-        ((*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+        ((*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
             .add(0_usize as usize))
             == std::slice::from_raw_parts(c"a".as_ptr(), libcc2rs::c_str_len(c"a".as_ptr()) + 1)
                 .to_vec())
-            && ((*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
+            && ((*(&mut (*((&mut (*(&mut copy).as_mut_ptr().add(0_usize as usize)))
                 .first_mut()
                 .unwrap())))
                 .as_mut_ptr()
@@ -150,14 +150,14 @@ unsafe fn main_0() -> i32 {
                 .to_vec())
     );
     assert!(
-        ((*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+        ((*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(0_usize as usize)))
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
             .add(1_usize as usize))
             == std::slice::from_raw_parts(c"Bc".as_ptr(), libcc2rs::c_str_len(c"Bc".as_ptr()) + 1)
                 .to_vec())
-            && ((*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
+            && ((*(&mut (*((&mut (*(&mut copy).as_mut_ptr().add(0_usize as usize)))
                 .first_mut()
                 .unwrap())))
                 .as_mut_ptr()
@@ -170,7 +170,7 @@ unsafe fn main_0() -> i32 {
     );
     (*(&mut v).as_mut_ptr().add(1_usize as usize)).remove(0);
     assert!(
-        (*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+        (*(&mut (*((&mut (*(&mut v).as_mut_ptr().add(1_usize as usize)))
             .first_mut()
             .unwrap())))
             .as_mut_ptr()
@@ -182,7 +182,7 @@ unsafe fn main_0() -> i32 {
             .to_vec()
     );
     assert!(
-        (((*((*(&mut copy).as_mut_ptr().add(1_usize as usize))
+        (((*((&mut (*(&mut copy).as_mut_ptr().add(1_usize as usize)))
             .first_mut()
             .unwrap()))
         .len())
