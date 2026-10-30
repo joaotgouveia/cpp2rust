@@ -35,8 +35,9 @@ fn main() {
         .expect("rustls-ffi did not export its include dir (DEP_RUSTLS_FFI_INCLUDE)");
     let src = Path::new(&inc).join("rustls.h");
     let dst = crate_root.join("rustls").join("rustls.h");
-    fs::copy(&src, &dst)
-        .unwrap_or_else(|e| panic!("failed to copy {} to {}: {e}", src.display(), dst.display()));
+    let content = fs::read(&src)
+        .unwrap_or_else(|e| panic!("failed to read {}: {e}", src.display()));
+    write_if_changed(&dst, content.as_slice());
 
     println!("cargo:rerun-if-env-changed=DEP_BROTLI_INCLUDE");
     let brotli_inc = env::var("DEP_BROTLI_INCLUDE")
@@ -51,8 +52,7 @@ fn main() {
             .unwrap_or_else(|e| panic!("failed to read {}: {e}", src.display()))
             .replace("#include <brotli/port.h>", "#include \"port.h\"")
             .replace("#include <brotli/types.h>", "#include \"types.h\"");
-        fs::write(&dst, content)
-            .unwrap_or_else(|e| panic!("failed to write {}: {e}", dst.display()));
+        write_if_changed(&dst, content.as_bytes());
     }
 
     // Generate modules that include absolute paths
@@ -111,4 +111,16 @@ fn visit(dir: &Path, f: &mut impl FnMut(&Path)) {
             }
         }
     }
+}
+
+// Keeps the header's timestamp when the content is unchanged, so the rule
+// index, which depends on it, is not rebuilt after every target edit.
+fn write_if_changed(dst: &Path, content: &[u8]) {
+    if fs::read(dst).is_ok_and(|old| old == content) {
+        return;
+    }
+    if let Some(dir) = dst.parent() {
+        fs::create_dir_all(dir).unwrap();
+    }
+    fs::write(dst, content).unwrap_or_else(|e| panic!("failed to write {}: {e}", dst.display()));
 }
