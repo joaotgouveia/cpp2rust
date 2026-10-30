@@ -4,6 +4,7 @@
 #include <cstddef>
 
 typedef std::nullptr_t t0;
+typedef decltype(nullptr) t1;
 typedef bool t10;
 typedef char t20;
 typedef signed char t30;

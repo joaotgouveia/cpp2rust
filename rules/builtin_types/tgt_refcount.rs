@@ -7,6 +7,10 @@ fn t0() -> AnyPtr {
     AnyPtr::default()
 }
 
+fn t1() -> AnyPtr {
+    AnyPtr::default()
+}
+
 fn t10() -> bool {
     false
 }
