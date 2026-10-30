@@ -146,7 +146,9 @@ unsafe fn main_0() -> i32 {
         let mut __tmp = Vec::new();
         let mut __it = m.begin();
         while __it != m.end() {
-            __tmp.push((*__it.iter_deref()).clone());
+            __tmp.push(<(i32, i32) as CppFromUnsafe<(i32, i32)>>::cpp_from(
+                __it.iter_deref(),
+            ));
             __it.iter_inc();
         }
         v6.splice(__off..__off, __tmp);

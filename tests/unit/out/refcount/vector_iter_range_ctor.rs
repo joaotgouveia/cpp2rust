@@ -180,7 +180,10 @@ fn main_0() -> i32 {
             != m.as_pointer()
                 .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.end())
         {
-            __tmp.push(__it.iter_deref().read());
+            __tmp.push(<(Value<i32>, Value<i32>) as CppFrom<(
+                Value<i32>,
+                Value<i32>,
+            )>>::cpp_from(__it.iter_deref()));
             __it.iter_inc();
         }
         v6.as_pointer()

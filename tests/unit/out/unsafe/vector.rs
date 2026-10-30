@@ -118,7 +118,7 @@ unsafe fn main_0() -> i32 {
         let mut __tmp = Vec::new();
         let mut __it = src.begin();
         while __it != src.end() {
-            __tmp.push((*__it.iter_deref()).clone());
+            __tmp.push((*__it.iter_deref()));
             __it.iter_inc();
         }
         v2.splice(__off..__off, __tmp);

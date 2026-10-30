@@ -115,7 +115,7 @@ fn main_0() -> i32 {
         let mut __tmp: Vec<i32> = Vec::new();
         let mut __it = src.decay().begin();
         while __it != src.decay().end() {
-            __tmp.push(__it.iter_deref().read());
+            __tmp.push((__it.iter_deref().read()));
             __it.iter_inc();
         }
         v2.as_pointer().with_mut(|__v: &mut Vec<i32>| {
