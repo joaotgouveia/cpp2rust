@@ -11,8 +11,8 @@ use std::{
     rc::{Rc, Weak},
 };
 
-use crate::field::{upgrade as upgrade_root, Root};
-use crate::reinterpret::{with_scratch, ByteRepr, OriginalAlloc};
+use crate::field::{Root, upgrade as upgrade_root};
+use crate::reinterpret::{ByteRepr, OriginalAlloc, with_scratch};
 
 pub type Value<T> = Rc<RefCell<T>>;
 

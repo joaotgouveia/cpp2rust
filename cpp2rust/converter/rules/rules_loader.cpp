@@ -405,10 +405,10 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
   name.split(parts, "::");
   for (auto [i, part] : llvm::enumerate(parts)) {
     bool last = i + 1 == parts.size();
-    clang::LookupResult result(
-        sema, &sema.Context.Idents.get(part), clang::SourceLocation(),
-        last ? clang::Sema::LookupOrdinaryName
-             : clang::Sema::LookupNamespaceName);
+    clang::LookupResult result(sema, &sema.Context.Idents.get(part),
+                               clang::SourceLocation(),
+                               last ? clang::Sema::LookupOrdinaryName
+                                    : clang::Sema::LookupNamespaceName);
     if (!sema.LookupQualifiedName(result, scope) || result.empty()) {
       // a C struct is in the tag namespace only (struct addrinfo)
       if (!last || sema.getLangOpts().CPlusPlus) {
@@ -424,9 +424,11 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
         auto decl = found->getUnderlyingDecl();
         if (auto tmpl = llvm::dyn_cast<clang::ClassTemplateDecl>(decl)) {
           return tmpl->getTemplatedDecl()->hasDefinition() ||
-                 llvm::any_of(tmpl->specializations(),
-                              [](const clang::ClassTemplateSpecializationDecl
-                                     *spec) { return spec->hasDefinition(); });
+                 llvm::any_of(
+                     tmpl->specializations(),
+                     [](const clang::ClassTemplateSpecializationDecl *spec) {
+                       return spec->hasDefinition();
+                     });
         }
         auto record = llvm::dyn_cast<clang::CXXRecordDecl>(decl);
         return !record || record->hasDefinition();

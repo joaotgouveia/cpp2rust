@@ -122,9 +122,9 @@ clang::Expr *getObject(clang::ASTContext &ctx, clang::Expr *object,
   } else if (object->isLValue() && !xvalue) {
     return object;
   }
-  return new (ctx) clang::OpaqueValueExpr(
-      object->getBeginLoc(), type,
-      xvalue ? clang::VK_XValue : clang::VK_LValue);
+  return new (ctx)
+      clang::OpaqueValueExpr(object->getBeginLoc(), type,
+                             xvalue ? clang::VK_XValue : clang::VK_LValue);
 }
 
 std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
@@ -158,9 +158,9 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
       operands.pop_back();
     }
   } else if (auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(expr)) {
-    operands.push_back(getObject(
-        ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts(),
-        call->getMethodDecl()));
+    operands.push_back(
+        getObject(ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts(),
+                  call->getMethodDecl()));
     operands.insert(operands.end(), call->arg_begin(), call->arg_end());
   } else if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
     operands.insert(operands.end(), call->arg_begin(), call->arg_end());
@@ -411,15 +411,14 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   } else if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
     used = ref->getDecl();
   }
-  auto record = used ? llvm::dyn_cast<clang::CXXRecordDecl>(
-                           used->getDeclContext())
-                     : nullptr;
+  auto record =
+      used ? llvm::dyn_cast<clang::CXXRecordDecl>(used->getDeclContext())
+           : nullptr;
   // a member of an implementation base, or named through an object, binds
   // the class the use names (std::atomic<float>::is_always_lock_free of
   // __atomic_float<float>, file.npos of basic_string<char>)
-  if (!record ||
-      RuleKeys::GetTypeKey(sema.Context.getCanonicalTagType(record)) !=
-          RuleKeys::GetTypeKey(qualifier)) {
+  if (!record || RuleKeys::GetTypeKey(sema.Context.getCanonicalTagType(
+                     record)) != RuleKeys::GetTypeKey(qualifier)) {
     auto named = namingClass(use);
     if (named.isNull()) {
       return std::nullopt;
@@ -702,8 +701,9 @@ clang::QualType namingClass(const clang::Expr *expr) {
       expr = call->getCallee()->IgnoreParenImpCasts();
     }
     if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr);
-        member && llvm::isa<clang::VarDecl, clang::CXXMethodDecl>(
-                      member->getMemberDecl()) &&
+        member &&
+        llvm::isa<clang::VarDecl, clang::CXXMethodDecl>(
+            member->getMemberDecl()) &&
         (llvm::isa<clang::VarDecl>(member->getMemberDecl()) ||
          llvm::cast<clang::CXXMethodDecl>(member->getMemberDecl())
              ->isStatic())) {
@@ -721,8 +721,8 @@ clang::QualType namingClass(const clang::Expr *expr) {
       return clang::QualType(dependent->getQualifier().getAsType(), 0);
     }
     auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr);
-    if (!ref ||
-        ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
+    if (!ref || ref->getQualifier().getKind() !=
+                    clang::NestedNameSpecifier::Kind::Type) {
       return {};
     }
     auto qualifier = clang::QualType(ref->getQualifier().getAsType(), 0);
@@ -836,8 +836,8 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
   // a list constructing the return type matches its constructions only, not
   // the conversion function sharing their key (atomic<T1>{std::move(a0)} and
   // atomic<bool>::operator bool)
-  if (auto list =
-          llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
+  if (auto list = llvm::dyn_cast<clang::InitListExpr>(
+          RuleDecls::SkipImplicit(returned));
       list && !list->getType()->isRecordType()) {
     return std::nullopt;
   }
@@ -985,13 +985,13 @@ bool deducesFromOperands(clang::Sema &sema, const clang::Expr *use,
                          clang::FunctionTemplateDecl *rule) {
   llvm::SmallBitVector deducible;
   sema.MarkDeducedTemplateParameters(rule, deducible);
-  auto fixed = RuleDecls::DeduceFromType(
-      sema, rule->getTemplateParameters(),
-      rule->getTemplatedDecl()->getReturnType(),
-      RuleDecls::SkipImplicit(use)
-          ->getType()
-          .getCanonicalType()
-          .getUnqualifiedType());
+  auto fixed =
+      RuleDecls::DeduceFromType(sema, rule->getTemplateParameters(),
+                                rule->getTemplatedDecl()->getReturnType(),
+                                RuleDecls::SkipImplicit(use)
+                                    ->getType()
+                                    .getCanonicalType()
+                                    .getUnqualifiedType());
   for (unsigned i = 0; i < deducible.size(); ++i) {
     if (deducible[i] && (!fixed || (*fixed)[i].isNull())) {
       return true;
@@ -1080,8 +1080,8 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
     auto names = [&](const clang::FunctionDecl *function) {
       auto ruled = namingClass(RuleDecls::GetReturned(function));
       return !used.isNull() && !ruled.isNull() &&
-             sema.Context.hasSameUnqualifiedType(
-                 used.getCanonicalType(), ruled.getCanonicalType());
+             sema.Context.hasSameUnqualifiedType(used.getCanonicalType(),
+                                                 ruled.getCanonicalType());
     };
     auto a_names = names(a_function);
     auto b_names = names(b_function);

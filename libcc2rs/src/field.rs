@@ -23,8 +23,8 @@ use std::marker::PhantomData;
 use std::rc::{Rc, Weak};
 
 use crate::rc::{
-    dangling, null_deref, AsPointer, Decay, FieldShape, Ptr, PtrKind, SliceParent, SliceRoot,
-    StrongPtr, Value,
+    AsPointer, Decay, FieldShape, Ptr, PtrKind, SliceParent, SliceRoot, StrongPtr, Value, dangling,
+    null_deref,
 };
 use crate::reinterpret::ByteRepr;
 

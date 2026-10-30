@@ -575,6 +575,33 @@ bool IsConvertibleMoveConstructor(const clang::CXXConstructorDecl *ctor) {
   return ctor->isUserProvided() || NeedsDefaultedMoveConstructor(parent);
 }
 
+bool MovesRuleArg(clang::Expr *expr, unsigned arg_idx, clang::Expr *arg,
+                  TranslationRule::Access access) {
+  auto param_type = GetParamType(expr, arg_idx);
+  bool moved = access == TranslationRule::Access::kTake ||
+               (access == TranslationRule::Access::kMove && param_type &&
+                (*param_type)->isRValueReferenceType());
+  auto *record = arg->getType()->getAsCXXRecordDecl();
+  return moved && !clang::isa<clang::MaterializeTemporaryExpr>(arg) && record &&
+         IsUserDefinedDecl(record);
+}
+
+clang::CXXConstructExpr *BuildMoveConstruction(clang::ASTContext &ctx,
+                                               clang::Expr *expr,
+                                               unsigned arg_idx,
+                                               clang::Expr *arg,
+                                               TranslationRule::Access access) {
+  if (!MovesRuleArg(expr, arg_idx, arg, access)) {
+    return nullptr;
+  }
+  for (auto *ctor : arg->getType()->getAsCXXRecordDecl()->ctors()) {
+    if (IsConvertibleMoveConstructor(ctor)) {
+      return MakeConstructExpr(ctx, arg->getType(), ctor, arg);
+    }
+  }
+  return nullptr;
+}
+
 static bool
 IsImplicitConvertingConstructor(const clang::CXXConstructorDecl *ctor) {
   return !ctor->isCopyOrMoveConstructor() && !ctor->isImplicit() &&
