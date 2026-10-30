@@ -1,35 +1,35 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-unsafe fn f1() {
+unsafe fn f1001() {
     std::process::abort();
 }
 
-unsafe fn f2(a0: *mut ::libc::c_void) {
+unsafe fn f1002(a0: *mut ::libc::c_void) {
     libcc2rs::free_unsafe(a0)
 }
 
-unsafe fn f3(a0: usize) -> *mut ::libc::c_void {
+unsafe fn f1003(a0: usize) -> *mut ::libc::c_void {
     libcc2rs::malloc_unsafe(a0)
 }
 
-unsafe fn f4(a0: *mut ::libc::c_void, a1: usize) -> *mut ::libc::c_void {
+unsafe fn f1004(a0: *mut ::libc::c_void, a1: usize) -> *mut ::libc::c_void {
     libcc2rs::realloc_unsafe(a0, a1)
 }
 
-unsafe fn f5(a0: usize, a1: usize) -> *mut ::libc::c_void {
+unsafe fn f1005(a0: usize, a1: usize) -> *mut ::libc::c_void {
     libcc2rs::calloc_unsafe(a0, a1)
 }
 
-unsafe fn f6(a0: *const libc::c_char) -> *mut libc::c_char {
+unsafe fn f1006(a0: *const libc::c_char) -> *mut libc::c_char {
     libc::getenv(a0)
 }
 
-unsafe fn f7(a0: *const libc::c_char, a1: *const libc::c_char, a2: i32) -> i32 {
+unsafe fn f1007(a0: *const libc::c_char, a1: *const libc::c_char, a2: i32) -> i32 {
     libc::setenv(a0, a1, a2)
 }
 
-unsafe fn f8(
+unsafe fn f1008(
     a0: *const ::libc::c_void,
     a1: *const ::libc::c_void,
     a2: usize,
@@ -48,7 +48,7 @@ unsafe fn f8(
     )
 }
 
-unsafe fn f9(
+unsafe fn f1009(
     a0: *mut ::libc::c_void,
     a1: usize,
     a2: usize,
@@ -65,7 +65,7 @@ unsafe fn f9(
     )
 }
 
-unsafe fn f10(a0: *const libc::c_char, a1: *mut libc::c_char) -> *mut libc::c_char {
+unsafe fn f1010(a0: *const libc::c_char, a1: *mut libc::c_char) -> *mut libc::c_char {
     libc::realpath(a0, a1)
 }
 

@@ -230,15 +230,11 @@ fn t33() -> isize {
 }
 
 unsafe fn f128<T1, T2>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
-    let __idx = a1 as usize;
-    let __v: &mut Vec<T1> = &mut a0;
-    __v.as_mut_ptr().add(__idx)
+    (&mut a0).as_mut_ptr().add(a1 as usize)
 }
 
 unsafe fn f129<T1, T2>(a0: &Vec<T1>, a1: usize) -> *const T1 {
-    let __idx = a1 as usize;
-    let __v: &Vec<T1> = &a0;
-    __v.as_ptr().add(__idx)
+    (&a0).as_ptr().add(a1 as usize)
 }
 
 unsafe fn f96<T1: Default, T2>(a0: usize, a1: T2) -> Vec<T1> {
@@ -255,11 +251,15 @@ unsafe fn f102<T1, T2>(a0: Vec<T1>, a1: T2) -> Vec<T1> {
     a0
 }
 
-unsafe fn f149<T1: Clone, T2, T3: UnsafeCppInputIterator<T1>>(a0: T3, a1: T3, a2: T2) -> Vec<T1> {
+unsafe fn f149<T1: CppFromUnsafe<T5>, T2, T3: UnsafeCppInputIterator<T5>, T4, T5>(
+    a0: T3,
+    a1: T3,
+    a2: T2,
+) -> Vec<T1> {
     let mut __v = Vec::new();
     let mut __it = a0;
     while __it != a1 {
-        __v.push((*__it.iter_deref()).clone());
+        __v.push(T1::cpp_from(__it.iter_deref()));
         __it.iter_inc();
     }
     __v

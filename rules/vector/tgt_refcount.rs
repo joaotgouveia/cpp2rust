@@ -142,11 +142,15 @@ fn f129<T1: ByteRepr + 'static, T2>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
     }
 }
 
-fn f149<T1: Clone + ByteRepr, T2, T3: CppInputIterator<T1>>(a0: T3, a1: T3, a2: T2) -> Vec<T1> {
+fn f149<T1: CppFrom<T5>, T2, T3: CppInputIterator<T5>, T4, T5: ByteRepr>(
+    a0: T3,
+    a1: T3,
+    a2: T2,
+) -> Vec<T1> {
     let mut __v = Vec::new();
     let mut __it = a0;
     while __it != a1 {
-        __v.push(__it.iter_deref().read());
+        __v.push(T1::cpp_from(__it.iter_deref()));
         __it.iter_inc();
     }
     __v
