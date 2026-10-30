@@ -392,11 +392,11 @@ TypeRuleMatch findType(clang::QualType use) {
   if (!best.rule_decl) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
-      best = findType(use.getCanonicalType());
-      if (!best.rule_decl) {
+      if (check_used_rules_) {
         unruled_typedefs_.push_back(spelled);
+        return best;
       }
-      return best;
+      return findType(use.getCanonicalType());
     }
   }
   return best;
