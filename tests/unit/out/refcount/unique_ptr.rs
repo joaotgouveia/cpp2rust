@@ -105,7 +105,11 @@ pub fn RndStuff_2() {
         assert!(((elem!(p2, i).read()) == 2));
         i.prefix_inc();
     }
-    let x3: Value<Option<Value<Box<[Pair]>>>> = Rc::new(RefCell::new(unimplemented!()));
+    let x3: Value<Option<Value<Box<[Pair]>>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
+        (0..10_usize)
+            .map(|_| <Pair>::default())
+            .collect::<Box<[_]>>(),
+    )))));
     let mut i: i32 = 0;
     'loop_: while (i < 10) {
         ((*x3.borrow()).as_pointer() as Ptr<Pair>)
@@ -164,7 +168,9 @@ pub fn RndStuff_2() {
     }
 }
 pub fn unique_ptr_that_wraps_container_3() {
-    let mut v: Option<Value<Box<[Vec<i8>]>>> = unimplemented!();
+    let mut v: Option<Value<Box<[Vec<i8>]>>> = Some(Rc::new(RefCell::new(
+        (0..2_usize).map(|_| vec![0]).collect::<Box<[_]>>(),
+    )));
     assert!(
         (((*(v.as_pointer() as Ptr<Vec<i8>>)
             .offset(0_usize as isize)

@@ -89,3 +89,9 @@ fn t6<T1>() -> Ptr<T1> {
 fn f14<T1, T2>(a0: Option<Value<T1>>, a1: AnyPtr) -> bool {
     a0.is_none()
 }
+
+fn f1<T1: CppArray<T2>, T2: Default>(a0: usize) -> Option<Value<Box<[T2]>>> {
+    Some(Rc::new(RefCell::new(
+        (0..a0).map(|_| <T2>::default()).collect::<Box<[_]>>(),
+    )))
+}

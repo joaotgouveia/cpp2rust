@@ -11,7 +11,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut g: Option<Value<Box<[i32]>>> = unimplemented!();
+    let mut g: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
+        (0..2_usize).map(|_| 0_i32).collect::<Box<[_]>>(),
+    )));
     (g.as_pointer() as Ptr<i32>)
         .offset(0_usize as isize)
         .write(11);

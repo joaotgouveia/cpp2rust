@@ -7,7 +7,9 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn All_0(arr: Ptr<Option<Value<Box<[i32]>>>>, mut N: i32, mut element: i32) {
-    let mut all: Option<Value<Box<[i32]>>> = unimplemented!();
+    let mut all: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
+        (0..(N as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
+    )));
     let mut i: i32 = 0;
     'loop_: while (i < N) {
         (all.as_pointer() as Ptr<i32>)
@@ -33,7 +35,9 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut N: i32 = 10;
-    let arr: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(unimplemented!()));
+    let arr: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
+        (0..(N as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
+    )))));
     ({ All_0(arr.as_pointer(), N, 1) });
     assert!((({ Consume_1((*arr.borrow_mut()).take(), N,) }) == 10));
     return 0;

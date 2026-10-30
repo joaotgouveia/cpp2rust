@@ -156,7 +156,8 @@ unsigned iteratorOverGeneric(
   for (unsigned i = 0; i < generics.size(); ++i) {
     for (const auto &bound : generics[i]) {
       llvm::StringRef trait = bound.trait_name;
-      if ((trait.ends_with("Iterator") || trait == "CppAllocator") &&
+      if ((trait.ends_with("Iterator") || trait == "CppAllocator" ||
+           trait == "CppArray") &&
           llvm::is_contained(bound.args, n)) {
         return i + 1;
       }
@@ -550,6 +551,9 @@ clang::QualType iteratorValueType(clang::QualType iterator) {
   if (iterator->isPointerType()) {
     return iterator->getPointeeType().getUnqualifiedType();
   }
+  if (auto *array = sema_->Context.getAsArrayType(iterator)) {
+    return array->getElementType().getUnqualifiedType();
+  }
   auto *record = iterator->getAsCXXRecordDecl();
   assert(record && sema_->isCompleteType(clang::SourceLocation(), iterator) &&
          "iterator is not a complete class");
@@ -567,6 +571,9 @@ clang::QualType iteratorElementType(clang::ASTContext &ctx,
   iterator = iterator.getNonReferenceType().getUnqualifiedType();
   if (iterator->isPointerType()) {
     return iterator->getPointeeType().getUnqualifiedType();
+  }
+  if (auto *array = ctx.getAsArrayType(iterator)) {
+    return array->getElementType().getUnqualifiedType();
   }
   auto [rule, bindings] = Search(ctx, iterator);
   assert(rule && "iterator has no type rule");

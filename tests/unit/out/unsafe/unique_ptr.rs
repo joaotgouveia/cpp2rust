@@ -165,7 +165,11 @@ pub unsafe fn RndStuff_2() {
         assert!(((*p2.offset((i) as isize)) == (2)));
         i.prefix_inc();
     }
-    let mut x3: Option<Box<[Pair]>> = unimplemented!();
+    let mut x3: Option<Box<[Pair]>> = Some(
+        (0..10_usize)
+            .map(|_| <Pair>::default())
+            .collect::<Box<[_]>>(),
+    );
     let mut i: i32 = 0;
     'loop_: while ((i) < (10)) {
         (*x3.as_deref()
@@ -231,7 +235,8 @@ pub unsafe fn RndStuff_2() {
     }
 }
 pub unsafe fn unique_ptr_that_wraps_container_3() {
-    let mut v: Option<Box<[Vec<libc::c_char>]>> = unimplemented!();
+    let mut v: Option<Box<[Vec<libc::c_char>]>> =
+        Some((0..2_usize).map(|_| vec![0]).collect::<Box<[_]>>());
     assert!(
         (((*v
             .as_deref()

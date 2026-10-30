@@ -249,9 +249,17 @@ pub unsafe fn AllocMinHeap_1(mut capacity: i32) -> Option<Box<MinHeap>> {
     let mut minHeap: Option<Box<MinHeap>> = Some(Box::new(MinHeap {
         size: 0,
         capacity: capacity,
-        arr: unimplemented!(),
+        arr: Some(
+            (0..(capacity as usize))
+                .map(|_| std::ptr::null_mut())
+                .collect::<Box<[_]>>(),
+        ),
         next: 0,
-        alloc: unimplemented!(),
+        alloc: Some(
+            (0..10000_usize)
+                .map(|_| <MinHeapNode>::default())
+                .collect::<Box<[_]>>(),
+        ),
     }));
     return minHeap.take();
 }
@@ -414,8 +422,8 @@ pub unsafe fn HuffmanCodes_5(
             })),
         )
     });
-    let mut arr: Option<Box<[i32]>> = unimplemented!();
-    let mut out: Option<Box<[i32]>> = unimplemented!();
+    let mut arr: Option<Box<[i32]>> = Some((0..100_usize).map(|_| 0_i32).collect::<Box<[_]>>());
+    let mut out: Option<Box<[i32]>> = Some((0..100_usize).map(|_| 0_i32).collect::<Box<[_]>>());
     let mut top: i32 = 0;
     let mut next: i32 = 0;
     (unsafe { CollectCodes_4(root, &mut arr, top, &mut out, &mut next) });
@@ -438,8 +446,13 @@ unsafe fn main_0() -> i32 {
         ('f' as libc::c_char),
     ];
     let mut arr2: [i32; 6] = [5, 9, 12, 13, 16, 45];
-    let mut data: Option<Box<[libc::c_char]>> = unimplemented!();
-    let mut freq: Option<Box<[i32]>> = unimplemented!();
+    let mut data: Option<Box<[libc::c_char]>> = Some(
+        (0..(size as usize))
+            .map(|_| (0 as libc::c_char))
+            .collect::<Box<[_]>>(),
+    );
+    let mut freq: Option<Box<[i32]>> =
+        Some((0..(size as usize)).map(|_| 0_i32).collect::<Box<[_]>>());
     let mut i: i32 = 0;
     'loop_: while ((i) < (size)) {
         (*data

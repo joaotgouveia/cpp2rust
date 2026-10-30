@@ -194,8 +194,16 @@ pub fn MSTKruskal_2(graph: Ptr<Graph>) -> f64 {
         quicksort_1(_arr, 0, _end)
     });
     let set: Value<DisjointSet> = Rc::new(RefCell::new(DisjointSet {
-        rank: unimplemented!(),
-        parent: unimplemented!(),
+        rank: Some(Rc::new(RefCell::new(
+            (0..(graph.with(|__s| __s.V) as usize))
+                .map(|_| 0_i32)
+                .collect::<Box<[_]>>(),
+        ))),
+        parent: Some(Rc::new(RefCell::new(
+            (0..(graph.with(|__s| __s.V) as usize))
+                .map(|_| 0_i32)
+                .collect::<Box<[_]>>(),
+        ))),
         n: graph.with(|__s| __s.V),
     }));
     ({ DisjointSetImpl::makeSet(&set.as_pointer()) });
@@ -229,7 +237,11 @@ fn main_0() -> i32 {
     let mut V: i32 = 4;
     let mut E: i32 = 5;
     let graph: Value<Graph> = Rc::new(RefCell::new(Graph {
-        edges: unimplemented!(),
+        edges: Some(Rc::new(RefCell::new(
+            (0..(E as usize))
+                .map(|_| <Edge>::default())
+                .collect::<Box<[_]>>(),
+        ))),
         V: V,
         E: E,
     }));

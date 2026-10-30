@@ -11,12 +11,19 @@ pub fn matalloc_0(
     mut p: i32,
     mut e: i32,
 ) -> Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> {
-    let mut m: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = unimplemented!();
+    let mut m: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = Some(Rc::new(RefCell::new(
+        (0..(n as usize)).map(|_| None).collect::<Box<[_]>>(),
+    )));
     let mut i: i32 = 0;
     'loop_: while (i < n) {
         (m.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)
             .offset((i as usize) as isize)
-            .write(unimplemented!().take());
+            .write(
+                Some(Rc::new(RefCell::new(
+                    (0..(p as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
+                )))
+                .take(),
+            );
         let mut j: i32 = 0;
         'loop_: while (j < p) {
             ((*(m.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)

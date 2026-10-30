@@ -1,6 +1,8 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
+use libcc2rs::*;
+
 unsafe fn f2<T1>(init: T1) -> Option<Box<T1>> {
     Some(Box::new(init))
 }
@@ -94,4 +96,8 @@ fn t6<T1>() -> *mut T1 {
 
 unsafe fn f14<T1, T2>(a0: &mut Option<Box<T1>>, a1: *mut ::libc::c_void) -> bool {
     a0.is_none()
+}
+
+unsafe fn f1<T1: CppArray<T2>, T2: Default>(a0: usize) -> Option<Box<[T2]>> {
+    Some((0..a0).map(|_| <T2>::default()).collect::<Box<[_]>>())
 }
