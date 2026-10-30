@@ -36,15 +36,19 @@ using t15 = typename std::vector<bool, T1>::iterator::reference;
 template <typename T1>
 using t16 = typename std::vector<bool, T1>::const_iterator::reference;
 
-std::vector<bool> f38(std::size_t n, const bool &value) {
-  return std::vector<bool>(n, value);
+template <typename T1>
+std::vector<bool, T1> f38(std::size_t n, const bool &value) {
+  return std::vector<bool, T1>(n, value);
 }
 
-template <class T1, std::size_t T2> const T1 *f40(T1 const (&a0)[T2]) {
+template <typename T1, std::size_t T2> const T1 *f40(T1 const (&a0)[T2]) {
   return std::end(a0);
 }
 
-bool f47(const std::vector<bool>::reference &o) { return o; }
+template <typename T1>
+bool f47(const typename std::vector<bool, T1>::reference &o) {
+  return o;
+}
 
 template <typename T1, typename T2 = std::allocator<T1>>
 typename std::vector<T1, T2>::iterator
