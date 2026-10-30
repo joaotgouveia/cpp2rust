@@ -68,6 +68,8 @@ pub struct TypeInfo {
     pub is_refcount_pointer: bool,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_unsafe_pointer: bool,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_projection: bool,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub derives: Vec<String>,
 }
@@ -85,6 +87,8 @@ pub struct FnIr {
     pub return_type: Option<TypeInfo>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_extern: Option<bool>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub init_generic: Option<i32>,
 }
 
 impl FnIr {

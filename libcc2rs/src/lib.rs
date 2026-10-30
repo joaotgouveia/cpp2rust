@@ -83,6 +83,9 @@ pub use rules::*;
 mod io;
 pub use io::*;
 
+mod ios;
+pub use ios::*;
+
 mod alloc;
 pub use alloc::*;
 

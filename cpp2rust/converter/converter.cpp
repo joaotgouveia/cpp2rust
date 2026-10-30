@@ -133,6 +133,7 @@ Converter::GetTemplateArgumentAsString(const clang::TemplateArgument &arg) {
   case clang::TemplateArgument::Type:
     return GetUnboxedTypeAsString(arg.getAsType());
   case clang::TemplateArgument::Integral:
+    return std::string(GetNumAsString(arg.getAsIntegral()));
   case clang::TemplateArgument::NullPtr:
   case clang::TemplateArgument::Declaration:
   case clang::TemplateArgument::StructuralValue: {
@@ -3049,12 +3050,7 @@ std::string Converter::ConvertDeclRef(clang::Expr *expr,
   }
 
   if (auto *function = decl->getAsFunction()) {
-    if (auto method = clang::dyn_cast<clang::CXXMethodDecl>(function)) {
-      if (method->isStatic()) {
-        return GetFunctionRefName(method);
-      }
-    }
-    return GetNamedDeclAsString(function->getCanonicalDecl());
+    return GetFunctionRefName(function);
   }
 
   if (auto enum_constant = clang::dyn_cast<clang::EnumConstantDecl>(decl)) {
@@ -5379,7 +5375,7 @@ bool Converter::isCallee() const {
 
 bool Converter::ShouldReplaceWithMappedBody(
     const clang::ValueDecl *decl) const {
-  return !clang::isa<clang::FunctionDecl>(decl) || !isAddrOf();
+  return !clang::isa<clang::FunctionDecl>(decl) || (!isAddrOf() && !isCallee());
 }
 
 void Converter::EmitFresh(std::string_view str) {

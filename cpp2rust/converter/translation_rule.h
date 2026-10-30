@@ -94,6 +94,7 @@ struct TypeInfo {
   std::string type;
   bool is_refcount_pointer = false;
   bool is_unsafe_pointer = false;
+  bool is_projection = false;
 
   bool is_pointer() const { return is_refcount_pointer || is_unsafe_pointer; }
 
@@ -107,6 +108,7 @@ struct ExprRule {
   std::vector<BodyFragment> body;
   bool multi_statement = false;
   bool is_extern = false;
+  unsigned init_generic = 0; // Tn naming the constructed type, when no Init<T, Args>
 
   void dump() const;
   bool usesInit() const;

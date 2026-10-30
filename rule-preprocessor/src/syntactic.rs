@@ -42,6 +42,15 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
     flags
 }
 
+/// Whether the type names an associated type through a `<X as Trait>::` anchor,
+/// which the converter cannot compare with the C++ type textually.
+fn is_projection(ty: &ast::Type) -> bool {
+    ty.syntax()
+        .descendants()
+        .filter_map(ast::PathSegment::cast)
+        .any(|segment| segment.as_token().is_some())
+}
+
 fn is_va_args_type(ty: &ast::Type) -> bool {
     if let ast::Type::PathType(boxed) = ty
         && let Some(segment) = boxed.path().and_then(|p| p.segment())
@@ -408,6 +417,7 @@ impl<'a> FnIrBuilder<'a> {
                 ty: ty_str,
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                is_projection: is_projection(&ty),
                 derives: Vec::new(),
             })
         }
@@ -449,9 +459,16 @@ impl<'a> FnIrBuilder<'a> {
 
         if let Some(gpl) = self.fn_item.generic_param_list() {
             for param in gpl.generic_params() {
-                if let ast::GenericParam::TypeParam(tp) = param {
-                    let name = tp.name().map(|n| n.text().to_string()).unwrap_or_default();
-                    generics.insert(name, extract_bounds(tp.type_bound_list()));
+                match param {
+                    ast::GenericParam::TypeParam(tp) => {
+                        let name = tp.name().map(|n| n.text().to_string()).unwrap_or_default();
+                        generics.insert(name, extract_bounds(tp.type_bound_list()));
+                    }
+                    ast::GenericParam::ConstParam(cp) => {
+                        let name = cp.name().map(|n| n.text().to_string()).unwrap_or_default();
+                        generics.insert(name, Vec::new());
+                    }
+                    _ => {}
                 }
             }
         }
@@ -624,6 +641,7 @@ impl<'a> FnIrBuilder<'a> {
                         ty: p.ty.clone(),
                         is_refcount_pointer: p.is_refcount_pointer,
                         is_unsafe_pointer: p.is_unsafe_pointer,
+                        is_projection: false,
                         derives: Vec::new(),
                     },
                 )
@@ -645,6 +663,17 @@ impl<'a> FnIrBuilder<'a> {
         });
 
         let body = self.body_fragments(&params, &generic_names);
+        let init_generic = params
+            .iter()
+            .find(|p| p.is_init)
+            .map(|p| {
+                assert!(
+                    generic_names.contains(&p.ty),
+                    "init parameter must be typed by a generic, got {}",
+                    p.ty
+                );
+                p.ty[1..].parse().expect("generic name is T<n>")
+            });
 
         let ir = FnIr {
             params: if params_map.is_empty() {
@@ -661,6 +690,7 @@ impl<'a> FnIrBuilder<'a> {
             multi_statement,
             body,
             is_extern: self.is_extern().then_some(true),
+            init_generic,
         };
         ir.validate(&format!("{}:{}", path.display(), fn_name));
         ir
@@ -735,6 +765,7 @@ impl<'a> TypeIrBuilder<'a> {
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                is_projection: false,
                 derives: Vec::new(),
             },
         }

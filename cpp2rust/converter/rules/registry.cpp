@@ -86,6 +86,26 @@ clang::QualType getInitPattern(const clang::FunctionDecl *rule) {
   return alias->template_arguments()[0].getAsType();
 }
 
+clang::QualType getInitPattern(const clang::FunctionDecl *rule,
+                               const TranslationRule::ExprRule &ir) {
+  auto pattern = getInitPattern(rule);
+  if (!pattern.isNull() || !ir.init_generic) {
+    return pattern;
+  }
+  auto tmpl = rule->getDescribedFunctionTemplate();
+  if (!tmpl) {
+    return {};
+  }
+  for (auto param : *tmpl->getTemplateParameters()) {
+    if (auto type_param = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param);
+        type_param &&
+        param->getName() == std::format("T{}", ir.init_generic)) {
+      return rule->getASTContext().getTypeDeclType(type_param);
+    }
+  }
+  return {};
+}
+
 void collectGenerics(const std::vector<TranslationRule::BodyFragment> &body,
                      std::unordered_set<unsigned> &used) {
   TranslationRule::AnyFragment(body, [&](const TranslationRule::BodyFragment
@@ -168,10 +188,11 @@ void checkGenerics(const std::string &dir, const std::string &name,
       llvm::report_fatal_error("Absent generic from src");
     }
   }
-  if (rule.usesInit() && getInitPattern(decl).isNull()) {
+  if (rule.usesInit() && getInitPattern(decl, rule).isNull()) {
     llvm::errs() << dir << "::" << name << '\n';
     llvm::report_fatal_error("Expr rule uses init but its src pack is not "
-                             "declared as Init<T, Args>");
+                             "declared as Init<T, Args> and its init "
+                             "parameter is not a generic");
   }
 }
 
@@ -570,7 +591,7 @@ clang::QualType GetInitType(const clang::Expr *expr) {
   auto match = findExpr(expr);
   assert(match.rule_decl && "expression must have a translation rule");
   auto function = match.rule_decl->decl->getAsFunction();
-  auto pattern = getInitPattern(function);
+  auto pattern = getInitPattern(function, match.rule_decl->rule);
   assert(!pattern.isNull() && "rule has no Init<T, Args> pack");
   clang::MultiLevelTemplateArgumentList args(
       function->getDescribedFunctionTemplate(), match.args, /*Final=*/false);

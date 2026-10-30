@@ -24,6 +24,8 @@ TypeInfo ParseTypeInfoJSON(const llvm::json::Object &obj) {
     info.is_refcount_pointer = *v;
   if (auto v = obj.getBoolean("is_unsafe_pointer"))
     info.is_unsafe_pointer = *v;
+  if (auto v = obj.getBoolean("is_projection"))
+    info.is_projection = *v;
   assert(!(info.is_refcount_pointer && info.is_unsafe_pointer));
   if (auto *arr = obj.getArray("derives")) {
     for (const auto &elem : *arr) {
@@ -345,6 +347,10 @@ ExprRule ParseExprRuleJSON(const llvm::json::Object &obj) {
 
   if (auto ms = obj.getBoolean("multi_statement")) {
     ir.multi_statement = *ms;
+  }
+
+  if (auto v = obj.getInteger("init_generic")) {
+    ir.init_generic = *v;
   }
 
   if (auto v = obj.getBoolean("is_extern")) {

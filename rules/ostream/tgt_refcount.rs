@@ -20,3 +20,15 @@ fn f11<T1>(a0: Ptr<::std::fs::File>, a1: u8) -> Ptr<::std::fs::File> {
     let _ = __s.write_all(&[a1]);
     __s
 }
+
+fn f2<T1, T2>(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
+    endl_refcount(a0)
+}
+
+fn f3<T1, T2>(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
+    ends_refcount(a0)
+}
+
+fn f4<T1, T2>(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
+    flush_refcount(a0)
+}

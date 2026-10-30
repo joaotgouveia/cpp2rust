@@ -440,8 +440,11 @@ std::string ConverterRefCount::ConvertElementPtr(clang::Expr *arg) {
 
 void ConverterRefCount::CheckRuleReturnType(clang::Expr *expr) {
   auto *call = clang::dyn_cast<clang::CallExpr>(expr);
-  if (!call ||
-      !RuleRegistry::GetExprRule(ctx_, expr)->return_type.is_refcount_pointer) {
+  if (!call) {
+    return;
+  }
+  auto &return_type = RuleRegistry::GetExprRule(ctx_, expr)->return_type;
+  if (!return_type.is_refcount_pointer || return_type.is_projection) {
     return;
   }
   // A reference is returned as a pointer. The library may spell the pointer
