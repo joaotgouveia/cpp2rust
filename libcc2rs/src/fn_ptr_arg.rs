@@ -157,6 +157,26 @@ impl<T: ?Sized + 'static> FnPtrArg for *const T {
     }
 }
 
+// Library values (std::pair, std::string, std::vector and comparison
+// categories) are passed as records are.
+macro_rules! impl_fn_ptr_arg_record {
+    (<$($g:ident),*> $ty:ty) => {
+        impl<$($g: 'static),*> FnPtrArg for $ty {
+            #[inline]
+            fn to_repr(self) -> ArgRepr {
+                ArgRepr::Record(Box::new(self))
+            }
+            fn from_repr(r: ArgRepr) -> Self {
+                record_from_repr(r)
+            }
+        }
+    };
+}
+
+impl_fn_ptr_arg_record!(<A, B> (A, B));
+impl_fn_ptr_arg_record!(<T> Vec<T>);
+impl_fn_ptr_arg_record!(<> std::cmp::Ordering);
+
 macro_rules! impl_fn_ptr_arg_unsafe_fn {
     () => {
         impl_fn_ptr_arg_unsafe_fn!(@gen A B C D E F G H I J K L M N O P Q S T U V W X Y);
