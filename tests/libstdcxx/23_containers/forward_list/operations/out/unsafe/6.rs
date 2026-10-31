@@ -272,6 +272,11 @@ impl Comp_int_ {
         return (((self.n) * (i)) < ((self.n) * (j)));
     }
 }
+impl Callable2<i32, i32, bool> for Comp_int_ {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { Comp_int_::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
 pub unsafe fn test01_9() {
     let n: u32 = 13_u32;
     let mut order: [[i32; 13]; 3] = [

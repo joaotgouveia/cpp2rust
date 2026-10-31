@@ -304,6 +304,11 @@ impl PathPointHasher {
         return ((unsafe { PathPoint::getType(&(*__pp)) }) as usize);
     }
 }
+impl Callable1<*const PathPoint, usize> for PathPointHasher {
+    fn call(&self, a1: *const PathPoint) -> usize {
+        unsafe { PathPointHasher::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct PathPointEqual {}
@@ -311,6 +316,11 @@ impl PathPointEqual {
     pub unsafe fn operator_call(&self, __lhs: *const PathPoint, __rhs: *const PathPoint) -> bool {
         return (((unsafe { PathPoint::getType(&(*__lhs)) }) as i32)
             == ((unsafe { PathPoint::getType(&(*__rhs)) }) as i32));
+    }
+}
+impl Callable2<*const PathPoint, *const PathPoint, bool> for PathPointEqual {
+    fn call(&self, a1: *const PathPoint, a2: *const PathPoint) -> bool {
+        unsafe { PathPointEqual::operator_call(self, a1, a2) }
     }
 }
 pub unsafe fn test01_9() {

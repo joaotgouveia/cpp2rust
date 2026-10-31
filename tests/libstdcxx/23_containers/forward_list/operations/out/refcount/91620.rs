@@ -209,6 +209,20 @@ impl PredLWG526 {
         Self { i_: i }
     }
 }
+impl Callable1<Ptr<PredLWG526>, bool> for PredLWG526 {
+    fn call(&self, a1: Ptr<PredLWG526>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            PredLWG526Impl::operator_call_3(__it, a1)
+        })
+    }
+}
+impl Callable2<Ptr<PredLWG526>, Ptr<PredLWG526>, bool> for PredLWG526 {
+    fn call(&self, a1: Ptr<PredLWG526>, a2: Ptr<PredLWG526>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            PredLWG526Impl::operator_call_5(__it, a1, a2)
+        })
+    }
+}
 pub fn test01_9() {
     let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 1, 3, 5, 8, 11])));
     let mut a2: [i32; 5] = [2, 3, 5, 8, 11];

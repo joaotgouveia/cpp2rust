@@ -96,6 +96,41 @@ pub fn constexpr_sum_fn_19(mut x1: i32, mut rest_1: i64, mut rest_2: i32) -> i32
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ConstexprSumT {}
+impl Callable0<i32> for ConstexprSumT {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            ConstexprSumTImpl::operator_call_2(__it)
+        })
+    }
+}
+impl Callable1<i32, i32> for ConstexprSumT {
+    fn call(&self, a1: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            ConstexprSumTImpl::operator_call_2_int(__it, a1)
+        })
+    }
+}
+impl Callable2<i32, i64, i32> for ConstexprSumT {
+    fn call(&self, a1: i32, a2: i64) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            ConstexprSumTImpl::operator_call_2_int_long(__it, a1, a2)
+        })
+    }
+}
+impl Callable3<i32, i64, i32, i32> for ConstexprSumT {
+    fn call(&self, a1: i32, a2: i64, a3: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            ConstexprSumTImpl::operator_call_2_int_long_int(__it, a1, a2, a3)
+        })
+    }
+}
+impl Callable3<i32, i32, i32, i32> for ConstexprSumT {
+    fn call(&self, a1: i32, a2: i32, a3: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            ConstexprSumTImpl::operator_call_2_int_int_int(__it, a1, a2, a3)
+        })
+    }
+}
 pub fn test_constexpr_evaluation_20() {
     let mut sum_obj: ConstexprSumT = <ConstexprSumT>::default();
     {
@@ -339,6 +374,88 @@ pub fn makeCallInfo_24(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TrackedCallable {}
+impl
+    Callable3<
+        Ptr<i32>,
+        Ptr<i32>,
+        Ptr<u32>,
+        CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: Ptr<i32>,
+        a2: Ptr<i32>,
+        a3: Ptr<u32>,
+    ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TrackedCallableImpl::operator_call_2_int_ref_const_int_ref_unsigned_int_ref(
+                __it, a1, a2, a3,
+            )
+        })
+    }
+}
+impl
+    Callable3<
+        Ptr<i32>,
+        Ptr<i32>,
+        Ptr<u32>,
+        CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: Ptr<i32>,
+        a2: Ptr<i32>,
+        a3: Ptr<u32>,
+    ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TrackedCallableImpl::operator_call_2_const_int_ref_const_int_ref_unsigned_int_ref(
+                __it, a1, a2, a3,
+            )
+        })
+    }
+}
+impl
+    Callable3<
+        Ptr<i32>,
+        Ptr<i32>,
+        Ptr<u32>,
+        CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: Ptr<i32>,
+        a2: Ptr<i32>,
+        a3: Ptr<u32>,
+    ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TrackedCallableImpl::operator_call_2_int_const_int_ref_unsigned_int(__it, a1, a2, a3)
+        })
+    }
+}
+impl
+    Callable3<
+        Ptr<i32>,
+        Ptr<i32>,
+        Ptr<u32>,
+        CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: Ptr<i32>,
+        a2: Ptr<i32>,
+        a3: Ptr<u32>,
+    ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TrackedCallableImpl::operator_call_2_const_int_const_int_ref_unsigned_int(
+                __it, a1, a2, a3,
+            )
+        })
+    }
+}
 pub fn check_apply_quals_and_types_25(t: Ptr<()>) {
     let mut expect_args: Ptr<TypeID> = ({ makeArgumentID_10() });
     let obj: Value<TrackedCallable> = Rc::new(RefCell::new(<TrackedCallable>::default()));
@@ -501,9 +618,34 @@ impl Clone for NothrowMoveable {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestNoexceptCallable_true_ {}
+impl Callable3<i32, Ptr<i8>, i64, NothrowMoveable> for TestNoexceptCallable_true_ {
+    fn call(&self, a1: i32, a2: Ptr<i8>, a3: i64) -> NothrowMoveable {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestNoexceptCallable_true_Impl::operator_call_1_int_const_char_ptr_long(
+                __it, a1, a2, a3,
+            )
+        })
+    }
+}
+impl Callable2<NothrowMoveable, i32, NothrowMoveable> for TestNoexceptCallable_true_ {
+    fn call(&self, a1: NothrowMoveable, a2: i32) -> NothrowMoveable {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestNoexceptCallable_true_Impl::operator_call_1_struct_NothrowMoveable_int(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestNoexceptCallable_false_ {}
+impl Callable3<i32, Ptr<i8>, i64, NothrowMoveable> for TestNoexceptCallable_false_ {
+    fn call(&self, a1: i32, a2: Ptr<i8>, a3: i64) -> NothrowMoveable {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestNoexceptCallable_false_Impl::operator_call_1_int_const_char_ptr_long(
+                __it, a1, a2, a3,
+            )
+        })
+    }
+}
 pub fn test_noexcept_30() {
     let mut nec: TestNoexceptCallable_true_ = <TestNoexceptCallable_true_>::default();
     let mut tc: TestNoexceptCallable_false_ = <TestNoexceptCallable_false_>::default();

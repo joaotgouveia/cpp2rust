@@ -86,6 +86,11 @@ impl Hash {
         return 0_usize;
     }
 }
+impl Callable1<*const TemplateConstructor, usize> for Hash {
+    fn call(&self, a1: *const TemplateConstructor) -> usize {
+        unsafe { Hash::operator_call(self, a1) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

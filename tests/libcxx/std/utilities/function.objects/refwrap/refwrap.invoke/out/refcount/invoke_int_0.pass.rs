@@ -15,6 +15,11 @@ pub fn f_int_0_1() -> i32 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_0 {}
+impl Callable0<i32> for A_int_0 {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| A_int_0Impl::operator_call(__it))
+    }
+}
 pub fn test_int_0_2() {
     {
         let mut r1: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(f_int_0_1);
@@ -38,6 +43,13 @@ pub fn f_void_1_3(mut i: i32) {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_void_1 {}
+impl Callable1<i32, ()> for A_void_1 {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            A_void_1Impl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

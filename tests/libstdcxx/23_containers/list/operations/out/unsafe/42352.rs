@@ -301,6 +301,11 @@ impl compare_12 {
         return ((*one) > (*two));
     }
 }
+impl Callable2<*const i32, *const i32, bool> for compare_12 {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { compare_12::operator_call(self, a1, a2) }
+    }
+}
 static mut nn_13: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 9 });
 pub fn main() {
     unsafe {

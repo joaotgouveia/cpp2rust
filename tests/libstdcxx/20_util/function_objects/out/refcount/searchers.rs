@@ -662,6 +662,20 @@ impl anon_12 {
         } as u8);
     }
 }
+impl Callable2<i8, i8, bool> for anon_12 {
+    fn call(&self, a1: i8, a2: i8) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            anon_12Impl::operator_call_2(__it, a1, a2)
+        })
+    }
+}
+impl Callable1<i8, usize> for anon_12 {
+    fn call(&self, a1: i8) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            anon_12Impl::operator_call_3(__it, a1)
+        })
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

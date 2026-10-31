@@ -44,6 +44,11 @@ impl std::cmp::PartialEq for test_equal_to_int_ {
     }
 }
 impl std::cmp::Eq for test_equal_to_int_ {}
+impl Callable2<*const i32, *const i32, bool> for test_equal_to_int_ {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { test_equal_to_int_::operator_call(self, a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_hash_int_ {
@@ -68,6 +73,11 @@ impl std::cmp::PartialEq for test_hash_int_ {
     }
 }
 impl std::cmp::Eq for test_hash_int_ {}
+impl Callable1<*const i32, usize> for test_hash_int_ {
+    fn call(&self, a1: *const i32) -> usize {
+        unsafe { test_hash_int_::operator_call(self, a1) }
+    }
+}
 impl Default for test_hash_int_ {
     fn default() -> Self {
         unsafe { test_hash_int_::new(None) }

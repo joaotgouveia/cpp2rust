@@ -264,12 +264,22 @@ impl pair_hash {
         return unimplemented!();
     }
 }
+impl Callable1<*const (i32, i32), usize> for pair_hash {
+    fn call(&self, a1: *const (i32, i32)) -> usize {
+        unsafe { pair_hash::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct pair_equal_to {}
 impl pair_equal_to {
     pub unsafe fn operator_call(&self, x: *const (i32, i32), y: *const (i32, i32)) -> bool {
         return (((*x).0) == ((*y).0));
+    }
+}
+impl Callable2<*const (i32, i32), *const (i32, i32), bool> for pair_equal_to {
+    fn call(&self, a1: *const (i32, i32), a2: *const (i32, i32)) -> bool {
+        unsafe { pair_equal_to::operator_call(self, a1, a2) }
     }
 }
 pub unsafe fn test01_9() {

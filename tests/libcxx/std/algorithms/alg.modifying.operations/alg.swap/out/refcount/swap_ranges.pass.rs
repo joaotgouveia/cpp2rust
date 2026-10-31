@@ -620,11 +620,35 @@ impl forward_iterator_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_13(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_int_ptr_ {}
 impl CppAdvance for forward_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i32> for forward_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_int_ptr_ {}
 pub fn operator_ne_15(
     x: Ptr<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -662,10 +686,43 @@ impl forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_15(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {}
 impl CppAdvance for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
+}
+impl CppIterator<Option<Value<i32>>>
+    for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
+    fn iter_deref(&self) -> Ptr<Option<Value<i32>>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_deref(
+                __it,
+            )
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_inc_6(
+                __it,
+            );
+        });
+        self
+    }
+}
+impl CppInputIterator<Option<Value<i32>>>
+    for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
 }
 pub fn operator_ne_17(
     x: Ptr<forward_iterator_std_array_int__2__ptr_>,
@@ -697,11 +754,35 @@ impl forward_iterator_std_array_int__2__ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_std_array_int__2__ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_17(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_std_array_int__2__ptr_ {}
 impl CppAdvance for forward_iterator_std_array_int__2__ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<Vec<i32>> for forward_iterator_std_array_int__2__ptr_ {
+    fn iter_deref(&self) -> Ptr<Vec<i32>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_std_array_int__2__ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_std_array_int__2__ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Vec<i32>> for forward_iterator_std_array_int__2__ptr_ {}
 pub fn operator_ne_18(
     x: Ptr<forward_iterator_std_array_int__3__ptr_>,
     y: Ptr<forward_iterator_std_array_int__3__ptr_>,
@@ -732,11 +813,35 @@ impl forward_iterator_std_array_int__3__ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_std_array_int__3__ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_18(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_std_array_int__3__ptr_ {}
 impl CppAdvance for forward_iterator_std_array_int__3__ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<Vec<i32>> for forward_iterator_std_array_int__3__ptr_ {
+    fn iter_deref(&self) -> Ptr<Vec<i32>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_std_array_int__3__ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_std_array_int__3__ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Vec<i32>> for forward_iterator_std_array_int__3__ptr_ {}
 pub fn operator_ne_19(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
@@ -770,11 +875,35 @@ impl bidirectional_iterator_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_19(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_int_ptr_ {}
 impl CppAdvance for bidirectional_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i32> for bidirectional_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_int_ptr_ {}
 pub fn operator_ne_21(
     x: Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -812,10 +941,41 @@ impl bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq
+    for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_21(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {}
 impl CppAdvance for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
+}
+impl CppIterator<Option<Value<i32>>>
+    for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
+    fn iter_deref(&self) -> Ptr<Option<Value<i32>>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Option<Value<i32>>>
+    for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
 }
 pub fn operator_ne_23(
     x: Ptr<bidirectional_iterator_std_array_int__2__ptr_>,
@@ -847,11 +1007,35 @@ impl bidirectional_iterator_std_array_int__2__ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_std_array_int__2__ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_23(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_std_array_int__2__ptr_ {}
 impl CppAdvance for bidirectional_iterator_std_array_int__2__ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<Vec<i32>> for bidirectional_iterator_std_array_int__2__ptr_ {
+    fn iter_deref(&self) -> Ptr<Vec<i32>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_std_array_int__2__ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_std_array_int__2__ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Vec<i32>> for bidirectional_iterator_std_array_int__2__ptr_ {}
 pub fn operator_ne_24(
     x: Ptr<bidirectional_iterator_std_array_int__3__ptr_>,
     y: Ptr<bidirectional_iterator_std_array_int__3__ptr_>,
@@ -882,11 +1066,35 @@ impl bidirectional_iterator_std_array_int__3__ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_std_array_int__3__ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_24(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_std_array_int__3__ptr_ {}
 impl CppAdvance for bidirectional_iterator_std_array_int__3__ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<Vec<i32>> for bidirectional_iterator_std_array_int__3__ptr_ {
+    fn iter_deref(&self) -> Ptr<Vec<i32>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_std_array_int__3__ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_std_array_int__3__ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Vec<i32>> for bidirectional_iterator_std_array_int__3__ptr_ {}
 pub fn operator_ne_25(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
@@ -920,11 +1128,35 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_25(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
 impl CppAdvance for random_access_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<i32> for random_access_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_int_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for random_access_iterator_int_ptr_ {}
 pub fn operator_ne_27(
     x: Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -962,10 +1194,41 @@ impl random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq
+    for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_27(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {}
 impl CppAdvance for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
+}
+impl CppIterator<Option<Value<i32>>>
+    for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
+    fn iter_deref(&self) -> Ptr<Option<Value<i32>>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Option<Value<i32>>>
+    for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
 }
 pub fn operator_ne_29(
     x: Ptr<random_access_iterator_std_array_int__2__ptr_>,
@@ -997,11 +1260,35 @@ impl random_access_iterator_std_array_int__2__ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_std_array_int__2__ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_29(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_std_array_int__2__ptr_ {}
 impl CppAdvance for random_access_iterator_std_array_int__2__ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<Vec<i32>> for random_access_iterator_std_array_int__2__ptr_ {
+    fn iter_deref(&self) -> Ptr<Vec<i32>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_std_array_int__2__ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_std_array_int__2__ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Vec<i32>> for random_access_iterator_std_array_int__2__ptr_ {}
 pub fn operator_ne_30(
     x: Ptr<random_access_iterator_std_array_int__3__ptr_>,
     y: Ptr<random_access_iterator_std_array_int__3__ptr_>,
@@ -1032,11 +1319,35 @@ impl random_access_iterator_std_array_int__3__ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_std_array_int__3__ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_30(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_std_array_int__3__ptr_ {}
 impl CppAdvance for random_access_iterator_std_array_int__3__ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<Vec<i32>> for random_access_iterator_std_array_int__3__ptr_ {
+    fn iter_deref(&self) -> Ptr<Vec<i32>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_std_array_int__3__ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_std_array_int__3__ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Vec<i32>> for random_access_iterator_std_array_int__3__ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -1092,11 +1403,35 @@ impl contiguous_iterator_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_31(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for contiguous_iterator_int_ptr_ {}
 impl CppAdvance for contiguous_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
 }
+impl CppIterator<i32> for contiguous_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_int_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for contiguous_iterator_int_ptr_ {}
 pub fn operator_ne_33(
     x: Ptr<contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -1134,10 +1469,39 @@ impl contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_33(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {}
 impl CppAdvance for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
+}
+impl CppIterator<Option<Value<i32>>>
+    for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
+    fn iter_deref(&self) -> Ptr<Option<Value<i32>>> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<Option<Value<i32>>>
+    for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
+{
 }
 pub fn base_35(i: Ptr<i32>) -> Ptr<i32> {
     let i: Value<Ptr<i32>> = Rc::new(RefCell::new(i));
@@ -1317,22 +1681,71 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_43(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_43(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_42(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_42(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
     }
 }
 impl Default for adl_Iterator {
@@ -1378,43 +1791,111 @@ impl util_iterator_error {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_int_ptr_ {}
+impl Callable0<()> for TestPtr_TestImpl_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestPtr_TestImpl_int_ptr_Impl::operator_call_1_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_contiguous_iterator_int_ptr__ {}
+impl Callable0<()> for TestPtr_TestImpl_contiguous_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl::operator_call_1_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_random_access_iterator_int_ptr__ {}
+impl Callable0<()> for TestPtr_TestImpl_random_access_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestPtr_TestImpl_random_access_iterator_int_ptr__Impl::operator_call_1_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_bidirectional_iterator_int_ptr__ {}
+impl Callable0<()> for TestPtr_TestImpl_bidirectional_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl::operator_call_1_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_forward_iterator_int_ptr__ {}
+impl Callable0<()> for TestPtr_TestImpl_forward_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestPtr_TestImpl_forward_iterator_int_ptr__Impl::operator_call_1_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr {}
+impl Callable0<()> for TestPtr {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestPtrImpl::operator_call_1_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_ {}
+impl Callable0<()> for TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
+impl Callable0<()  > for TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn call(&self) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)) } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
+impl Callable0<()  > for TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn call(&self) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)) } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
+impl Callable0<()  > for TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn call(&self) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)) } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
+impl Callable0<()>
+    for TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
+{
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr {}
+impl Callable0<()> for TestUniquePtr {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestUniquePtrImpl::operator_call_1_class_std_unique_ptr_int__ptr(__it)
+        })
+    }
+}
 pub fn test_simple_cases_44() -> bool {
     {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));

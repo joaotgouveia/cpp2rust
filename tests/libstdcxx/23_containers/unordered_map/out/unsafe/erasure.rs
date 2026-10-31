@@ -324,6 +324,11 @@ impl Pred_13 {
         return false;
     }
 }
+impl Callable1<*mut (i32, i32), bool> for Pred_13 {
+    fn call(&self, a1: *mut (i32, i32)) -> bool {
+        unsafe { Pred_13::operator_call(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

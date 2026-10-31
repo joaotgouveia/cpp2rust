@@ -162,6 +162,13 @@ pub fn operator_lt_9(rhs: Ptr<C2Int>, mut lhs: i32) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct FinalCompare_int_ {}
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for FinalCompare_int_ {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            FinalCompare_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test_10() -> bool {
     let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         (Rc::new(RefCell::new(5)), Rc::new(RefCell::new((5 as f64)))),

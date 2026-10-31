@@ -265,6 +265,11 @@ impl compare_counter {
         return ((a) < (b));
     }
 }
+impl Callable2<i32, i32, bool> for compare_counter {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { compare_counter::operator_call(self, a1, a2) }
+    }
+}
 pub static mut count_9: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub unsafe fn test01_10() {
     unimplemented!();

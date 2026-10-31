@@ -23,6 +23,17 @@ impl indirect_less {
                 .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)));
     }
 }
+impl Callable2<*const Option<Box<i32>>, *const Option<Box<i32>>, bool> for indirect_less {
+    fn call(&self, a1: *const Option<Box<i32>>, a2: *const Option<Box<i32>>) -> bool {
+        unsafe {
+            indirect_less::operator_call_1_class_std_unique_ptr_int_(
+                &mut *(&raw const *self).cast_mut(),
+                a1,
+                a2,
+            )
+        }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

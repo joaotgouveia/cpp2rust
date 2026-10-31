@@ -270,9 +270,23 @@ pub fn operator_mul_10(x: Int, mut y: Int) -> Int {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Add {}
+impl Callable2<Int, Int, Int> for Add {
+    fn call(&self, a1: Int, a2: Int) -> Int {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            AddImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Multiply {}
+impl Callable2<Int, Int, Int> for Multiply {
+    fn call(&self, a1: Int, a2: Int) -> Int {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            MultiplyImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test01_11() {
     let i: Value<Box<[Int]>> = Rc::new(RefCell::new(Box::new([
         Int::new({ 0 }),

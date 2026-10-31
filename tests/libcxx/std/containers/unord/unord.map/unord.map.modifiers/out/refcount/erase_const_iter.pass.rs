@@ -76,6 +76,11 @@ pub fn operator_eq_4(_a0: Ptr<TemplateConstructor>, _a1: Ptr<TemplateConstructor
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Hash {}
+impl Callable1<Ptr<TemplateConstructor>, usize> for Hash {
+    fn call(&self, a1: Ptr<TemplateConstructor>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| HashImpl::operator_call(__it, a1))
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

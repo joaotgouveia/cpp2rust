@@ -20,6 +20,21 @@ impl Comp {
         return ((lhs) < ((*rhs).0));
     }
 }
+impl Callable2<*const (i32, i32), *const (i32, i32), bool> for Comp {
+    fn call(&self, a1: *const (i32, i32), a2: *const (i32, i32)) -> bool {
+        unsafe { Comp::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<*const (i32, i32), i32, bool> for Comp {
+    fn call(&self, a1: *const (i32, i32), a2: i32) -> bool {
+        unsafe { Comp::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<i32, *const (i32, i32), bool> for Comp {
+    fn call(&self, a1: i32, a2: *const (i32, i32)) -> bool {
+        unsafe { Comp::operator_call_3(self, a1, a2) }
+    }
+}
 pub unsafe fn test_0() -> bool {
     let mut s: UnsafeMap<(i32, i32), ((i32, i32), i32)> = unimplemented!();
     assert!((unimplemented!() as bool));

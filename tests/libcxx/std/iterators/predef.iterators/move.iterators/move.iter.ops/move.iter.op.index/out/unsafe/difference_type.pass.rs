@@ -451,6 +451,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -536,6 +567,11 @@ pub unsafe fn test_10(mut i: *mut Option<Box<i32>>, mut n: isize, mut x: Option<
 pub struct do_nothing {}
 impl do_nothing {
     pub unsafe fn operator_call(&self, mut _a0: *mut ::libc::c_void) {}
+}
+impl Callable1<*mut ::libc::c_void, ()> for do_nothing {
+    fn call(&self, a1: *mut ::libc::c_void) -> () {
+        unsafe { do_nothing::operator_call(self, a1) }
+    }
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

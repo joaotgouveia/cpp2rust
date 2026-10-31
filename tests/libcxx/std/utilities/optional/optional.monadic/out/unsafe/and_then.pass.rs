@@ -19,12 +19,22 @@ impl LVal {
         return unimplemented!();
     }
 }
+impl Callable1<*mut i32, ()> for LVal {
+    fn call(&self, a1: *mut i32) -> () {
+        unsafe { LVal::operator_call_1(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CLVal {}
 impl CLVal {
     pub unsafe fn operator_call_2(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<*const i32, ()> for CLVal {
+    fn call(&self, a1: *const i32) -> () {
+        unsafe { CLVal::operator_call_2(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 #[repr(C)]
@@ -35,12 +45,22 @@ impl RVal {
         return unimplemented!();
     }
 }
+impl Callable1<*mut i32, ()> for RVal {
+    fn call(&self, a1: *mut i32) -> () {
+        unsafe { RVal::operator_call_3(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CRVal {}
 impl CRVal {
     pub unsafe fn operator_call_4(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<*const i32, ()> for CRVal {
+    fn call(&self, a1: *const i32) -> () {
+        unsafe { CRVal::operator_call_4(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 #[repr(C)]
@@ -51,12 +71,22 @@ impl RefQual {
         return unimplemented!();
     }
 }
+impl Callable1<i32, ()> for RefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { RefQual::operator_call_1(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CRefQual {}
 impl CRefQual {
     pub unsafe fn operator_call_2(&self, mut _a0: i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<i32, ()> for CRefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { CRefQual::operator_call_2(self, a1) }
     }
 }
 #[repr(C)]
@@ -67,12 +97,22 @@ impl RVRefQual {
         return unimplemented!();
     }
 }
+impl Callable1<i32, ()> for RVRefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { RVRefQual::operator_call_3(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct RVCRefQual {}
 impl RVCRefQual {
     pub unsafe fn operator_call_4(&self, mut _a0: i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<i32, ()> for RVCRefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { RVCRefQual::operator_call_4(self, a1) }
     }
 }
 #[repr(C)]
@@ -83,12 +123,22 @@ impl NOLVal {
         return unimplemented!();
     }
 }
+impl Callable1<*mut i32, ()> for NOLVal {
+    fn call(&self, a1: *mut i32) -> () {
+        unsafe { NOLVal::operator_call_1(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOCLVal {}
 impl NOCLVal {
     pub unsafe fn operator_call_2(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<*const i32, ()> for NOCLVal {
+    fn call(&self, a1: *const i32) -> () {
+        unsafe { NOCLVal::operator_call_2(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 #[repr(C)]
@@ -99,12 +149,22 @@ impl NORVal {
         return unimplemented!();
     }
 }
+impl Callable1<*mut i32, ()> for NORVal {
+    fn call(&self, a1: *mut i32) -> () {
+        unsafe { NORVal::operator_call_3(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOCRVal {}
 impl NOCRVal {
     pub unsafe fn operator_call_4(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<*const i32, ()> for NOCRVal {
+    fn call(&self, a1: *const i32) -> () {
+        unsafe { NOCRVal::operator_call_4(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 #[repr(C)]
@@ -115,12 +175,22 @@ impl NORefQual {
         return unimplemented!();
     }
 }
+impl Callable1<i32, ()> for NORefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { NORefQual::operator_call_1(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOCRefQual {}
 impl NOCRefQual {
     pub unsafe fn operator_call_2(&self, mut _a0: i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<i32, ()> for NOCRefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { NOCRefQual::operator_call_2(self, a1) }
     }
 }
 #[repr(C)]
@@ -131,12 +201,22 @@ impl NORVRefQual {
         return unimplemented!();
     }
 }
+impl Callable1<i32, ()> for NORVRefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { NORVRefQual::operator_call_3(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NORVCRefQual {}
 impl NORVCRefQual {
     pub unsafe fn operator_call_4(&self, mut _a0: i32) -> () {
         return unimplemented!();
+    }
+}
+impl Callable1<i32, ()> for NORVCRefQual {
+    fn call(&self, a1: i32) -> () {
+        unsafe { NORVCRefQual::operator_call_4(self, a1) }
     }
 }
 #[repr(C)]
@@ -153,6 +233,11 @@ impl NoCopy {
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const NoCopy) -> *mut NoCopy {
         return &mut (*(self as *mut NoCopy));
+    }
+}
+impl Callable1<*const NoCopy, ()> for NoCopy {
+    fn call(&self, a1: *const NoCopy) -> () {
+        unsafe { NoCopy::operator_call(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 impl Clone for NoCopy {

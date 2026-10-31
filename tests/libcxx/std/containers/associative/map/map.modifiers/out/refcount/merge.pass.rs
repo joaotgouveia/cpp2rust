@@ -147,6 +147,13 @@ pub fn test_5() -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct comparator_6 {}
+impl Callable2<Ptr<Counter_int_>, Ptr<Counter_int_>, bool> for comparator_6 {
+    fn call(&self, a1: Ptr<Counter_int_>, a2: Ptr<Counter_int_>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            comparator_6Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

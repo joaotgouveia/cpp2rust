@@ -33,6 +33,15 @@ impl binary_counting_predicate_bool__ptr__int__int___int__int_ {
         return self.count_;
     }
 }
+impl Callable2<*const i32, *const i32, bool>
+    for binary_counting_predicate_bool__ptr__int__int___int__int_
+{
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe {
+            binary_counting_predicate_bool__ptr__int__int___int__int_::operator_call(self, a1, a2)
+        }
+    }
+}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe)]
 #[cpp_from(() , new, value)]
@@ -54,6 +63,15 @@ impl binary_counting_predicate_std_greater_int___int__int_ {
     }
     pub unsafe fn count(&self) -> usize {
         return self.count_;
+    }
+}
+impl Callable2<*const i32, *const i32, bool>
+    for binary_counting_predicate_std_greater_int___int__int_
+{
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe {
+            binary_counting_predicate_std_greater_int___int__int_::operator_call(self, a1, a2)
+        }
     }
 }
 impl Default for binary_counting_predicate_std_greater_int___int__int_ {

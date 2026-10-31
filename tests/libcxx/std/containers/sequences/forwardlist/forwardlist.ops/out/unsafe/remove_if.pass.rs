@@ -78,6 +78,11 @@ impl unary_counting_predicate_bool__ptr__int___int_ {
         return self.count_;
     }
 }
+impl Callable1<*const i32, bool> for unary_counting_predicate_bool__ptr__int___int_ {
+    fn call(&self, a1: *const i32) -> bool {
+        unsafe { unary_counting_predicate_bool__ptr__int___int_::operator_call(self, a1) }
+    }
+}
 pub unsafe fn do_remove_if_5(
     l: *mut (),
     mut pred: *mut unary_counting_predicate_bool__ptr__int___int_,
@@ -126,6 +131,11 @@ impl PredLWG526 {
     }
     pub unsafe fn operator_eq(&self, mut i: i32) -> bool {
         return ((i) == (self.i_));
+    }
+}
+impl Callable1<*const PredLWG526, bool> for PredLWG526 {
+    fn call(&self, a1: *const PredLWG526) -> bool {
+        unsafe { PredLWG526::operator_call(self, a1) }
     }
 }
 pub unsafe fn test_9() -> bool {

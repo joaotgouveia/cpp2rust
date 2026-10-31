@@ -14,12 +14,22 @@ impl multiply {
         return ((a) * (b));
     }
 }
+impl Callable2<i32, i32, i32> for multiply {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        unsafe { multiply::operator_call_1_int(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct plus_one {}
 impl plus_one {
     pub unsafe fn operator_call_1_int(&mut self, mut a: i32) -> i32 {
         return ((a) + (1));
+    }
+}
+impl Callable1<i32, i32> for plus_one {
+    fn call(&self, a1: i32) -> i32 {
+        unsafe { plus_one::operator_call_1_int(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 pub unsafe fn test_0() -> bool {

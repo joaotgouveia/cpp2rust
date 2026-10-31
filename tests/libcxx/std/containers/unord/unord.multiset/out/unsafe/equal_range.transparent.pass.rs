@@ -125,7 +125,7 @@ impl std::cmp::PartialEq for StoredType_int_ {
 impl std::cmp::Eq for StoredType_int_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(StoredType_int_, to_StoredType_int_, ptr)]
+#[cpp_into(StoredType_int_, to_StoredType_int_)]
 pub struct SearchedType_int_ {
     value_: i32,
     conversions_: *mut i32,
@@ -155,6 +155,16 @@ impl hash_impl {
     }
     pub unsafe fn operator_call_2_int(&self, t: *const StoredType_int_) -> usize {
         return ((unsafe { StoredType_int_::get_value(&(*t)) }) as usize);
+    }
+}
+impl Callable1<*const SearchedType_int_, usize> for hash_impl {
+    fn call(&self, a1: *const SearchedType_int_) -> usize {
+        unsafe { hash_impl::operator_call_1_int(self, a1) }
+    }
+}
+impl Callable1<*const StoredType_int_, usize> for hash_impl {
+    fn call(&self, a1: *const StoredType_int_) -> usize {
+        unsafe { hash_impl::operator_call_2_int(self, a1) }
     }
 }
 #[repr(C)]

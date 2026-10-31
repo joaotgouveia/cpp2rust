@@ -873,6 +873,11 @@ impl __gnu_test_counter_type_hasher {
         return ((*c).val as usize);
     }
 }
+impl Callable1<*const __gnu_test_counter_type, usize> for __gnu_test_counter_type_hasher {
+    fn call(&self, a1: *const __gnu_test_counter_type) -> usize {
+        unsafe { __gnu_test_counter_type_hasher::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Mapped {}

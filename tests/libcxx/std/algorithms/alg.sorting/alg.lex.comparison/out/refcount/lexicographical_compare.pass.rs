@@ -1483,16 +1483,35 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         }
     }
 }
-impl CppEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_29(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_29(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
     }
 }
+impl CppIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 pub fn operator_eq_31(
     x: Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>,
     y: Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>,
@@ -1529,16 +1548,35 @@ impl cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
         }
     }
 }
-impl CppEq for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_31(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_31(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
     }
 }
+impl CppIterator<i32> for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {}
 pub fn operator_eq_33(
     x: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
     y: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
@@ -1575,16 +1613,35 @@ impl cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
         }
     }
 }
-impl CppEq for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_33(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_33(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
     }
 }
+impl CppIterator<i8> for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {}
 pub fn operator_eq_35(
     x: Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>,
     y: Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>,
@@ -1621,16 +1678,35 @@ impl cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
         }
     }
 }
-impl CppEq for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_35(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_35(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
     }
 }
+impl CppIterator<u8> for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<u8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u8> for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_eq_37(
     x: Ptr<forward_iterator_const_int_ptr_>,
@@ -1668,16 +1744,35 @@ impl forward_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for forward_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_37(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_37(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
 impl CppAdvance for forward_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i32> for forward_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_const_int_ptr_ {}
 pub fn operator_eq_39(
     x: Ptr<forward_iterator_const_wchar_t_ptr_>,
     y: Ptr<forward_iterator_const_wchar_t_ptr_>,
@@ -1714,16 +1809,35 @@ impl forward_iterator_const_wchar_t_ptr_ {
         }
     }
 }
-impl CppEq for forward_iterator_const_wchar_t_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_39(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for forward_iterator_const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_39(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for forward_iterator_const_wchar_t_ptr_ {}
 impl CppAdvance for forward_iterator_const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i32> for forward_iterator_const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_wchar_t_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_const_wchar_t_ptr_ {}
 pub fn operator_eq_41(
     x: Ptr<forward_iterator_const_char_ptr_>,
     y: Ptr<forward_iterator_const_char_ptr_>,
@@ -1760,16 +1874,35 @@ impl forward_iterator_const_char_ptr_ {
         }
     }
 }
-impl CppEq for forward_iterator_const_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_41(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for forward_iterator_const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_41(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for forward_iterator_const_char_ptr_ {}
 impl CppAdvance for forward_iterator_const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i8> for forward_iterator_const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_char_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for forward_iterator_const_char_ptr_ {}
 pub fn operator_eq_43(
     x: Ptr<forward_iterator_unsigned_char_ptr_>,
     y: Ptr<forward_iterator_unsigned_char_ptr_>,
@@ -1806,16 +1939,35 @@ impl forward_iterator_unsigned_char_ptr_ {
         }
     }
 }
-impl CppEq for forward_iterator_unsigned_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_43(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for forward_iterator_unsigned_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_43(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for forward_iterator_unsigned_char_ptr_ {}
 impl CppAdvance for forward_iterator_unsigned_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<u8> for forward_iterator_unsigned_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<u8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_unsigned_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_unsigned_char_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u8> for forward_iterator_unsigned_char_ptr_ {}
 pub fn operator_eq_45(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
@@ -1852,16 +2004,35 @@ impl bidirectional_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_45(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_45(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i32> for bidirectional_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_const_int_ptr_ {}
 pub fn operator_eq_47(
     x: Ptr<bidirectional_iterator_const_wchar_t_ptr_>,
     y: Ptr<bidirectional_iterator_const_wchar_t_ptr_>,
@@ -1898,16 +2069,35 @@ impl bidirectional_iterator_const_wchar_t_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_const_wchar_t_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_47(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_47(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_const_wchar_t_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i32> for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_wchar_t_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_const_wchar_t_ptr_ {}
 pub fn operator_eq_49(
     x: Ptr<bidirectional_iterator_const_char_ptr_>,
     y: Ptr<bidirectional_iterator_const_char_ptr_>,
@@ -1944,16 +2134,35 @@ impl bidirectional_iterator_const_char_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_const_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_49(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_49(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_const_char_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<i8> for bidirectional_iterator_const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_char_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for bidirectional_iterator_const_char_ptr_ {}
 pub fn operator_eq_51(
     x: Ptr<bidirectional_iterator_unsigned_char_ptr_>,
     y: Ptr<bidirectional_iterator_unsigned_char_ptr_>,
@@ -1990,16 +2199,35 @@ impl bidirectional_iterator_unsigned_char_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_unsigned_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_51(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_unsigned_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_51(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_unsigned_char_ptr_ {}
 impl CppAdvance for bidirectional_iterator_unsigned_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<u8> for bidirectional_iterator_unsigned_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<u8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_unsigned_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_unsigned_char_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u8> for bidirectional_iterator_unsigned_char_ptr_ {}
 pub fn operator_add_53(
     x: random_access_iterator_const_int_ptr_,
     mut n: isize,
@@ -2050,16 +2278,35 @@ impl random_access_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for random_access_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_55(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_55(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
 impl CppAdvance for random_access_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<i32> for random_access_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_int_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for random_access_iterator_const_int_ptr_ {}
 pub fn operator_add_57(
     x: random_access_iterator_const_wchar_t_ptr_,
     mut n: isize,
@@ -2110,16 +2357,35 @@ impl random_access_iterator_const_wchar_t_ptr_ {
         }
     }
 }
-impl CppEq for random_access_iterator_const_wchar_t_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_59(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for random_access_iterator_const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_59(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for random_access_iterator_const_wchar_t_ptr_ {}
 impl CppAdvance for random_access_iterator_const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<i32> for random_access_iterator_const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_wchar_t_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for random_access_iterator_const_wchar_t_ptr_ {}
 pub fn operator_add_61(
     x: random_access_iterator_const_char_ptr_,
     mut n: isize,
@@ -2170,16 +2436,35 @@ impl random_access_iterator_const_char_ptr_ {
         }
     }
 }
-impl CppEq for random_access_iterator_const_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_63(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for random_access_iterator_const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_63(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for random_access_iterator_const_char_ptr_ {}
 impl CppAdvance for random_access_iterator_const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<i8> for random_access_iterator_const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_char_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for random_access_iterator_const_char_ptr_ {}
 pub fn operator_add_65(
     x: random_access_iterator_unsigned_char_ptr_,
     mut n: isize,
@@ -2230,16 +2515,35 @@ impl random_access_iterator_unsigned_char_ptr_ {
         }
     }
 }
-impl CppEq for random_access_iterator_unsigned_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_67(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for random_access_iterator_unsigned_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_67(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for random_access_iterator_unsigned_char_ptr_ {}
 impl CppAdvance for random_access_iterator_unsigned_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<u8> for random_access_iterator_unsigned_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<u8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_unsigned_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_unsigned_char_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u8> for random_access_iterator_unsigned_char_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -2298,16 +2602,35 @@ impl contiguous_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for contiguous_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_69(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_69(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for contiguous_iterator_const_int_ptr_ {}
 impl CppAdvance for contiguous_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
 }
+impl CppIterator<i32> for contiguous_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_const_int_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for contiguous_iterator_const_int_ptr_ {}
 pub fn operator_eq_71(
     x: Ptr<contiguous_iterator_const_wchar_t_ptr_>,
     y: Ptr<contiguous_iterator_const_wchar_t_ptr_>,
@@ -2344,16 +2667,35 @@ impl contiguous_iterator_const_wchar_t_ptr_ {
         }
     }
 }
-impl CppEq for contiguous_iterator_const_wchar_t_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_71(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for contiguous_iterator_const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_71(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for contiguous_iterator_const_wchar_t_ptr_ {}
 impl CppAdvance for contiguous_iterator_const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
 }
+impl CppIterator<i32> for contiguous_iterator_const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_const_wchar_t_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for contiguous_iterator_const_wchar_t_ptr_ {}
 pub fn operator_eq_73(
     x: Ptr<contiguous_iterator_const_char_ptr_>,
     y: Ptr<contiguous_iterator_const_char_ptr_>,
@@ -2390,16 +2732,35 @@ impl contiguous_iterator_const_char_ptr_ {
         }
     }
 }
-impl CppEq for contiguous_iterator_const_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_73(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for contiguous_iterator_const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_73(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for contiguous_iterator_const_char_ptr_ {}
 impl CppAdvance for contiguous_iterator_const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
 }
+impl CppIterator<i8> for contiguous_iterator_const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_const_char_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for contiguous_iterator_const_char_ptr_ {}
 pub fn operator_eq_75(
     x: Ptr<contiguous_iterator_unsigned_char_ptr_>,
     y: Ptr<contiguous_iterator_unsigned_char_ptr_>,
@@ -2436,16 +2797,35 @@ impl contiguous_iterator_unsigned_char_ptr_ {
         }
     }
 }
-impl CppEq for contiguous_iterator_unsigned_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_75(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for contiguous_iterator_unsigned_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_75(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for contiguous_iterator_unsigned_char_ptr_ {}
 impl CppAdvance for contiguous_iterator_unsigned_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
 }
+impl CppIterator<u8> for contiguous_iterator_unsigned_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<u8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_unsigned_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_unsigned_char_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u8> for contiguous_iterator_unsigned_char_ptr_ {}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_input_iterator_int_ptr_ {
@@ -2616,22 +2996,71 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_83(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_83(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_82(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_82(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
     }
 }
 impl Default for adl_Iterator {
@@ -2677,87 +3106,293 @@ impl util_iterator_error {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_int__const_int_ptr_ {}
+impl Callable0<()> for Test_const_int__const_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_int__const_int_ptr_Impl::operator_call_1_const_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_int__contiguous_iterator_const_int_ptr__ {}
+impl Callable0<()> for Test_const_int__contiguous_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_int__contiguous_iterator_const_int_ptr__Impl::operator_call_1_const_int_ptr(
+                __it,
+            )
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_int__random_access_iterator_const_int_ptr__ {}
+impl Callable0<()> for Test_const_int__random_access_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_int__random_access_iterator_const_int_ptr__Impl::operator_call_1_const_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_int__bidirectional_iterator_const_int_ptr__ {}
+impl Callable0<()> for Test_const_int__bidirectional_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_int__bidirectional_iterator_const_int_ptr__Impl::operator_call_1_const_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_int__forward_iterator_const_int_ptr__ {}
+impl Callable0<()> for Test_const_int__forward_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_int__forward_iterator_const_int_ptr__Impl::operator_call_1_const_int_ptr(
+                __it,
+            )
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__ {}
+impl Callable0<()> for Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl::operator_call_1_const_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_wchar_t__const_wchar_t_ptr_ {}
+impl Callable0<()> for Test_const_wchar_t__const_wchar_t_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_wchar_t__const_wchar_t_ptr_Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__ {}
+impl Callable0<()> for Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__ {}
+impl Callable0<()> for Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__ {}
+impl Callable0<()> for Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__ {}
+impl Callable0<()> for Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__ {}
+impl Callable0<()>
+    for Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__
+{
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_char__const_char_ptr_ {}
+impl Callable0<()> for Test_const_char__const_char_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_char__const_char_ptr_Impl::operator_call_1_const_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_char__contiguous_iterator_const_char_ptr__ {}
+impl Callable0<()> for Test_const_char__contiguous_iterator_const_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_char__contiguous_iterator_const_char_ptr__Impl::operator_call_1_const_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_char__random_access_iterator_const_char_ptr__ {}
+impl Callable0<()> for Test_const_char__random_access_iterator_const_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_char__random_access_iterator_const_char_ptr__Impl::operator_call_1_const_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_char__bidirectional_iterator_const_char_ptr__ {}
+impl Callable0<()> for Test_const_char__bidirectional_iterator_const_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_char__bidirectional_iterator_const_char_ptr__Impl::operator_call_1_const_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_char__forward_iterator_const_char_ptr__ {}
+impl Callable0<()> for Test_const_char__forward_iterator_const_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_char__forward_iterator_const_char_ptr__Impl::operator_call_1_const_char_ptr(
+                __it,
+            )
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__ {}
+impl Callable0<()> for Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl::operator_call_1_const_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_unsigned_char__unsigned_char_ptr_ {}
+impl Callable0<()> for Test_unsigned_char__unsigned_char_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_unsigned_char__unsigned_char_ptr_Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__ {}
+impl Callable0<()> for Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_unsigned_char__random_access_iterator_unsigned_char_ptr__ {}
+impl Callable0<()> for Test_unsigned_char__random_access_iterator_unsigned_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__ {}
+impl Callable0<()> for Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_unsigned_char__forward_iterator_unsigned_char_ptr__ {}
+impl Callable0<()> for Test_unsigned_char__forward_iterator_unsigned_char_ptr__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__ {}
+impl Callable0<()>
+    for Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__
+{
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIter_const_int_ {}
+impl Callable0<bool> for TestIter_const_int_ {
+    fn call(&self) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIter_const_int_Impl::operator_call_1_const_int_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIter_const_wchar_t_ {}
+impl Callable0<bool> for TestIter_const_wchar_t_ {
+    fn call(&self) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIter_const_wchar_t_Impl::operator_call_1_const_wchar_t_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIter_const_char_ {}
+impl Callable0<bool> for TestIter_const_char_ {
+    fn call(&self) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIter_const_char_Impl::operator_call_1_const_char_ptr(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIter_unsigned_char_ {}
+impl Callable0<bool> for TestIter_unsigned_char_ {
+    fn call(&self) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIter_unsigned_char_Impl::operator_call_1_unsigned_char_ptr(__it)
+        })
+    }
+}
 pub fn test_84() -> bool {
     ({
         for_each_0 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <TestIter_const_int_  >::default()  , )

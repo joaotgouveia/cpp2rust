@@ -271,6 +271,21 @@ impl Equal {
         return ((i) == (j));
     }
 }
+impl Callable2<i32, i64, bool> for Equal {
+    fn call(&self, a1: i32, a2: i64) -> bool {
+        unsafe { Equal::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<i64, i32, bool> for Equal {
+    fn call(&self, a1: i64, a2: i32) -> bool {
+        unsafe { Equal::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<i32, i32, bool> for Equal {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { Equal::operator_call_3(self, a1, a2) }
+    }
+}
 pub static mut count_9: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -282,6 +297,16 @@ impl Hash {
     }
     pub unsafe fn operator_call_2(&self, mut l: i64) -> usize {
         return (l as usize);
+    }
+}
+impl Callable1<i32, usize> for Hash {
+    fn call(&self, a1: i32) -> usize {
+        unsafe { Hash::operator_call_1(self, a1) }
+    }
+}
+impl Callable1<i64, usize> for Hash {
+    fn call(&self, a1: i64) -> usize {
+        unsafe { Hash::operator_call_2(self, a1) }
     }
 }
 pub static mut count_10: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
@@ -511,6 +536,21 @@ impl E_17 {
         return ((3) < (r));
     }
 }
+impl Callable2<i32, i32, bool> for E_17 {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { E_17::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<i32, test04___E_Partition, bool> for E_17 {
+    fn call(&self, a1: i32, a2: test04___E_Partition) -> bool {
+        unsafe { E_17::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<test04___E_Partition, i32, bool> for E_17 {
+    fn call(&self, a1: test04___E_Partition, a2: i32) -> bool {
+        unsafe { E_17::operator_call_3(self, a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct H_18 {}
@@ -520,6 +560,16 @@ impl H_18 {
     }
     pub unsafe fn operator_call_2(&self, mut _a0: test04___E_Partition) -> usize {
         return 0_usize;
+    }
+}
+impl Callable1<i32, usize> for H_18 {
+    fn call(&self, a1: i32) -> usize {
+        unsafe { H_18::operator_call_1(self, a1) }
+    }
+}
+impl Callable1<test04___E_Partition, usize> for H_18 {
+    fn call(&self, a1: test04___E_Partition) -> usize {
+        unsafe { H_18::operator_call_2(self, a1) }
     }
 }
 pub fn main() {

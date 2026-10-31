@@ -284,6 +284,11 @@ pub struct F_10 {}
 impl F_10 {
     pub unsafe fn operator_call(&mut self) {}
 }
+impl Callable0<()> for F_10 {
+    fn call(&self) -> () {
+        unsafe { F_10::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 pub unsafe fn test02_11() {
     let mut f: F_13 = <F_13>::default();
     let mut g: () = unimplemented!();
@@ -377,6 +382,11 @@ impl F_13 {
         };
     }
 }
+impl Callable0<quals_12> for F_13 {
+    fn call(&self) -> quals_12 {
+        unsafe { F_13::operator_call_1(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 pub unsafe fn test03_14() {
     let mut i: i32 = 5;
     let mut vp: *mut ::libc::c_void = std::ptr::null_mut();
@@ -466,6 +476,16 @@ impl F_15 {
         mut _a1: i32,
     ) -> *mut ::libc::c_void {
         return p;
+    }
+}
+impl Callable2<*mut ::libc::c_void, *mut i32, *mut i32> for F_15 {
+    fn call(&self, a1: *mut ::libc::c_void, a2: *mut i32) -> *mut i32 {
+        unsafe { F_15::operator_call_1(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
+impl Callable2<*mut ::libc::c_void, i32, *mut ::libc::c_void> for F_15 {
+    fn call(&self, a1: *mut ::libc::c_void, a2: i32) -> *mut ::libc::c_void {
+        unsafe { F_15::operator_call_2(self, a1, a2) }
     }
 }
 pub unsafe fn f_16(mut i: i32, mut j: i32, mut k: i32) -> i32 {

@@ -131,6 +131,22 @@ impl UnsafeCppAdvance for cpp17_output_iterator_TrivialSortableWithComp_ptr_ {
         self.operator_inc_5();
     }
 }
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for cpp17_output_iterator_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            cpp17_output_iterator_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            cpp17_output_iterator_TrivialSortableWithComp_ptr_::operator_inc_5(self);
+        }
+        self
+    }
+}
 pub unsafe fn base_1(
     i: *const cpp17_output_iterator_NonTrivialSortableWithComp_ptr_,
 ) -> *mut NonTrivialSortableWithComp {
@@ -183,6 +199,22 @@ impl cpp17_output_iterator_NonTrivialSortableWithComp_ptr_ {
 impl UnsafeCppAdvance for cpp17_output_iterator_NonTrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_5();
+    }
+}
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for cpp17_output_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            cpp17_output_iterator_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            cpp17_output_iterator_NonTrivialSortableWithComp_ptr_::operator_inc_5(self);
+        }
+        self
     }
 }
 const _: () = assert!(
@@ -259,12 +291,44 @@ impl cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortab
         return & mut ( * ( self as *mut cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_  )  )  ;
     }
 }
+impl std::cmp::PartialEq
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_2(self as *const cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_, other as *const cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_))
+        }
+    }
+}
+impl std::cmp::Eq
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
+}
 impl UnsafeCppAdvance
     for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
 {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_5();
     }
+}
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_::operator_deref(self) as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_::operator_inc_5(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<TrivialSortableWithComp>
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
 }
 pub unsafe fn operator_ne_3(
     x : *const cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_,
@@ -312,7 +376,11 @@ impl
         return & mut ( * ( self as *mut cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_  )  )  ;
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ { fn eq(&self, other: &Self) -> bool { unsafe { !(operator_ne_3(self as *const cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_, other as *const cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_)) }}}
+impl std::cmp::Eq for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ { unsafe fn cpp_inc(&mut self) { self.operator_inc_5(); } }
+impl UnsafeCppIterator<NonTrivialSortableWithComp > for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ { fn iter_deref(&self) -> *mut NonTrivialSortableWithComp  { unsafe { cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_::operator_deref(self) as *mut NonTrivialSortableWithComp  } } fn iter_inc(&mut self) -> &mut Self { unsafe { cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_::operator_inc_5(self); } self } }
+impl UnsafeCppInputIterator<NonTrivialSortableWithComp > for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn base_4(
     i: *const forward_iterator_TrivialSortableWithComp_ptr_,
@@ -364,6 +432,20 @@ impl UnsafeCppAdvance for forward_iterator_TrivialSortableWithComp_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<TrivialSortableWithComp> for forward_iterator_TrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            forward_iterator_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_TrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_5(
     x: *const forward_iterator_const_TrivialSortableWithComp_ptr_,
     y: *const forward_iterator_const_TrivialSortableWithComp_ptr_,
@@ -412,10 +494,41 @@ impl forward_iterator_const_TrivialSortableWithComp_ptr_ {
         return &mut (*(self as *mut forward_iterator_const_TrivialSortableWithComp_ptr_));
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_5(
+                self as *const forward_iterator_const_TrivialSortableWithComp_ptr_,
+                other as *const forward_iterator_const_TrivialSortableWithComp_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_TrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for forward_iterator_const_TrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_6();
     }
+}
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for forward_iterator_const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            forward_iterator_const_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_const_TrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<TrivialSortableWithComp>
+    for forward_iterator_const_TrivialSortableWithComp_ptr_
+{
 }
 pub unsafe fn base_6(
     i: *const forward_iterator_NonTrivialSortableWithComp_ptr_,
@@ -469,6 +582,22 @@ impl UnsafeCppAdvance for forward_iterator_NonTrivialSortableWithComp_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for forward_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            forward_iterator_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_NonTrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_7(
     x: *const forward_iterator_const_NonTrivialSortableWithComp_ptr_,
     y: *const forward_iterator_const_NonTrivialSortableWithComp_ptr_,
@@ -519,10 +648,41 @@ impl forward_iterator_const_NonTrivialSortableWithComp_ptr_ {
         return &mut (*(self as *mut forward_iterator_const_NonTrivialSortableWithComp_ptr_));
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_NonTrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_7(
+                self as *const forward_iterator_const_NonTrivialSortableWithComp_ptr_,
+                other as *const forward_iterator_const_NonTrivialSortableWithComp_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_NonTrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for forward_iterator_const_NonTrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_6();
     }
+}
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for forward_iterator_const_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            forward_iterator_const_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_const_NonTrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<NonTrivialSortableWithComp>
+    for forward_iterator_const_NonTrivialSortableWithComp_ptr_
+{
 }
 pub unsafe fn base_8(
     i: *const bidirectional_iterator_TrivialSortableWithComp_ptr_,
@@ -576,6 +736,22 @@ impl UnsafeCppAdvance for bidirectional_iterator_TrivialSortableWithComp_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for bidirectional_iterator_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            bidirectional_iterator_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_TrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_9(
     x: *const bidirectional_iterator_const_TrivialSortableWithComp_ptr_,
     y: *const bidirectional_iterator_const_TrivialSortableWithComp_ptr_,
@@ -626,10 +802,41 @@ impl bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {
         return &mut (*(self as *mut bidirectional_iterator_const_TrivialSortableWithComp_ptr_));
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_9(
+                self as *const bidirectional_iterator_const_TrivialSortableWithComp_ptr_,
+                other as *const bidirectional_iterator_const_TrivialSortableWithComp_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_6();
     }
+}
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for bidirectional_iterator_const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            bidirectional_iterator_const_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_const_TrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<TrivialSortableWithComp>
+    for bidirectional_iterator_const_TrivialSortableWithComp_ptr_
+{
 }
 pub unsafe fn base_10(
     i: *const bidirectional_iterator_NonTrivialSortableWithComp_ptr_,
@@ -685,6 +892,22 @@ impl UnsafeCppAdvance for bidirectional_iterator_NonTrivialSortableWithComp_ptr_
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for bidirectional_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            bidirectional_iterator_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_NonTrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_11(
     x: *const bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_,
     y: *const bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_,
@@ -735,10 +958,41 @@ impl bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {
         return &mut (*(self as *mut bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_));
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_11(
+                self as *const bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_,
+                other as *const bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_6();
     }
+}
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<NonTrivialSortableWithComp>
+    for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_
+{
 }
 pub unsafe fn base_12(
     i: *const random_access_iterator_TrivialSortableWithComp_ptr_,
@@ -792,6 +1046,22 @@ impl UnsafeCppAdvance for random_access_iterator_TrivialSortableWithComp_ptr_ {
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for random_access_iterator_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            random_access_iterator_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_TrivialSortableWithComp_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_13(
     x: *const random_access_iterator_const_TrivialSortableWithComp_ptr_,
     y: *const random_access_iterator_const_TrivialSortableWithComp_ptr_,
@@ -842,10 +1112,41 @@ impl random_access_iterator_const_TrivialSortableWithComp_ptr_ {
         return &mut (*(self as *mut random_access_iterator_const_TrivialSortableWithComp_ptr_));
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_13(
+                self as *const random_access_iterator_const_TrivialSortableWithComp_ptr_,
+                other as *const random_access_iterator_const_TrivialSortableWithComp_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_TrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for random_access_iterator_const_TrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_7();
     }
+}
+impl UnsafeCppIterator<TrivialSortableWithComp>
+    for random_access_iterator_const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut TrivialSortableWithComp {
+        unsafe {
+            random_access_iterator_const_TrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut TrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_const_TrivialSortableWithComp_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<TrivialSortableWithComp>
+    for random_access_iterator_const_TrivialSortableWithComp_ptr_
+{
 }
 pub unsafe fn base_14(
     i: *const random_access_iterator_NonTrivialSortableWithComp_ptr_,
@@ -901,6 +1202,22 @@ impl UnsafeCppAdvance for random_access_iterator_NonTrivialSortableWithComp_ptr_
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for random_access_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            random_access_iterator_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_NonTrivialSortableWithComp_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_15(
     x: *const random_access_iterator_const_NonTrivialSortableWithComp_ptr_,
     y: *const random_access_iterator_const_NonTrivialSortableWithComp_ptr_,
@@ -951,10 +1268,41 @@ impl random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {
         return &mut (*(self as *mut random_access_iterator_const_NonTrivialSortableWithComp_ptr_));
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_15(
+                self as *const random_access_iterator_const_NonTrivialSortableWithComp_ptr_,
+                other as *const random_access_iterator_const_NonTrivialSortableWithComp_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {}
 impl UnsafeCppAdvance for random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_7();
     }
+}
+impl UnsafeCppIterator<NonTrivialSortableWithComp>
+    for random_access_iterator_const_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> *mut NonTrivialSortableWithComp {
+        unsafe {
+            random_access_iterator_const_NonTrivialSortableWithComp_ptr_::operator_deref(self)
+                as *mut NonTrivialSortableWithComp
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_const_NonTrivialSortableWithComp_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<NonTrivialSortableWithComp>
+    for random_access_iterator_const_NonTrivialSortableWithComp_ptr_
+{
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -1253,6 +1601,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -1478,6 +1857,13 @@ impl TrivialSortableWithComp_Comparator {
         return ((((*a).value) / (10)) < (((*b).value) / (10)));
     }
 }
+impl Callable2<*const TrivialSortableWithComp, *const TrivialSortableWithComp, bool>
+    for TrivialSortableWithComp_Comparator
+{
+    fn call(&self, a1: *const TrivialSortableWithComp, a2: *const TrivialSortableWithComp) -> bool {
+        unsafe { TrivialSortableWithComp_Comparator::operator_call(self, a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
 #[cpp_from(i32, new_1, value)]
@@ -1515,6 +1901,17 @@ impl NonTrivialSortableWithComp_Comparator {
         b: *const NonTrivialSortableWithComp,
     ) -> bool {
         return ((((*a).value) / (10)) < (((*b).value) / (10)));
+    }
+}
+impl Callable2<*const NonTrivialSortableWithComp, *const NonTrivialSortableWithComp, bool>
+    for NonTrivialSortableWithComp_Comparator
+{
+    fn call(
+        &self,
+        a1: *const NonTrivialSortableWithComp,
+        a2: *const NonTrivialSortableWithComp,
+    ) -> bool {
+        unsafe { NonTrivialSortableWithComp_Comparator::operator_call(self, a1, a2) }
     }
 }
 #[repr(C)]

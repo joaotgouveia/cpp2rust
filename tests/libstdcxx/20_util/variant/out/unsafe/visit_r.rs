@@ -291,6 +291,26 @@ impl Visitor_10 {
         return (((c as i32) == ((*s) as i32)) as i32);
     }
 }
+impl Callable2<i32, *mut ::libc::c_void, i32> for Visitor_10 {
+    fn call(&self, a1: i32, a2: *mut ::libc::c_void) -> i32 {
+        unsafe { Visitor_10::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<*mut libc::c_char, *mut ::libc::c_void, i32> for Visitor_10 {
+    fn call(&self, a1: *mut libc::c_char, a2: *mut ::libc::c_void) -> i32 {
+        unsafe { Visitor_10::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<i32, *const libc::c_char, i32> for Visitor_10 {
+    fn call(&self, a1: i32, a2: *const libc::c_char) -> i32 {
+        unsafe { Visitor_10::operator_call_3(self, a1, a2) }
+    }
+}
+impl Callable2<libc::c_char, *const libc::c_char, i32> for Visitor_10 {
+    fn call(&self, a1: libc::c_char, a2: *const libc::c_char) -> i32 {
+        unsafe { Visitor_10::operator_call_4(self, a1, a2) }
+    }
+}
 pub unsafe fn test02_11() {
     let mut v: () = unimplemented!();
     unimplemented!();
@@ -305,6 +325,16 @@ impl Visitor_12 {
     }
     pub unsafe fn operator_call_2(&mut self, mut _a0: i32) -> f64 {
         return 0.02_f64;
+    }
+}
+impl Callable1<f64, i32> for Visitor_12 {
+    fn call(&self, a1: f64) -> i32 {
+        unsafe { Visitor_12::operator_call_1(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
+impl Callable1<i32, f64> for Visitor_12 {
+    fn call(&self, a1: i32) -> f64 {
+        unsafe { Visitor_12::operator_call_2(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 pub unsafe fn test03_13() {

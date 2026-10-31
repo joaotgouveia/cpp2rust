@@ -47,12 +47,26 @@ impl LibraryManagedBuffer {
         Self { size_: size }
     }
 }
+impl Callable1<Ptr<()>, ()> for LibraryManagedBuffer {
+    fn call(&self, a1: Ptr<()>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            LibraryManagedBufferImpl::operator_call_3_char(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct LibraryDefaultBuffer {}
 impl LibraryDefaultBuffer {
     pub fn new() -> Self {
         Self {}
+    }
+}
+impl Callable1<Ptr<()>, ()> for LibraryDefaultBuffer {
+    fn call(&self, a1: Ptr<()>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            LibraryDefaultBufferImpl::operator_call_3_char(__it, a1)
+        })
     }
 }
 impl Default for LibraryDefaultBuffer {

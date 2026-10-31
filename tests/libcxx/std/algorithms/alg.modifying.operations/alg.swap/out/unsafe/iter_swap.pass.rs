@@ -788,6 +788,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -888,6 +919,15 @@ impl TestIterators_TestImpl_int_ptr_ {
         assert!(((i) == (2)) && ((j) == (1)));
     }
 }
+impl Callable0<()> for TestIterators_TestImpl_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe {
+            TestIterators_TestImpl_int_ptr_::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIterators_TestImpl_contiguous_iterator_int_ptr__ {}
@@ -921,6 +961,15 @@ impl TestIterators_TestImpl_contiguous_iterator_int_ptr__ {
         let mut j: i32 = 2;
         unimplemented!();
         assert!(((i) == (2)) && ((j) == (1)));
+    }
+}
+impl Callable0<()> for TestIterators_TestImpl_contiguous_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestIterators_TestImpl_contiguous_iterator_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
     }
 }
 #[repr(C)]
@@ -958,6 +1007,15 @@ impl TestIterators_TestImpl_random_access_iterator_int_ptr__ {
         assert!(((i) == (2)) && ((j) == (1)));
     }
 }
+impl Callable0<()> for TestIterators_TestImpl_random_access_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestIterators_TestImpl_random_access_iterator_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIterators_TestImpl_bidirectional_iterator_int_ptr__ {}
@@ -991,6 +1049,15 @@ impl TestIterators_TestImpl_bidirectional_iterator_int_ptr__ {
         let mut j: i32 = 2;
         unimplemented!();
         assert!(((i) == (2)) && ((j) == (1)));
+    }
+}
+impl Callable0<()> for TestIterators_TestImpl_bidirectional_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestIterators_TestImpl_bidirectional_iterator_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
     }
 }
 #[repr(C)]
@@ -1028,6 +1095,15 @@ impl TestIterators_TestImpl_forward_iterator_int_ptr__ {
         assert!(((i) == (2)) && ((j) == (1)));
     }
 }
+impl Callable0<()> for TestIterators_TestImpl_forward_iterator_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestIterators_TestImpl_forward_iterator_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIterators {}
@@ -1056,6 +1132,11 @@ impl TestIterators {
         (unsafe {
             for_each_6 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , <TestIterators_TestImpl_forward_iterator_int_ptr__ >::default() , )
         });
+    }
+}
+impl Callable0<()> for TestIterators {
+    fn call(&self) -> () {
+        unsafe { TestIterators::operator_call_1_int_ptr(&mut *(&raw const *self).cast_mut()) }
     }
 }
 pub unsafe fn test_14() -> bool {

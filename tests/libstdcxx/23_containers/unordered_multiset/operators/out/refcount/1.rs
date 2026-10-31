@@ -512,9 +512,21 @@ pub fn test02_10() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Hash {}
+impl Callable1<Ptr<(Value<i32>, Value<i32>)>, usize> for Hash {
+    fn call(&self, a1: Ptr<(Value<i32>, Value<i32>)>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| HashImpl::operator_call(__it, a1))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Equal {}
+impl Callable2<Ptr<(Value<i32>, Value<i32>)>, Ptr<(Value<i32>, Value<i32>)>, bool> for Equal {
+    fn call(&self, a1: Ptr<(Value<i32>, Value<i32>)>, a2: Ptr<(Value<i32>, Value<i32>)>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            EqualImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test03_11() {
     let us1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let us2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

@@ -301,6 +301,11 @@ impl Gt {
         return ((x as i32) > (y as i32));
     }
 }
+impl Callable2<bool, bool, bool> for Gt {
+    fn call(&self, a1: bool, a2: bool) -> bool {
+        unsafe { Gt::operator_call(self, a1, a2) }
+    }
+}
 static mut _S_count_13: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub unsafe fn test01_14() {
     let mut s1: Vec<bool> = unimplemented!();

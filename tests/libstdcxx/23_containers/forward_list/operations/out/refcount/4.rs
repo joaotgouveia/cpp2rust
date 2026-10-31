@@ -225,6 +225,13 @@ impl Mod_int_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl Callable2<i32, i32, bool> for Mod_int_ {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Mod_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test02_10() {
     let fl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

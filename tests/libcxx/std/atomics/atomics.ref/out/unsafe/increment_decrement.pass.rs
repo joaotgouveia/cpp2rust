@@ -510,6 +510,11 @@ impl TestEachIntegralType_TestIncrementDecrement_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestIncrementDecrement_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestIncrementDecrement_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {}
@@ -532,6 +537,11 @@ impl TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {
         });
     }
 }
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {
+    fn call(&self) -> () {
+        unsafe { TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestIncrementDecrement_ {}
@@ -547,6 +557,11 @@ impl TestEachPointerType_TestIncrementDecrement_ {
                 &<TestIncrementDecrement_const_int_ptr_>::default(),
             )
         });
+    }
+}
+impl Callable0<()> for TestEachPointerType_TestIncrementDecrement_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestIncrementDecrement_::operator_call(self) }
     }
 }
 pub unsafe fn does_not_have_increment_nor_decrement_operators_14() -> bool {
@@ -578,6 +593,11 @@ impl TestDoesNotHaveIncrementDecrement_bool_ {
         );;
     }
 }
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveIncrementDecrement_bool_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveIncrementDecrement_UserAtomicType_ {}
@@ -587,6 +607,11 @@ impl TestDoesNotHaveIncrementDecrement_UserAtomicType_ {
             true,
             "does_not_have_increment_nor_decrement_operators<std::atomic_ref<T>>()"
         );;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveIncrementDecrement_UserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -600,6 +625,11 @@ impl TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_ {
         );;
     }
 }
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveIncrementDecrement_float_ {}
@@ -609,6 +639,11 @@ impl TestDoesNotHaveIncrementDecrement_float_ {
             true,
             "does_not_have_increment_nor_decrement_operators<std::atomic_ref<T>>()"
         );;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_float_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveIncrementDecrement_float_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -622,6 +657,11 @@ impl TestDoesNotHaveIncrementDecrement_double_ {
         );;
     }
 }
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveIncrementDecrement_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveIncrementDecrement_long_double_ {}
@@ -631,6 +671,11 @@ impl TestDoesNotHaveIncrementDecrement_long_double_ {
             true,
             "does_not_have_increment_nor_decrement_operators<std::atomic_ref<T>>()"
         );;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_long_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveIncrementDecrement_long_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -668,6 +713,11 @@ impl TestIncrementDecrement_char_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_char_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_signed_char_ {}
@@ -701,6 +751,11 @@ impl TestIncrementDecrement_signed_char_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -738,6 +793,11 @@ impl TestIncrementDecrement_unsigned_char_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_short_ {}
@@ -771,6 +831,11 @@ impl TestIncrementDecrement_short_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_short_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -808,6 +873,11 @@ impl TestIncrementDecrement_unsigned_short_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_int_ {}
@@ -841,6 +911,11 @@ impl TestIncrementDecrement_int_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_int_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -878,6 +953,11 @@ impl TestIncrementDecrement_unsigned_int_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_long_ {}
@@ -911,6 +991,11 @@ impl TestIncrementDecrement_long_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_long_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -948,6 +1033,11 @@ impl TestIncrementDecrement_unsigned_long_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_long_long_ {}
@@ -981,6 +1071,11 @@ impl TestIncrementDecrement_long_long_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1018,6 +1113,11 @@ impl TestIncrementDecrement_unsigned_long_long_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_wchar_t_ {}
@@ -1051,6 +1151,11 @@ impl TestIncrementDecrement_wchar_t_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1088,6 +1193,11 @@ impl TestIncrementDecrement_char8_t_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_char16_t_ {}
@@ -1123,6 +1233,11 @@ impl TestIncrementDecrement_char16_t_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_char32_t_ {}
@@ -1156,6 +1271,11 @@ impl TestIncrementDecrement_char32_t_ {
                 const _: () = assert!(true, "");;
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_char32_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1206,6 +1326,11 @@ impl TestIncrementDecrement_int_ptr_ {
         }
     }
 }
+impl Callable0<()> for TestIncrementDecrement_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestIncrementDecrement_const_int_ptr_ {}
@@ -1252,6 +1377,11 @@ impl TestIncrementDecrement_const_int_ptr_ {
                 }
             }
         }
+    }
+}
+impl Callable0<()> for TestIncrementDecrement_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestIncrementDecrement_const_int_ptr_::operator_call(self) }
     }
 }
 pub fn main() {

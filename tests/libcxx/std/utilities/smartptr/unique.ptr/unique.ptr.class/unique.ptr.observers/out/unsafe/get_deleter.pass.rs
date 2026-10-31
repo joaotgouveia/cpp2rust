@@ -32,6 +32,11 @@ impl Deleter {
         return 6;
     }
 }
+impl Callable1<*mut ::libc::c_void, ()> for Deleter {
+    fn call(&self, a1: *mut ::libc::c_void) -> () {
+        unsafe { Deleter::operator_call(self, a1) }
+    }
+}
 impl Default for Deleter {
     fn default() -> Self {
         unsafe { Deleter::new() }

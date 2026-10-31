@@ -805,6 +805,28 @@ impl TransparentComparator {
         return ((*t1) < (*t2));
     }
 }
+impl Callable2<*const Vec<libc::c_char > , *const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ , bool > for TransparentComparator { fn call(&self, a1: *const Vec<libc::c_char > , a2: *const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ ) -> bool  { unsafe { TransparentComparator::operator_call_3_class_std_basic_string_char__0(self, a1, a2) } } }
+impl Callable2<*const i32, *const Transparent_int__false_, bool> for TransparentComparator {
+    fn call(&self, a1: *const i32, a2: *const Transparent_int__false_) -> bool {
+        unsafe { TransparentComparator::operator_call_3_int_0(self, a1, a2) }
+    }
+}
+impl Callable2<*const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ , *const Vec<libc::c_char > , bool > for TransparentComparator { fn call(&self, a1: *const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ , a2: *const Vec<libc::c_char > ) -> bool  { unsafe { TransparentComparator::operator_call_4_class_std_basic_string_char__0(self, a1, a2) } } }
+impl Callable2<*const Transparent_int__false_, *const i32, bool> for TransparentComparator {
+    fn call(&self, a1: *const Transparent_int__false_, a2: *const i32) -> bool {
+        unsafe { TransparentComparator::operator_call_4_int_0(self, a1, a2) }
+    }
+}
+impl Callable2<*const Vec<libc::c_char>, *const Vec<libc::c_char>, bool> for TransparentComparator {
+    fn call(&self, a1: *const Vec<libc::c_char>, a2: *const Vec<libc::c_char>) -> bool {
+        unsafe { TransparentComparator::operator_call_5_class_std_basic_string_char_(self, a1, a2) }
+    }
+}
+impl Callable2<*const i32, *const i32, bool> for TransparentComparator {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { TransparentComparator::operator_call_5_int(self, a1, a2) }
+    }
+}
 impl Default for TransparentComparator {
     fn default() -> Self {
         unsafe {

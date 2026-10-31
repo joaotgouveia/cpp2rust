@@ -203,6 +203,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct pred {}
+impl Callable1<i32, bool> for pred {
+    fn call(&self, a1: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| predImpl::operator_call(__it, a1))
+    }
+}
 pub fn test01_10() {
     let i: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])));
     let mut result: bool = unimplemented!();

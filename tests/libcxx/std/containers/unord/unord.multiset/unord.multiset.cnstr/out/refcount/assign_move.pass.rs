@@ -39,6 +39,13 @@ impl CppEq for test_equal_to_int_ {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_equal_to_int_ {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_equal_to_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct test_hash_int_ {
@@ -54,6 +61,13 @@ impl test_hash_int_ {
 impl CppEq for test_hash_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         test_hash_int_Impl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl Callable1<Ptr<i32>, usize> for test_hash_int_ {
+    fn call(&self, a1: Ptr<i32>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_hash_int_Impl::operator_call(__it, a1)
+        })
     }
 }
 impl Default for test_hash_int_ {

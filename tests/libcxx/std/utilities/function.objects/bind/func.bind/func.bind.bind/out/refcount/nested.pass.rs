@@ -9,9 +9,23 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct multiply {}
+impl Callable2<i32, i32, i32> for multiply {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            multiplyImpl::operator_call_1_int(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct plus_one {}
+impl Callable1<i32, i32> for plus_one {
+    fn call(&self, a1: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            plus_oneImpl::operator_call_1_int(__it, a1)
+        })
+    }
+}
 pub fn test_0() -> bool {
     let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     assert!(

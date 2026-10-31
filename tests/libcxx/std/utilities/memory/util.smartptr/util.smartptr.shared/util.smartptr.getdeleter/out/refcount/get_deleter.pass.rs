@@ -64,6 +64,13 @@ impl test_deleter_A_ {
         __this
     }
 }
+impl Callable1<Ptr<A>, ()> for test_deleter_A_ {
+    fn call(&self, a1: Ptr<A>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_deleter_A_Impl::operator_call(__it, a1)
+        })
+    }
+}
 impl Clone for test_deleter_A_ {
     fn clone(&self) -> Self {
         let __src: Value<test_deleter_A_> = Rc::new(RefCell::new(test_deleter_A_ {

@@ -264,6 +264,11 @@ impl A {
         return &mut (*(self as *mut A));
     }
 }
+impl Callable1<i32, i32> for A {
+    fn call(&self, a1: i32) -> i32 {
+        unsafe { A::operator_call(self, a1) }
+    }
+}
 impl Clone for A {
     fn clone(&self) -> Self {
         unsafe { A::copy_from(self as *const A) }

@@ -506,6 +506,11 @@ impl TestEachIntegralType_TestBitwiseAndAssign_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestBitwiseAndAssign_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestBitwiseAndAssign_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_ {}
@@ -528,6 +533,11 @@ impl TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_ {
         });
     }
 }
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_ {
+    fn call(&self) -> () {
+        unsafe { TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_ {}
@@ -545,12 +555,22 @@ impl TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_ {
         });
     }
 }
+impl Callable0<()> for TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseAndAssign_bool_ {}
 impl TestDoesNotHaveBitwiseAndAssign_bool_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_bool_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -561,12 +581,22 @@ impl TestDoesNotHaveBitwiseAndAssign_UserAtomicType_ {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_ {}
 impl TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -577,12 +607,22 @@ impl TestDoesNotHaveBitwiseAndAssign_float_ {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_float_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseAndAssign_double_ {}
 impl TestDoesNotHaveBitwiseAndAssign_double_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -593,6 +633,11 @@ impl TestDoesNotHaveBitwiseAndAssign_long_double_ {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_long_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_long_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseAndAssign_int_ptr_ {}
@@ -601,12 +646,22 @@ impl TestDoesNotHaveBitwiseAndAssign_int_ptr_ {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseAndAssign_const_int_ptr_ {}
 impl TestDoesNotHaveBitwiseAndAssign_const_int_ptr_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_and_assign<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseAndAssign_const_int_ptr_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -626,6 +681,11 @@ impl TestBitwiseAndAssign_char_ {
         assert!(((x as i32) == ((0 as libc::c_char) as i32)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_char_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_signed_char_ {}
@@ -641,6 +701,11 @@ impl TestBitwiseAndAssign_signed_char_ {
         y = (unimplemented!());
         assert!(((y as i32) == (0_i8 as i32)));
         assert!(((x as i32) == (0_i8 as i32)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -660,6 +725,11 @@ impl TestBitwiseAndAssign_unsigned_char_ {
         assert!(((x as i32) == (0_u8 as i32)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_short_ {}
@@ -675,6 +745,11 @@ impl TestBitwiseAndAssign_short_ {
         y = (unimplemented!());
         assert!(((y as i32) == (0_i16 as i32)));
         assert!(((x as i32) == (0_i16 as i32)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_short_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -694,6 +769,11 @@ impl TestBitwiseAndAssign_unsigned_short_ {
         assert!(((x as i32) == (0_u16 as i32)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_int_ {}
@@ -709,6 +789,11 @@ impl TestBitwiseAndAssign_int_ {
         y = (unimplemented!());
         assert!(((y) == (0)));
         assert!(((x) == (0)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_int_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -728,6 +813,11 @@ impl TestBitwiseAndAssign_unsigned_int_ {
         assert!(((x) == (0_u32)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_long_ {}
@@ -743,6 +833,11 @@ impl TestBitwiseAndAssign_long_ {
         y = (unimplemented!());
         assert!(((y) == (0_i64)));
         assert!(((x) == (0_i64)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -762,6 +857,11 @@ impl TestBitwiseAndAssign_unsigned_long_ {
         assert!(((x) == (0_u64)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_long_long_ {}
@@ -777,6 +877,11 @@ impl TestBitwiseAndAssign_long_long_ {
         y = (unimplemented!());
         assert!(((y) == (0_i64)));
         assert!(((x) == (0_i64)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -796,6 +901,11 @@ impl TestBitwiseAndAssign_unsigned_long_long_ {
         assert!(((x) == (0_u64)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_wchar_t_ {}
@@ -811,6 +921,11 @@ impl TestBitwiseAndAssign_wchar_t_ {
         y = (unimplemented!());
         assert!(((y) == (0_i32)));
         assert!(((x) == (0_i32)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -830,6 +945,11 @@ impl TestBitwiseAndAssign_char8_t_ {
         assert!(((x as i32) == (0_u8 as i32)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_char16_t_ {}
@@ -847,6 +967,11 @@ impl TestBitwiseAndAssign_char16_t_ {
         assert!(((x as i32) == (0_u16 as i32)));
     }
 }
+impl Callable0<()> for TestBitwiseAndAssign_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseAndAssign_char32_t_ {}
@@ -862,6 +987,11 @@ impl TestBitwiseAndAssign_char32_t_ {
         y = (unimplemented!());
         assert!(((y) == (0_u32)));
         assert!(((x) == (0_u32)));
+    }
+}
+impl Callable0<()> for TestBitwiseAndAssign_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseAndAssign_char32_t_::operator_call(self) }
     }
 }
 pub fn main() {

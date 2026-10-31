@@ -811,6 +811,21 @@ impl add_one {
         return ((x) + (1));
     }
 }
+impl Callable1<u64, u64> for add_one {
+    fn call(&self, a1: u64) -> u64 {
+        unsafe { add_one::operator_call_1_unsigned_long(self, a1) }
+    }
+}
+impl Callable1<u8, u8> for add_one {
+    fn call(&self, a1: u8) -> u8 {
+        unsafe { add_one::operator_call_1_unsigned_char(self, a1) }
+    }
+}
+impl Callable1<i32, i32> for add_one {
+    fn call(&self, a1: i32) -> i32 {
+        unsafe { add_one::operator_call_1_int(self, a1) }
+    }
+}
 pub unsafe fn test_11(
     mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,

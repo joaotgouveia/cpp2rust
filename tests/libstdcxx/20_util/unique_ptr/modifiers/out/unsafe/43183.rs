@@ -270,6 +270,11 @@ impl D {
         };
     }
 }
+impl Callable1<*mut i32, ()> for D {
+    fn call(&self, a1: *mut i32) -> () {
+        unsafe { D::operator_call(self, a1) }
+    }
+}
 pub static mut count_9: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub unsafe fn test01_10() {
     let mut up: Option<Box<i32>> = None;

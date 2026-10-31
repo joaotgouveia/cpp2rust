@@ -216,6 +216,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Pred {}
+impl Callable1<Ptr<i32>, bool> for Pred {
+    fn call(&self, a1: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| PredImpl::operator_call(__it, a1))
+    }
+}
 pub fn test01_12() {
     let s1: Value<Box<[i32]>> =
         Rc::new(RefCell::new((0..17).map(|_| 0_i32).collect::<Box<[i32]>>()));

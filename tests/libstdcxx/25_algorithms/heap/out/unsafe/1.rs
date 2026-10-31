@@ -284,6 +284,11 @@ impl Gt {
         return ((*x) > (*y));
     }
 }
+impl Callable2<*const i32, *const i32, bool> for Gt {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { Gt::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
 static mut _M_count_13: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub unsafe fn test01_14() {
     let mut s1: [i32; 17] = [0_i32; 17];

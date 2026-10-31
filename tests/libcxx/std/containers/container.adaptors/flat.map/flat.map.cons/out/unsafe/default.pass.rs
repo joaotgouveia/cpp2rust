@@ -109,6 +109,21 @@ impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__
         self.operator_inc_8();
     }
 }
+impl UnsafeCppIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_deref(self)
+                as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_inc_8(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -217,6 +232,8 @@ impl std::cmp::PartialOrd for min_pointer_min_pointer_int__std_integral_constant
 impl std::cmp::PartialEq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_11(self.clone(), other.clone()) }}}
 impl std::cmp::Eq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
 impl UnsafeCppAdvance for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_8(); } }
+impl UnsafeCppIterator<min_pointer_int__std_integral_constant_unsigned_long__0__ > for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn iter_deref(&self) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__  { unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__::operator_deref(self) as *mut min_pointer_int__std_integral_constant_unsigned_long__0__  } } fn iter_inc(&mut self) -> &mut Self { unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__::operator_inc_8(self); } self } }
+impl UnsafeCppInputIterator<min_pointer_int__std_integral_constant_unsigned_long__0__ > for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
@@ -602,6 +619,11 @@ impl DefaultCtableComp {
     }
     pub unsafe fn operator_call(&self, mut _a0: i32, mut _a1: i32) -> bool {
         return false;
+    }
+}
+impl Callable2<i32, i32, bool> for DefaultCtableComp {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { DefaultCtableComp::operator_call(self, a1, a2) }
     }
 }
 impl Default for DefaultCtableComp {

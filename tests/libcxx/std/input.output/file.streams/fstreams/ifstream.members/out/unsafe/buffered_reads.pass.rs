@@ -114,6 +114,11 @@ impl LibraryManagedBuffer {
         unimplemented!();
     }
 }
+impl Callable1<*mut (), ()> for LibraryManagedBuffer {
+    fn call(&self, a1: *mut ()) -> () {
+        unsafe { LibraryManagedBuffer::operator_call_3_char(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct LibraryDefaultBuffer {}
@@ -124,6 +129,11 @@ impl LibraryDefaultBuffer {
     }
     pub unsafe fn operator_call_3_char(&self, _a0: *mut ()) {}
     pub unsafe fn operator_call_3_wchar_t(&self, _a0: *mut ()) {}
+}
+impl Callable1<*mut (), ()> for LibraryDefaultBuffer {
+    fn call(&self, a1: *mut ()) -> () {
+        unsafe { LibraryDefaultBuffer::operator_call_3_char(self, a1) }
+    }
 }
 impl Default for LibraryDefaultBuffer {
     fn default() -> Self {

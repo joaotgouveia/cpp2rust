@@ -126,6 +126,31 @@ impl ConstexprSumT {
         return (unsafe { constexpr_sum_fn_18(values_0, values_1, values_2) });
     }
 }
+impl Callable0<i32> for ConstexprSumT {
+    fn call(&self) -> i32 {
+        unsafe { ConstexprSumT::operator_call_2(self) }
+    }
+}
+impl Callable1<i32, i32> for ConstexprSumT {
+    fn call(&self, a1: i32) -> i32 {
+        unsafe { ConstexprSumT::operator_call_2_int(self, a1) }
+    }
+}
+impl Callable2<i32, i64, i32> for ConstexprSumT {
+    fn call(&self, a1: i32, a2: i64) -> i32 {
+        unsafe { ConstexprSumT::operator_call_2_int_long(self, a1, a2) }
+    }
+}
+impl Callable3<i32, i64, i32, i32> for ConstexprSumT {
+    fn call(&self, a1: i32, a2: i64, a3: i32) -> i32 {
+        unsafe { ConstexprSumT::operator_call_2_int_long_int(self, a1, a2, a3) }
+    }
+}
+impl Callable3<i32, i32, i32, i32> for ConstexprSumT {
+    fn call(&self, a1: i32, a2: i32, a3: i32) -> i32 {
+        unsafe { ConstexprSumT::operator_call_2_int_int_int(self, a1, a2, a3) }
+    }
+}
 pub unsafe fn test_constexpr_evaluation_20() {
     let sum_obj: ConstexprSumT = <ConstexprSumT>::default();
     {
@@ -584,6 +609,102 @@ impl TrackedCallable {
         });
     }
 }
+impl
+    Callable3<
+        *mut i32,
+        *const i32,
+        *mut u32,
+        CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: *mut i32,
+        a2: *const i32,
+        a3: *mut u32,
+    ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
+        unsafe {
+            TrackedCallable::operator_call_2_int_ref_const_int_ref_unsigned_int_ref(
+                &mut *(&raw const *self).cast_mut(),
+                a1,
+                a2,
+                a3,
+            )
+        }
+    }
+}
+impl
+    Callable3<
+        *const i32,
+        *const i32,
+        *mut u32,
+        CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: *const i32,
+        a2: *const i32,
+        a3: *mut u32,
+    ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
+        unsafe {
+            TrackedCallable::operator_call_2_const_int_ref_const_int_ref_unsigned_int_ref(
+                &mut *(&raw const *self).cast_mut(),
+                a1,
+                a2,
+                a3,
+            )
+        }
+    }
+}
+impl
+    Callable3<
+        *mut i32,
+        *const i32,
+        *mut u32,
+        CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: *mut i32,
+        a2: *const i32,
+        a3: *mut u32,
+    ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
+        unsafe {
+            TrackedCallable::operator_call_2_int_const_int_ref_unsigned_int(
+                &mut *(&raw const *self).cast_mut(),
+                a1,
+                a2,
+                a3,
+            )
+        }
+    }
+}
+impl
+    Callable3<
+        *const i32,
+        *const i32,
+        *mut u32,
+        CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__,
+    > for TrackedCallable
+{
+    fn call(
+        &self,
+        a1: *const i32,
+        a2: *const i32,
+        a3: *mut u32,
+    ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
+        unsafe {
+            TrackedCallable::operator_call_2_const_int_const_int_ref_unsigned_int(
+                &mut *(&raw const *self).cast_mut(),
+                a1,
+                a2,
+                a3,
+            )
+        }
+    }
+}
 pub unsafe fn check_apply_quals_and_types_25(t: *mut ()) {
     let expect_args: *const TypeID = (unsafe { makeArgumentID_10() });
     let mut obj: TrackedCallable = <TrackedCallable>::default();
@@ -764,6 +885,20 @@ impl TestNoexceptCallable_true_ {
         return <NothrowMoveable>::default();
     }
 }
+impl Callable3<i32, *const libc::c_char, i64, NothrowMoveable> for TestNoexceptCallable_true_ {
+    fn call(&self, a1: i32, a2: *const libc::c_char, a3: i64) -> NothrowMoveable {
+        unsafe {
+            TestNoexceptCallable_true_::operator_call_1_int_const_char_ptr_long(self, a1, a2, a3)
+        }
+    }
+}
+impl Callable2<NothrowMoveable, i32, NothrowMoveable> for TestNoexceptCallable_true_ {
+    fn call(&self, a1: NothrowMoveable, a2: i32) -> NothrowMoveable {
+        unsafe {
+            TestNoexceptCallable_true_::operator_call_1_struct_NothrowMoveable_int(self, a1, a2)
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestNoexceptCallable_false_ {}
@@ -775,6 +910,13 @@ impl TestNoexceptCallable_false_ {
         mut _a2: i64,
     ) -> NothrowMoveable {
         return <NothrowMoveable>::default();
+    }
+}
+impl Callable3<i32, *const libc::c_char, i64, NothrowMoveable> for TestNoexceptCallable_false_ {
+    fn call(&self, a1: i32, a2: *const libc::c_char, a3: i64) -> NothrowMoveable {
+        unsafe {
+            TestNoexceptCallable_false_::operator_call_1_int_const_char_ptr_long(self, a1, a2, a3)
+        }
     }
 }
 pub unsafe fn test_noexcept_30() {

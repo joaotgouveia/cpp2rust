@@ -38,6 +38,11 @@ impl std::cmp::PartialEq for test_less_int_ {
     }
 }
 impl std::cmp::Eq for test_less_int_ {}
+impl Callable2<*const i32, *const i32, bool> for test_less_int_ {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { test_less_int_::operator_call(self, a1, a2) }
+    }
+}
 impl Default for test_less_int_ {
     fn default() -> Self {
         unsafe { test_less_int_::new_1() }
@@ -318,6 +323,11 @@ impl tracking_allocator_std_pair_const_int__int__ {
 pub struct NoOp {}
 impl NoOp {
     pub unsafe fn operator_call(&mut self) {}
+}
+impl Callable0<()> for NoOp {
+    fn call(&self) -> () {
+        unsafe { NoOp::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
 }
 pub unsafe fn test_alloc_9(
     lhs_alloc: Option<*const ()>,
@@ -818,6 +828,11 @@ impl AssertEmpty_12 {
     pub unsafe fn operator_call(&mut self) {
         assert!((*(self.lhs_allocs_).cast_const()).is_empty());
         assert!((*(self.rhs_allocs_).cast_const()).is_empty());
+    }
+}
+impl Callable0<()> for AssertEmpty_12 {
+    fn call(&self) -> () {
+        unsafe { AssertEmpty_12::operator_call(&mut *(&raw const *self).cast_mut()) }
     }
 }
 pub fn main() {

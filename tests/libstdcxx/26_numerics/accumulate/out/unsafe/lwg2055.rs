@@ -334,6 +334,11 @@ impl Add {
         return Int::move_from({ &mut x });
     }
 }
+impl Callable2<Int, Int, Int> for Add {
+    fn call(&self, a1: Int, a2: Int) -> Int {
+        unsafe { Add::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn test01_10() {
     let mut i: [Int; 5] = [
         Int::new({ 0 }),

@@ -150,6 +150,11 @@ impl CompareFloatingValues_float_ {
         return ((unimplemented!()) < (tol));
     }
 }
+impl Callable2<f32, f32, bool> for CompareFloatingValues_float_ {
+    fn call(&self, a1: f32, a2: f32) -> bool {
+        unsafe { CompareFloatingValues_float_::operator_call(self, a1, a2) }
+    }
+}
 impl Default for CompareFloatingValues_float_ {
     fn default() -> Self {
         unsafe { CompareFloatingValues_float_::new() }
@@ -194,6 +199,11 @@ impl CompareFloatingValues_double_ {
         return ((unimplemented!()) < (tol));
     }
 }
+impl Callable2<f64, f64, bool> for CompareFloatingValues_double_ {
+    fn call(&self, a1: f64, a2: f64) -> bool {
+        unsafe { CompareFloatingValues_double_::operator_call(self, a1, a2) }
+    }
+}
 impl Default for CompareFloatingValues_double_ {
     fn default() -> Self {
         unsafe { CompareFloatingValues_double_::new() }
@@ -236,6 +246,11 @@ impl CompareFloatingValues_long_double_ {
         }
         let mut tol: f64 = ((self.abs_tol) + ((unimplemented!()) * (self.rel_tol)));
         return ((unimplemented!()) < (tol));
+    }
+}
+impl Callable2<f64, f64, bool> for CompareFloatingValues_long_double_ {
+    fn call(&self, a1: f64, a2: f64) -> bool {
+        unsafe { CompareFloatingValues_long_double_::operator_call(self, a1, a2) }
     }
 }
 impl Default for CompareFloatingValues_long_double_ {
@@ -1440,6 +1455,11 @@ impl TestFloat {
         (unsafe { test_15() });
     }
 }
+impl Callable0<()> for TestFloat {
+    fn call(&self) -> () {
+        unsafe { TestFloat::operator_call_1_float(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestInt {}
@@ -1483,6 +1503,11 @@ impl TestInt {
             }
             n.prefix_inc();
         }
+    }
+}
+impl Callable0<()> for TestInt {
+    fn call(&self) -> () {
+        unsafe { TestInt::operator_call_1_short(&mut *(&raw const *self).cast_mut()) }
     }
 }
 pub fn main() {

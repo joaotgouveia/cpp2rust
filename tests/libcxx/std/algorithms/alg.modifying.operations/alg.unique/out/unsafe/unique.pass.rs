@@ -1929,6 +1929,11 @@ pub struct do_nothing {}
 impl do_nothing {
     pub unsafe fn operator_call(&self, mut _a0: *mut ::libc::c_void) {}
 }
+impl Callable1<*mut ::libc::c_void, ()> for do_nothing {
+    fn call(&self, a1: *mut ::libc::c_void) -> () {
+        unsafe { do_nothing::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test1_32() {
     let mut one: i32 = 1;
     let mut two: i32 = 2;

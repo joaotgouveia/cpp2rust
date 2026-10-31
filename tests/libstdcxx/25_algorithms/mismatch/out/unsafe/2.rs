@@ -385,6 +385,18 @@ impl UnsafeCppAdvance for __gnu_test_input_iterator_wrapper_int_ {
         self.operator_inc_9();
     }
 }
+impl UnsafeCppIterator<i32> for __gnu_test_input_iterator_wrapper_int_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { __gnu_test_input_iterator_wrapper_int_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            __gnu_test_input_iterator_wrapper_int_::operator_inc_9(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for __gnu_test_input_iterator_wrapper_int_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_ {
@@ -436,6 +448,11 @@ impl equal_to {
     pub unsafe fn operator_call(&mut self, mut l: i32, mut r: i32) -> bool {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)).prefix_inc();
         return ((l) == (r));
+    }
+}
+impl Callable2<i32, i32, bool> for equal_to {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { equal_to::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
     }
 }
 pub static mut eq_13: std::cell::LazyCell<equal_to> =

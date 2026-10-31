@@ -16,6 +16,11 @@ impl X {
     }
     pub unsafe fn operator_call(&mut self) {}
 }
+impl Callable0<()> for X {
+    fn call(&self) -> () {
+        unsafe { X::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 impl Default for X {
     fn default() -> Self {
         unsafe { X::new() }

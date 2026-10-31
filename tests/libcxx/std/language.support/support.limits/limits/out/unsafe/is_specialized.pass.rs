@@ -339,6 +339,11 @@ impl Test {
         );;
     }
 }
+impl Callable0<()> for Test {
+    fn call(&self) -> () {
+        unsafe { Test::operator_call_1_char(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

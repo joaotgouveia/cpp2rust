@@ -211,6 +211,11 @@ impl FinalCompare_int_ {
         return ((*x) < (*y));
     }
 }
+impl Callable2<*const i32, *const i32, bool> for FinalCompare_int_ {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { FinalCompare_int_::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn test_10() -> bool {
     let mut ar: [(); 8] = [
         (5, (5 as f64)),

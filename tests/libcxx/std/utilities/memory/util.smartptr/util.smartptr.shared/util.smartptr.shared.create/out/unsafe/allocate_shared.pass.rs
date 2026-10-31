@@ -118,6 +118,11 @@ impl std::cmp::PartialEq for operator_hijacker {
     }
 }
 impl std::cmp::Eq for operator_hijacker {}
+impl Callable0<i32> for operator_hijacker {
+    fn call(&self) -> i32 {
+        unsafe { operator_hijacker::operator_call(self) }
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_copyable<operator_hijacker>::value &&     //\n                  std::is_copy_constructible<operator_hijacker>::value && //\n                  std::is_move_constructible<operator_hijacker>::value && //\n                  std::is_copy_assignable<operator_hijacker>::value &&    //\n                  std::is_move_assignable<operator_hijacker>::value"

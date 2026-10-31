@@ -14,6 +14,11 @@ impl X {
         Self {}
     }
 }
+impl Callable0<()> for X {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| XImpl::operator_call(__it))
+    }
+}
 impl Default for X {
     fn default() -> Self {
         { X::new() }

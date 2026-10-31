@@ -24,6 +24,13 @@ impl unary_counting_predicate_bool__ptr__int___int_ {
         }
     }
 }
+impl Callable1<Ptr<i32>, bool> for unary_counting_predicate_bool__ptr__int___int_ {
+    fn call(&self, a1: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            unary_counting_predicate_bool__ptr__int___int_Impl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn is5_0(mut i: i32) -> bool {
     return (i == 5);
 }

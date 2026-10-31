@@ -297,6 +297,13 @@ impl CppEq for E_10 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Cmp_11 {}
+impl Callable2<E_10, E_10, bool> for Cmp_11 {
+    fn call(&self, a1: E_10, a2: E_10) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Cmp_11Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test02_12() {
     const _: () = assert!(true, "std::totally_ordered<std::set<W>>");;
     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));

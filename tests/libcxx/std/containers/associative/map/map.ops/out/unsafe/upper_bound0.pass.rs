@@ -22,6 +22,13 @@ impl transparent_less {
         });
     }
 }
+impl Callable2<*const C2Int, *const i32, bool> for transparent_less {
+    fn call(&self, a1: *const C2Int, a2: *const i32) -> bool {
+        unsafe {
+            transparent_less::operator_call_1_const_struct_C2Int_ref_const_int_ref(self, a1, a2)
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct transparent_less_not_referenceable {}
@@ -36,6 +43,15 @@ impl transparent_less_not_referenceable {
             let _lhs: i32 = (*u);
             operator_lt_0(_rhs, _lhs)
         });
+    }
+}
+impl Callable2<*const C2Int, *const i32, bool> for transparent_less_not_referenceable {
+    fn call(&self, a1: *const C2Int, a2: *const i32) -> bool {
+        unsafe {
+            transparent_less_not_referenceable::operator_call_1_const_struct_C2Int_ref_const_int_ref(
+                self, a1, a2,
+            )
+        }
     }
 }
 #[repr(C)]
@@ -57,6 +73,15 @@ impl transparent_less_nonempty {
             let _lhs: i32 = (*u);
             operator_lt_0(_rhs, _lhs)
         });
+    }
+}
+impl Callable2<*const C2Int, *const i32, bool> for transparent_less_nonempty {
+    fn call(&self, a1: *const C2Int, a2: *const i32) -> bool {
+        unsafe {
+            transparent_less_nonempty::operator_call_1_const_struct_C2Int_ref_const_int_ref(
+                self, a1, a2,
+            )
+        }
     }
 }
 #[repr(C)]

@@ -275,6 +275,13 @@ pub fn test01_9() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct hasher {}
+impl Callable1<i32, usize> for hasher {
+    fn call(&self, a1: i32) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            hasherImpl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn test02_10() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

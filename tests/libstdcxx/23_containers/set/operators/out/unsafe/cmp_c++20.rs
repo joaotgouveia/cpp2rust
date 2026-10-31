@@ -367,6 +367,11 @@ impl Cmp_11 {
         return false;
     }
 }
+impl Callable2<E_10, E_10, bool> for Cmp_11 {
+    fn call(&self, a1: E_10, a2: E_10) -> bool {
+        unsafe { Cmp_11::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn test02_12() {
     const _: () = assert!(true, "std::totally_ordered<std::set<W>>");;
     let mut c1: () = unimplemented!();

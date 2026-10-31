@@ -96,6 +96,19 @@ impl CppAdvance for cpp17_output_iterator_TrivialSortableWithComp_ptr_ {
         __it.operator_inc_5();
     }
 }
+impl CppIterator<TrivialSortableWithComp> for cpp17_output_iterator_TrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_output_iterator_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_output_iterator_TrivialSortableWithComp_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
 pub fn base_1(
     i: Ptr<cpp17_output_iterator_NonTrivialSortableWithComp_ptr_>,
 ) -> Ptr<NonTrivialSortableWithComp> {
@@ -128,6 +141,21 @@ impl cpp17_output_iterator_NonTrivialSortableWithComp_ptr_ {
 impl CppAdvance for cpp17_output_iterator_NonTrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
+    }
+}
+impl CppIterator<NonTrivialSortableWithComp>
+    for cpp17_output_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_output_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_output_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_inc_5(__it);
+        });
+        self
     }
 }
 const _: () = assert!(
@@ -189,12 +217,46 @@ impl cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortab
         }
     }
 }
+impl std::cmp::PartialEq
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_2(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
+}
 impl CppAdvance
     for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
 {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
     }
+}
+impl CppIterator<TrivialSortableWithComp>
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<TrivialSortableWithComp>
+    for cpp17_input_iterator_const_TrivialSortableWithComp_ptr__const_TrivialSortableWithComp_ptr_
+{
 }
 pub fn operator_ne_3(
     x : Ptr< cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_  >,
@@ -231,7 +293,11 @@ impl
         }
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ { fn eq(&self, other: &Self) -> bool {  { libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| !(operator_ne_3(__lhs.clone(), __rhs.clone()))) }}}
+impl std::cmp::Eq for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ { fn cpp_inc(__it: &Ptr<Self>) { __it.operator_inc_5(); } }
+impl CppIterator<NonTrivialSortableWithComp  > for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ { fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp  > { libcc2rs::with_record_ptr(&mut self.clone(), |__it| cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)) } fn iter_inc(&mut self) -> &mut Self { libcc2rs::with_record_ptr(self, |__it| { cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_Impl::operator_inc_5(__it); }); self } }
+impl CppInputIterator<NonTrivialSortableWithComp  > for cpp17_input_iterator_const_NonTrivialSortableWithComp_ptr__const_NonTrivialSortableWithComp_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_4(
     i: Ptr<forward_iterator_TrivialSortableWithComp_ptr_>,
@@ -267,6 +333,19 @@ impl CppAdvance for forward_iterator_TrivialSortableWithComp_ptr_ {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<TrivialSortableWithComp> for forward_iterator_TrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_TrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
 pub fn operator_ne_5(
     x: Ptr<forward_iterator_const_TrivialSortableWithComp_ptr_>,
     y: Ptr<forward_iterator_const_TrivialSortableWithComp_ptr_>,
@@ -297,10 +376,37 @@ impl forward_iterator_const_TrivialSortableWithComp_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_5(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_TrivialSortableWithComp_ptr_ {}
 impl CppAdvance for forward_iterator_const_TrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
+}
+impl CppIterator<TrivialSortableWithComp> for forward_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_TrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<TrivialSortableWithComp>
+    for forward_iterator_const_TrivialSortableWithComp_ptr_
+{
 }
 pub fn base_6(
     i: Ptr<forward_iterator_NonTrivialSortableWithComp_ptr_>,
@@ -336,6 +442,19 @@ impl CppAdvance for forward_iterator_NonTrivialSortableWithComp_ptr_ {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<NonTrivialSortableWithComp> for forward_iterator_NonTrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
 pub fn operator_ne_7(
     x: Ptr<forward_iterator_const_NonTrivialSortableWithComp_ptr_>,
     y: Ptr<forward_iterator_const_NonTrivialSortableWithComp_ptr_>,
@@ -366,10 +485,39 @@ impl forward_iterator_const_NonTrivialSortableWithComp_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_NonTrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_7(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_NonTrivialSortableWithComp_ptr_ {}
 impl CppAdvance for forward_iterator_const_NonTrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
+}
+impl CppIterator<NonTrivialSortableWithComp>
+    for forward_iterator_const_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_NonTrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<NonTrivialSortableWithComp>
+    for forward_iterator_const_NonTrivialSortableWithComp_ptr_
+{
 }
 pub fn base_8(
     i: Ptr<bidirectional_iterator_TrivialSortableWithComp_ptr_>,
@@ -405,6 +553,19 @@ impl CppAdvance for bidirectional_iterator_TrivialSortableWithComp_ptr_ {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<TrivialSortableWithComp> for bidirectional_iterator_TrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_TrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
 pub fn operator_ne_9(
     x: Ptr<bidirectional_iterator_const_TrivialSortableWithComp_ptr_>,
     y: Ptr<bidirectional_iterator_const_TrivialSortableWithComp_ptr_>,
@@ -435,10 +596,39 @@ impl bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_9(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_TrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
+}
+impl CppIterator<TrivialSortableWithComp>
+    for bidirectional_iterator_const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_TrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<TrivialSortableWithComp>
+    for bidirectional_iterator_const_TrivialSortableWithComp_ptr_
+{
 }
 pub fn base_10(
     i: Ptr<bidirectional_iterator_NonTrivialSortableWithComp_ptr_>,
@@ -474,6 +664,21 @@ impl CppAdvance for bidirectional_iterator_NonTrivialSortableWithComp_ptr_ {
         __it.operator_inc_6();
     }
 }
+impl CppIterator<NonTrivialSortableWithComp>
+    for bidirectional_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
 pub fn operator_ne_11(
     x: Ptr<bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_>,
     y: Ptr<bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_>,
@@ -506,10 +711,39 @@ impl bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_11(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
+}
+impl CppIterator<NonTrivialSortableWithComp>
+    for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<NonTrivialSortableWithComp>
+    for bidirectional_iterator_const_NonTrivialSortableWithComp_ptr_
+{
 }
 pub fn base_12(
     i: Ptr<random_access_iterator_TrivialSortableWithComp_ptr_>,
@@ -545,6 +779,19 @@ impl CppAdvance for random_access_iterator_TrivialSortableWithComp_ptr_ {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<TrivialSortableWithComp> for random_access_iterator_TrivialSortableWithComp_ptr_ {
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_TrivialSortableWithComp_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
 pub fn operator_ne_13(
     x: Ptr<random_access_iterator_const_TrivialSortableWithComp_ptr_>,
     y: Ptr<random_access_iterator_const_TrivialSortableWithComp_ptr_>,
@@ -575,10 +822,39 @@ impl random_access_iterator_const_TrivialSortableWithComp_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_TrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_13(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_TrivialSortableWithComp_ptr_ {}
 impl CppAdvance for random_access_iterator_const_TrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
+}
+impl CppIterator<TrivialSortableWithComp>
+    for random_access_iterator_const_TrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<TrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_TrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_TrivialSortableWithComp_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<TrivialSortableWithComp>
+    for random_access_iterator_const_TrivialSortableWithComp_ptr_
+{
 }
 pub fn base_14(
     i: Ptr<random_access_iterator_NonTrivialSortableWithComp_ptr_>,
@@ -614,6 +890,21 @@ impl CppAdvance for random_access_iterator_NonTrivialSortableWithComp_ptr_ {
         __it.operator_inc_7();
     }
 }
+impl CppIterator<NonTrivialSortableWithComp>
+    for random_access_iterator_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_NonTrivialSortableWithComp_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
 pub fn operator_ne_15(
     x: Ptr<random_access_iterator_const_NonTrivialSortableWithComp_ptr_>,
     y: Ptr<random_access_iterator_const_NonTrivialSortableWithComp_ptr_>,
@@ -646,10 +937,39 @@ impl random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_15(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {}
 impl CppAdvance for random_access_iterator_const_NonTrivialSortableWithComp_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
     }
+}
+impl CppIterator<NonTrivialSortableWithComp>
+    for random_access_iterator_const_NonTrivialSortableWithComp_ptr_
+{
+    fn iter_deref(&self) -> Ptr<NonTrivialSortableWithComp> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_NonTrivialSortableWithComp_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_NonTrivialSortableWithComp_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<NonTrivialSortableWithComp>
+    for random_access_iterator_const_NonTrivialSortableWithComp_ptr_
+{
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -851,22 +1171,71 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_24(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_24(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_23(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_23(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
     }
 }
 impl Default for adl_Iterator {
@@ -999,6 +1368,15 @@ impl Default for NonTrivialSortable {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TrivialSortableWithComp_Comparator {}
+impl Callable2<Ptr<TrivialSortableWithComp>, Ptr<TrivialSortableWithComp>, bool>
+    for TrivialSortableWithComp_Comparator
+{
+    fn call(&self, a1: Ptr<TrivialSortableWithComp>, a2: Ptr<TrivialSortableWithComp>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TrivialSortableWithComp_ComparatorImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
@@ -1025,6 +1403,19 @@ impl Default for TrivialSortableWithComp {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonTrivialSortableWithComp_Comparator {}
+impl Callable2<Ptr<NonTrivialSortableWithComp>, Ptr<NonTrivialSortableWithComp>, bool>
+    for NonTrivialSortableWithComp_Comparator
+{
+    fn call(
+        &self,
+        a1: Ptr<NonTrivialSortableWithComp>,
+        a2: Ptr<NonTrivialSortableWithComp>,
+    ) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NonTrivialSortableWithComp_ComparatorImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign)]
 #[cpp_from(i32, new_1, value)]
 #[byte_size(4)]

@@ -25,6 +25,13 @@ impl CppEq for test_less_int_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_less_int_ {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_less_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test_1() -> bool {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     assert!((unimplemented!() == 6_()));

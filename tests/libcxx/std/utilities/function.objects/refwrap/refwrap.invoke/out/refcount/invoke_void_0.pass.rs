@@ -15,6 +15,11 @@ pub fn f_void_0_1() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_void_0 {}
+impl Callable0<()> for A_void_0 {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| A_void_0Impl::operator_call(__it))
+    }
+}
 pub fn test_void_0_2() {
     let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     {

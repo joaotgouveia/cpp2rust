@@ -96,6 +96,13 @@ impl CppEq for operator_hijacker {
         operator_hijackerImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl Callable0<i32> for operator_hijacker {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            operator_hijackerImpl::operator_call(__it)
+        })
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_copyable<operator_hijacker>::value &&     //\n                  std::is_copy_constructible<operator_hijacker>::value && //\n                  std::is_move_constructible<operator_hijacker>::value && //\n                  std::is_copy_assignable<operator_hijacker>::value &&    //\n                  std::is_move_assignable<operator_hijacker>::value"

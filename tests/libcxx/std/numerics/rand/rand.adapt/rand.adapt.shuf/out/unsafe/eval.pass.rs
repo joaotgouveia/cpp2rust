@@ -36,6 +36,15 @@ impl rand1_unsigned_long_long__0__18446744073709551615_ {
         return r;
     }
 }
+impl Callable0<u64> for rand1_unsigned_long_long__0__18446744073709551615_ {
+    fn call(&self) -> u64 {
+        unsafe {
+            rand1_unsigned_long_long__0__18446744073709551615_::operator_call(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
+    }
+}
 impl Default for rand1_unsigned_long_long__0__18446744073709551615_ {
     fn default() -> Self {
         unsafe { rand1_unsigned_long_long__0__18446744073709551615_::new(None) }

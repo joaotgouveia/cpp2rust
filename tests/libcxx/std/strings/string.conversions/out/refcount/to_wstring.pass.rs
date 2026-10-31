@@ -9,21 +9,63 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_int_ {}
+impl Callable1<Ptr<Vec<i32>>, i32> for detail_parse_integer_impl_int_ {
+    fn call(&self, a1: Ptr<Vec<i32>>) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            detail_parse_integer_impl_int_Impl::operator_call_1_wchar_t(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_long_ {}
+impl Callable1<Ptr<Vec<i32>>, i64> for detail_parse_integer_impl_long_ {
+    fn call(&self, a1: Ptr<Vec<i32>>) -> i64 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            detail_parse_integer_impl_long_Impl::operator_call_1_wchar_t(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_long_long_ {}
+impl Callable1<Ptr<Vec<i32>>, i64> for detail_parse_integer_impl_long_long_ {
+    fn call(&self, a1: Ptr<Vec<i32>>) -> i64 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            detail_parse_integer_impl_long_long_Impl::operator_call_1_wchar_t(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_unsigned_int_ {}
+impl Callable1<Ptr<Vec<i32>>, u32> for detail_parse_integer_impl_unsigned_int_ {
+    fn call(&self, a1: Ptr<Vec<i32>>) -> u32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            detail_parse_integer_impl_unsigned_int_Impl::operator_call_1_wchar_t(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_unsigned_long_ {}
+impl Callable1<Ptr<Vec<i32>>, u64> for detail_parse_integer_impl_unsigned_long_ {
+    fn call(&self, a1: Ptr<Vec<i32>>) -> u64 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            detail_parse_integer_impl_unsigned_long_Impl::operator_call_1_wchar_t(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_unsigned_long_long_ {}
+impl Callable1<Ptr<Vec<i32>>, u64> for detail_parse_integer_impl_unsigned_long_long_ {
+    fn call(&self, a1: Ptr<Vec<i32>>) -> u64 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            detail_parse_integer_impl_unsigned_long_long_Impl::operator_call_1_wchar_t(__it, a1)
+        })
+    }
+}
 pub fn parse_integer_0(str: Ptr<Vec<i32>>) -> i32 {
     return ({
         detail_parse_integer_impl_int_Impl::operator_call_1_wchar_t(

@@ -9,6 +9,13 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Callable_Holder_Incomplete__ {}
+impl Callable0<()> for Callable_Holder_Incomplete__ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Callable_Holder_Incomplete__Impl::operator_call(__it)
+        })
+    }
+}
 pub fn no_args_0() -> Ptr<Holder_Incomplete_> {
     return Ptr::<Holder_Incomplete_>::null();
 }

@@ -34,6 +34,11 @@ impl std::cmp::PartialEq for test_less_int_ {
     }
 }
 impl std::cmp::Eq for test_less_int_ {}
+impl Callable2<*const i32, *const i32, bool> for test_less_int_ {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { test_less_int_::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn test_1() -> bool {
     let mut m: () = unimplemented!();
     assert!(((unimplemented!()) == (6_())));

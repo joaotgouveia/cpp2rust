@@ -18,6 +18,11 @@ impl A_void_0 {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_inc();
     }
 }
+impl Callable0<()> for A_void_0 {
+    fn call(&self) -> () {
+        unsafe { A_void_0::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 pub unsafe fn test_void_0_2() {
     let mut save_count: i32 = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     {

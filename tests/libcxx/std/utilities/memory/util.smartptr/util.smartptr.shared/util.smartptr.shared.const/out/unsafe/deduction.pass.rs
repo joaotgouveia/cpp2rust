@@ -32,6 +32,11 @@ impl D {
         };
     }
 }
+impl Callable1<*const A, ()> for D {
+    fn call(&self, a1: *const A) -> () {
+        unsafe { D::operator_call(self, a1) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

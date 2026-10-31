@@ -495,12 +495,22 @@ impl HashModuloOddness_16 {
         return unimplemented!();
     }
 }
+impl Callable1<i32, usize> for HashModuloOddness_16 {
+    fn call(&self, a1: i32) -> usize {
+        unsafe { HashModuloOddness_16::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CompareModuloOddness_17 {}
 impl CompareModuloOddness_17 {
     pub unsafe fn operator_call(&self, mut x: i32, mut y: i32) -> bool {
         return (((x) % (2)) == ((y) % (2)));
+    }
+}
+impl Callable2<i32, i32, bool> for CompareModuloOddness_17 {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { CompareModuloOddness_17::operator_call(self, a1, a2) }
     }
 }
 pub unsafe fn __cpp2rust_init_globals() {

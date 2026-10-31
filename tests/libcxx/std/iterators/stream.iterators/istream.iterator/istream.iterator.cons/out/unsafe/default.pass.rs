@@ -19,6 +19,11 @@ impl test_trivial_int__true_ {
         &(it);
     }
 }
+impl Callable0<()> for test_trivial_int__true_ {
+    fn call(&self) -> () {
+        unsafe { test_trivial_int__true_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_trivial_char__true_ {}
@@ -26,6 +31,11 @@ impl test_trivial_char__true_ {
     pub unsafe fn operator_call(&self) {
         let it: () = unimplemented!();
         &(it);
+    }
+}
+impl Callable0<()> for test_trivial_char__true_ {
+    fn call(&self) -> () {
+        unsafe { test_trivial_char__true_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -37,11 +47,21 @@ impl test_trivial_double__true_ {
         &(it);
     }
 }
+impl Callable0<()> for test_trivial_double__true_ {
+    fn call(&self) -> () {
+        unsafe { test_trivial_double__true_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_trivial_S__false_ {}
 impl test_trivial_S__false_ {
     pub unsafe fn operator_call(&self) {}
+}
+impl Callable0<()> for test_trivial_S__false_ {
+    fn call(&self) -> () {
+        unsafe { test_trivial_S__false_::operator_call(self) }
+    }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -49,6 +69,15 @@ pub struct test_trivial_std_basic_string_char__std_char_traits_char___std_alloca
 {}
 impl test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ {
     pub unsafe fn operator_call(&self) {}
+}
+impl Callable0<()>
+    for test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_
+{
+    fn call(&self) -> () {
+        unsafe {
+            test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_::operator_call(self)
+        }
+    }
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

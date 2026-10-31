@@ -271,6 +271,11 @@ impl hash {
         return (((val) % (self._M_modulo)) as usize);
     }
 }
+impl Callable1<i32, usize> for hash {
+    fn call(&self, a1: i32) -> usize {
+        unsafe { hash::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test01_9() {
     let mut us1: () = unimplemented!();
     let mut us2: () = unimplemented!();

@@ -14,51 +14,163 @@ pub struct test_macros_detail_is_same_std_optional_int___std_optional_int__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LVal {}
+impl Callable1<Ptr<i32>, ()> for LVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            LValImpl::operator_call_1(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CLVal {}
+impl Callable1<Ptr<i32>, ()> for CLVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CLValImpl::operator_call_2(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RVal {}
+impl Callable1<Ptr<i32>, ()> for RVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            RValImpl::operator_call_3(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CRVal {}
+impl Callable1<Ptr<i32>, ()> for CRVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CRValImpl::operator_call_4(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RefQual {}
+impl Callable1<i32, ()> for RefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            RefQualImpl::operator_call_1(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CRefQual {}
+impl Callable1<i32, ()> for CRefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CRefQualImpl::operator_call_2(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RVRefQual {}
+impl Callable1<i32, ()> for RVRefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            RVRefQualImpl::operator_call_3(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RVCRefQual {}
+impl Callable1<i32, ()> for RVCRefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            RVCRefQualImpl::operator_call_4(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NOLVal {}
+impl Callable1<Ptr<i32>, ()> for NOLVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NOLValImpl::operator_call_1(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NOCLVal {}
+impl Callable1<Ptr<i32>, ()> for NOCLVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NOCLValImpl::operator_call_2(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NORVal {}
+impl Callable1<Ptr<i32>, ()> for NORVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NORValImpl::operator_call_3(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NOCRVal {}
+impl Callable1<Ptr<i32>, ()> for NOCRVal {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NOCRValImpl::operator_call_4(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NORefQual {}
+impl Callable1<i32, ()> for NORefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NORefQualImpl::operator_call_1(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NOCRefQual {}
+impl Callable1<i32, ()> for NOCRefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NOCRefQualImpl::operator_call_2(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NORVRefQual {}
+impl Callable1<i32, ()> for NORVRefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NORVRefQualImpl::operator_call_3(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NORVCRefQual {}
+impl Callable1<i32, ()> for NORVCRefQual {
+    fn call(&self, a1: i32) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NORVCRefQualImpl::operator_call_4(__it, a1)
+        })
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
 #[byte_size(1)]
 pub struct NoCopy {}
@@ -67,6 +179,13 @@ impl NoCopy {
         let __this: NoCopy = Self {};
         assert!(false);
         __this
+    }
+}
+impl Callable1<Ptr<NoCopy>, ()> for NoCopy {
+    fn call(&self, a1: Ptr<NoCopy>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            NoCopyImpl::operator_call(__it, a1)
+        })
     }
 }
 impl Clone for NoCopy {

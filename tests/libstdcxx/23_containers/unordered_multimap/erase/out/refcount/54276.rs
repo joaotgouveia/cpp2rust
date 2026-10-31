@@ -239,6 +239,13 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct hasher {}
+impl Callable1<Ptr<A>, usize> for hasher {
+    fn call(&self, a1: Ptr<A>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            hasherImpl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn test01_10() {
     let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

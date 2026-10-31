@@ -55,6 +55,13 @@ pub fn insert3at_1(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct do_nothing {}
+impl Callable1<AnyPtr, ()> for do_nothing {
+    fn call(&self, a1: AnyPtr) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            do_nothingImpl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

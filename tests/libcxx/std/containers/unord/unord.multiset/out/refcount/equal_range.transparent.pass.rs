@@ -98,7 +98,7 @@ impl CppEq for StoredType_int_ {
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(StoredType_int_, to_StoredType_int_, ptr)]
+#[cpp_into(StoredType_int_, to_StoredType_int_)]
 #[byte_size(16)]
 pub struct SearchedType_int_ {
     #[offset(0)]
@@ -118,6 +118,20 @@ impl SearchedType_int_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct hash_impl {}
+impl Callable1<Ptr<SearchedType_int_>, usize> for hash_impl {
+    fn call(&self, a1: Ptr<SearchedType_int_>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            hash_implImpl::operator_call_1_int(__it, a1)
+        })
+    }
+}
+impl Callable1<Ptr<StoredType_int_>, usize> for hash_impl {
+    fn call(&self, a1: Ptr<StoredType_int_>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            hash_implImpl::operator_call_2_int(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct non_transparent_hash {}

@@ -287,6 +287,11 @@ impl hash {
         return ((*(*k).value) as usize);
     }
 }
+impl Callable1<*const Key, usize> for hash {
+    fn call(&self, a1: *const Key) -> usize {
+        unsafe { hash::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
 #[cpp_into(Key, to_Key)]

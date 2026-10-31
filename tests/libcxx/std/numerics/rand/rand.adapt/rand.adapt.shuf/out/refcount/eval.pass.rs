@@ -30,6 +30,13 @@ impl rand1_unsigned_long_long__0__18446744073709551615_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl Callable0<u64> for rand1_unsigned_long_long__0__18446744073709551615_ {
+    fn call(&self) -> u64 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            rand1_unsigned_long_long__0__18446744073709551615_Impl::operator_call(__it)
+        })
+    }
+}
 impl Default for rand1_unsigned_long_long__0__18446744073709551615_ {
     fn default() -> Self {
         { rand1_unsigned_long_long__0__18446744073709551615_::new(None) }

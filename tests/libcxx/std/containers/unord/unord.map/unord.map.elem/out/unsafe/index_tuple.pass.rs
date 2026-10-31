@@ -14,6 +14,11 @@ impl my_hash {
         return 0_usize;
     }
 }
+impl Callable1<*const (), usize> for my_hash {
+    fn call(&self, a1: *const ()) -> usize {
+        unsafe { my_hash::operator_call(self, a1) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

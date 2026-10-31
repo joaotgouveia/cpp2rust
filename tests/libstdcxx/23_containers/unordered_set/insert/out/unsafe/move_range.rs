@@ -390,6 +390,11 @@ impl __gnu_test_counter_type_hasher {
         return ((*c).val as usize);
     }
 }
+impl Callable1<*const __gnu_test_counter_type, usize> for __gnu_test_counter_type_hasher {
+    fn call(&self, a1: *const __gnu_test_counter_type) -> usize {
+        unsafe { __gnu_test_counter_type_hasher::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test01_17() {
     let mut ref_: Vec<__gnu_test_counter_type> = Vec::from([
         __gnu_test_counter_type::new_1({ 0 }),

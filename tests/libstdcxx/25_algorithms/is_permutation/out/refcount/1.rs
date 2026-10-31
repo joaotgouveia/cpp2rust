@@ -200,6 +200,13 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct my_equal_to {}
+impl Callable2<i32, i32, bool> for my_equal_to {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            my_equal_toImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     pub static arr0_9: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([11, 22, 33, 44, 55])));
 );

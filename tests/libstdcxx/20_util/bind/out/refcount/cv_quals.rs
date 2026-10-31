@@ -200,6 +200,18 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct X {}
+impl Callable0<i32> for X {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| XImpl::operator_call_1(__it))
+    }
+}
+impl Callable3<i32, i32, i32, i32> for X {
+    fn call(&self, a1: i32, a2: i32, a3: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            XImpl::operator_call_5(__it, a1, a2, a3)
+        })
+    }
+}
 pub fn test01_9() {
     let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;

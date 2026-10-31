@@ -35,6 +35,11 @@ impl A {
         __this
     }
 }
+impl Callable1<i32, i32> for A {
+    fn call(&self, a1: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| AImpl::operator_call(__it, a1))
+    }
+}
 impl Clone for A {
     fn clone(&self) -> Self {
         let __src: Value<A> = Rc::new(RefCell::new(A {

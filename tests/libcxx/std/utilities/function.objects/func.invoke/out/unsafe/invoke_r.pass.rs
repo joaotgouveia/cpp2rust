@@ -178,6 +178,11 @@ impl MoveOnlyVoidFunction_3 {
         (*self.was_called) = true;
     }
 }
+impl Callable0<()> for MoveOnlyVoidFunction_3 {
+    fn call(&self) -> () {
+        unsafe { MoveOnlyVoidFunction_3::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MoveOnlyIntFunction_4 {
@@ -187,6 +192,11 @@ impl MoveOnlyIntFunction_4 {
     pub unsafe fn operator_call(&mut self) -> i32 {
         (*self.was_called) = true;
         return 0;
+    }
+}
+impl Callable0<i32> for MoveOnlyIntFunction_4 {
+    fn call(&self) -> i32 {
+        unsafe { MoveOnlyIntFunction_4::operator_call(&mut *(&raw const *self).cast_mut()) }
     }
 }
 #[repr(C)]

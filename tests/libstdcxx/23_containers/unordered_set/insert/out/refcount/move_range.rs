@@ -293,6 +293,13 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_counter_type_hasher {}
+impl Callable1<Ptr<__gnu_test_counter_type>, usize> for __gnu_test_counter_type_hasher {
+    fn call(&self, a1: Ptr<__gnu_test_counter_type>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            __gnu_test_counter_type_hasherImpl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn test01_17() {
     let ref_: Value<Vec<__gnu_test_counter_type>> = Rc::new(RefCell::new(Vec::from([
         __gnu_test_counter_type::new_1({ 0 }),

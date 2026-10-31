@@ -453,9 +453,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct HashModuloOddness_16 {}
+impl Callable1<i32, usize> for HashModuloOddness_16 {
+    fn call(&self, a1: i32) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            HashModuloOddness_16Impl::operator_call(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CompareModuloOddness_17 {}
+impl Callable2<i32, i32, bool> for CompareModuloOddness_17 {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompareModuloOddness_17Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub trait CompareModuloOddness_17Impl {
     fn operator_call(&self, x: i32, y: i32) -> bool;
 }

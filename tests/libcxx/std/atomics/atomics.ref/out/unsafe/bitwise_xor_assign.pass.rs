@@ -506,6 +506,11 @@ impl TestEachIntegralType_TestBitwiseXorAssign_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestBitwiseXorAssign_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestBitwiseXorAssign_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_ {}
@@ -528,6 +533,11 @@ impl TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_ {
         });
     }
 }
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_ {
+    fn call(&self) -> () {
+        unsafe { TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestDoesNotHaveBitwiseXorAssign_ {}
@@ -545,12 +555,22 @@ impl TestEachPointerType_TestDoesNotHaveBitwiseXorAssign_ {
         });
     }
 }
+impl Callable0<()> for TestEachPointerType_TestDoesNotHaveBitwiseXorAssign_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestDoesNotHaveBitwiseXorAssign_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseXorAssign_bool_ {}
 impl TestDoesNotHaveBitwiseXorAssign_bool_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_bool_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -561,12 +581,22 @@ impl TestDoesNotHaveBitwiseXorAssign_UserAtomicType_ {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_ {}
 impl TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -577,12 +607,22 @@ impl TestDoesNotHaveBitwiseXorAssign_float_ {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_float_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseXorAssign_double_ {}
 impl TestDoesNotHaveBitwiseXorAssign_double_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -593,6 +633,11 @@ impl TestDoesNotHaveBitwiseXorAssign_long_double_ {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_long_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_long_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseXorAssign_int_ptr_ {}
@@ -601,12 +646,22 @@ impl TestDoesNotHaveBitwiseXorAssign_int_ptr_ {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveBitwiseXorAssign_const_int_ptr_ {}
 impl TestDoesNotHaveBitwiseXorAssign_const_int_ptr_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_bitwise_xor_assign<std::atomic_ref<float>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveBitwiseXorAssign_const_int_ptr_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -623,6 +678,11 @@ impl TestBitwiseXorAssign_char_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_char_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_signed_char_ {}
@@ -635,6 +695,11 @@ impl TestBitwiseXorAssign_signed_char_ {
         assert!(((y as i32) == (3_i8 as i32)));
         assert!(((x as i32) == (3_i8 as i32)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -651,6 +716,11 @@ impl TestBitwiseXorAssign_unsigned_char_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_short_ {}
@@ -663,6 +733,11 @@ impl TestBitwiseXorAssign_short_ {
         assert!(((y as i32) == (3_i16 as i32)));
         assert!(((x as i32) == (3_i16 as i32)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_short_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -679,6 +754,11 @@ impl TestBitwiseXorAssign_unsigned_short_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_int_ {}
@@ -691,6 +771,11 @@ impl TestBitwiseXorAssign_int_ {
         assert!(((y) == (3)));
         assert!(((x) == (3)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_int_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -707,6 +792,11 @@ impl TestBitwiseXorAssign_unsigned_int_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_long_ {}
@@ -719,6 +809,11 @@ impl TestBitwiseXorAssign_long_ {
         assert!(((y) == (3_i64)));
         assert!(((x) == (3_i64)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -735,6 +830,11 @@ impl TestBitwiseXorAssign_unsigned_long_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_long_long_ {}
@@ -747,6 +847,11 @@ impl TestBitwiseXorAssign_long_long_ {
         assert!(((y) == (3_i64)));
         assert!(((x) == (3_i64)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -763,6 +868,11 @@ impl TestBitwiseXorAssign_unsigned_long_long_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_wchar_t_ {}
@@ -775,6 +885,11 @@ impl TestBitwiseXorAssign_wchar_t_ {
         assert!(((y) == (3_i32)));
         assert!(((x) == (3_i32)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -791,6 +906,11 @@ impl TestBitwiseXorAssign_char8_t_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_char16_t_ {}
@@ -805,6 +925,11 @@ impl TestBitwiseXorAssign_char16_t_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestBitwiseXorAssign_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestBitwiseXorAssign_char32_t_ {}
@@ -817,6 +942,11 @@ impl TestBitwiseXorAssign_char32_t_ {
         assert!(((y) == (3_u32)));
         assert!(((x) == (3_u32)));
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestBitwiseXorAssign_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestBitwiseXorAssign_char32_t_::operator_call(self) }
     }
 }
 pub fn main() {

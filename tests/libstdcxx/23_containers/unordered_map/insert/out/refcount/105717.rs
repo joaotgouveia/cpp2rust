@@ -217,6 +217,11 @@ impl CppEq for Key {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct hash {}
+impl Callable1<Ptr<Key>, usize> for hash {
+    fn call(&self, a1: Ptr<Key>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| hashImpl::operator_call(__it, a1))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into((Value<Key  >, Value<i32  >)  , to_ValueKey_Valuei32)]
 #[byte_size(4)]

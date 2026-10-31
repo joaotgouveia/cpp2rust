@@ -211,6 +211,11 @@ impl std::cmp::PartialEq for test_less_MoveOnly_ {
     }
 }
 impl std::cmp::Eq for test_less_MoveOnly_ {}
+impl Callable2<*const MoveOnly, *const MoveOnly, bool> for test_less_MoveOnly_ {
+    fn call(&self, a1: *const MoveOnly, a2: *const MoveOnly) -> bool {
+        unsafe { test_less_MoveOnly_::operator_call(self, a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {

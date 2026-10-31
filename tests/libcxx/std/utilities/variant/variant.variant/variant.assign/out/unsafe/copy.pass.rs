@@ -316,6 +316,11 @@ impl anon_6 {
         };
     }
 }
+impl Callable0<Result_int_> for anon_6 {
+    fn call(&self) -> Result_int_ {
+        unsafe { anon_6::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_7 {}
@@ -328,6 +333,11 @@ impl anon_7 {
             index: unimplemented!(),
             value: ((*unimplemented!()) as i64),
         };
+    }
+}
+impl Callable0<Result_long_> for anon_7 {
+    fn call(&self) -> Result_long_ {
+        unsafe { anon_7::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -344,6 +354,11 @@ impl anon_8 {
         };
     }
 }
+impl Callable0<Result_int_> for anon_8 {
+    fn call(&self) -> Result_int_ {
+        unsafe { anon_8::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_9 {}
@@ -356,6 +371,11 @@ impl anon_9 {
             index: unimplemented!(),
             value: (*unimplemented!()).value,
         };
+    }
+}
+impl Callable0<Result_int_> for anon_9 {
+    fn call(&self) -> Result_int_ {
+        unsafe { anon_9::operator_call(self) }
     }
 }
 pub unsafe fn test_copy_assignment_different_index_10() {
@@ -414,6 +434,11 @@ impl anon_11 {
         };
     }
 }
+impl Callable0<Result_long_> for anon_11 {
+    fn call(&self) -> Result_long_ {
+        unsafe { anon_11::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_12 {}
@@ -426,6 +451,11 @@ impl anon_12 {
             index: unimplemented!(),
             value: (*unimplemented!()).value,
         };
+    }
+}
+impl Callable0<Result_int_> for anon_12 {
+    fn call(&self) -> Result_int_ {
+        unsafe { anon_12::operator_call(self) }
     }
 }
 pub unsafe fn test_assignment_throw_13() {}

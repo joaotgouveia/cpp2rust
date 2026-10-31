@@ -422,6 +422,11 @@ pub fn test_call_13() -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct F_14 {}
+impl Callable0<()> for F_14 {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| F_14Impl::operator_call_1(__it))
+    }
+}
 const _: () = assert!(true, "test_call()");
 pub fn main() {
     __cpp2rust_init_globals();

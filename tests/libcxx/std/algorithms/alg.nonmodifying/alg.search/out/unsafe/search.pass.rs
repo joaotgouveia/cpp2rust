@@ -178,6 +178,18 @@ impl UnsafeCppAdvance for forward_iterator_const_int_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for forward_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { forward_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_const_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for forward_iterator_const_int_ptr_ {}
 pub unsafe fn operator_eq_2(
     x: *const forward_iterator_User_S_ptr_,
     y: *const forward_iterator_User_S_ptr_,
@@ -246,6 +258,18 @@ impl UnsafeCppAdvance for forward_iterator_User_S_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<User_S> for forward_iterator_User_S_ptr_ {
+    fn iter_deref(&self) -> *mut User_S {
+        unsafe { forward_iterator_User_S_ptr_::operator_deref(self) as *mut User_S }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_User_S_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<User_S> for forward_iterator_User_S_ptr_ {}
 pub unsafe fn operator_eq_4(
     x: *const bidirectional_iterator_const_int_ptr_,
     y: *const bidirectional_iterator_const_int_ptr_,
@@ -314,6 +338,18 @@ impl UnsafeCppAdvance for bidirectional_iterator_const_int_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for bidirectional_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { bidirectional_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_const_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for bidirectional_iterator_const_int_ptr_ {}
 pub unsafe fn operator_eq_6(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
@@ -382,6 +418,18 @@ impl UnsafeCppAdvance for random_access_iterator_const_int_ptr_ {
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<i32> for random_access_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { random_access_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_const_int_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for random_access_iterator_const_int_ptr_ {}
 pub unsafe fn operator_eq_8(
     x: *const random_access_iterator_User_S_ptr_,
     y: *const random_access_iterator_User_S_ptr_,
@@ -450,6 +498,18 @@ impl UnsafeCppAdvance for random_access_iterator_User_S_ptr_ {
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<User_S> for random_access_iterator_User_S_ptr_ {
+    fn iter_deref(&self) -> *mut User_S {
+        unsafe { random_access_iterator_User_S_ptr_::operator_deref(self) as *mut User_S }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_User_S_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<User_S> for random_access_iterator_User_S_ptr_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -741,6 +801,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -818,6 +909,11 @@ impl MySearcherC {
         return (b, e);
     }
 }
+impl Callable2<*mut i32, *mut i32, (*mut i32, *mut i32)> for MySearcherC {
+    fn call(&self, a1: *mut i32, a2: *mut i32) -> (*mut i32, *mut i32) {
+        unsafe { MySearcherC::operator_call_1_int_ptr(self, a1, a2) }
+    }
+}
 pub unsafe fn test_constexpr_17() -> bool {
     let mut ia: [i32; 4] = [0, 1, 2, 3];
     let mut ib: [i32; 4] = [0, 1, 5, 3];
@@ -839,6 +935,11 @@ impl MySearcher {
     ) -> (*mut i32, *mut i32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut searcher_called_18)).prefix_inc();
         return (b, e);
+    }
+}
+impl Callable2<*mut i32, *mut i32, (*mut i32, *mut i32)> for MySearcher {
+    fn call(&self, a1: *mut i32, a2: *mut i32) -> (*mut i32, *mut i32) {
+        unsafe { MySearcher::operator_call_1_int_ptr(self, a1, a2) }
     }
 }
 #[repr(C)]

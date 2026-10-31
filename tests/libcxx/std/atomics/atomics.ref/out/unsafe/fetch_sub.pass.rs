@@ -456,6 +456,11 @@ impl TestEachIntegralType_TestFetchSub_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestFetchSub_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestFetchSub_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestFetchSub_ {}
@@ -465,6 +470,11 @@ impl TestEachPointerType_TestFetchSub_ {
         (unsafe {
             TestFetchSub_const_int_ptr_::operator_call(&<TestFetchSub_const_int_ptr_>::default())
         });
+    }
+}
+impl Callable0<()> for TestEachPointerType_TestFetchSub_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestFetchSub_::operator_call(self) }
     }
 }
 pub unsafe fn test_seq_cst_14(
@@ -874,6 +884,11 @@ impl TestDoesNotHaveFetchSub_bool_ {
         const _: () = assert!(!(false), "!has_fetch_sub<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchSub_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchSub_bool_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchSub_UserAtomicType_ {}
@@ -882,12 +897,22 @@ impl TestDoesNotHaveFetchSub_UserAtomicType_ {
         const _: () = assert!(!(false), "!has_fetch_sub<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchSub_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchSub_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchSub_LargeUserAtomicType_ {}
 impl TestDoesNotHaveFetchSub_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_sub<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchSub_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchSub_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -950,6 +975,11 @@ impl TestFetchSub_float_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_float_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_double_ {}
@@ -1008,6 +1038,11 @@ impl TestFetchSub_double_ {
             (unsafe { test_seq_cst_46(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_47(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_double_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1070,6 +1105,11 @@ impl TestFetchSub_char_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_signed_char_ {}
@@ -1129,6 +1169,11 @@ impl TestFetchSub_signed_char_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_signed_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_unsigned_char_ {}
@@ -1186,6 +1231,11 @@ impl TestFetchSub_unsigned_char_ {
             (unsafe { test_seq_cst_18(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_19(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_unsigned_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1248,6 +1298,11 @@ impl TestFetchSub_short_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_unsigned_short_ {}
@@ -1306,6 +1361,11 @@ impl TestFetchSub_unsigned_short_ {
             (unsafe { test_seq_cst_22(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_23(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_unsigned_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1368,6 +1428,11 @@ impl TestFetchSub_int_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_unsigned_int_ {}
@@ -1426,6 +1491,11 @@ impl TestFetchSub_unsigned_int_ {
             (unsafe { test_seq_cst_26(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_27(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_unsigned_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1488,6 +1558,11 @@ impl TestFetchSub_long_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_unsigned_long_ {}
@@ -1546,6 +1621,11 @@ impl TestFetchSub_unsigned_long_ {
             (unsafe { test_seq_cst_30(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_31(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_unsigned_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1608,6 +1688,11 @@ impl TestFetchSub_long_long_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_unsigned_long_long_ {}
@@ -1666,6 +1751,11 @@ impl TestFetchSub_unsigned_long_long_ {
             (unsafe { test_seq_cst_34(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_35(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_unsigned_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1728,6 +1818,11 @@ impl TestFetchSub_wchar_t_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_wchar_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_char8_t_ {}
@@ -1785,6 +1880,11 @@ impl TestFetchSub_char8_t_ {
             (unsafe { test_seq_cst_38(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_39(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_char8_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1847,6 +1947,11 @@ impl TestFetchSub_char16_t_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_char32_t_ {}
@@ -1905,6 +2010,11 @@ impl TestFetchSub_char32_t_ {
             (unsafe { test_seq_cst_42(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_43(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_char32_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1980,6 +2090,11 @@ impl TestFetchSub_int_ptr_ {
         }
     }
 }
+impl Callable0<()> for TestFetchSub_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchSub_const_int_ptr_ {}
@@ -2051,6 +2166,11 @@ impl TestFetchSub_const_int_ptr_ {
             (unsafe { test_seq_cst_50(fetch_sub_no_arg.copy_from(), load.copy_from()) });
             (unsafe { test_seq_cst_51(fetch_sub_with_order.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestFetchSub_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchSub_const_int_ptr_::operator_call(self) }
     }
 }
 pub fn main() {

@@ -208,6 +208,13 @@ impl CompLastLt {
         itsCount_9.with(|rc| *rc.borrow_mut() = 0);
     }
 }
+impl Callable2<i32, i32, bool> for CompLastLt {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompLastLtImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     pub static itsCount_9: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
@@ -220,6 +227,13 @@ impl CompLastEq {
     }
     pub fn reset() {
         itsCount_10.with(|rc| *rc.borrow_mut() = 0);
+    }
+}
+impl Callable2<i32, i32, bool> for CompLastEq {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompLastEqImpl::operator_call(__it, a1, a2)
+        })
     }
 }
 thread_local!(

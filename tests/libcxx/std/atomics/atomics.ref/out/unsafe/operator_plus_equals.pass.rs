@@ -510,6 +510,11 @@ impl TestEachIntegralType_TestOperatorPlusEquals_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestOperatorPlusEquals_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestOperatorPlusEquals_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestOperatorPlusEquals_ {}
@@ -525,6 +530,11 @@ impl TestEachPointerType_TestOperatorPlusEquals_ {
                 &<TestOperatorPlusEquals_const_int_ptr_>::default(),
             )
         });
+    }
+}
+impl Callable0<()> for TestEachPointerType_TestOperatorPlusEquals_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestOperatorPlusEquals_::operator_call(self) }
     }
 }
 pub unsafe fn test_seq_cst_14(
@@ -668,6 +678,11 @@ impl TestDoesNotHaveOperatorPlusEquals_bool_ {
         const _: () = assert!(!(false), "!has_operator_plus_equals<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveOperatorPlusEquals_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveOperatorPlusEquals_bool_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveOperatorPlusEquals_UserAtomicType_ {}
@@ -676,12 +691,22 @@ impl TestDoesNotHaveOperatorPlusEquals_UserAtomicType_ {
         const _: () = assert!(!(false), "!has_operator_plus_equals<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveOperatorPlusEquals_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveOperatorPlusEquals_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveOperatorPlusEquals_LargeUserAtomicType_ {}
 impl TestDoesNotHaveOperatorPlusEquals_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_operator_plus_equals<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveOperatorPlusEquals_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveOperatorPlusEquals_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -714,6 +739,11 @@ impl TestOperatorPlusEquals_float_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_float_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_double_ {}
@@ -742,6 +772,11 @@ impl TestOperatorPlusEquals_double_ {
                 });
             (unsafe { test_seq_cst_30(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_double_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -774,6 +809,11 @@ impl TestOperatorPlusEquals_char_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_char_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_signed_char_ {}
@@ -803,6 +843,11 @@ impl TestOperatorPlusEquals_signed_char_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_signed_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_unsigned_char_ {}
@@ -830,6 +875,11 @@ impl TestOperatorPlusEquals_unsigned_char_ {
                 });
             (unsafe { test_seq_cst_16(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_unsigned_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -862,6 +912,11 @@ impl TestOperatorPlusEquals_short_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_short_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_unsigned_short_ {}
@@ -890,6 +945,11 @@ impl TestOperatorPlusEquals_unsigned_short_ {
                 });
             (unsafe { test_seq_cst_18(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_unsigned_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -922,6 +982,11 @@ impl TestOperatorPlusEquals_int_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_int_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_unsigned_int_ {}
@@ -950,6 +1015,11 @@ impl TestOperatorPlusEquals_unsigned_int_ {
                 });
             (unsafe { test_seq_cst_20(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_unsigned_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -982,6 +1052,11 @@ impl TestOperatorPlusEquals_long_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_long_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_unsigned_long_ {}
@@ -1010,6 +1085,11 @@ impl TestOperatorPlusEquals_unsigned_long_ {
                 });
             (unsafe { test_seq_cst_22(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_unsigned_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1042,6 +1122,11 @@ impl TestOperatorPlusEquals_long_long_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_unsigned_long_long_ {}
@@ -1070,6 +1155,11 @@ impl TestOperatorPlusEquals_unsigned_long_long_ {
                 });
             (unsafe { test_seq_cst_24(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_unsigned_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1102,6 +1192,11 @@ impl TestOperatorPlusEquals_wchar_t_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_wchar_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_char8_t_ {}
@@ -1129,6 +1224,11 @@ impl TestOperatorPlusEquals_char8_t_ {
                 });
             (unsafe { test_seq_cst_26(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_char8_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1161,6 +1261,11 @@ impl TestOperatorPlusEquals_char16_t_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_char32_t_ {}
@@ -1189,6 +1294,11 @@ impl TestOperatorPlusEquals_char32_t_ {
                 });
             (unsafe { test_seq_cst_28(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_char32_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -1234,6 +1344,11 @@ impl TestOperatorPlusEquals_int_ptr_ {
         }
     }
 }
+impl Callable0<()> for TestOperatorPlusEquals_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOperatorPlusEquals_const_int_ptr_ {}
@@ -1275,6 +1390,11 @@ impl TestOperatorPlusEquals_const_int_ptr_ {
                 });
             (unsafe { test_seq_cst_32(plus_equals.copy_from(), load.copy_from()) });
         }
+    }
+}
+impl Callable0<()> for TestOperatorPlusEquals_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestOperatorPlusEquals_const_int_ptr_::operator_call(self) }
     }
 }
 pub fn main() {

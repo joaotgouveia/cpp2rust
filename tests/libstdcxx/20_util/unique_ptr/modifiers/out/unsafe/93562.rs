@@ -282,6 +282,11 @@ impl A_Deleter {
         };
     }
 }
+impl Callable1<*mut i32, ()> for A_Deleter {
+    fn call(&self, a1: *mut i32) -> () {
+        unsafe { A_Deleter::operator_call(self, a1) }
+    }
+}
 const _: () = assert!(true, "!std::is_move_assignable<Deleter>::value");
 const _: () = assert!(true, "std::is_swappable_v<Deleter>");
 pub unsafe fn test03_12() {

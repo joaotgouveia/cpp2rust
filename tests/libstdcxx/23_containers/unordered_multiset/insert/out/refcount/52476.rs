@@ -200,9 +200,25 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct pair_hash {}
+impl Callable1<Ptr<(Value<i32>, Value<i32>)>, usize> for pair_hash {
+    fn call(&self, a1: Ptr<(Value<i32>, Value<i32>)>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            pair_hashImpl::operator_call(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct pair_equal_to {}
+impl Callable2<Ptr<(Value<i32>, Value<i32>)>, Ptr<(Value<i32>, Value<i32>)>, bool>
+    for pair_equal_to
+{
+    fn call(&self, a1: Ptr<(Value<i32>, Value<i32>)>, a2: Ptr<(Value<i32>, Value<i32>)>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            pair_equal_toImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test01_9() {
     let mset: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut values: Vec<i32> = Vec::new();

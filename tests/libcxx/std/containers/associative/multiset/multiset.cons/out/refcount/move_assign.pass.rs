@@ -153,6 +153,13 @@ impl CppEq for test_less_MoveOnly_ {
         operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
+impl Callable2<Ptr<MoveOnly>, Ptr<MoveOnly>, bool> for test_less_MoveOnly_ {
+    fn call(&self, a1: Ptr<MoveOnly>, a2: Ptr<MoveOnly>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_less_MoveOnly_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {

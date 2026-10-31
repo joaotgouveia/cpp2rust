@@ -336,6 +336,11 @@ impl hasher {
         return (((val) / (2)) as usize);
     }
 }
+impl Callable1<i32, usize> for hasher {
+    fn call(&self, a1: i32) -> usize {
+        unsafe { hasher::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test02_10() {
     let mut m: () = unimplemented!();
     unimplemented!();

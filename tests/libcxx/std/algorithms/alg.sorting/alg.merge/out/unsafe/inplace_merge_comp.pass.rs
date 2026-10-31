@@ -840,6 +840,15 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         return result;
     }
 }
+impl Callable0<u64>
+    for support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_
+{
+    fn call(&self) -> u64 {
+        unsafe {
+            support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_::operator_call(&mut *(&raw const *self).cast_mut())
+        }
+    }
+}
 pub unsafe fn operator_eq_71(
     _a0: *const support_uniform_int_distribution_long_,
     _a1: *const support_uniform_int_distribution_long_,
@@ -954,6 +963,23 @@ impl std::cmp::PartialEq for support_uniform_int_distribution_long_ {
     }
 }
 impl std::cmp::Eq for support_uniform_int_distribution_long_ {}
+impl
+    Callable2<
+        *mut support_simple_random_generator,
+        *const support_uniform_int_distribution_long__param_type,
+        i64,
+    > for support_uniform_int_distribution_long_
+{
+    fn call(
+        &self,
+        a1: *mut support_simple_random_generator,
+        a2: *const support_uniform_int_distribution_long__param_type,
+    ) -> i64 {
+        unsafe {
+            support_uniform_int_distribution_long_::operator_call_6_class_support_simple_random_generator(&mut *(&raw const *self).cast_mut(), a1, a2)
+        }
+    }
+}
 pub static mut default_seed_73: std::cell::LazyCell<u16> =
     std::cell::LazyCell::new(|| unsafe { 19937_u16 });
 #[repr(C)]
@@ -984,6 +1010,13 @@ impl support_simple_random_generator {
         self.status_ =
             ((self.status_).wrapping_mul((214013_u32 as u32))).wrapping_add((2531011_u32 as u32));
         return (((self.status_) >> (16)) as u16);
+    }
+}
+impl Callable0<u16> for support_simple_random_generator {
+    fn call(&self) -> u16 {
+        unsafe {
+            support_simple_random_generator::operator_call(&mut *(&raw const *self).cast_mut())
+        }
     }
 }
 impl Default for support_simple_random_generator {
@@ -1108,6 +1141,11 @@ impl indirect_less {
             < (*(*y)
                 .as_deref()
                 .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)));
+    }
+}
+impl Callable2<*const Option<Box<i32>>, *const Option<Box<i32>>, bool> for indirect_less {
+    fn call(&self, a1: *const Option<Box<i32>>, a2: *const Option<Box<i32>>) -> bool {
+        unsafe { indirect_less::operator_call_1_class_std_unique_ptr_int_(self, a1, a2) }
     }
 }
 #[repr(C)]
@@ -1377,6 +1415,26 @@ impl UnsafeCppAdvance for bidirectional_iterator_int_ptr_ {
         self.operator_dec_7();
     }
 }
+impl UnsafeCppIterator<i32> for bidirectional_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { bidirectional_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for bidirectional_iterator_int_ptr_ {}
+impl UnsafeCppBidirectionalIterator<i32> for bidirectional_iterator_int_ptr_ {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_int_ptr_::operator_dec_7(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_eq_79(
     x: *const bidirectional_iterator_S_ptr_,
     y: *const bidirectional_iterator_S_ptr_,
@@ -1450,6 +1508,26 @@ impl UnsafeCppAdvance for bidirectional_iterator_S_ptr_ {
     }
     unsafe fn cpp_dec(&mut self) {
         self.operator_dec_7();
+    }
+}
+impl UnsafeCppIterator<S> for bidirectional_iterator_S_ptr_ {
+    fn iter_deref(&self) -> *mut S {
+        unsafe { bidirectional_iterator_S_ptr_::operator_deref(self) as *mut S }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_S_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<S> for bidirectional_iterator_S_ptr_ {}
+impl UnsafeCppBidirectionalIterator<S> for bidirectional_iterator_S_ptr_ {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_S_ptr_::operator_dec_7(self);
+        }
+        self
     }
 }
 pub unsafe fn operator_add_81(
@@ -1561,6 +1639,26 @@ impl UnsafeCppAdvance for random_access_iterator_int_ptr_ {
         self.operator_dec_8();
     }
 }
+impl UnsafeCppIterator<i32> for random_access_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { random_access_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_int_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for random_access_iterator_int_ptr_ {}
+impl UnsafeCppBidirectionalIterator<i32> for random_access_iterator_int_ptr_ {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_int_ptr_::operator_dec_8(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_add_86(
     mut x: random_access_iterator_S_ptr_,
     mut n: isize,
@@ -1668,6 +1766,26 @@ impl UnsafeCppAdvance for random_access_iterator_S_ptr_ {
     }
     unsafe fn cpp_dec(&mut self) {
         self.operator_dec_8();
+    }
+}
+impl UnsafeCppIterator<S> for random_access_iterator_S_ptr_ {
+    fn iter_deref(&self) -> *mut S {
+        unsafe { random_access_iterator_S_ptr_::operator_deref(self) as *mut S }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_S_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<S> for random_access_iterator_S_ptr_ {}
+impl UnsafeCppBidirectionalIterator<S> for random_access_iterator_S_ptr_ {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_S_ptr_::operator_dec_8(self);
+        }
+        self
     }
 }
 #[repr(C)]
@@ -1961,6 +2079,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -2046,6 +2195,15 @@ impl binary_counting_predicate_std_greater_int___int__int_ {
         return unimplemented!();
     }
 }
+impl Callable2<*const i32, *const i32, bool>
+    for binary_counting_predicate_std_greater_int___int__int_
+{
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe {
+            binary_counting_predicate_std_greater_int___int__int_::operator_call(self, a1, a2)
+        }
+    }
+}
 impl Default for binary_counting_predicate_std_greater_int___int__int_ {
     fn default() -> Self {
         unsafe {
@@ -2074,6 +2232,11 @@ impl binary_counting_predicate_std_greater_S___S__S_ {
     pub unsafe fn operator_call(&self, a1: *const S, a2: *const S) -> bool {
         (*(&raw const self.count_).cast_mut()).prefix_inc();
         return unimplemented!();
+    }
+}
+impl Callable2<*const S, *const S, bool> for binary_counting_predicate_std_greater_S___S__S_ {
+    fn call(&self, a1: *const S, a2: *const S) -> bool {
+        unsafe { binary_counting_predicate_std_greater_S___S__S_::operator_call(self, a1, a2) }
     }
 }
 impl Default for binary_counting_predicate_std_greater_S___S__S_ {
@@ -2678,6 +2841,11 @@ impl less_by_first {
         rhs: *const (i32, i32),
     ) -> bool {
         return unimplemented!();
+    }
+}
+impl Callable2<*const (i32, i32), *const (i32, i32), bool> for less_by_first {
+    fn call(&self, a1: *const (i32, i32), a2: *const (i32, i32)) -> bool {
+        unsafe { less_by_first::operator_call_1_struct_std_pair_int__int_(self, a1, a2) }
     }
 }
 pub unsafe fn test_PR31166_116() {

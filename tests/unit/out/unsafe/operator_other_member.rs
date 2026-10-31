@@ -42,6 +42,21 @@ impl S {
         return ((self.v) != (0));
     }
 }
+impl Callable0<i32> for S {
+    fn call(&self) -> i32 {
+        unsafe { S::operator_call_1(self) }
+    }
+}
+impl Callable1<i32, i32> for S {
+    fn call(&self, a1: i32) -> i32 {
+        unsafe { S::operator_call_2(self, a1) }
+    }
+}
+impl Callable2<i32, i32, i32> for S {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        unsafe { S::operator_call_3(self, a1, a2) }
+    }
+}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();
