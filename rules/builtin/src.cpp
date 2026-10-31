@@ -21,12 +21,6 @@ bool f10(long long a, long long b, long long *r) {
 
 void f11(void) { return __builtin_ia32_pause(); }
 
-bool f12(long a, long b, long *r) { return __builtin_mul_overflow(a, b, r); }
-
-bool f13(long long a, long long b, long long *r) {
-  return __builtin_mul_overflow(a, b, r);
-}
-
 void *f14(void *dst, const void *src, __SIZE_TYPE__ n) {
   return __builtin_memcpy(dst, src, n);
 }
