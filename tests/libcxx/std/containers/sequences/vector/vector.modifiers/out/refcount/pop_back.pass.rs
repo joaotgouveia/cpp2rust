@@ -228,17 +228,44 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
-impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_9(__lhs.read(), __rhs.read())
+impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_9(__lhs.read(), __rhs.read())
+            })
+        }
     }
 }
+impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_8();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_10();
+    }
+}
+impl CppIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_inc_8(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppBidirectionalIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_dec_10(__it);
+        });
+        self
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

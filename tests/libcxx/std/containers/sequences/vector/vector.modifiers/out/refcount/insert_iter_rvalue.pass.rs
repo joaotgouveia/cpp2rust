@@ -501,22 +501,87 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
-impl CppLess for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_25(__lhs.read(), __rhs.read())
+impl std::cmp::Ord for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                if operator_lt_25(__lhs.read(), __rhs.read()) {
+                    std::cmp::Ordering::Less
+                } else if operator_lt_25(__rhs.read(), __lhs.read()) {
+                    std::cmp::Ordering::Greater
+                } else {
+                    std::cmp::Ordering::Equal
+                }
+            })
+        }
     }
 }
-impl CppEq for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_26(__lhs.read(), __rhs.read())
+impl std::cmp::PartialOrd for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_26(__lhs.read(), __rhs.read())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_8();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_10();
+    }
+}
+impl CppIterator<MoveOnly> for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> Ptr<MoveOnly> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl::operator_inc_8(
+                __it,
+            );
+        });
+        self
+    }
+}
+impl CppInputIterator<MoveOnly> for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {}
+impl CppBidirectionalIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl::operator_dec_10(
+                __it,
+            );
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl::operator_add_assign(
+                __it, n as _,
+            );
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (operator_sub_24(__lhs.read(), __rhs.read())) as isize
+        })
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
