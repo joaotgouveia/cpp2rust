@@ -294,6 +294,8 @@ impl<T> Clone for UnsafeBidirectionalIterator<T> {
     }
 }
 
+impl<T> Copy for UnsafeBidirectionalIterator<T> {}
+
 impl<T> PartialEq for UnsafeBidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {
@@ -464,6 +466,8 @@ random_access_iterator!(
     UnsafeCppRandomAccessIterator,
     std::ptr::null_mut()
 );
+
+impl<T> Copy for UnsafeRandomAccessIterator<T> {}
 
 pub trait IterStep: Clone + PartialEq {
     fn iter_step(&mut self);
