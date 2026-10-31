@@ -98,7 +98,7 @@ impl CppEq for StoredType_int_ {
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(StoredType_int_, to_StoredType_int_)]
+#[cpp_into(StoredType_int_, to_StoredType_int_, ptr)]
 #[byte_size(16)]
 pub struct SearchedType_int_ {
     #[offset(0)]

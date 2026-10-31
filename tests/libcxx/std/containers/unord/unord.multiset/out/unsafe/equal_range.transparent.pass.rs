@@ -125,7 +125,7 @@ impl std::cmp::PartialEq for StoredType_int_ {
 impl std::cmp::Eq for StoredType_int_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(StoredType_int_, to_StoredType_int_)]
+#[cpp_into(StoredType_int_, to_StoredType_int_, ptr)]
 pub struct SearchedType_int_ {
     value_: i32,
     conversions_: *mut i32,
