@@ -137,6 +137,17 @@ impl FnPtrArg for Box<[VaArg]> {
     }
 }
 
+// A std::pair taken by value.
+impl<A: 'static, B: 'static> FnPtrArg for (A, B) {
+    #[inline]
+    fn to_repr(self) -> ArgRepr {
+        ArgRepr::Record(Box::new(self))
+    }
+    fn from_repr(r: ArgRepr) -> Self {
+        record_from_repr(r)
+    }
+}
+
 // The comparison categories, e.g., std::strong_ordering.
 impl FnPtrArg for std::cmp::Ordering {
     #[inline]
