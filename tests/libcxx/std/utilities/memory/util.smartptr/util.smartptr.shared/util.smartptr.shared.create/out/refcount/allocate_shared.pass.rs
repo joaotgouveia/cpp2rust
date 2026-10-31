@@ -174,7 +174,6 @@ pub fn operator_ne_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>)
 #[byte_size(1)]
 pub struct test_allocator_void__rebind_void_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Destructor)]
-#[cpp_from(test_allocator_void_, new_1, ptr)]
 #[byte_size(16)]
 pub struct test_allocator_void_ {
     #[offset(0)]

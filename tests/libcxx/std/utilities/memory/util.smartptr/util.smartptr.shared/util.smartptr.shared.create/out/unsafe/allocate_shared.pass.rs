@@ -212,7 +212,6 @@ pub unsafe fn operator_ne_7(
 pub struct test_allocator_void__rebind_void_ {}
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, DestructorUnsafe)]
-#[cpp_from(test_allocator_void_, new_1, ptr)]
 pub struct test_allocator_void_ {
     data_: i32,
     id_: i32,

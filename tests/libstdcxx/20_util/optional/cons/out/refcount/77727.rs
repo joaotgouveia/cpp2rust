@@ -199,7 +199,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, mut_ptr)]
 #[byte_size(4)]
 pub struct NonTransferable {
     #[offset(0)]

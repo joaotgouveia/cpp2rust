@@ -302,8 +302,8 @@ pub fn test04_10() {
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
-#[cpp_into(Ptr< i32  >  , to_pmuti32)]
-#[cpp_into(()  , to_)]
+#[cpp_into(Ptr< i32  >  , to_pmuti32, mut_ptr)]
+#[cpp_into(()  , to_, mut_ptr)]
 #[byte_size(4)]
 pub struct S_11 {
     #[offset(0)]

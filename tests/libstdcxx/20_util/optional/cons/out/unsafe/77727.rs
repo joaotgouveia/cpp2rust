@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(FnPtrArg, CppFromUnsafe, Default)]
 #[cpp_from(i32, new, value)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, mut_ptr)]
 pub struct NonTransferable {
     pub x: i32,
 }

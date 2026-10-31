@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, mut_ptr)]
 pub struct moveable {}
 impl moveable {
     pub unsafe fn move_from(_a0: *mut moveable) -> Self {

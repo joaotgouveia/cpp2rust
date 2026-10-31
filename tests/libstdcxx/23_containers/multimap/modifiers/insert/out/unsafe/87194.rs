@@ -258,7 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into((i32 , i32 ) , to_i32_i32)]
+#[cpp_into((i32 , i32 ) , to_i32_i32, mut_ptr)]
 pub struct S {
     pub val: i32,
 }

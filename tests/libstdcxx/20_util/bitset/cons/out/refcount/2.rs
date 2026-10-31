@@ -198,7 +198,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(Ptr< i8  >  , to_pconsti8)]
+#[cpp_into(Ptr< i8  >  , to_pconsti8, mut_ptr)]
 #[byte_size(1)]
 pub struct X {}
 pub fn test01_9() {

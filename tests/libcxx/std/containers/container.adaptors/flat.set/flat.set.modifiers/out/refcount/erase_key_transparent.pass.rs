@@ -1112,7 +1112,7 @@ const _: () = assert!(!(false), "!CanErase<const TransparentSet>");
 const _: () = assert!(!(false), "!CanErase<NonTransparentSet>");
 const _: () = assert!(!(false), "!CanErase<const NonTransparentSet>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(RandomAccessIterator<i32  >  , to_RandomAccessIteratori32)]
+#[cpp_into(RandomAccessIterator<i32  >  , to_RandomAccessIteratori32, mut_ptr)]
 #[byte_size(16)]
 pub struct HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____
 {

@@ -1670,7 +1670,7 @@ const _: () = assert!(!(false), "!CanErase<NonTransparentSet>");
 const _: () = assert!(!(false), "!CanErase<const NonTransparentSet>");
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(UnsafeRandomAccessIterator<i32 > , to_UnsafeRandomAccessIteratori32)]
+#[cpp_into(UnsafeRandomAccessIterator<i32 > , to_UnsafeRandomAccessIteratori32, mut_ptr)]
 pub struct HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____
 {
     pub key_: i32,
