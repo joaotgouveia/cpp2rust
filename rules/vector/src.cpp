@@ -46,8 +46,8 @@ template <typename T1, std::size_t T2> const T1 *f40(T1 const (&a0)[T2]) {
 }
 
 template <typename T1>
-bool f47(const typename std::vector<bool, T1>::reference &o) {
-  return o;
+bool f47(const typename std::vector<bool, T1>::reference &a0) {
+  return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2 = std::allocator<T1>>
