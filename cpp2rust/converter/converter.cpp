@@ -5216,6 +5216,16 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
       result = std::format("({} as {})", result, spelled);
     }
   }
+  // The target returns the raw pointer of the other mutability:
+  //   std::end(const_array)    <-- T1 * with T1 = const int, *mut T1
+  if (!lvalue && expr->isPRValue() && type->isPointerType()) {
+    bool is_const = type->getPointeeType().isConstQualified();
+    if (is_const && tgt_ir->return_type.is_mut_raw_pointer) {
+      result = std::format("({}).cast_const()", result);
+    } else if (!is_const && tgt_ir->return_type.is_const_raw_pointer) {
+      result = std::format("({}).cast_mut()", result);
+    }
+  }
   return result;
 }
 
@@ -5265,7 +5275,16 @@ std::string Converter::ConvertIRFragment(
               RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx),
           .is_index_base = ph->is_index_base,
       };
-      result += ConvertPlaceholder(expr, arg, ph_ctx);
+      auto converted = ConvertPlaceholder(expr, arg, ph_ctx);
+      // The target takes *mut T1 where C++ passes a pointer to const:
+      //   unique_ptr<const int>(new int)    <-- T1 * with T1 = const int
+      if (is_cpp_ptr && arg->getType()->getPointeeType().isConstQualified() &&
+          RuleRegistry::GetExprRule(ctx_, expr)
+              ->params.at(arg_idx)
+              .is_mut_raw_pointer) {
+        converted = std::format("({}).cast_mut()", converted);
+      }
+      result += converted;
     } else if (std::get_if<TranslationRule::VaArgsFragment>(&frag)) {
       assert(expr && "variadic arguments outside an expression rule");
       result += ConvertVariadicTail(expr, all_args);

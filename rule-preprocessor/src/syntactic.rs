@@ -42,6 +42,14 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
     flags
 }
 
+/// Whether the type is itself a `*mut T` or a `*const T` raw pointer.
+fn raw_pointer_flags(ty: &ast::Type) -> (bool, bool) {
+    match ty {
+        ast::Type::PtrType(ptr) => (ptr.mut_token().is_some(), ptr.const_token().is_some()),
+        _ => (false, false),
+    }
+}
+
 /// The generic a pointer type points to (`T1` of `*mut T1`, `Ptr<T1>`), if
 /// the pointee is a bare generic.
 fn pointee_generic(ty: &ast::Type) -> Option<i32> {
@@ -381,6 +389,8 @@ struct ParamInfo {
     is_refcount_pointer: bool,
     is_unsafe_pointer: bool,
     pointee_generic: Option<i32>,
+    is_mut_raw_pointer: bool,
+    is_const_raw_pointer: bool,
     is_mut_ref: bool,
     is_va_args: bool,
     is_init: bool,
@@ -419,12 +429,15 @@ impl<'a> FnIrBuilder<'a> {
                 "variadic argument parameter must be named `va`, found `{name}`"
             );
             let is_init = name == "init";
+            let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
             params.push(ParamInfo {
                 name,
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 pointee_generic: pointee_generic(&ty),
+                is_mut_raw_pointer,
+                is_const_raw_pointer,
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
                 is_va_args,
                 is_init,
@@ -448,12 +461,15 @@ impl<'a> FnIrBuilder<'a> {
             None
         } else {
             let (is_refcount_pointer, is_unsafe_pointer) = pointer_flags(&ty);
+            let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
             Some(TypeInfo {
                 ty: ty_str,
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 is_projection: is_projection(&ty),
                 pointee_generic: pointee_generic(&ty),
+                is_mut_raw_pointer,
+                is_const_raw_pointer,
                 derives: Vec::new(),
             })
         }
@@ -679,6 +695,8 @@ impl<'a> FnIrBuilder<'a> {
                         is_unsafe_pointer: p.is_unsafe_pointer,
                         is_projection: false,
                         pointee_generic: p.pointee_generic,
+                        is_mut_raw_pointer: p.is_mut_raw_pointer,
+                        is_const_raw_pointer: p.is_const_raw_pointer,
                         derives: Vec::new(),
                     },
                 )
@@ -794,6 +812,7 @@ impl<'a> TypeIrBuilder<'a> {
         let mut init_ctx = FragmentCtx::new(&builder, &[], &generic_names);
         init_ctx.visit(ra_ap_syntax::NodeOrToken::Node(init.syntax().clone()));
 
+        let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
         TypeIr {
             init: init_ctx.finish(),
             generic,
@@ -804,6 +823,8 @@ impl<'a> TypeIrBuilder<'a> {
                 is_unsafe_pointer,
                 is_projection: false,
                 pointee_generic: pointee_generic(&ty),
+                is_mut_raw_pointer,
+                is_const_raw_pointer,
                 derives: Vec::new(),
             },
         }

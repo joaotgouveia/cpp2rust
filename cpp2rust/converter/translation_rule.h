@@ -97,6 +97,9 @@ struct TypeInfo {
   bool is_projection = false;
   // Tn the pointer points to (*mut Tn, Ptr<Tn>), 0 otherwise
   unsigned pointee_generic = 0;
+  // *mut T, *const T
+  bool is_mut_raw_pointer = false;
+  bool is_const_raw_pointer = false;
 
   bool is_pointer() const { return is_refcount_pointer || is_unsafe_pointer; }
 
