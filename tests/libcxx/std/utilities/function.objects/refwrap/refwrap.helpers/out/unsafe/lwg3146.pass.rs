@@ -22,7 +22,7 @@ pub unsafe fn test_2() -> bool {
     {
         let mut i: i32 = 0;
         let mut ri: *mut i32 = &mut i;
-        let mut rri: *mut *mut i32 = ri;
+        let mut rri: *mut *mut i32 = &mut ri;
         let mut rrj: *mut *mut i32 = unimplemented!();
         const _: () = assert!(true, "");;
         assert!(((rrj) == (&mut ri as *mut *mut i32)));
@@ -30,7 +30,7 @@ pub unsafe fn test_2() -> bool {
     {
         let mut i: i32 = 0;
         let mut ri: *mut i32 = &mut i;
-        let mut rri: *const *mut i32 = ri;
+        let mut rri: *const *mut i32 = &mut ri;
         let mut rrj: *const *mut i32 = unimplemented!();
         const _: () = assert!(true, "");;
         assert!(((rrj) == ((&mut ri as *mut *mut i32).cast_const())));
@@ -38,7 +38,7 @@ pub unsafe fn test_2() -> bool {
     {
         let mut i: i32 = 0;
         let mut ri: *mut i32 = &mut i;
-        let mut rri: *mut *mut i32 = ri;
+        let mut rri: *mut *mut i32 = &mut ri;
         let mut rrj: *const *mut i32 = unimplemented!();
         const _: () = assert!(true, "");;
         assert!(((rrj) == ((&mut ri as *mut *mut i32).cast_const())));
@@ -46,7 +46,7 @@ pub unsafe fn test_2() -> bool {
     {
         let mut i: i32 = 0;
         let mut ri: *mut i32 = &mut i;
-        let mut rri: *const *mut i32 = ri;
+        let mut rri: *const *mut i32 = &mut ri;
         let mut rrj: *const *mut i32 = unimplemented!();
         const _: () = assert!(true, "");;
         assert!(((rrj) == ((&mut ri as *mut *mut i32).cast_const())));

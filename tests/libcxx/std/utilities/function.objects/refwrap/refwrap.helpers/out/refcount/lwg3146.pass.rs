@@ -22,7 +22,7 @@ pub fn test_2() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
-        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
         let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         assert!(((*rrj.borrow()) == (ri.as_pointer())));
@@ -30,7 +30,7 @@ pub fn test_2() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
-        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
         let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         assert!(((*rrj.borrow()) == (ri.as_pointer())));
@@ -38,7 +38,7 @@ pub fn test_2() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
-        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
         let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         assert!(((*rrj.borrow()) == (ri.as_pointer())));
@@ -46,7 +46,7 @@ pub fn test_2() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
-        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
         let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         assert!(((*rrj.borrow()) == (ri.as_pointer())));

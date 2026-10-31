@@ -33,8 +33,12 @@ pub fn test_0(container: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>>) {
         let c: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>> = (container).clone();
         let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
         assert!(
-            c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.find(&v.as_pointer()))
-                == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+            ({
+                let __tmp_0: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| {
+                    __m.find(&__tmp_0.as_pointer())
+                })
+            }) == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
         assert!((unimplemented!() == 0_usize));
         assert!(
@@ -59,8 +63,12 @@ pub fn test_0(container: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>>) {
         let c: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>> = (container).clone();
         let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
         assert!(
-            c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.find(&v.as_pointer()))
-                == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+            ({
+                let __tmp_1: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| {
+                    __m.find(&__tmp_1.as_pointer())
+                })
+            }) == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
         assert!((unimplemented!() == 0_usize));
         assert!(
