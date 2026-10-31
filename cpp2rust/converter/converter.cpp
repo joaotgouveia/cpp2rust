@@ -224,6 +224,10 @@ std::string Converter::ConvertFreshObject(clang::Expr *expr) {
   return ConvertFreshPointer(expr);
 }
 
+std::string Converter::ConvertStringLiteralPtr(clang::Expr *expr) {
+  return ToString(expr->IgnoreParens()->IgnoreImplicit()) + ".as_ptr()";
+}
+
 std::string Converter::ConvertPointerReceiver(clang::Expr *arg,
                                               std::string_view param_type) {
   return std::format("({} as {})", ConvertFreshObject(arg), param_type);
@@ -5063,7 +5067,9 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
   if (ph_ctx.declared_in_rule_as_rust_ptr && arg->getType()->isArrayType()) {
     auto elem = ctx_.getAsArrayType(arg->getType())->getElementType();
-    return std::format("({} as {})", ConvertFreshPointer(arg),
+    return std::format("({} as {})",
+                       IsStringLiteralExpr(arg) ? ConvertStringLiteralPtr(arg)
+                                                : ConvertFreshPointer(arg),
                        ToStringBase(ctx_.getPointerType(elem)));
   }
 

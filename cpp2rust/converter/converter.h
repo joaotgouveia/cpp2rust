@@ -1169,6 +1169,9 @@ protected:
   virtual std::string ConvertPointerReceiver(clang::Expr *arg,
                                              std::string_view param_type);
 
+  // A pointer to the first element of the string literal expr.
+  virtual std::string ConvertStringLiteralPtr(clang::Expr *expr);
+
   // A pointer to the elements of the container arg.
   virtual std::string ConvertElementPtr(clang::Expr *arg) {
     llvm_unreachable("no pointers to elements in this model");

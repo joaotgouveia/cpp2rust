@@ -471,8 +471,7 @@ private:
 
   std::string ConvertSubscriptIndex(clang::Expr *idx);
 
-  // A pointer to the first element of the string literal expr.
-  std::string ConvertStringLiteralPtr(clang::Expr *expr);
+  std::string ConvertStringLiteralPtr(clang::Expr *expr) override;
 
   // Element `idx` of pointer `base`, accessed without creating a pointer to it.
   void ConvertPointerElem(clang::Expr *base, clang::Expr *idx);
