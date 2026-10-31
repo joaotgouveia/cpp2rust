@@ -8,7 +8,8 @@ use std::marker::PhantomData;
 use std::rc::Rc;
 
 use crate::{
-    ByteRepr, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
+    ByteRepr, CppAdvance, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr,
+    UnsafeCppAdvance, UnsafeMapNode, Value,
 };
 
 pub trait CppIterator<T>: Clone {
@@ -493,6 +494,43 @@ iter_step!(BidirectionalIterator<T>, CppIterator);
 iter_step!(UnsafeBidirectionalIterator<T>, UnsafeCppIterator);
 iter_step!(RandomAccessIterator<T>, CppIterator);
 iter_step!(UnsafeRandomAccessIterator<T>, UnsafeCppIterator);
+
+// std::next and std::prev advance the bidirectional container iterators by
+// their ++ and --.
+macro_rules! unsafe_cpp_advance {
+    ($name:ident) => {
+        impl<T> UnsafeCppAdvance for $name<T> {
+            unsafe fn cpp_inc(&mut self) {
+                UnsafeCppIterator::<T>::iter_inc(self);
+            }
+            unsafe fn cpp_dec(&mut self) {
+                UnsafeCppBidirectionalIterator::<T>::iter_dec(self);
+            }
+        }
+    };
+}
+
+macro_rules! cpp_advance {
+    ($name:ident) => {
+        impl<T: 'static> CppAdvance for $name<T> {
+            fn cpp_inc(it: &Ptr<Self>) {
+                it.with_mut(|it| {
+                    CppIterator::<T>::iter_inc(it);
+                });
+            }
+            fn cpp_dec(it: &Ptr<Self>) {
+                it.with_mut(|it| {
+                    CppBidirectionalIterator::<T>::iter_dec(it);
+                });
+            }
+        }
+    };
+}
+
+unsafe_cpp_advance!(UnsafeBidirectionalIterator);
+unsafe_cpp_advance!(UnsafeRandomAccessIterator);
+cpp_advance!(BidirectionalIterator);
+cpp_advance!(RandomAccessIterator);
 
 pub struct IterRange<I> {
     cur: I,
