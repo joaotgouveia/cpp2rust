@@ -219,3 +219,13 @@ fn f200<T1: StreamChar, T2, T3>(a0: Ptr<::std::fs::File>, a1: Vec<T1>) -> Ptr<::
     let _ = __s.write_all(&__bytes);
     __s
 }
+
+fn f151<T1, T2, T3, T4, T5>(a0: std::fs::File, a1: std::fs::File, a2: T3) -> Vec<i8> {
+    use std::io::Read;
+    let mut __bytes: Vec<u8> = Vec::new();
+    let mut __f = &a0;
+    __f.read_to_end(&mut __bytes)
+        .expect("couldn't read the file");
+    __bytes.push(0);
+    CChar::from_byte_vec(__bytes)
+}

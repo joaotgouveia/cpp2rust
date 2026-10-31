@@ -566,3 +566,7 @@ unsafe fn f57<T1, T2: UnsafeCppInputIterator<T4>, T3, T4: Clone + PartialEq + De
     }
     __v
 }
+
+unsafe fn f7<T1>(a0: usize, a1: bool, a2: T1) -> Vec<bool> {
+    (0..(a0) as usize).map(|_| a1).collect::<Vec<bool>>()
+}

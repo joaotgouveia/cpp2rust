@@ -95,3 +95,7 @@ fn f1<T1: CppArray<T2>, T2: Default>(a0: usize) -> Option<Value<Box<[T2]>>> {
         (0..a0).map(|_| <T2>::default()).collect::<Box<[_]>>(),
     )))
 }
+
+fn f32<T1: ByteRepr, T2>(a0: Ptr<Option<Value<Box<[T1]>>>>) {
+    a0.write(None)
+}

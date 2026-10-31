@@ -101,3 +101,7 @@ unsafe fn f14<T1, T2>(a0: &mut Option<Box<T1>>, a1: *mut ::libc::c_void) -> bool
 unsafe fn f1<T1: CppArray<T2>, T2: Default>(a0: usize) -> Option<Box<[T2]>> {
     Some((0..a0).map(|_| <T2>::default()).collect::<Box<[_]>>())
 }
+
+unsafe fn f32<T1, T2>(a0: &mut Option<Box<[T1]>>) {
+    *a0 = None
+}

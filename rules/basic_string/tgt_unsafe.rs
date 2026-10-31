@@ -220,3 +220,13 @@ unsafe fn f200<T1: StreamChar, T2, T3>(mut a0: &mut ::std::fs::File, a1: Vec<T1>
     let _ = ::std::io::Write::write_all(&mut *__s, &__bytes);
     __s
 }
+
+unsafe fn f151<T1, T2, T3, T4, T5>(a0: std::fs::File, a1: std::fs::File, a2: T3) -> Vec<libc::c_char> {
+    let mut __bytes: Vec<u8> = Vec::new();
+    let mut __f = &a0;
+    __f.read_to_end(&mut __bytes)
+        .expect("couldn't read the file");
+    let mut __buf: Vec<libc::c_char> = __bytes.iter().map(|&b| b as libc::c_char).collect();
+    __buf.push(0);
+    __buf
+}
