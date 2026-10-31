@@ -7,7 +7,10 @@ use std::marker::PhantomData;
 
 use std::rc::Rc;
 
-use crate::{MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value};
+use crate::{
+    ByteRepr, CppAdvance, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr,
+    UnsafeCppAdvance, UnsafeMapNode, Value,
+};
 
 pub trait CppIterator<T>: Clone {
     fn iter_deref(&self) -> Ptr<T>;
@@ -461,6 +464,39 @@ random_access_iterator!(
     UnsafeCppRandomAccessIterator,
     std::ptr::null_mut()
 );
+
+// The iterators of the containers advance as std::next and std::prev advance
+// them, and are stored in records through pointers.
+macro_rules! advance_iterator {
+    ($name:ident, $unsafe_name:ident) => {
+        impl<T: 'static> ByteRepr for $name<T> {}
+
+        impl<T: 'static> CppAdvance for $name<T> {
+            fn cpp_inc(it: &Ptr<Self>) {
+                it.with_mut(|it| {
+                    it.iter_inc();
+                });
+            }
+            fn cpp_dec(it: &Ptr<Self>) {
+                it.with_mut(|it| {
+                    it.iter_dec();
+                });
+            }
+        }
+
+        impl<T> UnsafeCppAdvance for $unsafe_name<T> {
+            unsafe fn cpp_inc(&mut self) {
+                self.iter_inc();
+            }
+            unsafe fn cpp_dec(&mut self) {
+                self.iter_dec();
+            }
+        }
+    };
+}
+
+advance_iterator!(BidirectionalIterator, UnsafeBidirectionalIterator);
+advance_iterator!(RandomAccessIterator, UnsafeRandomAccessIterator);
 
 pub trait IterStep: Clone + PartialEq {
     fn iter_step(&mut self);
