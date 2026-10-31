@@ -452,7 +452,13 @@ void ConverterRefCount::CheckRuleReturnType(clang::Expr *expr) {
   // which is not what the pointee is spelled with.
   auto type = GetReturnTypeOfFunction(call).getDesugaredType(ctx_);
   if (auto *ref = type->getAs<clang::ReferenceType>()) {
-    type = ctx_.getPointerType(ref->getPointeeType());
+    // a reference to a class that is itself a pointer (vector<bool>'s
+    // reference) is that pointer
+    auto pointee = ref->getPointeeType();
+    type = pointee->isRecordType() &&
+                   RuleRegistry::MapsToRefcountPointer(ctx_, pointee)
+               ? pointee
+               : ctx_.getPointerType(pointee);
   }
   auto ret = NormalizeType(Mapper::GetReturnType(*this, expr));
   auto expected = NormalizeType(ToString(type));

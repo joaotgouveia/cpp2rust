@@ -292,7 +292,8 @@ private:
     }
   }
 
-  // An iterator declares its category. iterator_traits<T> checks the iterator
+  // An iterator declares its category, or only its concept (a C++20
+  // iterator such as iota_view's). iterator_traits<T> checks the iterator
   // concepts on any other class, whose ADL instantiates the classes of its
   // template arguments (Holder<NS::Incomplete>).
   void AddIterator(const clang::CXXRecordDecl *record) {
@@ -300,12 +301,15 @@ private:
     if (!definition) {
       return;
     }
-    clang::LookupResult category(sema_, &ctx_.Idents.get("iterator_category"),
+    for (auto member : {"iterator_category", "iterator_concept"}) {
+      clang::LookupResult result(sema_, &ctx_.Idents.get(member),
                                  definition->getLocation(),
                                  clang::Sema::LookupMemberName);
-    if (sema_.LookupQualifiedName(
-            category, const_cast<clang::CXXRecordDecl *>(definition))) {
-      AddKey(kAnyIteratorKey);
+      if (sema_.LookupQualifiedName(
+              result, const_cast<clang::CXXRecordDecl *>(definition))) {
+        AddKey(kAnyIteratorKey);
+        return;
+      }
     }
   }
 

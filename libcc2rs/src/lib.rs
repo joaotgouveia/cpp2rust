@@ -23,7 +23,7 @@ pub mod __field {
 }
 
 mod cstr;
-pub use cstr::{CChar, StreamChar, c_str_len};
+pub use cstr::{CChar, PathSource, StreamChar, c_str_len};
 
 mod void;
 pub use void::*;

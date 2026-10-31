@@ -181,6 +181,61 @@ macro_rules! impl_stream_char_wide {
 
 impl_stream_char_wide!(u16, u32, i32);
 
+// A filesystem path source (a string or a C string of any char type) as the
+// narrow bytes of the path.
+pub trait PathSource {
+    fn path_bytes(&self) -> Vec<u8>;
+}
+
+impl<T: StreamChar> PathSource for Vec<T> {
+    fn path_bytes(&self) -> Vec<u8> {
+        let mut out = Vec::new();
+        for &c in self.iter().take_while(|&&c| c != T::default()) {
+            c.push_stream_bytes(&mut out);
+        }
+        out
+    }
+}
+
+impl<T: StreamChar> PathSource for Ptr<T> {
+    fn path_bytes(&self) -> Vec<u8> {
+        let mut out = Vec::new();
+        self.with_c_str(|s| {
+            for &c in s {
+                c.push_stream_bytes(&mut out);
+            }
+        });
+        out
+    }
+}
+
+impl<T: StreamChar> PathSource for Ptr<Vec<T>> {
+    fn path_bytes(&self) -> Vec<u8> {
+        self.with(|s: &Vec<T>| s.path_bytes())
+    }
+}
+
+impl<T: StreamChar> PathSource for *const T {
+    fn path_bytes(&self) -> Vec<u8> {
+        let mut out = Vec::new();
+        let mut p = *self;
+        // SAFETY: the unsafe model passes a NUL-terminated C string.
+        unsafe {
+            while *p != T::default() {
+                (*p).push_stream_bytes(&mut out);
+                p = p.add(1);
+            }
+        }
+        out
+    }
+}
+
+impl<T: StreamChar> PathSource for *mut T {
+    fn path_bytes(&self) -> Vec<u8> {
+        (*self as *const T).path_bytes()
+    }
+}
+
 impl<T: CChar> fmt::Display for Ptr<T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {

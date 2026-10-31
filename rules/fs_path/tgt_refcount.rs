@@ -15,9 +15,11 @@ fn t4() -> Vec<i8> {
     vec![0]
 }
 
-fn f74<T1>(a0: Ptr<i8>) -> Vec<i8> {
-    let mut __v = Vec::new();
-    a0.with_c_str(|__s| __v.extend_from_slice(__s));
+fn f74<T1>(a0: Ptr<T1>) -> Vec<i8>
+where
+    Ptr<T1>: PathSource,
+{
+    let mut __v: Vec<i8> = a0.path_bytes().into_iter().map(|__b| __b as i8).collect();
     __v.push(0);
     __v
 }

@@ -2685,6 +2685,23 @@ bool Converter::VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) {
 
 bool Converter::VisitCXXRewrittenBinaryOperator(
     clang::CXXRewrittenBinaryOperator *expr) {
+  // a rule written with the operator as spelled takes the operands as written,
+  // short of the conversion to the base the rewritten callee takes
+  if (Mapper::Contains(ctx_, expr)) {
+    auto operand = [](const clang::Expr *e) {
+      auto *cast = clang::dyn_cast<clang::ImplicitCastExpr>(e);
+      while (cast && (cast->getCastKind() == clang::CK_DerivedToBase ||
+                      cast->getCastKind() == clang::CK_UncheckedDerivedToBase)) {
+        e = cast->getSubExpr();
+        cast = clang::dyn_cast<clang::ImplicitCastExpr>(e);
+      }
+      return const_cast<clang::Expr *>(e);
+    };
+    auto decomposed = expr->getDecomposedForm();
+    clang::Expr *args[] = {operand(decomposed.LHS), operand(decomposed.RHS)};
+    StrCat(GetMappedAsString(expr, args, 2, nullptr));
+    return false;
+  }
   Convert(expr->getSemanticForm());
   return false;
 }

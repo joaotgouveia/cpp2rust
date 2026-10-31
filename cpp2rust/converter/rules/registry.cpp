@@ -572,7 +572,11 @@ clang::QualType iteratorElementType(clang::ASTContext &ctx,
     return array->getElementType().getUnqualifiedType();
   }
   auto [rule, bindings] = Search(ctx, iterator);
-  assert(rule && "iterator has no type rule");
+  if (!rule) {
+    auto value = iteratorValueType(iterator);
+    assert(!value.isNull() && "iterator has neither a type rule nor value_type");
+    return value;
+  }
   // the element generic the rule declares (T1: CppIterator<T2>), else the
   // iterator class's value_type (the rule names a concrete element), else
   // the rule's first generic (ostream_iterator<T1> has value_type void)
