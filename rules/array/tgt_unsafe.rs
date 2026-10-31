@@ -31,12 +31,12 @@ fn t4<T1>() -> *const T1 {
     ::std::ptr::null()
 }
 
-fn t7<T1>() -> UnsafeRandomAccessIterator<T1> {
-    UnsafeRandomAccessIterator::default()
+fn t7<T1>() -> *mut T1 {
+    ::std::ptr::null_mut()
 }
 
-fn t8<T1>() -> UnsafeRandomAccessIterator<T1> {
-    UnsafeRandomAccessIterator::default()
+fn t8<T1>() -> *const T1 {
+    ::std::ptr::null()
 }
 
 fn t9() -> usize {
