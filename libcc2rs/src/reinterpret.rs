@@ -106,6 +106,22 @@ impl ByteRepr for bool {
     }
 }
 
+// The comparison categories, e.g., std::strong_ordering, hold a signed char.
+impl ByteRepr for std::cmp::Ordering {
+    #[inline]
+    fn byte_size() -> usize {
+        1
+    }
+    #[inline]
+    fn to_bytes(&self, buf: &mut [u8]) {
+        buf[0] = *self as i8 as u8;
+    }
+    #[inline]
+    fn from_bytes(buf: &[u8]) -> Self {
+        (buf[0] as i8).cmp(&0)
+    }
+}
+
 impl ByteRepr for () {}
 impl ByteRepr for std::fs::File {}
 impl<T: ByteRepr> ByteRepr for Vec<T> {}

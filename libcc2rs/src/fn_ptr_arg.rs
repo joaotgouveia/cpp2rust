@@ -137,6 +137,17 @@ impl FnPtrArg for Box<[VaArg]> {
     }
 }
 
+// The comparison categories, e.g., std::strong_ordering.
+impl FnPtrArg for std::cmp::Ordering {
+    #[inline]
+    fn to_repr(self) -> ArgRepr {
+        ArgRepr::Record(Box::new(self))
+    }
+    fn from_repr(r: ArgRepr) -> Self {
+        record_from_repr(r)
+    }
+}
+
 impl<T: ?Sized + 'static> FnPtrArg for *mut T {
     #[inline]
     fn to_repr(self) -> ArgRepr {
