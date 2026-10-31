@@ -16,7 +16,7 @@ impl Static {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, ptr)]
 pub struct S {
     pub v: i32,
 }

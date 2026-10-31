@@ -1003,9 +1003,9 @@ void Converter::EmitConversionAttrs(clang::CXXRecordDecl *decl) {
     if (!into_types.insert(target).second) {
       return;
     }
-    StrCat(std::format("#[cpp_into({}, {}, {})]", target,
+    StrCat(std::format("#[cpp_into({}, {}{})]", target,
                        GetMethodName(conversion),
-                       conversion->isConst() ? "ptr" : "mut_ptr"));
+                       conversion->isConst() ? "" : ", mut_ptr"));
   });
 }
 

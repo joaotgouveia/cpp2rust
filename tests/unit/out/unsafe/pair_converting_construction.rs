@@ -20,7 +20,7 @@ impl Celsius {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, ptr)]
 pub struct Meters {
     pub value: i32,
 }

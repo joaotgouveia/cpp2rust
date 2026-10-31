@@ -15,7 +15,7 @@ impl Static {
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, ptr)]
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]

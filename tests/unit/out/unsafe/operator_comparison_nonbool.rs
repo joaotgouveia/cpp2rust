@@ -114,7 +114,7 @@ impl std::cmp::PartialEq for Mixed {
 impl std::cmp::Eq for Mixed {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(bool, to_bool)]
+#[cpp_into(bool, to_bool, ptr)]
 pub struct MyBool {
     pub value: bool,
 }
@@ -175,7 +175,7 @@ pub unsafe fn operator_lt_6(mut a: Boolish, mut b: Boolish) -> MyBool {
 }
 #[repr(C)]
 #[derive(FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(bool, to_bool)]
+#[cpp_into(bool, to_bool, ptr)]
 pub struct RefBool {
     pub value: bool,
 }
