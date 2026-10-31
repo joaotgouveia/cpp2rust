@@ -60,8 +60,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let x: Value<i32> = Rc::new(RefCell::new(42));
         let y: Value<i32> = Rc::new(RefCell::new(43));
         let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new((*x.borrow()))),
-            Rc::new(RefCell::new((*y.borrow()))),
+            Rc::new(RefCell::new(x.as_pointer())),
+            Rc::new(RefCell::new(y.as_pointer())),
         )));
         const _: () = assert!(
             true,

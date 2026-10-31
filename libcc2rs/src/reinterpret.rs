@@ -106,6 +106,22 @@ impl ByteRepr for bool {
     }
 }
 
+// The comparison categories, e.g., std::strong_ordering, hold a signed char.
+impl ByteRepr for std::cmp::Ordering {
+    #[inline]
+    fn byte_size() -> usize {
+        1
+    }
+    #[inline]
+    fn to_bytes(&self, buf: &mut [u8]) {
+        buf[0] = *self as i8 as u8;
+    }
+    #[inline]
+    fn from_bytes(buf: &[u8]) -> Self {
+        (buf[0] as i8).cmp(&0)
+    }
+}
+
 impl ByteRepr for () {}
 impl ByteRepr for std::fs::File {}
 impl<T: ByteRepr> ByteRepr for Vec<T> {}
@@ -174,7 +190,6 @@ impl<T: ByteRepr> ByteRepr for Box<T> {}
 impl<T: 'static> ByteRepr for *const T {}
 impl<T: 'static> ByteRepr for *mut T {}
 impl<A: ByteRepr, B: ByteRepr> ByteRepr for (A, B) {}
-impl ByteRepr for std::cmp::Ordering {}
 impl<K: 'static, V: 'static> ByteRepr for std::collections::BTreeMap<K, V> {}
 
 // Runs `f` with a zeroed scratch buffer of `len` elements. Small buffers live

@@ -787,7 +787,7 @@ pub unsafe fn test_constexpr_15() -> bool {
     let mut ia: [i32; 4] = [1, 3, 6, 7];
     return (((unimplemented!()) == (ia.as_mut_ptr().offset((1) as isize)))
         && ((unimplemented!()) == (ia.as_mut_ptr().offset((2) as isize))))
-        && ((unimplemented!()) == (ia.as_ptr().add(ia.len())));
+        && ((unimplemented!()) == (ia.as_ptr().add(ia.len()) as *mut i32));
 }
 pub unsafe fn test_16(mut first: *mut i32, mut last: *mut i32, value: *const i32) {
     let mut i: *mut i32 = unimplemented!();

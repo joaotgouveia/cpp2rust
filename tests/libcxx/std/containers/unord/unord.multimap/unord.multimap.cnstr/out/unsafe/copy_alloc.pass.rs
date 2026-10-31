@@ -421,8 +421,8 @@ pub unsafe fn test_alloc_11(new_alloc: *const ()) {
         assert!(unimplemented!());
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == (4_())));
-        assert!((((*unimplemented!().iter_deref()).1) == (2)));
-        assert!((((*unimplemented!().iter_deref()).1) == (4)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (2)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (4)));
         {
             let mut range: ((), ()) = unimplemented!();
             let mut first_element: () = libcc2rs::next_unsafe(range.0.clone(), 0_isize);
@@ -430,14 +430,17 @@ pub unsafe fn test_alloc_11(new_alloc: *const ()) {
             let mut end: () = libcc2rs::next_unsafe(range.0.clone(), 2_isize);
             assert!(range.1 == end);
             assert!(
-                (((*first_element.iter_deref()).1) == (1))
-                    || (((*first_element.iter_deref()).1) == (2))
+                (((*(first_element.iter_deref() as *const (i32, i32))).1) == (1))
+                    || (((*(first_element.iter_deref() as *const (i32, i32))).1) == (2))
             );
             assert!(
-                (((*second_element.iter_deref()).1) == (1))
-                    || (((*second_element.iter_deref()).1) == (2))
+                (((*(second_element.iter_deref() as *const (i32, i32))).1) == (1))
+                    || (((*(second_element.iter_deref() as *const (i32, i32))).1) == (2))
             );
-            assert!((((*second_element.iter_deref()).1) != ((*range.0.iter_deref()).1)));
+            assert!(
+                (((*(second_element.iter_deref() as *const (i32, i32))).1)
+                    != ((*(range.0.iter_deref() as *const (i32, i32))).1))
+            );
         }
     }
     {
@@ -453,7 +456,7 @@ pub unsafe fn test_alloc_11(new_alloc: *const ()) {
         assert!(unimplemented!());
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == (1_())));
-        assert!((((*unimplemented!().iter_deref()).1) == (2)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (2)));
     }
     {
         let orig: () = unimplemented!();
@@ -540,8 +543,8 @@ pub unsafe fn test_alloc_12(new_alloc: *const min_allocator_std_pair_const_int__
         );
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == (4_())));
-        assert!((((*unimplemented!().iter_deref()).1) == (2)));
-        assert!((((*unimplemented!().iter_deref()).1) == (4)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (2)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (4)));
         {
             let mut range: ((), ()) = unimplemented!();
             let mut first_element: () = libcc2rs::next_unsafe(range.0.clone(), 0_isize);
@@ -549,14 +552,17 @@ pub unsafe fn test_alloc_12(new_alloc: *const min_allocator_std_pair_const_int__
             let mut end: () = libcc2rs::next_unsafe(range.0.clone(), 2_isize);
             assert!(range.1 == end);
             assert!(
-                (((*first_element.iter_deref()).1) == (1))
-                    || (((*first_element.iter_deref()).1) == (2))
+                (((*(first_element.iter_deref() as *const (i32, i32))).1) == (1))
+                    || (((*(first_element.iter_deref() as *const (i32, i32))).1) == (2))
             );
             assert!(
-                (((*second_element.iter_deref()).1) == (1))
-                    || (((*second_element.iter_deref()).1) == (2))
+                (((*(second_element.iter_deref() as *const (i32, i32))).1) == (1))
+                    || (((*(second_element.iter_deref() as *const (i32, i32))).1) == (2))
             );
-            assert!((((*second_element.iter_deref()).1) != ((*range.0.iter_deref()).1)));
+            assert!(
+                (((*(second_element.iter_deref() as *const (i32, i32))).1)
+                    != ((*(range.0.iter_deref() as *const (i32, i32))).1))
+            );
         }
     }
     {
@@ -578,7 +584,7 @@ pub unsafe fn test_alloc_12(new_alloc: *const min_allocator_std_pair_const_int__
         );
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == (1_())));
-        assert!((((*unimplemented!().iter_deref()).1) == (2)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (2)));
     }
     {
         let orig: () = unimplemented!();
@@ -683,8 +689,8 @@ pub unsafe fn test_alloc_13(new_alloc: *const test_allocator_std_pair_const_int_
         );
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == (4_())));
-        assert!((((*unimplemented!().iter_deref()).1) == (2)));
-        assert!((((*unimplemented!().iter_deref()).1) == (4)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (2)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (4)));
         {
             let mut range: ((), ()) = unimplemented!();
             let mut first_element: () = libcc2rs::next_unsafe(range.0.clone(), 0_isize);
@@ -692,14 +698,17 @@ pub unsafe fn test_alloc_13(new_alloc: *const test_allocator_std_pair_const_int_
             let mut end: () = libcc2rs::next_unsafe(range.0.clone(), 2_isize);
             assert!(range.1 == end);
             assert!(
-                (((*first_element.iter_deref()).1) == (1))
-                    || (((*first_element.iter_deref()).1) == (2))
+                (((*(first_element.iter_deref() as *const (i32, i32))).1) == (1))
+                    || (((*(first_element.iter_deref() as *const (i32, i32))).1) == (2))
             );
             assert!(
-                (((*second_element.iter_deref()).1) == (1))
-                    || (((*second_element.iter_deref()).1) == (2))
+                (((*(second_element.iter_deref() as *const (i32, i32))).1) == (1))
+                    || (((*(second_element.iter_deref() as *const (i32, i32))).1) == (2))
             );
-            assert!((((*second_element.iter_deref()).1) != ((*range.0.iter_deref()).1)));
+            assert!(
+                (((*(second_element.iter_deref() as *const (i32, i32))).1)
+                    != ((*(range.0.iter_deref() as *const (i32, i32))).1))
+            );
         }
     }
     {
@@ -721,7 +730,7 @@ pub unsafe fn test_alloc_13(new_alloc: *const test_allocator_std_pair_const_int_
         );
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == (1_())));
-        assert!((((*unimplemented!().iter_deref()).1) == (2)));
+        assert!((((*(unimplemented!().iter_deref() as *const (i32, i32))).1) == (2)));
     }
     {
         let orig: () = unimplemented!();

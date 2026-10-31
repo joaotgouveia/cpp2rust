@@ -1141,7 +1141,7 @@ pub unsafe fn test_35() -> bool {
         let mut b: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            forward_iterator_int_ptr_::new_1({ (input.as_ptr().add(input.len()) as *mut i32) });
         let mut it: forward_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1157,7 +1157,7 @@ pub unsafe fn test_35() -> bool {
         let mut b: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            forward_iterator_int_ptr_::new_1({ (input.as_ptr().add(input.len()) as *mut i32) });
         let mut it: forward_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1167,7 +1167,7 @@ pub unsafe fn test_35() -> bool {
         let mut b: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            forward_iterator_int_ptr_::new_1({ (input.as_ptr().add(input.len()) as *mut i32) });
         let mut it: forward_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1177,7 +1177,7 @@ pub unsafe fn test_35() -> bool {
         let mut b: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            forward_iterator_int_ptr_::new_1({ (input.as_ptr().add(input.len()) as *mut i32) });
         let mut it: forward_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1187,7 +1187,7 @@ pub unsafe fn test_35() -> bool {
         let mut b: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            forward_iterator_int_ptr_::new_1({ (input.as_ptr().add(input.len()) as *mut i32) });
         let mut it: forward_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1203,7 +1203,7 @@ pub unsafe fn test_35() -> bool {
         let mut b: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ unimplemented!() });
         let mut e: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            forward_iterator_int_ptr_::new_1({ (input.as_ptr().add(input.len()) as *mut i32) });
         let mut it: forward_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1268,8 +1268,9 @@ pub unsafe fn test_36() -> bool {
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: bidirectional_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1284,8 +1285,9 @@ pub unsafe fn test_36() -> bool {
         let expected: [i32; 2] = [1, 2];
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: bidirectional_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1294,8 +1296,9 @@ pub unsafe fn test_36() -> bool {
         let expected: [i32; 6] = [3, 4, 5, 6, 7, 8];
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: bidirectional_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1304,8 +1307,9 @@ pub unsafe fn test_36() -> bool {
         let expected: [i32; 2] = [7, 8];
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: bidirectional_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1314,8 +1318,9 @@ pub unsafe fn test_36() -> bool {
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: bidirectional_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1330,8 +1335,9 @@ pub unsafe fn test_36() -> bool {
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: bidirectional_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1396,8 +1402,9 @@ pub unsafe fn test_37() -> bool {
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: random_access_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1412,8 +1419,9 @@ pub unsafe fn test_37() -> bool {
         let expected: [i32; 2] = [1, 2];
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: random_access_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1422,8 +1430,9 @@ pub unsafe fn test_37() -> bool {
         let expected: [i32; 6] = [3, 4, 5, 6, 7, 8];
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: random_access_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1432,8 +1441,9 @@ pub unsafe fn test_37() -> bool {
         let expected: [i32; 2] = [7, 8];
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: random_access_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1442,8 +1452,9 @@ pub unsafe fn test_37() -> bool {
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: random_access_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1458,8 +1469,9 @@ pub unsafe fn test_37() -> bool {
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-        let mut e: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut i32)
+        });
         let mut it: random_access_iterator_int_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1511,7 +1523,7 @@ pub unsafe fn test_38() -> bool {
         let mut input: [i32; 3] = [0, 1, 2];
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: *mut i32 = unimplemented!();
-        let mut e: *mut i32 = input.as_ptr().add(input.len());
+        let mut e: *mut i32 = (input.as_ptr().add(input.len()) as *mut i32);
         let mut it: *mut i32 = unimplemented!();
         assert!(unimplemented!());
         assert!(((it) == (e)));
@@ -1520,7 +1532,7 @@ pub unsafe fn test_38() -> bool {
         let mut input: [i32; 3] = [0, 1, 2];
         let expected: [i32; 2] = [1, 2];
         let mut b: *mut i32 = unimplemented!();
-        let mut e: *mut i32 = input.as_ptr().add(input.len());
+        let mut e: *mut i32 = (input.as_ptr().add(input.len()) as *mut i32);
         let mut it: *mut i32 = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1528,7 +1540,7 @@ pub unsafe fn test_38() -> bool {
         let mut input: [i32; 8] = [1, 2, 3, 4, 5, 6, 7, 8];
         let expected: [i32; 6] = [3, 4, 5, 6, 7, 8];
         let mut b: *mut i32 = unimplemented!();
-        let mut e: *mut i32 = input.as_ptr().add(input.len());
+        let mut e: *mut i32 = (input.as_ptr().add(input.len()) as *mut i32);
         let mut it: *mut i32 = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1536,7 +1548,7 @@ pub unsafe fn test_38() -> bool {
         let mut input: [i32; 8] = [1, 2, 3, 4, 5, 6, 7, 8];
         let expected: [i32; 2] = [7, 8];
         let mut b: *mut i32 = unimplemented!();
-        let mut e: *mut i32 = input.as_ptr().add(input.len());
+        let mut e: *mut i32 = (input.as_ptr().add(input.len()) as *mut i32);
         let mut it: *mut i32 = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1544,7 +1556,7 @@ pub unsafe fn test_38() -> bool {
         let mut input: [i32; 3] = [0, 1, 2];
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: *mut i32 = unimplemented!();
-        let mut e: *mut i32 = input.as_ptr().add(input.len());
+        let mut e: *mut i32 = (input.as_ptr().add(input.len()) as *mut i32);
         let mut it: *mut i32 = unimplemented!();
         assert!(unimplemented!());
         assert!(((it) == (b)));
@@ -1553,7 +1565,7 @@ pub unsafe fn test_38() -> bool {
         let mut input: [i32; 3] = [0, 1, 2];
         let expected: [i32; 3] = [0, 1, 2];
         let mut b: *mut i32 = unimplemented!();
-        let mut e: *mut i32 = input.as_ptr().add(input.len());
+        let mut e: *mut i32 = (input.as_ptr().add(input.len()) as *mut i32);
         let mut it: *mut i32 = unimplemented!();
         assert!(unimplemented!());
         assert!(((it) == (b)));
@@ -1638,8 +1650,9 @@ pub unsafe fn test_39() -> bool {
         ];
         let mut b: forward_iterator_MoveOnly_ptr_ =
             forward_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
-        let mut e: forward_iterator_MoveOnly_ptr_ =
-            forward_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: forward_iterator_MoveOnly_ptr_ = forward_iterator_MoveOnly_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut MoveOnly)
+        });
         let mut it: forward_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1658,8 +1671,9 @@ pub unsafe fn test_39() -> bool {
         let expected: [MoveOnly; 2] = [MoveOnly::new({ Some(1) }), MoveOnly::new({ Some(2) })];
         let mut b: forward_iterator_MoveOnly_ptr_ =
             forward_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
-        let mut e: forward_iterator_MoveOnly_ptr_ =
-            forward_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: forward_iterator_MoveOnly_ptr_ = forward_iterator_MoveOnly_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut MoveOnly)
+        });
         let mut it: forward_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1684,8 +1698,9 @@ pub unsafe fn test_39() -> bool {
         ];
         let mut b: forward_iterator_MoveOnly_ptr_ =
             forward_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
-        let mut e: forward_iterator_MoveOnly_ptr_ =
-            forward_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: forward_iterator_MoveOnly_ptr_ = forward_iterator_MoveOnly_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut MoveOnly)
+        });
         let mut it: forward_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1703,8 +1718,9 @@ pub unsafe fn test_39() -> bool {
         let expected: [MoveOnly; 2] = [MoveOnly::new({ Some(7) }), MoveOnly::new({ Some(8) })];
         let mut b: forward_iterator_MoveOnly_ptr_ =
             forward_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
-        let mut e: forward_iterator_MoveOnly_ptr_ =
-            forward_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: forward_iterator_MoveOnly_ptr_ = forward_iterator_MoveOnly_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut MoveOnly)
+        });
         let mut it: forward_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1721,8 +1737,9 @@ pub unsafe fn test_39() -> bool {
         ];
         let mut b: forward_iterator_MoveOnly_ptr_ =
             forward_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
-        let mut e: forward_iterator_MoveOnly_ptr_ =
-            forward_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: forward_iterator_MoveOnly_ptr_ = forward_iterator_MoveOnly_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut MoveOnly)
+        });
         let mut it: forward_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1745,8 +1762,9 @@ pub unsafe fn test_39() -> bool {
         ];
         let mut b: forward_iterator_MoveOnly_ptr_ =
             forward_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
-        let mut e: forward_iterator_MoveOnly_ptr_ =
-            forward_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+        let mut e: forward_iterator_MoveOnly_ptr_ = forward_iterator_MoveOnly_ptr_::new_1({
+            (input.as_ptr().add(input.len()) as *mut MoveOnly)
+        });
         let mut it: forward_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1837,7 +1855,9 @@ pub unsafe fn test_40() -> bool {
         let mut b: bidirectional_iterator_MoveOnly_ptr_ =
             bidirectional_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: bidirectional_iterator_MoveOnly_ptr_ =
-            bidirectional_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            bidirectional_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: bidirectional_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1857,7 +1877,9 @@ pub unsafe fn test_40() -> bool {
         let mut b: bidirectional_iterator_MoveOnly_ptr_ =
             bidirectional_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: bidirectional_iterator_MoveOnly_ptr_ =
-            bidirectional_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            bidirectional_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: bidirectional_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1883,7 +1905,9 @@ pub unsafe fn test_40() -> bool {
         let mut b: bidirectional_iterator_MoveOnly_ptr_ =
             bidirectional_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: bidirectional_iterator_MoveOnly_ptr_ =
-            bidirectional_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            bidirectional_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: bidirectional_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1902,7 +1926,9 @@ pub unsafe fn test_40() -> bool {
         let mut b: bidirectional_iterator_MoveOnly_ptr_ =
             bidirectional_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: bidirectional_iterator_MoveOnly_ptr_ =
-            bidirectional_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            bidirectional_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: bidirectional_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -1920,7 +1946,9 @@ pub unsafe fn test_40() -> bool {
         let mut b: bidirectional_iterator_MoveOnly_ptr_ =
             bidirectional_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: bidirectional_iterator_MoveOnly_ptr_ =
-            bidirectional_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            bidirectional_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: bidirectional_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -1944,7 +1972,9 @@ pub unsafe fn test_40() -> bool {
         let mut b: bidirectional_iterator_MoveOnly_ptr_ =
             bidirectional_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: bidirectional_iterator_MoveOnly_ptr_ =
-            bidirectional_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            bidirectional_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: bidirectional_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -2035,7 +2065,9 @@ pub unsafe fn test_41() -> bool {
         let mut b: random_access_iterator_MoveOnly_ptr_ =
             random_access_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: random_access_iterator_MoveOnly_ptr_ =
-            random_access_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            random_access_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -2055,7 +2087,9 @@ pub unsafe fn test_41() -> bool {
         let mut b: random_access_iterator_MoveOnly_ptr_ =
             random_access_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: random_access_iterator_MoveOnly_ptr_ =
-            random_access_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            random_access_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -2081,7 +2115,9 @@ pub unsafe fn test_41() -> bool {
         let mut b: random_access_iterator_MoveOnly_ptr_ =
             random_access_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: random_access_iterator_MoveOnly_ptr_ =
-            random_access_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            random_access_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -2100,7 +2136,9 @@ pub unsafe fn test_41() -> bool {
         let mut b: random_access_iterator_MoveOnly_ptr_ =
             random_access_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: random_access_iterator_MoveOnly_ptr_ =
-            random_access_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            random_access_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
     }
@@ -2118,7 +2156,9 @@ pub unsafe fn test_41() -> bool {
         let mut b: random_access_iterator_MoveOnly_ptr_ =
             random_access_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: random_access_iterator_MoveOnly_ptr_ =
-            random_access_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            random_access_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -2142,7 +2182,9 @@ pub unsafe fn test_41() -> bool {
         let mut b: random_access_iterator_MoveOnly_ptr_ =
             random_access_iterator_MoveOnly_ptr_::new_1({ unimplemented!() });
         let mut e: random_access_iterator_MoveOnly_ptr_ =
-            random_access_iterator_MoveOnly_ptr_::new_1({ input.as_ptr().add(input.len()) });
+            random_access_iterator_MoveOnly_ptr_::new_1({
+                (input.as_ptr().add(input.len()) as *mut MoveOnly)
+            });
         let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
         assert!(unimplemented!());
         assert!(
@@ -2219,7 +2261,7 @@ pub unsafe fn test_42() -> bool {
             MoveOnly::new({ Some(2) }),
         ];
         let mut b: *mut MoveOnly = unimplemented!();
-        let mut e: *mut MoveOnly = input.as_ptr().add(input.len());
+        let mut e: *mut MoveOnly = (input.as_ptr().add(input.len()) as *mut MoveOnly);
         let mut it: *mut MoveOnly = unimplemented!();
         assert!(unimplemented!());
         assert!(((it) == (e)));
@@ -2232,7 +2274,7 @@ pub unsafe fn test_42() -> bool {
         ];
         let expected: [MoveOnly; 2] = [MoveOnly::new({ Some(1) }), MoveOnly::new({ Some(2) })];
         let mut b: *mut MoveOnly = unimplemented!();
-        let mut e: *mut MoveOnly = input.as_ptr().add(input.len());
+        let mut e: *mut MoveOnly = (input.as_ptr().add(input.len()) as *mut MoveOnly);
         let mut it: *mut MoveOnly = unimplemented!();
         assert!(unimplemented!());
     }
@@ -2256,7 +2298,7 @@ pub unsafe fn test_42() -> bool {
             MoveOnly::new({ Some(8) }),
         ];
         let mut b: *mut MoveOnly = unimplemented!();
-        let mut e: *mut MoveOnly = input.as_ptr().add(input.len());
+        let mut e: *mut MoveOnly = (input.as_ptr().add(input.len()) as *mut MoveOnly);
         let mut it: *mut MoveOnly = unimplemented!();
         assert!(unimplemented!());
     }
@@ -2273,7 +2315,7 @@ pub unsafe fn test_42() -> bool {
         ];
         let expected: [MoveOnly; 2] = [MoveOnly::new({ Some(7) }), MoveOnly::new({ Some(8) })];
         let mut b: *mut MoveOnly = unimplemented!();
-        let mut e: *mut MoveOnly = input.as_ptr().add(input.len());
+        let mut e: *mut MoveOnly = (input.as_ptr().add(input.len()) as *mut MoveOnly);
         let mut it: *mut MoveOnly = unimplemented!();
         assert!(unimplemented!());
     }
@@ -2289,7 +2331,7 @@ pub unsafe fn test_42() -> bool {
             MoveOnly::new({ Some(2) }),
         ];
         let mut b: *mut MoveOnly = unimplemented!();
-        let mut e: *mut MoveOnly = input.as_ptr().add(input.len());
+        let mut e: *mut MoveOnly = (input.as_ptr().add(input.len()) as *mut MoveOnly);
         let mut it: *mut MoveOnly = unimplemented!();
         assert!(unimplemented!());
         assert!(((it) == (b)));
@@ -2306,7 +2348,7 @@ pub unsafe fn test_42() -> bool {
             MoveOnly::new({ Some(2) }),
         ];
         let mut b: *mut MoveOnly = unimplemented!();
-        let mut e: *mut MoveOnly = input.as_ptr().add(input.len());
+        let mut e: *mut MoveOnly = (input.as_ptr().add(input.len()) as *mut MoveOnly);
         let mut it: *mut MoveOnly = unimplemented!();
         assert!(unimplemented!());
         assert!(((it) == (b)));

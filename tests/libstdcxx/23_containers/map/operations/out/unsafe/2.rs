@@ -318,7 +318,8 @@ pub unsafe fn test01_12() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((cit != (*(*std::cell::LazyCell::force_mut(&mut *&raw mut cx_11))).end())
-            && (((*cit.iter_deref()).1 as i32) == (('4' as libc::c_char) as i32)))
+            && (((*(cit.iter_deref() as *const (i32, libc::c_char))).1 as i32)
+                == (('4' as libc::c_char) as i32)))
         {
             unimplemented!();
             std::process::abort();
@@ -426,7 +427,8 @@ pub unsafe fn test03_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((cit != (*(*std::cell::LazyCell::force_mut(&mut *&raw mut cx_11))).end())
-            && (((*cit.iter_deref()).1 as i32) == (('2' as libc::c_char) as i32)))
+            && (((*(cit.iter_deref() as *const (i32, libc::c_char))).1 as i32)
+                == (('2' as libc::c_char) as i32)))
         {
             unimplemented!();
             std::process::abort();
@@ -437,7 +439,8 @@ pub unsafe fn test03_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((cit != (*(*std::cell::LazyCell::force_mut(&mut *&raw mut cx_11))).end())
-            && (((*cit.iter_deref()).1 as i32) == (('4' as libc::c_char) as i32)))
+            && (((*(cit.iter_deref() as *const (i32, libc::c_char))).1 as i32)
+                == (('4' as libc::c_char) as i32)))
         {
             unimplemented!();
             std::process::abort();
@@ -487,7 +490,8 @@ pub unsafe fn test04_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((cit != (*(*std::cell::LazyCell::force_mut(&mut *&raw mut cx_11))).end())
-            && (((*cit.iter_deref()).1 as i32) == (('4' as libc::c_char) as i32)))
+            && (((*(cit.iter_deref() as *const (i32, libc::c_char))).1 as i32)
+                == (('4' as libc::c_char) as i32)))
         {
             unimplemented!();
             std::process::abort();
@@ -553,7 +557,8 @@ pub unsafe fn test05_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((cit.0 != cit.1)
-            && (((*cit.0.iter_deref()).1 as i32) == (('2' as libc::c_char) as i32)))
+            && (((*(cit.0.iter_deref() as *const (i32, libc::c_char))).1 as i32)
+                == (('2' as libc::c_char) as i32)))
         {
             unimplemented!();
             std::process::abort();

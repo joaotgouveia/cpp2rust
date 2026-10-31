@@ -200,27 +200,6 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Cmp {}
-impl Callable2<i32, i64, bool> for Cmp {
-    fn call(&self, a1: i32, a2: i64) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            CmpImpl::operator_call_1(__it, a1, a2)
-        })
-    }
-}
-impl Callable2<i64, i32, bool> for Cmp {
-    fn call(&self, a1: i64, a2: i32) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            CmpImpl::operator_call_2(__it, a1, a2)
-        })
-    }
-}
-impl Callable2<i32, i32, bool> for Cmp {
-    fn call(&self, a1: i32, a2: i32) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            CmpImpl::operator_call_3(__it, a1, a2)
-        })
-    }
-}
 thread_local!(
     pub static count_9: Value<i32> = Rc::new(RefCell::new(0));
 );
@@ -690,12 +669,12 @@ pub fn run_tests_wrapped_env_21(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
-        true => {
-            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
-            0
+    if !({
+        let __name = env.to_rust_string();
+        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
+            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
         }
-        false => 0,
+        0
     } != 0)
     {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
@@ -704,11 +683,12 @@ pub fn run_tests_wrapped_env_21(
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
-            true => {
+        {
+            let __name = env.to_rust_string();
+            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
                 unsafe {
                     ::std::env::set_var(
-                        env.to_rust_string(),
+                        __name,
                         if !(oldENV).is_null() {
                             (oldENV).clone()
                         } else {
@@ -717,9 +697,8 @@ pub fn run_tests_wrapped_env_21(
                         .to_rust_string(),
                     )
                 };
-                0
             }
-            false => 0,
+            0
         };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({

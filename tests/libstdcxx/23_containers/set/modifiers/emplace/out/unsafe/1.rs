@@ -333,7 +333,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { PathPoint::getType(&(*ret.0.iter_deref())) }) as i32)
+        if !(((unsafe { PathPoint::getType(&(*(ret.0.iter_deref() as *const PathPoint))) }) as i32)
             == (('a' as libc::c_char) as i32))
         {
             unimplemented!();
@@ -361,7 +361,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { PathPoint::getType(&(*ret.0.iter_deref())) }) as i32)
+        if !(((unsafe { PathPoint::getType(&(*(ret.0.iter_deref() as *const PathPoint))) }) as i32)
             == (('a' as libc::c_char) as i32))
         {
             unimplemented!();
@@ -371,7 +371,9 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(&(*(unsafe { PathPoint::getCoords(&(*ret.0.iter_deref())) })))
+        if !((*(&(*(unsafe {
+            PathPoint::getCoords(&(*(ret.0.iter_deref() as *const PathPoint)))
+        })))
             .as_ptr()
             .add(0_usize as usize))
             == (0_f64))
@@ -392,7 +394,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { PathPoint::getType(&(*it.iter_deref())) }) as i32)
+        if !(((unsafe { PathPoint::getType(&(*(it.iter_deref() as *const PathPoint))) }) as i32)
             == (('b' as libc::c_char) as i32))
         {
             unimplemented!();
@@ -402,7 +404,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(&(*(unsafe { PathPoint::getCoords(&(*it.iter_deref())) })))
+        if !((*(&(*(unsafe { PathPoint::getCoords(&(*(it.iter_deref() as *const PathPoint))) })))
             .as_ptr()
             .add(0_usize as usize))
             == (3_f64))
@@ -424,7 +426,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { PathPoint::getType(&(*ret.0.iter_deref())) }) as i32)
+        if !(((unsafe { PathPoint::getType(&(*(ret.0.iter_deref() as *const PathPoint))) }) as i32)
             == (('c' as libc::c_char) as i32))
         {
             unimplemented!();
@@ -434,7 +436,9 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((&(*(&(*(unsafe { PathPoint::getCoords(&(*ret.0.iter_deref())) })))
+        if !((&(*(&(*(unsafe {
+            PathPoint::getCoords(&(*(ret.0.iter_deref() as *const PathPoint)))
+        })))
             .as_ptr()
             .add(0_usize as usize)) as *const f64)
             == ((px).cast_const()))

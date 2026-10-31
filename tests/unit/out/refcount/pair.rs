@@ -33,7 +33,7 @@ fn main_0() -> i32 {
     assert!(((*(*p3.borrow()).0.borrow()) == 5_f64));
     assert!(((*(*p3.borrow()).1.borrow()) == 6));
     let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
-    let n: Value<u32> = Rc::new(RefCell::new(2_u32));
+    let mut n: u32 = 2_u32;
     let const_ptr_pairs: Value<Vec<(Value<Ptr<i32>>, Value<u64>)>> = Rc::new(RefCell::new(
         (0..(1_usize) as usize)
             .map(|_| {
@@ -49,7 +49,7 @@ fn main_0() -> i32 {
             Rc::new(RefCell::new(
                 (arr.as_pointer() as Ptr<i32>).offset((1) as isize),
             )),
-            Rc::new(RefCell::new((*n.borrow()))),
+            Rc::new(RefCell::new(n)),
         );
         const_ptr_pairs.decay().offset(0_usize as isize).write((
             Rc::new(RefCell::new(

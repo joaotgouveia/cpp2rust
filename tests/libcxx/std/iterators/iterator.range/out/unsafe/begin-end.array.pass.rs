@@ -37,7 +37,7 @@ pub unsafe fn test_4() -> bool {
         assert!(((unimplemented!()) == (a.as_mut_ptr())));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((a.as_ptr().add(a.len())) == (a.as_mut_ptr().offset((3) as isize))));
+        assert!(((a.as_ptr().add(a.len()) as *mut i32) == (a.as_mut_ptr().offset((3) as isize))));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         assert!(((unimplemented!()) == ((*ca).as_ptr())));

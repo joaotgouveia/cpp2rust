@@ -47,7 +47,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator void**())");;
         let mut pPtr: Ptr<AnyPtr> = unimplemented!();
-        assert!((((pPtr.reinterpret_cast::<*mut i32>().read()).read()) == 84));
+        assert!((((pPtr.reinterpret_cast::<Ptr<i32>>().read()).read()) == 84));
     }
     return 0;
 }

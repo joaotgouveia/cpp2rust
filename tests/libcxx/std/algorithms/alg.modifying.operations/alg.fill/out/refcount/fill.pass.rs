@@ -1147,12 +1147,10 @@ pub fn test_vector_bool_28(mut N: usize) -> bool {
             let expected: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
             {
                 expected.decay().offset(0_usize as isize).write(
-                    (*{
+                    {
                         expected.decay().offset(1_usize as isize).write(false);
                         expected.decay().offset(1_usize as isize)
                     }
-                    .upgrade()
-                    .deref())
                     .read(),
                 );
                 expected.decay().offset(0_usize as isize)
@@ -1168,15 +1166,13 @@ pub fn test_vector_bool_28(mut N: usize) -> bool {
                     .decay()
                     .offset((N).wrapping_sub(1_usize) as isize)
                     .write(
-                        (*{
+                        {
                             expected
                                 .decay()
                                 .offset((N).wrapping_sub(2_usize) as isize)
                                 .write(false);
                             expected.decay().offset((N).wrapping_sub(2_usize) as isize)
                         }
-                        .upgrade()
-                        .deref())
                         .read(),
                     );
                 expected.decay().offset((N).wrapping_sub(1_usize) as isize)
@@ -1189,14 +1185,14 @@ pub fn test_vector_bool_28(mut N: usize) -> bool {
             let expected: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
             {
                 expected.decay().offset(0_usize as isize).write(
-                    (*{
+                    {
                         expected.decay().offset(1_usize as isize).write(
-                            (*{
+                            {
                                 expected
                                     .decay()
                                     .offset((N).wrapping_sub(1_usize) as isize)
                                     .write(
-                                        (*{
+                                        {
                                             expected
                                                 .decay()
                                                 .offset((N).wrapping_sub(2_usize) as isize)
@@ -1205,20 +1201,14 @@ pub fn test_vector_bool_28(mut N: usize) -> bool {
                                                 .decay()
                                                 .offset((N).wrapping_sub(2_usize) as isize)
                                         }
-                                        .upgrade()
-                                        .deref())
                                         .read(),
                                     );
                                 expected.decay().offset((N).wrapping_sub(1_usize) as isize)
                             }
-                            .upgrade()
-                            .deref())
                             .read(),
                         );
                         expected.decay().offset(1_usize as isize)
                     }
-                    .upgrade()
-                    .deref())
                     .read(),
                 );
                 expected.decay().offset(0_usize as isize)

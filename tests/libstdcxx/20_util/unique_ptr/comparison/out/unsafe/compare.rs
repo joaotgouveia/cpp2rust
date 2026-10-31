@@ -341,7 +341,7 @@ pub unsafe fn test01_9() {
         }
     }
     let mut p2: Option<Box<i32>> = Some(Box::from_raw(
-        (Box::leak(Box::new(1)) as *mut i32).cast_const(),
+        ((Box::leak(Box::new(1)) as *mut i32).cast_const() as *mut i32),
     ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

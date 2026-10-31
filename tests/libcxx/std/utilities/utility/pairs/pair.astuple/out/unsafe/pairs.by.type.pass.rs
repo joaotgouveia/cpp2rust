@@ -11,24 +11,24 @@ pub unsafe fn test_0() -> bool {
         let mut i: i32 = 1;
         let mut j: i32 = 2;
         {
-            let mut p: (*mut i32, *mut i32) = (i, j);
+            let mut p: (*mut i32, *mut i32) = (&mut i, &mut j);
             assert!(((unimplemented!()) == (&mut i as *mut i32)));
             assert!(((unimplemented!()) == (&mut j as *mut i32)));
             assert!(((unimplemented!()) == (&mut i as *mut i32)));
             assert!(((*unimplemented!()) == (2)));
-            let cp: (*mut i32, *mut i32) = (i, j);
+            let cp: (*mut i32, *mut i32) = (&mut i, &mut j);
             assert!(((unimplemented!()) == (&mut i as *mut i32)));
             assert!(((unimplemented!()) == (&mut j as *mut i32)));
             assert!(((unimplemented!()) == (&mut i as *mut i32)));
             assert!(((*unimplemented!()) == (2)));
         }
         {
-            let mut p: (*mut i32, *mut i32) = (i, j);
+            let mut p: (*mut i32, *mut i32) = (&mut i, &mut j);
             assert!(((unimplemented!()) == (&mut j as *mut i32)));
             assert!(((unimplemented!()) == (&mut i as *mut i32)));
             assert!(((unimplemented!()) == (&mut j as *mut i32)));
             assert!(((*unimplemented!()) == (1)));
-            let cp: (*mut i32, *mut i32) = (i, j);
+            let cp: (*mut i32, *mut i32) = (&mut i, &mut j);
             assert!(((unimplemented!()) == (&mut j as *mut i32)));
             assert!(((unimplemented!()) == (&mut i as *mut i32)));
             assert!(((unimplemented!()) == (&mut j as *mut i32)));
@@ -66,7 +66,7 @@ pub unsafe fn test_0() -> bool {
     {
         let mut x: i32 = 42;
         let y: i32 = 43;
-        let p: (*mut i32, *const i32) = (x, y);
+        let p: (*mut i32, *const i32) = (&mut x, &y);
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<int&&>(std::move(p)))>::value"

@@ -571,7 +571,8 @@ pub unsafe fn test_25() -> bool {
         }
         assert!(
             ((n as i64)
-                == (((t.as_ptr().add(t.len()) as usize - unimplemented!() as usize)
+                == ((((t.as_ptr().add(t.len()) as *mut MoveOnly) as usize
+                    - unimplemented!() as usize)
                     / ::std::mem::size_of::<MoveOnly>()) as i64))
         );
         assert!(unimplemented!());
@@ -616,7 +617,8 @@ pub unsafe fn test_25() -> bool {
         }
         assert!(
             ((n as i64)
-                == (((t.as_ptr().add(t.len()) as usize - unimplemented!() as usize)
+                == ((((t.as_ptr().add(t.len()) as *mut MoveOnly) as usize
+                    - unimplemented!() as usize)
                     / ::std::mem::size_of::<MoveOnly>()) as i64))
         );
         assert!(unimplemented!());
@@ -661,7 +663,8 @@ pub unsafe fn test_25() -> bool {
         }
         assert!(
             ((n as i64)
-                == (((t.as_ptr().add(t.len()) as usize - unimplemented!() as usize)
+                == ((((t.as_ptr().add(t.len()) as *mut MoveOnly) as usize
+                    - unimplemented!() as usize)
                     / ::std::mem::size_of::<MoveOnly>()) as i64))
         );
         assert!(unimplemented!());

@@ -21,12 +21,12 @@ fn t4<T1>() -> Ptr<T1> {
     Ptr::null()
 }
 
-fn t7<T1>() -> RandomAccessIterator<T1> {
-    RandomAccessIterator::default()
+fn t7<T1>() -> Ptr<T1> {
+    Ptr::null()
 }
 
-fn t8<T1>() -> RandomAccessIterator<T1> {
-    RandomAccessIterator::default()
+fn t8<T1>() -> Ptr<T1> {
+    Ptr::null()
 }
 
 fn f18<T1, const T2: usize>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {

@@ -833,7 +833,8 @@ pub unsafe fn test_18() -> bool {
         assert!(((beg) == (unimplemented!())));
         assert!(
             (unsafe {
-                let mut _other: *mut i32 = array.as_ptr().add(array.len()).offset(-((3) as isize));
+                let mut _other: *mut i32 =
+                    (array.as_ptr().add(array.len()) as *mut i32).offset(-((3) as isize));
                 sentinel_wrapper_int_ptr_::operator_eq(&end, &mut _other)
             })
         );
@@ -883,7 +884,7 @@ pub unsafe fn test_19() -> bool {
             (unsafe {
                 let mut _other: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({
-                        array.as_ptr().add(array.len()).offset(-((3) as isize))
+                        (array.as_ptr().add(array.len()) as *mut i32).offset(-((3) as isize))
                     });
                 sentinel_wrapper_contiguous_iterator_int_ptr__::operator_eq(&end, &mut _other)
             })
@@ -934,7 +935,7 @@ pub unsafe fn test_20() -> bool {
             (unsafe {
                 let mut _other: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({
-                        array.as_ptr().add(array.len()).offset(-((3) as isize))
+                        (array.as_ptr().add(array.len()) as *mut i32).offset(-((3) as isize))
                     });
                 sentinel_wrapper_random_access_iterator_int_ptr__::operator_eq(&end, &mut _other)
             })
@@ -985,7 +986,7 @@ pub unsafe fn test_21() -> bool {
             (unsafe {
                 let mut _other: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({
-                        array.as_ptr().add(array.len()).offset(-((3) as isize))
+                        (array.as_ptr().add(array.len()) as *mut i32).offset(-((3) as isize))
                     });
                 sentinel_wrapper_bidirectional_iterator_int_ptr__::operator_eq(&end, &mut _other)
             })
@@ -1035,7 +1036,7 @@ pub unsafe fn test_22() -> bool {
         assert!(
             (unsafe {
                 let mut _other: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-                    array.as_ptr().add(array.len()).offset(-((3) as isize))
+                    (array.as_ptr().add(array.len()) as *mut i32).offset(-((3) as isize))
                 });
                 sentinel_wrapper_forward_iterator_int_ptr__::operator_eq(&end, &mut _other)
             })

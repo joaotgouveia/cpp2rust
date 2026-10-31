@@ -312,7 +312,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.0.iter_deref()).a) == (1)) {
+        if !(((*(emplaced.0.iter_deref() as *const aggressive_aggregate)).a) == (1)) {
             unimplemented!();
             std::process::abort();
         }
@@ -320,24 +320,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.0.iter_deref()).b) == (2)) {
-            unimplemented!();
-            std::process::abort();
-        }
-    }
-    emplaced = unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((*emplaced.0.iter_deref()).a) == (2)) {
-            unimplemented!();
-            std::process::abort();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((*emplaced.0.iter_deref()).b) == (0)) {
+        if !(((*(emplaced.0.iter_deref() as *const aggressive_aggregate)).b) == (2)) {
             unimplemented!();
             std::process::abort();
         }
@@ -346,7 +329,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.0.iter_deref()).a) == (0)) {
+        if !(((*(emplaced.0.iter_deref() as *const aggressive_aggregate)).a) == (2)) {
             unimplemented!();
             std::process::abort();
         }
@@ -354,7 +337,24 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.0.iter_deref()).b) == (0)) {
+        if !(((*(emplaced.0.iter_deref() as *const aggressive_aggregate)).b) == (0)) {
+            unimplemented!();
+            std::process::abort();
+        }
+    }
+    emplaced = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((*(emplaced.0.iter_deref() as *const aggressive_aggregate)).a) == (0)) {
+            unimplemented!();
+            std::process::abort();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((*(emplaced.0.iter_deref() as *const aggressive_aggregate)).b) == (0)) {
             unimplemented!();
             std::process::abort();
         }
@@ -366,7 +366,7 @@ pub unsafe fn test_emplace_hint_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it.iter_deref()).a) == (3)) {
+        if !(((*(it.iter_deref() as *const aggressive_aggregate)).a) == (3)) {
             unimplemented!();
             std::process::abort();
         }
@@ -374,24 +374,7 @@ pub unsafe fn test_emplace_hint_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it.iter_deref()).b) == (2)) {
-            unimplemented!();
-            std::process::abort();
-        }
-    }
-    it = unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((*it.iter_deref()).a) == (4)) {
-            unimplemented!();
-            std::process::abort();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((*it.iter_deref()).b) == (0)) {
+        if !(((*(it.iter_deref() as *const aggressive_aggregate)).b) == (2)) {
             unimplemented!();
             std::process::abort();
         }
@@ -400,7 +383,7 @@ pub unsafe fn test_emplace_hint_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it.iter_deref()).a) == (0)) {
+        if !(((*(it.iter_deref() as *const aggressive_aggregate)).a) == (4)) {
             unimplemented!();
             std::process::abort();
         }
@@ -408,7 +391,24 @@ pub unsafe fn test_emplace_hint_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it.iter_deref()).b) == (0)) {
+        if !(((*(it.iter_deref() as *const aggressive_aggregate)).b) == (0)) {
+            unimplemented!();
+            std::process::abort();
+        }
+    }
+    it = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((*(it.iter_deref() as *const aggressive_aggregate)).a) == (0)) {
+            unimplemented!();
+            std::process::abort();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((*(it.iter_deref() as *const aggressive_aggregate)).b) == (0)) {
             unimplemented!();
             std::process::abort();
         }

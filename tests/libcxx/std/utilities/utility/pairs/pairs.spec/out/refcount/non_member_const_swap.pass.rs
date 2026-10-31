@@ -80,10 +80,10 @@ pub fn test_1() -> bool {
         let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((((*p1.borrow()).0.read()) == 2));
-        assert!((((*p1.borrow()).1.read()) == 3));
-        assert!((((*p2.borrow()).0.read()) == 0));
-        assert!((((*p2.borrow()).1.read()) == 1));
+        assert!((((*p1.borrow()).0.borrow().clone().read()) == 2));
+        assert!((((*p1.borrow()).1.borrow().clone().read()) == 3));
+        assert!((((*p2.borrow()).0.borrow().clone().read()) == 0));
+        assert!((((*p2.borrow()).1.borrow().clone().read()) == 1));
     }
     return true;
 }

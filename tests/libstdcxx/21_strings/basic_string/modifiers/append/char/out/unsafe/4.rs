@@ -298,7 +298,7 @@ pub unsafe fn test04_10() {
     let mut c: libc::c_char = ('b' as libc::c_char);
     str.splice(str.len().saturating_sub(1)..str.len(), {
         let mut v = ::std::slice::from_raw_parts(
-            (&mut c as *mut libc::c_char).cast_const(),
+            ((&mut c as *mut libc::c_char).cast_const() as *mut libc::c_char),
             1_usize as usize,
         )
         .to_vec();
@@ -315,8 +315,11 @@ pub unsafe fn test04_10() {
     }
     let mut arr: [libc::c_char; 2] = std::mem::transmute(*b"c\0");
     str.splice(str.len().saturating_sub(1)..str.len(), {
-        let mut v = ::std::slice::from_raw_parts((arr.as_mut_ptr()).cast_const(), 1_usize as usize)
-            .to_vec();
+        let mut v = ::std::slice::from_raw_parts(
+            ((arr.as_mut_ptr()).cast_const() as *mut libc::c_char),
+            1_usize as usize,
+        )
+        .to_vec();
         v.push((0 as libc::c_char));
         v
     });
@@ -332,7 +335,9 @@ pub unsafe fn test04_10() {
     }
     let carr: [libc::c_char; 2] = std::mem::transmute(*b"d\0");
     str.splice(str.len().saturating_sub(1)..str.len(), {
-        let mut v = ::std::slice::from_raw_parts(carr.as_ptr(), 1_usize as usize).to_vec();
+        let mut v =
+            ::std::slice::from_raw_parts((carr.as_ptr() as *mut libc::c_char), 1_usize as usize)
+                .to_vec();
         v.push((0 as libc::c_char));
         v
     });
@@ -348,7 +353,8 @@ pub unsafe fn test04_10() {
     }
     str.splice(str.len().saturating_sub(1)..str.len(), {
         let mut v = ::std::slice::from_raw_parts(
-            (unsafe { S_11::to_pmutlibcc_char(&mut <S_11>::default()) }).cast_const(),
+            ((unsafe { S_11::to_pmutlibcc_char(&mut <S_11>::default()) }).cast_const()
+                as *mut libc::c_char),
             1_usize as usize,
         )
         .to_vec();

@@ -258,7 +258,7 @@ pub unsafe fn test_9() -> bool {
         let mut keys: [i32; 6] = [1, 2, 3, 4, 5, 6];
         (unsafe {
             let _first: *mut i32 = unimplemented!();
-            let _last: *mut i32 = keys.as_ptr().add(keys.len());
+            let _last: *mut i32 = (keys.as_ptr().add(keys.len()) as *mut i32);
             test_6(&mut m, _first, _last)
         });
     }
@@ -296,7 +296,7 @@ pub unsafe fn test_9() -> bool {
             );
             (unsafe {
                 let _first: *mut Counter_int_ = unimplemented!();
-                let _last: *mut Counter_int_ = keys.as_ptr().add(keys.len());
+                let _last: *mut Counter_int_ = (keys.as_ptr().add(keys.len()) as *mut Counter_int_);
                 test_7(&mut m, _first, _last)
             });
         }
@@ -307,7 +307,7 @@ pub unsafe fn test_9() -> bool {
         let mut keys: [i32; 6] = [1, 2, 3, 4, 5, 6];
         (unsafe {
             let _first: *mut i32 = unimplemented!();
-            let _last: *mut i32 = keys.as_ptr().add(keys.len());
+            let _last: *mut i32 = (keys.as_ptr().add(keys.len()) as *mut i32);
             test_8(&mut m, _first, _last)
         });
     }

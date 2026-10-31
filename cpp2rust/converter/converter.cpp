@@ -1863,8 +1863,9 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
 
 void Converter::EmitCallResult(clang::CallExpr *expr, std::string str,
                                const TempMaterializationCtx *temps) {
-  bool deref = (GetReturnTypeOfFunction(expr)->isReferenceType() ||
-                (temps && IsReferenceType(expr))) &&
+  auto ty = GetReturnTypeOfFunction(expr);
+  bool deref = (ty->isReferenceType() || (temps && IsReferenceType(expr))) &&
+               !RuleRegistry::ReturnsProxyReference(ctx_, expr, ty) &&
                !isAddrOf() && !isVoid();
   // The dereference is in the block of the temporaries, so they are still
   // alive, as is the read of a field of the result.
@@ -3811,7 +3812,9 @@ bool Converter::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
   }
   if (IsPassThroughConstructor(ctor)) {
     Convert(expr->getArg(0));
-    if ((ctor->isCopyConstructor() || IsDefaultedMoveConstructor(ctor)) &&
+    // a trivial move copies the object, which is left as it was
+    if ((ctor->isCopyConstructor() || IsDefaultedMoveConstructor(ctor) ||
+         (ctor->isMoveConstructor() && ctor->isTrivial())) &&
         !TypeIsCopyable(expr->getType())) {
       EmitFresh(".clone()");
     }
@@ -5373,6 +5376,16 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
       result = std::format("({} as {})", result, spelled);
     }
   }
+  // The target returns the raw pointer of the other mutability, which its body
+  // need not spell as it declares:
+  //   std::end(const_array)    <-- T1 * with T1 = const int, *mut T1
+  if (!lvalue && expr->isPRValue() && type->isPointerType()) {
+    bool is_const = type->getPointeeType().isConstQualified();
+    if ((is_const && tgt_ir->return_type.is_mut_raw_pointer) ||
+        (!is_const && tgt_ir->return_type.is_const_raw_pointer)) {
+      result = std::format("({} as {})", result, rendered(type));
+    }
+  }
   return result;
 }
 
@@ -5419,10 +5432,23 @@ std::string Converter::ConvertIRFragment(
               !is_cpp_ptr && RuleRegistry::MapsToPointer(ctx_, arg->getType()) &&
               !RuleRegistry::ParamPointsTo(ctx_, expr, arg_idx, arg->getType()),
           .declared_in_rule_as_rust_ptr =
-              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx),
+              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||
+              RuleRegistry::ParamIsReference(ctx_, expr, arg_idx),
           .is_index_base = ph->is_index_base,
       };
-      result += ConvertPlaceholder(expr, arg, ph_ctx);
+      auto converted = ConvertPlaceholder(expr, arg, ph_ctx);
+      // The target takes *mut T1 where C++ passes a pointer to const:
+      //   unique_ptr<const int>(new int)    <-- T1 * with T1 = const int
+      if (auto pointee = arg->getType()->getPointeeType();
+          is_cpp_ptr && pointee.isConstQualified() &&
+          RuleRegistry::GetExprRule(ctx_, expr)
+              ->params.at(arg_idx)
+              .is_mut_raw_pointer) {
+        converted = std::format(
+            "({} as {})", converted,
+            ToString(ctx_.getPointerType(pointee.getUnqualifiedType())));
+      }
+      result += converted;
     } else if (std::get_if<TranslationRule::VaArgsFragment>(&frag)) {
       assert(expr && "variadic arguments outside an expression rule");
       result += ConvertVariadicTail(expr, all_args);

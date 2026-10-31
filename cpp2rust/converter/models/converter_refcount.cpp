@@ -508,6 +508,9 @@ std::string ConverterRefCount::ConvertFreshRValue(
 
 std::string ConverterRefCount::ConvertFreshPointer(
     clang::Expr *expr, std::optional<clang::QualType> implicit_convert_to) {
+  if (expr->getType()->isArrayType() && IsStringLiteralExpr(expr)) {
+    return MakeFresh(ConvertStringLiteralPtr(expr));
+  }
   return MakeFresh(ConvertPointer(expr, implicit_convert_to));
 }
 
@@ -1335,7 +1338,9 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     return temps ? temps->Wrap(std::move(s)) : s;
   };
   auto ty = GetReturnTypeOfFunction(expr);
-  auto *ref = ty->getAs<clang::ReferenceType>();
+  auto *ref = RuleRegistry::ReturnsProxyReference(ctx_, expr, ty)
+                  ? nullptr
+                  : ty->getAs<clang::ReferenceType>();
   // A rule returns a reference to a class object that is no pointer as a Rust
   // reference to it, e.g., ++it as &mut Iterator.
   if (auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
@@ -1631,9 +1636,9 @@ bool ConverterRefCount::VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) {
   case clang::Stmt::CXXReinterpretCastExprClass:
     assert(expr->getType()->isPointerType() &&
            "Only pointer casts are supported in reinterpret_cast");
-    EmitFresh(
-        std::format("{}.reinterpret_cast::<{}>()", ToString(expr->getSubExpr()),
-                    GetUnsafeTypeAsString(expr->getType()->getPointeeType())));
+    EmitFresh(std::format("{}.reinterpret_cast::<{}>()",
+                          ToString(expr->getSubExpr()),
+                          ConvertPointeeType(expr->getType())));
     return false;
   case clang::Stmt::CStyleCastExprClass:
   case clang::Stmt::CXXStaticCastExprClass:
@@ -1929,6 +1934,11 @@ bool ConverterRefCount::VisitMemberExpr(clang::MemberExpr *expr) {
   std::string str;
   if (known) {
     str = GetMappedAsString(expr);
+    // the Value of a reference field holds its pointer, e.g., the first of a
+    // pair<const int &, char>
+    if (member->getType()->isReferenceType()) {
+      str = std::format("{}.borrow().clone()", str);
+    }
   } else if (clang::isa<clang::FieldDecl>(member)) {
     // The pointer that the reference field holds, which is used in place in
     // an unboxed struct.

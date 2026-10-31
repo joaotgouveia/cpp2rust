@@ -19,8 +19,8 @@ impl A {
         let mut this = Self {
             data: (*_a0).data,
             m: (*_a0).m,
-            it: (*_a0).it,
-            cit: (*_a0).cit,
+            it: (*_a0).it.clone(),
+            cit: (*_a0).cit.clone(),
         };
         this
     }

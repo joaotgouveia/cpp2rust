@@ -293,8 +293,8 @@ pub unsafe fn test2_10() {
         let __a1 = 2;
         w.push(__a1)
     };
-    let mut p: (i32, Vec<i32>) = (1, v);
-    let mut q: (i32, Vec<i32>) = (2, w);
+    let mut p: (i32, Vec<i32>) = (1, (v).clone());
+    let mut q: (i32, Vec<i32>) = (2, (w).clone());
     p = std::mem::take(&mut q);
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

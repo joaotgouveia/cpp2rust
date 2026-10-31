@@ -100,29 +100,29 @@ pub unsafe fn tests_5() -> bool {
     {
         let mut array: Vec<i32> = std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec();
         (unsafe { check_noexcept_0(&mut array) });
-        let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
-        let mut j: UnsafeRandomAccessIterator<i32> = unimplemented!();
+        let mut i: *mut i32 = unimplemented!();
+        let mut j: *const i32 = unimplemented!();
         assert!((((i).cast_const()) == (j)));
     }
     {
         let mut array: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
         (unsafe { check_noexcept_1(&mut array) });
-        let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
-        let mut j: UnsafeRandomAccessIterator<i32> = unimplemented!();
+        let mut i: *mut i32 = unimplemented!();
+        let mut j: *const i32 = unimplemented!();
         assert!((((i).cast_const()) == (j)));
     }
     {
         let mut array: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
         (unsafe { check_noexcept_1(&mut array) });
-        let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
-        let mut j: UnsafeRandomAccessIterator<i32> = unimplemented!();
+        let mut i: *mut i32 = unimplemented!();
+        let mut j: *const i32 = unimplemented!();
         assert!(((i) == (unimplemented!())));
         assert!(((j) == (unimplemented!())));
     }
     {
         let mut array: Vec<i32> = Vec::from([1]);
         (unsafe { check_noexcept_2(&mut array) });
-        let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
+        let mut i: *mut i32 = unimplemented!();
         assert!(((*i) == (1)));
         assert!(((&mut (*i) as *mut i32) == (array.as_mut_ptr())));
         (*i) = 99;
@@ -137,7 +137,7 @@ pub unsafe fn tests_5() -> bool {
     {
         let mut array: Vec<i32> = Vec::from([1, 2]);
         (unsafe { check_noexcept_3(&mut array) });
-        let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
+        let mut i: *mut i32 = unimplemented!();
         assert!(((*i) == (1)));
         assert!(((&mut (*i) as *mut i32) == (array.as_mut_ptr())));
         (*i) = 99;
@@ -159,7 +159,7 @@ pub unsafe fn tests_5() -> bool {
     {
         let mut array: Vec<f64> = Vec::from([1_f64, 2_f64, 3.5_f64]);
         (unsafe { check_noexcept_4(&mut array) });
-        let mut i: UnsafeRandomAccessIterator<f64> = unimplemented!();
+        let mut i: *mut f64 = unimplemented!();
         assert!(((*i) == (1_f64)));
         assert!(((&mut (*i) as *mut f64) == (array.as_mut_ptr())));
         (*i) = 5.5_f64;
@@ -181,16 +181,16 @@ pub unsafe fn tests_5() -> bool {
     {
         let mut array: Vec<NoDefault> =
             std::array::from_fn::<_, 0, _>(|_| <NoDefault>::default()).to_vec();
-        let mut ib: UnsafeRandomAccessIterator<NoDefault> = unimplemented!();
-        let mut ie: UnsafeRandomAccessIterator<NoDefault> = unimplemented!();
+        let mut ib: *mut NoDefault = unimplemented!();
+        let mut ie: *mut NoDefault = unimplemented!();
         assert!(((ib) == (ie)));
     }
     {
         {
-            let mut ii1: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
-            let mut ii2: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
-            let mut ii4: UnsafeRandomAccessIterator<i32> = ii1;
-            let mut cii: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
+            let mut ii1: *mut i32 = ::std::ptr::null_mut();
+            let mut ii2: *mut i32 = ::std::ptr::null_mut();
+            let mut ii4: *mut i32 = ii1;
+            let mut cii: *const i32 = ::std::ptr::null();
             assert!(((ii1) == (ii2)));
             assert!(((ii1) == (ii4)));
             assert!((((ii1).cast_const()) == (cii)));
@@ -216,10 +216,10 @@ pub unsafe fn tests_5() -> bool {
             assert!(r2 == std::cmp::Ordering::Equal);
         }
         {
-            let mut ii1: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
-            let mut ii2: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
-            let mut ii4: UnsafeRandomAccessIterator<i32> = ii1;
-            let mut cii: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
+            let mut ii1: *mut i32 = ::std::ptr::null_mut();
+            let mut ii2: *mut i32 = ::std::ptr::null_mut();
+            let mut ii4: *mut i32 = ii1;
+            let mut cii: *const i32 = ::std::ptr::null();
             assert!(((ii1) == (ii2)));
             assert!(((ii1) == (ii4)));
             assert!(!((ii1) != (ii2)));

@@ -98,7 +98,10 @@ pub unsafe fn test_20() -> bool {
         assert!(((unsafe { begin_0(&mut a,) }) == (42)));
         assert!(((unsafe { end_1(&mut a,) }) == (42)));
         assert!(((unimplemented!()) == (a.as_mut_ptr())));
-        assert!(((a.as_ptr().add(a.len())) == (a.as_mut_ptr().offset((3) as isize))));
+        assert!(
+            ((a.as_ptr().add(a.len()) as *mut ArrayHijacker)
+                == (a.as_mut_ptr().offset((3) as isize)))
+        );
         assert!(((unimplemented!()) == ((a.as_mut_ptr()).cast_const())));
         assert!(((unimplemented!()) == ((a.as_mut_ptr().offset((3) as isize)).cast_const())));
         assert!(((unimplemented!()) == (a.as_mut_ptr().offset((3) as isize))));

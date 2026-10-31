@@ -112,6 +112,13 @@ impl PartialEq for AnyPtr {
     }
 }
 
+// The address of the bytes it points to, which is what it compares by.
+impl std::fmt::Debug for AnyPtr {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        std::fmt::Debug::fmt(&self.ptr.as_bytes(), f)
+    }
+}
+
 impl AnyPtr {
     // char buffers are Ptr<i8>; access them directly rather than through a
     // reinterpreted byte view.
@@ -151,12 +158,6 @@ impl AnyPtr {
 impl ByteRepr for AnyPtr {}
 
 // The address, as printed for %p.
-impl std::fmt::Debug for AnyPtr {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        std::fmt::Debug::fmt(&self.reinterpret_cast::<u8>(), f)
-    }
-}
-
 impl AnyPtr {
     pub fn to_int(&self) -> usize {
         self.reinterpret_cast::<u8>().to_int()

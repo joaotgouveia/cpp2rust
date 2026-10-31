@@ -59,7 +59,7 @@ unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut x: i32 = 42;
         let y: i32 = 43;
-        let p: (*mut i32, *const i32) = (x, y);
+        let p: (*mut i32, *const i32) = (&mut x, &y);
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"

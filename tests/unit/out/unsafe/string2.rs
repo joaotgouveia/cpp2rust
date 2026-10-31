@@ -26,7 +26,7 @@ unsafe fn main_0() -> i32 {
         )
         .to_vec()
     );
-    let mut names: [*mut libc::c_char; 1] = [arr.as_mut_ptr()];
+    let mut names: [*mut libc::c_char; 1] = [(arr.as_mut_ptr() as *mut libc::c_char)];
     let copy: Vec<libc::c_char> = std::slice::from_raw_parts(
         (names[(0) as usize]).cast_const(),
         libcc2rs::c_str_len((names[(0) as usize]).cast_const()) + 1,

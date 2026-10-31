@@ -101,8 +101,8 @@ pub fn tests_5() -> bool {
             std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
         ));
         ({ check_noexcept_0(array.as_pointer()) });
-        let mut i: RandomAccessIterator<i32> = unimplemented!();
-        let mut j: RandomAccessIterator<i32> = unimplemented!();
+        let mut i: Ptr<i32> = unimplemented!();
+        let mut j: Ptr<i32> = unimplemented!();
         assert!(({ (i).clone() } == { (j).clone() }));
     }
     {
@@ -110,8 +110,8 @@ pub fn tests_5() -> bool {
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
         ));
         ({ check_noexcept_1(array.as_pointer()) });
-        let mut i: RandomAccessIterator<i32> = unimplemented!();
-        let mut j: RandomAccessIterator<i32> = unimplemented!();
+        let mut i: Ptr<i32> = unimplemented!();
+        let mut j: Ptr<i32> = unimplemented!();
         assert!(({ (i).clone() } == { (j).clone() }));
     }
     {
@@ -119,15 +119,15 @@ pub fn tests_5() -> bool {
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
         ));
         ({ check_noexcept_1(array.as_pointer()) });
-        let mut i: RandomAccessIterator<i32> = unimplemented!();
-        let mut j: RandomAccessIterator<i32> = unimplemented!();
+        let mut i: Ptr<i32> = unimplemented!();
+        let mut j: Ptr<i32> = unimplemented!();
         assert!(({ (i).clone() } == { unimplemented!() }));
         assert!(({ (j).clone() } == { unimplemented!() }));
     }
     {
         let array: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1])));
         ({ check_noexcept_2(array.as_pointer()) });
-        let mut i: RandomAccessIterator<i32> = unimplemented!();
+        let mut i: Ptr<i32> = unimplemented!();
         assert!(((i.read()) == 1));
         assert!(({ (i).clone() } == { array.decay() }));
         i.write(99);
@@ -136,7 +136,7 @@ pub fn tests_5() -> bool {
     {
         let array: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
         ({ check_noexcept_3(array.as_pointer()) });
-        let mut i: RandomAccessIterator<i32> = unimplemented!();
+        let mut i: Ptr<i32> = unimplemented!();
         assert!(((i.read()) == 1));
         assert!(({ (i).clone() } == { array.decay() }));
         i.write(99);
@@ -146,7 +146,7 @@ pub fn tests_5() -> bool {
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
         ({ check_noexcept_4(array.as_pointer()) });
-        let mut i: RandomAccessIterator<f64> = unimplemented!();
+        let mut i: Ptr<f64> = unimplemented!();
         assert!(((i.read()) == 1_f64));
         assert!(({ (i).clone() } == { array.decay() }));
         i.write(5.5_f64);
@@ -157,16 +157,16 @@ pub fn tests_5() -> bool {
         let array: Value<Vec<NoDefault>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| <NoDefault>::default()).to_vec(),
         ));
-        let mut ib: RandomAccessIterator<NoDefault> = unimplemented!();
-        let mut ie: RandomAccessIterator<NoDefault> = unimplemented!();
+        let mut ib: Ptr<NoDefault> = unimplemented!();
+        let mut ie: Ptr<NoDefault> = unimplemented!();
         assert!(({ (ib).clone() } == { (ie).clone() }));
     }
     {
         {
-            let mut ii1: RandomAccessIterator<i32> = RandomAccessIterator::default();
-            let mut ii2: RandomAccessIterator<i32> = RandomAccessIterator::default();
-            let mut ii4: RandomAccessIterator<i32> = (ii1).clone();
-            let mut cii: RandomAccessIterator<i32> = RandomAccessIterator::default();
+            let mut ii1: Ptr<i32> = Ptr::null();
+            let mut ii2: Ptr<i32> = Ptr::null();
+            let mut ii4: Ptr<i32> = (ii1).clone();
+            let mut cii: Ptr<i32> = Ptr::null();
             assert!(({ (ii1).clone() } == { (ii2).clone() }));
             assert!(({ (ii1).clone() } == { (ii4).clone() }));
             assert!(({ (ii1).clone() } == { (cii).clone() }));
@@ -196,10 +196,10 @@ pub fn tests_5() -> bool {
             assert!((*r2.borrow()) == std::cmp::Ordering::Equal);
         }
         {
-            let mut ii1: RandomAccessIterator<i32> = RandomAccessIterator::default();
-            let mut ii2: RandomAccessIterator<i32> = RandomAccessIterator::default();
-            let mut ii4: RandomAccessIterator<i32> = (ii1).clone();
-            let mut cii: RandomAccessIterator<i32> = RandomAccessIterator::default();
+            let mut ii1: Ptr<i32> = Ptr::null();
+            let mut ii2: Ptr<i32> = Ptr::null();
+            let mut ii4: Ptr<i32> = (ii1).clone();
+            let mut cii: Ptr<i32> = Ptr::null();
             assert!(({ (ii1).clone() } == { (ii2).clone() }));
             assert!(({ (ii1).clone() } == { (ii4).clone() }));
             assert!(!({ (ii1).clone() } != { (ii2).clone() }));

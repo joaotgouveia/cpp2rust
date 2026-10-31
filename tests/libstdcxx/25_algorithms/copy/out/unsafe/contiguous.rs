@@ -463,7 +463,7 @@ unsafe fn main_0() -> i32 {
     };
     {
         let mut __first = unimplemented!();
-        let __last = i.as_ptr().add(i.len());
+        let __last = (i.as_ptr().add(i.len()) as *mut i32);
         let mut __out = Iter { index: 0 };
         while __first != __last {
             *__out.iter_deref() = (*__first.iter_deref());

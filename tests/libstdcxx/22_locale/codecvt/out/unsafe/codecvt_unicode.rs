@@ -7737,7 +7737,7 @@ pub unsafe fn utf16_to_utf32_in_error_64(cvt: *const (), mut endianess: utf16_en
         input[(t.replace_pos)] = t.replace_char;
         (unsafe {
             let _f: *mut u16 = unimplemented!();
-            let _l: *mut u16 = input.as_ptr().add(input.len());
+            let _l: *mut u16 = (input.as_ptr().add(input.len()) as *mut u16);
             utf16_to_bytes_61(_f, _l, unimplemented!(), endianess)
         });
         let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
@@ -9049,7 +9049,7 @@ pub unsafe fn utf16_to_ucs2_in_error_71(cvt: *const (), mut endianess: utf16_end
         input[(t.replace_pos)] = t.replace_char;
         (unsafe {
             let _f: *mut u16 = unimplemented!();
-            let _l: *mut u16 = input.as_ptr().add(input.len());
+            let _l: *mut u16 = (input.as_ptr().add(input.len()) as *mut u16);
             utf16_to_bytes_61(_f, _l, unimplemented!(), endianess)
         });
         let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };

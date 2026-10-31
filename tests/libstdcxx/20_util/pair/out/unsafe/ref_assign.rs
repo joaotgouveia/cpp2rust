@@ -259,8 +259,8 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_9() {
     let mut i: i32 = 1;
     let mut j: i32 = 2;
-    let mut p: (*mut i32, i32) = (i, 3);
-    let q: (*mut i32, i32) = (j, 4);
+    let mut p: (*mut i32, i32) = (&mut i, 3);
+    let q: (*mut i32, i32) = (&mut j, 4);
     p = q.clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -290,8 +290,8 @@ pub unsafe fn test01_9() {
 pub unsafe fn test02_10() {
     let mut i: i32 = 1;
     let mut j: i32 = 2;
-    let mut p: (i32, *mut i32) = (3, i);
-    let q: (i32, *mut i32) = (4, j);
+    let mut p: (i32, *mut i32) = (3, &mut i);
+    let q: (i32, *mut i32) = (4, &mut j);
     p = q.clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

@@ -541,7 +541,7 @@ pub unsafe fn test_constexpr_10() -> bool {
     let mut ia: [i32; 8] = [0, 1, 2, 2, 0, 1, 2, 3];
     let mut ib: [i32; 8] = [0, 1, 2, 7, 0, 1, 2, 3];
     return ((unimplemented!()) == (ia.as_mut_ptr().offset((2) as isize)))
-        && ((unimplemented!()) == (ib.as_ptr().add(ib.len())));
+        && ((unimplemented!()) == (ib.as_ptr().add(ib.len()) as *mut i32));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

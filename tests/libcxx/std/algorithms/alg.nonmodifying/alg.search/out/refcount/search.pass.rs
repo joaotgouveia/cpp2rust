@@ -2899,15 +2899,13 @@ pub trait MySearcherImpl {
 impl MySearcherImpl for Ptr<MySearcher> {
     fn operator_call_1_int_ptr(
         &self,
-        b: Ptr<i32>,
-        e: Ptr<i32>,
+        mut b: Ptr<i32>,
+        mut e: Ptr<i32>,
     ) -> (Value<Ptr<i32>>, Value<Ptr<i32>>) {
-        let b: Value<Ptr<i32>> = Rc::new(RefCell::new(b));
-        let e: Value<Ptr<i32>> = Rc::new(RefCell::new(e));
         (*searcher_called_18.with(Value::clone).borrow_mut()).prefix_inc();
         return (
-            Rc::new(RefCell::new((*b.borrow()))),
-            Rc::new(RefCell::new((*e.borrow()))),
+            Rc::new(RefCell::new((b).clone())),
+            Rc::new(RefCell::new((e).clone())),
         );
     }
 }
@@ -2921,14 +2919,12 @@ pub trait MySearcherCImpl {
 impl MySearcherCImpl for Ptr<MySearcherC> {
     fn operator_call_1_int_ptr(
         &self,
-        b: Ptr<i32>,
-        e: Ptr<i32>,
+        mut b: Ptr<i32>,
+        mut e: Ptr<i32>,
     ) -> (Value<Ptr<i32>>, Value<Ptr<i32>>) {
-        let b: Value<Ptr<i32>> = Rc::new(RefCell::new(b));
-        let e: Value<Ptr<i32>> = Rc::new(RefCell::new(e));
         return (
-            Rc::new(RefCell::new((*b.borrow()))),
-            Rc::new(RefCell::new((*e.borrow()))),
+            Rc::new(RefCell::new((b).clone())),
+            Rc::new(RefCell::new((e).clone())),
         );
     }
 }

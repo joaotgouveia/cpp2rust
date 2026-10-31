@@ -57,8 +57,22 @@ pub unsafe fn test_7() -> bool {
         assert!(!(unimplemented!()));
         let mut vc: () = unimplemented!();
         const _: () = assert!(true, "");;
-        assert!((unsafe { vc((1, ('2' as libc::c_char)), (2, ('1' as libc::c_char)),) }));
-        assert!(!(unsafe { vc((2, ('1' as libc::c_char)), (1, ('2' as libc::c_char)),) }));
+        assert!(
+            (unsafe {
+                vc(
+                    (&mut 1, &mut ('2' as libc::c_char)),
+                    (&mut 2, &mut ('1' as libc::c_char)),
+                )
+            })
+        );
+        assert!(
+            !(unsafe {
+                vc(
+                    (&mut 2, &mut ('1' as libc::c_char)),
+                    (&mut 1, &mut ('2' as libc::c_char)),
+                )
+            })
+        );
     }
     {
         let mut comp: () = unimplemented!();
@@ -73,8 +87,8 @@ pub unsafe fn test_7() -> bool {
         let mut a: (i32, i32) = (1, 2);
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "!noexcept(vc(a, a))");;
-        assert!(!(unsafe { vc((1, 2), (2, 1),) }));
-        assert!((unsafe { vc((2, 1), (1, 2),) }));
+        assert!(!(unsafe { vc((&mut 1, &mut 2), (&mut 2, &mut 1),) }));
+        assert!((unsafe { vc((&mut 2, &mut 1), (&mut 1, &mut 2),) }));
     }
     {
         let mut m: () = unimplemented!();
@@ -87,8 +101,8 @@ pub unsafe fn test_7() -> bool {
         let mut vc: () = unimplemented!();
         let mut a: (i32, i32) = (1, 2);
         const _: () = assert!(true, "");;
-        assert!((unsafe { vc((1, 2), (2, 1),) }));
-        assert!(!(unsafe { vc((2, 1), (1, 2),) }));
+        assert!((unsafe { vc((&mut 1, &mut 2), (&mut 2, &mut 1),) }));
+        assert!(!(unsafe { vc((&mut 2, &mut 1), (&mut 1, &mut 2),) }));
     }
     {
         let mut comp: () = unimplemented!();

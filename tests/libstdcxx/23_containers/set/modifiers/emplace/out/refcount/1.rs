@@ -229,13 +229,6 @@ impl PathPoint {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PathPointLess {}
-impl Callable2<Ptr<PathPoint>, Ptr<PathPoint>, bool> for PathPointLess {
-    fn call(&self, a1: Ptr<PathPoint>, a2: Ptr<PathPoint>) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            PathPointLessImpl::operator_call(__it, a1, a2)
-        })
-    }
-}
 pub fn test01_9() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let coord1: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 1_f64, 2_f64])));
@@ -553,12 +546,12 @@ pub fn run_tests_wrapped_env_14(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
-        true => {
-            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
-            0
+    if !({
+        let __name = env.to_rust_string();
+        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
+            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
         }
-        false => 0,
+        0
     } != 0)
     {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
@@ -567,11 +560,12 @@ pub fn run_tests_wrapped_env_14(
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
-            true => {
+        {
+            let __name = env.to_rust_string();
+            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
                 unsafe {
                     ::std::env::set_var(
-                        env.to_rust_string(),
+                        __name,
                         if !(oldENV).is_null() {
                             (oldENV).clone()
                         } else {
@@ -580,9 +574,8 @@ pub fn run_tests_wrapped_env_14(
                         .to_rust_string(),
                     )
                 };
-                0
             }
-            false => 0,
+            0
         };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({

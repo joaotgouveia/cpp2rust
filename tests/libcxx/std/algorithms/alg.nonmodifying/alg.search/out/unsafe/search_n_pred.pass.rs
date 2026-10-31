@@ -802,7 +802,7 @@ pub unsafe fn test_constexpr_16() -> bool {
     let mut ia: [i32; 6] = [0, 0, 1, 1, 2, 2];
     return (((unimplemented!()) == (ia.as_mut_ptr()))
         && ((unimplemented!()) == (ia.as_mut_ptr().offset((2) as isize))))
-        && ((unimplemented!()) == (ia.as_ptr().add(ia.len())));
+        && ((unimplemented!()) == (ia.as_ptr().add(ia.len()) as *mut i32));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

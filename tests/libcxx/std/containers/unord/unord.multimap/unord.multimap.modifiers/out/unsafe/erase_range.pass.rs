@@ -9,12 +9,14 @@ use std::rc::Rc;
 pub unsafe fn CheckConsecutiveKeys_0(mut pos: (), mut end: (), key: (), values: *mut ()) {
     'loop_: while !(unimplemented!()) {
         assert!(pos != end);
-        assert!((((*pos.iter_deref()).0) == (key)));
+        assert!((((*(pos.iter_deref() as *const (i32, Vec<libc::c_char>))).0) == (key)));
         assert!(unimplemented!() != unimplemented!());
         unimplemented!();
         pos.iter_inc();
     }
-    assert!((pos == end) || (((*pos.iter_deref()).0) != (key)));
+    assert!(
+        (pos == end) || (((*(pos.iter_deref() as *const (i32, Vec<libc::c_char>))).0) != (key))
+    );
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

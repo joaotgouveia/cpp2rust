@@ -919,7 +919,7 @@ pub unsafe fn test_constexpr_17() -> bool {
     let mut ib: [i32; 4] = [0, 1, 5, 3];
     let mut ic: [i32; 12] = [0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3, 4];
     return (((unimplemented!()) == (ic.as_mut_ptr().offset((3) as isize)))
-        && ((unimplemented!()) == (ic.as_ptr().add(ic.len()))))
+        && ((unimplemented!()) == (ic.as_ptr().add(ic.len()) as *mut i32)))
         && ((unimplemented!()) == (unimplemented!()));
 }
 pub static mut searcher_called_18: std::cell::LazyCell<i32> =
