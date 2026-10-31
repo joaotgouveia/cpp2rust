@@ -722,6 +722,19 @@ bool ParamIsPointer(clang::ASTContext &ctx, const clang::Expr *expr,
   return rule->params.at(index).is_pointer();
 }
 
+bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                   unsigned index, clang::QualType type) {
+  auto [rule, bindings] = Search(ctx, expr);
+  assert(rule && "expression must have a translation rule");
+  auto n = rule->params.at(index).pointee_generic;
+  if (!n || n > bindings.size() ||
+      bindings[n - 1].getKind() != clang::TemplateArgument::Type) {
+    return false;
+  }
+  return ctx.hasSameUnqualifiedType(bindings[n - 1].getAsType(),
+                                    type.getNonReferenceType());
+}
+
 clang::Expr *BuildParamConversion(clang::ASTContext &ctx,
                                   const clang::Expr *expr, unsigned index,
                                   clang::Expr *arg) {

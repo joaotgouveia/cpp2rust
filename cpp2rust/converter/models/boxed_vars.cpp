@@ -276,7 +276,8 @@ private:
       auto type = arg->getType();
       if (!rule->params[i].is_pointer() ||
           (type->isPointerType() && !type->isFunctionPointerType()) ||
-          RuleRegistry::MapsToPointer(ctx_, type)) {
+          (RuleRegistry::MapsToPointer(ctx_, type) &&
+           !RuleRegistry::ParamPointsTo(ctx_, expr, i, type))) {
         AddValueUse(arg);
       }
     }

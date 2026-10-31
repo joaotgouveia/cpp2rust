@@ -451,18 +451,21 @@ void ConverterRefCount::CheckRuleReturnType(clang::Expr *expr) {
   // or reference type with a typedef of its own, e.g., iterator::pointer,
   // which is not what the pointee is spelled with.
   auto type = GetReturnTypeOfFunction(call).getDesugaredType(ctx_);
-  if (auto *ref = type->getAs<clang::ReferenceType>()) {
-    // a reference to a class that is itself a pointer (vector<bool>'s
-    // reference) is that pointer
-    auto pointee = ref->getPointeeType();
-    type = pointee->isRecordType() &&
-                   RuleRegistry::MapsToRefcountPointer(ctx_, pointee)
-               ? pointee
-               : ctx_.getPointerType(pointee);
-  }
   auto ret = NormalizeType(Mapper::GetReturnType(*this, expr));
+  std::optional<std::string> proxy;
+  if (auto *ref = type->getAs<clang::ReferenceType>()) {
+    auto pointee = ref->getPointeeType();
+    type = ctx_.getPointerType(pointee);
+    // a reference to a class that is itself a pointer is either a pointer to
+    // it (reference_wrapper<T>&) or, for a proxy reference whose rules treat
+    // it as the reference (vector<bool>'s reference), that pointer
+    if (pointee->isRecordType() &&
+        RuleRegistry::MapsToRefcountPointer(ctx_, pointee)) {
+      proxy = NormalizeType(ToString(pointee));
+    }
+  }
   auto expected = NormalizeType(ToString(type));
-  if (ret != expected) {
+  if (ret != expected && ret != proxy) {
     llvm::errs() << "rule return type " << ret << " is not " << expected
                  << '\n';
     llvm::report_fatal_error("rule return type does not match the C++ one");
