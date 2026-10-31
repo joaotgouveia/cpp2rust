@@ -241,22 +241,69 @@ pub struct Iter {
     #[offset(0)]
     pub index: i32,
 }
-impl CppLess for Iter {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        IterImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for Iter {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_iterator_ptrs(self, other, |__lhs, __rhs| {
+                IterImpl::operator_cmp(__lhs, __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for Iter {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        IterImpl::operator_eq(__lhs, __rhs.clone())
+impl std::cmp::PartialOrd for Iter {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for Iter {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_iterator_ptrs(self, other, |__lhs, __rhs| {
+                IterImpl::operator_eq(__lhs, __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for Iter {}
 impl CppAdvance for Iter {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_4();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_5();
+    }
+}
+impl CppIterator<i32> for Iter {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_iterator_ptr(&mut self.clone(), |__it| IterImpl::operator_deref(__it))
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_iterator_ptr(self, |__it| {
+            IterImpl::operator_inc_4(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for Iter {}
+impl CppBidirectionalIterator<i32> for Iter {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_iterator_ptr(self, |__it| {
+            IterImpl::operator_dec_5(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for Iter {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_iterator_ptr(self, |__it| {
+            IterImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_iterator_ptrs(self, from, |__lhs, __rhs| {
+            (operator_sub_17(__lhs.read(), __rhs.read())) as isize
+        })
     }
 }
 impl Default for Iter {

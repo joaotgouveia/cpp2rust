@@ -181,6 +181,18 @@ impl UnsafeCppAdvance for forward_iterator_int_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for forward_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { forward_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for forward_iterator_int_ptr_ {}
 pub unsafe fn operator_eq_3(
     x: *const forward_iterator_std_unique_ptr_int__do_nothing__ptr_,
     y: *const forward_iterator_std_unique_ptr_int__do_nothing__ptr_,
@@ -258,6 +270,24 @@ impl UnsafeCppAdvance for forward_iterator_std_unique_ptr_int__do_nothing__ptr_ 
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<Option<Box<i32>>> for forward_iterator_std_unique_ptr_int__do_nothing__ptr_ {
+    fn iter_deref(&self) -> *mut Option<Box<i32>> {
+        unsafe {
+            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::operator_deref(self)
+                as *mut Option<Box<i32>>
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<Option<Box<i32>>>
+    for forward_iterator_std_unique_ptr_int__do_nothing__ptr_
+{
+}
 pub unsafe fn operator_eq_6(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
@@ -329,6 +359,18 @@ impl UnsafeCppAdvance for bidirectional_iterator_int_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for bidirectional_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { bidirectional_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for bidirectional_iterator_int_ptr_ {}
 pub unsafe fn operator_eq_9(
     x: *const bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_,
     y: *const bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_,
@@ -406,6 +448,26 @@ impl UnsafeCppAdvance for bidirectional_iterator_std_unique_ptr_int__do_nothing_
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<Option<Box<i32>>>
+    for bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_
+{
+    fn iter_deref(&self) -> *mut Option<Box<i32>> {
+        unsafe {
+            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::operator_deref(self)
+                as *mut Option<Box<i32>>
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<Option<Box<i32>>>
+    for bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_
+{
+}
 pub unsafe fn operator_eq_12(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
@@ -477,6 +539,18 @@ impl UnsafeCppAdvance for random_access_iterator_int_ptr_ {
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<i32> for random_access_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { random_access_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_int_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for random_access_iterator_int_ptr_ {}
 pub unsafe fn operator_eq_15(
     x: *const random_access_iterator_std_unique_ptr_int__do_nothing__ptr_,
     y: *const random_access_iterator_std_unique_ptr_int__do_nothing__ptr_,
@@ -553,6 +627,26 @@ impl UnsafeCppAdvance for random_access_iterator_std_unique_ptr_int__do_nothing_
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_7();
     }
+}
+impl UnsafeCppIterator<Option<Box<i32>>>
+    for random_access_iterator_std_unique_ptr_int__do_nothing__ptr_
+{
+    fn iter_deref(&self) -> *mut Option<Box<i32>> {
+        unsafe {
+            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::operator_deref(self)
+                as *mut Option<Box<i32>>
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<Option<Box<i32>>>
+    for random_access_iterator_std_unique_ptr_int__do_nothing__ptr_
+{
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -849,6 +943,37 @@ impl UnsafeCppAdvance for adl_Iterator {
     }
     unsafe fn cpp_dec(&mut self) {
         self.operator_dec_16();
+    }
+}
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
     }
 }
 impl Default for adl_Iterator {

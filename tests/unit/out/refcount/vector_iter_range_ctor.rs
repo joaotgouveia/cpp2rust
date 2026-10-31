@@ -19,7 +19,7 @@ impl Degrees {
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(i64, to_i64, ptr)]
+#[cpp_into(i64, to_i64)]
 #[byte_size(4)]
 pub struct Reading {
     #[offset(0)]

@@ -20,7 +20,7 @@ impl Degrees {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(i64, to_i64, ptr)]
+#[cpp_into(i64, to_i64)]
 pub struct Reading {
     pub raw_: i32,
 }

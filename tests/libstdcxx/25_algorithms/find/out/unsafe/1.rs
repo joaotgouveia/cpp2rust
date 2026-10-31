@@ -385,6 +385,18 @@ impl UnsafeCppAdvance for __gnu_test_input_iterator_wrapper_int_ {
         self.operator_inc_9();
     }
 }
+impl UnsafeCppIterator<i32> for __gnu_test_input_iterator_wrapper_int_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { __gnu_test_input_iterator_wrapper_int_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            __gnu_test_input_iterator_wrapper_int_::operator_inc_9(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for __gnu_test_input_iterator_wrapper_int_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_ {

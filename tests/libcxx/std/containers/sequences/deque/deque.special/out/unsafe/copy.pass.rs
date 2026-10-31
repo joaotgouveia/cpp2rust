@@ -131,7 +131,11 @@ impl cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr_
  ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
  return & mut ( * ( self as *mut cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__  )  )  ;
  } }
+impl std::cmp::PartialEq for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__ { fn eq(&self, other: &Self) -> bool { unsafe { !(operator_ne_0(self as *const cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__, other as *const cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__)) }}}
+impl std::cmp::Eq for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__ {}
 impl UnsafeCppAdvance for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_5(); } }
+impl UnsafeCppIterator<i32 > for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__ { fn iter_deref(&self) -> *mut i32  { unsafe { cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__::operator_deref(self) as *mut i32  } } fn iter_inc(&mut self) -> &mut Self { unsafe { cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__::operator_inc_5(self); } self } }
+impl UnsafeCppInputIterator<i32 > for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr___std__Deque_iterator_int__const_int_ref__const_int_ptr__ {}
 pub unsafe fn operator_ne_1(
     x : *const cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____,
     y : *const cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____,
@@ -154,7 +158,11 @@ impl cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_co
  ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
  return & mut ( * ( self as *mut cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  )  )  ;
  } }
+impl std::cmp::PartialEq for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { fn eq(&self, other: &Self) -> bool { unsafe { !(operator_ne_1(self as *const cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____, other as *const cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____)) }}}
+impl std::cmp::Eq for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ {}
 impl UnsafeCppAdvance for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { unsafe fn cpp_inc(&mut self) { self.operator_inc_5(); } }
+impl UnsafeCppIterator<i32 > for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { fn iter_deref(&self) -> *mut i32  { unsafe { cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____::operator_deref(self) as *mut i32  } } fn iter_inc(&mut self) -> &mut Self { unsafe { cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____::operator_inc_5(self); } self } }
+impl UnsafeCppInputIterator<i32 > for cpp17_input_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0_____std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_eq_2(
     x: *const random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__,
@@ -223,6 +231,26 @@ impl UnsafeCppAdvance for random_access_iterator_std__Deque_iterator_int__int_re
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_7();
     }
+}
+impl UnsafeCppIterator<i32> for random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__::operator_deref(self)
+                as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__::operator_inc_7(
+                self,
+            );
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32>
+    for random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__
+{
 }
 pub unsafe fn operator_add_3(
     mut x: random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__,
@@ -296,12 +324,44 @@ impl random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_pt
         return & mut ( * ( self as *mut random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__  )  )  ;
     }
 }
+impl std::cmp::PartialEq
+    for random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__
+{
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_5(self as *const random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__, other as *const random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__))
+        }
+    }
+}
+impl std::cmp::Eq
+    for random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__
+{
+}
 impl UnsafeCppAdvance
     for random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__
 {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_7();
     }
+}
+impl UnsafeCppIterator<i32>
+    for random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__
+{
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__::operator_deref(self) as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32>
+    for random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__
+{
 }
 pub unsafe fn operator_eq_6(
     x : *const random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____,
@@ -328,6 +388,8 @@ impl random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__s
 impl std::cmp::PartialEq for random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_6(self as *const random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____, other as *const random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____) }}}
 impl std::cmp::Eq for random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ {}
 impl UnsafeCppAdvance for random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ { unsafe fn cpp_inc(&mut self) { self.operator_inc_7(); } }
+impl UnsafeCppIterator<i32 > for random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ { fn iter_deref(&self) -> *mut i32  { unsafe { random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____::operator_deref(self) as *mut i32  } } fn iter_inc(&mut self) -> &mut Self { unsafe { random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____::operator_inc_7(self); } self } }
+impl UnsafeCppInputIterator<i32 > for random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ {}
 pub unsafe fn operator_ne_7(
     x : *const random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____,
     y : *const random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____,
@@ -350,7 +412,11 @@ impl random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_
  ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
  return & mut ( * ( self as *mut random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  )  )  ;
  } }
+impl std::cmp::PartialEq for random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { fn eq(&self, other: &Self) -> bool { unsafe { !(operator_ne_7(self as *const random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____, other as *const random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____)) }}}
+impl std::cmp::Eq for random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ {}
 impl UnsafeCppAdvance for random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { unsafe fn cpp_inc(&mut self) { self.operator_inc_7(); } }
+impl UnsafeCppIterator<i32 > for random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { fn iter_deref(&self) -> *mut i32  { unsafe { random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____::operator_deref(self) as *mut i32  } } fn iter_inc(&mut self) -> &mut Self { unsafe { random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____::operator_inc_7(self); } self } }
+impl UnsafeCppInputIterator<i32 > for random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -642,6 +708,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -839,6 +936,31 @@ impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__
         self.operator_dec_10();
     }
 }
+impl UnsafeCppIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_deref(self)
+                as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_inc_8(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppBidirectionalIterator<i32>
+    for min_pointer_int__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_dec_10(self);
+        }
+        self
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -913,6 +1035,10 @@ impl std::cmp::PartialOrd for min_pointer_min_pointer_int__std_integral_constant
 impl std::cmp::PartialEq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_24(self.clone(), other.clone()) }}}
 impl std::cmp::Eq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
 impl UnsafeCppAdvance for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_8(); } unsafe fn cpp_dec(&mut self) { self.operator_dec_10(); } }
+impl UnsafeCppIterator<min_pointer_int__std_integral_constant_unsigned_long__0__ > for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn iter_deref(&self) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__  { unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__::operator_deref(self) as *mut min_pointer_int__std_integral_constant_unsigned_long__0__  } } fn iter_inc(&mut self) -> &mut Self { unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__::operator_inc_8(self); } self } }
+impl UnsafeCppInputIterator<min_pointer_int__std_integral_constant_unsigned_long__0__ > for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppBidirectionalIterator<min_pointer_int__std_integral_constant_unsigned_long__0__ > for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn iter_dec(&mut self) -> &mut Self { unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__::operator_dec_10(self); } self } }
+impl UnsafeCppRandomAccessIterator<min_pointer_int__std_integral_constant_unsigned_long__0__ > for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn iter_add_assign(&mut self, n: isize) -> Self { unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__::operator_add_assign(self, n as _); } self.clone() } fn iter_distance(&self, from: &Self) -> isize { unsafe { (operator_sub_22(self.clone(), from.clone())) as isize } } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}

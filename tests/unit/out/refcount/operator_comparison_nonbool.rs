@@ -69,7 +69,7 @@ impl CppEq for Mixed {
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(bool, to_bool, ptr)]
+#[cpp_into(bool, to_bool)]
 #[byte_size(1)]
 pub struct MyBool {
     #[offset(0)]
@@ -109,7 +109,7 @@ pub fn operator_lt_6(mut a: Boolish, mut b: Boolish) -> MyBool {
     return MyBool::new({ (a.v < b.v) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
-#[cpp_into(bool, to_bool, ptr)]
+#[cpp_into(bool, to_bool)]
 #[byte_size(1)]
 pub struct RefBool {
     #[offset(0)]
