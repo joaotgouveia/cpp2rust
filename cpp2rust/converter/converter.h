@@ -785,11 +785,16 @@ protected:
   bool ConvertOutOfLineVirtualMethod(clang::CXXMethodDecl *decl);
 
   void AddOrdTrait(const clang::CXXRecordDecl *decl);
+  void AddAdvanceTrait(const clang::CXXRecordDecl *decl);
 
   virtual void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
                                              const clang::FunctionDecl *eq,
                                              const clang::FunctionDecl *lt,
                                              const clang::FunctionDecl *cmp);
+
+  virtual void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                                   const clang::CXXMethodDecl *inc,
+                                   const clang::CXXMethodDecl *dec);
 
   std::string GetEqBody(const clang::CXXRecordDecl *decl,
                         const clang::FunctionDecl *eq,

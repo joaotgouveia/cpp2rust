@@ -60,6 +60,10 @@ public:
                                      const clang::FunctionDecl *lt,
                                      const clang::FunctionDecl *cmp) override;
 
+  void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                           const clang::CXXMethodDecl *inc,
+                           const clang::CXXMethodDecl *dec) override;
+
   std::string GetShallowCopy(const clang::RecordDecl *decl,
                              std::string_view src);
   void AddCloneTrait(const clang::RecordDecl *decl) override;

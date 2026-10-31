@@ -10,7 +10,7 @@ fn t1<T1, T2>() -> ::std::fs::File {
 unsafe fn f7<T1, T2>(mut a0: &mut ::std::fs::File, a1: bool) -> *mut ::std::fs::File {
     let __r: &mut ::std::fs::File = &mut a0;
     let __s: *mut ::std::fs::File = __r;
-    let _ = write!(*__s, "{}", a1 as i32);
+    libcc2rs::write_bool(&mut *__s, a1);
     __s
 }
 

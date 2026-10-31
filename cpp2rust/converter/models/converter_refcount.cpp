@@ -654,6 +654,19 @@ void ConverterRefCount::ConvertOrdAndPartialOrdTraits(
   emit("CppEq", "equal", GetEqBody(decl, eq, lt, cmp, "__lhs", "__rhs"));
 }
 
+void ConverterRefCount::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                                            const clang::CXXMethodDecl *inc,
+                                            const clang::CXXMethodDecl *dec) {
+  StrCat(std::format("impl CppAdvance for {} {{", GetRecordName(decl)));
+  StrCat(std::format("fn cpp_inc(__it: &Ptr<Self>) {{ __it.{}(); }}",
+                     GetMethodName(inc)));
+  if (dec) {
+    StrCat(std::format("fn cpp_dec(__it: &Ptr<Self>) {{ __it.{}(); }}",
+                       GetMethodName(dec)));
+  }
+  StrCat("}");
+}
+
 std::string ConverterRefCount::GetShallowCopy(const clang::RecordDecl *decl,
                                               std::string_view src) {
   std::string fields;

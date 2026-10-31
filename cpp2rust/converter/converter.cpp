@@ -908,6 +908,7 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     ConvertCXXRecordMethods(cxx);
     ConvertVirtualMethods(cxx);
     AddOrdTrait(cxx);
+    AddAdvanceTrait(cxx);
   }
   AddCloneTrait(decl);
   AddDefaultTrait(decl);
@@ -4753,6 +4754,40 @@ void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
   }
 
   ConvertOrdAndPartialOrdTraits(decl, eq, lt, cmp);
+}
+
+// Records with prefix ++ (and --) advance like iterators in the library's
+// generic algorithms (std::next and std::prev used as function values).
+void Converter::AddAdvanceTrait(const clang::CXXRecordDecl *decl) {
+  const clang::CXXMethodDecl *inc = nullptr;
+  const clang::CXXMethodDecl *dec = nullptr;
+  for (const auto *method : decl->methods()) {
+    if (method->isImplicit() || method->isDeleted() || !method->hasBody() ||
+        method->getDescribedFunctionTemplate() || method->getNumParams() != 0) {
+      continue;
+    }
+    if (method->getOverloadedOperator() == clang::OO_PlusPlus) {
+      inc = method;
+    } else if (method->getOverloadedOperator() == clang::OO_MinusMinus) {
+      dec = method;
+    }
+  }
+  if (inc) {
+    ConvertAdvanceTrait(decl, inc, dec);
+  }
+}
+
+void Converter::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                                    const clang::CXXMethodDecl *inc,
+                                    const clang::CXXMethodDecl *dec) {
+  StrCat(std::format("impl UnsafeCppAdvance for {} {{", GetRecordName(decl)));
+  StrCat(std::format("unsafe fn cpp_inc(&mut self) {{ self.{}(); }}",
+                     GetMethodName(inc)));
+  if (dec) {
+    StrCat(std::format("unsafe fn cpp_dec(&mut self) {{ self.{}(); }}",
+                       GetMethodName(dec)));
+  }
+  StrCat("}");
 }
 
 void Converter::AddCloneTrait(const clang::RecordDecl *decl) {
