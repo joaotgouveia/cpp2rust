@@ -68,7 +68,12 @@ fn pointee_generic(ty: &ast::Type) -> Option<i32> {
         ast::Type::RefType(r) => return pointee_generic(&r.ty()?),
         _ => return None,
     };
-    let ast::Type::PathType(path) = pointee else {
+    bare_generic(&pointee)
+}
+
+/// The generic the type is (`T1`), if it is a bare generic.
+fn bare_generic(ty: &ast::Type) -> Option<i32> {
+    let ast::Type::PathType(path) = ty else {
         return None;
     };
     let path = path.path()?;
@@ -389,6 +394,7 @@ struct ParamInfo {
     is_refcount_pointer: bool,
     is_unsafe_pointer: bool,
     pointee_generic: Option<i32>,
+    generic: Option<i32>,
     is_mut_raw_pointer: bool,
     is_const_raw_pointer: bool,
     is_mut_ref: bool,
@@ -436,6 +442,7 @@ impl<'a> FnIrBuilder<'a> {
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 pointee_generic: pointee_generic(&ty),
+                generic: bare_generic(&ty),
                 is_mut_raw_pointer,
                 is_const_raw_pointer,
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
@@ -468,6 +475,7 @@ impl<'a> FnIrBuilder<'a> {
                 is_unsafe_pointer,
                 is_projection: is_projection(&ty),
                 pointee_generic: pointee_generic(&ty),
+                generic: bare_generic(&ty),
                 is_mut_raw_pointer,
                 is_const_raw_pointer,
                 derives: Vec::new(),
@@ -695,6 +703,7 @@ impl<'a> FnIrBuilder<'a> {
                         is_unsafe_pointer: p.is_unsafe_pointer,
                         is_projection: false,
                         pointee_generic: p.pointee_generic,
+                        generic: p.generic,
                         is_mut_raw_pointer: p.is_mut_raw_pointer,
                         is_const_raw_pointer: p.is_const_raw_pointer,
                         derives: Vec::new(),
@@ -823,6 +832,7 @@ impl<'a> TypeIrBuilder<'a> {
                 is_unsafe_pointer,
                 is_projection: false,
                 pointee_generic: pointee_generic(&ty),
+                generic: bare_generic(&ty),
                 is_mut_raw_pointer,
                 is_const_raw_pointer,
                 derives: Vec::new(),

@@ -72,6 +72,8 @@ pub struct TypeInfo {
     pub is_projection: bool,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub pointee_generic: Option<i32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub generic: Option<i32>,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_mut_raw_pointer: bool,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]

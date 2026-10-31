@@ -735,6 +735,26 @@ static bool pointsTo(clang::ASTContext &ctx,
                                     type.getNonReferenceType());
 }
 
+bool ParamIsReference(clang::ASTContext &ctx, const clang::Expr *expr,
+                      unsigned index) {
+  auto [rule, bindings] = Search(ctx, expr);
+  assert(rule && "expression must have a translation rule");
+  auto n = rule->params.at(index).generic;
+  if (!n || n > bindings.size() ||
+      bindings[n - 1].getKind() != clang::TemplateArgument::Type ||
+      !bindings[n - 1].getAsType()->isReferenceType()) {
+    return false;
+  }
+  // A forwarding reference, Tn &&, binds Tn to a reference to an lvalue
+  // argument, which the target takes as the value.
+  auto *decl = findExpr(expr).rule_decl->decl->getAsFunction();
+  auto *param = decl->getParamDecl(index)
+                    ->getType()
+                    .getNonReferenceType()
+                    ->getAs<clang::TemplateTypeParmType>();
+  return !param || param->getIndex() != n - 1;
+}
+
 bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
                    unsigned index, clang::QualType type) {
   auto [rule, bindings] = Search(ctx, expr);
@@ -770,7 +790,7 @@ clang::Expr *BuildParamConversion(clang::ASTContext &ctx,
   auto target = binding.getAsType();
   if ((arg->getType()->isArrayType() && target->isPointerType()) ||
       ctx.hasSameUnqualifiedType(arg->getType().getNonReferenceType(),
-                                 target)) {
+                                 target.getNonReferenceType())) {
     return nullptr;
   }
   auto *init = BuildInitExpr(*sema_, target, arg, arg->getExprLoc());

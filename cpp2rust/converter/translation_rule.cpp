@@ -28,6 +28,8 @@ TypeInfo ParseTypeInfoJSON(const llvm::json::Object &obj) {
     info.is_projection = *v;
   if (auto v = obj.getInteger("pointee_generic"))
     info.pointee_generic = *v;
+  if (auto v = obj.getInteger("generic"))
+    info.generic = *v;
   if (auto v = obj.getBoolean("is_mut_raw_pointer"))
     info.is_mut_raw_pointer = *v;
   if (auto v = obj.getBoolean("is_const_raw_pointer"))

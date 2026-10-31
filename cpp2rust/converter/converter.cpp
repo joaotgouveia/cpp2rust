@@ -5274,7 +5274,8 @@ std::string Converter::ConvertIRFragment(
               !is_cpp_ptr && RuleRegistry::MapsToPointer(ctx_, arg->getType()) &&
               !RuleRegistry::ParamPointsTo(ctx_, expr, arg_idx, arg->getType()),
           .declared_in_rule_as_rust_ptr =
-              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx),
+              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||
+              RuleRegistry::ParamIsReference(ctx_, expr, arg_idx),
           .is_index_base = ph->is_index_base,
       };
       auto converted = ConvertPlaceholder(expr, arg, ph_ctx);
